@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateCameraStateChange.TsAnimNotifyStateCameraStateChange_C
-// 0x0008 (0x0050 - 0x0048)
-class UTsAnimNotifyStateCameraStateChange_C final : public UKuroAnimNotifyState
+// 0x0008 (0x0060 - 0x0058)
+class UTsAnimNotifyStateCameraStateChange_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	bool                                          是否为单客户端;                                    // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          是否跟随;                                          // 0x0049(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          切人时恢复跟随;                                    // 0x004A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          是否为单客户端;                                    // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          是否跟随;                                          // 0x0059(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          切人时恢复跟随;                                    // 0x005A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

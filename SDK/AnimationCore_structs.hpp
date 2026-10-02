@@ -81,6 +81,24 @@ public:
 };
 DUMPER7_ASSERTS_FNodeHierarchyWithUserData;
 
+// ScriptStruct AnimationCore.FABRIKChainLink
+// 0x0038 (0x0038 - 0x0000)
+struct alignas(0x08) FFABRIKChainLink final
+{
+public:
+	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FFABRIKChainLink;
+
+// ScriptStruct AnimationCore.CCDIKChainLink
+// 0x0080 (0x0080 - 0x0000)
+struct alignas(0x10) FCCDIKChainLink final
+{
+public:
+	uint8                                         Pad_0[0x80];                                       // 0x0000(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCCDIKChainLink;
+
 // ScriptStruct AnimationCore.FilterOptionPerAxis
 // 0x0003 (0x0003 - 0x0000)
 struct FFilterOptionPerAxis final
@@ -122,15 +140,6 @@ public:
 };
 DUMPER7_ASSERTS_FTransformConstraint;
 
-// ScriptStruct AnimationCore.FABRIKChainLink
-// 0x0038 (0x0038 - 0x0000)
-struct alignas(0x08) FFABRIKChainLink final
-{
-public:
-	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FFABRIKChainLink;
-
 // ScriptStruct AnimationCore.ConstraintDescriptor
 // 0x0010 (0x0010 - 0x0000)
 struct alignas(0x08) FConstraintDescriptor final
@@ -166,14 +175,16 @@ public:
 };
 DUMPER7_ASSERTS_FTransformFilter;
 
-// ScriptStruct AnimationCore.CCDIKChainLink
-// 0x0080 (0x0080 - 0x0000)
-struct alignas(0x10) FCCDIKChainLink final
+// ScriptStruct AnimationCore.ConstraintDescriptionEx
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FConstraintDescriptionEx
 {
 public:
-	uint8                                         Pad_0[0x80];                                       // 0x0000(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFilterOptionPerAxis                   AxesFilterOption;                                  // 0x0008(0x0003)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FCCDIKChainLink;
+DUMPER7_ASSERTS_FConstraintDescriptionEx;
 
 // ScriptStruct AnimationCore.EulerTransform
 // 0x0024 (0x0024 - 0x0000)
@@ -196,17 +207,6 @@ public:
 	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAxis;
-
-// ScriptStruct AnimationCore.ConstraintDescriptionEx
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FConstraintDescriptionEx
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFilterOptionPerAxis                   AxesFilterOption;                                  // 0x0008(0x0003)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FConstraintDescriptionEx;
 
 // ScriptStruct AnimationCore.AimConstraintDescription
 // 0x0030 (0x0040 - 0x0010)

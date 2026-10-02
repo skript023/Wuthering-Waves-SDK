@@ -42,15 +42,15 @@ void UTsUiNavigationPlatformChangeListener_C::ExecuteUbergraph_TsUiNavigationPla
 }
 
 
-// Function TsUiNavigationPlatformChangeListener.TsUiNavigationPlatformChangeListener_C.OnDestroyBP
+// Function TsUiNavigationPlatformChangeListener.TsUiNavigationPlatformChangeListener_C.OnPreDestroyBP
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
-void UTsUiNavigationPlatformChangeListener_C::OnDestroyBP()
+void UTsUiNavigationPlatformChangeListener_C::OnPreDestroyBP()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsUiNavigationPlatformChangeListener_C", "OnDestroyBP");
+		Func = Class->GetFunction("TsUiNavigationPlatformChangeListener_C", "OnPreDestroyBP");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

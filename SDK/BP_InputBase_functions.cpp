@@ -1626,5 +1626,233 @@ void UBP_InputBase_C::GetMoveVector(struct FVector2D* ReturnVaule)
 		*ReturnVaule = std::move(Parms.ReturnVaule);
 }
 
+
+// Function BP_InputBase.BP_InputBase_C.下降按下
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSInputCommand                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+
+struct FSInputCommand UBP_InputBase_C::下降按下(float time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "下降按下");
+
+	Params::BP_InputBase_C_下降按下 Parms{};
+
+	Parms.time = time;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.下降抬起
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSInputCommand                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+
+struct FSInputCommand UBP_InputBase_C::下降抬起(float time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "下降抬起");
+
+	Params::BP_InputBase_C_下降抬起 Parms{};
+
+	Parms.time = time;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.下降长按
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSInputCommand                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+
+struct FSInputCommand UBP_InputBase_C::下降长按(float time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "下降长按");
+
+	Params::BP_InputBase_C_下降长按 Parms{};
+
+	Parms.time = time;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.下降按下事件
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_InputBase_C::下降按下事件(float time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "下降按下事件");
+
+	Params::BP_InputBase_C_下降按下事件 Parms{};
+
+	Parms.time = time;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.下降抬起事件
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_InputBase_C::下降抬起事件(float time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "下降抬起事件");
+
+	Params::BP_InputBase_C_下降抬起事件 Parms{};
+
+	Parms.time = time;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.移动输入按下
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   yaw                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSInputCommand                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+
+struct FSInputCommand UBP_InputBase_C::移动输入按下(float time, float yaw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "移动输入按下");
+
+	Params::BP_InputBase_C_移动输入按下 Parms{};
+
+	Parms.time = time;
+	Parms.yaw = yaw;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.移动输入抬起
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   yaw                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSInputCommand                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+
+struct FSInputCommand UBP_InputBase_C::移动输入抬起(float time, float yaw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "移动输入抬起");
+
+	Params::BP_InputBase_C_移动输入抬起 Parms{};
+
+	Parms.time = time;
+	Parms.yaw = yaw;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.移动输入长按
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   yaw                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSInputCommand                   ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+
+struct FSInputCommand UBP_InputBase_C::移动输入长按(float time, float yaw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "移动输入长按");
+
+	Params::BP_InputBase_C_移动输入长按 Parms{};
+
+	Parms.time = time;
+	Parms.yaw = yaw;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.移动输入按下事件
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   yaw                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_InputBase_C::移动输入按下事件(float time, float yaw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "移动输入按下事件");
+
+	Params::BP_InputBase_C_移动输入按下事件 Parms{};
+
+	Parms.time = time;
+	Parms.yaw = yaw;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InputBase.BP_InputBase_C.移动输入抬起事件
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   time                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   yaw                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UBP_InputBase_C::移动输入抬起事件(float time, float yaw)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InputBase_C", "移动输入抬起事件");
+
+	Params::BP_InputBase_C_移动输入抬起事件 Parms{};
+
+	Parms.time = time;
+	Parms.yaw = yaw;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

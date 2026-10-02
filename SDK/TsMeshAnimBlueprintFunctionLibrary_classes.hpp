@@ -31,7 +31,6 @@ public:
 	static float GetRandomStandActionIndex(int32 entityId, class UObject* __WorldContext);
 	static void HideWeapon(int32 entityId, bool hide, int32 index, bool hideEffect, bool useHighPriority, class UObject* __WorldContext);
 	static void HideHulu(int32 entityId, bool bHidden, class UObject* __WorldContext);
-	static void ChangeMeshAnim(int32 entityId, class USkeletalMesh* meshClass, class UClass* animBlueprintClass, class UObject* __WorldContext);
 	static float GetDegMovementSlope(int32 entityId, class UObject* __WorldContext);
 	static class FString GetRoleFootStepState(int32 entityId, class UObject* __WorldContext);
 	static void SetIkMeshOffset(int32 entityId, float offset, class UObject* __WorldContext);
@@ -51,6 +50,12 @@ public:
 	static void UpdateAnimInfoHoldingHandsRoleNpc(int32 entityId, class UBP_ABPLogicParams_C* animLogicParams, class UObject* __WorldContext);
 	static class UAnimInstance* MainAnimInstanceForVehicle(int32 entityId, class UObject* __WorldContext);
 	static bool GetDisableBlink(int32 entityId, class UObject* __WorldContext);
+	static float GetHeadBaseYawBuffer(int32 entityId, class UObject* __WorldContext);
+	static bool GetIgnoreMontageBlinkCurve(int32 entityId, class UObject* __WorldContext);
+	static void SetSightSpeedAndRatio(int32 entityId, float speed, float ratio, class UObject* __WorldContext);
+	static void SetSightDirectLimitAngles(int32 entityId, float horizontalAngle, float verticalDownAngle, float verticalUpAngle, class UObject* __WorldContext);
+	static void SetRotateBonesToTagertDefault(int32 entityId, const struct FVector& defaultTargetOffset, float lerpSpeed, float targetUpdateThreshold, class UObject* __WorldContext);
+	static void SetRotateBonesToTagertWithTime(int32 entityId, TArray<class FString>& boneNames, float timeLength, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

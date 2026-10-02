@@ -10,19 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateWalkOnWater.TsAnimNotifyStateWalkOnWater_C
-// 0x0018 (0x0060 - 0x0048)
-class UTsAnimNotifyStateWalkOnWater_C final : public UKuroAnimNotifyState
+// 0x0018 (0x0070 - 0x0058)
+class UTsAnimNotifyStateWalkOnWater_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	class FString                                 Key;                                               // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          FixLocation;                                       // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class FString                                 Key;                                               // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          FixLocation;                                       // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

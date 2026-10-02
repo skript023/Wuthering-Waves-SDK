@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ESkillGenre.ESkillGenre
-// NumValues: 0x0010
+// NumValues: 0x001A
 enum class ESkillGenre : uint8
 {
 	NewEnumerator0                           = 0,
@@ -33,7 +33,17 @@ enum class ESkillGenre : uint8
 	NewEnumerator13                          = 12,
 	NewEnumerator14                          = 13,
 	NewEnumerator12                          = 14,
-	ESkillGenre_MAX                          = 15,
+	NewEnumerator15                          = 15,
+	NewEnumerator16                          = 16,
+	NewEnumerator17                          = 17,
+	NewEnumerator18                          = 18,
+	NewEnumerator19                          = 19,
+	NewEnumerator20                          = 20,
+	NewEnumerator21                          = 21,
+	NewEnumerator22                          = 22,
+	NewEnumerator23                          = 23,
+	NewEnumerator24                          = 24,
+	ESkillGenre_MAX                          = 25,
 };
 
 }

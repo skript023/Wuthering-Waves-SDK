@@ -112,5 +112,25 @@ void ABP_VolumetricFogDistFalloff_PointLight_C::PointFunction()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
+
+// Function BP_VolumetricFogDistFalloff_PointLight.BP_VolumetricFogDistFalloff_PointLight_C.GetPlacementSortOrder
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 ABP_VolumetricFogDistFalloff_PointLight_C::GetPlacementSortOrder() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_VolumetricFogDistFalloff_PointLight_C", "GetPlacementSortOrder");
+
+	Params::BP_VolumetricFogDistFalloff_PointLight_C_GetPlacementSortOrder Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
 }
 

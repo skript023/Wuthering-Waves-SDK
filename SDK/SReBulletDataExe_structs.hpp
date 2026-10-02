@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SReBulletDataExe.SReBulletDataExe
-// 0x00D0 (0x00D0 - 0x0000)
+// 0x00D8 (0x00D8 - 0x0000)
 struct FSReBulletDataExe final
 {
 public:
@@ -30,8 +30,10 @@ public:
 	TArray<int64>                                 能量恢复类GE数组的Id_92_0FFC094E4B4069E9FA541E99A18C6836; // 0x0050(0x0010)(Edit, BlueprintVisible)
 	TArray<int64>                                 命中后对在场上角色应用的GE的Id_113_B47727BE4F7758AAC1A06FA7B32C1D0D; // 0x0060(0x0010)(Edit, BlueprintVisible)
 	TArray<int64>                                 受击对象进入应用的GE的Id_117_3D423BD949732127D0B715A8BF2B2848; // 0x0070(0x0010)(Edit, BlueprintVisible)
-	struct FGameplayTagContainer                  受击对象进入添加Tag_146_9B73F7964709707C04B8E4879A52B2EA; // 0x0080(0x0020)(Edit, BlueprintVisible)
-	TSoftObjectPtr<class UKuroBpDataAssetGroup>   GB组_137_0105B2DE424147DFA801D5AF518CC183;         // 0x00A0(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	bool                                          等待回包过程中不重复触发进入GE_153_7DF497084866107D99DB30B089B6A78C; // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_81[0x7];                                       // 0x0081(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  受击对象进入添加Tag_146_9B73F7964709707C04B8E4879A52B2EA; // 0x0088(0x0020)(Edit, BlueprintVisible)
+	TSoftObjectPtr<class UKuroBpDataAssetGroup>   GB组_137_0105B2DE424147DFA801D5AF518CC183;         // 0x00A8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSReBulletDataExe;
 

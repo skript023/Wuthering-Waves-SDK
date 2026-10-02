@@ -44,7 +44,7 @@ public:
 	static void OnPlayerImpactEnd(int32 entityId, class UObject* __WorldContext);
 	static void OnPlayerAttackBegin(int32 entityId, class UObject* __WorldContext);
 	static void OnPlayerImpactBegin(int32 entityId, class UObject* __WorldContext);
-	static void UpdateNpcPerformData(int32 entityId, bool& isAttacked1, bool& isImpacted, float& direction, float& strength, class UObject* __WorldContext);
+	static void UpdateNpcPerformData(int32 entityId, bool& isAttacked1, bool& isImpacted, float& direction, float& strength, bool& isRegionMoveMode1, bool& isEnableTurnMove, float& turnYawRateRef1, bool& forceUpdateSourceAnimation, class UObject* __WorldContext);
 	static int32 GetLevelIntVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
 	static class FString GetLevelStringVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);
 	static float GetLevelFloatVar(const struct FSAiLevelVar& levelVar, class UObject* __WorldContext);

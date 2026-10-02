@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.ExecuteUbergraph_GA_Kamola_Hold_MoveAttack
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -46,6 +46,76 @@ void UGA_Kamola_Hold_MoveAttack_C::K2_ActivateAbility()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "K2_ActivateAbility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnCompleted_5D118C384AE61F1C80292E81DE2581DF
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Kamola_Hold_MoveAttack_C::OnCompleted_5D118C384AE61F1C80292E81DE2581DF()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnCompleted_5D118C384AE61F1C80292E81DE2581DF");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnBlendOut_5D118C384AE61F1C80292E81DE2581DF
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Kamola_Hold_MoveAttack_C::OnBlendOut_5D118C384AE61F1C80292E81DE2581DF()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnBlendOut_5D118C384AE61F1C80292E81DE2581DF");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnInterrupted_5D118C384AE61F1C80292E81DE2581DF
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Kamola_Hold_MoveAttack_C::OnInterrupted_5D118C384AE61F1C80292E81DE2581DF()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnInterrupted_5D118C384AE61F1C80292E81DE2581DF");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnCancelled_5D118C384AE61F1C80292E81DE2581DF
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Kamola_Hold_MoveAttack_C::OnCancelled_5D118C384AE61F1C80292E81DE2581DF()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnCancelled_5D118C384AE61F1C80292E81DE2581DF");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnTick_5D118C384AE61F1C80292E81DE2581DF
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Kamola_Hold_MoveAttack_C::OnTick_5D118C384AE61F1C80292E81DE2581DF()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnTick_5D118C384AE61F1C80292E81DE2581DF");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -256,76 +326,6 @@ void UGA_Kamola_Hold_MoveAttack_C::OnTick_5D118C384AE61F1C80292E8162E23EFB()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnTick_5D118C384AE61F1C80292E8162E23EFB");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnCompleted_5D118C384AE61F1C80292E81DE2581DF
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Kamola_Hold_MoveAttack_C::OnCompleted_5D118C384AE61F1C80292E81DE2581DF()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnCompleted_5D118C384AE61F1C80292E81DE2581DF");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnBlendOut_5D118C384AE61F1C80292E81DE2581DF
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Kamola_Hold_MoveAttack_C::OnBlendOut_5D118C384AE61F1C80292E81DE2581DF()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnBlendOut_5D118C384AE61F1C80292E81DE2581DF");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnInterrupted_5D118C384AE61F1C80292E81DE2581DF
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Kamola_Hold_MoveAttack_C::OnInterrupted_5D118C384AE61F1C80292E81DE2581DF()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnInterrupted_5D118C384AE61F1C80292E81DE2581DF");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnCancelled_5D118C384AE61F1C80292E81DE2581DF
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Kamola_Hold_MoveAttack_C::OnCancelled_5D118C384AE61F1C80292E81DE2581DF()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnCancelled_5D118C384AE61F1C80292E81DE2581DF");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Kamola_Hold_MoveAttack.GA_Kamola_Hold_MoveAttack_C.OnTick_5D118C384AE61F1C80292E81DE2581DF
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Kamola_Hold_MoveAttack_C::OnTick_5D118C384AE61F1C80292E81DE2581DF()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Kamola_Hold_MoveAttack_C", "OnTick_5D118C384AE61F1C80292E81DE2581DF");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -955,34 +955,6 @@ void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRol
 }
 
 
-// Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_3E404ABF415A86DE760E4EA5D518A11A
-// (BlueprintEvent)
-
-void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_3E404ABF415A86DE760E4EA5D518A11A()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_3E404ABF415A86DE760E4EA5D518A11A");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_3CFDE6C94309141C64E2ED8B06C1F1D6
-// (BlueprintEvent)
-
-void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_3CFDE6C94309141C64E2ED8B06C1F1D6()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_3CFDE6C94309141C64E2ED8B06C1F1D6");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_302400AC4759384B598B33BC6D6EEB3E
 // (BlueprintEvent)
 
@@ -1006,6 +978,20 @@ void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRol
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_54372384432A58CEB93EE88069166697");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_26985D1543AE8B7E8FB6809AE5FDD7D5
+// (BlueprintEvent)
+
+void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_26985D1543AE8B7E8FB6809AE5FDD7D5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_26985D1543AE8B7E8FB6809AE5FDD7D5");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1277,29 +1263,43 @@ void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRol
 }
 
 
-// Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_9397B12D44E48C5E1B6EE1B0605E64B1
+// Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_5954DF6E4B9A0F4F9E0523BF3975F430
 // (BlueprintEvent)
 
-void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_9397B12D44E48C5E1B6EE1B0605E64B1()
+void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_5954DF6E4B9A0F4F9E0523BF3975F430()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_9397B12D44E48C5E1B6EE1B0605E64B1");
+		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_5954DF6E4B9A0F4F9E0523BF3975F430");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_ModifyBone_2FDA046645AE9155BEEEFB9E86DDDB38
+// Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_5B3B900E406A6EB56D45A8A150CD5027
 // (BlueprintEvent)
 
-void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_ModifyBone_2FDA046645AE9155BEEEFB9E86DDDB38()
+void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_5B3B900E406A6EB56D45A8A150CD5027()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_ModifyBone_2FDA046645AE9155BEEEFB9E86DDDB38");
+		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_TransitionResult_5B3B900E406A6EB56D45A8A150CD5027");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_ModifyBone_C72417F6464CF93BF15FC48FDC7E74B4
+// (BlueprintEvent)
+
+void UABP_BaseRoleNPC_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_ModifyBone_C72417F6464CF93BF15FC48FDC7E74B4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_BaseRoleNPC_AnimGraphNode_ModifyBone_C72417F6464CF93BF15FC48FDC7E74B4");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1704,9 +1704,10 @@ void UABP_BaseRoleNPC_C::重置坐下待机计时()
 // Function ABP_BaseRoleNPC.ABP_BaseRoleNPC_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
+// const struct FPoseLink&                 地区运动模式                                           (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
 // struct FPoseLink*                       AnimGraph_0                                            (Parm, OutParm, NoDestructor)
 
-void UABP_BaseRoleNPC_C::AnimGraph(struct FPoseLink* AnimGraph_0)
+void UABP_BaseRoleNPC_C::AnimGraph(const struct FPoseLink& 地区运动模式, struct FPoseLink* AnimGraph_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1714,6 +1715,8 @@ void UABP_BaseRoleNPC_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 		Func = Class->GetFunction("ABP_BaseRoleNPC_C", "AnimGraph");
 
 	Params::ABP_BaseRoleNPC_C_AnimGraph Parms{};
+
+	Parms.地区运动模式 = std::move(地区运动模式);
 
 	UObject::ProcessEvent(Func, &Parms);
 

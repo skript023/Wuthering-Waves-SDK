@@ -1180,5 +1180,49 @@ void ATsAiController_C::AddLevelVarIntEventBinder(const struct FSAiLevelVar& lev
 	Func->FunctionFlags = Flgs;
 }
 
+
+// Function TsAiController.TsAiController_C.渲染状态改变时
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    wasRendered                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ATsAiController_C::渲染状态改变时(bool wasRendered)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAiController_C", "渲染状态改变时");
+
+	Params::TsAiController_C_渲染状态改变时 Parms{};
+
+	Parms.wasRendered = wasRendered;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsAiController.TsAiController_C.BindPlayerDamageEvents
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ATsAiController_C::BindPlayerDamageEvents()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAiController_C", "BindPlayerDamageEvents");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
 }
 

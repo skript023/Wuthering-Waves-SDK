@@ -18,18 +18,19 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsDecoratorCoolDown.TsDecoratorCoolDown_C
-// 0x0018 (0x00C0 - 0x00A8)
+// 0x0020 (0x00D0 - 0x00B0)
 class UTsDecoratorCoolDown_C final : public UBTDecorator_BlueprintBase
 {
 public:
-	struct FFloatRange                            RandomCdTime;                                      // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnTrueFirstTime;                               // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B9[0x3];                                       // 0x00B9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Id;                                                // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FFloatRange                            RandomCdTime;                                      // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnTrueFirstTime;                               // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Id;                                                // 0x00C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsOnlyCheckCoolDown;                               // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void InitTsVariables();
 	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void InitTsVariables();
 
 public:
 	static class UClass* StaticClass()

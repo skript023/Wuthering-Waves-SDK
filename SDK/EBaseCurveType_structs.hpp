@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EBaseCurveType.EBaseCurveType
-// NumValues: 0x000D
+// NumValues: 0x0012
 enum class EBaseCurveType : uint8
 {
 	NewEnumerator0                           = 0,
@@ -30,7 +30,12 @@ enum class EBaseCurveType : uint8
 	NewEnumerator9                           = 9,
 	NewEnumerator10                          = 10,
 	NewEnumerator11                          = 11,
-	EBaseCurveType_MAX                       = 12,
+	NewEnumerator12                          = 12,
+	NewEnumerator13                          = 13,
+	NewEnumerator14                          = 14,
+	NewEnumerator15                          = 15,
+	NewEnumerator17                          = 16,
+	EBaseCurveType_MAX                       = 17,
 };
 
 }

@@ -67,6 +67,31 @@ EXeFGMode UXeFGBlueprintLibrary::GetXeFGMode()
 }
 
 
+// Function XeFGBlueprint.XeFGBlueprintLibrary.GetXeFGUICompositionState
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// EXeFGUICompositionState                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EXeFGUICompositionState UXeFGBlueprintLibrary::GetXeFGUICompositionState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("XeFGBlueprintLibrary", "GetXeFGUICompositionState");
+
+	Params::XeFGBlueprintLibrary_GetXeFGUICompositionState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function XeFGBlueprint.XeFGBlueprintLibrary.IfRelaunchRequiredByXeFG
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -132,6 +157,31 @@ void UXeFGBlueprintLibrary::SetXeFGMode(EXeFGMode Mode)
 	Params::XeFGBlueprintLibrary_SetXeFGMode Parms{};
 
 	Parms.Mode = Mode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function XeFGBlueprint.XeFGBlueprintLibrary.SetXeFGUICompositionState
+// (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// EXeFGUICompositionState                 State                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UXeFGBlueprintLibrary::SetXeFGUICompositionState(EXeFGUICompositionState State)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("XeFGBlueprintLibrary", "SetXeFGUICompositionState");
+
+	Params::XeFGBlueprintLibrary_SetXeFGUICompositionState Parms{};
+
+	Parms.State = State;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

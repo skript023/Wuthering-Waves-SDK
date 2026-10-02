@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
+#include "SCommonQteButton_structs.hpp"
+#include "ECommonQteViewType_SingleButton_structs.hpp"
+#include "ECommonQteInteractiveTiming_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "LGUI_structs.hpp"
-#include "ECommonQteInteractiveTiming_structs.hpp"
-#include "ECommonQteViewType_SingleButton_structs.hpp"
-#include "SCommonQteButton_structs.hpp"
 #include "SCommonQte_Attach_structs.hpp"
 
 
@@ -22,22 +22,24 @@ namespace SDK
 {
 
 // UserDefinedStruct SCommonQte_SingleClick.SCommonQte_SingleClick
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00C8 (0x00C8 - 0x0000)
 struct FSCommonQte_SingleClick final
 {
 public:
 	ECommonQteViewType_SingleButton               ViewType_8_8011A49748943EDEB8F749BACCEA6435;       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCommonQteButton                      UIConfig_15_7D1814F047F7875E71D239BB5D624892;      // 0x0008(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	ECommonQteInteractiveTiming                   InteractiveTiming_18_7C5C080A4B88CC87AC782C99C278E96B; // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsShowBorder_21_B251E67244444D5D80F9A09705858DA4;  // 0x0061(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          IsAttachToActor_24_466F0EE9491DD922AAB7D58BE823C35E; // 0x0062(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_63[0x5];                                       // 0x0063(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCommonQte_Attach                     AttachConfig_26_743F7DA0428FB17B51AB85881549CFE1;  // 0x0068(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EUIAnchorHorizontalAlign                      ButtonAnchorHAlign_38_37C676B347ED4CC2433D469BFDA831C1; // 0x00A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EUIAnchorVerticalAlign                        ButtonAnchorVAlign_39_563B4C9C492F87F7F9A7888858911851; // 0x00A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A2[0x2];                                       // 0x00A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              ButtonOffset_30_157F3DAE4D4F0081324A009946DF390E;  // 0x00A4(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCommonQteButton                      UIConfig_15_7D1814F047F7875E71D239BB5D624892;      // 0x0008(0x0068)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	ECommonQteInteractiveTiming                   InteractiveTiming_18_7C5C080A4B88CC87AC782C99C278E96B; // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsShowBorder_21_B251E67244444D5D80F9A09705858DA4;  // 0x0071(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsAttachToActor_24_466F0EE9491DD922AAB7D58BE823C35E; // 0x0072(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_73[0x5];                                       // 0x0073(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSCommonQte_Attach                     AttachConfig_26_743F7DA0428FB17B51AB85881549CFE1;  // 0x0078(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EUIAnchorHorizontalAlign                      ButtonAnchorHAlign_38_37C676B347ED4CC2433D469BFDA831C1; // 0x00B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EUIAnchorVerticalAlign                        ButtonAnchorVAlign_39_563B4C9C492F87F7F9A7888858911851; // 0x00B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B2[0x2];                                       // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              ButtonOffset_30_157F3DAE4D4F0081324A009946DF390E;  // 0x00B4(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ProgressResponseStart_46_A4836EC449F623BDB1D96FB0940A7583; // 0x00BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ProgressResponseEnd_47_2549592544AA54232C50A0936B92574F; // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCommonQte_SingleClick;
 

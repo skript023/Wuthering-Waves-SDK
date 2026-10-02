@@ -18,26 +18,26 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsLguiEventSystemActor.TsLguiEventSystemActor_C
-// 0x0028 (0x02E0 - 0x02B8)
+// 0x0020 (0x02D8 - 0x02B8)
 class ATsLguiEventSystemActor_C final : public ALGUIEventSystemActor
 {
 public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class ULGUI_TouchInputModule*                 TouchInputModule;                                  // 0x02C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class ULGUI_StandaloneInputModule*            StandaloneInputModule;                             // 0x02C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ULGUI_PointerInputModule*               CurrentInputModule;                                // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          NavigationEnable;                                  // 0x02D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          NavigationEnable;                                  // 0x02D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void InputTrigger(bool triggerPress, EMouseButtonType mouseButtonType);
-	void InputNavigation(ELGUINavigationDirection direction, bool pressOrRelease, bool forceNavigation);
-	void InputTriggerForNavigation(bool triggerPress);
-	void InputScroll(float axisValue);
-	void InputTouchTrigger(bool touchPress, int32 touchId, const struct FVector& touchPointPosition);
-	void InputTouchMove(int32 touchId, const struct FVector& touchPointPosition);
-	class UUIItem* GetNowHitComponent();
-	class ULGUIPointerEventData* GetPointerEventData(float pointerId, bool createIfNotExist);
+	void SetClickThresholdWithInputKeyType(EInputKeyType inputKeyType);
 	bool IsPointerEventDataLineTrace(class ULGUIPointerEventData* pointerEventData);
+	class ULGUIPointerEventData* GetPointerEventData(float pointerId, bool createIfNotExist);
+	class UUIItem* GetNowHitComponent();
+	void InputTouchMove(int32 touchId, const struct FVector& touchPointPosition);
+	void InputTouchTrigger(bool touchPress, int32 touchId, const struct FVector& touchPointPosition);
+	void InputScroll(float axisValue);
+	void InputTriggerForNavigation(bool triggerPress);
+	void InputNavigation(ELGUINavigationDirection direction, bool pressOrRelease, bool forceNavigation);
+	void InputTrigger(bool triggerPress, EMouseButtonType mouseButtonType);
 
 public:
 	static class UClass* StaticClass()

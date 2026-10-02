@@ -11,12 +11,21 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "KuroComponent_structs.hpp"
 #include "Engine_structs.hpp"
+#include "KuroComponent_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function KuroComponent.GpuNpcDitherComponent.ResetDitherForAllInstance
+// 0x0004 (0x0004 - 0x0000)
+struct GpuNpcDitherComponent_ResetDitherForAllInstance final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GpuNpcDitherComponent_ResetDitherForAllInstance;
 
 // Function KuroComponent.KuroCharacterAnimationComponent.AddModelLocation
 // 0x000C (0x000C - 0x0000)
@@ -39,22 +48,26 @@ public:
 DUMPER7_ASSERTS_KuroCharacterAnimationComponent_AddModelQuat;
 
 // Function KuroComponent.KuroCharacterAnimationComponent.D_GetTransformOffsetInWorld
-// 0x0080 (0x0080 - 0x0000)
+// 0x0090 (0x0090 - 0x0000)
 struct KuroCharacterAnimationComponent_D_GetTransformOffsetInWorld final
 {
 public:
 	struct FTransformDouble                       Child;                                             // 0x0000(0x0040)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTransformDouble                       Parent;                                            // 0x0040(0x0040)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          InUseLocalMode;                                    // 0x0080(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_81[0xF];                                       // 0x0081(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroCharacterAnimationComponent_D_GetTransformOffsetInWorld;
 
 // Function KuroComponent.KuroCharacterAnimationComponent.GetTransformOffsetInWorld
-// 0x0060 (0x0060 - 0x0000)
+// 0x0070 (0x0070 - 0x0000)
 struct KuroCharacterAnimationComponent_GetTransformOffsetInWorld final
 {
 public:
 	struct FTransform                             Child;                                             // 0x0000(0x0030)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	struct FTransform                             Parent;                                            // 0x0030(0x0030)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          InUseLocalMode;                                    // 0x0060(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0xF];                                       // 0x0061(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroCharacterAnimationComponent_GetTransformOffsetInWorld;
 
@@ -67,15 +80,35 @@ public:
 };
 DUMPER7_ASSERTS_KuroCharacterAnimationComponent_SetOriginLocation;
 
+// Function KuroComponent.KuroRegionDetectComponent.GetRegionDetectId
+// 0x0004 (0x0004 - 0x0000)
+struct KuroRegionDetectComponent_GetRegionDetectId final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroRegionDetectComponent_GetRegionDetectId;
+
 // Function KuroComponent.KuroRegionDetectComponent.GetRegionEvent
-// 0x0018 (0x0018 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct KuroRegionDetectComponent_GetRegionEvent final
 {
 public:
 	class FString                                 RegionName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroRegionEventBinder*                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Id;                                                // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroRegionEventBinder*                 ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroRegionDetectComponent_GetRegionEvent;
+
+// Function KuroComponent.KuroRegionDetectComponent.RemoveRegionDetect
+// 0x0004 (0x0004 - 0x0000)
+struct KuroRegionDetectComponent_RemoveRegionDetect final
+{
+public:
+	int32                                         Id;                                                // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroRegionDetectComponent_RemoveRegionDetect;
 
 // Function KuroComponent.KuroRegionDetectComponent.SetDebugMode
 // 0x0001 (0x0001 - 0x0000)
@@ -87,20 +120,24 @@ public:
 DUMPER7_ASSERTS_KuroRegionDetectComponent_SetDebugMode;
 
 // Function KuroComponent.KuroRegionDetectComponent.SetEventTarget
-// 0x0008 (0x0008 - 0x0000)
+// 0x0010 (0x0010 - 0x0000)
 struct KuroRegionDetectComponent_SetEventTarget final
 {
 public:
 	class AActor*                                 DetectTarget;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Id;                                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroRegionDetectComponent_SetEventTarget;
 
 // Function KuroComponent.KuroRegionDetectComponent.SetEventTargets
-// 0x0010 (0x0010 - 0x0000)
+// 0x0018 (0x0018 - 0x0000)
 struct KuroRegionDetectComponent_SetEventTargets final
 {
 public:
 	TArray<class AActor*>                         DetectTargets;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         Id;                                                // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroRegionDetectComponent_SetEventTargets;
 
@@ -129,6 +166,73 @@ public:
 	float                                         CurCountDown;                                      // 0x0040(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroSceneItemGuidePathComponent_StartTick;
+
+// Function KuroComponent.KuroSceneItemModelBufferComponent.AddModelLocation
+// 0x000C (0x000C - 0x0000)
+struct KuroSceneItemModelBufferComponent_AddModelLocation final
+{
+public:
+	struct FVector                                Offset;                                            // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroSceneItemModelBufferComponent_AddModelLocation;
+
+// Function KuroComponent.KuroSceneItemModelBufferComponent.AddModelQuat
+// 0x0020 (0x0020 - 0x0000)
+struct KuroSceneItemModelBufferComponent_AddModelQuat final
+{
+public:
+	struct FQuat                                  Quat;                                              // 0x0000(0x0010)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          LockCenter;                                        // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0xF];                                       // 0x0011(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroSceneItemModelBufferComponent_AddModelQuat;
+
+// Function KuroComponent.KuroSceneItemModelBufferComponent.D_GetTransformOffsetInWorld
+// 0x00C0 (0x00C0 - 0x0000)
+struct KuroSceneItemModelBufferComponent_D_GetTransformOffsetInWorld final
+{
+public:
+	struct FTransformDouble                       Child;                                             // 0x0000(0x0040)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTransformDouble                       Parent;                                            // 0x0040(0x0040)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTransformDouble                       Out;                                               // 0x0080(0x0040)(Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroSceneItemModelBufferComponent_D_GetTransformOffsetInWorld;
+
+// Function KuroComponent.KuroSceneItemModelBufferComponent.GetTransformOffsetInWorld
+// 0x0060 (0x0060 - 0x0000)
+struct KuroSceneItemModelBufferComponent_GetTransformOffsetInWorld final
+{
+public:
+	struct FTransform                             Child;                                             // 0x0000(0x0030)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTransform                             Parent;                                            // 0x0030(0x0030)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroSceneItemModelBufferComponent_GetTransformOffsetInWorld;
+
+// Function KuroComponent.KuroSceneItemModelBufferComponent.SetUpMeshComponent
+// 0x0008 (0x0008 - 0x0000)
+struct KuroSceneItemModelBufferComponent_SetUpMeshComponent final
+{
+public:
+	class USkeletalMeshComponent*                 InMeshComponent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroSceneItemModelBufferComponent_SetUpMeshComponent;
+
+// Function KuroComponent.KuroSceneItemModelBufferComponent.SetActorTransformExceptSkeletalMesh
+// 0x00C0 (0x00C0 - 0x0000)
+struct KuroSceneItemModelBufferComponent_SetActorTransformExceptSkeletalMesh final
+{
+public:
+	struct FVectorDouble                          NewLocation;                                       // 0x0000(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               NewRotation;                                       // 0x0018(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0024(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepHitResult;                                    // 0x0028(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          bTeleport;                                         // 0x00BC(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreOverlap;                                    // 0x00BD(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00BE(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BF[0x1];                                       // 0x00BF(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroSceneItemModelBufferComponent_SetActorTransformExceptSkeletalMesh;
 
 // Function KuroComponent.KuroSceneItemMoveComponent.FindTimeByValueIn01Curve
 // 0x0020 (0x0020 - 0x0000)
@@ -336,6 +440,20 @@ public:
 };
 DUMPER7_ASSERTS_KuroSceneItemMoveComponent_StartRotate;
 
+// Function KuroComponent.KuroSceneItemMoveComponent.StartTrackMove
+// 0x0020 (0x0020 - 0x0000)
+struct KuroSceneItemMoveComponent_StartTrackMove final
+{
+public:
+	class AActor*                                 TargetActor;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveSpeed;                                         // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               InitRotatorOffset;                                 // 0x000C(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         angleSpeed;                                        // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x001C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroSceneItemMoveComponent_StartTrackMove;
+
 // Function KuroComponent.KuroSceneItemMoveComponent.StopAllMove
 // 0x0002 (0x0002 - 0x0000)
 struct KuroSceneItemMoveComponent_StopAllMove final
@@ -356,6 +474,17 @@ public:
 	bool                                          ReturnValue;                                       // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroSceneItemMoveComponent_StopRotate;
+
+// Function KuroComponent.KuroSceneItemMoveComponent.SwitchTrackTarget
+// 0x0010 (0x0010 - 0x0000)
+struct KuroSceneItemMoveComponent_SwitchTrackTarget final
+{
+public:
+	class AActor*                                 NewTargetActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroSceneItemMoveComponent_SwitchTrackTarget;
 
 // Function KuroComponent.KuroSceneItemMoveComponent.UpdateDynamicSpeedSplineMoveParams
 // 0x0010 (0x0010 - 0x0000)

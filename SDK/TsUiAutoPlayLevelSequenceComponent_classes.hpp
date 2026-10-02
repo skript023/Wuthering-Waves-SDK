@@ -26,10 +26,11 @@ public:
 
 public:
 	void ExecuteUbergraph_TsUiAutoPlayLevelSequenceComponent(int32 EntryPoint);
+	void OnPreDestroyBP();
 	void OnUIActiveInHierarchyBP(bool activeOrInactive);
-	void OnDestroyBP();
 	void UpdateBP(float DeltaTime);
 	void AwakeBP();
+	void TryRefresh();
 
 public:
 	static class UClass* StaticClass()

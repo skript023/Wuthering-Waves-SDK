@@ -38,21 +38,20 @@ public:
 	int32                                         LodLevel;                                          // 0x0304(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void DebugSetNpcDitherValue(float value);
-	void HandleLoadedDaConfig(class UPD_NpcSetupData_C* daConfig1, bool isEditor);
-	void StopMontage();
-	void HideDialog();
-	bool TryPlayMontage(const class FString& montagePath);
-	void ShowDialog(const class FString& text1, float removeFrame1);
-	void ResetMeshLocation();
-	void SetDefaultCollision();
-	void FindFloor();
-	void LoadModel();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void EditorTick(float DeltaSeconds);
-	void EditorInit();
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_TsSimpleNpc(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void EditorInit();
+	void EditorTick(float DeltaSeconds);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void LoadModel();
+	void FindFloor();
+	void SetDefaultCollision();
+	void ResetMeshLocation();
+	void ShowDialog(const class FString& text1, float removeFrame1);
+	bool TryPlayMontage(const class FString& montagePath);
+	void HideDialog();
+	void StopMontage();
+	void DebugSetNpcDitherValue(float value);
 
 public:
 	static class UClass* StaticClass()

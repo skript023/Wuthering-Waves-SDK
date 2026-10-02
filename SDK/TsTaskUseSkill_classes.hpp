@@ -10,24 +10,24 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTaskUseSkill.TsTaskUseSkill_C
-// 0x0008 (0x00C0 - 0x00B8)
+// 0x0008 (0x00C8 - 0x00C0)
 class UTsTaskUseSkill_C final : public UTsTaskAbortImmediatelyBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskUseSkill_C;                   // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskUseSkill_C;                   // 0x00C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_TsTaskUseSkill(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 
 public:
 	static class UClass* StaticClass()

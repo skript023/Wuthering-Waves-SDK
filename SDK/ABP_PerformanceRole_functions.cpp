@@ -645,6 +645,20 @@ void UABP_PerformanceRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Per
 }
 
 
+// Function ABP_PerformanceRole.ABP_PerformanceRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PerformanceRole_AnimGraphNode_TwoWayBlend_FAF3694E42FD5346F4D4E6A1D7B9BFD1
+// (BlueprintEvent)
+
+void UABP_PerformanceRole_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PerformanceRole_AnimGraphNode_TwoWayBlend_FAF3694E42FD5346F4D4E6A1D7B9BFD1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PerformanceRole_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PerformanceRole_AnimGraphNode_TwoWayBlend_FAF3694E42FD5346F4D4E6A1D7B9BFD1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function ABP_PerformanceRole.ABP_PerformanceRole_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PerformanceRole_AnimGraphNode_TransitionResult_FA89A36640926C129757FAA49AF6A81A
 // (BlueprintEvent)
 
@@ -1460,6 +1474,40 @@ void UABP_PerformanceRole_C::Set_Current_State(EPerformanceRoleState state)
 	Params::ABP_PerformanceRole_C_Set_Current_State Parms{};
 
 	Parms.state = state;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_PerformanceRole.ABP_PerformanceRole_C.TryForceEnterLoop
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UABP_PerformanceRole_C::TryForceEnterLoop()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PerformanceRole_C", "TryForceEnterLoop");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_PerformanceRole.ABP_PerformanceRole_C.SetInstantAttributeBlend
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bInstant                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UABP_PerformanceRole_C::SetInstantAttributeBlend(bool bInstant)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ABP_PerformanceRole_C", "SetInstantAttributeBlend");
+
+	Params::ABP_PerformanceRole_C_SetInstantAttributeBlend Parms{};
+
+	Parms.bInstant = bInstant;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SMovementSetting.SMovementSetting
-// 0x0058 (0x0058 - 0x0000)
+// 0x0060 (0x0060 - 0x0000)
 struct FSMovementSetting final
 {
 public:
@@ -34,7 +34,8 @@ public:
 	float                                         NormalSwimSpeed_16_5594DF0C45045A38F17AFDA3DBD9D6B2; // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         FastSwimSpeed_18_0553DCF8405A234767699F9349DACAFE; // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ControllerRotationSpeed_44_FA4FC2A24AAEFA020A423DB3E453A8C2; // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMovementRotationSetting              ControllerRotationSpeedSetting_45_C5A27A7C43483ED4E23B18AB1C67F1FB; // 0x003C(0x0018)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSMovementRotationSetting              ControllerRotationSpeedSetting_45_C5A27A7C43483ED4E23B18AB1C67F1FB; // 0x0040(0x0020)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSMovementSetting;
 

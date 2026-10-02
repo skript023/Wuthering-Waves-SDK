@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function BP_GlobalGI.BP_GlobalGI_C.ExecuteUbergraph_BP_GlobalGI
-// (Final, UbergraphFunction, HasDefaults)
+// (Final, UbergraphFunction)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -37,15 +37,69 @@ void ABP_GlobalGI_C::ExecuteUbergraph_BP_GlobalGI(int32 EntryPoint)
 }
 
 
-// Function BP_GlobalGI.BP_GlobalGI_C.OnPostProcessCustomTagsUpdated
-// (Event, Protected, BlueprintEvent)
+// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroTickEditor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GlobalGI_C::OnPostProcessCustomTagsUpdated()
+void ABP_GlobalGI_C::OnKuroTickEditor(float DeltaTime)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "OnPostProcessCustomTagsUpdated");
+		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroTickEditor");
+
+	Params::BP_GlobalGI_C_OnKuroTickEditor Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GlobalGI_C::OnKuroTick(float DeltaTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroTick");
+
+	Params::BP_GlobalGI_C_OnKuroTick Parms{};
+
+	Parms.DeltaTime = DeltaTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroInit
+// (Event, Public, BlueprintEvent)
+
+void ABP_GlobalGI_C::OnKuroInit()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroInit");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_GlobalGI_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -118,74 +172,6 @@ void ABP_GlobalGI_C::OnKuroRuntimeDestroy()
 		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroRuntimeDestroy");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GlobalGI.BP_GlobalGI_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_GlobalGI_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroInit
-// (Event, Public, BlueprintEvent)
-
-void ABP_GlobalGI_C::OnKuroInit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroInit");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GlobalGI_C::OnKuroTick(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroTick");
-
-	Params::BP_GlobalGI_C_OnKuroTick Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GlobalGI.BP_GlobalGI_C.OnKuroTickEditor
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaTime                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GlobalGI_C::OnKuroTickEditor(float DeltaTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "OnKuroTickEditor");
-
-	Params::BP_GlobalGI_C_OnKuroTickEditor Parms{};
-
-	Parms.DeltaTime = DeltaTime;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -476,6 +462,26 @@ void ABP_GlobalGI_C::GetViewLocation(struct FVector* WorldPosition, bool* Suc)
 
 	if (Suc != nullptr)
 		*Suc = Parms.Suc;
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpdateTimeOnce
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   OverrideTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GlobalGI_C::UpdateTimeOnce(float OverrideTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateTimeOnce");
+
+	Params::BP_GlobalGI_C_UpdateTimeOnce Parms{};
+
+	Parms.OverrideTime = OverrideTime;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -841,15 +847,15 @@ void ABP_GlobalGI_C::UpdateFlowmapSkybox()
 }
 
 
-// Function BP_GlobalGI.BP_GlobalGI_C.UpdateMisc
+// Function BP_GlobalGI.BP_GlobalGI_C.Update Misc
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_GlobalGI_C::UpdateMisc()
+void ABP_GlobalGI_C::Update_Misc()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateMisc");
+		Func = Class->GetFunction("BP_GlobalGI_C", "Update Misc");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1011,6 +1017,26 @@ struct FLinearColor ABP_GlobalGI_C::Clamp_Luminance(const struct FLinearColor& I
 }
 
 
+// Function BP_GlobalGI.BP_GlobalGI_C.SetLevelSequenceCloudControl
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ABP_SeqControlClouds_C*           SeqCloudsController_0                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GlobalGI_C::SetLevelSequenceCloudControl(class ABP_SeqControlClouds_C* SeqCloudsController_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "SetLevelSequenceCloudControl");
+
+	Params::BP_GlobalGI_C_SetLevelSequenceCloudControl Parms{};
+
+	Parms.SeqCloudsController_0 = SeqCloudsController_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_GlobalGI.BP_GlobalGI_C.GetParallaxCorrectCachedShadowDirection
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1161,20 +1187,6 @@ void ABP_GlobalGI_C::UpdateBigWorld()
 }
 
 
-// Function BP_GlobalGI.BP_GlobalGI_C.OnGlobalGITick
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_GlobalGI_C::OnGlobalGITick()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GlobalGI_C", "OnGlobalGITick");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_GlobalGI.BP_GlobalGI_C.UpdateEditor
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
@@ -1184,6 +1196,20 @@ void ABP_GlobalGI_C::UpdateEditor()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateEditor");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpdateFrozen
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::UpdateFrozen()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateFrozen");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1226,6 +1252,132 @@ void ABP_GlobalGI_C::UpdateVolumeCloudLightWeight()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateVolumeCloudLightWeight");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpdateOriginSkyAtmosphere
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::UpdateOriginSkyAtmosphere()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateOriginSkyAtmosphere");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.Set GIControlParamToGlobalShaderParam
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::Set_GIControlParamToGlobalShaderParam()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "Set GIControlParamToGlobalShaderParam");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpdateCharacterRootPos
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::UpdateCharacterRootPos()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateCharacterRootPos");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpadteVolumertricCloud
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::UpadteVolumertricCloud()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UpadteVolumertricCloud");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.ToggleShowDynamicSkyPlatform
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::ToggleShowDynamicSkyPlatform()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "ToggleShowDynamicSkyPlatform");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpdateMeshBlend
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::UpdateMeshBlend()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateMeshBlend");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.OnGlobalGITick
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::OnGlobalGITick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "OnGlobalGITick");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UpdateVolumeCloudGodRay
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::UpdateVolumeCloudGodRay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UpdateVolumeCloudGodRay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GlobalGI.BP_GlobalGI_C.UodateSkylightBlendTick
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GlobalGI_C::UodateSkylightBlendTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GlobalGI_C", "UodateSkylightBlendTick");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

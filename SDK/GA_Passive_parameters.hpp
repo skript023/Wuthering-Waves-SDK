@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function GA_Passive.Ga_Passive_C.K2_OnEndAbility
-// 0x0001 (0x0001 - 0x0000)
-struct Ga_Passive_C_K2_OnEndAbility final
-{
-public:
-	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_Ga_Passive_C_K2_OnEndAbility;
-
 // Function GA_Passive.Ga_Passive_C.ExecuteUbergraph_Ga_Passive
 // 0x0008 (0x0008 - 0x0000)
 struct Ga_Passive_C_ExecuteUbergraph_Ga_Passive final
@@ -32,6 +23,15 @@ public:
 	bool                                          K2Node_Event_bWasCancelled;                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_Ga_Passive_C_ExecuteUbergraph_Ga_Passive;
+
+// Function GA_Passive.Ga_Passive_C.K2_OnEndAbility
+// 0x0001 (0x0001 - 0x0000)
+struct Ga_Passive_C_K2_OnEndAbility final
+{
+public:
+	bool                                          bWasCancelled;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_Ga_Passive_C_K2_OnEndAbility;
 
 }
 

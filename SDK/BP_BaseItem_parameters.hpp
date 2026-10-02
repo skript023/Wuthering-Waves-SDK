@@ -14,14 +14,14 @@
 namespace SDK::Params
 {
 
-// Function BP_BaseItem.BP_BaseItem_C.GetEntityId
+// Function BP_BaseItem.BP_BaseItem_C.ExecuteUbergraph_BP_BaseItem
 // 0x0004 (0x0004 - 0x0000)
-struct BP_BaseItem_C_GetEntityId final
+struct BP_BaseItem_C_ExecuteUbergraph_BP_BaseItem final
 {
 public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseItem_C_GetEntityId;
+DUMPER7_ASSERTS_BP_BaseItem_C_ExecuteUbergraph_BP_BaseItem;
 
 // Function BP_BaseItem.BP_BaseItem_C.ApplyEntityId
 // 0x0004 (0x0004 - 0x0000)
@@ -32,14 +32,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_BaseItem_C_ApplyEntityId;
 
-// Function BP_BaseItem.BP_BaseItem_C.ExecuteUbergraph_BP_BaseItem
+// Function BP_BaseItem.BP_BaseItem_C.GetEntityId
 // 0x0004 (0x0004 - 0x0000)
-struct BP_BaseItem_C_ExecuteUbergraph_BP_BaseItem final
+struct BP_BaseItem_C_GetEntityId final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseItem_C_ExecuteUbergraph_BP_BaseItem;
+DUMPER7_ASSERTS_BP_BaseItem_C_GetEntityId;
 
 }
 

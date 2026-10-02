@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SpineThingsInfo_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SpineThingsInfo_structs.hpp"
 
 
 namespace SDK::Params
@@ -135,11 +135,12 @@ public:
 	class FString                                 maleSpineName;                                     // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 femaleSpineName;                                   // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	bool                                          needLoop;                                          // 0x0040(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          useFullscreenAdaptAnchor;                          // 0x0041(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_KuroMasterSeqEvent_C_显示预览图;
 
 // Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.显示预览图(数组)
-// 0x0040 (0x0040 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct BP_KuroMasterSeqEvent_C_显示预览图_数组_ final
 {
 public:
@@ -147,6 +148,7 @@ public:
 	class FString                                 FemaleAssetPath;                                   // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 	TArray<struct FSpineThingsInfo>               maleSpineArray;                                    // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 	TArray<struct FSpineThingsInfo>               femaleSpineArray;                                  // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	bool                                          useFullscreenAdaptAnchor;                          // 0x0040(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_KuroMasterSeqEvent_C_显示预览图_数组_;
 
@@ -249,6 +251,39 @@ public:
 	struct FMovieSceneObjectBindingID             binding;                                           // 0x0000(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_KuroMasterSeqEvent_C_绑定物品检视Actor;
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.启用剧情交互按钮
+// 0x0001 (0x0001 - 0x0000)
+struct BP_KuroMasterSeqEvent_C_启用剧情交互按钮 final
+{
+public:
+	bool                                          bEnable;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_KuroMasterSeqEvent_C_启用剧情交互按钮;
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.打开报幕界面
+// 0x0038 (0x0038 - 0x0000)
+struct BP_KuroMasterSeqEvent_C_打开报幕界面 final
+{
+public:
+	class FString                                 uiPrefabId;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	float                                         duration;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 uiStartAnimName;                                   // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 uiEndAnimName;                                     // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_KuroMasterSeqEvent_C_打开报幕界面;
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.相机振动
+// 0x0038 (0x0038 - 0x0000)
+struct BP_KuroMasterSeqEvent_C_相机振动 final
+{
+public:
+	bool                                          启用;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   资产;                                              // 0x0008(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_KuroMasterSeqEvent_C_相机振动;
 
 }
 

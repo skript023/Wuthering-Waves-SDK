@@ -17,21 +17,56 @@
 namespace SDK
 {
 
-// Function BPI_Animation.BPI_Animation_C.InterfaceManipulateInteractDirection
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BPI_Animation.BPI_Animation_C.InterfaceJumpPressed
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   角度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  Speed                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Animation_C::InterfaceManipulateInteractDirection(float 角度)
+void IBPI_Animation_C::InterfaceJumpPressed(float* Speed)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "InterfaceManipulateInteractDirection");
+		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "InterfaceJumpPressed");
 
-	Params::BPI_Animation_C_InterfaceManipulateInteractDirection Parms{};
+	Params::BPI_Animation_C_InterfaceJumpPressed Parms{};
 
-	Parms.角度 = 角度;
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	if (Speed != nullptr)
+		*Speed = Parms.Speed;
+}
+
+
+// Function BPI_Animation.BPI_Animation_C.ClimbDash
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void IBPI_Animation_C::ClimbDash()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "ClimbDash");
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+}
+
+
+// Function BPI_Animation.BPI_Animation_C.InterfaceSimulateJump
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Speed                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void IBPI_Animation_C::InterfaceSimulateJump(float Speed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "InterfaceSimulateJump");
+
+	Params::BPI_Animation_C_InterfaceSimulateJump Parms{};
+
+	Parms.Speed = Speed;
 
 	AsUObject()->ProcessEvent(Func, &Parms);
 }
@@ -57,58 +92,43 @@ void IBPI_Animation_C::InterfaceFixHookDirect(const struct FVector& Offset)
 }
 
 
-// Function BPI_Animation.BPI_Animation_C.InterfaceSimulateJump
+// Function BPI_Animation.BPI_Animation_C.InterfaceManipulateInteractDirection
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   Speed                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   角度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Animation_C::InterfaceSimulateJump(float Speed)
+void IBPI_Animation_C::InterfaceManipulateInteractDirection(float 角度)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "InterfaceSimulateJump");
+		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "InterfaceManipulateInteractDirection");
 
-	Params::BPI_Animation_C_InterfaceSimulateJump Parms{};
+	Params::BPI_Animation_C_InterfaceManipulateInteractDirection Parms{};
 
-	Parms.Speed = Speed;
+	Parms.角度 = 角度;
 
 	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
 
-// Function BPI_Animation.BPI_Animation_C.ClimbDash
+// Function BPI_Animation.BPI_Animation_C.InterfaceControlPoint
 // (Public, BlueprintCallable, BlueprintEvent)
-
-void IBPI_Animation_C::ClimbDash()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "ClimbDash");
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-}
-
-
-// Function BPI_Animation.BPI_Animation_C.InterfaceJumpPressed
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float*                                  Speed                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   Offset                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void IBPI_Animation_C::InterfaceJumpPressed(float* Speed)
+void IBPI_Animation_C::InterfaceControlPoint(const struct FVector& Offset)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "InterfaceJumpPressed");
+		Func = AsUObject()->Class->GetFunction("BPI_Animation_C", "InterfaceControlPoint");
 
-	Params::BPI_Animation_C_InterfaceJumpPressed Parms{};
+	Params::BPI_Animation_C_InterfaceControlPoint Parms{};
+
+	Parms.Offset = std::move(Offset);
 
 	AsUObject()->ProcessEvent(Func, &Parms);
-
-	if (Speed != nullptr)
-		*Speed = Parms.Speed;
 }
 
 }

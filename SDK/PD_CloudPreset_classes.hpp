@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PD_CloudPreset.PD_CloudPreset_C
-// 0x10B0 (0x10E8 - 0x0038)
+// 0x1650 (0x1688 - 0x0038)
 class UPD_CloudPreset_C final : public UPrimaryDataAsset
 {
 public:
@@ -110,6 +110,36 @@ public:
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       拉海洛阴天;                                        // 0x1058(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       梵高;                                              // 0x1088(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 	TSoftObjectPtr<class UPD_CloudPrefab_C>       不渲染BP_Cloud控制的云;                            // 0x10B8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       罗伊白天;                                          // 0x10E8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       罗伊夜晚;                                          // 0x1118(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       罗伊极光;                                          // 0x1148(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       罗伊初见;                                          // 0x1178(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       星海BOSS一阶;                                      // 0x11A8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       星海BOSS二阶;                                      // 0x11D8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       拉海洛初见;                                        // 0x1208(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       罗伊红色极光;                                      // 0x1238(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       日灵棺解密前;                                      // 0x1268(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       日灵棺解密后;                                      // 0x1298(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       高达Boss一阶;                                      // 0x12C8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       高达Boss三阶;                                      // 0x12F8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       梦州白天;                                          // 0x1328(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       梦州夜晚;                                          // 0x1358(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       梦州阴天;                                          // 0x1388(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       梦州初见;                                          // 0x13B8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       宅邸解谜前;                                        // 0x13E8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       宅邸解谜后;                                        // 0x1418(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       梦州特殊1;                                         // 0x1448(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       梦州特殊2;                                         // 0x1478(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       人境;                                              // 0x14A8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       地境;                                              // 0x14D8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       天境;                                              // 0x1508(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       心湖;                                              // 0x1538(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       火匣;                                              // 0x1568(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       水匣;                                              // 0x1598(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       金匣;                                              // 0x15C8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       天演幻心;                                          // 0x15F8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       天演幻心二阶段;                                    // 0x1628(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CloudPrefab_C>       金匣冷调;                                          // 0x1658(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

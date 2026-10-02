@@ -11,9 +11,11 @@
 #include "Basic.hpp"
 
 #include "SPartHitEffect_structs.hpp"
-#include "SAimPart_structs.hpp"
 #include "SLockOnPart_structs.hpp"
+#include "SAimPart_structs.hpp"
 #include "SLockOnConfig_structs.hpp"
+#include "SCameraLockOnConfig_structs.hpp"
+#include "SOcclusionDitherConfig_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -21,7 +23,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PartHitEffect.BP_PartHitEffect_C
-// 0x0050 (0x0088 - 0x0038)
+// 0x0080 (0x00B8 - 0x0038)
 class UBP_PartHitEffect_C final : public UPrimaryDataAsset
 {
 public:
@@ -32,6 +34,9 @@ public:
 	float                                         CompleteHideDistance;                              // 0x006C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         StartDitherValue;                                  // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FSLockOnConfig                         LockOnConfig;                                      // 0x0074(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSCameraLockOnConfig                   CameraLockOnConfig;                                // 0x0088(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSOcclusionDitherConfig                OcclusionDitherConfig;                             // 0x00A0(0x0018)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

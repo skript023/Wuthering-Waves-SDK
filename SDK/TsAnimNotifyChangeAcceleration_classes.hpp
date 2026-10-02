@@ -11,19 +11,19 @@
 #include "Basic.hpp"
 
 #include "ECharState_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyChangeAcceleration.TsAnimNotifyChangeAcceleration_C
-// 0x0008 (0x0050 - 0x0048)
-class UTsAnimNotifyChangeAcceleration_C final : public UKuroAnimNotify
+// 0x0008 (0x0060 - 0x0058)
+class UTsAnimNotifyChangeAcceleration_C final : public UTsAnimNotifyBase_C
 {
 public:
-	float                                         Time;                                              // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECharState                                    MoveState;                                         // 0x004C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Time;                                              // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECharState                                    MoveState;                                         // 0x005C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

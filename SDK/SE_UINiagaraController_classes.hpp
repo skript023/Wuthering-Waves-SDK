@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass SE_UINiagaraController.SE_UINiagaraController_C
-// 0x0030 (0x00F8 - 0x00C8)
+// 0x0038 (0x0100 - 0x00C8)
 class USE_UINiagaraController_C final : public USE_ControllerBase_C
 {
 public:
@@ -32,6 +32,8 @@ public:
 	uint8                                         Pad_ED[0x3];                                       // 0x00ED(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AspectRatio;                                       // 0x00F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ControlByWidth;                                    // 0x00F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F5[0x3];                                       // 0x00F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class AUIContainerActor*                      AdaptTo;                                           // 0x00F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_SE_UINiagaraController(int32 EntryPoint);

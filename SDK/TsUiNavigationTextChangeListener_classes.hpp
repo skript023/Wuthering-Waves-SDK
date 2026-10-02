@@ -25,10 +25,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0108(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void OnNotifyTextChangeBP(const class FString& NotifyText);
-	void AwakeBP();
-	void StartBP();
 	void ExecuteUbergraph_TsUiNavigationTextChangeListener(int32 EntryPoint);
+	void StartBP();
+	void AwakeBP();
+	void OnNotifyTextChangeBP(const class FString& NotifyText);
 
 public:
 	static class UClass* StaticClass()

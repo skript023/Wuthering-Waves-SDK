@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_TestGameMode.BP_TestGameMode_C
-// 0x0090 (0x0438 - 0x03A8)
+// 0x00E0 (0x0488 - 0x03A8)
 class ABP_TestGameMode_C final : public AKuroSilenceGameMode
 {
 public:
@@ -41,6 +41,8 @@ public:
 	uint8                                         Pad_41A[0x6];                                      // 0x041A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 ApiUrl;                                            // 0x0420(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	bool                                          bTriggerLoginOnce;                                 // 0x0430(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_431[0x7];                                      // 0x0431(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class FString>            LevelNameMapping;                                  // 0x0438(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly)
 
 public:
 	void GetServerIpAndPort(class FString* ServerIp, class FString* ApiServerPort, class FString* LoginServerPort);
@@ -49,11 +51,11 @@ public:
 	void Get_Player_Starts(bool* Exist, TArray<class APlayerStart*>* PlayerStarts_0);
 	void CheckStreamingHandler();
 	void Check();
-	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
 	void LoginServerStatusResponse(bool bConnectedSuccessfully, int32 HttpResponseCode, const class FString& Data);
 	void ApiServereStatusResponse(bool bConnectedSuccessfully, int32 HttpResponseCode, const class FString& Data);
 	void ExecuteUbergraph_BP_TestGameMode(int32 EntryPoint);
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

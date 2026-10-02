@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "TASdkPlugin_structs.hpp"
 #include "Engine_classes.hpp"
+#include "TASdkPlugin_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
 
@@ -102,7 +102,6 @@ class UThinkingAnalytics final : public UBlueprintFunctionLibrary
 public:
 	static void CalibrateTime(const TDelegate<void(int32 Index)>& OnTimeCalibrated, int32 Index_0);
 	static bool CreateSimpleInstance(const struct FCreateInstanceParam& Param);
-	static void DestroyAllInstance(const bool Flush_0);
 	static void DestroyInstance(const int32 Index_0, const bool Flush_0);
 	static void EnableAutoTrack(int32 Index_0);
 	static void EnableAutoTrackWithType(const TArray<class FString>& EventTypeList, int32 Index_0);
@@ -161,6 +160,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UThinkingAnalytics;
+
+// Class TASdkPlugin.ThinkingAnalyticsLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UThinkingAnalyticsLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static void Flush(int32 Index_0);
+	static bool Track(const class FString& EventName, const class FString& Properties, int32 Index_0);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ThinkingAnalyticsLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ThinkingAnalyticsLibrary")
+	}
+	static class UThinkingAnalyticsLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UThinkingAnalyticsLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UThinkingAnalyticsLibrary;
 
 // Class TASdkPlugin.ThinkingAnalyticsSettings
 // 0x0068 (0x0098 - 0x0030)

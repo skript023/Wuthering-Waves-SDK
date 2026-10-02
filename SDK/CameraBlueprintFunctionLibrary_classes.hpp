@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
+#include "ECameraGravityMode_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "EAimAssistMode_structs.hpp"
-#include "ECameraGravityMode_structs.hpp"
+#include "ECameraAnsEffectiveClientType_structs.hpp"
 #include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "ECustomCameraMode_structs.hpp"
-#include "ECameraAnsEffectiveClientType_structs.hpp"
 
 
 namespace SDK
@@ -94,6 +94,14 @@ public:
 	static bool IsCameraSpecificLockEnable(class UObject* __WorldContext);
 	static int32 GetCameraSpecificLockEntityId(class UObject* __WorldContext);
 	static int32 EnableCameraSpecificLockLocation(const struct FVectorDouble& location, float priority, class UObject* __WorldContext);
+	static struct FVector GetFightCameraForward(int32 index, class UObject* __WorldContext);
+	static void SetOcclusionDitherState(bool isEnable, class UObject* __WorldContext);
+	static void InitSeparateCamera(const class FString& cameraName, const struct FVector2D& initLocation, const struct FVector2D& initSize, bool enableScissorOffset, class UObject* __WorldContext);
+	static void FadeSeparateCamera(const class FString& cameraName, float fadeTime, const struct FVector2D& targetViewLocation, const struct FVector2D& targetViewSize, bool enableScissorOffset, class UCurveFloat* curve, class UObject* __WorldContext);
+	static void ForceStopCameraModify(bool withFadeOut, class UObject* __WorldContext);
+	static int32 EnableSoftLockCamera(class UObject* __WorldContext);
+	static void DisableSoftLockCamera(int32 handle, class UObject* __WorldContext);
+	static class UCameraComponent* GetPhotoCameraComponent(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

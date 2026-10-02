@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "InputCore_structs.hpp"
-#include "Slate_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Slate_structs.hpp"
 
 
 namespace SDK::Params
@@ -42,7 +42,7 @@ struct TsHotFixActionHandle_C_AddPressBinding final
 {
 public:
 	class FString                                 actionName;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class ABasePlayerController*                  controller;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddPressBinding;
@@ -53,7 +53,7 @@ struct TsHotFixActionHandle_C_AddReleaseBinding final
 {
 public:
 	class FString                                 actionName;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class ABasePlayerController*                  controller;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddReleaseBinding;
@@ -63,7 +63,7 @@ DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddReleaseBinding;
 struct TsHotFixActionHandle_C_AddTouchPressBinding final
 {
 public:
-	class ABasePlayerController*                  controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddTouchPressBinding;
 
@@ -72,7 +72,7 @@ DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddTouchPressBinding;
 struct TsHotFixActionHandle_C_AddTouchReleaseBinding final
 {
 public:
-	class ABasePlayerController*                  controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddTouchReleaseBinding;
 
@@ -103,7 +103,7 @@ DUMPER7_ASSERTS_TsHotFixActionHandle_C_OnTouchReleaseAction;
 struct TsHotFixActionHandle_C_ClearActionBinding final
 {
 public:
-	class ABasePlayerController*                  controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_ClearActionBinding;
 
@@ -123,7 +123,7 @@ DUMPER7_ASSERTS_TsHotFixActionHandle_C_OnTouchMoveAction;
 struct TsHotFixActionHandle_C_AddTouchMoveBinding final
 {
 public:
-	class ABasePlayerController*                  controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddTouchMoveBinding;
 
@@ -133,7 +133,7 @@ struct TsHotFixActionHandle_C_AddAxisBinding final
 {
 public:
 	class FString                                 axisName;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class ABasePlayerController*                  controller;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x0018(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddAxisBinding;
@@ -152,7 +152,7 @@ DUMPER7_ASSERTS_TsHotFixActionHandle_C_OnAxisInput;
 struct TsHotFixActionHandle_C_ClearAxisBinding final
 {
 public:
-	class ABasePlayerController*                  controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_ClearAxisBinding;
 
@@ -161,7 +161,7 @@ DUMPER7_ASSERTS_TsHotFixActionHandle_C_ClearAxisBinding;
 struct TsHotFixActionHandle_C_AddAnyKeyPress final
 {
 public:
-	class ABasePlayerController*                  controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FInputChord                            chord;                                             // 0x0008(0x0028)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 	class FName                                   AnyKeyPressAction;                                 // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
@@ -172,7 +172,7 @@ DUMPER7_ASSERTS_TsHotFixActionHandle_C_AddAnyKeyPress;
 struct TsHotFixActionHandle_C_ClearKeyBinding final
 {
 public:
-	class ABasePlayerController*                  controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APlayerController*                      controller;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsHotFixActionHandle_C_ClearKeyBinding;
 

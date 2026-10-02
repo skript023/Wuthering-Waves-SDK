@@ -19,18 +19,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Vision_WaitAttack.GA_Vision_WaitAttack_C
-// 0x0058 (0x05E8 - 0x0590)
+// 0x0058 (0x0630 - 0x05D8)
 class UGA_Vision_WaitAttack_C final : public UGa_Passive_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitAttack_C;             // 0x0590(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           普攻;                                              // 0x05A0(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           蓄力;                                              // 0x05AC(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           技能;                                              // 0x05B8(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           闪避反击;                                          // 0x05C4(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           大招;                                              // 0x05D0(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           瞄准射击;                                          // 0x05DC(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitAttack_C;             // 0x05D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           普攻;                                              // 0x05E8(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           蓄力;                                              // 0x05F4(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           技能;                                              // 0x0600(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           闪避反击;                                          // 0x060C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           大招;                                              // 0x0618(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           瞄准射击;                                          // 0x0624(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Vision_WaitAttack(int32 EntryPoint);

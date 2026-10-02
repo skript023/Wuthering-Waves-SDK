@@ -15,14 +15,15 @@ namespace SDK
 {
 
 // UserDefinedEnum EAimViewState.EAimViewState
-// NumValues: 0x0005
+// NumValues: 0x0006
 enum class EAimViewState : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
 	NewEnumerator2                           = 2,
 	NewEnumerator3                           = 3,
-	EAimViewState_MAX                        = 4,
+	NewEnumerator4                           = 4,
+	EAimViewState_MAX                        = 5,
 };
 
 }

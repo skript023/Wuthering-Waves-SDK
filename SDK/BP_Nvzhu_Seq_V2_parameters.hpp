@@ -11,24 +11,21 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SModelConfig_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function BP_Nvzhu_Seq_V2.BP_Nvzhu_Seq_V2_C.UserConstructionScript
-// 0x0478 (0x0478 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct BP_Nvzhu_Seq_V2_C_UserConstructionScript final
 {
 public:
-	struct FSModelConfig                          CallFunc_GetDataTableRowFromName_OutRow;           // 0x0000(0x0458)(ContainsInstancedReference, HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0458(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsEditor_ReturnValue;                     // 0x0459(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_45A[0x6];                                      // 0x045A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                CallFunc_LoadAsset_Blocking_ReturnValue;           // 0x0460(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMesh*                          K2Node_DynamicCast_As_____;                        // 0x0468(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0470(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsEditor_ReturnValue;                     // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                CallFunc_LoadAsset_Blocking_ReturnValue;           // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMesh*                          K2Node_DynamicCast_As_____;                        // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_Nvzhu_Seq_V2_C_UserConstructionScript;
 

@@ -10,52 +10,83 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
-// 0x00C8 (0x00C8 - 0x0000)
-struct GameplayCueInterface_BlueprintCustomHandler final
+// Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
+// 0x00D0 (0x00D0 - 0x0000)
+struct GameplayCueNotify_Actor_K2_HandleGameplayCue final
 {
 public:
-	EGameplayCueEvent                             EventType;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EGameplayCueEvent                             EventType;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GameplayCueInterface_BlueprintCustomHandler;
+DUMPER7_ASSERTS_GameplayCueNotify_Actor_K2_HandleGameplayCue;
 
-// Function GameplayAbilities.AbilitySystemGlobals.ServerActivatePlayerAbility
-// 0x0010 (0x0010 - 0x0000)
-struct AbilitySystemGlobals_ServerActivatePlayerAbility final
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnActive
+// 0x00D0 (0x00D0 - 0x0000)
+struct GameplayCueNotify_Actor_OnActive final
 {
 public:
-	class FString                                 AbilityNameMatch;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_AbilitySystemGlobals_ServerActivatePlayerAbility;
+DUMPER7_ASSERTS_GameplayCueNotify_Actor_OnActive;
 
-// Function GameplayAbilities.AbilitySystemGlobals.ServerCancelPlayerAbility
-// 0x0010 (0x0010 - 0x0000)
-struct AbilitySystemGlobals_ServerCancelPlayerAbility final
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute
+// 0x00D0 (0x00D0 - 0x0000)
+struct GameplayCueNotify_Actor_OnExecute final
 {
 public:
-	class FString                                 AbilityNameMatch;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_AbilitySystemGlobals_ServerCancelPlayerAbility;
+DUMPER7_ASSERTS_GameplayCueNotify_Actor_OnExecute;
 
-// Function GameplayAbilities.AbilitySystemGlobals.ServerEndPlayerAbility
-// 0x0010 (0x0010 - 0x0000)
-struct AbilitySystemGlobals_ServerEndPlayerAbility final
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed
+// 0x0008 (0x0008 - 0x0000)
+struct GameplayCueNotify_Actor_OnOwnerDestroyed final
 {
 public:
-	class FString                                 AbilityNameMatch;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 DestroyedActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_AbilitySystemGlobals_ServerEndPlayerAbility;
+DUMPER7_ASSERTS_GameplayCueNotify_Actor_OnOwnerDestroyed;
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove
+// 0x00D0 (0x00D0 - 0x0000)
+struct GameplayCueNotify_Actor_OnRemove final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GameplayCueNotify_Actor_OnRemove;
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive
+// 0x00D0 (0x00D0 - 0x0000)
+struct GameplayCueNotify_Actor_WhileActive final
+{
+public:
+	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GameplayCueNotify_Actor_WhileActive;
 
 // Function GameplayAbilities.AbilitySystemBlueprintLibrary.AbilityTargetDataFromActor
 // 0x0030 (0x0030 - 0x0000)
@@ -1762,74 +1793,43 @@ public:
 };
 DUMPER7_ASSERTS_GameplayAbilityWorldReticle_SetReticleMaterialParamVector;
 
-// Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
-// 0x00D0 (0x00D0 - 0x0000)
-struct GameplayCueNotify_Actor_K2_HandleGameplayCue final
+// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
+// 0x00C8 (0x00C8 - 0x0000)
+struct GameplayCueInterface_BlueprintCustomHandler final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EGameplayCueEvent                             EventType;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	EGameplayCueEvent                             EventType;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GameplayCueNotify_Actor_K2_HandleGameplayCue;
+DUMPER7_ASSERTS_GameplayCueInterface_BlueprintCustomHandler;
 
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnActive
-// 0x00D0 (0x00D0 - 0x0000)
-struct GameplayCueNotify_Actor_OnActive final
+// Function GameplayAbilities.AbilitySystemGlobals.ServerActivatePlayerAbility
+// 0x0010 (0x0010 - 0x0000)
+struct AbilitySystemGlobals_ServerActivatePlayerAbility final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x00C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 AbilityNameMatch;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GameplayCueNotify_Actor_OnActive;
+DUMPER7_ASSERTS_AbilitySystemGlobals_ServerActivatePlayerAbility;
 
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute
-// 0x00D0 (0x00D0 - 0x0000)
-struct GameplayCueNotify_Actor_OnExecute final
+// Function GameplayAbilities.AbilitySystemGlobals.ServerCancelPlayerAbility
+// 0x0010 (0x0010 - 0x0000)
+struct AbilitySystemGlobals_ServerCancelPlayerAbility final
 {
 public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x00C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FString                                 AbilityNameMatch;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GameplayCueNotify_Actor_OnExecute;
+DUMPER7_ASSERTS_AbilitySystemGlobals_ServerCancelPlayerAbility;
 
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed
-// 0x0008 (0x0008 - 0x0000)
-struct GameplayCueNotify_Actor_OnOwnerDestroyed final
+// Function GameplayAbilities.AbilitySystemGlobals.ServerEndPlayerAbility
+// 0x0010 (0x0010 - 0x0000)
+struct AbilitySystemGlobals_ServerEndPlayerAbility final
 {
 public:
-	class AActor*                                 DestroyedActor;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AbilityNameMatch;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_GameplayCueNotify_Actor_OnOwnerDestroyed;
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove
-// 0x00D0 (0x00D0 - 0x0000)
-struct GameplayCueNotify_Actor_OnRemove final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x00C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_GameplayCueNotify_Actor_OnRemove;
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive
-// 0x00D0 (0x00D0 - 0x0000)
-struct GameplayCueNotify_Actor_WhileActive final
-{
-public:
-	class AActor*                                 MyTarget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x00C8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_GameplayCueNotify_Actor_WhileActive;
+DUMPER7_ASSERTS_AbilitySystemGlobals_ServerEndPlayerAbility;
 
 // Function GameplayAbilities.AbilityTask_ApplyRootMotionConstantForce.ApplyRootMotionConstantForce
 // 0x0058 (0x0058 - 0x0000)

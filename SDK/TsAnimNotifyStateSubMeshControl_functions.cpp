@@ -78,5 +78,30 @@ bool UTsAnimNotifyStateSubMeshControl_C::K2_NotifyBegin(class USkeletalMeshCompo
 	return Parms.ReturnValue;
 }
 
+
+// Function TsAnimNotifyStateSubMeshControl.TsAnimNotifyStateSubMeshControl_C.GetNotifyName
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString UTsAnimNotifyStateSubMeshControl_C::GetNotifyName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsAnimNotifyStateSubMeshControl_C", "GetNotifyName");
+
+	Params::TsAnimNotifyStateSubMeshControl_C_GetNotifyName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
 }
 

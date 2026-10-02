@@ -17,15 +17,65 @@
 namespace SDK
 {
 
-// Function KuroGameBudget.KuroGameBudgetBlueprintDefine.Clear
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.AddAssistantActor
+// (Final, Native, Static, Public)
+// Parameters:
+// class AActor*                           AssistantActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroGameBudgetBlueprintDefine::Clear()
+void UKuroGameBudgetAllocatorCSharpInterface::AddAssistantActor(class AActor* AssistantActor)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroGameBudgetBlueprintDefine", "Clear");
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "AddAssistantActor");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_AddAssistantActor Parms{};
+
+	Parms.AssistantActor = AssistantActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.AfterTickOutside
+// (Final, Native, Static, Public)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::AfterTickOutside(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "AfterTickOutside");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_AfterTickOutside Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.ClearAssistantActors
+// (Final, Native, Static, Public)
+
+void UKuroGameBudgetAllocatorCSharpInterface::ClearAssistantActors()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "ClearAssistantActors");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -36,21 +86,41 @@ void UKuroGameBudgetBlueprintDefine::Clear()
 }
 
 
-// Function KuroGameBudget.KuroGameBudgetBlueprintDefine.Initialize
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<struct FGameBudgetBlueprintGroupConfig>&GroupConfigs                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.DestroyEnvironment
+// (Final, Native, Static, Public)
 
-void UKuroGameBudgetBlueprintDefine::Initialize(const TArray<struct FGameBudgetBlueprintGroupConfig>& GroupConfigs)
+void UKuroGameBudgetAllocatorCSharpInterface::DestroyEnvironment()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("KuroGameBudgetBlueprintDefine", "Initialize");
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "DestroyEnvironment");
 
-	Params::KuroGameBudgetBlueprintDefine_Initialize Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.GroupConfigs = std::move(GroupConfigs);
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.GetGameBudgetDebugString
+// (Final, Native, Static, Public)
+// Parameters:
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UKuroGameBudgetAllocatorCSharpInterface::GetGameBudgetDebugString(uint32 Token)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "GetGameBudgetDebugString");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_GetGameBudgetDebugString Parms{};
+
+	Parms.Token = Token;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -58,6 +128,1035 @@ void UKuroGameBudgetBlueprintDefine::Initialize(const TArray<struct FGameBudgetB
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.GetLastFrameGameThreadConsumeTime
+// (Final, Native, Static, Public)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroGameBudgetAllocatorCSharpInterface::GetLastFrameGameThreadConsumeTime()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "GetLastFrameGameThreadConsumeTime");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_GetLastFrameGameThreadConsumeTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.InitializeEnvironment
+// (Final, Native, Static, Public)
+// Parameters:
+// class UWorld*                           World                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    OnlyCSharpEnvironment                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::InitializeEnvironment(class UWorld* World, bool OnlyCSharpEnvironment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "InitializeEnvironment");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_InitializeEnvironment Parms{};
+
+	Parms.World = World;
+	Parms.OnlyCSharpEnvironment = OnlyCSharpEnvironment;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.IsEnvironmentValid
+// (Final, Native, Static, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroGameBudgetAllocatorCSharpInterface::IsEnvironmentValid()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "IsEnvironmentValid");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_IsEnvironmentValid Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.MarkActorInFighting
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    IsInFighting                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::MarkActorInFighting(const class FName& GroupName, uint32 Token, bool IsInFighting)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "MarkActorInFighting");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_MarkActorInFighting Parms{};
+
+	Parms.GroupName = GroupName;
+	Parms.Token = Token;
+	Parms.IsInFighting = IsInFighting;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.RegisterOnceTaskCustomGroup
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupId                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::RegisterOnceTaskCustomGroup(const class FName& GroupId, int32 Priority)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "RegisterOnceTaskCustomGroup");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_RegisterOnceTaskCustomGroup Parms{};
+
+	Parms.GroupId = GroupId;
+	Parms.Priority = Priority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.RegisterOnceTaskDefaultGroup
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupID                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   MaxWaitFrame                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::RegisterOnceTaskDefaultGroup(const class FName& GroupID, int32 Priority, int32 MaxWaitFrame)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "RegisterOnceTaskDefaultGroup");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_RegisterOnceTaskDefaultGroup Parms{};
+
+	Parms.GroupID = GroupID;
+	Parms.Priority = Priority;
+	Parms.MaxWaitFrame = MaxWaitFrame;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.RemoveAssistantActor
+// (Final, Native, Static, Public)
+// Parameters:
+// class AActor*                           AssistantActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::RemoveAssistantActor(class AActor* AssistantActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "RemoveAssistantActor");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_RemoveAssistantActor Parms{};
+
+	Parms.AssistantActor = AssistantActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetActorCavernMode
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EActorCavernMode                        NewActorCavernMode                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetActorCavernMode(const class FName& GroupName, uint32 Token, EActorCavernMode NewActorCavernMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetActorCavernMode");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetActorCavernMode Parms{};
+
+	Parms.GroupName = GroupName;
+	Parms.Token = Token;
+	Parms.NewActorCavernMode = NewActorCavernMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetBudgetTime
+// (Final, Native, Static, Public)
+// Parameters:
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetBudgetTime(float Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetBudgetTime");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetBudgetTime Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetCenterActor
+// (Final, Native, Static, Public)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetCenterActor(class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetCenterActor");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetCenterActor Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetCenterActorLocationOffset
+// (Final, Native, Static, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVectorDouble&             Offset                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetCenterActorLocationOffset(const struct FVectorDouble& Offset)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetCenterActorLocationOffset");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetCenterActorLocationOffset Parms{};
+
+	Parms.Offset = std::move(Offset);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetConstantTick
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupTag                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InConstantTick                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InReduceWhenInvisible                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetConstantTick(const class FName& GroupTag, uint32 Token, bool InConstantTick, bool InReduceWhenInvisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetConstantTick");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetConstantTick Parms{};
+
+	Parms.GroupTag = GroupTag;
+	Parms.Token = Token;
+	Parms.InConstantTick = InConstantTick;
+	Parms.InReduceWhenInvisible = InReduceWhenInvisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetDefaultTickIntervalDetailConfig
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// struct FGameBudgetAllocatorGroupConfig* Config                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// uint32                                  MaxTickInterval                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  TickReductionStartSize                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  TickReductionIntervalSize                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetDefaultTickIntervalDetailConfig(struct FGameBudgetAllocatorGroupConfig* Config, uint32 MaxTickInterval, uint32 TickReductionStartSize, uint32 TickReductionIntervalSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetDefaultTickIntervalDetailConfig");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetDefaultTickIntervalDetailConfig Parms{};
+
+	Parms.MaxTickInterval = MaxTickInterval;
+	Parms.TickReductionStartSize = TickReductionStartSize;
+	Parms.TickReductionIntervalSize = TickReductionIntervalSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Config != nullptr)
+		*Config = std::move(Parms.Config);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetDefaultTickIntervalDetailScreenRadiusConfig
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// struct FGameBudgetAllocatorGroupConfig* Config                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   TickReductionStartScreenRatio                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TickReductionIntervalScreenRatio                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetDefaultTickIntervalDetailScreenRadiusConfig(struct FGameBudgetAllocatorGroupConfig* Config, float TickReductionStartScreenRatio, float TickReductionIntervalScreenRatio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetDefaultTickIntervalDetailScreenRadiusConfig");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetDefaultTickIntervalDetailScreenRadiusConfig Parms{};
+
+	Parms.TickReductionStartScreenRatio = TickReductionStartScreenRatio;
+	Parms.TickReductionIntervalScreenRatio = TickReductionIntervalScreenRatio;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Config != nullptr)
+		*Config = std::move(Parms.Config);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetDisableAssistantCenterActor
+// (Final, Native, Static, Public)
+// Parameters:
+// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetDisableAssistantCenterActor(bool InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetDisableAssistantCenterActor");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetDisableAssistantCenterActor Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetGlobalCavernMode
+// (Final, Native, Static, Public)
+// Parameters:
+// EActorCavernMode                        GlobalMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetGlobalCavernMode(EActorCavernMode GlobalMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetGlobalCavernMode");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetGlobalCavernMode Parms{};
+
+	Parms.GlobalMode = GlobalMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetGlobalMode
+// (Final, Native, Static, Public)
+// Parameters:
+// EGameBudgetAllocatorGlobalMode          GlobalMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetGlobalMode(EGameBudgetAllocatorGlobalMode GlobalMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetGlobalMode");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetGlobalMode Parms{};
+
+	Parms.GlobalMode = GlobalMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetGroupConfig
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameBudgetAllocatorGroupConfig&GroupConfig                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetGroupConfig(const class FName& GroupName, const struct FGameBudgetAllocatorGroupConfig& GroupConfig)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetGroupConfig");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetGroupConfig Parms{};
+
+	Parms.GroupName = GroupName;
+	Parms.GroupConfig = std::move(GroupConfig);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetMaximumFrameRate
+// (Final, Native, Static, Public)
+// Parameters:
+// uint32                                  MaxFPS                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetMaximumFrameRate(uint32 MaxFPS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetMaximumFrameRate");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetMaximumFrameRate Parms{};
+
+	Parms.MaxFPS = MaxFPS;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetPauseFrame
+// (Final, Native, Static, Public)
+// Parameters:
+// uint64                                  Frame                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetPauseFrame(uint64 Frame)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetPauseFrame");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetPauseFrame Parms{};
+
+	Parms.Frame = Frame;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetTickIntervalDetailConfig
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// struct FGameBudgetAllocatorGroupConfig* Config                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// EGameBudgetAllocatorGlobalMode          GlobalMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGameBudgetAllocatorActorMode           ActorModel                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  MaxTickInterval                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  TickReductionStartSize                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  TickReductionIntervalSize                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetTickIntervalDetailConfig(struct FGameBudgetAllocatorGroupConfig* Config, EGameBudgetAllocatorGlobalMode GlobalMode, EGameBudgetAllocatorActorMode ActorModel, uint32 MaxTickInterval, uint32 TickReductionStartSize, uint32 TickReductionIntervalSize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetTickIntervalDetailConfig");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetTickIntervalDetailConfig Parms{};
+
+	Parms.GlobalMode = GlobalMode;
+	Parms.ActorModel = ActorModel;
+	Parms.MaxTickInterval = MaxTickInterval;
+	Parms.TickReductionStartSize = TickReductionStartSize;
+	Parms.TickReductionIntervalSize = TickReductionIntervalSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Config != nullptr)
+		*Config = std::move(Parms.Config);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetTickIntervalDetailScreenRadiusConfig
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// struct FGameBudgetAllocatorGroupConfig* Config                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// EGameBudgetAllocatorGlobalMode          GlobalMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGameBudgetAllocatorActorMode           ActorModel                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TickReductionStartScreenRatio                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TickReductionIntervalScreenRatio                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetTickIntervalDetailScreenRadiusConfig(struct FGameBudgetAllocatorGroupConfig* Config, EGameBudgetAllocatorGlobalMode GlobalMode, EGameBudgetAllocatorActorMode ActorModel, float TickReductionStartScreenRatio, float TickReductionIntervalScreenRatio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetTickIntervalDetailScreenRadiusConfig");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetTickIntervalDetailScreenRadiusConfig Parms{};
+
+	Parms.GlobalMode = GlobalMode;
+	Parms.ActorModel = ActorModel;
+	Parms.TickReductionStartScreenRatio = TickReductionStartScreenRatio;
+	Parms.TickReductionIntervalScreenRatio = TickReductionIntervalScreenRatio;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Config != nullptr)
+		*Config = std::move(Parms.Config);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetUpdateCompensateEnable
+// (Final, Native, Static, Public)
+// Parameters:
+// bool                                    Enabled                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetUpdateCompensateEnable(bool Enabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetUpdateCompensateEnable");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetUpdateCompensateEnable Parms{};
+
+	Parms.Enabled = Enabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetUseBoundsCalculateDistance
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    UseBoundsCalculateDistance                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetUseBoundsCalculateDistance(const class FName& GroupName, uint32 Token, bool UseBoundsCalculateDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetUseBoundsCalculateDistance");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetUseBoundsCalculateDistance Parms{};
+
+	Parms.GroupName = GroupName;
+	Parms.Token = Token;
+	Parms.UseBoundsCalculateDistance = UseBoundsCalculateDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetUsePerformanceActorCalculateBounds
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    UseBoundsCalculateDistance                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetUsePerformanceActorCalculateBounds(const class FName& GroupName, uint32 Token, bool UseBoundsCalculateDistance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetUsePerformanceActorCalculateBounds");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetUsePerformanceActorCalculateBounds Parms{};
+
+	Parms.GroupName = GroupName;
+	Parms.Token = Token;
+	Parms.UseBoundsCalculateDistance = UseBoundsCalculateDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.SetUseWasRecentlyPassVisibilityTest
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupTag                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InUseWasRecentlyPassVisibilityTest                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::SetUseWasRecentlyPassVisibilityTest(const class FName& GroupTag, uint32 Token, bool InUseWasRecentlyPassVisibilityTest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "SetUseWasRecentlyPassVisibilityTest");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_SetUseWasRecentlyPassVisibilityTest Parms{};
+
+	Parms.GroupTag = GroupTag;
+	Parms.Token = Token;
+	Parms.InUseWasRecentlyPassVisibilityTest = InUseWasRecentlyPassVisibilityTest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.TickOutside
+// (Final, Native, Static, Public)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::TickOutside(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "TickOutside");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_TickOutside Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.UnregisterFunction
+// (Final, Native, Static, Public)
+// Parameters:
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::UnregisterFunction(uint32 Token)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "UnregisterFunction");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_UnregisterFunction Parms{};
+
+	Parms.Token = Token;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.UpdateActor
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::UpdateActor(const class FName& GroupName, uint32 Token, class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "UpdateActor");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_UpdateActor Parms{};
+
+	Parms.GroupName = GroupName;
+	Parms.Token = Token;
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.UpdateMinUpdateFIFOBudgetTime
+// (Final, Native, Static, Public)
+// Parameters:
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::UpdateMinUpdateFIFOBudgetTime(float Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "UpdateMinUpdateFIFOBudgetTime");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_UpdateMinUpdateFIFOBudgetTime Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetAllocatorCSharpInterface.UpdatePerformanceActor
+// (Final, Native, Static, Public, HasOutParams)
+// Parameters:
+// const class FName&                      GroupName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint32                                  Token                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetAllocatorCSharpInterface::UpdatePerformanceActor(const class FName& GroupName, uint32 Token, class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetAllocatorCSharpInterface", "UpdatePerformanceActor");
+
+	Params::KuroGameBudgetAllocatorCSharpInterface_UpdatePerformanceActor Parms{};
+
+	Parms.GroupName = GroupName;
+	Parms.Token = Token;
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.AfterTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::AfterTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "AfterTick");
+
+	Params::KuroGameBudgetBlueprintActor_AfterTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.K2_GetGameBudgetLocationProxy
+// (Native, Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVectorDouble AKuroGameBudgetBlueprintActor::K2_GetGameBudgetLocationProxy()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "K2_GetGameBudgetLocationProxy");
+
+	Params::KuroGameBudgetBlueprintActor_K2_GetGameBudgetLocationProxy Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.ManualRegisterTick
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroGameBudgetBlueprintActor::ManualRegisterTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "ManualRegisterTick");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.ManualUnregisterTick
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroGameBudgetBlueprintActor::ManualUnregisterTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "ManualUnregisterTick");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.MarkSpecialBlueprintActor
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroGameBudgetBlueprintActor::MarkSpecialBlueprintActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "MarkSpecialBlueprintActor");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OnApplyWorldOffset
+// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   InWorldOffset                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWorldShift                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::OnApplyWorldOffset(const struct FVector& InWorldOffset, bool bWorldShift)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "OnApplyWorldOffset");
+
+	Params::KuroGameBudgetBlueprintActor_OnApplyWorldOffset Parms{};
+
+	Parms.InWorldOffset = std::move(InWorldOffset);
+	Parms.bWorldShift = bWorldShift;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OnCustomPlayerRangeEnter
+// (Event, Public, BlueprintEvent)
+
+void AKuroGameBudgetBlueprintActor::OnCustomPlayerRangeEnter()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "OnCustomPlayerRangeEnter");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OnCustomPlayerRangeLeave
+// (Event, Public, BlueprintEvent)
+
+void AKuroGameBudgetBlueprintActor::OnCustomPlayerRangeLeave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "OnCustomPlayerRangeLeave");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OnEnvInteractChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bEnableEnvInteract                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::OnEnvInteractChanged(bool bEnableEnvInteract)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "OnEnvInteractChanged");
+
+	Params::KuroGameBudgetBlueprintActor_OnEnvInteractChanged Parms{};
+
+	Parms.bEnableEnvInteract = bEnableEnvInteract;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -117,6 +1216,271 @@ void AKuroGameBudgetBlueprintActor::OnVisible()
 }
 
 
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideGameBudgetGroupType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EGameBudgetBlueprintGroup               InOverrideGroupType                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::OverrideGameBudgetGroupType(EGameBudgetBlueprintGroup InOverrideGroupType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "OverrideGameBudgetGroupType");
+
+	Params::KuroGameBudgetBlueprintActor_OverrideGameBudgetGroupType Parms{};
+
+	Parms.InOverrideGroupType = InOverrideGroupType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideLocationProxy
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bInOverrideLocationProxy                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::OverrideLocationProxy(bool bInOverrideLocationProxy)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "OverrideLocationProxy");
+
+	Params::KuroGameBudgetBlueprintActor_OverrideLocationProxy Parms{};
+
+	Parms.bInOverrideLocationProxy = bInOverrideLocationProxy;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideTickWithPaused
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bTickWithPaused                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::OverrideTickWithPaused(bool bTickWithPaused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "OverrideTickWithPaused");
+
+	Params::KuroGameBudgetBlueprintActor_OverrideTickWithPaused Parms{};
+
+	Parms.bTickWithPaused = bTickWithPaused;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.OverrideUseWasRecentlyPassVisibilityTest
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bUseWasRecentlyPassVisibilityTest                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::OverrideUseWasRecentlyPassVisibilityTest(bool bUseWasRecentlyPassVisibilityTest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "OverrideUseWasRecentlyPassVisibilityTest");
+
+	Params::KuroGameBudgetBlueprintActor_OverrideUseWasRecentlyPassVisibilityTest Parms{};
+
+	Parms.bUseWasRecentlyPassVisibilityTest = bUseWasRecentlyPassVisibilityTest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.PauseGameBudget
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroGameBudgetBlueprintActor::PauseGameBudget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "PauseGameBudget");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.RegisterCustomPlayerRangeEvent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             RangeName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void()>                       OnEnter                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TDelegate<void()>                       OnLeave                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::RegisterCustomPlayerRangeEvent(class FName RangeName, TDelegate<void()> OnEnter, TDelegate<void()> OnLeave)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "RegisterCustomPlayerRangeEvent");
+
+	Params::KuroGameBudgetBlueprintActor_RegisterCustomPlayerRangeEvent Parms{};
+
+	Parms.RangeName = RangeName;
+	Parms.OnEnter = OnEnter;
+	Parms.OnLeave = OnLeave;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.RegisterOnceTickWithPaused
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroGameBudgetBlueprintActor::RegisterOnceTickWithPaused()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "RegisterOnceTickWithPaused");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.ResumeGameBudget
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroGameBudgetBlueprintActor::ResumeGameBudget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "ResumeGameBudget");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.SetCustomPlayerRangeEnabled
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bEnabled                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::SetCustomPlayerRangeEnabled(bool bEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "SetCustomPlayerRangeEnabled");
+
+	Params::KuroGameBudgetBlueprintActor_SetCustomPlayerRangeEnabled Parms{};
+
+	Parms.bEnabled = bEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.UnregisterCustomPlayerRangeEvent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             RangeName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::UnregisterCustomPlayerRangeEvent(class FName RangeName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "UnregisterCustomPlayerRangeEvent");
+
+	Params::KuroGameBudgetBlueprintActor_UnregisterCustomPlayerRangeEvent Parms{};
+
+	Parms.RangeName = RangeName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.UpdateCustomPlayerRangeDistance
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             RangeName                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   EnterRange                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   LeaveRange                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::UpdateCustomPlayerRangeDistance(class FName RangeName, float EnterRange, float LeaveRange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "UpdateCustomPlayerRangeDistance");
+
+	Params::KuroGameBudgetBlueprintActor_UpdateCustomPlayerRangeDistance Parms{};
+
+	Parms.RangeName = RangeName;
+	Parms.EnterRange = EnterRange;
+	Parms.LeaveRange = LeaveRange;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroGameBudget.KuroGameBudgetBlueprintActor.UpdateOverrideBounds
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -157,6 +1521,33 @@ void AKuroGameBudgetBlueprintActor::UpdateOverrideBoundsFromSet(const TSet<class
 	Params::KuroGameBudgetBlueprintActor_UpdateOverrideBoundsFromSet Parms{};
 
 	Parms.InActors = std::move(InActors);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintActor.UpdateSimpleCustomPlayerRangeDistance
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   EnterRange                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   LeaveRange                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AKuroGameBudgetBlueprintActor::UpdateSimpleCustomPlayerRangeDistance(float EnterRange, float LeaveRange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetBlueprintActor", "UpdateSimpleCustomPlayerRangeDistance");
+
+	Params::KuroGameBudgetBlueprintActor_UpdateSimpleCustomPlayerRangeDistance Parms{};
+
+	Parms.EnterRange = EnterRange;
+	Parms.LeaveRange = LeaveRange;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -237,6 +1628,37 @@ void UGameBudgetAllocator::SetDefaultTickIntervalDetailConfig(struct FGameBudget
 	Parms.MaxTickInterval = MaxTickInterval;
 	Parms.TickReductionStartSize = TickReductionStartSize;
 	Parms.TickReductionIntervalSize = TickReductionIntervalSize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Config != nullptr)
+		*Config = std::move(Parms.Config);
+}
+
+
+// Function KuroGameBudget.GameBudgetAllocator.SetDefaultTickIntervalDetailScreenRadiusConfig
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// struct FGameBudgetAllocatorGroupConfig* Config                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   TickReductionStartScreenRatio                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TickReductionIntervalScreenRatio                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGameBudgetAllocator::SetDefaultTickIntervalDetailScreenRadiusConfig(struct FGameBudgetAllocatorGroupConfig* Config, float TickReductionStartScreenRatio, float TickReductionIntervalScreenRatio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameBudgetAllocator", "SetDefaultTickIntervalDetailScreenRadiusConfig");
+
+	Params::GameBudgetAllocator_SetDefaultTickIntervalDetailScreenRadiusConfig Parms{};
+
+	Parms.TickReductionStartScreenRatio = TickReductionStartScreenRatio;
+	Parms.TickReductionIntervalScreenRatio = TickReductionIntervalScreenRatio;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -389,6 +1811,41 @@ void UGameBudgetAllocator::SetTickIntervalDetailConfig(struct FGameBudgetAllocat
 }
 
 
+// Function KuroGameBudget.GameBudgetAllocator.SetTickIntervalDetailScreenRadiusConfig
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// struct FGameBudgetAllocatorGroupConfig* Config                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// EGameBudgetAllocatorGlobalMode          GlobalMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGameBudgetAllocatorActorMode           ActorMode                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TickReductionStartScreenRatio                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TickReductionIntervalScreenRatio                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGameBudgetAllocator::SetTickIntervalDetailScreenRadiusConfig(struct FGameBudgetAllocatorGroupConfig* Config, EGameBudgetAllocatorGlobalMode GlobalMode, EGameBudgetAllocatorActorMode ActorMode, float TickReductionStartScreenRatio, float TickReductionIntervalScreenRatio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameBudgetAllocator", "SetTickIntervalDetailScreenRadiusConfig");
+
+	Params::GameBudgetAllocator_SetTickIntervalDetailScreenRadiusConfig Parms{};
+
+	Parms.GlobalMode = GlobalMode;
+	Parms.ActorMode = ActorMode;
+	Parms.TickReductionStartScreenRatio = TickReductionStartScreenRatio;
+	Parms.TickReductionIntervalScreenRatio = TickReductionIntervalScreenRatio;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Config != nullptr)
+		*Config = std::move(Parms.Config);
+}
+
+
 // Function KuroGameBudget.GameBudgetAllocator.TickOutside
 // (Final, Native, Public)
 // Parameters:
@@ -436,6 +1893,194 @@ void UGameBudgetAllocator::UpdateMinUpdateFIFOBudgetTime(float Time)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintDefine.Clear
+// (Final, Native, Static, Public, BlueprintCallable)
+
+void UKuroGameBudgetBlueprintDefine::Clear()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetBlueprintDefine", "Clear");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetBlueprintDefine.Initialize
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<struct FGameBudgetBlueprintGroupConfig>&GroupConfigs                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetBlueprintDefine::Initialize(const TArray<struct FGameBudgetBlueprintGroupConfig>& GroupConfigs)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameBudgetBlueprintDefine", "Initialize");
+
+	Params::KuroGameBudgetBlueprintDefine_Initialize Parms{};
+
+	Parms.GroupConfigs = std::move(GroupConfigs);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.AfterTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetComponent::AfterTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "AfterTick");
+
+	Params::KuroGameBudgetComponent_AfterTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.K2_GetGameBudgetLocationProxy
+// (Native, Event, Public, HasDefaults, BlueprintEvent)
+// Parameters:
+// struct FVectorDouble                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVectorDouble UKuroGameBudgetComponent::K2_GetGameBudgetLocationProxy()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "K2_GetGameBudgetLocationProxy");
+
+	Params::KuroGameBudgetComponent_K2_GetGameBudgetLocationProxy Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.ManualRegisterTick
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroGameBudgetComponent::ManualRegisterTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "ManualRegisterTick");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.ManualUnregisterTick
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroGameBudgetComponent::ManualUnregisterTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "ManualUnregisterTick");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.MarkSpecialBlueprintActor
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroGameBudgetComponent::MarkSpecialBlueprintActor()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "MarkSpecialBlueprintActor");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.OnApplyWorldOffset
+// (Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   InWorldOffset                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWorldShift                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetComponent::OnApplyWorldOffset(const struct FVector& InWorldOffset, bool bWorldShift)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "OnApplyWorldOffset");
+
+	Params::KuroGameBudgetComponent_OnApplyWorldOffset Parms{};
+
+	Parms.InWorldOffset = std::move(InWorldOffset);
+	Parms.bWorldShift = bWorldShift;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.OnEnvInteractChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bEnableEnvInteract                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetComponent::OnEnvInteractChanged(bool bEnableEnvInteract)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "OnEnvInteractChanged");
+
+	Params::KuroGameBudgetComponent_OnEnvInteractChanged Parms{};
+
+	Parms.bEnableEnvInteract = bEnableEnvInteract;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -495,6 +2140,163 @@ void UKuroGameBudgetComponent::OnVisible()
 }
 
 
+// Function KuroGameBudget.KuroGameBudgetComponent.OverrideGameBudgetGroupType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EGameBudgetBlueprintGroup               InOverrideGroupType                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetComponent::OverrideGameBudgetGroupType(EGameBudgetBlueprintGroup InOverrideGroupType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "OverrideGameBudgetGroupType");
+
+	Params::KuroGameBudgetComponent_OverrideGameBudgetGroupType Parms{};
+
+	Parms.InOverrideGroupType = InOverrideGroupType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.OverrideLocationProxy
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bInOverrideLocationProxy                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetComponent::OverrideLocationProxy(bool bInOverrideLocationProxy)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "OverrideLocationProxy");
+
+	Params::KuroGameBudgetComponent_OverrideLocationProxy Parms{};
+
+	Parms.bInOverrideLocationProxy = bInOverrideLocationProxy;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.OverrideTickWithPaused
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bTickWithPaused                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetComponent::OverrideTickWithPaused(bool bTickWithPaused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "OverrideTickWithPaused");
+
+	Params::KuroGameBudgetComponent_OverrideTickWithPaused Parms{};
+
+	Parms.bTickWithPaused = bTickWithPaused;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.OverrideUseWasRecentlyPassVisibilityTest
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bUseWasRecentlyPassVisibilityTest                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetComponent::OverrideUseWasRecentlyPassVisibilityTest(bool bUseWasRecentlyPassVisibilityTest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "OverrideUseWasRecentlyPassVisibilityTest");
+
+	Params::KuroGameBudgetComponent_OverrideUseWasRecentlyPassVisibilityTest Parms{};
+
+	Parms.bUseWasRecentlyPassVisibilityTest = bUseWasRecentlyPassVisibilityTest;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.PauseGameBudget
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroGameBudgetComponent::PauseGameBudget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "PauseGameBudget");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.RegisterOnceTickWithPaused
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroGameBudgetComponent::RegisterOnceTickWithPaused()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "RegisterOnceTickWithPaused");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetComponent.ResumeGameBudget
+// (Final, Native, Public, BlueprintCallable)
+
+void UKuroGameBudgetComponent::ResumeGameBudget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetComponent", "ResumeGameBudget");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroGameBudget.KuroGameBudgetComponent.UpdateOverrideBounds
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -535,6 +2337,56 @@ void UKuroGameBudgetComponent::UpdateOverrideBoundsFromSet(const TSet<class AAct
 	Params::KuroGameBudgetComponent_UpdateOverrideBoundsFromSet Parms{};
 
 	Parms.InActors = std::move(InActors);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetSubSystem.SetEnvInteractChange
+// (Final, Native, Public)
+// Parameters:
+// bool                                    bEnableEnvInteract                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetSubSystem::SetEnvInteractChange(bool bEnableEnvInteract)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetSubSystem", "SetEnvInteractChange");
+
+	Params::KuroGameBudgetSubSystem_SetEnvInteractChange Parms{};
+
+	Parms.bEnableEnvInteract = bEnableEnvInteract;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameBudget.KuroGameBudgetSubSystem.SetGamePaused
+// (Final, Native, Public)
+// Parameters:
+// bool                                    bPaused                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroGameBudgetSubSystem::SetGamePaused(bool bPaused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroGameBudgetSubSystem", "SetGamePaused");
+
+	Params::KuroGameBudgetSubSystem_SetGamePaused Parms{};
+
+	Parms.bPaused = bPaused;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

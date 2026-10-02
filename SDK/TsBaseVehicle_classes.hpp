@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "ECharacterDitherType_structs.hpp"
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "ECharacterRenderingType_structs.hpp"
+#include "ECharacterDitherType_structs.hpp"
 #include "KuroVehicle_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -22,7 +22,7 @@ namespace SDK
 
 // TypeScriptGeneratedClass TsBaseVehicle.TsBaseVehicle_C
 // 0x0040 (0x06F0 - 0x06B0)
-class ATsBaseVehicle_C final : public AKuroBaseVehicle
+class ATsBaseVehicle_C : public AKuroBaseVehicle
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x06B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -34,10 +34,10 @@ public:
 	int32                                         EntityId;                                          // 0x06EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	int32 GetEntityId();
-	void SetDitherEffect(float dither, ECharacterDitherType ditherType);
-	void ReceiveDestroyed();
 	void ExecuteUbergraph_TsBaseVehicle(int32 EntryPoint);
+	void ReceiveDestroyed();
+	void SetDitherEffect(float dither, ECharacterDitherType ditherType);
+	int32 GetEntityId();
 
 public:
 	static class UClass* StaticClass()

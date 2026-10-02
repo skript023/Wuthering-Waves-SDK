@@ -17,16 +17,16 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsDecoratorBlackboard.TsDecoratorBlackboard_C
-// 0x0018 (0x00C0 - 0x00A8)
+// 0x0018 (0x00C8 - 0x00B0)
 class UTsDecoratorBlackboard_C final : public UBTDecorator_BlueprintBase
 {
 public:
-	class FString                                 BlackboardKeyName;                                 // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          IsSet;                                             // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class FString                                 BlackboardKeyName;                                 // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          IsSet;                                             // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void InitTsVariables();
 	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void InitTsVariables();
 
 public:
 	static class UClass* StaticClass()

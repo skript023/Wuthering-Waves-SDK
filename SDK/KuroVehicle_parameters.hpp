@@ -10,8 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "KuroVehicle_structs.hpp"
+#include "KuroAnim_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroVehicle_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -106,7 +107,7 @@ struct KuroConfigHelper_SetEnumMapping final
 {
 public:
 	class UEnum*                                  Enumtype;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           PropertyNames;                                     // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<class FString>                         PropertyNames;                                     // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroConfigHelper_SetEnumMapping;
 
@@ -118,6 +119,62 @@ public:
 	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroVehicleMovementComponent_BackToRecord;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.BackToRecordByTimeDelta
+// 0x0008 (0x0008 - 0x0000)
+struct KuroVehicleMovementComponent_BackToRecordByTimeDelta final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_BackToRecordByTimeDelta;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.EnableFixFlyMode
+// 0x0002 (0x0002 - 0x0000)
+struct KuroVehicleMovementComponent_EnableFixFlyMode final
+{
+public:
+	bool                                          enable;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFixFlyModeType                               Type;                                              // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_EnableFixFlyMode;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.GetBaseMovement
+// 0x0010 (0x0010 - 0x0000)
+struct KuroVehicleMovementComponent_GetBaseMovement final
+{
+public:
+	TArray<class UPrimitiveComponent*>            Out;                                               // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_GetBaseMovement;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.GetCurrentMotorFrontPulling
+// 0x000C (0x000C - 0x0000)
+struct KuroVehicleMovementComponent_GetCurrentMotorFrontPulling final
+{
+public:
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_GetCurrentMotorFrontPulling;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.GetCurrentMotorPower
+// 0x0004 (0x0004 - 0x0000)
+struct KuroVehicleMovementComponent_GetCurrentMotorPower final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_GetCurrentMotorPower;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.GetCurrentMotorRearPulling
+// 0x000C (0x000C - 0x0000)
+struct KuroVehicleMovementComponent_GetCurrentMotorRearPulling final
+{
+public:
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_GetCurrentMotorRearPulling;
 
 // Function KuroVehicle.KuroVehicleMovementComponent.GetMotorInputDirect
 // 0x000C (0x000C - 0x0000)
@@ -166,6 +223,18 @@ public:
 	float                                         Duration;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroVehicleMovementComponent_IgnoreMoveFriction;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.IsValidTransform
+// 0x0060 (0x0060 - 0x0000)
+struct KuroVehicleMovementComponent_IsValidTransform final
+{
+public:
+	struct FTransformDouble                       Trans;                                             // 0x0000(0x0040)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         IgnoreActors;                                      // 0x0040(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0xF];                                       // 0x0051(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_IsValidTransform;
 
 // Function KuroVehicle.KuroVehicleMovementComponent.Kuro_SetGravityDirect
 // 0x000C (0x000C - 0x0000)
@@ -228,18 +297,31 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FQuat                                  QuatDelta;                                         // 0x0010(0x0010)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          bSweep;                                            // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0xF];                                       // 0x0021(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x0024(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroVehicleMovementComponent_MoveMotorcycle;
 
+// Function KuroVehicle.KuroVehicleMovementComponent.SetMotionLockMask
+// 0x0002 (0x0002 - 0x0000)
+struct KuroVehicleMovementComponent_SetMotionLockMask final
+{
+public:
+	bool                                          enable;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Mask;                                              // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_SetMotionLockMask;
+
 // Function KuroVehicle.KuroVehicleMovementComponent.SetMotorInput
-// 0x0014 (0x0014 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct KuroVehicleMovementComponent_SetMotorInput final
 {
 public:
 	struct FVector                                InputDirect;                                       // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         FrontBraking;                                      // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         BackBraking;                                       // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AirRotateInput;                                    // 0x0014(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroVehicleMovementComponent_SetMotorInput;
 
@@ -253,6 +335,15 @@ public:
 };
 DUMPER7_ASSERTS_KuroVehicleMovementComponent_SetMotorRotateSpeed;
 
+// Function KuroVehicle.KuroVehicleMovementComponent.SetMotorSubState
+// 0x0001 (0x0001 - 0x0000)
+struct KuroVehicleMovementComponent_SetMotorSubState final
+{
+public:
+	EMotorSubState                                NewSubState;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_SetMotorSubState;
+
 // Function KuroVehicle.KuroVehicleMovementComponent.SetMovementMode
 // 0x0002 (0x0002 - 0x0000)
 struct KuroVehicleMovementComponent_SetMovementMode final
@@ -263,6 +354,25 @@ public:
 };
 DUMPER7_ASSERTS_KuroVehicleMovementComponent_SetMovementMode;
 
+// Function KuroVehicle.KuroVehicleMovementComponent.SetRecordTimeLengthAndPeriod
+// 0x0008 (0x0008 - 0x0000)
+struct KuroVehicleMovementComponent_SetRecordTimeLengthAndPeriod final
+{
+public:
+	float                                         InMaxTimeLength;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InPeriod;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_SetRecordTimeLengthAndPeriod;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.SetSimulatedMotorWheelInfos
+// 0x0010 (0x0010 - 0x0000)
+struct KuroVehicleMovementComponent_SetSimulatedMotorWheelInfos final
+{
+public:
+	TArray<struct FMotorWheelDisplayInfo>         In;                                                // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_SetSimulatedMotorWheelInfos;
+
 // Function KuroVehicle.KuroVehicleMovementComponent.TryMotorcyclingOneStep
 // 0x0004 (0x0004 - 0x0000)
 struct KuroVehicleMovementComponent_TryMotorcyclingOneStep final
@@ -271,6 +381,42 @@ public:
 	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroVehicleMovementComponent_TryMotorcyclingOneStep;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.UpdateMotorRailMoveTransform
+// 0x0060 (0x0060 - 0x0000)
+struct KuroVehicleMovementComponent_UpdateMotorRailMoveTransform final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       TargetTransform;                                   // 0x0010(0x0040)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bApplyRootMotion;                                  // 0x0050(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSweep;                                            // 0x0051(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_52[0xE];                                       // 0x0052(0x000E)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_UpdateMotorRailMoveTransform;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.GetBackMotorHitResult
+// 0x0098 (0x0098 - 0x0000)
+struct KuroVehicleMovementComponent_GetBackMotorHitResult final
+{
+public:
+	struct FHitResult                             OutHit;                                            // 0x0000(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0094(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_GetBackMotorHitResult;
+
+// Function KuroVehicle.KuroVehicleMovementComponent.GetFrontMotorHitResult
+// 0x0098 (0x0098 - 0x0000)
+struct KuroVehicleMovementComponent_GetFrontMotorHitResult final
+{
+public:
+	struct FHitResult                             OutHit;                                            // 0x0000(0x0094)(Parm, OutParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0094(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroVehicleMovementComponent_GetFrontMotorHitResult;
 
 // Function KuroVehicle.KuroVehicleMovementComponent.GetMaxAcceleration
 // 0x0004 (0x0004 - 0x0000)

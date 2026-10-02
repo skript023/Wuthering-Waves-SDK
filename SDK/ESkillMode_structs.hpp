@@ -15,12 +15,13 @@ namespace SDK
 {
 
 // UserDefinedEnum ESkillMode.ESkillMode
-// NumValues: 0x0003
+// NumValues: 0x0004
 enum class ESkillMode : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
-	ESkillMode_MAX                           = 2,
+	NewEnumerator2                           = 2,
+	ESkillMode_MAX                           = 3,
 };
 
 }

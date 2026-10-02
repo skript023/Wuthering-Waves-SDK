@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
+#include "SCaughtInfo_structs.hpp"
 #include "SReBulletDataMain_structs.hpp"
 #include "Engine_structs.hpp"
-#include "SCaughtInfo_structs.hpp"
 #include "SVisionData_structs.hpp"
 #include "EMovementDirection_structs.hpp"
+#include "SCharacterPart_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SSkillInfo_structs.hpp"
-#include "SCharacterPart_structs.hpp"
 #include "SEffectData_structs.hpp"
 #include "SAttributeModifierData_structs.hpp"
 #include "SDamageData_structs.hpp"
@@ -47,7 +47,7 @@ public:
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_GetLocalWind;
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetMovementSettings
-// 0x0CC0 (0x0CC0 - 0x0000)
+// 0x0DE0 (0x0DE0 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetMovementSettings final
 {
 public:
@@ -55,11 +55,11 @@ public:
 	class FName                                   rowName;                                           // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMovementSetting_State                data;                                              // 0x0020(0x0648)(Parm, OutParm, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0668(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_669[0x7];                                      // 0x0669(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSMovementSetting_State                CallFunc_GetDataTableRowFromName_OutRow;           // 0x0670(0x0648)(NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0CB8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSMovementSetting_State                data;                                              // 0x0020(0x06D8)(Parm, OutParm, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x06F8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6F9[0x7];                                      // 0x06F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSMovementSetting_State                CallFunc_GetDataTableRowFromName_OutRow;           // 0x0700(0x06D8)(NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0DD8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetMovementSettings;
 
@@ -81,24 +81,23 @@ public:
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetBulletData;
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetHitEffect
-// 0x0168 (0x0168 - 0x0000)
+// 0x0170 (0x0170 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetHitEffect final
 {
 public:
 	class UDataTable*                             dataTable;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   rowName;                                           // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSHitEffect                            backData;                                          // 0x0014(0x00A0)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSHitEffect                            backData;                                          // 0x0014(0x00A4)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x00B8(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          ReturnValue;                                       // 0x00C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSHitEffect                            CallFunc_GetDataTableRowFromName_OutRow;           // 0x00C4(0x00A0)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0164(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSHitEffect                            CallFunc_GetDataTableRowFromName_OutRow;           // 0x00C4(0x00A4)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0168(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetHitEffect;
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetSkillInfo
-// 0x0370 (0x0370 - 0x0000)
+// 0x0400 (0x0400 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetSkillInfo final
 {
 public:
@@ -106,12 +105,12 @@ public:
 	class FName                                   rowName;                                           // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillInfo                            data;                                              // 0x0020(0x01A0)(Parm, OutParm, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x01C0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1C1[0x7];                                      // 0x01C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSSkillInfo                            CallFunc_GetDataTableRowFromName_OutRow;           // 0x01C8(0x01A0)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0368(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0369(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSSkillInfo                            data;                                              // 0x0020(0x01E8)(Parm, OutParm, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0208(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSSkillInfo                            CallFunc_GetDataTableRowFromName_OutRow;           // 0x0210(0x01E8)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x03F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x03F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetSkillInfo;
 
@@ -167,7 +166,7 @@ public:
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetEffectData;
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetNewBulletData
-// 0x0FA0 (0x0FA0 - 0x0000)
+// 0x0FC0 (0x0FC0 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetNewBulletData final
 {
 public:
@@ -175,16 +174,16 @@ public:
 	class FName                                   rowName;                                           // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSReBulletDataMain                     data;                                              // 0x0020(0x07B8)(Parm, OutParm, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x07D8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7D9[0x7];                                      // 0x07D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x07E0(0x07B8)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0F98(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSReBulletDataMain                     data;                                              // 0x0020(0x07C8)(Parm, OutParm, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x07E8(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7E9[0x7];                                      // 0x07E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x07F0(0x07C8)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0FB8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetNewBulletData;
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetAllSkillInfos
-// 0x0210 (0x0210 - 0x0000)
+// 0x0258 (0x0258 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetAllSkillInfos final
 {
 public:
@@ -197,19 +196,19 @@ public:
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSSkillInfo                            CallFunc_GetDataTableRowFromName_OutRow;           // 0x0058(0x01A0)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x01F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1F9[0x3];                                      // 0x01F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x01FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_201[0x3];                                      // 0x0201(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0204(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0208(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            CallFunc_GetDataTableRowFromName_OutRow;           // 0x0058(0x01E8)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0240(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_241[0x3];                                      // 0x0241(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0244(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_249[0x3];                                      // 0x0249(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x024C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0250(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetAllSkillInfos;
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetAllCharacterPartDatas
-// 0x0188 (0x0188 - 0x0000)
+// 0x01E0 (0x01E0 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetAllCharacterPartDatas final
 {
 public:
@@ -222,14 +221,14 @@ public:
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCharacterPart                        CallFunc_GetDataTableRowFromName_OutRow;           // 0x0058(0x0118)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0174(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0178(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_179[0x3];                                      // 0x0179(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x017C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCharacterPart                        CallFunc_GetDataTableRowFromName_OutRow;           // 0x0058(0x0170)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x01C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1C9[0x3];                                      // 0x01C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x01CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1D1[0x3];                                      // 0x01D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x01D4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x01D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetAllCharacterPartDatas;
 
@@ -282,7 +281,7 @@ public:
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetCaughtInfo;
 
 // Function BPL_CharacterUtility.BPL_CharacterUtility_C.DtGetAllBulletData
-// 0x0828 (0x0828 - 0x0000)
+// 0x0838 (0x0838 - 0x0000)
 struct BPL_CharacterUtility_C_DtGetAllBulletData final
 {
 public:
@@ -295,14 +294,14 @@ public:
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x0048(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x0058(0x07B8)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0810(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_811[0x3];                                      // 0x0811(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ___int_Loop_Counter_Variable;                      // 0x0814(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0818(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_819[0x3];                                      // 0x0819(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x081C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0820(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSReBulletDataMain                     CallFunc_GetDataTableRowFromName_OutRow;           // 0x0058(0x07C8)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0820(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_821[0x3];                                      // 0x0821(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0824(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0828(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_829[0x3];                                      // 0x0829(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x082C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x0830(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPL_CharacterUtility_C_DtGetAllBulletData;
 

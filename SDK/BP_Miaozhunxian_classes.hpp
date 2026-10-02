@@ -33,13 +33,13 @@ public:
 	bool                                          Showing;                                           // 0x02F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_BP_Miaozhunxian(int32 EntryPoint);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
-	void Init();
-	void UpdateMesh();
-	void HideMesh();
 	void ShowMesh();
+	void HideMesh();
+	void UpdateMesh();
+	void Init();
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void ExecuteUbergraph_BP_Miaozhunxian(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

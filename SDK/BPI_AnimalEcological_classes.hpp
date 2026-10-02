@@ -21,23 +21,23 @@ namespace SDK
 class IBPI_AnimalEcological_C final
 {
 public:
-	void SystemUiEnd();
-	void SystemUiStart();
-	void FeedStart(const struct FGameplayTag& GameplayTag);
-	void GetCurrentActionTime(float* ActionTime);
-	void NoneStateEnd();
-	void NoneStateStart();
-	void StateMachineInitializationComplete();
-	void InteractEnd();
-	void InteractStart();
-	void IdleEnd();
-	void IdleStart();
-	void UnderAttackEnd();
-	void UnderAttackStart();
-	void AlertEnd();
-	void AlertStart();
-	void TakeOffEnd();
 	void TakeOffStart();
+	void TakeOffEnd();
+	void AlertStart();
+	void AlertEnd();
+	void UnderAttackStart();
+	void UnderAttackEnd();
+	void IdleStart();
+	void IdleEnd();
+	void InteractStart();
+	void InteractEnd();
+	void StateMachineInitializationComplete();
+	void NoneStateStart();
+	void NoneStateEnd();
+	void GetCurrentActionTime(float* ActionTime);
+	void FeedStart(const struct FGameplayTag& GameplayTag);
+	void SystemUiStart();
+	void SystemUiEnd();
 
 public:
 	static class UClass* StaticClass()

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_TeleControlConfig.BP_TeleControlConfig_C
-// 0x0268 (0x02A0 - 0x0038)
+// 0x02C8 (0x0300 - 0x0038)
 class UBP_TeleControlConfig_C final : public UPrimaryDataAsset
 {
 public:
@@ -89,6 +89,8 @@ public:
 	struct FSoftObjectPath                        归位消失特效;                                      // 0x0228(0x0020)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 	TMap<int32, float>                            投掷状态CueId;                                     // 0x0248(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UPhysicalMaterial*                      物体物理材质;                                      // 0x0298(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSoftObjectPtr<class UKuroForceFeedbackEffect> 吸取飞行手柄震动;                                 // 0x02A0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UKuroForceFeedbackEffect> 投掷手柄震动;                                     // 0x02D0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

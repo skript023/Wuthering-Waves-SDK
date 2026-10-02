@@ -10,21 +10,22 @@
 
 #include "Basic.hpp"
 
-#include "SSceneInteractionitem_structs.hpp"
 #include "Engine_structs.hpp"
-#include "GameplayTags_structs.hpp"
+#include "SSceneInteractionTags_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "SSceneInteractionTags_structs.hpp"
-#include "ESceneInteractionEffect_structs.hpp"
+#include "SSceneInteractionitem_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "SScenePropertyEffect_structs.hpp"
+#include "ESceneInteractionEffect_structs.hpp"
+#include "BPELevelPrefabDestructibleOverlapSource_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass SceneInteractionActor.SceneInteractionActor_C
-// 0x02C8 (0x0578 - 0x02B0)
+// 0x02D0 (0x0580 - 0x02B0)
 class ASceneInteractionActor_C final : public AKuroSceneInteractionActor
 {
 public:
@@ -34,22 +35,22 @@ public:
 	TMap<class FString, class AActor*>            ReferenceActors;                                   // 0x0310(0x0050)(Edit, BlueprintVisible)
 	TArray<class AActor*>                         CollisionActors;                                   // 0x0360(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	class FString                                 LevelName;                                         // 0x0370(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	float                                         HandleId;                                          // 0x0380(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_384[0x4];                                      // 0x0384(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<ESceneInteractionEffect, class ABP_EffectActor_C*> EndEffects;                              // 0x0388(0x0050)(Edit, BlueprintVisible)
-	TMap<ESceneInteractionEffect, struct FSScenePropertyEffect> Effects;                             // 0x03D8(0x0050)(Edit, BlueprintVisible)
-	TArray<class AActor*>                         InteractionEffectHookActors;                       // 0x0428(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	class ATsBaseCharacter_C*                     CharacterForOrgan;                                 // 0x0438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	TMap<struct FGameplayTag, struct FSSceneInteractionTags> TagsAndCorrespondingEffects;            // 0x0440(0x0050)(Edit, BlueprintVisible)
-	TArray<class AActor*>                         ActorsForProjection;                               // 0x0490(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TMap<class AActor*, struct FGameplayTag>      PartCollisionActorsAndCorrespondingTags;           // 0x04A0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	class UMaterialInstance*                      MaterialForProjection;                             // 0x04F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class ASkeletalMeshActor*>             SkeletalMeshActors;                                // 0x04F8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<class AActor*>                         ReceivingDecalsActors;                             // 0x0508(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	class ABP_InteractionMaterialController_C*    InteractionMaterialController;                     // 0x0518(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_BasePlatform_C*                     BasePlatformInternal;                              // 0x0520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CurrentStateAkEventHandle;                         // 0x0528(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_52C[0x4];                                      // 0x052C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         HandleId;                                          // 0x0380(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntityId;                                          // 0x0384(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CurrentStateAkEventHandle;                         // 0x0388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_38C[0x4];                                      // 0x038C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<ESceneInteractionEffect, class ABP_EffectActor_C*> EndEffects;                              // 0x0390(0x0050)(Edit, BlueprintVisible)
+	TMap<ESceneInteractionEffect, struct FSScenePropertyEffect> Effects;                             // 0x03E0(0x0050)(Edit, BlueprintVisible)
+	TArray<class AActor*>                         InteractionEffectHookActors;                       // 0x0430(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	class ATsBaseCharacter_C*                     CharacterForOrgan;                                 // 0x0440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	TMap<struct FGameplayTag, struct FSSceneInteractionTags> TagsAndCorrespondingEffects;            // 0x0448(0x0050)(Edit, BlueprintVisible)
+	TArray<class AActor*>                         ActorsForProjection;                               // 0x0498(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TMap<class AActor*, struct FGameplayTag>      PartCollisionActorsAndCorrespondingTags;           // 0x04A8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	class UMaterialInstance*                      MaterialForProjection;                             // 0x04F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class ASkeletalMeshActor*>             SkeletalMeshActors;                                // 0x0500(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<class AActor*>                         ReceivingDecalsActors;                             // 0x0510(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	class ABP_InteractionMaterialController_C*    InteractionMaterialController;                     // 0x0520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_BasePlatform_C*                     BasePlatformInternal;                              // 0x0528(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UStaticMesh*>                    StaticMeshList;                                    // 0x0530(0x0010)(Edit, BlueprintVisible)
 	bool                                          需要过渡状态;                                      // 0x0540(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          跳过表现过程;                                      // 0x0541(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
@@ -59,47 +60,52 @@ public:
 	TArray<class ASkeletalMeshActor*>             AllSkeletalMeshActors;                             // 0x0550(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	class AActor*                                 OverrideEffectActor;                               // 0x0560(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class ABP_EffectActor_C*>              EffectsInheritTimeDilation;                        // 0x0568(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	EBPELevelPrefabDestructibleOverlapSource      RangeOtherActorVelocitySource;                     // 0x0578(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_SceneInteractionActor(int32 EntryPoint);
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveBeginPlay();
-	void AddNewState();
-	void UpdateTimeDilation();
-	void AddNewEndEffect();
-	void AddMatrialDataForChildrenActor(class AActor* actor, class UItemMaterialControllerActorData_C* materialData);
-	void ResetTagActorHide(const struct FGameplayTag& tag);
-	void StopExtraEffectOnTagsChange(const struct FGameplayTag& tag);
-	class ALevelSequenceActor* GetDirectorBySequence(class ULevelSequence* sequence);
-	void DestroySelf();
-	void StopTagAkEvent(const struct FGameplayTag& tag);
-	void UpdateProjectionActorTransform(const struct FTransformDouble& transform1);
-	void TryStopCurrentState();
-	void ChangeState1();
-	void ChangeState2();
-	void ChangeState3();
-	void ChangeState4();
-	void ChangeState5();
-	void ChangeState6();
-	void ChangeState7();
-	void ChangeState8();
-	void PreviewFullDestructible();
-	void RemoveActorProjection();
-	void 使用字段值切换状态();
-	void 模拟Tag添加();
-	void 模拟Tag移除();
-	void 重置();
-	void ApplyAnimOptimizationParams(bool bUseDistanceMap);
-	void PendingPlayStateEffect();
-	void RemovePendingStateEffectTick();
-	void PendingPlayCrossStateEffect();
-	void RemovePendingCrossStateEffectTick();
-	void PendingPlayTagEffect();
-	void RemovePendingTagEffectTick();
-	void PlayKuroSkeletalMeshDestruction(class AActor* actor, bool isJumpToEnd);
-	bool CheckAllEffectPlaying();
-	float GetActiveSequenceRemainTime(class ULevelSequence* sequence);
+	void PostTagEvent(const class FString& event, const struct FGameplayTag& tag, bool follow);
+	void PostAutoMergeEvent(const class FString& event, float tagId, bool follow);
+	void OverrideKuroDestructibleActorPhysicsVelocity(class AKuroDestructibleActor* skeletalMeshDestruction);
+	void UnsetOverrideSeqBindActor(class AActor* actorToUnbind, const class FString& bindingName);
+	void SetOverrideSeqBindActor(class AActor* actorToBind, const class FString& bindingName);
 	void AddNewEffect();
+	float GetActiveSequenceRemainTime(class ULevelSequence* sequence);
+	bool CheckAllEffectPlaying();
+	void PlayKuroSkeletalMeshDestruction(class AActor* actor, bool isJumpToEnd);
+	void RemovePendingTagEffectTick();
+	void PendingPlayTagEffect();
+	void RemovePendingCrossStateEffectTick();
+	void PendingPlayCrossStateEffect();
+	void RemovePendingStateEffectTick();
+	void PendingPlayStateEffect();
+	void ApplyAnimOptimizationParams(bool bUseDistanceMap);
+	void 重置();
+	void 模拟Tag移除();
+	void 模拟Tag添加();
+	void 使用字段值切换状态();
+	void RemoveActorProjection();
+	void ChangeState8();
+	void ChangeState7();
+	void ChangeState6();
+	void ChangeState5();
+	void ChangeState4();
+	void ChangeState3();
+	void ChangeState2();
+	void ChangeState1();
+	void TryStopCurrentState();
+	void UpdateProjectionActorTransform(const struct FTransformDouble& transform1);
+	void StopTagAkEvent(const struct FGameplayTag& tag);
+	void DestroySelf();
+	class ALevelSequenceActor* GetDirectorBySequence(class ULevelSequence* sequence);
+	void StopExtraEffectOnTagsChange(const struct FGameplayTag& tag);
+	void ResetTagActorHide(const struct FGameplayTag& tag);
+	void AddMatrialDataForChildrenActor(class AActor* actor, class UItemMaterialControllerActorData_C* materialData);
+	void AddNewEndEffect();
+	void UpdateTimeDilation();
+	void AddNewState();
+	void ReceiveBeginPlay();
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ExecuteUbergraph_SceneInteractionActor(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

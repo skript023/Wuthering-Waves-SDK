@@ -16,6 +16,87 @@
 namespace SDK::Params
 {
 
+// Function KuroData.KuroDerivedDataTable.MarkFieldOverridden
+// 0x0018 (0x0018 - 0x0000)
+struct KuroDerivedDataTable_MarkFieldOverridden final
+{
+public:
+	class FName                                   RowName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PropertyName;                                      // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroDerivedDataTable_MarkFieldOverridden;
+
+// Function KuroData.KuroDerivedDataTable.MarkRowFullyOverridden
+// 0x000C (0x000C - 0x0000)
+struct KuroDerivedDataTable_MarkRowFullyOverridden final
+{
+public:
+	class FName                                   RowName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroDerivedDataTable_MarkRowFullyOverridden;
+
+// Function KuroData.KuroDerivedDataTable.RevertRowToParent
+// 0x000C (0x000C - 0x0000)
+struct KuroDerivedDataTable_RevertRowToParent final
+{
+public:
+	class FName                                   RowName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroDerivedDataTable_RevertRowToParent;
+
+// Function KuroData.KuroDerivedDataTable.UnmarkFieldOverridden
+// 0x0018 (0x0018 - 0x0000)
+struct KuroDerivedDataTable_UnmarkFieldOverridden final
+{
+public:
+	class FName                                   RowName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PropertyName;                                      // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroDerivedDataTable_UnmarkFieldOverridden;
+
+// Function KuroData.KuroDerivedDataTable.GetAllResolvedRowNames
+// 0x0010 (0x0010 - 0x0000)
+struct KuroDerivedDataTable_GetAllResolvedRowNames final
+{
+public:
+	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroDerivedDataTable_GetAllResolvedRowNames;
+
+// Function KuroData.KuroDerivedDataTable.HasAnyOverrideInRow
+// 0x0010 (0x0010 - 0x0000)
+struct KuroDerivedDataTable_HasAnyOverrideInRow final
+{
+public:
+	class FName                                   RowName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDerivedDataTable_HasAnyOverrideInRow;
+
+// Function KuroData.KuroDerivedDataTable.IsChildOnlyRow
+// 0x0010 (0x0010 - 0x0000)
+struct KuroDerivedDataTable_IsChildOnlyRow final
+{
+public:
+	class FName                                   RowName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDerivedDataTable_IsChildOnlyRow;
+
+// Function KuroData.KuroDerivedDataTable.IsFieldOverridden
+// 0x001C (0x001C - 0x0000)
+struct KuroDerivedDataTable_IsFieldOverridden final
+{
+public:
+	class FName                                   RowName;                                           // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PropertyName;                                      // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDerivedDataTable_IsFieldOverridden;
+
 // Function KuroData.KuroHitResult.GetHitCount
 // 0x0004 (0x0004 - 0x0000)
 struct KuroHitResult_GetHitCount final
@@ -252,6 +333,17 @@ public:
 	float                                         Roll;                                              // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_TraceBoxElement_SetBoxOrientation;
+
+// Function KuroData.TraceCapsuleElement.SetCapsuleOrientation
+// 0x000C (0x000C - 0x0000)
+struct TraceCapsuleElement_SetCapsuleOrientation final
+{
+public:
+	float                                         Pitch;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Yaw;                                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Roll;                                              // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TraceCapsuleElement_SetCapsuleOrientation;
 
 }
 

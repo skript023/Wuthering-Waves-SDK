@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SCommonQte_LongPress_structs.hpp"
-#include "ECommonQteType_structs.hpp"
 #include "SCommonQte_SingleClick_structs.hpp"
+#include "ECommonQteType_structs.hpp"
 #include "SCommonQte_ContinuousClick_structs.hpp"
 #include "SCommonQte_Drag_structs.hpp"
+#include "SCommonQte_LongPress_structs.hpp"
 #include "SCommonQte_SelectOption_structs.hpp"
 
 
@@ -22,7 +22,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SCommonQte_Base.SCommonQte_Base
-// 0x0358 (0x0358 - 0x0000)
+// 0x03D0 (0x03D0 - 0x0000)
 struct FSCommonQte_Base final
 {
 public:
@@ -31,11 +31,11 @@ public:
 	float                                         Duration_10_42900054479C54A92E052EBFFE3505C2;      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         LeastDuration_33_E0125F8643C14F58545A0AB03CC3B3B3; // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         TimeDilation_11_F065BDBA4006E0F671964D86B2B690A1;  // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSCommonQte_SingleClick                SingleClickConfig_5_65D6E75040CF4B488DEE9BB14F9AC700; // 0x0010(0x00B0)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	struct FSCommonQte_ContinuousClick            ContinuousClickConfig_29_56A22B244D8A0DB107A2A099420F783C; // 0x00C0(0x00C8)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	struct FSCommonQte_Drag                       DragConfig_36_5D1C9292421203FE24805486EF3CF14F;    // 0x0188(0x00C0)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	struct FSCommonQte_LongPress                  LongPressConfig_39_CD7C381A44477869FFCA15A56D28D1AF; // 0x0248(0x00B8)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	struct FSCommonQte_SelectOption               SelectOptionConfig_45_A2EB81AC4A771288001E1EB1A7A3351E; // 0x0300(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_SingleClick                SingleClickConfig_5_65D6E75040CF4B488DEE9BB14F9AC700; // 0x0010(0x00C8)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_ContinuousClick            ContinuousClickConfig_29_56A22B244D8A0DB107A2A099420F783C; // 0x00D8(0x00E8)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_Drag                       DragConfig_36_5D1C9292421203FE24805486EF3CF14F;    // 0x01C0(0x00E8)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_LongPress                  LongPressConfig_39_CD7C381A44477869FFCA15A56D28D1AF; // 0x02A8(0x00D0)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_SelectOption               SelectOptionConfig_45_A2EB81AC4A771288001E1EB1A7A3351E; // 0x0378(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCommonQte_Base;
 

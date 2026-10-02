@@ -17,6 +17,19 @@
 namespace SDK::Params
 {
 
+// Function KuroVoxelRuntime.KuroCaveVolumeSubsystem.D_QueryVoxelCaveType
+// 0x0028 (0x0028 - 0x0000)
+struct KuroCaveVolumeSubsystem_D_QueryVoxelCaveType final
+{
+public:
+	class UObject*                                WorldContext;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVectorDouble                          UELocation;                                        // 0x0008(0x0018)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTraceDown;                                        // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ReturnValue;                                       // 0x0021(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22[0x6];                                       // 0x0022(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCaveVolumeSubsystem_D_QueryVoxelCaveType;
+
 // Function KuroVoxelRuntime.KuroVoxelSystem.D_GetMaterialIDAtPos
 // 0x0028 (0x0028 - 0x0000)
 struct KuroVoxelSystem_D_GetMaterialIDAtPos final

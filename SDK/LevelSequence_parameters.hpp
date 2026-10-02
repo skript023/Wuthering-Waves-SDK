@@ -17,6 +17,103 @@
 namespace SDK::Params
 {
 
+// Function LevelSequence.LevelSequence.CopyMetaData
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequence_CopyMetaData final
+{
+public:
+	class UObject*                                InMetaData;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequence_CopyMetaData;
+
+// Function LevelSequence.LevelSequence.D_GetCenterOffset
+// 0x0020 (0x0020 - 0x0000)
+struct LevelSequence_D_GetCenterOffset final
+{
+public:
+	struct FVectorDouble                          OutCenterOffset;                                   // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LevelSequence_D_GetCenterOffset;
+
+// Function LevelSequence.LevelSequence.FindOrAddMetaDataByClass
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequence_FindOrAddMetaDataByClass final
+{
+public:
+	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequence_FindOrAddMetaDataByClass;
+
+// Function LevelSequence.LevelSequence.GetAnimAudio
+// 0x0001 (0x0001 - 0x0000)
+struct LevelSequence_GetAnimAudio final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequence_GetAnimAudio;
+
+// Function LevelSequence.LevelSequence.GetCenterOffset
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequence_GetCenterOffset final
+{
+public:
+	struct FVector                                OutCenterOffset;                                   // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LevelSequence_GetCenterOffset;
+
+// Function LevelSequence.LevelSequence.RemoveMetaDataByClass
+// 0x0008 (0x0008 - 0x0000)
+struct LevelSequence_RemoveMetaDataByClass final
+{
+public:
+	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequence_RemoveMetaDataByClass;
+
+// Function LevelSequence.LevelSequence.SetAnimAudio
+// 0x0001 (0x0001 - 0x0000)
+struct LevelSequence_SetAnimAudio final
+{
+public:
+	bool                                          Value;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequence_SetAnimAudio;
+
+// Function LevelSequence.LevelSequence.SetCenterOffset
+// 0x000C (0x000C - 0x0000)
+struct LevelSequence_SetCenterOffset final
+{
+public:
+	struct FVector                                InCenterOffset;                                    // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequence_SetCenterOffset;
+
+// Function LevelSequence.LevelSequence.FindMetaDataByClass
+// 0x0010 (0x0010 - 0x0000)
+struct LevelSequence_FindMetaDataByClass final
+{
+public:
+	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequence_FindMetaDataByClass;
+
+// Function LevelSequence.LevelSequence.GetMovieScene
+// 0x0008 (0x0008 - 0x0000)
+struct LevelSequence_GetMovieScene final
+{
+public:
+	class UMovieScene*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelSequence_GetMovieScene;
+
 // Function LevelSequence.LevelSequenceActor.AddBinding
 // 0x0028 (0x0028 - 0x0000)
 struct LevelSequenceActor_AddBinding final
@@ -222,103 +319,6 @@ public:
 	class ULevelSequence*                         ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LevelSequenceActor_LoadSequence;
-
-// Function LevelSequence.LevelSequence.CopyMetaData
-// 0x0010 (0x0010 - 0x0000)
-struct LevelSequence_CopyMetaData final
-{
-public:
-	class UObject*                                InMetaData;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequence_CopyMetaData;
-
-// Function LevelSequence.LevelSequence.D_GetCenterOffset
-// 0x0020 (0x0020 - 0x0000)
-struct LevelSequence_D_GetCenterOffset final
-{
-public:
-	struct FVectorDouble                          OutCenterOffset;                                   // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_LevelSequence_D_GetCenterOffset;
-
-// Function LevelSequence.LevelSequence.FindOrAddMetaDataByClass
-// 0x0010 (0x0010 - 0x0000)
-struct LevelSequence_FindOrAddMetaDataByClass final
-{
-public:
-	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequence_FindOrAddMetaDataByClass;
-
-// Function LevelSequence.LevelSequence.GetAnimAudio
-// 0x0001 (0x0001 - 0x0000)
-struct LevelSequence_GetAnimAudio final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequence_GetAnimAudio;
-
-// Function LevelSequence.LevelSequence.GetCenterOffset
-// 0x0010 (0x0010 - 0x0000)
-struct LevelSequence_GetCenterOffset final
-{
-public:
-	struct FVector                                OutCenterOffset;                                   // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_LevelSequence_GetCenterOffset;
-
-// Function LevelSequence.LevelSequence.RemoveMetaDataByClass
-// 0x0008 (0x0008 - 0x0000)
-struct LevelSequence_RemoveMetaDataByClass final
-{
-public:
-	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequence_RemoveMetaDataByClass;
-
-// Function LevelSequence.LevelSequence.SetAnimAudio
-// 0x0001 (0x0001 - 0x0000)
-struct LevelSequence_SetAnimAudio final
-{
-public:
-	bool                                          Value;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequence_SetAnimAudio;
-
-// Function LevelSequence.LevelSequence.SetCenterOffset
-// 0x000C (0x000C - 0x0000)
-struct LevelSequence_SetCenterOffset final
-{
-public:
-	struct FVector                                InCenterOffset;                                    // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequence_SetCenterOffset;
-
-// Function LevelSequence.LevelSequence.FindMetaDataByClass
-// 0x0010 (0x0010 - 0x0000)
-struct LevelSequence_FindMetaDataByClass final
-{
-public:
-	TSubclassOf<class UObject>                    InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequence_FindMetaDataByClass;
-
-// Function LevelSequence.LevelSequence.GetMovieScene
-// 0x0008 (0x0008 - 0x0000)
-struct LevelSequence_GetMovieScene final
-{
-public:
-	class UMovieScene*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelSequence_GetMovieScene;
 
 // Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
 // 0x0020 (0x0020 - 0x0000)

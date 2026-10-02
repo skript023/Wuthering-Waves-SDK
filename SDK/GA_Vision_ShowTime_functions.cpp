@@ -57,6 +57,20 @@ void UGA_Vision_ShowTime_C::材质结束(int32 材质ID)
 }
 
 
+// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGA_Vision_ShowTime_C::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Vision_ShowTime_C", "K2_ActivateAbility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.K2_OnEndAbility
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -74,20 +88,6 @@ void UGA_Vision_ShowTime_C::K2_OnEndAbility(bool bWasCancelled)
 	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Vision_ShowTime.GA_Vision_ShowTime_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Vision_ShowTime_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Vision_ShowTime_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EVisionType.EVisionType
-// NumValues: 0x0007
+// NumValues: 0x0008
 enum class EVisionType : uint8
 {
 	NewEnumerator0                           = 0,
@@ -24,7 +24,8 @@ enum class EVisionType : uint8
 	NewEnumerator3                           = 3,
 	NewEnumerator4                           = 4,
 	NewEnumerator5                           = 5,
-	EVisionType_MAX                          = 6,
+	NewEnumerator6                           = 6,
+	EVisionType_MAX                          = 7,
 };
 
 }

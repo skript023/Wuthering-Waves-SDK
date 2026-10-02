@@ -23,5 +23,266 @@ enum class ETestEnumInt32BlueprintType : uint8
 	TEBTI32_MAX                              = 257,
 };
 
+// Enum Sharphereal.EMonoAotMode
+// NumValues: 0x000B
+enum class EMonoAotMode : uint8
+{
+	Auto                                     = 18446744073709551615,
+	MONO_AOT_MODE_NONE                       = 0,
+	MONO_AOT_MODE_NORMAL                     = 1,
+	MONO_AOT_MODE_HYBRID                     = 2,
+	MONO_AOT_MODE_FULL                       = 3,
+	MONO_AOT_MODE_LLVMONLY                   = 4,
+	MONO_AOT_MODE_INTERP                     = 5,
+	MONO_AOT_MODE_INTERP_LLVMONLY            = 6,
+	MONO_AOT_MODE_LLVMONLY_INTERP            = 7,
+	MONO_AOT_MODE_INTERP_ONLY                = 8,
+	EMonoAotMode_MAX                         = 9,
+};
+
+// Enum Sharphereal.EKooSharpMonoTraceMask
+// NumValues: 0x0018
+enum class EKooSharpMonoTraceMask : uint8
+{
+	ALL                                      = 0,
+	MONO_TRACE_ASSEMBLY                      = 1,
+	MONO_TRACE_TYPE                          = 2,
+	MONO_TRACE_DLLIMPORT                     = 3,
+	MONO_TRACE_GC                            = 4,
+	MONO_TRACE_CONFIG                        = 5,
+	MONO_TRACE_AOT                           = 6,
+	MONO_TRACE_SECURITY                      = 7,
+	MONO_TRACE_THREADPOOL                    = 8,
+	MONO_TRACE_IO_SELECTOR                   = 9,
+	MONO_TRACE_IO_LAYER_PROCESS              = 10,
+	MONO_TRACE_IO_LAYER_SOCKET               = 11,
+	MONO_TRACE_IO_LAYER_FILE                 = 12,
+	MONO_TRACE_IO_LAYER_EVENT                = 13,
+	MONO_TRACE_IO_LAYER_SEMAPHORE            = 14,
+	MONO_TRACE_IO_LAYER_MUTEX                = 15,
+	MONO_TRACE_IO_LAYER_HANDLE               = 16,
+	MONO_TRACE_TAILCALL                      = 17,
+	MONO_TRACE_PROFILER                      = 18,
+	MONO_TRACE_TIERED                        = 19,
+	MONO_TRACE_QCALL                         = 20,
+	MONO_TRACE_METADATA_UPDATE               = 21,
+	MONO_TRACE_DIAGNOSTICS                   = 22,
+	EKooSharpMonoTraceMask_MAX               = 23,
+};
+
+// Enum Sharphereal.EKooSharpMonoTraceLevel
+// NumValues: 0x0007
+enum class EKooSharpMonoTraceLevel : uint8
+{
+	error                                    = 0,
+	critical                                 = 1,
+	warning                                  = 2,
+	message                                  = 3,
+	info                                     = 4,
+	debug                                    = 5,
+	EKooSharpMonoTraceLevel_MAX              = 6,
+};
+
+// Enum Sharphereal.EKooSharpBuildConfiguration
+// NumValues: 0x0009
+enum class EKooSharpBuildConfiguration : uint8
+{
+	Debug                                    = 0,
+	DebugEditor                              = 1,
+	DebugGame                                = 2,
+	DebugGameEditor                          = 3,
+	Development                              = 4,
+	DevelopmentEditor                        = 5,
+	Test                                     = 6,
+	Shipping                                 = 7,
+	EKooSharpBuildConfiguration_MAX          = 8,
+};
+
+// Enum Sharphereal.ESharpherealReflectionUFunctionParamMode
+// NumValues: 0x0005
+enum class ESharpherealReflectionUFunctionParamMode : uint8
+{
+	None                                     = 0,
+	In                                       = 1,
+	Ref                                      = 2,
+	Out                                      = 3,
+	ESharpherealReflectionUFunctionParamMode_MAX = 4,
+};
+
+// Enum Sharphereal.ESharpherealReflectionTypeCode
+// NumValues: 0x0020
+enum class ESharpherealReflectionTypeCode : uint8
+{
+	Unsupported                              = 0,
+	T_Bool                                   = 1,
+	T_Sbyte                                  = 2,
+	T_Byte                                   = 3,
+	T_Short                                  = 4,
+	T_UShort                                 = 5,
+	T_Int                                    = 6,
+	T_UInt                                   = 7,
+	T_Long                                   = 8,
+	T_ULong                                  = 9,
+	T_Float                                  = 10,
+	T_Double                                 = 11,
+	T_Enum                                   = 12,
+	T_EnumAsByte                             = 13,
+	T_String                                 = 14,
+	T_Name                                   = 15,
+	T_Text                                   = 16,
+	T_Struct                                 = 17,
+	T_UObject                                = 18,
+	T_WeakObject                             = 19,
+	T_SoftObject                             = 20,
+	T_LazyObject                             = 21,
+	T_Class                                  = 22,
+	T_SoftClass                              = 23,
+	T_Interface                              = 24,
+	T_Array                                  = 25,
+	T_Set                                    = 26,
+	T_Map                                    = 27,
+	T_Delegate                               = 28,
+	T_MulticastInlineDelegate                = 29,
+	T_MulticastSparseDelegate                = 30,
+	ESharpherealReflectionTypeCode_MAX       = 31,
+};
+
+// ScriptStruct Sharphereal.KooSharpMonoTraceMaskRuntimeSettings
+// 0x0050 (0x0050 - 0x0000)
+struct FKooSharpMonoTraceMaskRuntimeSettings final
+{
+public:
+	TArray<EKooSharpMonoTraceMask>                Debug;                                             // 0x0000(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<EKooSharpMonoTraceMask>                DebugGame;                                         // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<EKooSharpMonoTraceMask>                Development;                                       // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<EKooSharpMonoTraceMask>                Test;                                              // 0x0030(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<EKooSharpMonoTraceMask>                Shipping;                                          // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKooSharpMonoTraceMaskRuntimeSettings;
+
+// ScriptStruct Sharphereal.KooSharpMonoTraceLevelRuntimeSettings
+// 0x0005 (0x0005 - 0x0000)
+struct FKooSharpMonoTraceLevelRuntimeSettings final
+{
+public:
+	EKooSharpMonoTraceLevel                       Debug;                                             // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKooSharpMonoTraceLevel                       DebugGame;                                         // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKooSharpMonoTraceLevel                       Development;                                       // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKooSharpMonoTraceLevel                       Test;                                              // 0x0003(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKooSharpMonoTraceLevel                       Shipping;                                          // 0x0004(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FKooSharpMonoTraceLevelRuntimeSettings;
+
+// ScriptStruct Sharphereal.SharpGameAssemblyConfig
+// 0x0030 (0x0030 - 0x0000)
+struct FSharpGameAssemblyConfig final
+{
+public:
+	class FString                                 AssemblyName;                                      // 0x0000(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GeneratedOutputDir;                                // 0x0010(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         TsSourcePathPrefixes;                              // 0x0020(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpGameAssemblyConfig;
+
+// ScriptStruct Sharphereal.SharpherealReflectionEnumValueGenerateDefine
+// 0x0018 (0x0018 - 0x0000)
+struct FSharpherealReflectionEnumValueGenerateDefine final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Value;                                             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionEnumValueGenerateDefine;
+
+// ScriptStruct Sharphereal.SharpherealReflectionEnumGenerateDefine
+// 0x0020 (0x0020 - 0x0000)
+struct FSharpherealReflectionEnumGenerateDefine final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSharpherealReflectionEnumValueGenerateDefine> EnumDefine;                         // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionEnumGenerateDefine;
+
+// ScriptStruct Sharphereal.SharpherealReflectionPropertyTypeGenerateDefine
+// 0x0018 (0x0018 - 0x0000)
+struct FSharpherealReflectionPropertyTypeGenerateDefine final
+{
+public:
+	ESharpherealReflectionTypeCode                TypeCode;                                          // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 MetaType;                                          // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionPropertyTypeGenerateDefine;
+
+// ScriptStruct Sharphereal.SharpherealReflectionPropertyGenerateDefine
+// 0x0020 (0x0020 - 0x0000)
+struct FSharpherealReflectionPropertyGenerateDefine final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSharpherealReflectionPropertyTypeGenerateDefine> TypeDefine;                      // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionPropertyGenerateDefine;
+
+// ScriptStruct Sharphereal.SharpherealReflectionStructGenerateDefine
+// 0x0030 (0x0030 - 0x0000)
+struct FSharpherealReflectionStructGenerateDefine final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Super;                                             // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSharpherealReflectionPropertyGenerateDefine> PropertyDefine;                      // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionStructGenerateDefine;
+
+// ScriptStruct Sharphereal.SharpherealReflectionFunctionParamGenerateDefine
+// 0x0028 (0x0028 - 0x0000)
+struct FSharpherealReflectionFunctionParamGenerateDefine final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESharpherealReflectionUFunctionParamMode      Mode;                                              // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSharpherealReflectionPropertyTypeGenerateDefine> TypeDefine;                      // 0x0018(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionFunctionParamGenerateDefine;
+
+// ScriptStruct Sharphereal.SharpherealReflectionFunctionGenerateDefine
+// 0x0050 (0x0050 - 0x0000)
+struct FSharpherealReflectionFunctionGenerateDefine final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        FuncFlags;                                         // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSharpherealReflectionFunctionParamGenerateDefine ReturnType;                             // 0x0018(0x0028)(NativeAccessSpecifierPublic)
+	TArray<struct FSharpherealReflectionFunctionParamGenerateDefine> ParamType;                      // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionFunctionGenerateDefine;
+
+// ScriptStruct Sharphereal.SharpherealReflectionClassGenerateDefine
+// 0x0040 (0x0040 - 0x0000)
+struct FSharpherealReflectionClassGenerateDefine final
+{
+public:
+	class FString                                 Name;                                              // 0x0000(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Super;                                             // 0x0010(0x0010)(ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FSharpherealReflectionPropertyGenerateDefine> PropertyDefine;                      // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSharpherealReflectionFunctionGenerateDefine> FunctionDefine;                      // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionClassGenerateDefine;
+
+// ScriptStruct Sharphereal.SharpherealReflectionCollectGeneratorDefine
+// 0x0030 (0x0030 - 0x0000)
+struct FSharpherealReflectionCollectGeneratorDefine final
+{
+public:
+	TArray<struct FSharpherealReflectionEnumGenerateDefine> EnumDefines;                             // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSharpherealReflectionStructGenerateDefine> StructDefines;                         // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FSharpherealReflectionClassGenerateDefine> ClassDefines;                           // 0x0020(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FSharpherealReflectionCollectGeneratorDefine;
+
 }
 

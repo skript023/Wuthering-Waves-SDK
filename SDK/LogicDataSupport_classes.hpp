@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "LogicDataBase_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "ECamp_structs.hpp"
+#include "LogicDataBase_classes.hpp"
 
 
 namespace SDK

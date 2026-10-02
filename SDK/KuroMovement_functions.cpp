@@ -774,6 +774,35 @@ class FString UKuroDebugMovementComponent::KuroDebugMovementBaseRecordToString(c
 }
 
 
+// Function KuroMovement.KuroDebugMovementComponent.DrawRecord
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FBaseRecord&               Record                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   SphereRadius                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ArrowLength                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroDebugMovementComponent::DrawRecord(const struct FBaseRecord& Record, float SphereRadius, float ArrowLength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDebugMovementComponent", "DrawRecord");
+
+	Params::KuroDebugMovementComponent_DrawRecord Parms{};
+
+	Parms.Record = std::move(Record);
+	Parms.SphereRadius = SphereRadius;
+	Parms.ArrowLength = ArrowLength;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroMovement.KuroDebugMovementComponent.GetCurrentFrameIndex
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1087,6 +1116,42 @@ void AKuroMoveTrigger::OnEnterOverlap(class UPrimitiveComponent* OverlappedCompo
 }
 
 
+// Function KuroMovement.KuroMovementBPLibrary.KuroBinarySearchCurve
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UCurveFloat*                      Curve                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Y                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   From                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   To                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   tolerance                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UKuroMovementBPLibrary::KuroBinarySearchCurve(class UCurveFloat* Curve, float Y, float From, float To, float tolerance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroMovementBPLibrary", "KuroBinarySearchCurve");
+
+	Params::KuroMovementBPLibrary_KuroBinarySearchCurve Parms{};
+
+	Parms.Curve = Curve;
+	Parms.Y = Y;
+	Parms.From = From;
+	Parms.To = To;
+	Parms.tolerance = tolerance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroMovement.KuroMovementBPLibrary.KuroEaseSpeedTo
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1172,6 +1237,42 @@ bool UKuroMovementBPLibrary::KuroKite(float DeltaSeconds, class UCharacterMoveme
 
 	if (InOutTargetForward != nullptr)
 		*InOutTargetForward = std::move(Parms.InOutTargetForward);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroMovement.KuroMovementBPLibrary.KuroMoveByOffset
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCharacterMovementComponent*      CharMoveComp                                           (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   MoveDelta                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EMoveSlideType                          SlideType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   SlideDirection                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EMoveHitType                            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMoveHitType UKuroMovementBPLibrary::KuroMoveByOffset(float DeltaSeconds, class UCharacterMovementComponent* CharMoveComp, const struct FVector& MoveDelta, EMoveSlideType SlideType, const struct FVector& SlideDirection)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroMovementBPLibrary", "KuroMoveByOffset");
+
+	Params::KuroMovementBPLibrary_KuroMoveByOffset Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.CharMoveComp = CharMoveComp;
+	Parms.MoveDelta = std::move(MoveDelta);
+	Parms.SlideType = SlideType;
+	Parms.SlideDirection = std::move(SlideDirection);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

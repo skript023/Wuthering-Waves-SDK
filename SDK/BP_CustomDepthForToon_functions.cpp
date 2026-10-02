@@ -17,29 +17,35 @@
 namespace SDK
 {
 
-// Function BP_CustomDepthForToon.BP_CustomDepthForToon_C.DisableCustomDepthForToon
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_CustomDepthForToon.BP_CustomDepthForToon_C.ExecuteUbergraph_BP_CustomDepthForToon
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_CustomDepthForToon_C::DisableCustomDepthForToon()
+void ABP_CustomDepthForToon_C::ExecuteUbergraph_BP_CustomDepthForToon(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CustomDepthForToon_C", "DisableCustomDepthForToon");
+		Func = Class->GetFunction("BP_CustomDepthForToon_C", "ExecuteUbergraph_BP_CustomDepthForToon");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_CustomDepthForToon_C_ExecuteUbergraph_BP_CustomDepthForToon Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BP_CustomDepthForToon.BP_CustomDepthForToon_C.EnableCustomDepthForToon
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function BP_CustomDepthForToon.BP_CustomDepthForToon_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_CustomDepthForToon_C::EnableCustomDepthForToon()
+void ABP_CustomDepthForToon_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CustomDepthForToon_C", "EnableCustomDepthForToon");
+		Func = Class->GetFunction("BP_CustomDepthForToon_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -59,37 +65,31 @@ void ABP_CustomDepthForToon_C::ReceiveDestroyed()
 }
 
 
-// Function BP_CustomDepthForToon.BP_CustomDepthForToon_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_CustomDepthForToon.BP_CustomDepthForToon_C.EnableCustomDepthForToon
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_CustomDepthForToon_C::ReceiveBeginPlay()
+void ABP_CustomDepthForToon_C::EnableCustomDepthForToon()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CustomDepthForToon_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_CustomDepthForToon_C", "EnableCustomDepthForToon");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_CustomDepthForToon.BP_CustomDepthForToon_C.ExecuteUbergraph_BP_CustomDepthForToon
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_CustomDepthForToon.BP_CustomDepthForToon_C.DisableCustomDepthForToon
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_CustomDepthForToon_C::ExecuteUbergraph_BP_CustomDepthForToon(int32 EntryPoint)
+void ABP_CustomDepthForToon_C::DisableCustomDepthForToon()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CustomDepthForToon_C", "ExecuteUbergraph_BP_CustomDepthForToon");
+		Func = Class->GetFunction("BP_CustomDepthForToon_C", "DisableCustomDepthForToon");
 
-	Params::BP_CustomDepthForToon_C_ExecuteUbergraph_BP_CustomDepthForToon Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SequenceData_Generated.BP_SequenceData_Generated_C
-// 0x0090 (0x00C8 - 0x0038)
+// 0x0178 (0x01B0 - 0x0038)
 class UBP_SequenceData_Generated_C final : public UPrimaryDataAsset
 {
 public:
@@ -34,6 +34,14 @@ public:
 	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FName>                           BlendOutTags;                                      // 0x00A8(0x0010)(Edit, BlueprintVisible)
 	TArray<class FString>                         PreloadUiArray;                                    // 0x00B8(0x0010)(Edit, BlueprintVisible)
+	bool                                          IsCustomizedFinalPos;                              // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   MalePlayerBP;                                      // 0x00D0(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftClassPtr<class UClass>                   FemalePlayerBP;                                    // 0x0100(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class USkeletalMesh>           MaleMesh;                                          // 0x0130(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class USkeletalMesh>           FemaleMesh;                                        // 0x0160(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TArray<int32>                                 QteId;                                             // 0x0190(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FSoftObjectPath>                ActorRefs;                                         // 0x01A0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

@@ -18,23 +18,6 @@
 namespace SDK::Params
 {
 
-// Function BP_SingleCloud.BP_SingleCloud_C.UpdateCloudRotation
-// 0x00B0 (0x00B0 - 0x0000)
-struct BP_SingleCloud_C_UpdateCloudRotation final
-{
-public:
-	struct FVectorDouble                          CallFunc_D_GetUpVector_ReturnValue;                // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_GetRightVector_ReturnValue;             // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_GetForwardVector_ReturnValue;           // 0x0030(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_Multiply_VectorFloat_ReturnValue;       // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVectorDouble                          CallFunc_D_Cross_VectorVector_ReturnValue;         // 0x0060(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_D_MakeRotationFromAxes_ReturnValue;       // 0x0078(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc_D_Cross_VectorVector_ReturnValue_1;       // 0x0088(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               CallFunc_D_MakeRotationFromAxes_ReturnValue_1;     // 0x00A0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_SingleCloud_C_UpdateCloudRotation;
-
 // Function BP_SingleCloud.BP_SingleCloud_C.UpdateDistanceFade
 // 0x0040 (0x0040 - 0x0000)
 struct BP_SingleCloud_C_UpdateDistanceFade final
@@ -70,7 +53,7 @@ public:
 DUMPER7_ASSERTS_BP_SingleCloud_C_UpdateCameraPosition;
 
 // Function BP_SingleCloud.BP_SingleCloud_C.UpdateMaterialParams
-// 0x01A8 (0x01A8 - 0x0000)
+// 0x0248 (0x0248 - 0x0000)
 struct BP_SingleCloud_C_UpdateMaterialParams final
 {
 public:
@@ -79,31 +62,38 @@ public:
 	TMap<class FName, struct FLinearColor>        NewLocalVar_0;                                     // 0x0058(0x0050)(Edit, BlueprintVisible)
 	bool                                          ___bool_Variable;                                  // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, float>                      K2Node_MakeMap_Map;                                // 0x00B0(0x0050)(ConstParm)
-	TMap<class FName, class UTexture*>            K2Node_MakeMap_Map_1;                              // 0x0100(0x0050)()
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0150(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_151[0x7];                                      // 0x0151(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, class UTexture*>            K2Node_Select_Default;                             // 0x0158(0x0050)()
+	TMap<class FName, struct FLinearColor>        K2Node_MakeMap_Map;                                // 0x00B0(0x0050)(ConstParm)
+	TMap<class FName, float>                      K2Node_MakeMap_Map_1;                              // 0x0100(0x0050)(ConstParm)
+	TMap<class FName, float>                      K2Node_MakeMap_Map_2;                              // 0x0150(0x0050)(ConstParm)
+	TMap<class FName, class UTexture*>            K2Node_MakeMap_Map_3;                              // 0x01A0(0x0050)()
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1F1[0x7];                                      // 0x01F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, class UTexture*>            K2Node_Select_Default;                             // 0x01F8(0x0050)()
 };
 DUMPER7_ASSERTS_BP_SingleCloud_C_UpdateMaterialParams;
 
 // Function BP_SingleCloud.BP_SingleCloud_C.UserConstructionScript
-// 0x0040 (0x0040 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct BP_SingleCloud_C_UserConstructionScript final
 {
 public:
 	bool                                          bCast;                                             // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          ___bool_Variable;                                  // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          ___bool_Variable_1;                                // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FBoxSphereBounds                       CallFunc_D_GetComponentBounds_ReturnValue;         // 0x0004(0x001C)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EBP_EWorldType                                CallFunc_GetWorldType_ReturnValue;                 // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0022(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_23[0x5];                                       // 0x0023(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          ___bool_Variable_2;                                // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMaterialInstanceConstant*              K2Node_Select_Default;                             // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBP_EWorldType                                CallFunc_GetWorldType_ReturnValue;                 // 0x0030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0031(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0032(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_33[0x5];                                       // 0x0033(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceConstant*              K2Node_Select_Default_1;                           // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceConstant*              K2Node_Select_Default_2;                           // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_SingleCloud_C_UserConstructionScript;
 
@@ -169,6 +159,23 @@ public:
 	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0188(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_SingleCloud_C_ExecuteUbergraph_BP_SingleCloud;
+
+// Function BP_SingleCloud.BP_SingleCloud_C.UpdateCloudRotation
+// 0x00B0 (0x00B0 - 0x0000)
+struct BP_SingleCloud_C_UpdateCloudRotation final
+{
+public:
+	struct FVectorDouble                          CallFunc_D_GetUpVector_ReturnValue;                // 0x0000(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_GetRightVector_ReturnValue;             // 0x0018(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_GetForwardVector_ReturnValue;           // 0x0030(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_Multiply_VectorFloat_ReturnValue;       // 0x0048(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          CallFunc_D_Cross_VectorVector_ReturnValue;         // 0x0060(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_D_MakeRotationFromAxes_ReturnValue;       // 0x0078(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_D_Cross_VectorVector_ReturnValue_1;       // 0x0088(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               CallFunc_D_MakeRotationFromAxes_ReturnValue_1;     // 0x00A0(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_SingleCloud_C_UpdateCloudRotation;
 
 }
 

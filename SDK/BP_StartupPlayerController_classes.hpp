@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_StartupPlayerController.BP_StartupPlayerController_C
-// 0x0000 (0x0788 - 0x0788)
+// 0x0000 (0x0798 - 0x0798)
 class ABP_StartupPlayerController_C final : public ATsStartupPlayerController_C
 {
 public:

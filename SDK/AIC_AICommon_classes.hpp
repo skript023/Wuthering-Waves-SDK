@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SAiConditions_structs.hpp"
 #include "Engine_structs.hpp"
-#include "TsAiController_classes.hpp"
-#include "CoreUObject_structs.hpp"
+#include "SAiConditions_structs.hpp"
 #include "EAiLevelVarSource_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "TsAiController_classes.hpp"
 #include "ECharacterState_structs.hpp"
 
 
@@ -52,27 +52,27 @@ public:
 
 public:
 	void ExecuteUbergraph_AIC_AICommon(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
+	void OnStart();
+	void 通用行为树条件(bool bContent);
 	void 保底传送回调(bool bContent);
 	void 区域监听事件();
 	void 入战监听(bool bContent);
+	void 默认感知保底事件(bool bContent);
 	void AicTriggerEvent(class FName Name_0);
 	void 仇恨外受击(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num);
 	void 感知监听(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num);
 	void 仇恨监听(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num);
 	void 通用战斗AI(bool bContent);
-	void 默认感知保底事件(bool bContent);
-	void 通用行为树条件(bool bContent);
-	void OnStart();
-	void ReceiveTick(float DeltaSeconds);
 	void 状态切换函数(class UObject* 角色, ECharacterState 老状态, ECharacterState 新状态, bool 主控, class UObject** 角色返回, ECharacterState* 老状态返回, ECharacterState* 新状态返回, bool* 主控返回);
 	void 感知到仇恨目标();
 	void 状态切换时(ECharacterState oldState, ECharacterState newState, bool isAutonomousProxy);
 	void 获取控制权时();
 	void 设置区域监听对象();
-	void 区域(const TDelegate<void()>& 换人监听);
 	void 区域监听事件函数(const class FString& 区域名称, const TDelegate<void(bool IsInRegion, class AActor* Target)>& 事件);
 	void 角色怪射线检测(bool* 可以钩锁);
 	void 通用关卡变量切换监听(EAiLevelVarSource 关卡变量监听类型, const class FString& 关卡变量名称, int32 关卡副本行为树id, const TDelegate<void(bool bContent)>& 事件);
+	void 避开卡死的可集成函数();
 
 public:
 	static class UClass* StaticClass()

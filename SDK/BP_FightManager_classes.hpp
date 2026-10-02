@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ECamp_structs.hpp"
 #include "Engine_structs.hpp"
 #include "BP_ManagerBase_classes.hpp"
-#include "ECamp_structs.hpp"
 #include "ERelation_structs.hpp"
 
 
@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_FightManager.BP_FightManager_C
-// 0x01A8 (0x01F0 - 0x0048)
+// 0x01F8 (0x0240 - 0x0048)
 class UBP_FightManager_C final : public UBP_ManagerBase_C
 {
 public:
@@ -38,27 +38,31 @@ public:
 	TArray<class UObject*>                        怪物临时BPAI数组;                                  // 0x0108(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	bool                                          场景加载完成;                                      // 0x0118(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_119[0x7];                                      // 0x0119(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, class ATsBaseCharacter_C*> Debug的对象集合;                                  // 0x0120(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class FString, class ABaseCharacter*>    Debug的对象集合;                                   // 0x0120(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMulticastInlineDelegate<void(const class FString& Option)> 添加Debug的FightAttribute;           // 0x0170(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMulticastInlineDelegate<void(const class FString& Option)> 删除Debug的FightAttribute;           // 0x0180(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 	TMap<int32, int32>                            站位怪物数量;                                      // 0x0190(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	class UDataTable*                             受击类型覆盖表;                                    // 0x01E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         攻击位数量;                                        // 0x01E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1EC[0x4];                                      // 0x01EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, int32>                    DebugEntityMap;                                    // 0x01F0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
-	void 查询受击类型覆盖(int32 ID, struct FSHitMapping* 受击覆盖, bool* 是否找到);
-	void 站位控制(TArray<class UObject*>& 怪物数组);
-	void 删除Debug的对象(const class ATsBaseCharacter_C*& baseChar);
-	void 添加Debug的对象(const class ATsBaseCharacter_C*& baseChar);
-	void 注册BPai(class UObject* BPAI对象);
-	void 烈度获取所有Actor();
-	void 烈度返回NPC();
-	void 阵营判断(ECamp 自身阵营, ECamp 目标阵营, ERelation* 关系, int32* 关系整数);
-	void 初始化(class UBP_MainGameInstance_C* 游戏实例_0);
-	void 战斗初始化();
-	void Tick(float DeltaSeconds);
-	void 当阵容加载完成时();
 	void ExecuteUbergraph_BP_FightManager(int32 EntryPoint);
+	void 当阵容加载完成时();
+	void Tick(float DeltaSeconds);
+	void 战斗初始化();
+	void 初始化(class UBP_MainGameInstance_C* 游戏实例_0);
+	void 阵营判断(ECamp 自身阵营, ECamp 目标阵营, ERelation* 关系, int32* 关系整数);
+	void 烈度返回NPC();
+	void 烈度获取所有Actor();
+	void 注册BPai(class UObject* BPAI对象);
+	void 添加Debug的对象(const class ABaseCharacter*& baseChar);
+	void 删除Debug的对象(const class ABaseCharacter*& baseChar);
+	void 站位控制(TArray<class UObject*>& 怪物数组);
+	void 查询受击类型覆盖(int32 ID, struct FSHitMapping* 受击覆盖, bool* 是否找到);
+	void AddDebugEntity(int32 EntityId, const class FString& ObjectName);
+	void RemoveDebugEntity(int32 EntityId, const class FString& ObjectName);
 
 public:
 	static class UClass* StaticClass()

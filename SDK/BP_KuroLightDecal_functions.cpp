@@ -17,6 +17,20 @@
 namespace SDK
 {
 
+// Function BP_KuroLightDecal.BP_KuroLightDecal_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroLightDecal_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroLightDecal_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_KuroLightDecal.BP_KuroLightDecal_C.updateMaterialParameters
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -31,17 +45,23 @@ void ABP_KuroLightDecal_C::updateMaterialParameters()
 }
 
 
-// Function BP_KuroLightDecal.BP_KuroLightDecal_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroLightDecal.BP_KuroLightDecal_C.GetPlacementSortOrder
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_KuroLightDecal_C::UserConstructionScript()
+int32 ABP_KuroLightDecal_C::GetPlacementSortOrder() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroLightDecal_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_KuroLightDecal_C", "GetPlacementSortOrder");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_KuroLightDecal_C_GetPlacementSortOrder Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 }

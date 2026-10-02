@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Common_limitmove.GA_Common_limitmove_C
-// 0x0008 (0x0590 - 0x0588)
+// 0x0008 (0x05D8 - 0x05D0)
 class UGA_Common_limitmove_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Common_limitmove_C;              // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Common_limitmove_C;              // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_GA_Common_limitmove(int32 EntryPoint);

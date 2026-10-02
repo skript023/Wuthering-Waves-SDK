@@ -16,17 +16,6 @@
 namespace SDK::Params
 {
 
-// Function BP_SuperFarFog.BP_SuperFarFog_C.UserConstructionScript
-// 0x0003 (0x0003 - 0x0000)
-struct BP_SuperFarFog_C_UserConstructionScript final
-{
-public:
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue_1;         // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_SuperFarFog_C_UserConstructionScript;
-
 // Function BP_SuperFarFog.BP_SuperFarFog_C.ExecuteUbergraph_BP_SuperFarFog
 // 0x0020 (0x0020 - 0x0000)
 struct BP_SuperFarFog_C_ExecuteUbergraph_BP_SuperFarFog final
@@ -44,6 +33,17 @@ public:
 	float                                         CallFunc_SelectFloat_ReturnValue;                  // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_SuperFarFog_C_ExecuteUbergraph_BP_SuperFarFog;
+
+// Function BP_SuperFarFog.BP_SuperFarFog_C.UserConstructionScript
+// 0x0003 (0x0003 - 0x0000)
+struct BP_SuperFarFog_C_UserConstructionScript final
+{
+public:
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue_1;         // 0x0001(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0002(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_SuperFarFog_C_UserConstructionScript;
 
 }
 

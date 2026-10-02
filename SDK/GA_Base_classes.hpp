@@ -12,87 +12,87 @@
 
 #include "Engine_structs.hpp"
 #include "SSkillInfo_structs.hpp"
-#include "EPawnChannel_structs.hpp"
 #include "KuroGAS_classes.hpp"
 #include "EAimViewState_structs.hpp"
+#include "EPawnChannel_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Base.GA_Base_C
-// 0x01C0 (0x0588 - 0x03C8)
+// 0x0208 (0x05D0 - 0x03C8)
 class UGA_Base_C : public UBaseGameplayAbility
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FSSkillInfo                            当前技能数据;                                      // 0x03D0(0x01A0)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	class FString                                 当前技能数据名;                                    // 0x0570(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	int32                                         SkillId;                                           // 0x0580(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSkillInfo                            当前技能数据;                                      // 0x03D0(0x01E8)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	class FString                                 当前技能数据名;                                    // 0x05B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	int32                                         SkillId;                                           // 0x05C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void 移除召唤物(int32 召唤者ID, int32 移除召唤物ID);
-	void 根据子弹实体ID销毁子弹(int32 子弹ID, bool isSummonChildBullet);
-	void 获取角色ID(class ATsBaseCharacter_C* 目标, float* RoleID);
-	void 获取游戏事件管理器(class UBP_EventManager_C** 事件管理器);
-	void 获取黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, class FString* String);
-	void 设置黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, const class FString& 值);
-	void 子弹冻结(const class FString& 子弹Id, float 冻结时间);
-	void 获取当前GA的技能数据名(class FString* 当前技能数据名_0);
-	void 获取当前操作角色Actor(class ATsBaseCharacter_C** 当前角色);
-	void 设置黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, const struct FVectorDouble& 值);
-	void 获取黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, struct FVectorDouble* 值);
-	void 设置黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值);
-	void 获取黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值);
-	void 查询特定子弹数量(class FName 子弹名字, int32* 子弹数量);
-	void 获取当前技能攻速(float* SpeedRatio);
-	void 通过ID获取对象Buff层数(int64 buffId, bool enforceOnGoingCheck, int32* 层数);
-	void 施法者移除标签(const struct FGameplayTag& tag);
-	void 施法者添加标签(const struct FGameplayTag& Tag);
-	int32 创建并播放特效(const class UObject* DA文件名, const struct FTransformDouble& transform, bool AttachToCharacter);
-	float 获取两者距离(class AActor* 目标A, class AActor* 目标B);
-	void 发送事件(class AActor* 发送目标, const struct FGameplayTag& 事件Tag);
-	void 结束异步任务(class UGameplayTask* 任务, bool* 有效);
-	void 设置当前技能打断等级(int32 打断等级);
-	void 获取地面坐标点(const struct FVectorDouble& 指定点, float 深度, struct FVectorDouble* 地面坐标, bool* 是否存在);
-	void 获取目标Tag层数(class ATsBaseCharacter_C* 目标, const struct FGameplayTag& Tag, int32* 层数);
-	void 销毁特定子弹(class FName 子弹名字, bool 是否召唤子子弹);
-	void 面向目标(class ATsBaseCharacter_C* 目标, class AActor* 面向目标_0);
-	void 设置技能目标(class AActor* SkillTarget);
-	void 获取黑板指定Key值关联对象(class ATsBaseCharacter_C* 角色, const class FString& key, class ATsBaseCharacter_C** 对象, bool* 是否找到对象);
-	void 根据实体ID获取对象(int32 实体ID, class ATsBaseCharacter_C** 对象, bool* 是否找到对象);
-	void 获取实体ID(class ATsBaseCharacter_C* 对象, int32* 实体ID);
-	void 设置黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64 值);
-	void 获取黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64* 值);
-	void 设置黑板Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值);
-	void 获取黑板_Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值);
-	void 是否联网(bool* 联网);
-	void 召唤(int32 配置表ID, const struct FTransformDouble& 出生位置, bool* 是否成功, class ATsBaseCharacter_C** 召唤物, int32* 实体ID);
-	void 使用技能(class ATsBaseCharacter_C* 释放者, class FName 技能ID, class AActor* 技能目标, class FName Socket, bool* 是否成功释放);
-	void 创建子弹(class ATsBaseCharacter_C* 施法者, const class FString& 子弹ID, const struct FTransformDouble& 初始变换, const struct FVectorDouble& 目标点, int32* 子弹);
-	void 设置材质效果(class ATsBaseCharacter_C* 设置对象, class UPD_CharacterControllerData_C* 材质配置, int32* Handle);
-	void 通过_ID移除目标Buff(int64 BuffId, int32 移除层数, class ATsBaseCharacter_C* 目标);
-	void 获取Current属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值);
-	void 获取Base属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值);
-	void 通过_ID给对象添加Buff(class ATsBaseCharacter_C* Buff对象, int64 BuffId, int32 Buff层数);
-	void 通过Tag移除自身Buff(const struct FGameplayTag& tag);
-	void 设置通道的碰撞响应(class UPrimitiveComponent* 目标, ECollisionChannel Channel, ECollisionResponse NewResponse);
-	void 设置强制速度(const struct FVectorDouble& 速度);
-	void 获取技能目标(class ATsBaseCharacter_C* 目标, class AActor** 技能目标);
-	void 是否拥有任意标签(class ATsBaseCharacter_C* 目标, const struct FGameplayTagContainer& 标签, bool* 是否存在);
-	void 获取AbilitySystemComponent(class UBaseAbilitySystemComponent** AbilitySystemComponent);
-	void 获取技能目标距离(bool 平面2D, float* 距离);
-	void 获取技能标签(TArray<struct FGameplayTag>* 技能标签);
-	void 获取技能所有动画(TArray<class UAnimMontage*>* 技能动画数组);
-	void 获取技能动画(int32 编号, class UAnimMontage** 动画);
-	void 获取当前技能配置(struct FSSkillInfo* 当前技能数据_0);
-	void 获取当前技能配置Id(class FString* 当前技能数据名_0);
-	void 获取施法单位EntityId(int32* EntityId);
-	void 获取施法载具(class ATsBaseVehicle_C** 施法载具);
-	void 获取施法者(class ATsBaseCharacter_C** 施法者);
-	void K2_ActivateAbility();
-	void K2_OnEndAbility(bool bWasCancelled);
 	void ExecuteUbergraph_GA_Base(int32 EntryPoint);
+	void K2_OnEndAbility(bool bWasCancelled);
+	void K2_ActivateAbility();
+	void 获取施法者(class ATsBaseCharacter_C** 施法者);
+	void 获取施法载具(class ATsBaseVehicle_C** 施法载具);
+	void 获取施法单位EntityId(int32* EntityId);
+	void 获取当前技能配置Id(class FString* 当前技能数据名_0);
+	void 获取当前技能配置(struct FSSkillInfo* 当前技能数据_0);
+	void 获取技能动画(int32 编号, class UAnimMontage** 动画);
+	void 获取技能所有动画(TArray<class UAnimMontage*>* 技能动画数组);
+	void 获取技能标签(TArray<struct FGameplayTag>* 技能标签);
+	void 获取AbilitySystemComponent(class UBaseAbilitySystemComponent** AbilitySystemComponent);
+	void 获取技能目标(class ATsBaseCharacter_C* 目标, class AActor** 技能目标);
+	void 获取技能目标距离(bool 平面2D, float* 距离);
+	void 是否拥有任意标签(class ATsBaseCharacter_C* 目标, const struct FGameplayTagContainer& 标签, bool* 是否存在);
+	void 设置强制速度(const struct FVectorDouble& 速度);
+	void 设置通道的碰撞响应(class UPrimitiveComponent* 目标, ECollisionChannel Channel, ECollisionResponse NewResponse);
+	void 通过Tag移除自身Buff(const struct FGameplayTag& tag);
+	void 通过_ID给对象添加Buff(class ATsBaseCharacter_C* Buff对象, int64 BuffId, int32 Buff层数);
+	void 获取Base属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值);
+	void 获取Current属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值);
+	void 通过_ID移除目标Buff(int64 BuffId, int32 移除层数, class ATsBaseCharacter_C* 目标);
+	void 设置材质效果(class ATsBaseCharacter_C* 设置对象, class UPD_CharacterControllerData_C* 材质配置, int32* Handle);
+	void 创建子弹(class ATsBaseCharacter_C* 施法者, const class FString& 子弹ID, const struct FTransformDouble& 初始变换, const struct FVectorDouble& 目标点, int32* 子弹);
+	void 使用技能(class ATsBaseCharacter_C* 释放者, class FName 技能ID, class AActor* 技能目标, class FName Socket, bool* 是否成功释放);
+	void 召唤(int32 配置表ID, const struct FTransformDouble& 出生位置, bool* 是否成功, class ATsBaseCharacter_C** 召唤物, int32* 实体ID);
+	void 是否联网(bool* 联网);
+	void 获取黑板_Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值);
+	void 设置黑板Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值);
+	void 获取黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64* 值);
+	void 设置黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64 值);
+	void 获取实体ID(class ATsBaseCharacter_C* 对象, int32* 实体ID);
+	void 根据实体ID获取对象(int32 实体ID, class ATsBaseCharacter_C** 对象, bool* 是否找到对象);
+	void 获取黑板指定Key值关联对象(class ATsBaseCharacter_C* 角色, const class FString& key, class ATsBaseCharacter_C** 对象, bool* 是否找到对象);
+	void 设置技能目标(class AActor* SkillTarget);
+	void 面向目标(class ATsBaseCharacter_C* 目标, class AActor* 面向目标_0);
+	void 销毁特定子弹(class FName 子弹名字, bool 是否召唤子子弹);
+	void 获取目标Tag层数(class ATsBaseCharacter_C* 目标, const struct FGameplayTag& Tag, int32* 层数);
+	void 获取地面坐标点(const struct FVectorDouble& 指定点, float 深度, struct FVectorDouble* 地面坐标, bool* 是否存在);
+	void 设置当前技能打断等级(int32 打断等级);
+	void 结束异步任务(class UGameplayTask* 任务, bool* 有效);
+	void 发送事件(class AActor* 发送目标, const struct FGameplayTag& 事件Tag);
+	float 获取两者距离(class AActor* 目标A, class AActor* 目标B);
+	int32 创建并播放特效(const class UObject* DA文件名, const struct FTransformDouble& transform, bool AttachToCharacter);
+	void 施法者添加标签(const struct FGameplayTag& Tag);
+	void 施法者移除标签(const struct FGameplayTag& tag);
+	void 通过ID获取对象Buff层数(int64 buffId, bool enforceOnGoingCheck, int32* 层数);
+	void 获取当前技能攻速(float* SpeedRatio);
+	void 查询特定子弹数量(class FName 子弹名字, int32* 子弹数量);
+	void 获取黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值);
+	void 设置黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值);
+	void 获取黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, struct FVectorDouble* 值);
+	void 设置黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, const struct FVectorDouble& 值);
+	void 获取当前操作角色Actor(class ATsBaseCharacter_C** 当前角色);
+	void 获取当前GA的技能数据名(class FString* 当前技能数据名_0);
+	void 子弹冻结(const class FString& 子弹Id, float 冻结时间);
+	void 设置黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, const class FString& 值);
+	void 获取黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, class FString* String);
+	void 获取游戏事件管理器(class UBP_EventManager_C** 事件管理器);
+	void 获取角色ID(class ATsBaseCharacter_C* 目标, float* RoleID);
+	void 根据子弹实体ID销毁子弹(int32 子弹ID, bool isSummonChildBullet);
+	void 移除召唤物(int32 召唤者ID, int32 移除召唤物ID);
 	void 修改当前技能打断等级(float priority);
 	void 设置接收同打断等级打断(bool skillAcceptInput);
 	void 通过角度获取目标附近的合法点(class AActor* 目标Actor, float 旋转, float 仰角, float 长度, struct FVectorDouble* 合法点, bool* 碰撞挤压);

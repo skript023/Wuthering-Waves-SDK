@@ -10,69 +10,100 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "ENpcSetupType_structs.hpp"
 #include "SNpcHookPart_structs.hpp"
-#include "Engine_classes.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "SNpcChildPart_structs.hpp"
+#include "ENpcSetupType_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass PD_NpcSetupData.PD_NpcSetupData_C
-// 0x01A0 (0x01D8 - 0x0038)
-class UPD_NpcSetupData_C final : public UPrimaryDataAsset
+// 0x02C0 (0x02F8 - 0x0038)
+class UPD_NpcSetupData_C final : public UKuroNpcDataAsset
 {
 public:
-	class USkeletalMesh*                          Skel_Hair;                                         // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FColor                                 Skel_Hair_Color;                                   // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMesh*                          Skel_Face;                                         // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMesh*                          Skel_BodyUp;                                       // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FColor                                 Skel_BodyUp_Color;                                 // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMesh*                          Skel_BodyDown;                                     // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FColor                                 Skel_BodyDown_Color;                               // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMesh*                          Skel_Body;                                         // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bDyeColor;                                         // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           SkinDyeColor;                                      // 0x007C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ENpcSetupType                                 NpcSetupType;                                      // 0x008C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class USkeletalMesh*                          Skel_Main;                                         // 0x0090(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FSNpcHookPart>                  Hook_Arm;                                          // 0x0098(0x0010)(Edit, BlueprintVisible)
-	class FName                                   Hook_Arm_Socket;                                   // 0x00A8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSNpcHookPart>                  Hook_Waist;                                        // 0x00B8(0x0010)(Edit, BlueprintVisible)
-	class FName                                   Hook_Waist_Socket;                                 // 0x00C8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSNpcHookPart>                  Hook_Back;                                         // 0x00D8(0x0010)(Edit, BlueprintVisible)
-	class FName                                   Hook_Back_Socket;                                  // 0x00E8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F4[0x4];                                       // 0x00F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSNpcHookPart>                  Hook_Weapon;                                       // 0x00F8(0x0010)(Edit, BlueprintVisible)
-	class FName                                   Hook_Weapon_Socket;                                // 0x0108(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSNpcHookPart>                  Hook_Leg;                                          // 0x0118(0x0010)(Edit, BlueprintVisible)
-	class FName                                   Hook_Leg_Socket;                                   // 0x0128(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FColor                                 Body_Dyecolor01;                                   // 0x0134(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FColor                                 Body_Dyecolor02;                                   // 0x0138(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13C[0x4];                                      // 0x013C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSNpcHookPart>                  Hook_Head;                                         // 0x0140(0x0010)(Edit, BlueprintVisible)
-	class FName                                   Hook_Head_Socket;                                  // 0x0150(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_15C[0x4];                                      // 0x015C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstance*                      Hair_Mat;                                          // 0x0160(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstance*                      Face_Mat;                                          // 0x0168(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0038(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USkeletalMesh*                          Skel_Hair;                                         // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 Skel_Hair_Color;                                   // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMesh*                          Skel_Face;                                         // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMesh*                          Skel_BodyUp;                                       // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 Skel_BodyUp_Color;                                 // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMesh*                          Skel_BodyDown;                                     // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 Skel_BodyDown_Color;                               // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMesh*                          Skel_Body;                                         // 0x0078(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bDyeColor;                                         // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_81[0x3];                                       // 0x0081(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           SkinDyeColor;                                      // 0x0084(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ENpcSetupType                                 NpcSetupType;                                      // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class USkeletalMesh*                          Skel_Main;                                         // 0x0098(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FSNpcHookPart>                  Hook_Arm;                                          // 0x00A0(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Arm_Socket;                                   // 0x00B0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Waist;                                        // 0x00C0(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Waist_Socket;                                 // 0x00D0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DC[0x4];                                       // 0x00DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Back;                                         // 0x00E0(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Back_Socket;                                  // 0x00F0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Weapon;                                       // 0x0100(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Weapon_Socket;                                // 0x0110(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Leg;                                          // 0x0120(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Leg_Socket;                                   // 0x0130(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 Body_Dyecolor01;                                   // 0x013C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 Body_Dyecolor02;                                   // 0x0140(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_144[0x4];                                      // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Head;                                         // 0x0148(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Head_Socket;                                  // 0x0158(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_164[0x4];                                      // 0x0164(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstance*                      Hair_Mat;                                          // 0x0168(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      Skel_BodyUp_Mat;                                   // 0x0170(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      Skel_BodyDown_Mat;                                 // 0x0178(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInstance*                      Skel_Body_Mat;                                     // 0x0180(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class UMaterialInstance*>              Skel_Body_Mat_Extra;                               // 0x0188(0x0010)(Edit, BlueprintVisible)
 	TArray<class UMaterialInstance*>              Hair_Mat_Extra;                                    // 0x0198(0x0010)(Edit, BlueprintVisible)
-	TArray<class UMaterialInstance*>              Face_Mat_Extra;                                    // 0x01A8(0x0010)(Edit, BlueprintVisible)
-	TArray<class UMaterialInstance*>              Skel_BodyUp_Mat_Extra;                             // 0x01B8(0x0010)(Edit, BlueprintVisible)
-	TArray<class UMaterialInstance*>              Skel_BodyDown_Mat_Extra;                           // 0x01C8(0x0010)(Edit, BlueprintVisible)
+	class UMaterialInstance*                      Face_Mat;                                          // 0x01A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UMaterialInstance*>              Face_Mat_Extra;                                    // 0x01B0(0x0010)(Edit, BlueprintVisible)
+	TArray<class UMaterialInstance*>              Skel_BodyUp_Mat_Extra;                             // 0x01C0(0x0010)(Edit, BlueprintVisible)
+	TArray<class UMaterialInstance*>              Skel_BodyDown_Mat_Extra;                           // 0x01D0(0x0010)(Edit, BlueprintVisible)
+	TArray<class UMaterialInterface*>             ReferencedOulineMaterials;                         // 0x01E0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, AdvancedDisplay)
+	TArray<struct FSNpcChildPart>                 ChildParts;                                        // 0x01F0(0x0010)(Edit, BlueprintVisible)
+	TArray<class FName>                           HideParentBoneNames;                               // 0x0200(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FSNpcHookPart>                  Hook_Arm_L;                                        // 0x0210(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Arm_L_Socket;                                 // 0x0220(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_22C[0x4];                                      // 0x022C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Fore;                                         // 0x0230(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Fore_Socket;                                  // 0x0240(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24C[0x4];                                      // 0x024C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Fore_L;                                       // 0x0250(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Fore_L_Socket;                                // 0x0260(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_26C[0x4];                                      // 0x026C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Leg_L;                                        // 0x0270(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Leg_L_Socket;                                 // 0x0280(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_28C[0x4];                                      // 0x028C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Calf;                                         // 0x0290(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Calf_Socket;                                  // 0x02A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSNpcHookPart>                  Hook_Calf_L;                                       // 0x02B0(0x0010)(Edit, BlueprintVisible)
+	class FName                                   Hook_Calf_L_Socket;                                // 0x02C0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 Skel_Face_Skin_Color;                              // 0x02CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 Skel_Face_SkinSubsurface_Color;                    // 0x02D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bOverrideSkin;                                     // 0x02D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2D5[0x3];                                      // 0x02D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           SkinColor;                                         // 0x02D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           SkinSubsurfaceColor;                               // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void ExecuteUbergraph_PD_NpcSetupData(int32 EntryPoint);
+	void OnPreSave();
 	void IsEmpty(bool* Result);
 	void HasSkelMain(bool* Result);
 	void HasSkelHair(bool* Result);
@@ -82,6 +113,12 @@ public:
 	void HasSkelBody(bool* Result);
 	void GetAllParts(TArray<class USkeletalMesh*>* OutParts);
 	void GetAllPartMaterials(TArray<class UMaterialInstance*>* Results);
+	void Set_Override();
+	void Set_Single_Override(class USkeletalMesh*& skel_mesh, class UMaterialInstance*& mat, TArray<class UMaterialInstance*>& mat_extra);
+	void FixNPCOutline();
+	void GetOutlineReference(bool bSeq, class USkeletalMesh* Skel, class UMaterialInterface* mat, TArray<class UMaterialInterface*>& mat_extra, TArray<class UMaterialInterface*>& OutOLMat);
+	void SetOLReference();
+	void IsSeq(bool* bSeq);
 
 public:
 	static class UClass* StaticClass()

@@ -50,13 +50,13 @@ public:
 	struct FRotator                               Add_Bip001RFoot;                                   // 0x01B8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ProcessEye(const struct FVector& EyeLookAt, float AngleScale);
-	void SetAnimDataFloatByOwner(TArray<struct FNamedCurveValue>& InCurves);
 	void SetAnimDataVectorByOwner(TMap<class FName, struct FVector>& VectorMap);
+	void SetAnimDataFloatByOwner(TArray<struct FNamedCurveValue>& InCurves);
+	void ProcessEye(const struct FVector& EyeLookAt, float AngleScale);
 
-	class FName GetBindingName() const;
-	void GetCurves(TArray<struct FNamedCurveValue>* OutValues) const;
 	float GetCurveValue(class FName CurveName) const;
+	void GetCurves(TArray<struct FNamedCurveValue>* OutValues) const;
+	class FName GetBindingName() const;
 
 public:
 	static class UClass* StaticClass()

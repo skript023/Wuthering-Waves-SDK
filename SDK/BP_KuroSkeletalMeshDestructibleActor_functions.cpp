@@ -11,35 +11,62 @@
 #include "Basic.hpp"
 
 #include "BP_KuroSkeletalMeshDestructibleActor_classes.hpp"
-#include "BP_KuroSkeletalMeshDestructibleActor_parameters.hpp"
 
 
 namespace SDK
 {
 
-// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.可视化物理破碎表现参数
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.编辑时预览破碎效果
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_KuroSkeletalMeshDestructibleActor_C::可视化物理破碎表现参数()
+void ABP_KuroSkeletalMeshDestructibleActor_C::编辑时预览破碎效果()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "可视化物理破碎表现参数");
+		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "编辑时预览破碎效果");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.Apply Custom Primitive Data
+// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.显示或隐藏代理静态模型
 // (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_KuroSkeletalMeshDestructibleActor_C::Apply_Custom_Primitive_Data()
+void ABP_KuroSkeletalMeshDestructibleActor_C::显示或隐藏代理静态模型()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "Apply Custom Primitive Data");
+		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "显示或隐藏代理静态模型");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.显示或隐藏所有的物理模拟碎块
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroSkeletalMeshDestructibleActor_C::显示或隐藏所有的物理模拟碎块()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "显示或隐藏所有的物理模拟碎块");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C.显示或隐藏破碎时渲染模型
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroSkeletalMeshDestructibleActor_C::显示或隐藏破碎时渲染模型()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroSkeletalMeshDestructibleActor_C", "显示或隐藏破碎时渲染模型");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

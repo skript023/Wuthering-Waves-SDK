@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ECommonQteInputAction.ECommonQteInputAction
-// NumValues: 0x0026
+// NumValues: 0x002B
 enum class ECommonQteInputAction : uint8
 {
 	NewEnumerator15                          = 0,
@@ -55,7 +55,12 @@ enum class ECommonQteInputAction : uint8
 	NewEnumerator34                          = 34,
 	NewEnumerator35                          = 35,
 	NewEnumerator36                          = 36,
-	ECommonQteInputAction_MAX                = 37,
+	NewEnumerator37                          = 37,
+	NewEnumerator38                          = 38,
+	NewEnumerator39                          = 39,
+	NewEnumerator40                          = 40,
+	NewEnumerator41                          = 41,
+	ECommonQteInputAction_MAX                = 42,
 };
 
 }

@@ -10,28 +10,28 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTaskBattleWander.TsTaskBattleWander_C
-// 0x0018 (0x00D0 - 0x00B8)
+// 0x0018 (0x00D8 - 0x00C0)
 class UTsTaskBattleWander_C final : public UTsTaskAbortImmediatelyBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskBattleWander_C;               // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	int32                                         MoveState;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         AllyDetect;                                        // 0x00C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          WalkOff;                                           // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskBattleWander_C;               // 0x00C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	int32                                         MoveState;                                         // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         AllyDetect;                                        // 0x00CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          WalkOff;                                           // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 
 public:
-	void InitTsVariables();
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 	void ExecuteUbergraph_TsTaskBattleWander(int32 EntryPoint);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void InitTsVariables();
 
 public:
 	static class UClass* StaticClass()

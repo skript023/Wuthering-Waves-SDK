@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateSceneInteract.TsAnimNotifyStateSceneInteract_C
-// 0x0048 (0x0090 - 0x0048)
-class UTsAnimNotifyStateSceneInteract_C final : public UKuroAnimNotifyState
+// 0x0048 (0x00A0 - 0x0058)
+class UTsAnimNotifyStateSceneInteract_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	class FName                                   SocketName;                                        // 0x0048(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UBP_SceneBattleInteract_C> DataAssetRef;                                    // 0x0058(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	int32                                         QualityRequire;                                    // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IgnoreCommonWeapon;                                // 0x008C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          ShieldWaterMoveEffect;                             // 0x008D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class FName                                   SocketName;                                        // 0x0058(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UBP_SceneBattleInteract_C> DataAssetRef;                                    // 0x0068(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	int32                                         QualityRequire;                                    // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IgnoreCommonWeapon;                                // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ShieldWaterMoveEffect;                             // 0x009D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

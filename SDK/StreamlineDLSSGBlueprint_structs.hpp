@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // Enum StreamlineDLSSGBlueprint.EStreamlineDLSSGMode
-// NumValues: 0x0006
+// NumValues: 0x0008
 enum class EStreamlineDLSSGMode : uint8
 {
 	Off                                      = 0,
@@ -23,6 +23,8 @@ enum class EStreamlineDLSSGMode : uint8
 	On2X                                     = 17,
 	On3X                                     = 23,
 	On4X                                     = 31,
+	On5X                                     = 37,
+	On6X                                     = 59,
 	EStreamlineDLSSGMode_MAX                 = 252,
 };
 

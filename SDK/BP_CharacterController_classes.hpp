@@ -18,15 +18,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CharacterController.BP_CharacterController_C
-// 0x0020 (0x07B0 - 0x0790)
+// 0x0020 (0x07C0 - 0x07A0)
 class ABP_CharacterController_C final : public ATsCharacterController_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CharacterController_C;           // 0x0790(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     当前操作角色;                                      // 0x0798(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          GmIsOpen;                                          // 0x07A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7A1[0x7];                                      // 0x07A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBP_KuroCheatManager_C*                 KuroCheatManager;                                  // 0x07A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_CharacterController_C;           // 0x07A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     当前操作角色;                                      // 0x07A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          GmIsOpen;                                          // 0x07B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_7B1[0x7];                                      // 0x07B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBP_KuroCheatManager_C*                 KuroCheatManager;                                  // 0x07B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ReceiveUnPossess(class APawn* UnpossessedPawn);

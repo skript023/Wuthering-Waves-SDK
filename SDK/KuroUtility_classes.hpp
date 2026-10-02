@@ -11,9 +11,10 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_classes.hpp"
-#include "KuroUtility_structs.hpp"
+#include "KuroNetwork_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroUtility_structs.hpp"
 
 
 namespace SDK
@@ -46,6 +47,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAsyncLoadState;
+
+// Class KuroUtility.GameplayTagsManagerLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UGameplayTagsManagerLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class FString GetOriginalTag(const class FName& TagName);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameplayTagsManagerLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameplayTagsManagerLibrary")
+	}
+	static class UGameplayTagsManagerLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameplayTagsManagerLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UGameplayTagsManagerLibrary;
 
 // Class KuroUtility.HoldPreloadObject
 // 0x0060 (0x0090 - 0x0030)
@@ -151,11 +175,41 @@ public:
 };
 DUMPER7_ASSERTS_UKuroActorEventBinder;
 
+// Class KuroUtility.KuroActorLevelVolume
+// 0x00C8 (0x03B0 - 0x02E8)
+class AKuroActorLevelVolume final : public AVolume
+{
+public:
+	class FName                                   VolumeId;                                          // 0x02E8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 TAPDUrl;                                           // 0x02F8(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TSet<class FString>                           ExcludeActorType;                                  // 0x0308(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TSet<class FString>                           ExcludeActorName;                                  // 0x0358(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	EActorPartitionVolumeType                     Type;                                              // 0x03A8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3A9[0x7];                                      // 0x03A9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroActorLevelVolume")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroActorLevelVolume")
+	}
+	static class AKuroActorLevelVolume* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroActorLevelVolume>();
+	}
+};
+DUMPER7_ASSERTS_AKuroActorLevelVolume;
+
 // Class KuroUtility.KuroActorManager
 // 0x0000 (0x0030 - 0x0030)
 class UKuroActorManager final : public UBlueprintFunctionLibrary
 {
 public:
+	static int32 CalcUObjectMemory(class UObject* Object, bool bIsGetDepends);
 	static void Clear();
 	static bool ClearAcquiredComponents(class AActor* Actor);
 	static class AActor* D_SpawnActor(const class UObject* WorldContextObject, const TSubclassOf<class AActor> ActorClass, const struct FTransformDouble& SpawnTransform, ESpawnActorCollisionHandlingMethod CollisionHandlingOverride, class AActor* Owner, class APawn* Instigator, bool bAsPoolActor);
@@ -192,15 +246,18 @@ public:
 DUMPER7_ASSERTS_UKuroActorManager;
 
 // Class KuroUtility.KuroActorPartitionVolume
-// 0x0068 (0x0350 - 0x02E8)
+// 0x00D0 (0x03B8 - 0x02E8)
 class AKuroActorPartitionVolume final : public AVolume
 {
 public:
 	class FName                                   VolumeId;                                          // 0x02E8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EActorPartitionVolumeType                     Type;                                              // 0x02F4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2F5[0x3];                                      // 0x02F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class FString>                           ExcludeActorType;                                  // 0x02F8(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_348[0x8];                                      // 0x0348(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 BotURL;                                            // 0x02F8(0x0010)(Edit, ZeroConstructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EActorPartitionVolumeType                     Type;                                              // 0x0308(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_309[0x7];                                      // 0x0309(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class FString>                           ExcludeActorType;                                  // 0x0310(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	TSet<class FString>                           ExcludeActorName;                                  // 0x0360(0x0050)(Edit, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3B0[0x8];                                      // 0x03B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -226,6 +283,19 @@ public:
 	static bool AddApplicationLifetimeDelegate(const TDelegate<void(int32 Type)>& InDelegate);
 	static bool AddEditorPreEndPIEDelegate(const TDelegate<void(bool bSimulateInEditor)>& InDelegate);
 	static bool AddWindowActivationDelegate(const TDelegate<void(bool Activated)>& InDelegate);
+	static void ExitWithCode(bool bForceExit, const class FString& Reason, int32 ExitCode);
+	static void ExitWithReason(bool bForceExit, const class FString& Reason);
+	static class FString GetAppReleaseType();
+	static const class FString GetCommandLine();
+	static class FString GetSessionCachedUserName();
+	static const class FString IniPlatformName();
+	static const class FString IniPlatformNameIncludeEditor();
+	static bool IsAsyncLoadingThreadEnabled();
+	static bool IsBuildShipping();
+	static bool IsBuildTest();
+	static bool IsWithEditor();
+	static bool IsWithStat();
+	static class FString ProjectContentDir();
 	static bool Test(int32 Type);
 	static bool UnBind();
 
@@ -449,6 +519,30 @@ public:
 };
 DUMPER7_ASSERTS_UKuroStateMachineConditionOr;
 
+// Class KuroUtility.KuroCameraFunctionLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroCameraFunctionLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static void DelaySetNearClipPlane(float distance);
+	static float GetNearClipPlane();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroCameraFunctionLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroCameraFunctionLibrary")
+	}
+	static class UKuroCameraFunctionLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroCameraFunctionLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroCameraFunctionLibrary;
+
 // Class KuroUtility.KuroCollectActorComponent
 // 0x0008 (0x00C8 - 0x00C0)
 class UKuroCollectActorComponent final : public UActorComponent
@@ -458,7 +552,11 @@ public:
 	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	static void GetActorsWithTag(class FName Tag, ECollectActorType Type, TArray<class AActor*>* OutResult);
 	static class AActor* GetActorWithTag(class FName Tag, ECollectActorType Type);
+
+	void AddCollectActorComponentInEditor();
+	void RemoveCollectActorComponentInEditor();
 
 public:
 	static class UClass* StaticClass()
@@ -500,10 +598,52 @@ public:
 };
 DUMPER7_ASSERTS_UKuroCompressLibrary;
 
+// Class KuroUtility.KuroCycleCounterLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroCycleCounterLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static int32 CreateCycleCounter(const class FName& StatName);
+	static void DestroyEnvironment();
+	static void InitializeEnvironment();
+	static void StartCycleCounter(int32 StatIndex);
+	static void StartCycleCounterByName(const class FName& StatName);
+	static void StopCycleCounter();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroCycleCounterLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroCycleCounterLibrary")
+	}
+	static class UKuroCycleCounterLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroCycleCounterLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroCycleCounterLibrary;
+
 // Class KuroUtility.KuroDemoInteractiveActor
 // 0x0000 (0x02B0 - 0x02B0)
 class AKuroDemoInteractiveActor final : public AActor
 {
+public:
+	bool BroadcastMulticastDelegateProperty(const class FName PropertyName);
+	bool CallFunction(const class FName FunctionName);
+	bool ExecuteSingleDelegateProperty(const class FName PropertyName);
+	bool GetBoolPropertyValue(const class FName PropertyName, bool* OutValue);
+	bool GetFloatPropertyValue(const class FName PropertyName, float* OutValue);
+	bool GetIntPropertyValue(const class FName PropertyName, int32* OutValue);
+	bool GetPropertyOffsetFromContainer(const class FName PropertyName, int32* OutOffset);
+	bool GetStringPropertyValue(const class FName PropertyName, class FString* OutValue);
+	bool SetBoolPropertyValue(const class FName PropertyName, const bool Value);
+	bool SetFloatPropertyValue(const class FName PropertyName, const float Value);
+	bool SetIntPropertyValue(const class FName PropertyName, const int32 Value);
+	bool SetStringPropertyValue(const class FName PropertyName, const class FString& Value);
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -572,6 +712,29 @@ public:
 };
 DUMPER7_ASSERTS_AKuroEntityActor;
 
+// Class KuroUtility.KuroGasStaticLibraryLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroGasStaticLibraryLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static void SetMultiAttributesValue(class UBaseAttributeSet* AttributeSet, TArray<int32>* AttributeTypes, TArray<float>* BaseValues, TArray<float>* CurrentValues);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroGasStaticLibraryLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroGasStaticLibraryLibrary")
+	}
+	static class UKuroGasStaticLibraryLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroGasStaticLibraryLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroGasStaticLibraryLibrary;
+
 // Class KuroUtility.KuroIntEventBinder
 // 0x0010 (0x0040 - 0x0030)
 class UKuroIntEventBinder final : public UObject
@@ -614,6 +777,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroJsStatsLibrary;
+
+// Class KuroUtility.KuroLoggingLibraryLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroLoggingLibraryLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class FString GetLogFilename();
+	static void PromoteGlobalLogVerbosity(uint8 Verbosity);
+	static void RegisterTerminateDelegate();
+	static void ResetGlobalLogVerbosity();
+	static void SetCategoryVerbosity(const class FString& CategoryName, uint8 Verbosity);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroLoggingLibraryLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroLoggingLibraryLibrary")
+	}
+	static class UKuroLoggingLibraryLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroLoggingLibraryLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroLoggingLibraryLibrary;
 
 // Class KuroUtility.KuroMathLibrary
 // 0x0000 (0x0030 - 0x0030)
@@ -664,6 +854,32 @@ public:
 };
 DUMPER7_ASSERTS_UKuroMemoryLibrary;
 
+// Class KuroUtility.KuroMemProbeLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroMemProbeLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class FString GetMemProbeDir();
+	static void MemDumpSmaps(const class FString& Marker);
+	static void MemSnapshot(const class FString& Marker);
+	static void MemSnapshotFull(const class FString& Marker);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroMemProbeLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroMemProbeLibrary")
+	}
+	static class UKuroMemProbeLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroMemProbeLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroMemProbeLibrary;
+
 // Class KuroUtility.KuroMeshTextureFunctionLibrary
 // 0x0000 (0x0030 - 0x0030)
 class UKuroMeshTextureFunctionLibrary final : public UBlueprintFunctionLibrary
@@ -699,6 +915,55 @@ public:
 };
 DUMPER7_ASSERTS_UKuroMeshTextureFunctionLibrary;
 
+// Class KuroUtility.KuroMmapConfigLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroMmapConfigLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static bool MapConfig(const class FString& InPath, int32 PakChunkIndex, int64* OutPtr, int64* OutLength);
+	static int32 UnmapAllConfigs();
+	static int32 UnmapConfig(const class FString& InPath, int32 PakChunkIndex);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroMmapConfigLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroMmapConfigLibrary")
+	}
+	static class UKuroMmapConfigLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroMmapConfigLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroMmapConfigLibrary;
+
+// Class KuroUtility.KuroOpenHarmonyLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroOpenHarmonyLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static void InitGamePerformance(const struct FKuroHarmonyGamePackageInfo& PackageInfo);
+	static void UpdateGameConfigInfo(const struct FKuroHarmonyGameConfigInfo& ConfigInfo);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroOpenHarmonyLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroOpenHarmonyLibrary")
+	}
+	static class UKuroOpenHarmonyLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroOpenHarmonyLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroOpenHarmonyLibrary;
+
 // Class KuroUtility.KuroPerceptionEventBinder
 // 0x0010 (0x0040 - 0x0030)
 class UKuroPerceptionEventBinder final : public UObject
@@ -721,6 +986,54 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroPerceptionEventBinder;
+
+// Class KuroUtility.KuroPerfSightHelperLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroPerfSightHelperLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static void BeginCallGraph(const class FString& Name_0);
+	static void BeginExtTag(const class FString& TagName);
+	static void EnableTimedReport();
+	static void EndCallGraph(const class FString& Name_0);
+	static void EndExtTag(const class FString& TagName);
+	static bool IsBeginCallGraphCalled();
+	static bool IsOnFrameBeginRegistered();
+	static void MarkStartUpFinish();
+	static void PostFrame(float DeltaTime);
+	static void PostValueFloat1(const class FString& Category, const class FString& Key, float ValueA);
+	static void PostValueFloat2(const class FString& Category, const class FString& Key, float ValueA, float ValueB);
+	static void PostValueFloat3(const class FString& Category, const class FString& Key, float ValueA, float ValueB, float ValueC);
+	static void PostValueInteger1(const class FString& Category, const class FString& Key, int32 ValueA);
+	static void PostValueInteger2(const class FString& Category, const class FString& Key, int32 ValueA, int32 ValueB);
+	static void PostValueInteger3(const class FString& Category, const class FString& Key, int32 ValueA, int32 ValueB, int32 ValueC);
+	static void PostValueString(const class FString& Category, const class FString& Key, const class FString& Value);
+	static void RegisterOnFrameBegin(const class FString& CallGraphName);
+	static void RegisterTickGroupEvent();
+	static void SafePopCall(const class FString& CallGraphName);
+	static void SafePushCall(const class FString& CallGraphName);
+	static void SetFlameGraphDropThresholds(int32 Threshold);
+	static void SetFlameGraphQueueSize(int32 Length);
+	static void SetFlameGraphStrMapSize(int32 InSize);
+	static void SetStrategyById(int32 StrategyId, int32 StrategyValue);
+	static void UnRegisterOnFrameBegin();
+	static void UnRegisterTickGroupEvent();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroPerfSightHelperLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPerfSightHelperLibrary")
+	}
+	static class UKuroPerfSightHelperLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroPerfSightHelperLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroPerfSightHelperLibrary;
 
 // Class KuroUtility.KuroPhysicsLibrary
 // 0x0000 (0x0030 - 0x0030)
@@ -769,6 +1082,66 @@ public:
 };
 DUMPER7_ASSERTS_UKuroPolypartition;
 
+// Class KuroUtility.KuroScreenBlueprintFunctionLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroScreenBlueprintFunctionLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static double ComputePhysicalScreenDensity();
+	static struct FVector2D GetDisplayScreenResolution();
+	static double GetPhysicalScreenDensityDPI();
+	static struct FVector2D GetPhysicalScreenResolution();
+	static struct FVector2D GetPhysicalScreenResolutionV2();
+	static double GetScreenDensityDPI();
+	static double GetScreenLogicalDensity();
+	static double GetScreenScaledDensity();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroScreenBlueprintFunctionLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroScreenBlueprintFunctionLibrary")
+	}
+	static class UKuroScreenBlueprintFunctionLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroScreenBlueprintFunctionLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroScreenBlueprintFunctionLibrary;
+
+// Class KuroUtility.KuroScreenLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroScreenLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static double ComputePhysicalScreenDensity();
+	static struct FVector2D GetDisplayScreenResolution();
+	static double GetPhysicalScreenDensityDPI();
+	static struct FVector2D GetPhysicalScreenResolution();
+	static struct FVector2D GetPhysicalScreenResolutionV2();
+	static double GetScreenDensityDPI();
+	static double GetScreenLogicalDensity();
+	static double GetScreenScaledDensity();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroScreenLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroScreenLibrary")
+	}
+	static class UKuroScreenLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroScreenLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroScreenLibrary;
+
 // Class KuroUtility.KuroSilenceGameMode
 // 0x0008 (0x03A8 - 0x03A0)
 class AKuroSilenceGameMode : public AGameMode
@@ -805,6 +1178,8 @@ public:
 	static class FString GetCustomChannel();
 	static bool GetDeviceIsEmulator();
 	static bool GetDeviceIsRooted();
+	static class FString GetHarmonyOSVersion();
+	static bool IsHarmonyOS();
 	static void OpenAppWithUrl(const class FString& schema, const class FString& failSchema);
 
 public:
@@ -904,6 +1279,9 @@ public:
 	static TArray<class FString> GetDirectories(const class FString& Path);
 	static class FString GetDiskSerialNo();
 	static bool GetEnableMobileLowStreaming(class ULevelSequence* Sequence);
+	static class FString GetFileAccessTime(const class FString& Path);
+	static class FString GetFileCreationTime(const class FString& Path);
+	static class FString GetFileModificationTime(const class FString& Path);
 	static TArray<class FString> GetFiles(const class FString& Path, const class FString& Extension);
 	static TArray<class FString> GetFilesRecursive(const class FString& Path, const class FString& Filter, bool Files, bool Directories);
 	static struct FVector GetFirstLocationFromSeqTrack(class UMovieScene3DTransformTrack* TransformTrack);
@@ -911,9 +1289,11 @@ public:
 	static class FString GetGPUInfo();
 	static class FString GetLevelPath(const class UObject* WorldContextObject);
 	static class AActor* GetLevelPrefabShowActor(class AActor* Actor);
+	static bool GetLocalAdapterAddressesUint32(TArray<int32>* OutAddresses);
 	static void GetLocalHostAddresses(TArray<class FString>* OutAddresses, const bool bAppendPort);
 	static class FString GetMacAddress();
 	static TArray<struct FVector> GetNavPointData(class UObject* WorldContextObject, int32 XNumber, int32 YNumber, int32 Dis, class ANavigationData* NavData, const struct FVector& Point, const struct FVector& QueryExtent, TSubclassOf<class UNavigationQueryFilter> FilterClass);
+	static class FString GetOSVersion();
 	static float GetPIEStartTimeInSeconds();
 	static float GetPlatformTimeInSeconds();
 	static class FString GetProcessorId();
@@ -926,6 +1306,7 @@ public:
 	static int64 GetTotalPhysicalMemory();
 	static class UMovieSceneTrack* GetTrackByClass(const TArray<class UMovieSceneTrack*>& Tracks, TSubclassOf<class UMovieSceneTrack> Class_0);
 	static class FString GetVendorInfo();
+	static int32 GetVideoMemoryGB();
 	static struct FVector2D GetViewPortMousePosition();
 	static bool GetViewPortMousePosition2(struct FVector2D* MousePos);
 	static class FString GetWholeStatUnitInfo(float Timespan);
@@ -945,12 +1326,14 @@ public:
 	static class FString KuroFormatText(const class FString& Format, const TArray<class FString>& Parameters);
 	static TArray<class FString> LoadFilesRecursive(const class FString& Path, const class FString& Filter, bool Files, bool Directories);
 	static bool LoadFileToArray(const class FString& Path, TArray<uint8>* OutArray);
+	static bool LoadFileToArrayPriorPakChunk(const class FString& Path, int32 PakchunkIndex, TArray<uint8>* OutArray);
 	static bool LoadFileToString(class FString* Result, const class FString& Filename);
 	static TArray<class FString> LoadFileToStringArray(const class FString& FileRevisionPath);
 	static bool MakeDirectory(const class FString& Path, const bool bTree);
 	static class FString Md5HashAnsiString(const class FString& inString);
 	static class FString Md5HashUTF8String(const class FString& inString);
 	static void PerceptionConfigureSense(class UAIPerceptionComponent* AIPerception, class UAISenseConfig* AISenseConfig);
+	static void PingGateWay(const class FString& Address, const int32 Port, const float Timeout, const class FString& Payload, const TDelegate<void(const class FString& Address, int32 Port, double Time, EKuroNetworkPingResponseStatus Result)>& PingDelegate);
 	static void RegisterCustomCommandProcessor(const class FString& Category, const TDelegate<void(const class FString& Command)>& Processor);
 	static void RemoveFromRoot(class UObject* InObject);
 	static void ResetHttpMaxFlushTimeSeconds();
@@ -959,6 +1342,9 @@ public:
 	static void SetActorModify(class AActor* Actor);
 	static void SetActorPermanent(class AActor* Actor, const bool bIsPermanent, const bool bWithAllChildren);
 	static void SetBaseAndSaveBaseLocation(class UCharacterMovementComponent* CharacterMovementComp, class UPrimitiveComponent* NewBase);
+	static void SetConsoleVariableWithCurrentPriority_Float(const class FString& InCVar, float InValue);
+	static void SetConsoleVariableWithCurrentPriority_Int(const class FString& InCVar, int32 InValue);
+	static void SetConsoleVariableWithCurrentPriority_String(const class FString& InCVar, const class FString& InValue);
 	static void SetCursorVisibility(bool visible);
 	static void SetEditorWidgetSkipTick(bool bSkipTick);
 	static void SetGameThreadAffinity(bool bIsInFighting);
@@ -1067,6 +1453,7 @@ public:
 	static class FString GetOnlineIdByUserId(class FString* userId);
 	static class FString GetPlayerIdByPlayerSessionId(class FString* playerSessionId);
 	static TArray<struct FProductData> GetStoreProducts();
+	static TArray<struct FProductData> GetStoreProductsWithParams(int32 ServiceLabel, int32 Offset, int32 Limit);
 	static struct FTrophyInfoData GetTrophyList(class FString* userId, int32* inputOffset, int32 length);
 	static struct FTrophyInfoData GetTrophyListWithContextIdAndHandleId(int32 context, int32 handle, int32* inputOffset, int32 length);
 	static void GetTrophyListWithContextIdAndHandleIdAsync(int32* inputOffset, int32 length, int32 context, int32 handle, const TDelegate<void(const struct FTrophyInfoData& data)>& callback);
@@ -1126,6 +1513,73 @@ public:
 };
 DUMPER7_ASSERTS_UKuroStaticPS5Library;
 
+// Class KuroUtility.KuroStaticXSXLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UKuroStaticXSXLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static struct FXboxMultiplayerPrivilegeResult CheckXboxMultiplayerPrivilege(int64 UserHandle);
+	static void CheckXboxPermissionAsync(int64 UserHandle, int64 TargetXuid, EXboxPermission Permission, TDelegate<void(const struct FXboxPermissionCheckResult& Result)> Callback);
+	static struct FXboxMultiplayerPrivilegeResult CheckXboxPrivilege(int64 UserHandle, EXboxUserPrivilege Privilege, EXboxUserPrivilegeOptions Options);
+	static void DeleteXboxMultiplayerActivityAsync(int64 UserHandle, TDelegate<void(bool bSuccess)> Callback);
+	static void FlushXboxMultiplayerActivityRecentPlayersAsync(int64 UserHandle);
+	static struct FXboxInviteInfo GetLastXboxInviteInfo();
+	static void GetXboxAchievementsAsync(int64 UserHandle, int64 Xuid, EXboxAchievementType AchievementType, bool bUnlockedOnly, EXboxAchievementOrderBy OrderBy, int32 SkipItems, int32 MaxItems);
+	static struct FXboxAvoidListResult GetXboxAvoidList(int64 UserHandle);
+	static void GetXboxAvoidListAsync(int64 UserHandle, TDelegate<void(const struct FXboxAvoidListResult& Result)> Callback);
+	static bool GetXboxClassicGamertag(int64 UserHandle, class FString* OutGamertag);
+	static bool GetXboxDefaultUserHandle(int64* OutUserHandle);
+	static struct FXboxUserHandleResult GetXboxDefaultUserHandleStruct();
+	static bool GetXboxGamertagAllComponents(int64 UserHandle, class FString* OutModernGamertag, class FString* OutSuffix, class FString* OutUniqueModernGamertag, class FString* OutClassicGamertag);
+	static bool GetXboxGamertagByType(int64 UserHandle, EXboxGamertagComponent Component, class FString* OutGamertag);
+	static struct FXboxGamertagResult GetXboxGamertagForDisplay(int64 UserHandle, EXboxGamertagComponent Component);
+	static bool GetXboxModernGamertag(int64 UserHandle, class FString* OutGamertag);
+	static bool GetXboxModernGamertagSuffix(int64 UserHandle, class FString* OutSuffix);
+	static bool GetXboxMultiplayerActivity(int64 UserHandle, int64 TargetXuid, class FString* OutConnectionString, int32* OutMaxPlayers, int32* OutCurrentPlayers, class FString* OutGroupId);
+	static void GetXboxTokenAndSignatureAsync(int64 UserHandle, const class FString& Url, TDelegate<void(const struct FXboxTokenAndSignatureResult& Result)> Callback);
+	static bool GetXboxUniqueModernGamertag(int64 UserHandle, class FString* OutUniqueModernGamertag);
+	static void GetXboxUserCollectionsIdAsync(int64 UserHandle, const class FString& ServiceTicket, const class FString& PublisherUserId, TDelegate<void(const struct FXboxUserStoreIdResult& Result)> Callback);
+	static struct FXboxUserIdResult GetXboxUserId(int64 UserHandle);
+	static void GetXboxUserPurchaseIdAsync(int64 UserHandle, const class FString& ServiceTicket, const class FString& PublisherUserId, TDelegate<void(const struct FXboxUserStoreIdResult& Result)> Callback);
+	static bool InitXboxMultiplayerManager(const class FString& LobbySessionTemplateName);
+	static bool RegisterForXboxGameInviteEvent();
+	static bool RegisterForXboxGameInviteEventWithCallback(TDelegate<void(const struct FXboxInviteInfo& Info)> Callback);
+	static void RegisterXboxAchievementsCallback(TDelegate<void(bool bSuccess, const TArray<struct FXboxAchievementInfo>& Achievements)> Callback);
+	static void RegisterXboxAchievementUpdatedCallback(TDelegate<void(bool bSuccess)> Callback);
+	static bool ResolveXboxMultiplayerPrivilegeWithUi(int64 UserHandle);
+	static bool ResolveXboxPrivilegeWithUi(int64 UserHandle, EXboxUserPrivilege Privilege, EXboxUserPrivilegeOptions Options);
+	static bool SendXboxMultiplayerActivityInvites(int64 UserHandle, const TArray<int64>& TargetXuids, bool bCrossNetwork, const class FString& ConnectionString);
+	static void SetXboxMultiplayerActivityAsync(int64 UserHandle, int64 xuid, const class FString& ConnectionString, int32 MaxPlayers, int32 CurrentPlayers, const class FString& GroupId, EXboxMultiplayerActivityJoinRestriction JoinRestriction, bool bAllowCrossPlatformJoin, TDelegate<void(bool bSuccess)> Callback);
+	static bool ShowKeyBoard(bool State);
+	static bool ShowXboxMultiplayerActivityGameInvite(int64 UserHandle);
+	static bool ShowXboxPlayerProfileCard(int64 LocalUserHandle, int64 TargetXuid);
+	static void UnregisterFromXboxGameInviteEvent();
+	static void UnregisterXboxAchievementsCallback();
+	static void UnregisterXboxAchievementUpdatedCallback();
+	static void UpdateXboxAchievementAsync(int64 UserHandle, int64 Xuid, const class FString& AchievementId, int32 PercentComplete);
+	static void UpdateXboxMultiplayerActivityRecentPlayersAsync(int64 UserHandle, const TArray<struct FXboxRecentPlayerUpdate>& Updates, TDelegate<void(bool bSuccess)> Callback);
+	static TArray<struct FXboxMultiplayerEvent> XboxMultiplayerManagerDoWork();
+	static bool XboxMultiplayerManagerJoinGameFromLobby(const class FString& SessionTemplateName);
+	static bool XboxMultiplayerManagerJoinGameWithName(const class FString& SessionName, const class FString& SessionTemplateName, const TArray<int64>& Xuids);
+	static bool XboxMultiplayerManagerJoinLobby(const class FString& InviteHandleId, int64 UserHandle);
+	static bool XboxMultiplayerManagerLobbyAddLocalUser(int64 UserHandle);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroStaticXSXLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroStaticXSXLibrary")
+	}
+	static class UKuroStaticXSXLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroStaticXSXLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UKuroStaticXSXLibrary;
+
 // Class KuroUtility.KuroSubLevelVisibleSubsystem
 // 0x0088 (0x00C0 - 0x0038)
 class UKuroSubLevelVisibleSubsystem final : public UGameInstanceSubsystem
@@ -1168,10 +1622,12 @@ public:
 	static int32 GetAllFileNumNeedToSend();
 	static int32 GetSendedFileNum();
 	static void InterruptSending();
+	static bool IsAutoSendWhenExitRunning();
 	static bool IsSending();
 	static void SendFileToTencentCOS(const class FString& Path, const class FString& RemoteURI, const class FString& SecretID, const class FString& SecretKey, const class FString& BucketName, const class FString& Region);
 	static void SendLogToTencentCOS(const TDelegate<void(int32 State, float Rate)>& OnProgress);
 	static void SetAdmissibleValue(int32 SingleLogSizeInMb);
+	static void SetCloudPath(const class FString& Name_0);
 	static void SetFilesToSend(const TArray<class FString>& FilePaths);
 	static void SetHandleFunc(const TDelegate<void(const TArray<class FString>& FileNames)>& PrepareFunc, const TDelegate<void(const TArray<class FString>& SendedFiles)>& PostSend);
 	static void SetIsAutoSend(bool bIsAutoSend);
@@ -1328,6 +1784,33 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULoadMapNotify;
+
+// Class KuroUtility.TpSafeProxyLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UTpSafeProxyLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static struct FArrayBuffer GetAntiData();
+	static struct FArrayBuffer GetAntiData2();
+	static void Logout();
+	static void RecvAntiData(const struct FArrayBuffer& Data);
+	static void SetUserInfo(int32 AccountType, int32 WorldId, const class FString& OpenId, int32 PlayerId);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TpSafeProxyLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TpSafeProxyLibrary")
+	}
+	static class UTpSafeProxyLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UTpSafeProxyLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UTpSafeProxyLibrary;
 
 // Class KuroUtility.KuroTickManager
 // 0x0080 (0x00B0 - 0x0030)

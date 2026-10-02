@@ -42,6 +42,25 @@ void ATsBasePlayerController_C::ExecuteUbergraph_TsBasePlayerController(int32 En
 }
 
 
+// Function TsBasePlayerController.TsBasePlayerController_C.OnReceivedPlayer
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ATsBasePlayerController_C::OnReceivedPlayer()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsBasePlayerController_C", "OnReceivedPlayer");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function TsBasePlayerController.TsBasePlayerController_C.ReceiveTick
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

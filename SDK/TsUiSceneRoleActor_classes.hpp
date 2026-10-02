@@ -26,9 +26,9 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	bool IsShowUiWepaonEffect();
-	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_TsUiSceneRoleActor(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
+	bool IsShowUiWepaonEffect();
 
 public:
 	static class UClass* StaticClass()

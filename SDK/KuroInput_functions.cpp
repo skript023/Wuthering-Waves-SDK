@@ -44,6 +44,31 @@ void ABasePlayerController::SetKuroForceFeedbackConfig(EGlobalKuroForceFeedbackT
 }
 
 
+// Function KuroInput.BasePlayerController.SetUseGamepadState
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// bool                                    value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABasePlayerController::SetUseGamepadState(bool value)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BasePlayerController", "SetUseGamepadState");
+
+	Params::BasePlayerController_SetUseGamepadState Parms{};
+
+	Parms.value = value;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroInput.BasePlayerController.SetUseSonyGamepadState
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -430,6 +455,134 @@ void ABasePlayerController::StopKuroForceFeedback(class UKuroForceFeedbackEffect
 }
 
 
+// Function KuroInput.KuroInputFunctionLibrary.AddActionBinding
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      ActionName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EInputEvent                       KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::AddActionBinding(class APlayerController* PlayerController, const class FName& ActionName, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "AddActionBinding");
+
+	Params::KuroInputFunctionLibrary_AddActionBinding Parms{};
+
+	Parms.PlayerController = PlayerController;
+	Parms.ActionName = ActionName;
+	Parms.KeyEvent = KeyEvent;
+	Parms.Object = Object;
+	Parms.FuncName = FuncName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInput.KuroInputFunctionLibrary.AddAxisBinding
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      AxisName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::AddAxisBinding(class APlayerController* PlayerController, const class FName& AxisName, class UObject* Object, const class FName& FuncName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "AddAxisBinding");
+
+	Params::KuroInputFunctionLibrary_AddAxisBinding Parms{};
+
+	Parms.PlayerController = PlayerController;
+	Parms.AxisName = AxisName;
+	Parms.Object = Object;
+	Parms.FuncName = FuncName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInput.KuroInputFunctionLibrary.AddKeyBinding
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FInputChord&               Chord                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EInputEvent                       KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::AddKeyBinding(class APlayerController* PlayerController, const struct FInputChord& Chord, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "AddKeyBinding");
+
+	Params::KuroInputFunctionLibrary_AddKeyBinding Parms{};
+
+	Parms.PlayerController = PlayerController;
+	Parms.Chord = std::move(Chord);
+	Parms.KeyEvent = KeyEvent;
+	Parms.Object = Object;
+	Parms.FuncName = FuncName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInput.KuroInputFunctionLibrary.AddTouchBinding
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EInputEvent                       KeyEvent                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      FuncName                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::AddTouchBinding(class APlayerController* PlayerController, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "AddTouchBinding");
+
+	Params::KuroInputFunctionLibrary_AddTouchBinding Parms{};
+
+	Parms.PlayerController = PlayerController;
+	Parms.KeyEvent = KeyEvent;
+	Parms.Object = Object;
+	Parms.FuncName = FuncName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroInput.KuroInputFunctionLibrary.ApplyInputMode
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -455,6 +608,56 @@ void UKuroInputFunctionLibrary::ApplyInputMode(class APlayerController* InPlayer
 }
 
 
+// Function KuroInput.KuroInputFunctionLibrary.ClearActionBindings
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::ClearActionBindings(class APlayerController* PlayerController)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "ClearActionBindings");
+
+	Params::KuroInputFunctionLibrary_ClearActionBindings Parms{};
+
+	Parms.PlayerController = PlayerController;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInput.KuroInputFunctionLibrary.ClearAxisBindings
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::ClearAxisBindings(class APlayerController* PlayerController)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "ClearAxisBindings");
+
+	Params::KuroInputFunctionLibrary_ClearAxisBindings Parms{};
+
+	Parms.PlayerController = PlayerController;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroInput.KuroInputFunctionLibrary.ClearInputModeReply
 // (Final, Native, Static, Public, BlueprintCallable)
 
@@ -469,6 +672,56 @@ void UKuroInputFunctionLibrary::ClearInputModeReply()
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInput.KuroInputFunctionLibrary.ClearKeyBindings
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::ClearKeyBindings(class APlayerController* PlayerController)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "ClearKeyBindings");
+
+	Params::KuroInputFunctionLibrary_ClearKeyBindings Parms{};
+
+	Parms.PlayerController = PlayerController;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInput.KuroInputFunctionLibrary.ClearTouchBindings
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class APlayerController*                PlayerController                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::ClearTouchBindings(class APlayerController* PlayerController)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "ClearTouchBindings");
+
+	Params::KuroInputFunctionLibrary_ClearTouchBindings Parms{};
+
+	Parms.PlayerController = PlayerController;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -647,6 +900,33 @@ struct FInputModeReply UKuroInputFunctionLibrary::SetUIOnlyInputMode(class APlay
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function KuroInput.KuroInputFunctionLibrary.TryUseHighPrecisionMouseMovement
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class APlayerController*          InPlayerController                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUse                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInputFunctionLibrary::TryUseHighPrecisionMouseMovement(const class APlayerController* InPlayerController, bool bUse)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroInputFunctionLibrary", "TryUseHighPrecisionMouseMovement");
+
+	Params::KuroInputFunctionLibrary_TryUseHighPrecisionMouseMovement Parms{};
+
+	Parms.InPlayerController = InPlayerController;
+	Parms.bUse = bUse;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

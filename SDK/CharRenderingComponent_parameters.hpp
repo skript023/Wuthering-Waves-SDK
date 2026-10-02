@@ -11,12 +11,12 @@
 #include "Basic.hpp"
 
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
-#include "ECharacterSlotSpecifiedType_structs.hpp"
+#include "ECharacterDitherType_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ECharacterBodySpecifiedType_structs.hpp"
 #include "ECharacterControllerCaseType_structs.hpp"
-#include "Engine_structs.hpp"
-#include "ECharacterDitherType_structs.hpp"
+#include "ECharacterSlotSpecifiedType_structs.hpp"
 #include "ECharacterRenderingType_structs.hpp"
 
 
@@ -340,15 +340,6 @@ public:
 };
 DUMPER7_ASSERTS_CharRenderingComponent_C_SetLogicOwner;
 
-// Function CharRenderingComponent.CharRenderingComponent_C.GetTimeDilation
-// 0x0004 (0x0004 - 0x0000)
-struct CharRenderingComponent_C_GetTimeDilation final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_CharRenderingComponent_C_GetTimeDilation;
-
 // Function CharRenderingComponent.CharRenderingComponent_C.SetRealtimeShadowEnabled
 // 0x0001 (0x0001 - 0x0000)
 struct CharRenderingComponent_C_SetRealtimeShadowEnabled final
@@ -414,17 +405,6 @@ public:
 	bool                                          paused;                                            // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_CharRenderingComponent_C_SetEffectPause;
-
-// Function CharRenderingComponent.CharRenderingComponent_C.QuickInitAndAddData
-// 0x0018 (0x0018 - 0x0000)
-struct CharRenderingComponent_C_QuickInitAndAddData final
-{
-public:
-	class UObject*                                data;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ASkeletalMeshActor*                     meshActor;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_CharRenderingComponent_C_QuickInitAndAddData;
 
 // Function CharRenderingComponent.CharRenderingComponent_C.GetSkeletalMeshComponent
 // 0x0018 (0x0018 - 0x0000)
@@ -585,6 +565,92 @@ public:
 	bool                                          castShadow;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_CharRenderingComponent_C_SetShouldCastShadow;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetDitherUseHeadMaskHideEffect
+// 0x0001 (0x0001 - 0x0000)
+struct CharRenderingComponent_C_SetDitherUseHeadMaskHideEffect final
+{
+public:
+	bool                                          enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_SetDitherUseHeadMaskHideEffect;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.GetInAudioShr
+// 0x0001 (0x0001 - 0x0000)
+struct CharRenderingComponent_C_GetInAudioShr final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_GetInAudioShr;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.QuickInitAndAddData
+// 0x0018 (0x0018 - 0x0000)
+struct CharRenderingComponent_C_QuickInitAndAddData final
+{
+public:
+	class UObject*                                data;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ASkeletalMeshActor*                     meshActor;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_QuickInitAndAddData;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.GetWaterHitLocationZ
+// 0x0004 (0x0004 - 0x0000)
+struct CharRenderingComponent_C_GetWaterHitLocationZ final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_GetWaterHitLocationZ;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.GetAudioShrTag
+// 0x000C (0x000C - 0x0000)
+struct CharRenderingComponent_C_GetAudioShrTag final
+{
+public:
+	class FName                                   ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_GetAudioShrTag;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.PreBodyInfoRuntimeInit
+// 0x000C (0x000C - 0x0000)
+struct CharRenderingComponent_C_PreBodyInfoRuntimeInit final
+{
+public:
+	class FName                                   bodyName;                                          // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_PreBodyInfoRuntimeInit;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.PostBodyInfoRuntimeInit
+// 0x000C (0x000C - 0x0000)
+struct CharRenderingComponent_C_PostBodyInfoRuntimeInit final
+{
+public:
+	class FName                                   bodyName;                                          // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_PostBodyInfoRuntimeInit;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.SetMaterialReplaceV2ByIndex
+// 0x0018 (0x0018 - 0x0000)
+struct CharRenderingComponent_C_SetMaterialReplaceV2ByIndex final
+{
+public:
+	class UMaterialInterface*                     material;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   bodyName;                                          // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         materialIndex;                                     // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_SetMaterialReplaceV2ByIndex;
+
+// Function CharRenderingComponent.CharRenderingComponent_C.RemoveExternalMaterialReplaceV2ByIndex
+// 0x0010 (0x0010 - 0x0000)
+struct CharRenderingComponent_C_RemoveExternalMaterialReplaceV2ByIndex final
+{
+public:
+	class FName                                   bodyName;                                          // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         materialIndex;                                     // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CharRenderingComponent_C_RemoveExternalMaterialReplaceV2ByIndex;
 
 }
 

@@ -10,45 +10,45 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 
 
 namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_ParaglidingBase.ABP_ParaglidingBase_C
-// 0x0590 (0x0CA0 - 0x0710)
+// 0x05F0 (0x0E20 - 0x0830)
 class UABP_ParaglidingBase_C : public UAnimInstance
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0710(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x0718(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x0740(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x0768(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x0790(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x07B8(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x07E0(0x0028)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x0808(0x0038)()
-	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer;                    // 0x0840(0x0108)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x0948(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0980(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0A58(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0A90(0x0198)()
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0C28(0x0038)()
-	class ATsBaseCharacter_C*                     角色蓝图;                                          // 0x0C60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          开伞;                                              // 0x0C68(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C69[0x7];                                      // 0x0C69(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelGroup_C*                    消散特效;                                          // 0x0C70(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          滑翔滞空;                                          // 0x0C78(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          滑翔上升;                                          // 0x0C79(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C7A[0x2];                                      // 0x0C7A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         滑翔混合当前值;                                    // 0x0C7C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         滑翔混合目标值;                                    // 0x0C80(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         滑翔混合插值值速度;                                // 0x0C84(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                滑翔伞修正偏移;                                    // 0x0C88(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x0838(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x0860(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x0888(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x08B0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x08D8(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x0900(0x0028)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x0928(0x0038)()
+	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer;                    // 0x0960(0x0118)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x0A78(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0AB0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0B88(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0BC0(0x01E8)()
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0DA8(0x0038)()
+	class ATsBaseCharacter_C*                     角色蓝图;                                          // 0x0DE0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          开伞;                                              // 0x0DE8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_DE9[0x7];                                      // 0x0DE9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelGroup_C*                    消散特效;                                          // 0x0DF0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          滑翔滞空;                                          // 0x0DF8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          滑翔上升;                                          // 0x0DF9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_DFA[0x2];                                      // 0x0DFA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         滑翔混合当前值;                                    // 0x0DFC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         滑翔混合目标值;                                    // 0x0E00(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         滑翔混合插值值速度;                                // 0x0E04(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                滑翔伞修正偏移;                                    // 0x0E08(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_ParaglidingBase(int32 EntryPoint);

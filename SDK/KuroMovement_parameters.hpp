@@ -298,15 +298,25 @@ public:
 DUMPER7_ASSERTS_KuroClimbObject_TryUpArrives;
 
 // Function KuroMovement.KuroDebugMovementComponent.KuroDebugMovementBaseRecordToString
-// 0x0058 (0x0058 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct KuroDebugMovementComponent_KuroDebugMovementBaseRecordToString final
 {
 public:
-	struct FBaseRecord                            Record;                                            // 0x0000(0x0044)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ReturnValue;                                       // 0x0048(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBaseRecord                            Record;                                            // 0x0000(0x0070)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0070(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroDebugMovementComponent_KuroDebugMovementBaseRecordToString;
+
+// Function KuroMovement.KuroDebugMovementComponent.DrawRecord
+// 0x0078 (0x0078 - 0x0000)
+struct KuroDebugMovementComponent_DrawRecord final
+{
+public:
+	struct FBaseRecord                            Record;                                            // 0x0000(0x0070)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         SphereRadius;                                      // 0x0070(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ArrowLength;                                       // 0x0074(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroDebugMovementComponent_DrawRecord;
 
 // Function KuroMovement.KuroDebugMovementComponent.GetCurrentFrameIndex
 // 0x0004 (0x0004 - 0x0000)
@@ -336,13 +346,13 @@ public:
 DUMPER7_ASSERTS_KuroDebugMovementComponent_GetMaxRecordFrameCount;
 
 // Function KuroMovement.KuroDebugMovementComponent.GetPreviousRecord
-// 0x0110 (0x0110 - 0x0000)
+// 0x0160 (0x0160 - 0x0000)
 struct KuroDebugMovementComponent_GetPreviousRecord final
 {
 public:
 	int32                                         preNum;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSingleFrameDebugInfo                  ReturnValue;                                       // 0x0008(0x0108)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FSingleFrameDebugInfo                  ReturnValue;                                       // 0x0008(0x0158)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroDebugMovementComponent_GetPreviousRecord;
 
@@ -415,6 +425,21 @@ public:
 };
 DUMPER7_ASSERTS_KuroMoveTrigger_OnEnterOverlap;
 
+// Function KuroMovement.KuroMovementBPLibrary.KuroBinarySearchCurve
+// 0x0020 (0x0020 - 0x0000)
+struct KuroMovementBPLibrary_KuroBinarySearchCurve final
+{
+public:
+	class UCurveFloat*                            Curve;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Y;                                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         From;                                              // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         To;                                                // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         tolerance;                                         // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0018(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroMovementBPLibrary_KuroBinarySearchCurve;
+
 // Function KuroMovement.KuroMovementBPLibrary.KuroEaseSpeedTo
 // 0x0030 (0x0030 - 0x0000)
 struct KuroMovementBPLibrary_KuroEaseSpeedTo final
@@ -454,6 +479,23 @@ public:
 	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroMovementBPLibrary_KuroKite;
+
+// Function KuroMovement.KuroMovementBPLibrary.KuroMoveByOffset
+// 0x0030 (0x0030 - 0x0000)
+struct KuroMovementBPLibrary_KuroMoveByOffset final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCharacterMovementComponent*            CharMoveComp;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MoveDelta;                                         // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMoveSlideType                                SlideType;                                         // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                SlideDirection;                                    // 0x0020(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMoveHitType                                  ReturnValue;                                       // 0x002C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroMovementBPLibrary_KuroMoveByOffset;
 
 // Function KuroMovement.KuroMovementBPLibrary.KuroRoll
 // 0x0038 (0x0038 - 0x0000)

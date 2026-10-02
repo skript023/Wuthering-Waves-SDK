@@ -10,28 +10,29 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass AnimNotifyStateGhost.AnimNotifyStateGhost_C
-// 0x0040 (0x0088 - 0x0048)
-class UAnimNotifyStateGhost_C final : public UKuroAnimNotifyState
+// 0x0048 (0x00A0 - 0x0058)
+class UAnimNotifyStateGhost_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	float                                         SpawnRate;                                         // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         GhostLifeTime;                                     // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TSoftObjectPtr<class UEffectModelBase>        EffectDataAssetRef;                                // 0x0050(0x0030)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          UseSpawnRate;                                      // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_81[0x3];                                       // 0x0081(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SpawnInterval;                                     // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	float                                         SpawnRate;                                         // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         GhostLifeTime;                                     // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSoftObjectPtr<class UEffectModelBase>        EffectDataAssetRef;                                // 0x0060(0x0030)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash)
+	bool                                          UseSpawnRate;                                      // 0x0090(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_91[0x3];                                       // 0x0091(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SpawnInterval;                                     // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	bool                                          UseBaseColorTex;                                   // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	bool K2_ValidateAssets();
-	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
+	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
+	bool K2_ValidateAssets();
 
 	class FString GetNotifyName() const;
 

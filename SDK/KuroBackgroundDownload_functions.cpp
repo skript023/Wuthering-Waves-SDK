@@ -26,8 +26,9 @@ namespace SDK
 // int32                                   InRetryCount                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   InTimeout                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bNewIOSApi                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bAllowCell                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroBgPrefixDownload::Start(const class FString& Suffix, const TArray<class FString>& Prefixes, const TArray<struct FKuroRequestDownloadInfo>& Targets, int32 InRetryCount, float InTimeout, bool bNewIOSApi)
+void UKuroBgPrefixDownload::Start(const class FString& Suffix, const TArray<class FString>& Prefixes, const TArray<struct FKuroRequestDownloadInfo>& Targets, int32 InRetryCount, float InTimeout, bool bNewIOSApi, bool bAllowCell)
 {
 	static class UFunction* Func = nullptr;
 
@@ -42,6 +43,7 @@ void UKuroBgPrefixDownload::Start(const class FString& Suffix, const TArray<clas
 	Parms.InRetryCount = InRetryCount;
 	Parms.InTimeout = InTimeout;
 	Parms.bNewIOSApi = bNewIOSApi;
+	Parms.bAllowCell = bAllowCell;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -73,18 +75,24 @@ void UKuroBgPrefixDownload::Cancel() const
 
 // Function KuroBackgroundDownload.KuroBgPrefixDownload.Continue
 // (Final, Native, Public, Const)
+// Parameters:
+// bool                                    bAllowCell                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroBgPrefixDownload::Continue() const
+void UKuroBgPrefixDownload::Continue(bool bAllowCell) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("KuroBgPrefixDownload", "Continue");
 
+	Params::KuroBgPrefixDownload_Continue Parms{};
+
+	Parms.bAllowCell = bAllowCell;
+
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

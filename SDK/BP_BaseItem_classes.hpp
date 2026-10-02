@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "TsBaseItem_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
@@ -28,10 +28,10 @@ public:
 	int32                                         EntityId;                                          // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveBeginPlay();
-	int32 GetEntityId();
-	void ApplyEntityId(int32 EntityId_0);
 	void ExecuteUbergraph_BP_BaseItem(int32 EntryPoint);
+	void ApplyEntityId(int32 EntityId_0);
+	int32 GetEntityId();
+	void ReceiveBeginPlay();
 
 public:
 	static class UClass* StaticClass()

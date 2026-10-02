@@ -289,6 +289,15 @@ public:
 };
 DUMPER7_ASSERTS_KuroLauncherLibrary_GetGConfigString;
 
+// Function KuroHotPatch.KuroLauncherLibrary.GetMountedPaks
+// 0x0010 (0x0010 - 0x0000)
+struct KuroLauncherLibrary_GetMountedPaks final
+{
+public:
+	TArray<class FString>                         OutPakFilenames;                                   // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLauncherLibrary_GetMountedPaks;
+
 // Function KuroHotPatch.KuroLauncherLibrary.GetNetworkConnectionType
 // 0x0001 (0x0001 - 0x0000)
 struct KuroLauncherLibrary_GetNetworkConnectionType final

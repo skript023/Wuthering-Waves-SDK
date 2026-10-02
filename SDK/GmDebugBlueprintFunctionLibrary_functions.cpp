@@ -17,6 +17,35 @@
 namespace SDK
 {
 
+// Function GmDebugBlueprintFunctionLibrary.GmDebugBlueprintFunctionLibrary_C.TsGmLoadSkillFightDt
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECharacterLoadType                      dtLoadType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGmDebugBlueprintFunctionLibrary_C::TsGmLoadSkillFightDt(int32 entityId, ECharacterLoadType dtLoadType, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GmDebugBlueprintFunctionLibrary_C", "TsGmLoadSkillFightDt");
+
+	Params::GmDebugBlueprintFunctionLibrary_C_TsGmLoadSkillFightDt Parms{};
+
+	Parms.entityId = entityId;
+	Parms.dtLoadType = dtLoadType;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GmDebugBlueprintFunctionLibrary.GmDebugBlueprintFunctionLibrary_C.TsSetFightDtTypeForDebug
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

@@ -73,15 +73,6 @@ enum class EGameplayTagSourceType : uint8
 	EGameplayTagSourceType_MAX               = 7,
 };
 
-// ScriptStruct GameplayTags.GameplayTagReferenceHelper
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FGameplayTagReferenceHelper final
-{
-public:
-	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FGameplayTagReferenceHelper;
-
 // ScriptStruct GameplayTags.GameplayTag
 // 0x000C (0x000C - 0x0000)
 struct FGameplayTag final
@@ -101,15 +92,14 @@ public:
 };
 DUMPER7_ASSERTS_FGameplayTagContainer;
 
-// ScriptStruct GameplayTags.RestrictedConfigInfo
-// 0x0020 (0x0020 - 0x0000)
-struct FRestrictedConfigInfo final
+// ScriptStruct GameplayTags.GameplayTagCreationWidgetHelper
+// 0x0001 (0x0001 - 0x0000)
+struct FGameplayTagCreationWidgetHelper final
 {
 public:
-	class FString                                 RestrictedConfigName;                              // 0x0000(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FString>                         Owners;                                            // 0x0010(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_FRestrictedConfigInfo;
+DUMPER7_ASSERTS_FGameplayTagCreationWidgetHelper;
 
 // ScriptStruct GameplayTags.GameplayTagQuery
 // 0x0048 (0x0048 - 0x0000)
@@ -125,14 +115,24 @@ public:
 };
 DUMPER7_ASSERTS_FGameplayTagQuery;
 
-// ScriptStruct GameplayTags.GameplayTagCreationWidgetHelper
-// 0x0001 (0x0001 - 0x0000)
-struct FGameplayTagCreationWidgetHelper final
+// ScriptStruct GameplayTags.GameplayTagRedirect
+// 0x0018 (0x0018 - 0x0000)
+struct FGameplayTagRedirect final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   OldTagName;                                        // 0x0000(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NewTagName;                                        // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGameplayTagCreationWidgetHelper;
+DUMPER7_ASSERTS_FGameplayTagRedirect;
+
+// ScriptStruct GameplayTags.GameplayTagReferenceHelper
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FGameplayTagReferenceHelper final
+{
+public:
+	uint8                                         Pad_0[0x10];                                       // 0x0000(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FGameplayTagReferenceHelper;
 
 // ScriptStruct GameplayTags.GameplayTagNode
 // 0x0070 (0x0070 - 0x0000)
@@ -177,6 +177,16 @@ public:
 };
 DUMPER7_ASSERTS_FRestrictedGameplayTagTableRow;
 
+// ScriptStruct GameplayTags.RestrictedConfigInfo
+// 0x0020 (0x0020 - 0x0000)
+struct FRestrictedConfigInfo final
+{
+public:
+	class FString                                 RestrictedConfigName;                              // 0x0000(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         Owners;                                            // 0x0010(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FRestrictedConfigInfo;
+
 // ScriptStruct GameplayTags.GameplayTagCategoryRemap
 // 0x0020 (0x0020 - 0x0000)
 struct FGameplayTagCategoryRemap final
@@ -186,16 +196,6 @@ public:
 	TArray<class FString>                         RemapCategories;                                   // 0x0010(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FGameplayTagCategoryRemap;
-
-// ScriptStruct GameplayTags.GameplayTagRedirect
-// 0x0018 (0x0018 - 0x0000)
-struct FGameplayTagRedirect final
-{
-public:
-	class FName                                   OldTagName;                                        // 0x0000(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   NewTagName;                                        // 0x000C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FGameplayTagRedirect;
 
 }
 

@@ -38,15 +38,6 @@ public:
 };
 DUMPER7_ASSERTS_ThinkingAnalytics_CreateSimpleInstance;
 
-// Function TASdkPlugin.ThinkingAnalytics.DestroyAllInstance
-// 0x0001 (0x0001 - 0x0000)
-struct ThinkingAnalytics_DestroyAllInstance final
-{
-public:
-	bool                                          Flush_0;                                           // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_ThinkingAnalytics_DestroyAllInstance;
-
 // Function TASdkPlugin.ThinkingAnalytics.DestroyInstance
 // 0x0008 (0x0008 - 0x0000)
 struct ThinkingAnalytics_DestroyInstance final
@@ -517,6 +508,28 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_ThinkingAnalytics_UserUnset;
+
+// Function TASdkPlugin.ThinkingAnalyticsLibrary.Flush
+// 0x0004 (0x0004 - 0x0000)
+struct ThinkingAnalyticsLibrary_Flush final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_ThinkingAnalyticsLibrary_Flush;
+
+// Function TASdkPlugin.ThinkingAnalyticsLibrary.Track
+// 0x0028 (0x0028 - 0x0000)
+struct ThinkingAnalyticsLibrary_Track final
+{
+public:
+	class FString                                 EventName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Properties;                                        // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0024(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_ThinkingAnalyticsLibrary_Track;
 
 }
 

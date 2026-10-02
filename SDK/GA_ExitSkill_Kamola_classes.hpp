@@ -18,15 +18,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_ExitSkill_Kamola.GA_ExitSkill_Kamola_C
-// 0x0028 (0x05B0 - 0x0588)
+// 0x0028 (0x05F8 - 0x05D0)
 class UGA_ExitSkill_Kamola_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_ExitSkill_Kamola_C;              // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBP_QTE_Camera_C*                       QTECamera;                                         // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Entity_Id;                                         // 0x0598(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class FName                                   技能_ID;                                           // 0x059C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     施法角色;                                          // 0x05A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_ExitSkill_Kamola_C;              // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBP_QTE_Camera_C*                       QTECamera;                                         // 0x05D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Entity_Id;                                         // 0x05E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class FName                                   技能_ID;                                           // 0x05E4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     施法角色;                                          // 0x05F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_ExitSkill_Kamola(int32 EntryPoint);

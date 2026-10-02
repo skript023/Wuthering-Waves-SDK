@@ -17,6 +17,255 @@
 namespace SDK::Params
 {
 
+// Function MovieScene.MovieSceneSequence.FindBindingByTag
+// 0x0024 (0x0024 - 0x0000)
+struct MovieSceneSequence_FindBindingByTag final
+{
+public:
+	class FName                                   InBindingName;                                     // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMovieSceneObjectBindingID             ReturnValue;                                       // 0x000C(0x0018)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSequence_FindBindingByTag;
+
+// Function MovieScene.MovieSceneSequence.FindBindingsByBothTags
+// 0x0020 (0x0020 - 0x0000)
+struct MovieSceneSequence_FindBindingsByBothTags final
+{
+public:
+	TArray<class FName>                           InBindingNames;                                    // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FMovieSceneObjectBindingID>     ReturnValue;                                       // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSequence_FindBindingsByBothTags;
+
+// Function MovieScene.MovieSceneSequence.FindBindingsByTag
+// 0x0020 (0x0020 - 0x0000)
+struct MovieSceneSequence_FindBindingsByTag final
+{
+public:
+	class FName                                   InBindingName;                                     // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FMovieSceneObjectBindingID>     ReturnValue;                                       // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSequence_FindBindingsByTag;
+
+// Function MovieScene.MovieSceneSequence.FindMasterTrackByTag
+// 0x0018 (0x0018 - 0x0000)
+struct MovieSceneSequence_FindMasterTrackByTag final
+{
+public:
+	class FName                                   InTrackTagName;                                    // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMovieSceneTrack*                       ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSequence_FindMasterTrackByTag;
+
+// Function MovieScene.MovieSceneSequence.FindMasterTracksByBothTags
+// 0x0020 (0x0020 - 0x0000)
+struct MovieSceneSequence_FindMasterTracksByBothTags final
+{
+public:
+	TArray<class FName>                           InTrackTagNames;                                   // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UMovieSceneTrack*>               ReturnValue;                                       // 0x0010(0x0010)(ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSequence_FindMasterTracksByBothTags;
+
+// Function MovieScene.MovieSceneSequence.FindMasterTracksByTag
+// 0x0020 (0x0020 - 0x0000)
+struct MovieSceneSequence_FindMasterTracksByTag final
+{
+public:
+	class FName                                   InTrackTagName;                                    // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMovieSceneTrack*>               ReturnValue;                                       // 0x0010(0x0010)(ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSequence_FindMasterTracksByTag;
+
+// Function MovieScene.MovieSceneSequence.HasBindingTag
+// 0x0010 (0x0010 - 0x0000)
+struct MovieSceneSequence_HasBindingTag final
+{
+public:
+	class FName                                   InBindingName;                                     // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IncludeSubSequence;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000D(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MovieSceneSequence_HasBindingTag;
+
+// Function MovieScene.MovieSceneSequence.HasMasterTrackTag
+// 0x0010 (0x0010 - 0x0000)
+struct MovieSceneSequence_HasMasterTrackTag final
+{
+public:
+	class FName                                   InTrackTagName;                                    // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IncludeSubSequence;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000D(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MovieSceneSequence_HasMasterTrackTag;
+
+// Function MovieScene.MovieSceneSection.SetBlendType
+// 0x0001 (0x0001 - 0x0000)
+struct MovieSceneSection_SetBlendType final
+{
+public:
+	EMovieSceneBlendType                          InBlendType;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_SetBlendType;
+
+// Function MovieScene.MovieSceneSection.SetCompletionMode
+// 0x0001 (0x0001 - 0x0000)
+struct MovieSceneSection_SetCompletionMode final
+{
+public:
+	EMovieSceneCompletionMode                     InCompletionMode;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_SetCompletionMode;
+
+// Function MovieScene.MovieSceneSection.SetIsActive
+// 0x0001 (0x0001 - 0x0000)
+struct MovieSceneSection_SetIsActive final
+{
+public:
+	bool                                          bInIsActive;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_SetIsActive;
+
+// Function MovieScene.MovieSceneSection.SetIsLocked
+// 0x0001 (0x0001 - 0x0000)
+struct MovieSceneSection_SetIsLocked final
+{
+public:
+	bool                                          bInIsLocked;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_SetIsLocked;
+
+// Function MovieScene.MovieSceneSection.SetOverlapPriority
+// 0x0004 (0x0004 - 0x0000)
+struct MovieSceneSection_SetOverlapPriority final
+{
+public:
+	int32                                         NewPriority;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_SetOverlapPriority;
+
+// Function MovieScene.MovieSceneSection.SetPostRollFrames
+// 0x0004 (0x0004 - 0x0000)
+struct MovieSceneSection_SetPostRollFrames final
+{
+public:
+	int32                                         InPostRollFrames;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_SetPostRollFrames;
+
+// Function MovieScene.MovieSceneSection.SetPreRollFrames
+// 0x0004 (0x0004 - 0x0000)
+struct MovieSceneSection_SetPreRollFrames final
+{
+public:
+	int32                                         InPreRollFrames;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_SetPreRollFrames;
+
+// Function MovieScene.MovieSceneSection.SetRowIndex
+// 0x0004 (0x0004 - 0x0000)
+struct MovieSceneSection_SetRowIndex final
+{
+public:
+	int32                                         NewRowIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_SetRowIndex;
+
+// Function MovieScene.MovieSceneSection.GetBlendType
+// 0x0002 (0x0002 - 0x0000)
+struct MovieSceneSection_GetBlendType final
+{
+public:
+	struct FOptionalMovieSceneBlendType           ReturnValue;                                       // 0x0000(0x0002)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_GetBlendType;
+
+// Function MovieScene.MovieSceneSection.GetCompletionMode
+// 0x0001 (0x0001 - 0x0000)
+struct MovieSceneSection_GetCompletionMode final
+{
+public:
+	EMovieSceneCompletionMode                     ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_GetCompletionMode;
+
+// Function MovieScene.MovieSceneSection.GetEndFrame
+// 0x0008 (0x0008 - 0x0000)
+struct MovieSceneSection_GetEndFrame final
+{
+public:
+	struct FFrameNumberRangeBound                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_GetEndFrame;
+
+// Function MovieScene.MovieSceneSection.GetOverlapPriority
+// 0x0004 (0x0004 - 0x0000)
+struct MovieSceneSection_GetOverlapPriority final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_GetOverlapPriority;
+
+// Function MovieScene.MovieSceneSection.GetPostRollFrames
+// 0x0004 (0x0004 - 0x0000)
+struct MovieSceneSection_GetPostRollFrames final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_GetPostRollFrames;
+
+// Function MovieScene.MovieSceneSection.GetPreRollFrames
+// 0x0004 (0x0004 - 0x0000)
+struct MovieSceneSection_GetPreRollFrames final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_GetPreRollFrames;
+
+// Function MovieScene.MovieSceneSection.GetRowIndex
+// 0x0004 (0x0004 - 0x0000)
+struct MovieSceneSection_GetRowIndex final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_GetRowIndex;
+
+// Function MovieScene.MovieSceneSection.GetStartFrame
+// 0x0008 (0x0008 - 0x0000)
+struct MovieSceneSection_GetStartFrame final
+{
+public:
+	struct FFrameNumberRangeBound                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_GetStartFrame;
+
+// Function MovieScene.MovieSceneSection.IsActive
+// 0x0001 (0x0001 - 0x0000)
+struct MovieSceneSection_IsActive final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_IsActive;
+
+// Function MovieScene.MovieSceneSection.IsLocked
+// 0x0001 (0x0001 - 0x0000)
+struct MovieSceneSection_IsLocked final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneSection_IsLocked;
+
 // Function MovieScene.MovieSceneSequencePlayer.GetBoundObjects
 // 0x0028 (0x0028 - 0x0000)
 struct MovieSceneSequencePlayer_GetBoundObjects final
@@ -385,211 +634,6 @@ public:
 };
 DUMPER7_ASSERTS_MovieSceneSequencePlayer_IsStopped;
 
-// Function MovieScene.MovieSceneSection.SetBlendType
-// 0x0001 (0x0001 - 0x0000)
-struct MovieSceneSection_SetBlendType final
-{
-public:
-	EMovieSceneBlendType                          InBlendType;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_SetBlendType;
-
-// Function MovieScene.MovieSceneSection.SetCompletionMode
-// 0x0001 (0x0001 - 0x0000)
-struct MovieSceneSection_SetCompletionMode final
-{
-public:
-	EMovieSceneCompletionMode                     InCompletionMode;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_SetCompletionMode;
-
-// Function MovieScene.MovieSceneSection.SetIsActive
-// 0x0001 (0x0001 - 0x0000)
-struct MovieSceneSection_SetIsActive final
-{
-public:
-	bool                                          bInIsActive;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_SetIsActive;
-
-// Function MovieScene.MovieSceneSection.SetIsLocked
-// 0x0001 (0x0001 - 0x0000)
-struct MovieSceneSection_SetIsLocked final
-{
-public:
-	bool                                          bInIsLocked;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_SetIsLocked;
-
-// Function MovieScene.MovieSceneSection.SetOverlapPriority
-// 0x0004 (0x0004 - 0x0000)
-struct MovieSceneSection_SetOverlapPriority final
-{
-public:
-	int32                                         NewPriority;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_SetOverlapPriority;
-
-// Function MovieScene.MovieSceneSection.SetPostRollFrames
-// 0x0004 (0x0004 - 0x0000)
-struct MovieSceneSection_SetPostRollFrames final
-{
-public:
-	int32                                         InPostRollFrames;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_SetPostRollFrames;
-
-// Function MovieScene.MovieSceneSection.SetPreRollFrames
-// 0x0004 (0x0004 - 0x0000)
-struct MovieSceneSection_SetPreRollFrames final
-{
-public:
-	int32                                         InPreRollFrames;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_SetPreRollFrames;
-
-// Function MovieScene.MovieSceneSection.SetRowIndex
-// 0x0004 (0x0004 - 0x0000)
-struct MovieSceneSection_SetRowIndex final
-{
-public:
-	int32                                         NewRowIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_SetRowIndex;
-
-// Function MovieScene.MovieSceneSection.GetBlendType
-// 0x0002 (0x0002 - 0x0000)
-struct MovieSceneSection_GetBlendType final
-{
-public:
-	struct FOptionalMovieSceneBlendType           ReturnValue;                                       // 0x0000(0x0002)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_GetBlendType;
-
-// Function MovieScene.MovieSceneSection.GetCompletionMode
-// 0x0001 (0x0001 - 0x0000)
-struct MovieSceneSection_GetCompletionMode final
-{
-public:
-	EMovieSceneCompletionMode                     ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_GetCompletionMode;
-
-// Function MovieScene.MovieSceneSection.GetEndFrame
-// 0x0008 (0x0008 - 0x0000)
-struct MovieSceneSection_GetEndFrame final
-{
-public:
-	struct FFrameNumberRangeBound                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_GetEndFrame;
-
-// Function MovieScene.MovieSceneSection.GetOverlapPriority
-// 0x0004 (0x0004 - 0x0000)
-struct MovieSceneSection_GetOverlapPriority final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_GetOverlapPriority;
-
-// Function MovieScene.MovieSceneSection.GetPostRollFrames
-// 0x0004 (0x0004 - 0x0000)
-struct MovieSceneSection_GetPostRollFrames final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_GetPostRollFrames;
-
-// Function MovieScene.MovieSceneSection.GetPreRollFrames
-// 0x0004 (0x0004 - 0x0000)
-struct MovieSceneSection_GetPreRollFrames final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_GetPreRollFrames;
-
-// Function MovieScene.MovieSceneSection.GetRowIndex
-// 0x0004 (0x0004 - 0x0000)
-struct MovieSceneSection_GetRowIndex final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_GetRowIndex;
-
-// Function MovieScene.MovieSceneSection.GetStartFrame
-// 0x0008 (0x0008 - 0x0000)
-struct MovieSceneSection_GetStartFrame final
-{
-public:
-	struct FFrameNumberRangeBound                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_GetStartFrame;
-
-// Function MovieScene.MovieSceneSection.IsActive
-// 0x0001 (0x0001 - 0x0000)
-struct MovieSceneSection_IsActive final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_IsActive;
-
-// Function MovieScene.MovieSceneSection.IsLocked
-// 0x0001 (0x0001 - 0x0000)
-struct MovieSceneSection_IsLocked final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSection_IsLocked;
-
-// Function MovieScene.MovieSceneSequence.FindBindingByTag
-// 0x0024 (0x0024 - 0x0000)
-struct MovieSceneSequence_FindBindingByTag final
-{
-public:
-	class FName                                   InBindingName;                                     // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMovieSceneObjectBindingID             ReturnValue;                                       // 0x000C(0x0018)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSequence_FindBindingByTag;
-
-// Function MovieScene.MovieSceneSequence.FindBindingsByBothTags
-// 0x0020 (0x0020 - 0x0000)
-struct MovieSceneSequence_FindBindingsByBothTags final
-{
-public:
-	TArray<class FName>                           InBindingNames;                                    // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FMovieSceneObjectBindingID>     ReturnValue;                                       // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSequence_FindBindingsByBothTags;
-
-// Function MovieScene.MovieSceneSequence.FindBindingsByTag
-// 0x0020 (0x0020 - 0x0000)
-struct MovieSceneSequence_FindBindingsByTag final
-{
-public:
-	class FName                                   InBindingName;                                     // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FMovieSceneObjectBindingID>     ReturnValue;                                       // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneSequence_FindBindingsByTag;
-
-// Function MovieScene.MovieSceneSequence.HasBindingTag
-// 0x0010 (0x0010 - 0x0000)
-struct MovieSceneSequence_HasBindingTag final
-{
-public:
-	class FName                                   InBindingName;                                     // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IncludeSubSequence;                                // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000D(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MovieSceneSequence_HasBindingTag;
-
 // Function MovieScene.MovieSceneSubSection.SetSequence
 // 0x0008 (0x0008 - 0x0000)
 struct MovieSceneSubSection_SetSequence final
@@ -655,6 +699,15 @@ public:
 	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MovieScene_AllTags;
+
+// Function MovieScene.MovieScene.AllTrackTags
+// 0x0010 (0x0010 - 0x0000)
+struct MovieScene_AllTrackTags final
+{
+public:
+	TArray<class FName>                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieScene_AllTrackTags;
 
 // Function MovieScene.MovieSceneEasingFunction.OnEvaluate
 // 0x0008 (0x0008 - 0x0000)

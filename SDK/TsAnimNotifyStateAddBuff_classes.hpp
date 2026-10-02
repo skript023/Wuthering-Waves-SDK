@@ -11,19 +11,19 @@
 #include "Basic.hpp"
 
 #include "ESkillBehaviorBuffTargetType_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateAddBuff.TsAnimNotifyStateAddBuff_C
-// 0x0010 (0x0058 - 0x0048)
-class UTsAnimNotifyStateAddBuff_C final : public UKuroAnimNotifyState
+// 0x0010 (0x0068 - 0x0058)
+class UTsAnimNotifyStateAddBuff_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	int64                                         BuffId;                                            // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESkillBehaviorBuffTargetType                  施加目标;                                          // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int64                                         BuffId;                                            // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESkillBehaviorBuffTargetType                  施加目标;                                          // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

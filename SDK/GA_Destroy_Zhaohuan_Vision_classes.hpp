@@ -18,29 +18,34 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Destroy_Zhaohuan_Vision.GA_Destroy_Zhaohuan_Vision_C
-// 0x0090 (0x0618 - 0x0588)
+// 0x0090 (0x0660 - 0x05D0)
 class GA_Destroy_Zhaohuan_Vision::UGA_Destroy_Zhaohuan_Vision_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Destroy_Zhaohuan_Vision_C;       // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	int32                                         召唤者ID;                                          // 0x0590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_594[0x4];                                      // 0x0594(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     召唤者;                                            // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         材质Handle;                                        // 0x05A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5A4[0x4];                                      // 0x05A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPD_CharacterControllerData_C*          材质配置;                                          // 0x05A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          外部结束;                                          // 0x05B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5B1[0x7];                                      // 0x05B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<int32, class ATsBaseCharacter_C*>        伴生物销毁材质Handle;                              // 0x05B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         伴生物数量;                                        // 0x0608(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_60C[0x4];                                      // 0x060C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                召唤销毁材质;                                      // 0x0610(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Destroy_Zhaohuan_Vision_C;       // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	int32                                         召唤者ID;                                          // 0x05D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5DC[0x4];                                      // 0x05DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseCharacter_C*                     召唤者;                                            // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         材质Handle;                                        // 0x05E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5EC[0x4];                                      // 0x05EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPD_CharacterControllerData_C*          材质配置;                                          // 0x05F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          外部结束;                                          // 0x05F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5F9[0x7];                                      // 0x05F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, class ATsBaseCharacter_C*>        伴生物销毁材质Handle;                              // 0x0600(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         伴生物数量;                                        // 0x0650(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_654[0x4];                                      // 0x0654(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                召唤销毁材质;                                      // 0x0658(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Destroy_Zhaohuan_Vision(int32 EntryPoint);
 	void K2_OnEndAbility(bool bWasCancelled);
 	void K2_ActivateAbility();
-	void EventReceived_18B59F5945020DB23C42FD88E4097BC7(const struct FGameplayEventData& Payload);
+	void OnCompleted_5D118C384AE61F1C80292E8149471FA9();
+	void OnBlendOut_5D118C384AE61F1C80292E8149471FA9();
+	void OnInterrupted_5D118C384AE61F1C80292E8149471FA9();
+	void OnCancelled_5D118C384AE61F1C80292E8149471FA9();
+	void OnTick_5D118C384AE61F1C80292E8149471FA9();
+	void EventReceived_18B59F5945020DB23C42FD889E6C8830(const struct FGameplayEventData& Payload);
 	void 初始化参数();
 	void 获取幻象数据(class ATsBaseCharacter_C* entity, bool* 是否找到, struct FSVisionData* 输出行);
 	void 结束召唤状态();

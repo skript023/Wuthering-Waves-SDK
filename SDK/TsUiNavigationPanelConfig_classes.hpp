@@ -11,9 +11,9 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "LGUI_classes.hpp"
 #include "SNavigationGroup_structs.hpp"
 #include "SNavigationDynamicListenerConfig_structs.hpp"
+#include "LGUI_classes.hpp"
 
 
 namespace SDK
@@ -39,14 +39,15 @@ public:
 	class FString                                 InteractiveTag;                                    // 0x0260(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	class AActor*                                 GamepadMouseActor;                                 // 0x0270(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          FirstFindFromSubPanelWhenFindNone;                 // 0x0278(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          NeedCacheListener;                                 // 0x0279(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_TsUiNavigationPanelConfig(int32 EntryPoint);
+	void OnPreDestroyBP();
 	void StartBP();
 	void OnDisableBP();
 	void OnEnableBP();
 	void AwakeBP();
-	void OnDestroyBP();
 
 public:
 	static class UClass* StaticClass()

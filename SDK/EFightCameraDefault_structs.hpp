@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EFightCameraDefault.EFightCameraDefault
-// NumValues: 0x0067
+// NumValues: 0x0079
 enum class EFightCameraDefault : uint8
 {
 	NewEnumerator21                          = 0,
@@ -120,7 +120,25 @@ enum class EFightCameraDefault : uint8
 	NewEnumerator101                         = 99,
 	NewEnumerator102                         = 100,
 	NewEnumerator103                         = 101,
-	EFightCameraDefault_MAX                  = 102,
+	NewEnumerator104                         = 102,
+	NewEnumerator105                         = 103,
+	NewEnumerator106                         = 104,
+	NewEnumerator107                         = 105,
+	NewEnumerator108                         = 106,
+	NewEnumerator109                         = 107,
+	NewEnumerator110                         = 108,
+	NewEnumerator111                         = 109,
+	NewEnumerator112                         = 110,
+	NewEnumerator113                         = 111,
+	NewEnumerator114                         = 112,
+	NewEnumerator115                         = 113,
+	NewEnumerator116                         = 114,
+	NewEnumerator117                         = 115,
+	NewEnumerator118                         = 116,
+	NewEnumerator119                         = 117,
+	NewEnumerator120                         = 118,
+	NewEnumerator121                         = 119,
+	EFightCameraDefault_MAX                  = 120,
 };
 
 }

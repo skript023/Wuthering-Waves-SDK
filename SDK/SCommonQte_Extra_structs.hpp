@@ -17,18 +17,20 @@ namespace SDK
 {
 
 // UserDefinedStruct SCommonQte_Extra.SCommonQte_Extra
-// 0x00D8 (0x00D8 - 0x0000)
+// 0x0108 (0x0108 - 0x0000)
 struct FSCommonQte_Extra final
 {
 public:
 	bool                                          IsBlockFightInput_21_79D37B5443E5D735705520AC9CF02321; // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          HideAllBattleUi_1_E3BA121845C46E518FC5668DC0BCA722; // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          ShowMouseCursor_34_E42919854D870460BFF6F1A300A83D9D; // 0x0002(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<EBattleUIChild>                        HideUIElement_5_0C9790D245D0D4F997F946973FA53F7C;  // 0x0008(0x0010)(Edit, BlueprintVisible)
 	TSoftObjectPtr<class UEffectScreenPlayData_C> ScreenEffectType1_18_E105472141855A53BD5578961F4F653C; // 0x0018(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TSoftObjectPtr<class UEffectModelPostProcess_C> ScreenEffectType2_12_A5BAEFA840840123B8ED57A06B5E26D6; // 0x0048(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 	TSoftClassPtr<class UClass>                   CameraShake_19_2C0A28C8453D7874F601A5A4A32AC26F;   // 0x0078(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TSoftObjectPtr<class UCurveFloat>             UiScaleCurve_24_54CFD893434378DD1F8DD2B5BB0AB83C;  // 0x00A8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class UKuroForceFeedbackEffect> GamepadShake_31_AC303F1C42878E95E293199CF88D2C45; // 0x00A8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class UCurveFloat>             UiScaleCurve_24_54CFD893434378DD1F8DD2B5BB0AB83C;  // 0x00D8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCommonQte_Extra;
 

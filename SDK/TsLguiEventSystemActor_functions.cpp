@@ -17,23 +17,21 @@
 namespace SDK
 {
 
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTrigger
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.SetClickThresholdWithInputKeyType
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    triggerPress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-// EMouseButtonType                        mouseButtonType                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// EInputKeyType                           inputKeyType                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ATsLguiEventSystemActor_C::InputTrigger(bool triggerPress, EMouseButtonType mouseButtonType)
+void ATsLguiEventSystemActor_C::SetClickThresholdWithInputKeyType(EInputKeyType inputKeyType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputTrigger");
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "SetClickThresholdWithInputKeyType");
 
-	Params::TsLguiEventSystemActor_C_InputTrigger Parms{};
+	Params::TsLguiEventSystemActor_C_SetClickThresholdWithInputKeyType Parms{};
 
-	Parms.triggerPress = triggerPress;
-	Parms.mouseButtonType = mouseButtonType;
+	Parms.inputKeyType = inputKeyType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -44,154 +42,22 @@ void ATsLguiEventSystemActor_C::InputTrigger(bool triggerPress, EMouseButtonType
 }
 
 
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputNavigation
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ELGUINavigationDirection                direction                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// bool                                    pressOrRelease                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-// bool                                    forceNavigation                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-
-void ATsLguiEventSystemActor_C::InputNavigation(ELGUINavigationDirection direction, bool pressOrRelease, bool forceNavigation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputNavigation");
-
-	Params::TsLguiEventSystemActor_C_InputNavigation Parms{};
-
-	Parms.direction = direction;
-	Parms.pressOrRelease = pressOrRelease;
-	Parms.forceNavigation = forceNavigation;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTriggerForNavigation
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    triggerPress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-
-void ATsLguiEventSystemActor_C::InputTriggerForNavigation(bool triggerPress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputTriggerForNavigation");
-
-	Params::TsLguiEventSystemActor_C_InputTriggerForNavigation Parms{};
-
-	Parms.triggerPress = triggerPress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputScroll
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   axisValue                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ATsLguiEventSystemActor_C::InputScroll(float axisValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputScroll");
-
-	Params::TsLguiEventSystemActor_C_InputScroll Parms{};
-
-	Parms.axisValue = axisValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchTrigger
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    touchPress                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-// int32                                   touchId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FVector&                   touchPointPosition                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-
-void ATsLguiEventSystemActor_C::InputTouchTrigger(bool touchPress, int32 touchId, const struct FVector& touchPointPosition)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputTouchTrigger");
-
-	Params::TsLguiEventSystemActor_C_InputTouchTrigger Parms{};
-
-	Parms.touchPress = touchPress;
-	Parms.touchId = touchId;
-	Parms.touchPointPosition = std::move(touchPointPosition);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchMove
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   touchId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FVector&                   touchPointPosition                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-
-void ATsLguiEventSystemActor_C::InputTouchMove(int32 touchId, const struct FVector& touchPointPosition)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputTouchMove");
-
-	Params::TsLguiEventSystemActor_C_InputTouchMove Parms{};
-
-	Parms.touchId = touchId;
-	Parms.touchPointPosition = std::move(touchPointPosition);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetNowHitComponent
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.IsPointerEventDataLineTrace
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UUIItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class ULGUIPointerEventData*            pointerEventData                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
 
-class UUIItem* ATsLguiEventSystemActor_C::GetNowHitComponent()
+bool ATsLguiEventSystemActor_C::IsPointerEventDataLineTrace(class ULGUIPointerEventData* pointerEventData)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsLguiEventSystemActor_C", "GetNowHitComponent");
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "IsPointerEventDataLineTrace");
 
-	Params::TsLguiEventSystemActor_C_GetNowHitComponent Parms{};
+	Params::TsLguiEventSystemActor_C_IsPointerEventDataLineTrace Parms{};
+
+	Parms.pointerEventData = pointerEventData;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -234,22 +100,19 @@ class ULGUIPointerEventData* ATsLguiEventSystemActor_C::GetPointerEventData(floa
 }
 
 
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.IsPointerEventDataLineTrace
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetNowHitComponent
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ULGUIPointerEventData*            pointerEventData                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
+// class UUIItem*                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
-bool ATsLguiEventSystemActor_C::IsPointerEventDataLineTrace(class ULGUIPointerEventData* pointerEventData)
+class UUIItem* ATsLguiEventSystemActor_C::GetNowHitComponent()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("TsLguiEventSystemActor_C", "IsPointerEventDataLineTrace");
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "GetNowHitComponent");
 
-	Params::TsLguiEventSystemActor_C_IsPointerEventDataLineTrace Parms{};
-
-	Parms.pointerEventData = pointerEventData;
+	Params::TsLguiEventSystemActor_C_GetNowHitComponent Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -259,6 +122,168 @@ bool ATsLguiEventSystemActor_C::IsPointerEventDataLineTrace(class ULGUIPointerEv
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchMove
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   touchId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   touchPointPosition                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void ATsLguiEventSystemActor_C::InputTouchMove(int32 touchId, const struct FVector& touchPointPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputTouchMove");
+
+	Params::TsLguiEventSystemActor_C_InputTouchMove Parms{};
+
+	Parms.touchId = touchId;
+	Parms.touchPointPosition = std::move(touchPointPosition);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchTrigger
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    touchPress                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// int32                                   touchId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVector&                   touchPointPosition                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void ATsLguiEventSystemActor_C::InputTouchTrigger(bool touchPress, int32 touchId, const struct FVector& touchPointPosition)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputTouchTrigger");
+
+	Params::TsLguiEventSystemActor_C_InputTouchTrigger Parms{};
+
+	Parms.touchPress = touchPress;
+	Parms.touchId = touchId;
+	Parms.touchPointPosition = std::move(touchPointPosition);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputScroll
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   axisValue                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ATsLguiEventSystemActor_C::InputScroll(float axisValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputScroll");
+
+	Params::TsLguiEventSystemActor_C_InputScroll Parms{};
+
+	Parms.axisValue = axisValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTriggerForNavigation
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    triggerPress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+
+void ATsLguiEventSystemActor_C::InputTriggerForNavigation(bool triggerPress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputTriggerForNavigation");
+
+	Params::TsLguiEventSystemActor_C_InputTriggerForNavigation Parms{};
+
+	Parms.triggerPress = triggerPress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputNavigation
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ELGUINavigationDirection                direction                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// bool                                    pressOrRelease                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// bool                                    forceNavigation                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+
+void ATsLguiEventSystemActor_C::InputNavigation(ELGUINavigationDirection direction, bool pressOrRelease, bool forceNavigation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputNavigation");
+
+	Params::TsLguiEventSystemActor_C_InputNavigation Parms{};
+
+	Parms.direction = direction;
+	Parms.pressOrRelease = pressOrRelease;
+	Parms.forceNavigation = forceNavigation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTrigger
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    triggerPress                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// EMouseButtonType                        mouseButtonType                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void ATsLguiEventSystemActor_C::InputTrigger(bool triggerPress, EMouseButtonType mouseButtonType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsLguiEventSystemActor_C", "InputTrigger");
+
+	Params::TsLguiEventSystemActor_C_InputTrigger Parms{};
+
+	Parms.triggerPress = triggerPress;
+	Parms.mouseButtonType = mouseButtonType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 }

@@ -19,27 +19,37 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_FloatingStaticMesh.BP_FloatingStaticMesh_C
-// 0x00F0 (0x0458 - 0x0368)
+// 0x0160 (0x0980 - 0x0820)
 class ABP_FloatingStaticMesh_C final : public AKuroFloatingStaticMesh
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0368(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UKuroVirtualAttachmentParentComponent*  KuroVirtualAttachmentParent;                       // 0x0370(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   StaticMeshComp;                                    // 0x0378(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        Scene;                                             // 0x0380(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          使用材质参数;                                      // 0x0388(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_389[0x7];                                      // 0x0389(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, float>                      FloatParameters;                                   // 0x0390(0x0050)(Edit, BlueprintVisible)
-	TMap<class FName, struct FLinearColor>        ColorParameters;                                   // 0x03E0(0x0050)(Edit, BlueprintVisible)
-	struct FLinearColor                           EmissionDayColor;                                  // 0x0430(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           EmissionColor;                                     // 0x0440(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          UseWholeDayEmission;                               // 0x0450(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0820(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UKuroVirtualAttachmentParentComponent*  KuroVirtualAttachmentParent;                       // 0x0828(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   StaticMeshComp;                                    // 0x0830(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Scene;                                             // 0x0838(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	bool                                          使用材质参数;                                      // 0x0840(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_841[0x7];                                      // 0x0841(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, float>                      FloatParameters;                                   // 0x0848(0x0050)(Edit, BlueprintVisible)
+	TMap<class FName, struct FLinearColor>        ColorParameters;                                   // 0x0898(0x0050)(Edit, BlueprintVisible)
+	struct FLinearColor                           EmissionDayColor;                                  // 0x08E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           EmissionColor;                                     // 0x08F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseWholeDayEmission;                               // 0x0908(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_909[0x7];                                      // 0x0909(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class AActor*, struct FTransformDouble>  ChildActors;                                       // 0x0910(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CustomData;                                        // 0x0960(0x0010)(Edit, BlueprintVisible)
+	bool                                          SpecialBlueprintActor;                             // 0x0970(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          OverrideSuperFarActor;                             // 0x0971(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          HiddenState;                                       // 0x0972(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          UseWasRecentlyPassVisibilityTest;                  // 0x0973(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_FloatingStaticMesh(int32 EntryPoint);
 	void ReceiveBeginPlay();
 	void UserConstructionScript();
 	void SetMaterialParams();
+	void RefreshChildActors();
+	void CopyCustomPrimitiveData(class UStaticMeshComponent* Target);
+	void SetCustomData();
 
 public:
 	static class UClass* StaticClass()

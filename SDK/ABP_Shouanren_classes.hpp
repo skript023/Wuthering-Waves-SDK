@@ -18,16 +18,16 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Shouanren.ABP_Shouanren_C
-// 0x0020 (0x2B080 - 0x2B060)
+// 0x0020 (0x2CBD0 - 0x2CBB0)
 class UABP_Shouanren_C final : public UABP_BaseRole_C
 {
 public:
-	uint8                                         Pad_2B05C[0x4];                                    // 0x2B05C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_ABP_Shouanren_C;                    // 0x2B060(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UABP_Shouanren_C*                       BaseCharAnim;                                      // 0x2B068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          PhysicsClothSimulateEnable;                        // 0x2B070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B071[0x3];                                    // 0x2B071(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PhysicsClothSimulateScale;                         // 0x2B074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2CBAC[0x4];                                    // 0x2CBAC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame_ABP_Shouanren_C;                    // 0x2CBB0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UABP_Shouanren_C*                       BaseCharAnim;                                      // 0x2CBB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          PhysicsClothSimulateEnable;                        // 0x2CBC0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2CBC1[0x3];                                    // 0x2CBC1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PhysicsClothSimulateScale;                         // 0x2CBC4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_Shouanren(int32 EntryPoint);

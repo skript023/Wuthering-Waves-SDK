@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_ShouAnRen_AttackL_EX.GA_ShouAnRen_AttackL_EX_C.ExecuteUbergraph_GA_ShouAnRen_AttackL_EX
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

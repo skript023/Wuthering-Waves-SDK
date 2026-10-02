@@ -10,17 +10,20 @@
 
 #include "Basic.hpp"
 
+#include "SSceneInteractionDestructibleInfo_structs.hpp"
+
 
 namespace SDK
 {
 
 // UserDefinedStruct SSceneInteractionActorSkeletalmeshDestructible.SSceneInteractionActorSkeletalMeshDestructible
-// 0x0020 (0x0020 - 0x0000)
+// 0x0048 (0x0048 - 0x0000)
 struct FSSceneInteractionActorSkeletalMeshDestructible final
 {
 public:
 	TArray<class AKuroDestructibleActor*>         PlayDestructionAllImmediately_10_CEE345CE4B337E583CB02FA768482D38; // 0x0000(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	TArray<class AKuroDestructibleActor*>         CanPlayDestructionWhenHit_11_6EBB7F64462CFC53CE836B87659E8992; // 0x0010(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	struct FSSceneInteractionDestructibleInfo     HitInfo_20_CEF87ADF4706E4D1F055EF9C24C6FEBA;       // 0x0020(0x0028)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSSceneInteractionActorSkeletalMeshDestructible;
 

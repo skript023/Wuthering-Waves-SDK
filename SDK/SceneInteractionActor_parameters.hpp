@@ -10,97 +10,83 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function SceneInteractionActor.SceneInteractionActor_C.ExecuteUbergraph_SceneInteractionActor
+// Function SceneInteractionActor.SceneInteractionActor_C.PostTagEvent
+// 0x0020 (0x0020 - 0x0000)
+struct SceneInteractionActor_C_PostTagEvent final
+{
+public:
+	class FString                                 event;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FGameplayTag                           tag;                                               // 0x0010(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+	bool                                          follow;                                            // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_PostTagEvent;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.PostAutoMergeEvent
+// 0x0018 (0x0018 - 0x0000)
+struct SceneInteractionActor_C_PostAutoMergeEvent final
+{
+public:
+	class FString                                 event;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	float                                         tagId;                                             // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          follow;                                            // 0x0014(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_PostAutoMergeEvent;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.OverrideKuroDestructibleActorPhysicsVelocity
 // 0x0008 (0x0008 - 0x0000)
-struct SceneInteractionActor_C_ExecuteUbergraph_SceneInteractionActor final
+struct SceneInteractionActor_C_OverrideKuroDestructibleActorPhysicsVelocity final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AKuroDestructibleActor*                 skeletalMeshDestruction;                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_SceneInteractionActor_C_ExecuteUbergraph_SceneInteractionActor;
+DUMPER7_ASSERTS_SceneInteractionActor_C_OverrideKuroDestructibleActorPhysicsVelocity;
 
-// Function SceneInteractionActor.SceneInteractionActor_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct SceneInteractionActor_C_ReceiveEndPlay final
+// Function SceneInteractionActor.SceneInteractionActor_C.UnsetOverrideSeqBindActor
+// 0x0018 (0x0018 - 0x0000)
+struct SceneInteractionActor_C_UnsetOverrideSeqBindActor final
 {
 public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 actorToUnbind;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 bindingName;                                       // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_SceneInteractionActor_C_ReceiveEndPlay;
+DUMPER7_ASSERTS_SceneInteractionActor_C_UnsetOverrideSeqBindActor;
 
-// Function SceneInteractionActor.SceneInteractionActor_C.AddMatrialDataForChildrenActor
+// Function SceneInteractionActor.SceneInteractionActor_C.SetOverrideSeqBindActor
+// 0x0018 (0x0018 - 0x0000)
+struct SceneInteractionActor_C_SetOverrideSeqBindActor final
+{
+public:
+	class AActor*                                 actorToBind;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 bindingName;                                       // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_SetOverrideSeqBindActor;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.GetActiveSequenceRemainTime
 // 0x0010 (0x0010 - 0x0000)
-struct SceneInteractionActor_C_AddMatrialDataForChildrenActor final
-{
-public:
-	class AActor*                                 actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class UItemMaterialControllerActorData_C*     materialData;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SceneInteractionActor_C_AddMatrialDataForChildrenActor;
-
-// Function SceneInteractionActor.SceneInteractionActor_C.ResetTagActorHide
-// 0x000C (0x000C - 0x0000)
-struct SceneInteractionActor_C_ResetTagActorHide final
-{
-public:
-	struct FGameplayTag                           tag;                                               // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SceneInteractionActor_C_ResetTagActorHide;
-
-// Function SceneInteractionActor.SceneInteractionActor_C.StopExtraEffectOnTagsChange
-// 0x000C (0x000C - 0x0000)
-struct SceneInteractionActor_C_StopExtraEffectOnTagsChange final
-{
-public:
-	struct FGameplayTag                           tag;                                               // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SceneInteractionActor_C_StopExtraEffectOnTagsChange;
-
-// Function SceneInteractionActor.SceneInteractionActor_C.GetDirectorBySequence
-// 0x0010 (0x0010 - 0x0000)
-struct SceneInteractionActor_C_GetDirectorBySequence final
+struct SceneInteractionActor_C_GetActiveSequenceRemainTime final
 {
 public:
 	class ULevelSequence*                         sequence;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ALevelSequenceActor*                    ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_SceneInteractionActor_C_GetDirectorBySequence;
+DUMPER7_ASSERTS_SceneInteractionActor_C_GetActiveSequenceRemainTime;
 
-// Function SceneInteractionActor.SceneInteractionActor_C.StopTagAkEvent
-// 0x000C (0x000C - 0x0000)
-struct SceneInteractionActor_C_StopTagAkEvent final
-{
-public:
-	struct FGameplayTag                           tag;                                               // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_SceneInteractionActor_C_StopTagAkEvent;
-
-// Function SceneInteractionActor.SceneInteractionActor_C.UpdateProjectionActorTransform
-// 0x0040 (0x0040 - 0x0000)
-struct SceneInteractionActor_C_UpdateProjectionActorTransform final
-{
-public:
-	struct FTransformDouble                       transform1;                                        // 0x0000(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_SceneInteractionActor_C_UpdateProjectionActorTransform;
-
-// Function SceneInteractionActor.SceneInteractionActor_C.ApplyAnimOptimizationParams
+// Function SceneInteractionActor.SceneInteractionActor_C.CheckAllEffectPlaying
 // 0x0001 (0x0001 - 0x0000)
-struct SceneInteractionActor_C_ApplyAnimOptimizationParams final
+struct SceneInteractionActor_C_CheckAllEffectPlaying final
 {
 public:
-	bool                                          bUseDistanceMap;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_SceneInteractionActor_C_ApplyAnimOptimizationParams;
+DUMPER7_ASSERTS_SceneInteractionActor_C_CheckAllEffectPlaying;
 
 // Function SceneInteractionActor.SceneInteractionActor_C.PlayKuroSkeletalMeshDestruction
 // 0x0010 (0x0010 - 0x0000)
@@ -112,24 +98,89 @@ public:
 };
 DUMPER7_ASSERTS_SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction;
 
-// Function SceneInteractionActor.SceneInteractionActor_C.CheckAllEffectPlaying
+// Function SceneInteractionActor.SceneInteractionActor_C.ApplyAnimOptimizationParams
 // 0x0001 (0x0001 - 0x0000)
-struct SceneInteractionActor_C_CheckAllEffectPlaying final
+struct SceneInteractionActor_C_ApplyAnimOptimizationParams final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	bool                                          bUseDistanceMap;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_SceneInteractionActor_C_CheckAllEffectPlaying;
+DUMPER7_ASSERTS_SceneInteractionActor_C_ApplyAnimOptimizationParams;
 
-// Function SceneInteractionActor.SceneInteractionActor_C.GetActiveSequenceRemainTime
+// Function SceneInteractionActor.SceneInteractionActor_C.UpdateProjectionActorTransform
+// 0x0040 (0x0040 - 0x0000)
+struct SceneInteractionActor_C_UpdateProjectionActorTransform final
+{
+public:
+	struct FTransformDouble                       transform1;                                        // 0x0000(0x0040)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_UpdateProjectionActorTransform;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.StopTagAkEvent
+// 0x000C (0x000C - 0x0000)
+struct SceneInteractionActor_C_StopTagAkEvent final
+{
+public:
+	struct FGameplayTag                           tag;                                               // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_StopTagAkEvent;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.GetDirectorBySequence
 // 0x0010 (0x0010 - 0x0000)
-struct SceneInteractionActor_C_GetActiveSequenceRemainTime final
+struct SceneInteractionActor_C_GetDirectorBySequence final
 {
 public:
 	class ULevelSequence*                         sequence;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ALevelSequenceActor*                    ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_SceneInteractionActor_C_GetActiveSequenceRemainTime;
+DUMPER7_ASSERTS_SceneInteractionActor_C_GetDirectorBySequence;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.StopExtraEffectOnTagsChange
+// 0x000C (0x000C - 0x0000)
+struct SceneInteractionActor_C_StopExtraEffectOnTagsChange final
+{
+public:
+	struct FGameplayTag                           tag;                                               // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_StopExtraEffectOnTagsChange;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ResetTagActorHide
+// 0x000C (0x000C - 0x0000)
+struct SceneInteractionActor_C_ResetTagActorHide final
+{
+public:
+	struct FGameplayTag                           tag;                                               // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_ResetTagActorHide;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.AddMatrialDataForChildrenActor
+// 0x0010 (0x0010 - 0x0000)
+struct SceneInteractionActor_C_AddMatrialDataForChildrenActor final
+{
+public:
+	class AActor*                                 actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class UItemMaterialControllerActorData_C*     materialData;                                      // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_AddMatrialDataForChildrenActor;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct SceneInteractionActor_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_ReceiveEndPlay;
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ExecuteUbergraph_SceneInteractionActor
+// 0x0008 (0x0008 - 0x0000)
+struct SceneInteractionActor_C_ExecuteUbergraph_SceneInteractionActor final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_SceneInteractionActor_C_ExecuteUbergraph_SceneInteractionActor;
 
 }
 

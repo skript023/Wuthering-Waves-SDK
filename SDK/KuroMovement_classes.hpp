@@ -69,18 +69,21 @@ public:
 DUMPER7_ASSERTS_UKuroClimbObject;
 
 // Class KuroMovement.KuroDebugMovementComponent
-// 0x01A0 (0x06D0 - 0x0530)
+// 0x0270 (0x0800 - 0x0590)
 class UKuroDebugMovementComponent final : public UPrimitiveComponent
 {
 public:
-	int32                                         DrawDebugCount;                                    // 0x0528(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         bShowLog : 1;                                      // 0x052C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	EKDMDrawDebugType                             bDrawDebug;                                        // 0x052D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_52E[0x1A2];                                    // 0x052E(0x01A2)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         DrawDebugCount;                                    // 0x0590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bShowLog : 1;                                      // 0x0594(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	EKDMDrawDebugType                             bDrawDebug;                                        // 0x0595(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bRecording : 1;                                    // 0x0596(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bHasPersistentRecord : 1;                          // 0x0596(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_597[0x269];                                    // 0x0597(0x0269)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class FString KuroDebugMovementBaseRecordToString(const struct FBaseRecord& Record);
 
+	void DrawRecord(const struct FBaseRecord& Record, float SphereRadius, float ArrowLength);
 	int32 GetCurrentFrameIndex();
 	class FString GetFrameCountInfo();
 	int32 GetMaxRecordFrameCount();
@@ -188,8 +191,10 @@ DUMPER7_ASSERTS_AKuroMoveBrushTrigger;
 class UKuroMovementBPLibrary final : public UBlueprintFunctionLibrary
 {
 public:
+	static float KuroBinarySearchCurve(class UCurveFloat* Curve, float Y, float From, float To, float tolerance);
 	static int32 KuroEaseSpeedTo(class UPawnMovementComponent* PawnMoveComp, const float TargetSpeed, const EKuroEasingFuncType EaseType, const float TransitionTime, const float Exponent, const class FString& CurvePath);
 	static bool KuroKite(float DeltaSeconds, class UCharacterMovementComponent* CharMoveComp, const struct FVector& TargetPrevPos, const struct FVector& TargetNextPos, float MinDist, float MaxDist, float MinAccel, float MaxAccel, float Friction, struct FVector* InOutTargetForward, float FacingLerpSpeed, float FacingLerpRate);
+	static EMoveHitType KuroMoveByOffset(float DeltaSeconds, class UCharacterMovementComponent* CharMoveComp, const struct FVector& MoveDelta, EMoveSlideType SlideType, const struct FVector& SlideDirection);
 	static bool KuroRoll(float DeltaSeconds, class UCharacterMovementComponent* CharMoveComp, float TargetSpeed, float Friction, float AccelOnGround, struct FVector* FloorNormal, float Gravity, float StepUpHeight, float MaxSpeed);
 	static int32 KuroSki(float DeltaTime, class UCharacterMovementComponent* CharMoveComp, const struct FVector& PrevBlockNormal, const struct FVector& Direction, const struct FVector& SpeedParams, float IgnoreStepHeight, class UCurveFloat* SpeedReduceCurve);
 	static EMoveHitType KuroSoar(float DeltaSeconds, class UCharacterMovementComponent* CharMoveComp, float AirFriction, float Aerodynamics, const struct FVector& Gravity, const struct FVector& SoarPlaneNormal, float MaxSpeed);

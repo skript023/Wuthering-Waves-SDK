@@ -10,17 +10,87 @@
 
 #include "Basic.hpp"
 
-#include "UMG_classes.hpp"
+#include "MovieScene_structs.hpp"
+#include "MovieScene_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "LevelSequence_structs.hpp"
-#include "MovieScene_structs.hpp"
-#include "MovieScene_classes.hpp"
 #include "Engine_classes.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK
 {
+
+// Class LevelSequence.LevelSequenceBurnInInitSettings
+// 0x0000 (0x0030 - 0x0030)
+class ULevelSequenceBurnInInitSettings final : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LevelSequenceBurnInInitSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LevelSequenceBurnInInitSettings")
+	}
+	static class ULevelSequenceBurnInInitSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULevelSequenceBurnInInitSettings>();
+	}
+};
+DUMPER7_ASSERTS_ULevelSequenceBurnInInitSettings;
+
+// Class LevelSequence.LevelSequence
+// 0x01E0 (0x0248 - 0x0068)
+class ULevelSequence : public UMovieSceneSequence
+{
+public:
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMovieScene*                            MovieScene;                                        // 0x0070(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLevelSequenceObjectReferenceMap       ObjectReferences;                                  // 0x0078(0x0050)(Protected, NativeAccessSpecifierProtected)
+	struct FLevelSequenceBindingReferences        BindingReferences;                                 // 0x00C8(0x00A0)(Protected, NativeAccessSpecifierProtected)
+	TMap<class FString, struct FLevelSequenceObject> PossessedObjects;                               // 0x0168(0x0050)(Deprecated, Protected, NativeAccessSpecifierProtected)
+	class UClass*                                 DirectorClass;                                     // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bOverrideCenterOffset;                             // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1C1[0x3];                                      // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                DefaultCenterOffset;                               // 0x01C4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bUseAnimAudio;                                     // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1D1[0x7];                                      // 0x01D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroSequenceConsoleCommandDataAsset*   KuroSequenceConsoleCommandDataAsset;               // 0x01D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroSequenceConsoleCommandDataAsset*   SequenceDataAsset;                                 // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UAssetUserData*>                 AssetUserData;                                     // 0x01E8(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
+	TMap<struct FGuid, struct FGuid>              CustomGuidToBindingGuidMap;                        // 0x01F8(0x0050)(Protected, NativeAccessSpecifierProtected)
+
+public:
+	class UObject* CopyMetaData(class UObject* InMetaData);
+	bool D_GetCenterOffset(struct FVectorDouble* OutCenterOffset);
+	class UObject* FindOrAddMetaDataByClass(TSubclassOf<class UObject> InClass);
+	bool GetAnimAudio();
+	bool GetCenterOffset(struct FVector* OutCenterOffset);
+	void RemoveMetaDataByClass(TSubclassOf<class UObject> InClass);
+	void SetAnimAudio(bool Value);
+	void SetCenterOffset(const struct FVector& InCenterOffset);
+
+	class UObject* FindMetaDataByClass(TSubclassOf<class UObject> InClass) const;
+	class UMovieScene* GetMovieScene() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LevelSequence")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LevelSequence")
+	}
+	static class ULevelSequence* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ULevelSequence>();
+	}
+};
+DUMPER7_ASSERTS_ULevelSequence;
 
 // Class LevelSequence.LevelSequenceActor
 // 0x0098 (0x0348 - 0x02B0)
@@ -85,85 +155,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ALevelSequenceActor;
-
-// Class LevelSequence.KuroSequenceConsoleCommandDataAsset
-// 0x0048 (0x0080 - 0x0038)
-class UKuroSequenceConsoleCommandDataAsset final : public UDataAsset
-{
-public:
-	TArray<class FString>                         ConsoleCommands;                                   // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         GlobalConsoleCommands;                             // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         MobileConsoleCommands;                             // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class FString>                         GlobalMobileConsoleCommands;                       // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	bool                                          bMobileLowStreaming;                               // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MobileLowStreamingScale;                           // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroSequenceConsoleCommandDataAsset")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroSequenceConsoleCommandDataAsset")
-	}
-	static class UKuroSequenceConsoleCommandDataAsset* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroSequenceConsoleCommandDataAsset>();
-	}
-};
-DUMPER7_ASSERTS_UKuroSequenceConsoleCommandDataAsset;
-
-// Class LevelSequence.LevelSequence
-// 0x01E0 (0x0248 - 0x0068)
-class ULevelSequence : public UMovieSceneSequence
-{
-public:
-	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMovieScene*                            MovieScene;                                        // 0x0070(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLevelSequenceObjectReferenceMap       ObjectReferences;                                  // 0x0078(0x0050)(Protected, NativeAccessSpecifierProtected)
-	struct FLevelSequenceBindingReferences        BindingReferences;                                 // 0x00C8(0x00A0)(Protected, NativeAccessSpecifierProtected)
-	TMap<class FString, struct FLevelSequenceObject> PossessedObjects;                               // 0x0168(0x0050)(Deprecated, Protected, NativeAccessSpecifierProtected)
-	class UClass*                                 DirectorClass;                                     // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bOverrideCenterOffset;                             // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1C1[0x3];                                      // 0x01C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                DefaultCenterOffset;                               // 0x01C4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	bool                                          bUseAnimAudio;                                     // 0x01D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1D1[0x7];                                      // 0x01D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKuroSequenceConsoleCommandDataAsset*   KuroSequenceConsoleCommandDataAsset;               // 0x01D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroSequenceConsoleCommandDataAsset*   SequenceDataAsset;                                 // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UAssetUserData*>                 AssetUserData;                                     // 0x01E8(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, Protected, NativeAccessSpecifierProtected)
-	TMap<struct FGuid, struct FGuid>              CustomGuidToBindingGuidMap;                        // 0x01F8(0x0050)(Protected, NativeAccessSpecifierProtected)
-
-public:
-	class UObject* CopyMetaData(class UObject* InMetaData);
-	bool D_GetCenterOffset(struct FVectorDouble* OutCenterOffset);
-	class UObject* FindOrAddMetaDataByClass(TSubclassOf<class UObject> InClass);
-	bool GetAnimAudio();
-	bool GetCenterOffset(struct FVector* OutCenterOffset);
-	void RemoveMetaDataByClass(TSubclassOf<class UObject> InClass);
-	void SetAnimAudio(bool Value);
-	void SetCenterOffset(const struct FVector& InCenterOffset);
-
-	class UObject* FindMetaDataByClass(TSubclassOf<class UObject> InClass) const;
-	class UMovieScene* GetMovieScene() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LevelSequence")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LevelSequence")
-	}
-	static class ULevelSequence* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ULevelSequence>();
-	}
-};
-DUMPER7_ASSERTS_ULevelSequence;
 
 // Class LevelSequence.AnimSequenceLevelSequenceLink
 // 0x0030 (0x0060 - 0x0030)
@@ -245,25 +236,34 @@ public:
 };
 DUMPER7_ASSERTS_ILevelSequenceMetaData;
 
-// Class LevelSequence.LevelSequenceBurnInInitSettings
-// 0x0000 (0x0030 - 0x0030)
-class ULevelSequenceBurnInInitSettings final : public UObject
+// Class LevelSequence.KuroSequenceConsoleCommandDataAsset
+// 0x0048 (0x0080 - 0x0038)
+class UKuroSequenceConsoleCommandDataAsset final : public UDataAsset
 {
+public:
+	TArray<class FString>                         ConsoleCommands;                                   // 0x0038(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         GlobalConsoleCommands;                             // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         MobileConsoleCommands;                             // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class FString>                         GlobalMobileConsoleCommands;                       // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bMobileLowStreaming;                               // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_79[0x3];                                       // 0x0079(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MobileLowStreamingScale;                           // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("LevelSequenceBurnInInitSettings")
+		STATIC_CLASS_IMPL("KuroSequenceConsoleCommandDataAsset")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"LevelSequenceBurnInInitSettings")
+		STATIC_NAME_IMPL(L"KuroSequenceConsoleCommandDataAsset")
 	}
-	static class ULevelSequenceBurnInInitSettings* GetDefaultObj()
+	static class UKuroSequenceConsoleCommandDataAsset* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<ULevelSequenceBurnInInitSettings>();
+		return GetDefaultObjImpl<UKuroSequenceConsoleCommandDataAsset>();
 	}
 };
-DUMPER7_ASSERTS_ULevelSequenceBurnInInitSettings;
+DUMPER7_ASSERTS_UKuroSequenceConsoleCommandDataAsset;
 
 // Class LevelSequence.LevelSequenceBurnInOptions
 // 0x0030 (0x0060 - 0x0030)
@@ -423,13 +423,13 @@ public:
 DUMPER7_ASSERTS_ULegacyLevelSequenceDirectorBlueprint;
 
 // Class LevelSequence.LevelSequencePlayer
-// 0x0138 (0x0830 - 0x06F8)
+// 0x0138 (0x0848 - 0x0710)
 class ULevelSequencePlayer final : public UMovieSceneSequencePlayer
 {
 public:
-	TMulticastInlineDelegate<void(class UCameraComponent* CameraComponent)> OnCameraCut;             // 0x06F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class ULevelSequence* LevelSequence, const struct FGuid& Guid, class UObject* Object)> OnSequenceObjectSpawned; // 0x0708(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_718[0x118];                                    // 0x0718(0x0118)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class UCameraComponent* CameraComponent)> OnCameraCut;             // 0x0710(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class ULevelSequence* LevelSequence, const struct FGuid& Guid, class UObject* Object)> OnSequenceObjectSpawned; // 0x0720(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_730[0x118];                                    // 0x0730(0x0118)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class ULevelSequencePlayer* CreateLevelSequencePlayer(class UObject* WorldContextObject, class ULevelSequence* LevelSequence, const struct FMovieSceneSequencePlaybackSettings& Settings, class ALevelSequenceActor** OutActor);

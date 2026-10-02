@@ -12,28 +12,11 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "NavigationSystem_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function NavigationSystem.NavRelevantComponent.SetNavigationRelevancy
-// 0x0001 (0x0001 - 0x0000)
-struct NavRelevantComponent_SetNavigationRelevancy final
-{
-public:
-	bool                                          bRelevant;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavRelevantComponent_SetNavigationRelevancy;
-
-// Function NavigationSystem.NavModifierComponent.SetAreaClass
-// 0x0008 (0x0008 - 0x0000)
-struct NavModifierComponent_SetAreaClass final
-{
-public:
-	TSubclassOf<class UNavArea>                   NewAreaClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_NavModifierComponent_SetAreaClass;
 
 // Function NavigationSystem.NavModifierVolume.SetAreaClass
 // 0x0008 (0x0008 - 0x0000)
@@ -43,6 +26,17 @@ public:
 	TSubclassOf<class UNavArea>                   NewAreaClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_NavModifierVolume_SetAreaClass;
+
+// Function NavigationSystem.NavigationDataChunkTileVariantsActor.OnDataLayerStateChanged
+// 0x0010 (0x0010 - 0x0000)
+struct NavigationDataChunkTileVariantsActor_OnDataLayerStateChanged final
+{
+public:
+	class FName                                   DataLayerLabel;                                    // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EDataLayerState                               State;                                             // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_NavigationDataChunkTileVariantsActor_OnDataLayerStateChanged;
 
 // Function NavigationSystem.NavigationPath.EnableDebugDrawing
 // 0x0014 (0x0014 - 0x0000)
@@ -147,6 +141,24 @@ public:
 };
 DUMPER7_ASSERTS_NavigationSystemV1_D_FindPathToLocationSynchronously;
 
+// Function NavigationSystem.NavigationSystemV1.D_GetNearestPolyAreaID
+// 0x0060 (0x0060 - 0x0000)
+struct NavigationSystemV1_D_GetNearestPolyAreaID final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVectorDouble                          Point;                                             // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVectorDouble                          QueryExtent;                                       // 0x0020(0x0018)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         AreaID;                                            // 0x0038(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UNavigationQueryFilter>     FilterClass;                                       // 0x0040(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ANavigationData*                        NavData;                                           // 0x0048(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UObject*                          Querier;                                           // 0x0050(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0058(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_NavigationSystemV1_D_GetNearestPolyAreaID;
+
 // Function NavigationSystem.NavigationSystemV1.D_IsStraightReachable
 // 0x0068 (0x0068 - 0x0000)
 struct NavigationSystemV1_D_IsStraightReachable final
@@ -162,6 +174,23 @@ public:
 	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_NavigationSystemV1_D_IsStraightReachable;
+
+// Function NavigationSystem.NavigationSystemV1.D_K2_BatchProjectPointToNavigation
+// 0x0060 (0x0060 - 0x0000)
+struct NavigationSystemV1_D_K2_BatchProjectPointToNavigation final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVectorDouble>                  Points;                                            // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FNavBatchProjectionResult>      ProjectedLocationsResults;                         // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	class ANavigationData*                        NavData;                                           // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UNavigationQueryFilter>     FilterClass;                                       // 0x0030(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVectorDouble                          QueryExtent;                                       // 0x0038(0x0018)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	double                                        MaxError;                                          // 0x0050(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0058(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_NavigationSystemV1_D_K2_BatchProjectPointToNavigation;
 
 // Function NavigationSystem.NavigationSystemV1.D_K2_GetRandomLocationInNavigableRadius
 // 0x0058 (0x0058 - 0x0000)
@@ -226,8 +255,9 @@ public:
 	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 PathfindingContext;                                // 0x0040(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TSubclassOf<class UNavigationQueryFilter>     FilterClass;                                       // 0x0048(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0050(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         WaterBottomTolerance;                              // 0x0050(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0054(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_55[0x3];                                       // 0x0055(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_NavigationSystemV1_D_NavigationGetWaterSurface;
 
@@ -675,6 +705,71 @@ public:
 	class AActor*                                 Invoker;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_NavigationSystemV1_UnregisterNavigationInvoker;
+
+// Function NavigationSystem.NavigationSystemV1.GetWaterDepthAtLocation
+// 0x001C (0x001C - 0x0000)
+struct NavigationSystemV1_GetWaterDepthAtLocation final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutWaterDepth;                                     // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutWaterBottomDepth;                               // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         QueryDownDistance;                                 // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_NavigationSystemV1_GetWaterDepthAtLocation;
+
+// Function NavigationSystem.NavigationSystemV1.GetWaterRegionInfoBelowLocation
+// 0x0038 (0x0038 - 0x0000)
+struct NavigationSystemV1_GetWaterRegionInfoBelowLocation final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 OutWaterBodyIds;                                   // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FVector                                OutWaterBottomLocation;                            // 0x0020(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         QueryDownDistance;                                 // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_NavigationSystemV1_GetWaterRegionInfoBelowLocation;
+
+// Function NavigationSystem.NavigationSystemV1.IsLevelInstanceNavDataEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct NavigationSystemV1_IsLevelInstanceNavDataEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavigationSystemV1_IsLevelInstanceNavDataEnabled;
+
+// Function NavigationSystem.NavRelevantComponent.SetNavigationRelevancy
+// 0x0001 (0x0001 - 0x0000)
+struct NavRelevantComponent_SetNavigationRelevancy final
+{
+public:
+	bool                                          bRelevant;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavRelevantComponent_SetNavigationRelevancy;
+
+// Function NavigationSystem.NavMeshTileVariantFileSubsystem.IsStreamingCompleted
+// 0x0001 (0x0001 - 0x0000)
+struct NavMeshTileVariantFileSubsystem_IsStreamingCompleted final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavMeshTileVariantFileSubsystem_IsStreamingCompleted;
+
+// Function NavigationSystem.NavModifierComponent.SetAreaClass
+// 0x0008 (0x0008 - 0x0000)
+struct NavModifierComponent_SetAreaClass final
+{
+public:
+	TSubclassOf<class UNavArea>                   NewAreaClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_NavModifierComponent_SetAreaClass;
 
 // Function NavigationSystem.RecastNavMesh.K2_ReplaceAreaInTileBounds
 // 0x0038 (0x0038 - 0x0000)

@@ -11,13 +11,52 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "KuroAudio_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroAudio_structs.hpp"
 #include "MovieScene_classes.hpp"
 
 
 namespace SDK
 {
+
+// Class KuroAudio.KuroAudioStatics
+// 0x0000 (0x0030 - 0x0030)
+class UKuroAudioStatics final : public UBlueprintFunctionLibrary
+{
+public:
+	static void ChangeIosAudioSessionProperties();
+	static void ExecuteActionOnEvent(const class UAkAudioEvent* AudioEvent, const EAudioActionType ActionType, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
+	static void ExecuteActionOnEventName(const class FString& EventName, const EAudioActionType ActionType, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
+	static void ExecuteActionOnPlayingId(const int32 PlayingId, const EAudioActionType ActionType, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
+	static class UAkComponent* GetAkComponent(class USceneComponent* Parent, const class FName& SocketName, bool* bCreated);
+	static class UKuroAudioEnvironmentSubsystem* GetAudioEnvironmentSubsystem(const class UWorld* World);
+	static int32 GetSourcePlayPosition(const int32 PlayingId, const bool bExtrapolate);
+	static bool IsAndroidApiUsingOpenSL();
+	static bool IsDolbyAtmosGameSupported();
+	static void PostEventWithMidiNote(const class UAkAudioEvent* AudioEvent, const uint8 Note, const class AActor* Actor);
+	static void PostNotifyEvent(const class UAkAudioEvent* NotifyEvent, const class AActor* Actor);
+	static void SeekOnEventName(const class FString& EventName, const int32 Position, const class AActor* Actor, const int32 PlayingId, const bool bSnapToMarker);
+	static void SetIosAuditPackage(bool IsAuditPackage);
+	static void SetRtpcValue(const class FString& RtpcName, const float Value, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
+	static void SetState(const class FString& StateGroup, const class FString& State);
+	static void SetSwitch(const class FString& SwitchGroup, const class FString& SwitchState, const class AActor* Actor);
+	static void StopAll(const class AActor* Actor);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroAudioStatics")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroAudioStatics")
+	}
+	static class UKuroAudioStatics* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroAudioStatics>();
+	}
+};
+DUMPER7_ASSERTS_UKuroAudioStatics;
 
 // Class KuroAudio.KuroAmbientSoundActor
 // 0x0008 (0x02B8 - 0x02B0)
@@ -42,31 +81,33 @@ public:
 };
 DUMPER7_ASSERTS_AKuroAmbientSoundActor;
 
-// Class KuroAudio.KuroAudioStateVolume
-// 0x0028 (0x0310 - 0x02E8)
-class AKuroAudioStateVolume final : public AVolume
+// Class KuroAudio.KuroAudioVolume
+// 0x0018 (0x0300 - 0x02E8)
+class AKuroAudioVolume final : public AVolume
 {
 public:
-	class FString                                 Group;                                             // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 State;                                             // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Priority;                                          // 0x0308(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_309[0x7];                                      // 0x0309(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EKuroAudioVolumeChannel                       Channel;                                           // 0x02E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Priority;                                          // 0x02E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2EA[0x6];                                      // 0x02EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkAudioEvent*                          StateEvent;                                        // 0x02F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableDynamicReverb;                              // 0x02F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2F9[0x7];                                      // 0x02F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KuroAudioStateVolume")
+		STATIC_CLASS_IMPL("KuroAudioVolume")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KuroAudioStateVolume")
+		STATIC_NAME_IMPL(L"KuroAudioVolume")
 	}
-	static class AKuroAudioStateVolume* GetDefaultObj()
+	static class AKuroAudioVolume* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AKuroAudioStateVolume>();
+		return GetDefaultObjImpl<AKuroAudioVolume>();
 	}
 };
-DUMPER7_ASSERTS_AKuroAudioStateVolume;
+DUMPER7_ASSERTS_AKuroAudioVolume;
 
 // Class KuroAudio.KuroAmbientSoundComponent
 // 0x0050 (0x0270 - 0x0220)
@@ -103,11 +144,12 @@ public:
 DUMPER7_ASSERTS_UKuroAmbientSoundComponent;
 
 // Class KuroAudio.KuroAmbientSoundPositionsProxyComponent
-// 0x0000 (0x06A0 - 0x06A0)
+// 0x0010 (0x0770 - 0x0760)
 class UKuroAmbientSoundPositionsProxyComponent final : public UInstancedStaticMeshComponent
 {
 public:
-	class UKuroAmbientSoundComponent*             TargetComponent;                                   // 0x0698(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UKuroAmbientSoundComponent*             TargetComponent;                                   // 0x0760(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_768[0x8];                                      // 0x0768(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -152,13 +194,13 @@ public:
 DUMPER7_ASSERTS_UKuroAudioDelegates;
 
 // Class KuroAudio.KuroAudioEnvironmentSubsystem
-// 0x07A8 (0x07E0 - 0x0038)
+// 0x0748 (0x0780 - 0x0038)
 class alignas(0x10) UKuroAudioEnvironmentSubsystem final : public UWorldSubsystem
 {
 public:
 	uint8                                         Pad_38[0x278];                                     // 0x0038(0x0278)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void()>              EnvironmentUpdatedDelegate;                        // 0x02B0(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C0[0x520];                                    // 0x02C0(0x0520)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2C0[0x4C0];                                    // 0x02C0(0x04C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void D_DynamicReverbTrace(const struct FVectorDouble& Location, const bool bForceUpdate);
@@ -186,71 +228,31 @@ public:
 };
 DUMPER7_ASSERTS_UKuroAudioEnvironmentSubsystem;
 
-// Class KuroAudio.KuroAudioStatics
-// 0x0000 (0x0030 - 0x0030)
-class UKuroAudioStatics final : public UBlueprintFunctionLibrary
+// Class KuroAudio.KuroAudioStateVolume
+// 0x0028 (0x0310 - 0x02E8)
+class AKuroAudioStateVolume final : public AVolume
 {
 public:
-	static void ChangeIosAudioSessionProperties();
-	static void ExecuteActionOnEvent(const class UAkAudioEvent* AudioEvent, const EAudioActionType ActionType, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
-	static void ExecuteActionOnEventName(const class FString& EventName, const EAudioActionType ActionType, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
-	static void ExecuteActionOnPlayingId(const int32 PlayingId, const EAudioActionType ActionType, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
-	static class UAkComponent* GetAkComponent(class USceneComponent* Parent, const class FName& SocketName, bool* bCreated);
-	static class UKuroAudioEnvironmentSubsystem* GetAudioEnvironmentSubsystem(const class UWorld* World);
-	static int32 GetSourcePlayPosition(const int32 PlayingId);
-	static bool IsAndroidApiUsingOpenSL();
-	static bool IsDolbyAtmosGameSupported();
-	static void PostNotifyEvent(const class UAkAudioEvent* NotifyEvent, const class AActor* Actor);
-	static void SeekOnEventName(const class FString& EventName, const int32 Position, const class AActor* Actor, const int32 PlayingId, const bool bSnapToMarker);
-	static void SetIosAuditPackage(bool IsAuditPackage);
-	static void SetRtpcValue(const class FString& RtpcName, const float Value, const class AActor* Actor, const int32 TransitionDuration, const EAudioFadeCurve TransitionFadeCurve);
-	static void SetState(const class FString& StateGroup, const class FString& State);
-	static void SetSwitch(const class FString& SwitchGroup, const class FString& SwitchState, const class AActor* Actor);
-	static void StopAll(const class AActor* Actor);
+	class FString                                 Group;                                             // 0x02E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 State;                                             // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Priority;                                          // 0x0308(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_309[0x7];                                      // 0x0309(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KuroAudioStatics")
+		STATIC_CLASS_IMPL("KuroAudioStateVolume")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KuroAudioStatics")
+		STATIC_NAME_IMPL(L"KuroAudioStateVolume")
 	}
-	static class UKuroAudioStatics* GetDefaultObj()
+	static class AKuroAudioStateVolume* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKuroAudioStatics>();
+		return GetDefaultObjImpl<AKuroAudioStateVolume>();
 	}
 };
-DUMPER7_ASSERTS_UKuroAudioStatics;
-
-// Class KuroAudio.KuroAudioVolume
-// 0x0018 (0x0300 - 0x02E8)
-class AKuroAudioVolume final : public AVolume
-{
-public:
-	EKuroAudioVolumeChannel                       Channel;                                           // 0x02E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Priority;                                          // 0x02E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2EA[0x6];                                      // 0x02EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkAudioEvent*                          StateEvent;                                        // 0x02F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnableDynamicReverb;                              // 0x02F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2F9[0x7];                                      // 0x02F9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroAudioVolume")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroAudioVolume")
-	}
-	static class AKuroAudioVolume* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AKuroAudioVolume>();
-	}
-};
-DUMPER7_ASSERTS_AKuroAudioVolume;
+DUMPER7_ASSERTS_AKuroAudioStateVolume;
 
 // Class KuroAudio.KuroBgPlayerStatic
 // 0x0000 (0x0030 - 0x0030)
@@ -286,8 +288,10 @@ public:
 	int32                                         FadeDuration;                                      // 0x00FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EAudioFadeCurve                               FadeCurve;                                         // 0x0100(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bSyncAudio;                                        // 0x0101(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutoMatchLength;                                  // 0x0102(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_103[0x5];                                      // 0x0103(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bTriggerOnSeqReverse;                              // 0x0102(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFreezeOnAttachmentLost;                           // 0x0103(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutoMatchLength;                                  // 0x0104(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_105[0x3];                                      // 0x0105(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAkAudioEvent*                          AudioEvent;                                        // 0x0108(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TSoftObjectPtr<class UAkAudioEvent>           SoftAudioEvent;                                    // 0x0110(0x0030)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
@@ -308,12 +312,12 @@ public:
 DUMPER7_ASSERTS_UMovieSceneKuroAudioEventSection;
 
 // Class KuroAudio.MovieSceneKuroAudioEventTrack
-// 0x0018 (0x0098 - 0x0080)
+// 0x0018 (0x00B0 - 0x0098)
 class UMovieSceneKuroAudioEventTrack final : public UMovieSceneTrack
 {
 public:
-	uint8                                         Pad_80[0x8];                                       // 0x0080(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UMovieSceneSection*>             Sections;                                          // 0x0088(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_98[0x8];                                       // 0x0098(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMovieSceneSection*>             Sections;                                          // 0x00A0(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

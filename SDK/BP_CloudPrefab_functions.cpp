@@ -107,29 +107,41 @@ void ABP_CloudPrefab_C::UserConstructionScript()
 
 // Function BP_CloudPrefab.BP_CloudPrefab_C.Active
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bInstantHide_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_CloudPrefab_C::Active()
+void ABP_CloudPrefab_C::Active(bool bInstantHide_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_CloudPrefab_C", "Active");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_CloudPrefab_C_Active Parms{};
+
+	Parms.bInstantHide_0 = bInstantHide_0;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
 // Function BP_CloudPrefab.BP_CloudPrefab_C.Hidden
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    InstantHide                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_CloudPrefab_C::Hidden()
+void ABP_CloudPrefab_C::Hidden(bool InstantHide)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_CloudPrefab_C", "Hidden");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_CloudPrefab_C_Hidden Parms{};
+
+	Parms.InstantHide = InstantHide;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -371,6 +383,28 @@ void ABP_CloudPrefab_C::CurveProgress(bool* stop)
 
 	if (stop != nullptr)
 		*stop = Parms.stop;
+}
+
+
+// Function BP_CloudPrefab.BP_CloudPrefab_C.OverrideMountainMeshAndMaterial
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UMaterialInstance*                MaterialInstance                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UStaticMesh*                      Mesh                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CloudPrefab_C::OverrideMountainMeshAndMaterial(class UMaterialInstance* MaterialInstance, class UStaticMesh* Mesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_CloudPrefab_C", "OverrideMountainMeshAndMaterial");
+
+	Params::BP_CloudPrefab_C_OverrideMountainMeshAndMaterial Parms{};
+
+	Parms.MaterialInstance = MaterialInstance;
+	Parms.Mesh = Mesh;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

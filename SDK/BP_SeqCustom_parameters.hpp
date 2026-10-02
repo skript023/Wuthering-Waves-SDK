@@ -17,6 +17,35 @@
 namespace SDK::Params
 {
 
+// Function BP_SeqCustom.BP_SeqCustom_C.ExecuteUbergraph_BP_SeqCustom
+// 0x000C (0x000C - 0x0000)
+struct BP_SeqCustom_C_ExecuteUbergraph_BP_SeqCustom final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EEndPlayReason                                K2Node_Event_EndPlayReason;                        // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SeqCustom_C_ExecuteUbergraph_BP_SeqCustom;
+
+// Function BP_SeqCustom.BP_SeqCustom_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct BP_SeqCustom_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SeqCustom_C_ReceiveEndPlay;
+
+// Function BP_SeqCustom.BP_SeqCustom_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_SeqCustom_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SeqCustom_C_ReceiveTick;
+
 // Function BP_SeqCustom.BP_SeqCustom_C.SetAnimDataVector
 // 0x0058 (0x0058 - 0x0000)
 struct BP_SeqCustom_C_SetAnimDataVector final
@@ -94,6 +123,26 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_SeqCustom_C_IsCustomSupport;
+
+// Function BP_SeqCustom.BP_SeqCustom_C.GetSeqMouthAnimInstance
+// 0x0010 (0x0010 - 0x0000)
+struct BP_SeqCustom_C_GetSeqMouthAnimInstance final
+{
+public:
+	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SeqCustom_C_GetSeqMouthAnimInstance;
+
+// Function BP_SeqCustom.BP_SeqCustom_C.GetSeqTalkId
+// 0x0008 (0x0008 - 0x0000)
+struct BP_SeqCustom_C_GetSeqTalkId final
+{
+public:
+	int32                                         TalkID_0;                                          // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         TalkID_SP_0;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_SeqCustom_C_GetSeqTalkId;
 
 }
 

@@ -16,42 +16,6 @@
 namespace SDK::Params
 {
 
-// Function TsEffectActor.TsEffectActor_C.GetHandle
-// 0x0004 (0x0004 - 0x0000)
-struct TsEffectActor_C_GetHandle final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsEffectActor_C_GetHandle;
-
-// Function TsEffectActor.TsEffectActor_C.GetEffectPath
-// 0x0010 (0x0010 - 0x0000)
-struct TsEffectActor_C_GetEffectPath final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsEffectActor_C_GetEffectPath;
-
-// Function TsEffectActor.TsEffectActor_C.SetHandle
-// 0x0004 (0x0004 - 0x0000)
-struct TsEffectActor_C_SetHandle final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsEffectActor_C_SetHandle;
-
-// Function TsEffectActor.TsEffectActor_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct TsEffectActor_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsEffectActor_C_ReceiveEndPlay;
-
 // Function TsEffectActor.TsEffectActor_C.ExecuteUbergraph_TsEffectActor
 // 0x000C (0x000C - 0x0000)
 struct TsEffectActor_C_ExecuteUbergraph_TsEffectActor final
@@ -63,6 +27,33 @@ public:
 	int32                                         K2Node_Event_Handle;                               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsEffectActor_C_ExecuteUbergraph_TsEffectActor;
+
+// Function TsEffectActor.TsEffectActor_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct TsEffectActor_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsEffectActor_C_ReceiveEndPlay;
+
+// Function TsEffectActor.TsEffectActor_C.SetHandle
+// 0x0004 (0x0004 - 0x0000)
+struct TsEffectActor_C_SetHandle final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsEffectActor_C_SetHandle;
+
+// Function TsEffectActor.TsEffectActor_C.GetHandle
+// 0x0004 (0x0004 - 0x0000)
+struct TsEffectActor_C_GetHandle final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsEffectActor_C_GetHandle;
 
 }
 

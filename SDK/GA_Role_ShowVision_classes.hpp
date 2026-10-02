@@ -10,24 +10,34 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "GA_Base_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Role_ShowVision.GA_Role_ShowVision_C
-// 0x0008 (0x0590 - 0x0588)
+// 0x0020 (0x05F0 - 0x05D0)
 class UGA_Role_ShowVision_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_ShowVision_C;               // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_ShowVision_C;               // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVectorDouble                          TargetVector;                                      // 0x05D8(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Role_ShowVision(int32 EntryPoint);
 	void K2_OnEndAbility(bool bWasCancelled);
 	void K2_ActivateAbility();
+	void OnFinish_EB6C77C54CC3097D3F8C1CB75EDD641B();
+	void EventReceived_7827A09144808811E6A718B5B2F58484(const struct FGameplayEventData& Payload);
+	void OnCompleted_5D118C384AE61F1C80292E8175A3FDF5();
+	void OnBlendOut_5D118C384AE61F1C80292E8175A3FDF5();
+	void OnInterrupted_5D118C384AE61F1C80292E8175A3FDF5();
+	void OnCancelled_5D118C384AE61F1C80292E8175A3FDF5();
+	void OnTick_5D118C384AE61F1C80292E8175A3FDF5();
+	void EventReceived_18B59F5945020DB23C42FD88288C716A(const struct FGameplayEventData& Payload);
 
 public:
 	static class UClass* StaticClass()

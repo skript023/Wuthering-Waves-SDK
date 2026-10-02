@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "SCameraModifier_Settings_structs.hpp"
-#include "Engine_classes.hpp"
-#include "SBaseCurve_structs.hpp"
-#include "GameplayTags_structs.hpp"
 #include "ECameraAnsEffectiveClientType_structs.hpp"
+#include "SBaseCurve_structs.hpp"
+#include "SCameraModifier_Settings_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "Engine_classes.hpp"
 #include "SCameraModifier_Condition_structs.hpp"
 
 
@@ -22,31 +22,31 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_QTE_Camera.BP_QTE_Camera_C
-// 0x0190 (0x01C8 - 0x0038)
+// 0x01F0 (0x0228 - 0x0038)
 class UBP_QTE_Camera_C final : public UPrimaryDataAsset
 {
 public:
-	struct FSCameraModifier_Settings              相机配置;                                          // 0x0038(0x0118)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	float                                         Duration;                                          // 0x0150(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         BlendInTime;                                       // 0x0154(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         BlendOutTime;                                      // 0x0158(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         BreakBlendOutTime;                                 // 0x015C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSBaseCurve                            BlendInCurve;                                      // 0x0160(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSBaseCurve                            BlendOutCurve;                                     // 0x0168(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         设置QTE位置_角度_有目标_;                          // 0x0170(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         设置QTE位置_距离_有目标_;                          // 0x0174(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         设置QTE位置_高度_有目标_;                          // 0x0178(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         设置QTE位置_角度_无目标_;                          // 0x017C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         设置QTE位置_距离_无目标_;                          // 0x0180(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         设置QTE位置_高度_无目标_;                          // 0x0184(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         使用QTE次级镜头_与目标高度差_;                     // 0x0188(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         使用QTE次级镜头_当前臂长_;                         // 0x018C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         QTE次级镜头臂长add;                                // 0x0190(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           Tag;                                               // 0x0194(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
-	ECameraAnsEffectiveClientType                 生效客户端类型;                                    // 0x01A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1A1[0x7];                                      // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CameraAttachSocket;                                // 0x01A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	TArray<struct FSCameraModifier_Condition>     条件;                                              // 0x01B8(0x0010)(Edit, BlueprintVisible)
+	struct FSCameraModifier_Settings              相机配置;                                          // 0x0038(0x0168)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	float                                         Duration;                                          // 0x01A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BlendInTime;                                       // 0x01A4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BlendOutTime;                                      // 0x01A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BreakBlendOutTime;                                 // 0x01AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSBaseCurve                            BlendInCurve;                                      // 0x01B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSBaseCurve                            BlendOutCurve;                                     // 0x01C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         设置QTE位置_角度_有目标_;                          // 0x01D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         设置QTE位置_距离_有目标_;                          // 0x01D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         设置QTE位置_高度_有目标_;                          // 0x01D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         设置QTE位置_角度_无目标_;                          // 0x01DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         设置QTE位置_距离_无目标_;                          // 0x01E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         设置QTE位置_高度_无目标_;                          // 0x01E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         使用QTE次级镜头_与目标高度差_;                     // 0x01E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         使用QTE次级镜头_当前臂长_;                         // 0x01EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         QTE次级镜头臂长add;                                // 0x01F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           Tag;                                               // 0x01F4(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
+	ECameraAnsEffectiveClientType                 生效客户端类型;                                    // 0x0200(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_201[0x7];                                      // 0x0201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CameraAttachSocket;                                // 0x0208(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	TArray<struct FSCameraModifier_Condition>     条件;                                              // 0x0218(0x0010)(Edit, BlueprintVisible)
 
 public:
 	static class UClass* StaticClass()

@@ -44,8 +44,9 @@ void ABP_Clouds_C::ExecuteUbergraph_BP_Clouds(int32 EntryPoint)
 // float                                   ChangeSpeed                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsInEditor                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    IsAudio                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    InstantHide                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Clouds_C::LoadAndSwitch(TSoftObjectPtr<class UObject> Asset, float ChangeSpeed, bool IsInEditor, bool IsAudio)
+void ABP_Clouds_C::LoadAndSwitch(TSoftObjectPtr<class UObject> Asset, float ChangeSpeed, bool IsInEditor, bool IsAudio, bool InstantHide)
 {
 	static class UFunction* Func = nullptr;
 
@@ -58,6 +59,7 @@ void ABP_Clouds_C::LoadAndSwitch(TSoftObjectPtr<class UObject> Asset, float Chan
 	Parms.ChangeSpeed = ChangeSpeed;
 	Parms.IsInEditor = IsInEditor;
 	Parms.IsAudio = IsAudio;
+	Parms.InstantHide = InstantHide;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -72,8 +74,10 @@ void ABP_Clouds_C::LoadAndSwitch(TSoftObjectPtr<class UObject> Asset, float Chan
 // bool                                    bOverrideCloudRotation                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // float                                   CloudSpeed                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   CloudOffset                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ControlSeqCloud                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    InstantHide                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Clouds_C::Switch_Clouds(E_Cloud_Presents CloudPresents, float ChangeSpeed, bool IsInEditor, bool bOverrideCloudRotation, float CloudSpeed, float CloudOffset)
+void ABP_Clouds_C::Switch_Clouds(E_Cloud_Presents CloudPresents, float ChangeSpeed, bool IsInEditor, bool bOverrideCloudRotation, float CloudSpeed, float CloudOffset, bool ControlSeqCloud, bool InstantHide)
 {
 	static class UFunction* Func = nullptr;
 
@@ -88,6 +92,8 @@ void ABP_Clouds_C::Switch_Clouds(E_Cloud_Presents CloudPresents, float ChangeSpe
 	Parms.bOverrideCloudRotation = bOverrideCloudRotation;
 	Parms.CloudSpeed = CloudSpeed;
 	Parms.CloudOffset = CloudOffset;
+	Parms.ControlSeqCloud = ControlSeqCloud;
+	Parms.InstantHide = InstantHide;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -279,28 +285,6 @@ void ABP_Clouds_C::Zero3无音区01()
 }
 
 
-// Function BP_Clouds.BP_Clouds_C.SwitchCloudsSub
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UPD_CloudPrefab_C*                CloudPresents                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ChangeSpeed                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Clouds_C::SwitchCloudsSub(class UPD_CloudPrefab_C* CloudPresents, float ChangeSpeed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Clouds_C", "SwitchCloudsSub");
-
-	Params::BP_Clouds_C_SwitchCloudsSub Parms{};
-
-	Parms.CloudPresents = CloudPresents;
-	Parms.ChangeSpeed = ChangeSpeed;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Clouds.BP_Clouds_C.Hidden Old
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -336,8 +320,9 @@ void ABP_Clouds_C::Zero4中曲台地()
 // class UChildActorComponent*             CloudActorComponent                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ChangeSpeed                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // int32                                   TransSortNumber                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bInstantHide                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Clouds_C::SetCloudParameters(class UPD_CloudPrefab_C* CloudPrefeb, class UChildActorComponent* CloudActorComponent, float ChangeSpeed, int32 TransSortNumber)
+void ABP_Clouds_C::SetCloudParameters(class UPD_CloudPrefab_C* CloudPrefeb, class UChildActorComponent* CloudActorComponent, float ChangeSpeed, int32 TransSortNumber, bool bInstantHide)
 {
 	static class UFunction* Func = nullptr;
 
@@ -350,6 +335,7 @@ void ABP_Clouds_C::SetCloudParameters(class UPD_CloudPrefab_C* CloudPrefeb, clas
 	Parms.CloudActorComponent = CloudActorComponent;
 	Parms.ChangeSpeed = ChangeSpeed;
 	Parms.TransSortNumber = TransSortNumber;
+	Parms.bInstantHide = bInstantHide;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -1574,6 +1560,436 @@ void ABP_Clouds_C::Two4_不渲染BP_Cloud控制的云()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Clouds_C", "24 不渲染BP_Cloud控制的云");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.13 罗伊白天
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::One3_罗伊白天()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "13 罗伊白天");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.14 罗伊夜晚
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::One4_罗伊夜晚()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "14 罗伊夜晚");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.15 罗伊极光
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::One5_罗伊极光()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "15 罗伊极光");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.16 罗伊初见
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::One6_罗伊初见()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "16 罗伊初见");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.17 星海BOSS一阶
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::One7_星海BOSS一阶()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "17 星海BOSS一阶");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.18 星海BOSS三阶
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::One8_星海BOSS三阶()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "18 星海BOSS三阶");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.19 拉海洛初见
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::One9_拉海洛初见()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "19 拉海洛初见");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.20 日灵棺解密前
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two0_日灵棺解密前()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "20 日灵棺解密前");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.21 日灵棺解密后
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two1_日灵棺解密后()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "21 日灵棺解密后");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.22 高达Boss一阶
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two2_高达Boss一阶()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "22 高达Boss一阶");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.23 高达Boss三阶
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two3_高达Boss三阶()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "23 高达Boss三阶");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.24 梦州白天
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two4_梦州白天()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "24 梦州白天");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.25 梦州夜晚
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two5_梦州夜晚()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "25 梦州夜晚");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.26 梦州阴天
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two6_梦州阴天()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "26 梦州阴天");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.27 梦州初见
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two7_梦州初见()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "27 梦州初见");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.28 宅邸解谜前
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two8_宅邸解谜前()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "28 宅邸解谜前");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.29 宅邸解谜后
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Two9_宅邸解谜后()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "29 宅邸解谜后");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.30 梦州特殊1
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three0_梦州特殊1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "30 梦州特殊1");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.31 梦州特殊2
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three1_梦州特殊2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "31 梦州特殊2");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.32 人境
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three2_人境()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "32 人境");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.33 地境
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three3_地境()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "33 地境");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.34 天境
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three4_天境()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "34 天境");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.35 心湖
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three5_心湖()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "35 心湖");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.SwitchCloudsSub
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UPD_CloudPrefab_C*                CloudPresents                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ChangeSpeed                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    InstantHide                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_Clouds_C::SwitchCloudsSub(class UPD_CloudPrefab_C* CloudPresents, float ChangeSpeed, bool InstantHide)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "SwitchCloudsSub");
+
+	Params::BP_Clouds_C_SwitchCloudsSub Parms{};
+
+	Parms.CloudPresents = CloudPresents;
+	Parms.ChangeSpeed = ChangeSpeed;
+	Parms.InstantHide = InstantHide;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.36 火匣
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three6_火匣()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "36 火匣");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.37 水匣
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three7_水匣()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "37 水匣");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.38 金匣
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three8_金匣()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "38 金匣");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.39 天演幻心
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Three9_天演幻心()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "39 天演幻心");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.40 天演幻心二阶段
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Four0_天演幻心二阶段()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "40 天演幻心二阶段");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Clouds.BP_Clouds_C.41 金匣冷调
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Clouds_C::Four1_金匣冷调()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Clouds_C", "41 金匣冷调");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

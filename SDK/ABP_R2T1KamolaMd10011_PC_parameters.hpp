@@ -40,19 +40,6 @@ public:
 };
 DUMPER7_ASSERTS_ABP_R2T1KamolaMd10011_PC_C_BlueprintUpdateAnimation;
 
-// Function ABP_R2T1KamolaMd10011_PC.ABP_R2T1KamolaMd10011_PC_C.BindGameplayVariable
-// 0x0020 (0x0020 - 0x0000)
-struct ABP_R2T1KamolaMd10011_PC_C_BindGameplayVariable final
-{
-public:
-	class APawn*                                  CallFunc_TryGetPawnOwner_ReturnValue;              // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_ABP_R2T1KamolaMd10011_PC_C_BindGameplayVariable;
-
 // Function ABP_R2T1KamolaMd10011_PC.ABP_R2T1KamolaMd10011_PC_C.AnimGraph
 // 0x0010 (0x0010 - 0x0000)
 struct ABP_R2T1KamolaMd10011_PC_C_AnimGraph final

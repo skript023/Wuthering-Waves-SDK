@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PD_CloudPrefab.PD_CloudPrefab_C
-// 0x0008 (0x01A0 - 0x0198)
+// 0x0008 (0x01A8 - 0x01A0)
 class UPD_CloudPrefab_C final : public UKuroPDCloudPrefab
 {
 public:
-	class UClass*                                 PrefebBP;                                          // 0x0198(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UClass*                                 PrefebBP;                                          // 0x01A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

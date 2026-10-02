@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelGroup.EffectModelGroup_C
-// 0x0000 (0x05A8 - 0x05A8)
+// 0x0000 (0x05B0 - 0x05B0)
 class UEffectModelGroup_C final : public UEffectModelGroup
 {
 public:

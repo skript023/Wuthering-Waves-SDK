@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTaskAbortImmediatelyBase.TsTaskAbortImmediatelyBase_C
-// 0x0008 (0x00B8 - 0x00B0)
+// 0x0008 (0x00C0 - 0x00B8)
 class UTsTaskAbortImmediatelyBase_C : public UBTTask_BlueprintBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_TsTaskAbortImmediatelyBase(int32 EntryPoint);

@@ -16,25 +16,25 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass KuroSceneInteraction_45.TPrefab_SM_Gat_57A_C
+// BlueprintGeneratedClass KuroSceneInteraction_45.TPrefab_SM_Pro_CollectionDoor_C
 // 0x0000 (0x02B8 - 0x02B8)
-class KuroSceneInteraction_45::ATPrefab_SM_Gat_57A_C final : public ALevelScriptActor
+class KuroSceneInteraction_45::ATPrefab_SM_Pro_CollectionDoor_C final : public ALevelScriptActor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_45.TPrefab_SM_Gat_57A_C")
+		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_45.TPrefab_SM_Pro_CollectionDoor_C")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"TPrefab_SM_Gat_57A_C")
+		STATIC_NAME_IMPL(L"TPrefab_SM_Pro_CollectionDoor_C")
 	}
-	static class KuroSceneInteraction_45::ATPrefab_SM_Gat_57A_C* GetDefaultObj()
+	static class KuroSceneInteraction_45::ATPrefab_SM_Pro_CollectionDoor_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<KuroSceneInteraction_45::ATPrefab_SM_Gat_57A_C>();
+		return GetDefaultObjImpl<KuroSceneInteraction_45::ATPrefab_SM_Pro_CollectionDoor_C>();
 	}
 };
-DUMPER7_ASSERTS_KuroSceneInteraction_45__ATPrefab_SM_Gat_57A_C;
+DUMPER7_ASSERTS_KuroSceneInteraction_45__ATPrefab_SM_Pro_CollectionDoor_C;
 
 }
 

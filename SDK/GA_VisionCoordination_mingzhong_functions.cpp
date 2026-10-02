@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_VisionCoordination_mingzhong.GA_VisionCoordination_mingzhong_C.ExecuteUbergraph_GA_VisionCoordination_mingzhong
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

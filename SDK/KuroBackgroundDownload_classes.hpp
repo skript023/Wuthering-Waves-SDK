@@ -27,10 +27,10 @@ public:
 	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void Start(const class FString& Suffix, const TArray<class FString>& Prefixes, const TArray<struct FKuroRequestDownloadInfo>& Targets, int32 InRetryCount, float InTimeout, bool bNewIOSApi);
+	void Start(const class FString& Suffix, const TArray<class FString>& Prefixes, const TArray<struct FKuroRequestDownloadInfo>& Targets, int32 InRetryCount, float InTimeout, bool bNewIOSApi, bool bAllowCell);
 
 	void Cancel() const;
-	void Continue() const;
+	void Continue(bool bAllowCell) const;
 	int32 GetBpsSpeed() const;
 
 public:

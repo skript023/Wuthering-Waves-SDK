@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "KuroGAS_structs.hpp"
+#include "Engine_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
+#include "SGEData_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
-#include "KuroGAS_structs.hpp"
-#include "SGEData_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -223,7 +223,8 @@ struct BPL_Fight_C_删除材质效果 final
 public:
 	class ATsBaseCharacter_C*                     设置对象_;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         Handle_;                                           // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          PlayWithEnd;                                       // 0x000C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPL_Fight_C_删除材质效果;

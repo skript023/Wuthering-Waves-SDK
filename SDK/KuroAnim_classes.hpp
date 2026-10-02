@@ -10,35 +10,43 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
-#include "KuroAnim_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "KuroAnim_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
+#include "KuroTerrainSurvey_structs.hpp"
 
 
 namespace SDK
 {
 
 // Class KuroAnim.KuroAnimInstance
-// 0x00F0 (0x0800 - 0x0710)
+// 0x0190 (0x09C0 - 0x0830)
 #pragma pack(push, 0x1)
 class alignas(0x10) UKuroAnimInstance : public UAnimInstance
 {
 public:
-	uint8                                         Pad_710[0x68];                                     // 0x0710(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              TurnLimitForBoneRotateAnimNode;                    // 0x0778(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              LookUpLimitForBoneRotateAnimNode;                  // 0x0780(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRollBackToOriginForBoneRotateAnimNode;            // 0x0788(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStopForBoneRotateAnimNode;                        // 0x0789(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_78A[0x2];                                      // 0x078A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TurnAngleForBoneRotateAnimNode;                    // 0x078C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LookUpAngleForBoneRotateAnimNode;                  // 0x0790(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TurnOffsetForBoneRotateAnimNode;                   // 0x0794(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LookUpOffsetForBoneRotateAnimNode;                 // 0x0798(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_79C[0x4];                                      // 0x079C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, class UAnimSequence*>       ExtraRibbonAnims;                                  // 0x07A0(0x0050)(Edit, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7F0[0x8];                                      // 0x07F0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_830[0x68];                                     // 0x0830(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              TurnLimitForBoneRotateAnimNode;                    // 0x0898(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              LookUpLimitForBoneRotateAnimNode;                  // 0x08A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRollBackToOriginForBoneRotateAnimNode;            // 0x08A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStopForBoneRotateAnimNode;                        // 0x08A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8AA[0x2];                                      // 0x08AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TurnAngleForBoneRotateAnimNode;                    // 0x08AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LookUpAngleForBoneRotateAnimNode;                  // 0x08B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TurnOffsetForBoneRotateAnimNode;                   // 0x08B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LookUpOffsetForBoneRotateAnimNode;                 // 0x08B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8BC[0x4];                                      // 0x08BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, class UAnimSequence*>       ExtraRibbonAnims;                                  // 0x08C0(0x0050)(Edit, NativeAccessSpecifierPublic)
+	TMap<class FName, struct FExtraFollowTable>   SecondaryExtraFollowAnims;                         // 0x0910(0x0050)(Edit, NativeAccessSpecifierPublic)
+	uint8                                         Pad_960[0x8];                                      // 0x0960(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bExtraFollowFreeze;                                // 0x0968(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRequestSaveExtraFollowSnapshot;                   // 0x0969(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_96A[0x6];                                      // 0x096A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             ExtraFollowFrozenWorldTransform;                   // 0x0970(0x0030)(BlueprintVisible, BlueprintReadOnly, Transient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bExtraFollowLockWorldTransform;                    // 0x09A0(0x0001)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9A1[0x17];                                     // 0x09A1(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	float AngleConversion(const float& Angle);
@@ -51,11 +59,13 @@ public:
 	struct FVector CalculateRelativeAcceleration(const struct FVector& Speed, const struct FVector& Acceleration, const struct FRotator& RoleRotator, class ACharacter* Character);
 	void CalculateSpeedMixed(const struct FRotator& RoleRotator, const struct FRotator& AdditiveRotator, const struct FVector& Speed, class ACharacter* Character, class UCurveFloat*& Curve, const float& DeltaTime, float& CachedPercentFB, float& CachedPercentLR, struct FVeloctiyBlend& VelocityBlend);
 	float CalculateStandRate(class UCurveFloat*& AngleToStepFrequency, const float& Slop, const float& Speed, const float& AnimWalkSpeed, const float& AnimRunSpeed, const float& SprintSpeed, const float& StepLengthMix);
-	float CalculateStepLengthMixed(class UCurveFloat*& AngleToStepLength, class UCurveFloat*& WalkCurve, class UCurveFloat*& RunCurve, const float& Speed, const float& Slop);
+	float CalculateStepLengthMixed(class ACharacter* Character, class UCurveFloat*& AngleToStepLength, class UCurveFloat*& WalkCurve, class UCurveFloat*& RunCurve, const float& Speed, const float& Slop);
 	float CalculateWalkRunMixed(const int32& MoveState);
 	void CalucateClimbOffset(class ACharacter*& Character, const struct FVector& IKDirection, const struct FVector& OffsetRelativeLocation, const struct FVector& BoneLocation, float OffsetCorrection, float TraceRadius, const struct FVector& MeshWorldLocation, const struct FRotator& QuatInverse, struct FVector& CachedLocation, struct FVector& CachedNormal, const float& IKCurveValue, const float& ClimbRadius, float& PrevFrameAlpha, struct FVector* OutOffset, struct FVector* OutNormal, bool* bSuccess);
 	void ClimbIKProcess(class UAnimInstance* AnimInstance, const struct FVector& MeshWorldLocation, const struct FRotator& QuatInverse, const bool& IsClimbExitState, struct FVector& OverallOffsetLocation, float& ClimbIK, class ACharacter*& Character, class USkeletalMeshComponent*& Mesh, const float& ClimbRadius, const struct FVector& LFootOffsetRelativeLocation, struct FVector& LFootCachedLocation, struct FVector& LFootCachedNormal, struct FVector& LFootOffsetLocation, struct FVector& LFootNormalDirection, float& LFootPrevFrameAlpha, const struct FVector& RFootOffsetRelativeLocation, struct FVector& RFootCachedLocation, struct FVector& RFootCachedNormal, struct FVector& RFootOffsetLocation, struct FVector& RFootNormalDirection, float& RFootPrevFrameAlpha, const struct FVector& LHandOffsetRelativeLocation, struct FVector& LHandCachedLocation, struct FVector& LHandCachedNormal, struct FVector& LHandOffsetLocation, struct FVector& LHandNormalDirection, float& LHandPrevFrameAlpha, const struct FVector& RHandOffsetRelativeLocation, struct FVector& RHandCachedLocation, struct FVector& RHandCachedNormal, struct FVector& RHandOffsetLocation, struct FVector& RHandNormalDirection, float& RHandPrevFrameAlpha);
+	void FreezeExtraFollowAtWorldTransform(const struct FTransform& WorldTransform);
 	class FString GetDebugAnimNodeString();
+	class FString GetStateMachineCurrentStatesString();
 	void GroundIKProcess(const struct FVector& MeshWorldLocation, const float& DegMovementSlop, class ACharacter*& Character, class USkeletalMeshComponent*& Mesh, const bool& bUpHill, const bool& bDownHill, const float& Speed, const bool& HasMoveInput, bool& bLFootNeedIK, struct FVector& LFootOffsetLocation, struct FVector& LFootNormalDirection, struct FHitResult& LFootHitResult, bool& bRFootNeedIK, struct FVector& RFootOffsetLocation, struct FVector& RFootNormalDirection, struct FHitResult& RFootHitResult, bool UseCurveFootLocation);
 	void IKInfoLerpProcess(const float& DeltaTime, const float& HipLerpSpeed, const struct FRotator& QuatInverse, const struct FVector& OverallOffsetLocation, struct FVector& OverallOffsetLocationBeUsed, struct FVector& LFootOffsetRelativeLocation, struct FVector& LFootNormalRelativeDirection, const struct FVector& LFootOffsetLocation, const struct FVector& LFootNormalDirection, struct FVector& RFootOffsetRelativeLocation, struct FVector& RFootNormalRelativeDirection, const struct FVector& RFootOffsetLocation, const struct FVector& RFootNormalDirection, struct FVector& LHandOffsetRelativeLocation, struct FVector& LHandNormalRelativeDirection, const struct FVector& LHandOffsetLocation, const struct FVector& LHandNormalDirection, struct FVector& RHandOffsetRelativeLocation, struct FVector& RHandNormalRelativeDirection, const struct FVector& RHandOffsetLocation, const struct FVector& RHandNormalDirection);
 	struct FLeanAmount InterpLeanAmountTo(const struct FLeanAmount& Current, const struct FLeanAmount& Target, float DeltaTime, float InterpSpeed);
@@ -64,14 +74,17 @@ public:
 	void RegisterActor(class ACharacter* Character);
 	void RegisterExtraFollowOwnerAnimInstance(class UAnimInstance* AnimInstance);
 	void ResigterExtraRibbenOwnerAnimInstance(class UAnimInstance* AnimInstance);
+	void SaveExtraFollowSnapshot();
 	void SetBoneRotateToLocationInfoRunBegin(float TurnAngle, float LookUpAngle, const struct FVector2D& TurnLimit, const struct FVector2D& LookUpLimit, float TurnOffset, float LookUpOffset);
 	void SetBoneRotateToLocationInfoRunEnd();
 	void SetBoneRotateToLocationInfoRunTick(float TurnAngle, float LookUpAngle);
 	void SetBoneRotateToLocationInfoStopBegin();
 	void SetBoneRotateToLocationInfoStopEnd();
 	void SetDebugTraceType(EDrawDebugTrace GroundTrace, EDrawDebugTrace ClimbTrace);
+	void SetExtraFollowFreeze(bool bFreeze);
 	void SetFootOffset(const struct FVector& SkeletionAbsoluteLocation, const struct FVector& IKDirection, const float& BenchMarkDepth, const float& RotationCorrectedDistance, class ACharacter*& Character, class USkeletalMeshComponent*& Mesh, const bool& HasMoveInput, bool& bNeedIK, struct FVector& OffsetLocation, struct FVector& NormalDirection, struct FHitResult& OutHitResult);
 	void StartABP();
+	void UnfreezeExtraFollow();
 	void UnRegisterActorAndResetInstance();
 	void UpdateABP(float DeltaSeconds);
 	void UpdateAdditiveBlendInfo(class UAnimInstance* AnimInstance, const bool& bUsingAdditiveBlend, const bool& bUsingWholeBodyBlend, float& AdditiveBlendAlpha, struct FAdditiveBlendAlpha& Pelvis, struct FAdditiveBlendAlpha& Spine, struct FAdditiveBlendAlpha& Spine1, struct FAdditiveBlendAlpha& Spine2, struct FAdditiveBlendAlpha& Head, struct FAdditiveBlendAlpha& ArmL, struct FAdditiveBlendAlpha& ArmR, struct FAdditiveBlendAlpha& Leg);
@@ -84,9 +97,11 @@ public:
 	void UpdateIKInfoInGroundState(const bool& HasWallForward, const struct FVector& MeshWorldLocation, const bool& IsMoving, const float& DegMovementSlop, bool& bUpHill, bool& bDownHill, class ACharacter*& Character, class USkeletalMeshComponent*& Mesh, const float& Speed, const bool& HasMoveInput, const float& RunWalkMix, struct FVector& OverallOffsetLocation, float& HipLerpSpeed, bool& bLFootNeedIK, struct FVector& LFootOffsetLocation, struct FVector& LFootNormalDirection, struct FHitResult& LFootHitResult, bool& bRFootNeedIK, struct FVector& RFootOffsetLocation, struct FVector& RFootNormalDirection, struct FHitResult& RFootHitResult, bool UseCurveFootLocation);
 	void UpdateIKinfoInOtherState(class ACharacter*& Character, struct FVector& OverallOffsetLocation, struct FVector& LFootOffsetLocation, struct FVector& LFootNormalDirection, struct FVector& RFootOffsetLocation, struct FVector& RFootNormalDirection, struct FVector& LHandNormalDirection, struct FVector& RHandNormalDirection, float& HipLerpSpeed);
 	void UpdateIKInfoLocalValue(class ACharacter* Character, struct FRotator& MeshQuatInverse, struct FVector& MeshWorldLocation);
-	void UpdateMoveInfoMixed(float& WalkRunMixed, const float& DeltaTime, const float& Slop, class UCurveFloat*& AngleToStepFrequency, class UCurveFloat*& AngleToStepLength, class UCurveFloat*& WalkCurve, class UCurveFloat*& RunCurve, const float& SpeedSize, float& StepLengthMixed, const float& AnimWalkSpeed, const float& AnimRunSpeed, const float& SprintSpeed, float& StandRate);
+	void UpdateMoveInfoMixed(class ACharacter*& Character, float& WalkRunMixed, const float& DeltaTime, const float& Slop, class UCurveFloat*& AngleToStepFrequency, class UCurveFloat*& AngleToStepLength, class UCurveFloat*& WalkCurve, class UCurveFloat*& RunCurve, const float& SpeedSize, float& StepLengthMixed, const float& AnimWalkSpeed, const float& AnimRunSpeed, const float& SprintSpeed, float& StandRate);
 	void UpdateRoleInfo(bool& StateGround, bool& StateGroundSprint, bool& StateGroundWalk, bool& StateGroundRun, bool& StateRunStop, bool& StateSprintStop, bool& StateWalkStop, bool& RunStop, bool& StateClimb, bool& StateAir, bool& StateAirGlide, bool& StateWater, bool& StateView, bool& StateAim, bool& StateFace);
 	void UpdateSkillMoveInfo(const float& DeltaTime, const struct FRotator& RoleRotator, const struct FVector& Speed, class ACharacter*& Character, float& RotatorMixed, const struct FVector& Acceleration, struct FVector& RelativeAcceleration, struct FLeanAmount& LeanAmount, const float& GroundLeanAmountLerpSpeed, const struct FRotator& AimRotator, float& AimAngle, struct FVector2D& AimMoveMixed, const float& RotatorSpeed, class AActor* SkillTarget, const struct FVectorDouble& CachedActorLocation);
+
+	bool IsSyncGroupBetweenMarkersCoarse(class FName InSyncGroupName, class FName PreviousMarker, class FName NextMarker, bool bRespectMarkerOrder) const;
 
 public:
 	static class UClass* StaticClass()
@@ -106,33 +121,32 @@ public:
 DUMPER7_ASSERTS_UKuroAnimInstance;
 
 // Class KuroAnim.KuroAnimInstanceChar
-// 0x0120 (0x0920 - 0x0800)
+// 0x00D0 (0x0A90 - 0x09C0)
 class UKuroAnimInstanceChar : public UKuroAnimInstance
 {
 public:
-	class UAbpLogicParams*                        LogicParams;                                       // 0x07F8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ABaseCharacter*                         BaseCharacter;                                     // 0x0800(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_808[0x8];                                      // 0x0808(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         DeltaTime;                                         // 0x0810(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EntityId;                                          // 0x0814(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsAutonomousProxy;                                // 0x0818(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_819[0x3];                                      // 0x0819(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Velocity;                                          // 0x081C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_828[0xC];                                      // 0x0828(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bIsMovedLocation;                                  // 0x0834(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_835[0x1B];                                     // 0x0835(0x001B)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Acceleration;                                      // 0x0850(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ActorForward;                                      // 0x085C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_868[0x4];                                      // 0x0868(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         OnJumpSpeed;                                       // 0x086C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStunned;                                          // 0x0870(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_871[0x2F];                                     // 0x0871(0x002F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               LowerBodyRotator;                                  // 0x08A0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8AC[0x4];                                      // 0x08AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          LocationProxy;                                     // 0x08B0(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FTransform>          CachedBones;                                       // 0x08C8(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
-	ESightLockMode                                SightLockMode;                                     // 0x0918(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_919[0x7];                                      // 0x0919(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UAbpLogicParams*                        LogicParams;                                       // 0x09B8(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABaseCharacter*                         BaseCharacter;                                     // 0x09C0(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9C8[0x8];                                      // 0x09C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DeltaTime;                                         // 0x09D0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EntityId;                                          // 0x09D4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsAutonomousProxy;                                // 0x09D8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9D9[0x3];                                      // 0x09D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Velocity;                                          // 0x09DC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9E8[0xC];                                      // 0x09E8(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIsMovedLocation;                                  // 0x09F4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9F5[0x1B];                                     // 0x09F5(0x001B)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Acceleration;                                      // 0x0A10(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ActorForward;                                      // 0x0A1C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A28[0x4];                                      // 0x0A28(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         OnJumpSpeed;                                       // 0x0A2C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStunned;                                          // 0x0A30(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A31[0x2F];                                     // 0x0A31(0x002F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               LowerBodyRotator;                                  // 0x0A60(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A6C[0x4];                                      // 0x0A6C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          LocationProxy;                                     // 0x0A70(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESightLockMode                                SightLockMode;                                     // 0x0A88(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A89[0x7];                                      // 0x0A89(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -151,16 +165,16 @@ public:
 DUMPER7_ASSERTS_UKuroAnimInstanceChar;
 
 // Class KuroAnim.KuroAdjustableBoxComponent
-// 0x0030 (0x0580 - 0x0550)
+// 0x0030 (0x05F0 - 0x05C0)
 class UKuroAdjustableBoxComponent final : public UBoxComponent
 {
 public:
-	TArray<class FName>                           BindSocketNames;                                   // 0x0550(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         AddExtent;                                         // 0x0560(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinExtent;                                         // 0x0564(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxExtent;                                         // 0x0568(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAdjustBoxType                                AdjustBoxType;                                     // 0x056C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_56D[0x13];                                     // 0x056D(0x0013)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           BindSocketNames;                                   // 0x05B8(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         AddExtent;                                         // 0x05C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinExtent;                                         // 0x05CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxExtent;                                         // 0x05D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAdjustBoxType                                AdjustBoxType;                                     // 0x05D4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5D5[0x1B];                                     // 0x05D5(0x001B)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -179,30 +193,30 @@ public:
 DUMPER7_ASSERTS_UKuroAdjustableBoxComponent;
 
 // Class KuroAnim.KuroAnimInstanceNpc
-// 0x0030 (0x0950 - 0x0920)
+// 0x0030 (0x0AC0 - 0x0A90)
 class UKuroAnimInstanceNpc final : public UKuroAnimInstanceChar
 {
 public:
-	struct FVector                                SightDirection;                                    // 0x0920(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SightAlpha;                                        // 0x092C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CameraModeType;                                    // 0x0930(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsBeingCaptured;                                  // 0x0934(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayKnockUpAnim;                                  // 0x0935(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHeadIKReturnToOrigin;                             // 0x0936(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharMoveStateType                            CharacterMoveStateType;                            // 0x0937(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharPositionStateType                        CharacterPositionStateType;                        // 0x0938(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMoveDirection                                MovementDirection;                                 // 0x0939(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EWalkPosture                                  WalkingPosture;                                    // 0x093A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_93B[0x1];                                      // 0x093B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         UpdateDeltaSeconds;                                // 0x093C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WorldDeltaSeconds;                                 // 0x0940(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIdleThreeState;                                   // 0x0944(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCommonDebugState;                                 // 0x0945(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInAirState;                                       // 0x0946(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLowerHalfUniversalFusionState;                    // 0x0947(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInBattleState;                                    // 0x0948(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayEnterBattleState;                             // 0x0949(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_94A[0x6];                                      // 0x094A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector                                SightDirection;                                    // 0x0A90(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightAlpha;                                        // 0x0A9C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CameraModeType;                                    // 0x0AA0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsBeingCaptured;                                  // 0x0AA4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayKnockUpAnim;                                  // 0x0AA5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHeadIKReturnToOrigin;                             // 0x0AA6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharMoveStateType                            CharacterMoveStateType;                            // 0x0AA7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharPositionStateType                        CharacterPositionStateType;                        // 0x0AA8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMoveDirection                                MovementDirection;                                 // 0x0AA9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EWalkPosture                                  WalkingPosture;                                    // 0x0AAA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AAB[0x1];                                      // 0x0AAB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         UpdateDeltaSeconds;                                // 0x0AAC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WorldDeltaSeconds;                                 // 0x0AB0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIdleThreeState;                                   // 0x0AB4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCommonDebugState;                                 // 0x0AB5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAirState;                                       // 0x0AB6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLowerHalfUniversalFusionState;                    // 0x0AB7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInBattleState;                                    // 0x0AB8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayEnterBattleState;                             // 0x0AB9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_ABA[0x6];                                      // 0x0ABA(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -221,16 +235,16 @@ public:
 DUMPER7_ASSERTS_UKuroAnimInstanceNpc;
 
 // Class KuroAnim.KuroAdjustableCapsuleComponent
-// 0x0040 (0x0590 - 0x0550)
+// 0x0040 (0x05F0 - 0x05B0)
 class UKuroAdjustableCapsuleComponent final : public UCapsuleComponent
 {
 public:
-	TArray<class FName>                           BindSocketNames;                                   // 0x0548(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         AddRadius;                                         // 0x0558(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinRadius;                                         // 0x055C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxRadius;                                         // 0x0560(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAdjustCapsuleType                            AdjustCapsuleType;                                 // 0x0564(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_565[0x2B];                                     // 0x0565(0x002B)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           BindSocketNames;                                   // 0x05B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         AddRadius;                                         // 0x05C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinRadius;                                         // 0x05C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxRadius;                                         // 0x05C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAdjustCapsuleType                            AdjustCapsuleType;                                 // 0x05CC(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5CD[0x23];                                     // 0x05CD(0x0023)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -249,14 +263,14 @@ public:
 DUMPER7_ASSERTS_UKuroAdjustableCapsuleComponent;
 
 // Class KuroAnim.KuroAnimInstancePhyCloth
-// 0x0040 (0x0750 - 0x0710)
+// 0x0040 (0x0870 - 0x0830)
 class UKuroAnimInstancePhyCloth final : public UAnimInstance
 {
 public:
-	bool                                          bEnableFormSwitch;                                 // 0x0710(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_711[0x7];                                      // 0x0711(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSoftObjectPtr<class USkeletalMesh>>   FormSkelMeshRefs;                                  // 0x0718(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                         Pad_728[0x28];                                     // 0x0728(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bEnableFormSwitch;                                 // 0x0830(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_831[0x7];                                      // 0x0831(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSoftObjectPtr<class USkeletalMesh>>   FormSkelMeshRefs;                                  // 0x0838(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	uint8                                         Pad_848[0x28];                                     // 0x0848(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -299,36 +313,40 @@ public:
 DUMPER7_ASSERTS_UKuroAnimConfig;
 
 // Class KuroAnim.KuroAnimInstanceMonster
-// 0x0050 (0x0970 - 0x0920)
+// 0x0060 (0x0AF0 - 0x0A90)
 class UKuroAnimInstanceMonster : public UKuroAnimInstanceChar
 {
 public:
-	TArray<class FName>                           HitBonesList;                                      // 0x0920(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FVector                                SightDirection;                                    // 0x0930(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SightAlpha;                                        // 0x093C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         CameraModeType;                                    // 0x0940(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HateLocation;                                      // 0x0944(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsBeingCaptured;                                  // 0x0950(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayKnockUpAnim;                                  // 0x0951(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHeadIKReturnToOrigin;                             // 0x0952(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharMoveStateType                            CharacterMoveStateType;                            // 0x0953(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharPositionStateType                        CharacterPositionStateType;                        // 0x0954(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAcceptNewHit;                                     // 0x0955(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bEnterFk;                                          // 0x0956(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHitInAir;                                         // 0x0957(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         HitAnimType;                                       // 0x0958(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMoveDirection                                MovementDirection;                                 // 0x095C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EWalkPosture                                  WalkingPosture;                                    // 0x095D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_95E[0x2];                                      // 0x095E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         UpdateDeltaSeconds;                                // 0x0960(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WorldDeltaSeconds;                                 // 0x0964(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIdleThreeState;                                   // 0x0968(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCommonDebugState;                                 // 0x0969(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInAirState;                                       // 0x096A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLowerHalfUniversalFusionState;                    // 0x096B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInBattleState;                                    // 0x096C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPlayEnterBattleState;                             // 0x096D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_96E[0x2];                                      // 0x096E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           HitBonesList;                                      // 0x0A90(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FVector                                SightDirection;                                    // 0x0AA0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightAlpha;                                        // 0x0AAC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightDirectionRightAngle;                          // 0x0AB0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightDirectionUpAngle;                             // 0x0AB4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HateLocation;                                      // 0x0AB8(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsBeingCaptured;                                  // 0x0AC4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayKnockUpAnim;                                  // 0x0AC5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHeadIKReturnToOrigin;                             // 0x0AC6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharMoveStateType                            CharacterMoveStateType;                            // 0x0AC7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharPositionStateType                        CharacterPositionStateType;                        // 0x0AC8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAcceptNewHit;                                     // 0x0AC9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnterFk;                                          // 0x0ACA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHitInAir;                                         // 0x0ACB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HitAnimType;                                       // 0x0ACC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMoveDirection                                MovementDirection;                                 // 0x0AD0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EWalkPosture                                  WalkingPosture;                                    // 0x0AD1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AD2[0x2];                                      // 0x0AD2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         UpdateDeltaSeconds;                                // 0x0AD4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WorldDeltaSeconds;                                 // 0x0AD8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIdleThreeState;                                   // 0x0ADC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCommonDebugState;                                 // 0x0ADD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAirState;                                       // 0x0ADE(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLowerHalfUniversalFusionState;                    // 0x0ADF(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInBattleState;                                    // 0x0AE0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPlayEnterBattleState;                             // 0x0AE1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsFlyMonster;                                     // 0x0AE2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AE3[0x1];                                      // 0x0AE3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TurnInt;                                           // 0x0AE4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AE8[0x8];                                      // 0x0AE8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -347,191 +365,227 @@ public:
 DUMPER7_ASSERTS_UKuroAnimInstanceMonster;
 
 // Class KuroAnim.KuroAnimInstanceRole
-// 0x0340 (0x0C60 - 0x0920)
+// 0x03D0 (0x0E60 - 0x0A90)
 class UKuroAnimInstanceRole : public UKuroAnimInstanceChar
 {
 public:
-	TArray<int32>                                 ValidPerformanceIndexes;                           // 0x0920(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         FloorSpeed;                                        // 0x0930(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_934[0x1C];                                     // 0x0934(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bCanbeInterrupt;                                   // 0x0950(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bMoveBlock;                                        // 0x0951(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_952[0x2];                                      // 0x0952(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TimeSeconds;                                       // 0x0954(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_958[0x4];                                      // 0x0958(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bIsNotNPC;                                         // 0x095C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_95D[0x3];                                      // 0x095D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ChangeRoleCount;                                   // 0x0960(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_964[0x1];                                      // 0x0964(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bHasNPCTag;                                        // 0x0965(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsGoingToMove;                                    // 0x0966(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_967[0x5];                                      // 0x0967(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         TurnMix;                                           // 0x096C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVeloctiyBlend                         SpeedMix;                                          // 0x0970(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         LerpSpeedAlpha;                                    // 0x0980(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              AimMoveMix;                                        // 0x0984(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LocalAccel;                                        // 0x098C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLeanAmount                            LeanAmount;                                        // 0x0998(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	EMoveDirection                                MoveDirection;                                     // 0x09A0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9A1[0x3];                                      // 0x09A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GroundMovePlayRate;                                // 0x09A4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WalkRunMix;                                        // 0x09A8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StepSizeMix;                                       // 0x09AC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVeloctiyBlend                         AccelLerpMix;                                      // 0x09B0(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         AimYaw;                                            // 0x09C0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AimPitch;                                          // 0x09C4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsFightStand;                                     // 0x09C8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9C9[0x3];                                      // 0x09C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              MoveMix;                                           // 0x09CC(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CachePercentLR;                                    // 0x09D4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CachePercentFB;                                    // 0x09D8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EStandTurnType                                StandTurnType;                                     // 0x09DC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9DD[0x3];                                      // 0x09DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         LandSpeedIndex;                                    // 0x09E0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FallingSpeed;                                      // 0x09E4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ForecastLandWeight;                                // 0x09E8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AirVelocity;                                       // 0x09EC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AirTargetYaw;                                      // 0x09F8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                GlideMix;                                          // 0x09FC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SlideMix;                                          // 0x0A08(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A0C[0x18];                                     // 0x0A0C(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                AirSlideMix;                                       // 0x0A24(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                HookRopeMix;                                       // 0x0A30(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HookRopeSucceedSpeed;                              // 0x0A3C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A3D[0x3];                                      // 0x0A3D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         JumpMix;                                           // 0x0A40(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SwimRootOffset;                                    // 0x0A44(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SwimAccelOffset;                                   // 0x0A50(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SwimAccelOffsetReal;                               // 0x0A54(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SwimMix;                                           // 0x0A58(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FastClimbMix;                                      // 0x0A5C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ClimbBrakeMix;                                     // 0x0A60(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsClimbMoving;                                    // 0x0A64(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A65[0x3];                                      // 0x0A65(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ClimbRadius;                                       // 0x0A68(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ClimbDirection;                                    // 0x0A6C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ValidClimbDirection;                               // 0x0A70(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKuroHumanIKMode                              IKMode;                                            // 0x0A74(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIKNoLerp;                                         // 0x0A75(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A76[0x2];                                      // 0x0A76(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               ComprehensiveRotator;                              // 0x0A78(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                BeHitStandardizedDirect;                           // 0x0A84(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BeHitSocketLocation;                               // 0x0A90(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SightLockAlpha;                                    // 0x0A9C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SightLockDirect;                                   // 0x0AA0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInAimShotEnd;                                     // 0x0AAC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AAD[0x3];                                      // 0x0AAD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AimYawMix;                                         // 0x0AB0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         FreezeCountDown;                                   // 0x0AB4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateStop;                                        // 0x0AB8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateSprintStop;                                  // 0x0AB9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateRunStop;                                     // 0x0ABA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateWalkStop;                                    // 0x0ABB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGround;                                      // 0x0ABC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateStand;                                       // 0x0ABD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGroundSprint;                                // 0x0ABE(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGroundRun;                                   // 0x0ABF(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGroundWalk;                                  // 0x0AC0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateClimb;                                       // 0x0AC1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAir;                                         // 0x0AC2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateSki;                                         // 0x0AC3(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateNormalSki;                                   // 0x0AC4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirSlide;                                    // 0x0AC5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirGlide;                                    // 0x0AC6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateWater;                                       // 0x0AC7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateSkill;                                       // 0x0AC8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLockDirection;                               // 0x0AC9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAimDirection;                                // 0x0ACA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFaceDirection;                               // 0x0ACB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateBeHit;                                       // 0x0ACC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateHitPush;                                     // 0x0ACD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateBeHitFly;                                    // 0x0ACE(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateDying;                                       // 0x0ACF(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateDrown;                                       // 0x0AD0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateInBattle;                                    // 0x0AD1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateEnterBattle;                                 // 0x0AD2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateKeepSprint;                                  // 0x0AD3(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFastSwim;                                    // 0x0AD4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateSit;                                         // 0x0AD5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateOverlapBaseAnim;                             // 0x0AD6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseAdditive;                                      // 0x0AD7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseOverlapLayerAdditive;                          // 0x0AD8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLowerRightTurnBlending;                      // 0x0AD9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLowerBlending;                               // 0x0ADA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateWholeBodyBlend;                              // 0x0ADB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateUseSpecialStateMachine;                      // 0x0ADC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFastBlend;                                   // 0x0ADD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseArmAdditive;                                   // 0x0ADE(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLeftArmBlend;                                // 0x0ADF(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateRightArmBlend;                               // 0x0AE0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AE1[0x3];                                      // 0x0AE1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LowerBlendAlpha;                                   // 0x0AE4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaPelvis;                                  // 0x0AE8(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaSpine;                                   // 0x0AF4(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaSpine1;                                  // 0x0B00(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaSpine2;                                  // 0x0B0C(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaHead;                                    // 0x0B18(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaArmL;                                    // 0x0B24(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaArmR;                                    // 0x0B30(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAdditiveBlendAlpha                    BlendAlphaLeg;                                     // 0x0B3C(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bStateCast;                                        // 0x0B48(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateCastThrowing;                                // 0x0B49(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateCastSelecting;                               // 0x0B4A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateCastCasting;                                 // 0x0B4B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateMoveShot;                                    // 0x0B4C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateHoldShot;                                    // 0x0B4D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAiming;                                      // 0x0B4E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateGeneralAiming;                               // 0x0B4F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateShotNotify;                                  // 0x0B50(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateFixHook;                                     // 0x0B51(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirNormalShot;                               // 0x0B52(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirNormalShotLeft;                           // 0x0B53(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirNormalShotRight;                          // 0x0B54(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateAirNormalShotFall;                           // 0x0B55(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateBurst;                                       // 0x0B56(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateInBurst;                                     // 0x0B57(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLimitForward;                                // 0x0B58(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStateLimitBackward;                               // 0x0B59(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLandRollWhenDying;                                // 0x0B5A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCaught;                                           // 0x0B5B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRagDollQuit;                                      // 0x0B5C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B5D[0x3];                                      // 0x0B5D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ExpresionAlpha;                                    // 0x0B60(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B64[0x8];                                      // 0x0B64(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bEpresion;                                         // 0x0B6C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B6D[0x3];                                      // 0x0B6D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PerformanceCountDown;                              // 0x0B70(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPerformance;                                      // 0x0B74(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B75[0x3];                                      // 0x0B75(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         PerformanceIndex;                                  // 0x0B78(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAllowPerformance;                                 // 0x0B7C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAcceptNewSkill;                                   // 0x0B7D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B7E[0x6];                                      // 0x0B7E(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bStageMotionSki;                                   // 0x0B84(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHugeItemPull;                                     // 0x0B85(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHugeItemPullAngle;                                // 0x0B86(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B87[0x1];                                      // 0x0B87(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FString, float>                    SizeToCharHeightMap;                               // 0x0B88(0x0050)(Edit, NativeAccessSpecifierPublic)
-	struct FVector2D                              LandSpeedThresholds;                               // 0x0BD8(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SpeedMixLerp;                                      // 0x0BE0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GroundLeanLerp;                                    // 0x0BE4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimWalkSpeed;                                     // 0x0BE8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimRunSpeed;                                      // 0x0BEC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimSprintSpeed;                                   // 0x0BF0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AirLeanLerp;                                       // 0x0BF4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         JumpMixLerp;                                       // 0x0BF8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SlideRotateLerp;                                   // 0x0BFC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SlideRotateLerp2;                                  // 0x0C00(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C04[0x4];                                      // 0x0C04(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            StandWalkStepCurve;                                // 0x0C08(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            StandRunStepCurve;                                 // 0x0C10(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            ForecastLandCurve;                                 // 0x0C18(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            RelativeSpeedBlendCurve;                           // 0x0C20(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            AirLeanCurve;                                      // 0x0C28(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            AngelToStepLengthCurve;                            // 0x0C30(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            AngleToStepFrequencyCurve;                         // 0x0C38(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UDataAsset*                             FkMaterialControllerData;                          // 0x0C40(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C48[0x18];                                     // 0x0C48(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 ValidPerformanceIndexes;                           // 0x0A90(0x0010)(BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         FloorSpeed;                                        // 0x0AA0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AA4[0x1C];                                     // 0x0AA4(0x001C)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bCanbeInterrupt;                                   // 0x0AC0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMoveBlock;                                        // 0x0AC1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC2[0x2];                                      // 0x0AC2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TimeSeconds;                                       // 0x0AC4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC8[0x4];                                      // 0x0AC8(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIsNotNPC;                                         // 0x0ACC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_ACD[0x3];                                      // 0x0ACD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ChangeRoleCount;                                   // 0x0AD0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AD4[0x1];                                      // 0x0AD4(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bHasNPCTag;                                        // 0x0AD5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsGoingToMove;                                    // 0x0AD6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AD7[0x5];                                      // 0x0AD7(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TurnMix;                                           // 0x0ADC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVeloctiyBlend                         SpeedMix;                                          // 0x0AE0(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         LerpSpeedAlpha;                                    // 0x0AF0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              AimMoveMix;                                        // 0x0AF4(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LocalAccel;                                        // 0x0AFC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLeanAmount                            LeanAmount;                                        // 0x0B08(0x0008)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	EMoveDirection                                MoveDirection;                                     // 0x0B10(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B11[0x3];                                      // 0x0B11(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GroundMovePlayRate;                                // 0x0B14(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WalkRunMix;                                        // 0x0B18(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StepSizeMix;                                       // 0x0B1C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVeloctiyBlend                         AccelLerpMix;                                      // 0x0B20(0x0010)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         AimYaw;                                            // 0x0B30(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AimPitch;                                          // 0x0B34(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsFightStand;                                     // 0x0B38(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B39[0x3];                                      // 0x0B39(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              MoveMix;                                           // 0x0B3C(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CachePercentLR;                                    // 0x0B44(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CachePercentFB;                                    // 0x0B48(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EStandTurnType                                StandTurnType;                                     // 0x0B4C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B4D[0x3];                                      // 0x0B4D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         StandTurnAngle;                                    // 0x0B50(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         LandSpeedIndex;                                    // 0x0B54(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FallingSpeed;                                      // 0x0B58(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ForecastLandWeight;                                // 0x0B5C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AirVelocity;                                       // 0x0B60(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AirTargetYaw;                                      // 0x0B6C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                GlideMix;                                          // 0x0B70(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SlideMix;                                          // 0x0B7C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B80[0x18];                                     // 0x0B80(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                AirSlideMix;                                       // 0x0B98(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HookRopeMix;                                       // 0x0BA4(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HookRopeSucceedSpeed;                              // 0x0BB0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BB1[0x3];                                      // 0x0BB1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         JumpMix;                                           // 0x0BB4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AirRelativeVelocity;                               // 0x0BB8(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SwimRootOffset;                                    // 0x0BC4(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SwimAccelOffset;                                   // 0x0BD0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SwimAccelOffsetReal;                               // 0x0BD4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SwimMix;                                           // 0x0BD8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FastClimbMix;                                      // 0x0BDC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ClimbBrakeMix;                                     // 0x0BE0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsClimbMoving;                                    // 0x0BE4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BE5[0x3];                                      // 0x0BE5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ClimbRadius;                                       // 0x0BE8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ClimbDirection;                                    // 0x0BEC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ValidClimbDirection;                               // 0x0BF0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroHumanIKMode                              IKMode;                                            // 0x0BF4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIKNoLerp;                                         // 0x0BF5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BF6[0x2];                                      // 0x0BF6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               ComprehensiveRotator;                              // 0x0BF8(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                BeHitStandardizedDirect;                           // 0x0C04(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BeHitSocketLocation;                               // 0x0C10(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SightLockAlpha;                                    // 0x0C1C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SightLockDirect;                                   // 0x0C20(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAimShotEnd;                                     // 0x0C2C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C2D[0x3];                                      // 0x0C2D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AimYawMix;                                         // 0x0C30(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         FreezeCountDown;                                   // 0x0C34(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateStop;                                        // 0x0C38(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateSprintStop;                                  // 0x0C39(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateRunStop;                                     // 0x0C3A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateWalkStop;                                    // 0x0C3B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGround;                                      // 0x0C3C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateStand;                                       // 0x0C3D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGroundSprint;                                // 0x0C3E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGroundRun;                                   // 0x0C3F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGroundWalk;                                  // 0x0C40(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateClimb;                                       // 0x0C41(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAir;                                         // 0x0C42(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateSki;                                         // 0x0C43(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateNormalSki;                                   // 0x0C44(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirSlide;                                    // 0x0C45(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirGlide;                                    // 0x0C46(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirKite;                                     // 0x0C47(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateWater;                                       // 0x0C48(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateSkill;                                       // 0x0C49(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLockDirection;                               // 0x0C4A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAimDirection;                                // 0x0C4B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFaceDirection;                               // 0x0C4C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateBeHit;                                       // 0x0C4D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateHitPush;                                     // 0x0C4E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateBeHitFly;                                    // 0x0C4F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateDying;                                       // 0x0C50(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateDrown;                                       // 0x0C51(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateInBattle;                                    // 0x0C52(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateEnterBattle;                                 // 0x0C53(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateKeepSprint;                                  // 0x0C54(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFastSwim;                                    // 0x0C55(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateSit;                                         // 0x0C56(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateXA;                                          // 0x0C57(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAreaSportMode;                               // 0x0C58(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAreaSportModeKeep;                           // 0x0C59(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateVehicleDriveMoto;                            // 0x0C5A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCharacterStateAreaSportMode;                      // 0x0C5B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateOverlapBaseAnim;                             // 0x0C5C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAdditive;                                      // 0x0C5D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseOverlapLayerAdditive;                          // 0x0C5E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLowerRightTurnBlending;                      // 0x0C5F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLowerBlending;                               // 0x0C60(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateWholeBodyBlend;                              // 0x0C61(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateUseSpecialStateMachine;                      // 0x0C62(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFastBlend;                                   // 0x0C63(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseArmAdditive;                                   // 0x0C64(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLeftArmBlend;                                // 0x0C65(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateRightArmBlend;                               // 0x0C66(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C67[0x1];                                      // 0x0C67(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LowerBlendAlpha;                                   // 0x0C68(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaPelvis;                                  // 0x0C6C(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaSpine;                                   // 0x0C78(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaSpine1;                                  // 0x0C84(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaSpine2;                                  // 0x0C90(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaHead;                                    // 0x0C9C(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaArmL;                                    // 0x0CA8(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaArmR;                                    // 0x0CB4(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAdditiveBlendAlpha                    BlendAlphaLeg;                                     // 0x0CC0(0x000C)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bStateCast;                                        // 0x0CCC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateCastThrowing;                                // 0x0CCD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateCastSelecting;                               // 0x0CCE(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateCastCasting;                                 // 0x0CCF(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateMoveShot;                                    // 0x0CD0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateHoldShot;                                    // 0x0CD1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAiming;                                      // 0x0CD2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateGeneralAiming;                               // 0x0CD3(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateShotNotify;                                  // 0x0CD4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateFixHook;                                     // 0x0CD5(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirNormalShot;                               // 0x0CD6(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirNormalShotLeft;                           // 0x0CD7(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirNormalShotRight;                          // 0x0CD8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateAirNormalShotFall;                           // 0x0CD9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateBurst;                                       // 0x0CDA(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateInBurst;                                     // 0x0CDB(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLimitForward;                                // 0x0CDC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStateLimitBackward;                               // 0x0CDD(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLandRollWhenDying;                                // 0x0CDE(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCaught;                                           // 0x0CDF(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRagDollQuit;                                      // 0x0CE0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisablePerformance;                               // 0x0CE1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CE2[0x2];                                      // 0x0CE2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ExpresionAlpha;                                    // 0x0CE4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CE8[0x8];                                      // 0x0CE8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bEpresion;                                         // 0x0CF0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CF1[0x3];                                      // 0x0CF1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PerformanceCountDown;                              // 0x0CF4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPerformance;                                      // 0x0CF8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CF9[0x3];                                      // 0x0CF9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PerformanceIndex;                                  // 0x0CFC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowPerformance;                                 // 0x0D00(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowManualPerformance;                           // 0x0D01(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D02[0x2];                                      // 0x0D02(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AllowManualPerformanceIndex;                       // 0x0D04(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowManualPerformanceLoop;                       // 0x0D08(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAcceptNewSkill;                                   // 0x0D09(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D0A[0x6];                                      // 0x0D0A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bStageMotionSki;                                   // 0x0D10(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHugeItemPull;                                     // 0x0D11(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHugeItemPullAngle;                                // 0x0D12(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D13[0x5];                                      // 0x0D13(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, float>                    SizeToCharHeightMap;                               // 0x0D18(0x0050)(Edit, NativeAccessSpecifierPublic)
+	struct FVector2D                              LandSpeedThresholds;                               // 0x0D68(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpeedMixLerp;                                      // 0x0D70(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GroundLeanLerp;                                    // 0x0D74(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimWalkSpeed;                                     // 0x0D78(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimRunSpeed;                                      // 0x0D7C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimSprintSpeed;                                   // 0x0D80(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AirLeanLerp;                                       // 0x0D84(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         JumpMixLerp;                                       // 0x0D88(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SlideRotateLerp;                                   // 0x0D8C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SlideRotateLerp2;                                  // 0x0D90(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D94[0x4];                                      // 0x0D94(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            StandWalkStepCurve;                                // 0x0D98(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            StandRunStepCurve;                                 // 0x0DA0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            ForecastLandCurve;                                 // 0x0DA8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            RelativeSpeedBlendCurve;                           // 0x0DB0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AirLeanCurve;                                      // 0x0DB8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AngelToStepLengthCurve;                            // 0x0DC0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AngleToStepFrequencyCurve;                         // 0x0DC8(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDataAsset*                             FkMaterialControllerData;                          // 0x0DD0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         XAUDBlend;                                         // 0x0DD8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         XARLBlend;                                         // 0x0DDC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMovingPlatformMoving;                             // 0x0DE0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DE1[0x3];                                      // 0x0DE1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MovingPlatIKAlpha;                                 // 0x0DE4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UphillLeanForward;                                 // 0x0DE8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UphillIKDiminish;                                  // 0x0DEC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsVehicleImpact;                                  // 0x0DF0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DF1[0x3];                                      // 0x0DF1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         VehicleCollisionAlpha;                             // 0x0DF4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VehicleCollisionAngle;                             // 0x0DF8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VehicleCollisionStrength;                          // 0x0DFC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector4                               VehicleCollisionMix;                               // 0x0E00(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               VehicleSeatRot;                                    // 0x0E10(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bIsGondolaClimbWaterfall;                          // 0x0E1C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSuddenStop;                                     // 0x0E1D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsSuddenMove;                                     // 0x0E1E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E1F[0x1];                                      // 0x0E1F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SuddenMoveCd;                                      // 0x0E20(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E24[0xC];                                      // 0x0E24(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector4                               VehicleSuddenMoveMix;                              // 0x0E30(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LastForwardSpeed;                                  // 0x0E40(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CurForwardSpeed;                                   // 0x0E44(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E48[0x18];                                     // 0x0E48(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -550,7 +604,7 @@ public:
 DUMPER7_ASSERTS_UKuroAnimInstanceRole;
 
 // Class KuroAnim.AbpLogicParams
-// 0x0160 (0x0190 - 0x0030)
+// 0x0200 (0x0230 - 0x0030)
 class UAbpLogicParams final : public UObject
 {
 public:
@@ -564,58 +618,85 @@ public:
 	struct FVector                                BeHitLocationRef;                                  // 0x0048(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BeHitSocketNameRef;                                // 0x0054(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   BeHitBoneRef;                                      // 0x0060(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharMoveStateType                            CharMoveStateRef;                                  // 0x006C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharPositionStateType                        CharPositionStateRef;                              // 0x006D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharViewDirectionStateType                   CharCameraStateRef;                                // 0x006E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6F[0x1];                                       // 0x006F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BattleIdleTimeRef;                                 // 0x0070(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DegMovementSlopeRef;                               // 0x0074(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SightDirectRef;                                    // 0x0078(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          RagQuitStateRef;                                   // 0x0084(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsJumpRef;                                         // 0x0085(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_86[0x2];                                       // 0x0086(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                AccelerationRef;                                   // 0x0088(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsMovingRef;                                       // 0x0094(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         SpeedRef;                                          // 0x0098(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                InputDirectRef;                                    // 0x009C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               InputRotatorRef;                                   // 0x00A8(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          IsFallingIntoWaterRef;                             // 0x00B4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         GroundedTimeRef;                                   // 0x00B8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HasMoveInputRef;                                   // 0x00BC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FClimbInfoStruct                       ClimbInfoRef;                                      // 0x00C0(0x0010)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FClimbStateStruct                      ClimbStateRef;                                     // 0x00D0(0x0003)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D3[0x1];                                       // 0x00D3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ClimbOnWallAngleRef;                               // 0x00D4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SprintSwimOffsetRef;                               // 0x00D8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SprintSwimOffsetLerpSpeedRef;                      // 0x00DC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                SlideForwardRef;                                   // 0x00E0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SlideSwitchThisFrameRef;                           // 0x00EC(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SlideStandModeRef;                                 // 0x00ED(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EE[0x2];                                       // 0x00EE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         JumpUpRateRef;                                     // 0x00F0(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ForceExitStateStopRef;                             // 0x00F4(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F5[0x3];                                       // 0x00F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 SkillTarget;                                       // 0x00F8(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 HateTarget;                                        // 0x0100(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LastActiveSkillTime;                               // 0x0108(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SitDownDirect;                                     // 0x010C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         StandUpDirect;                                     // 0x0110(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSitDown;                                          // 0x0114(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_115[0x3];                                      // 0x0115(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         SitDownType;                                       // 0x0118(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsInPerformingPlot;                               // 0x011C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsInSequence;                                     // 0x011D(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsInSplineMove;                                   // 0x011E(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsInUiCamera;                                     // 0x011F(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FIKTarget                              LeftHandIKTargetCS;                                // 0x0120(0x0030)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FIKTarget                              RightHandIKTargetCS;                               // 0x0150(0x0030)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bDisableBlink;                                     // 0x0180(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSwingState;                                       // 0x0181(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESwingStateType                               SwingStateType;                                    // 0x0182(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_183[0xD];                                      // 0x0183(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBoneFeedbackAnimHitInfo               HitInfo;                                           // 0x0070(0x0050)(BlueprintVisible, NativeAccessSpecifierPublic)
+	ECharMoveStateType                            CharMoveStateRef;                                  // 0x00C0(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharPositionStateType                        CharPositionStateRef;                              // 0x00C1(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharViewDirectionStateType                   CharCameraStateRef;                                // 0x00C2(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C3[0x1];                                       // 0x00C3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BattleIdleTimeRef;                                 // 0x00C4(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DegMovementSlopeRef;                               // 0x00C8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SightDirectRef;                                    // 0x00CC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RagQuitStateRef;                                   // 0x00D8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsJumpRef;                                         // 0x00D9(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DA[0x2];                                       // 0x00DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                AccelerationRef;                                   // 0x00DC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsMovingRef;                                       // 0x00E8(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E9[0x3];                                       // 0x00E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         SpeedRef;                                          // 0x00EC(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InputDirectRef;                                    // 0x00F0(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               InputRotatorRef;                                   // 0x00FC(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          IsFallingIntoWaterRef;                             // 0x0108(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_109[0x3];                                      // 0x0109(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         GroundedTimeRef;                                   // 0x010C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HasMoveInputRef;                                   // 0x0110(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_111[0x3];                                      // 0x0111(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FClimbInfoStruct                       ClimbInfoRef;                                      // 0x0114(0x0010)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FClimbStateStruct                      ClimbStateRef;                                     // 0x0124(0x0003)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_127[0x1];                                      // 0x0127(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ClimbOnWallAngleRef;                               // 0x0128(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SprintSwimOffsetRef;                               // 0x012C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SprintSwimOffsetLerpSpeedRef;                      // 0x0130(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                SlideForwardRef;                                   // 0x0134(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SlideSwitchThisFrameRef;                           // 0x0140(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SlideStandModeRef;                                 // 0x0141(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_142[0x2];                                      // 0x0142(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         JumpUpRateRef;                                     // 0x0144(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ForceExitStateStopRef;                             // 0x0148(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_149[0x7];                                      // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 SkillTarget;                                       // 0x0150(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 HateTarget;                                        // 0x0158(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LastActiveSkillTime;                               // 0x0160(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SitDownDirect;                                     // 0x0164(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StandUpDirect;                                     // 0x0168(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSitDown;                                          // 0x016C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_16D[0x3];                                      // 0x016D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SitDownType;                                       // 0x0170(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsDriver;                                          // 0x0174(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsOnVehicle;                                       // 0x0175(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsOnVehicleWithOther;                              // 0x0176(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsLeavingVehicle;                                  // 0x0177(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         VehicleType;                                       // 0x0178(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsVehicleImpact;                                   // 0x017C(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17D[0x3];                                      // 0x017D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         VehicleCollisionAngle;                             // 0x0180(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         VehicleCollisionStrength;                          // 0x0184(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         YawInPassengerCoordinate;                          // 0x0188(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                VehicleVelocity;                                   // 0x018C(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInPerformingPlot;                               // 0x0198(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInSequence;                                     // 0x0199(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInSplineMove;                                   // 0x019A(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsInUiCamera;                                     // 0x019B(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19C[0x4];                                      // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FIKTarget                              LeftHandIKTargetCS;                                // 0x01A0(0x0030)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FIKTarget                              RightHandIKTargetCS;                               // 0x01D0(0x0030)(BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bDisableBlink;                                     // 0x0200(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreMontageBlinkCurve;                          // 0x0201(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSwingState;                                       // 0x0202(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESwingStateType                               SwingStateType;                                    // 0x0203(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                FloatingLocalDirectionRef;                         // 0x0204(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FloatingMoveMixRef;                                // 0x0210(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                HookTargetLocation;                                // 0x0214(0x000C)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsRailSlideMove;                                  // 0x0220(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERailSlideAnimType                            RailSlideAnimType;                                 // 0x0221(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsAirRailSlideMove;                               // 0x0222(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERailSlideJumpType                            RailSlideJumpType;                                 // 0x0223(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseLandAnimation;                                 // 0x0224(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInAssistedWalking;                                // 0x0225(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHelpedAssistedWalk;                               // 0x0226(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSkipEnterAssistedWalkAnim;                        // 0x0227(0x0001)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AssistedWalkAnimRate;                              // 0x0228(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SelfiePhotoArmAngle;                               // 0x022C(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -634,11 +715,11 @@ public:
 DUMPER7_ASSERTS_UAbpLogicParams;
 
 // Class KuroAnim.KuroAnimJsSubsystem
-// 0x00B0 (0x00E8 - 0x0038)
+// 0x0100 (0x0138 - 0x0038)
 class UKuroAnimJsSubsystem final : public UGameInstanceSubsystem
 {
 public:
-	uint8                                         Pad_38[0xB0];                                      // 0x0038(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x100];                                     // 0x0038(0x0100)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -656,6 +737,34 @@ public:
 };
 DUMPER7_ASSERTS_UKuroAnimJsSubsystem;
 
+// Class KuroAnim.KuroAnimJsSubsystemProxy
+// 0x0000 (0x0030 - 0x0030)
+class UKuroAnimJsSubsystemProxy final : public UObject
+{
+public:
+	static void RegisterEntity(const class UGameInstance* World, int32 EntityId);
+	static void RegisterUpdateAnimInfoCsFunction(const class UGameInstance* World, TDelegate<void(int32 EntityId)> UpdateAnimInfoCsFunction);
+	static void RegisterUpdateMonsterInfoCsFunction(const class UGameInstance* World, TDelegate<void(int32 EntityId)> UpdateAnimInfoCsFunction);
+	static void RegisterUpdateNpcInfoCsFunction(const class UGameInstance* World, TDelegate<void(int32 EntityId)> UpdateAnimInfoCsFunction);
+	static void UnregisterEntity(const class UGameInstance* World, int32 EntityId);
+	static void UnregisterUpdateAnimInfoFunction(const class UGameInstance* World);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroAnimJsSubsystemProxy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroAnimJsSubsystemProxy")
+	}
+	static class UKuroAnimJsSubsystemProxy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroAnimJsSubsystemProxy>();
+	}
+};
+DUMPER7_ASSERTS_UKuroAnimJsSubsystemProxy;
+
 // Class KuroAnim.KuroAnimLibrary
 // 0x0000 (0x0030 - 0x0030)
 class UKuroAnimLibrary final : public UBlueprintFunctionLibrary
@@ -664,6 +773,7 @@ public:
 	static void EndAnimNotifyStates(class UAnimInstance* AnimInstance);
 	static struct FTransform GetDefaultBoneComponentPoseByName(const class USkeletalMeshComponent* SkelMeshComp, const class FName& BoneName);
 	static struct FTransform GetDefaultBoneLocalPoseByName(const class USkeletalMeshComponent* SkelMeshComp, const class FName& BoneName);
+	static class FString GetGameplayAbpPath(class UObject* BaseAbp, const class FString& GameplayTypeName);
 
 public:
 	static class UClass* StaticClass()
@@ -686,9 +796,13 @@ DUMPER7_ASSERTS_UKuroAnimLibrary;
 class UKuroAnimMathLibrary final : public UBlueprintFunctionLibrary
 {
 public:
+	static struct FQuat FindBetween(const struct FVector& V1, const struct FVector& V2);
+	static struct FQuat LookQuat_ForwardFirst(const struct FVector& Forward, const struct FVector& Up);
+	static struct FQuat LookQuat_UpFirst(const struct FVector& Forward, const struct FVector& Up);
 	static struct FRotator LookRotation_ForwardFirst(const struct FVector& Forward, const struct FVector& Up);
 	static struct FRotator LookRotation_UpFirst(const struct FVector& Forward, const struct FVector& Up);
 	static struct FRotator Quat_FindBetween(const struct FVector& V1, const struct FVector& V2);
+	static struct FQuat Slerp(const struct FQuat& From, const struct FQuat& To, float Slerp_0);
 
 public:
 	static class UClass* StaticClass()
@@ -706,12 +820,38 @@ public:
 };
 DUMPER7_ASSERTS_UKuroAnimMathLibrary;
 
+// Class KuroAnim.MotorWheelDisplayInfoObject
+// 0x0010 (0x0040 - 0x0030)
+class UMotorWheelDisplayInfoObject final : public UObject
+{
+public:
+	TArray<struct FMotorWheelDisplayInfo>         DisplayInfos;                                      // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MotorWheelDisplayInfoObject")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MotorWheelDisplayInfoObject")
+	}
+	static class UMotorWheelDisplayInfoObject* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMotorWheelDisplayInfoObject>();
+	}
+};
+DUMPER7_ASSERTS_UMotorWheelDisplayInfoObject;
+
 // Class KuroAnim.KuroTrackRecorder
-// 0x00F0 (0x0120 - 0x0030)
+// 0x0100 (0x0130 - 0x0030)
 class UKuroTrackRecorder : public UObject
 {
 public:
-	uint8                                         Pad_30[0xF0];                                      // 0x0030(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 TargetActor;                                       // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class UActorComponent*>                CachedComponents;                                  // 0x0040(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_50[0xE0];                                      // 0x0050(0x00E0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	struct FGuid GetMainGuid();
@@ -734,11 +874,11 @@ public:
 DUMPER7_ASSERTS_UKuroTrackRecorder;
 
 // Class KuroAnim.KuroCameraRecorder
-// 0x0008 (0x0128 - 0x0120)
+// 0x0008 (0x0138 - 0x0130)
 class UKuroCameraRecorder final : public UKuroTrackRecorder
 {
 public:
-	uint8                                         Pad_120[0x8];                                      // 0x0120(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_130[0x8];                                      // 0x0130(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -789,13 +929,16 @@ public:
 DUMPER7_ASSERTS_UKuroCameraShake;
 
 // Class KuroAnim.KuroCharacterRecorder
-// 0x0010 (0x0130 - 0x0120)
+// 0x0010 (0x0140 - 0x0130)
 class UKuroCharacterRecorder final : public UKuroTrackRecorder
 {
 public:
-	bool                                          bUseClone;                                         // 0x0120(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                BaseBlueprint;                                     // 0x0128(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseClone;                                         // 0x0130(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRecordSkeletalMeshAnimSeq;                        // 0x0131(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bComponentPossessable;                             // 0x0132(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bActorPossessable;                                 // 0x0133(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_134[0x4];                                      // 0x0134(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                BaseBlueprint;                                     // 0x0138(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -814,7 +957,7 @@ public:
 DUMPER7_ASSERTS_UKuroCharacterRecorder;
 
 // Class KuroAnim.KuroEffectRecorder
-// 0x0000 (0x0120 - 0x0120)
+// 0x0000 (0x0130 - 0x0130)
 class UKuroEffectRecorder final : public UKuroTrackRecorder
 {
 public:
@@ -834,7 +977,7 @@ public:
 DUMPER7_ASSERTS_UKuroEffectRecorder;
 
 // Class KuroAnim.KuroMeshRecorder
-// 0x0000 (0x0120 - 0x0120)
+// 0x0000 (0x0130 - 0x0130)
 class UKuroMeshRecorder final : public UKuroTrackRecorder
 {
 public:
@@ -852,6 +995,61 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroMeshRecorder;
+
+// Class KuroAnim.KuroPredictionAnimInstanceRole
+// 0x0160 (0x0FC0 - 0x0E60)
+class UKuroPredictionAnimInstanceRole final : public UKuroAnimInstanceRole
+{
+public:
+	uint8                                         Pad_E60[0x8];                                      // 0x0E60(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCollectPropertyParams                 CPPPropertyData;                                   // 0x0E68(0x00B8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F20[0xA0];                                     // 0x0F20(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static void CallOnComponentStart(class UKuroAnimInstance* InInstance);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroPredictionAnimInstanceRole")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroPredictionAnimInstanceRole")
+	}
+	static class UKuroPredictionAnimInstanceRole* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroPredictionAnimInstanceRole>();
+	}
+};
+DUMPER7_ASSERTS_UKuroPredictionAnimInstanceRole;
+
+// Class KuroAnim.KuroQuadrupedIK_Settings
+// 0x0438 (0x0470 - 0x0038)
+class UKuroQuadrupedIK_Settings final : public UDataAsset
+{
+public:
+	struct FKuroQuadrupedIK_BasicSettings         Basic;                                             // 0x0038(0x0138)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroQuadrupedIK_SpineSettings         Spine;                                             // 0x0170(0x02B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKuroQuadrupedIK_FeetSettings          Feet;                                              // 0x0420(0x0034)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroQuadrupedIK_DebugSettings         Debug;                                             // 0x0454(0x0018)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_46C[0x4];                                      // 0x046C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroQuadrupedIK_Settings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroQuadrupedIK_Settings")
+	}
+	static class UKuroQuadrupedIK_Settings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroQuadrupedIK_Settings>();
+	}
+};
+DUMPER7_ASSERTS_UKuroQuadrupedIK_Settings;
 
 // Class KuroAnim.KuroRecordCharacter
 // 0x0068 (0x0318 - 0x02B0)

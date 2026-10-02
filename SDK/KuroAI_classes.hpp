@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "Engine_classes.hpp"
 
@@ -17,13 +18,128 @@
 namespace SDK
 {
 
+// Class KuroAI.BTSaveLoadCompositeNode
+// 0x0008 (0x00A8 - 0x00A0)
+class UBTSaveLoadCompositeNode : public UBTCompositeNode
+{
+public:
+	int32                                         UniqueID;                                          // 0x00A0(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A4[0x4];                                       // 0x00A4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTSaveLoadCompositeNode")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTSaveLoadCompositeNode")
+	}
+	static class UBTSaveLoadCompositeNode* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTSaveLoadCompositeNode>();
+	}
+};
+DUMPER7_ASSERTS_UBTSaveLoadCompositeNode;
+
+// Class KuroAI.BTSaveLoadComposite_Selector
+// 0x0000 (0x00A8 - 0x00A8)
+class UBTSaveLoadComposite_Selector final : public UBTSaveLoadCompositeNode
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTSaveLoadComposite_Selector")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTSaveLoadComposite_Selector")
+	}
+	static class UBTSaveLoadComposite_Selector* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTSaveLoadComposite_Selector>();
+	}
+};
+DUMPER7_ASSERTS_UBTSaveLoadComposite_Selector;
+
+// Class KuroAI.BTComposite_If
+// 0x0008 (0x00A8 - 0x00A0)
+class UBTComposite_If final : public UBTCompositeNode
+{
+public:
+	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	bool PerformConditionCheck(class AActor* OwnerActor);
+	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTComposite_If")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTComposite_If")
+	}
+	static class UBTComposite_If* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTComposite_If>();
+	}
+};
+DUMPER7_ASSERTS_UBTComposite_If;
+
+// Class KuroAI.BTSaveLoadComposite_Sequence
+// 0x0000 (0x00A8 - 0x00A8)
+class UBTSaveLoadComposite_Sequence final : public UBTSaveLoadCompositeNode
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTSaveLoadComposite_Sequence")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTSaveLoadComposite_Sequence")
+	}
+	static class UBTSaveLoadComposite_Sequence* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTSaveLoadComposite_Sequence>();
+	}
+};
+DUMPER7_ASSERTS_UBTSaveLoadComposite_Sequence;
+
+// Class KuroAI.BTComposite_IfDecorator
+// 0x0020 (0x00C0 - 0x00A0)
+class UBTComposite_IfDecorator final : public UBTCompositeNode
+{
+public:
+	TArray<class UBTDecorator*>                   ConditionDecorators;                               // 0x00A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FBTDecoratorLogic>              ConditionDecoratorOps;                             // 0x00B0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTComposite_IfDecorator")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTComposite_IfDecorator")
+	}
+	static class UBTComposite_IfDecorator* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTComposite_IfDecorator>();
+	}
+};
+DUMPER7_ASSERTS_UBTComposite_IfDecorator;
+
 // Class KuroAI.BTComposite_ParallelNode
-// 0x0008 (0x00A0 - 0x0098)
+// 0x0008 (0x00A8 - 0x00A0)
 class UBTComposite_ParallelNode final : public UBTCompositeNode
 {
 public:
-	bool                                          Test;                                              // 0x0098(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          Test;                                              // 0x00A0(0x0001)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A1[0x7];                                       // 0x00A1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -42,14 +158,14 @@ public:
 DUMPER7_ASSERTS_UBTComposite_ParallelNode;
 
 // Class KuroAI.BTComposite_Random
-// 0x0030 (0x00C8 - 0x0098)
+// 0x0030 (0x00D0 - 0x00A0)
 class UBTComposite_Random final : public UBTCompositeNode
 {
 public:
-	TArray<int32>                                 Weights;                                           // 0x0098(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, NativeAccessSpecifierPublic)
-	TArray<int32>                                 WeightIncrements;                                  // 0x00A8(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, NativeAccessSpecifierPublic)
-	float                                         ResetTime;                                         // 0x00B8(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Key;                                               // 0x00BC(0x000C)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Weights;                                           // 0x00A0(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, NativeAccessSpecifierPublic)
+	TArray<int32>                                 WeightIncrements;                                  // 0x00B0(0x0010)(Edit, ZeroConstructor, DisableEditOnTemplate, NativeAccessSpecifierPublic)
+	float                                         ResetTime;                                         // 0x00C0(0x0004)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Key;                                               // 0x00C4(0x000C)(Edit, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -68,7 +184,7 @@ public:
 DUMPER7_ASSERTS_UBTComposite_Random;
 
 // Class KuroAI.BTDecorator_ForceFailure
-// 0x0000 (0x0070 - 0x0070)
+// 0x0000 (0x0078 - 0x0078)
 class UBTDecorator_ForceFailure final : public UBTDecorator
 {
 public:
@@ -87,13 +203,45 @@ public:
 };
 DUMPER7_ASSERTS_UBTDecorator_ForceFailure;
 
+// Class KuroAI.BTTask_RunBehaviorWithDelegate
+// 0x0050 (0x00D8 - 0x0088)
+class UBTTask_RunBehaviorWithDelegate final : public UBTTask_RunBehavior
+{
+public:
+	TDelegate<void(class UBehaviorTreeComponent* OwnerComp, int32 NodeId)> OnAfterExecuteDelegate;   // 0x0088(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(class UBehaviorTreeComponent* OwnerComp, int32 NodeId)> OnSubtreeDeactivatedDelegate; // 0x00B0(0x0028)(Edit, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BTTask_RunBehaviorWithDelegate")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BTTask_RunBehaviorWithDelegate")
+	}
+	static class UBTTask_RunBehaviorWithDelegate* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBTTask_RunBehaviorWithDelegate>();
+	}
+};
+DUMPER7_ASSERTS_UBTTask_RunBehaviorWithDelegate;
+
 // Class KuroAI.KuroAILibrary
 // 0x0000 (0x0030 - 0x0030)
 class UKuroAILibrary final : public UBlueprintFunctionLibrary
 {
 public:
+	static void DumpBtNodeAllProperties(class UBTNode* TaskNode);
 	static class UBTNode* GetCurrentRootNode(class UBehaviorTreeComponent* BTComp);
+	static class UBTNode* GetNodeFromBehaviorTree(class UBehaviorTreeComponent* BTComp, int32 NodeId);
+	static class UBTNode* GetNodeFromSubtree(class UBehaviorTreeComponent* BTComp, int32 SubTreeNodeId, int32 NodeId);
+	static bool LoadBehaviorTreeNodeInfo(class UBehaviorTreeComponent* BTComp, const TMap<int32, int32>& InSavedInfoMap, int32 MaxNodeNum);
+	static bool LoadBehaviorTreeNodeInfoFromRecordItem(class UBehaviorTreeComponent* BTComp, const struct FBtSaveLoadRecordItem& InItem);
 	static void ResetRandomNode(class UBehaviorTreeComponent* BTComp, class UBTNode* Node, const TArray<int32>& WeightsOverride);
+	static bool SaveBehaviorTreeNodeInfo(class UBehaviorTreeComponent* BTComp, TMap<int32, int32>* OutSavedInfoMap, int32 MaxNodeNum);
+	static bool SaveBehaviorTreeNodeInfoWithSubtree(class UBehaviorTreeComponent* BTComp, struct FBtSaveLoadRecord* OutRecord);
+	static void SetBtNodePropertyFromString(class UBTNode* TaskNode, class FName PropertyName, const class FString& NewValue);
 
 public:
 	static class UClass* StaticClass()

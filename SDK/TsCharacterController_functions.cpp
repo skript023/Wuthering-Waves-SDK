@@ -197,6 +197,25 @@ void ATsCharacterController_C::ReceiveUnPossess(class APawn* UnpossessedPawn)
 }
 
 
+// Function TsCharacterController.TsCharacterController_C.ReceiveDestroyed
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ATsCharacterController_C::ReceiveDestroyed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsCharacterController_C", "ReceiveDestroyed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function TsCharacterController.TsCharacterController_C.ExecuteUbergraph_TsCharacterController
 // (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:

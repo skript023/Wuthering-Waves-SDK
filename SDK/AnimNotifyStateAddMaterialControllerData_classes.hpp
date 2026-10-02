@@ -10,23 +10,29 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "GameplayTags_structs.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass AnimNotifyStateAddMaterialControllerData.AnimNotifyStateAddMaterialControllerData_C
-// 0x0010 (0x0058 - 0x0048)
-class UAnimNotifyStateAddMaterialControllerData_C final : public UKuroAnimNotifyState
+// 0x0068 (0x00C0 - 0x0058)
+class UAnimNotifyStateAddMaterialControllerData_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	class UPD_CharacterControllerData_C*          MaterialAssetData;                                 // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Handle;                                            // 0x0050(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPD_CharacterControllerData_C*          MaterialAssetData;                                 // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          NeedAnyTag;                                        // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, bool>               PlayNeedTags;                                      // 0x0068(0x0050)(Edit, BlueprintVisible)
+	bool                                          TagCheckWithOwner;                                 // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          OnlyAddOnTsBaseCharacter;                          // 0x00B9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          OnlyAddOnUiActor;                                  // 0x00BA(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
+	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 
 	class FString GetNotifyName() const;
 

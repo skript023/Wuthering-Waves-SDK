@@ -11,22 +11,22 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "SSkillBehaviorCue_structs.hpp"
 #include "GA_Base_classes.hpp"
+#include "SSkillBehaviorCue_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass GA_BurstEnd_Kamola.GA_BurstEnd_Kamola_C
-// 0x0028 (0x05B0 - 0x0588)
+// 0x0028 (0x05F8 - 0x05D0)
 class UGA_BurstEnd_Kamola_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_BurstEnd_Kamola_C;               // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class FName                                   追踪插槽;                                          // 0x0590(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         特效Handle;                                        // 0x059C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FSSkillBehaviorCue>             播放特效;                                          // 0x05A0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_BurstEnd_Kamola_C;               // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class FName                                   追踪插槽;                                          // 0x05D8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         特效Handle;                                        // 0x05E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FSSkillBehaviorCue>             播放特效;                                          // 0x05E8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_GA_BurstEnd_Kamola(int32 EntryPoint);

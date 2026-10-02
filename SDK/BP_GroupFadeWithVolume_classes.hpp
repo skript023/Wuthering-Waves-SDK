@@ -18,64 +18,81 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C
-// 0x0338 (0x06C8 - 0x0390)
+// 0x0470 (0x08A0 - 0x0430)
 class ABP_GroupFadeWithVolume_C final : public AKuroBPCustomCookActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0390(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0398(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TSet<class ALight*>                           LightList;                                         // 0x03A0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<float>                                 CachedLightIntensity;                              // 0x03F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TSet<class ABP_VolumetricSphereLight_C*>      VolumeLightSphereList;                             // 0x0400(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<float>                                 CachedVolumeLightSphere;                           // 0x0450(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TSet<class ABP_KuroLightDecal_C*>             DecalLightList;                                    // 0x0460(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
-	TArray<float>                                 CachedDecalLight;                                  // 0x04B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TSet<class ABP_VolumetricSphereLightSuperFar_C*> VolumeLightSphereSuperFarList;                  // 0x04C0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<float>                                 CachedVolumeLightSphereSuperFar;                   // 0x0510(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class AKuroPostProcessVolume*                 BoundVolume;                                       // 0x0520(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_GlobalGI_C*                         CachedGlobalGI;                                    // 0x0528(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         lastWeight;                                        // 0x0530(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_534[0x4];                                      // 0x0534(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class ABP_SingleCloud_C*>                CloudList;                                         // 0x0538(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<float>                                 CachedCloudIntensity;                              // 0x0588(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          bPC;                                               // 0x0598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bMobile;                                           // 0x0599(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_59A[0x6];                                      // 0x059A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class AKuroPostProcessVolume*>           FadeOutVolumes;                                    // 0x05A0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	float                                         maxFadeoutWeight;                                  // 0x05F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bCooked;                                           // 0x05F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5F5[0x3];                                      // 0x05F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class ABP_SuperFarFog_C*>                SuperfarFogList;                                   // 0x05F8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<float>                                 CachedSuperFarFogOpacity;                          // 0x0648(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<float>                                 CachedSuperFarFogOpacity_Night;                    // 0x0658(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TSet<class ABP_KuroFlickLight_C*>             FlickLightList;                                    // 0x0668(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<float>                                 CachedFlickLightIntensity;                         // 0x06B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0430(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0438(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TSet<class ALight*>                           LightList;                                         // 0x0440(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedLightIntensity;                              // 0x0490(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSet<class ABP_VolumetricSphereLight_C*>      VolumeLightSphereList;                             // 0x04A0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedVolumeLightSphere;                           // 0x04F0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSet<class ABP_KuroLightDecal_C*>             DecalLightList;                                    // 0x0500(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
+	TArray<float>                                 CachedDecalLight;                                  // 0x0550(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSet<class ABP_VolumetricSphereLightSuperFar_C*> VolumeLightSphereSuperFarList;                  // 0x0560(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedVolumeLightSphereSuperFar;                   // 0x05B0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class AKuroPostProcessVolume*                 BoundVolume;                                       // 0x05C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_GlobalGI_C*                         CachedGlobalGI;                                    // 0x05C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         lastWeight;                                        // 0x05D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5D4[0x4];                                      // 0x05D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class ABP_SingleCloud_C*>                CloudList;                                         // 0x05D8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedCloudIntensity;                              // 0x0628(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSet<class ABP_SingleCloud_Custom_C*>         CustomCloudList;                                   // 0x0638(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedCustomCloudIntensity;                        // 0x0688(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bPC;                                               // 0x0698(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bMobile;                                           // 0x0699(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_69A[0x6];                                      // 0x069A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class AKuroPostProcessVolume*>           FadeOutVolumes;                                    // 0x06A0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	float                                         maxFadeoutWeight;                                  // 0x06F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bCooked;                                           // 0x06F4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6F5[0x3];                                      // 0x06F5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class ABP_SuperFarFog_C*>                SuperfarFogList;                                   // 0x06F8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedSuperFarFogOpacity;                          // 0x0748(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<float>                                 CachedSuperFarFogOpacity_Night;                    // 0x0758(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSet<class ABP_KuroFlickLight_C*>             FlickLightList;                                    // 0x0768(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedFlickLightIntensity;                         // 0x07B8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSet<class ABP_KuroLightDecal_C*>             LightDecalList;                                    // 0x07C8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedLightDecalIntensity;                         // 0x0818(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSet<class ABP_ShadowDecal_C*>                ShadowDecalList;                                   // 0x0828(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TArray<float>                                 CachedShadowDecalIntensity;                        // 0x0878(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bUseMPCFadeGroup;                                  // 0x0888(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_889[0x3];                                      // 0x0889(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MPCFadeGroup;                                      // 0x088C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   FadeGroupName;                                     // 0x0890(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bForceShow;                                        // 0x089C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void UpdateFlickLight(float A);
-	void CacheFlickLight();
-	void MarkLightExcludeFromTOD();
-	float ComputeWeight();
-	void CheckObjectPlatform(const class UObject* Object, bool* valid);
-	void CheckPlatform();
-	void UpdateSuperFarFog(float A);
-	void CacheSuperFarFog();
-	void UpdateCloud(float B);
-	void CacheCloud();
-	void UpdateVolumeLightSphereFar(float A);
-	void CacheVolumeLightSphereFar();
-	void UpdateVolumeLightSphere(float B);
-	void CacheVolumeLightSphere();
-	void UpdateLight(float A);
-	void CacheLightInstensity();
-	void ClearInvalid();
-	void UserConstructionScript();
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
-	void CacheIntensity();
-	void BeforeCookForMobile();
-	void BeforeCookForPC();
 	void ExecuteUbergraph_BP_GroupFadeWithVolume(int32 EntryPoint);
+	void BeforeCookForPC();
+	void BeforeCookForMobile();
+	void CacheIntensity();
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void UserConstructionScript();
+	void ClearInvalid();
+	void CacheLightInstensity();
+	void UpdateLight(float A);
+	void CacheVolumeLightSphere();
+	void UpdateVolumeLightSphere(float B);
+	void CacheVolumeLightSphereFar();
+	void UpdateVolumeLightSphereFar(float A);
+	void CacheCloud();
+	void UpdateCloud(float B);
+	void CacheCustomCloud();
+	void UpdateCustomCloud(float B);
+	void CacheSuperFarFog();
+	void UpdateSuperFarFog(float A);
+	void CheckPlatform();
+	void CheckObjectPlatform(const class UObject* Object, bool* valid);
+	float ComputeWeight();
+	void MarkLightExcludeFromTOD();
+	void CacheFlickLight();
+	void UpdateFlickLight(float A);
+	void CacheLightDecal();
+	void UpdateLightDecal(float A);
+	void CacheShadowDecal();
+	void UpdateShadowDecal(float A);
 
 public:
 	static class UClass* StaticClass()

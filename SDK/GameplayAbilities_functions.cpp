@@ -17,81 +17,124 @@
 namespace SDK
 {
 
-// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayCueParameters&    Parameters                                             (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue
+// (Native, Public, BlueprintCallable)
 
-void IGameplayCueInterface::BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
+void AGameplayCueNotify_Actor::K2_EndGameplayCue()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "BlueprintCustomHandler");
+		Func = Class->GetFunction("GameplayCueNotify_Actor", "K2_EndGameplayCue");
 
-	Params::GameplayCueInterface_BlueprintCustomHandler Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AGameplayCueNotify_Actor::K2_HandleGameplayCue(class AActor* MyTarget, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameplayCueNotify_Actor", "K2_HandleGameplayCue");
+
+	Params::GameplayCueNotify_Actor_K2_HandleGameplayCue Parms{};
+
+	Parms.MyTarget = MyTarget;
 	Parms.EventType = EventType;
 	Parms.Parameters = std::move(Parameters);
 
-	AsUObject()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
-// (BlueprintCosmetic, Native, Public, BlueprintCallable)
-
-void IGameplayCueInterface::ForwardGameplayCueToParent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "ForwardGameplayCueToParent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemGlobals.ListPlayerAbilities
-// (Final, Exec, Native, Public)
-
-void UAbilitySystemGlobals::ListPlayerAbilities()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemGlobals", "ListPlayerAbilities");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemGlobals.ServerActivatePlayerAbility
-// (Final, Exec, Native, Public)
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnActive
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const class FString&                    AbilityNameMatch                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAbilitySystemGlobals::ServerActivatePlayerAbility(const class FString& AbilityNameMatch)
+bool AGameplayCueNotify_Actor::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemGlobals", "ServerActivatePlayerAbility");
+		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnActive");
 
-	Params::AbilitySystemGlobals_ServerActivatePlayerAbility Parms{};
+	Params::GameplayCueNotify_Actor_OnActive Parms{};
 
-	Parms.AbilityNameMatch = std::move(AbilityNameMatch);
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AGameplayCueNotify_Actor::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnExecute");
+
+	Params::GameplayCueNotify_Actor_OnExecute Parms{};
+
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed
+// (Native, Public)
+// Parameters:
+// class AActor*                           DestroyedActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGameplayCueNotify_Actor::OnOwnerDestroyed(class AActor* DestroyedActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnOwnerDestroyed");
+
+	Params::GameplayCueNotify_Actor_OnOwnerDestroyed Parms{};
+
+	Parms.DestroyedActor = DestroyedActor;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -102,21 +145,24 @@ void UAbilitySystemGlobals::ServerActivatePlayerAbility(const class FString& Abi
 }
 
 
-// Function GameplayAbilities.AbilitySystemGlobals.ServerCancelPlayerAbility
-// (Final, Exec, Native, Public)
+// Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const class FString&                    AbilityNameMatch                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAbilitySystemGlobals::ServerCancelPlayerAbility(const class FString& AbilityNameMatch)
+bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemGlobals", "ServerCancelPlayerAbility");
+		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnRemove");
 
-	Params::AbilitySystemGlobals_ServerCancelPlayerAbility Parms{};
+	Params::GameplayCueNotify_Actor_OnRemove Parms{};
 
-	Parms.AbilityNameMatch = std::move(AbilityNameMatch);
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -124,24 +170,29 @@ void UAbilitySystemGlobals::ServerCancelPlayerAbility(const class FString& Abili
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function GameplayAbilities.AbilitySystemGlobals.ServerEndPlayerAbility
-// (Final, Exec, Native, Public)
+// Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const class FString&                    AbilityNameMatch                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UAbilitySystemGlobals::ServerEndPlayerAbility(const class FString& AbilityNameMatch)
+bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemGlobals", "ServerEndPlayerAbility");
+		Func = Class->GetFunction("GameplayCueNotify_Actor", "WhileActive");
 
-	Params::AbilitySystemGlobals_ServerEndPlayerAbility Parms{};
+	Params::GameplayCueNotify_Actor_WhileActive Parms{};
 
-	Parms.AbilityNameMatch = std::move(AbilityNameMatch);
+	Parms.MyTarget = MyTarget;
+	Parms.Parameters = std::move(Parameters);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -149,44 +200,8 @@ void UAbilitySystemGlobals::ServerEndPlayerAbility(const class FString& AbilityN
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
-
-// Function GameplayAbilities.AbilitySystemGlobals.ToggleIgnoreAbilitySystemCooldowns
-// (Exec, Native, Public)
-
-void UAbilitySystemGlobals::ToggleIgnoreAbilitySystemCooldowns()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemGlobals", "ToggleIgnoreAbilitySystemCooldowns");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GameplayAbilities.AbilitySystemGlobals.ToggleIgnoreAbilitySystemCosts
-// (Exec, Native, Public)
-
-void UAbilitySystemGlobals::ToggleIgnoreAbilitySystemCosts()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AbilitySystemGlobals", "ToggleIgnoreAbilitySystemCosts");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
+	return Parms.ReturnValue;
 }
 
 
@@ -4804,15 +4819,56 @@ void AGameplayAbilityWorldReticle::SetReticleMaterialParamVector(class FName Par
 }
 
 
-// Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue
-// (Native, Public, BlueprintCallable)
+// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (Parm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void AGameplayCueNotify_Actor::K2_EndGameplayCue()
+void IGameplayCueInterface::BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "K2_EndGameplayCue");
+		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "BlueprintCustomHandler");
+
+	Params::GameplayCueInterface_BlueprintCustomHandler Parms{};
+
+	Parms.EventType = EventType;
+	Parms.Parameters = std::move(Parameters);
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
+// (BlueprintCosmetic, Native, Public, BlueprintCallable)
+
+void IGameplayCueInterface::ForwardGameplayCueToParent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "ForwardGameplayCueToParent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemGlobals.ListPlayerAbilities
+// (Final, Exec, Native, Public)
+
+void UAbilitySystemGlobals::ListPlayerAbilities()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemGlobals", "ListPlayerAbilities");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4823,105 +4879,21 @@ void AGameplayCueNotify_Actor::K2_EndGameplayCue()
 }
 
 
-// Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
-// (Event, Public, HasOutParams, BlueprintEvent)
+// Function GameplayAbilities.AbilitySystemGlobals.ServerActivatePlayerAbility
+// (Final, Exec, Native, Public)
 // Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const class FString&                    AbilityNameMatch                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AGameplayCueNotify_Actor::K2_HandleGameplayCue(class AActor* MyTarget, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
+void UAbilitySystemGlobals::ServerActivatePlayerAbility(const class FString& AbilityNameMatch)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "K2_HandleGameplayCue");
+		Func = Class->GetFunction("AbilitySystemGlobals", "ServerActivatePlayerAbility");
 
-	Params::GameplayCueNotify_Actor_K2_HandleGameplayCue Parms{};
+	Params::AbilitySystemGlobals_ServerActivatePlayerAbility Parms{};
 
-	Parms.MyTarget = MyTarget;
-	Parms.EventType = EventType;
-	Parms.Parameters = std::move(Parameters);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnActive
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AGameplayCueNotify_Actor::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnActive");
-
-	Params::GameplayCueNotify_Actor_OnActive Parms{};
-
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnExecute
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AGameplayCueNotify_Actor::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnExecute");
-
-	Params::GameplayCueNotify_Actor_OnExecute Parms{};
-
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnOwnerDestroyed
-// (Native, Public)
-// Parameters:
-// class AActor*                           DestroyedActor                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGameplayCueNotify_Actor::OnOwnerDestroyed(class AActor* DestroyedActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnOwnerDestroyed");
-
-	Params::GameplayCueNotify_Actor_OnOwnerDestroyed Parms{};
-
-	Parms.DestroyedActor = DestroyedActor;
+	Parms.AbilityNameMatch = std::move(AbilityNameMatch);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4932,24 +4904,21 @@ void AGameplayCueNotify_Actor::OnOwnerDestroyed(class AActor* DestroyedActor)
 }
 
 
-// Function GameplayAbilities.GameplayCueNotify_Actor.OnRemove
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Function GameplayAbilities.AbilitySystemGlobals.ServerCancelPlayerAbility
+// (Final, Exec, Native, Public)
 // Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AbilityNameMatch                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+void UAbilitySystemGlobals::ServerCancelPlayerAbility(const class FString& AbilityNameMatch)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnRemove");
+		Func = Class->GetFunction("AbilitySystemGlobals", "ServerCancelPlayerAbility");
 
-	Params::GameplayCueNotify_Actor_OnRemove Parms{};
+	Params::AbilitySystemGlobals_ServerCancelPlayerAbility Parms{};
 
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
+	Parms.AbilityNameMatch = std::move(AbilityNameMatch);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4957,29 +4926,24 @@ bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGa
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function GameplayAbilities.GameplayCueNotify_Actor.WhileActive
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Function GameplayAbilities.AbilitySystemGlobals.ServerEndPlayerAbility
+// (Final, Exec, Native, Public)
 // Parameters:
-// class AActor*                           MyTarget                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    AbilityNameMatch                                       (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
+void UAbilitySystemGlobals::ServerEndPlayerAbility(const class FString& AbilityNameMatch)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "WhileActive");
+		Func = Class->GetFunction("AbilitySystemGlobals", "ServerEndPlayerAbility");
 
-	Params::GameplayCueNotify_Actor_WhileActive Parms{};
+	Params::AbilitySystemGlobals_ServerEndPlayerAbility Parms{};
 
-	Parms.MyTarget = MyTarget;
-	Parms.Parameters = std::move(Parameters);
+	Parms.AbilityNameMatch = std::move(AbilityNameMatch);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -4987,8 +4951,44 @@ bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct 
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	return Parms.ReturnValue;
+
+// Function GameplayAbilities.AbilitySystemGlobals.ToggleIgnoreAbilitySystemCooldowns
+// (Exec, Native, Public)
+
+void UAbilitySystemGlobals::ToggleIgnoreAbilitySystemCooldowns()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemGlobals", "ToggleIgnoreAbilitySystemCooldowns");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.AbilitySystemGlobals.ToggleIgnoreAbilitySystemCosts
+// (Exec, Native, Public)
+
+void UAbilitySystemGlobals::ToggleIgnoreAbilitySystemCosts()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AbilitySystemGlobals", "ToggleIgnoreAbilitySystemCosts");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

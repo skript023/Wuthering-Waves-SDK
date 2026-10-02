@@ -18,14 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_QiuYuan_Hold_Attack.GA_QiuYuan_Hold_Attack_C
-// 0x0010 (0x0598 - 0x0588)
+// 0x0010 (0x05E0 - 0x05D0)
 class UGA_QiuYuan_Hold_Attack_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_QiuYuan_Hold_Attack_C;           // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          落地攻击;                                          // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_591[0x3];                                      // 0x0591(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BlockTime;                                         // 0x0594(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_QiuYuan_Hold_Attack_C;           // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          落地攻击;                                          // 0x05D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5D9[0x3];                                      // 0x05D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BlockTime;                                         // 0x05DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_QiuYuan_Hold_Attack(int32 EntryPoint);

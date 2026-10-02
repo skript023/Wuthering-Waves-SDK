@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "E_BillboardMode_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "E_BillboardMode_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_HaloPointLight.BP_HaloPointLight_C
-// 0x00B8 (0x0380 - 0x02C8)
+// 0x00C8 (0x0390 - 0x02C8)
 class ABP_HaloPointLight_C final : public APointLight
 {
 public:
@@ -61,14 +61,25 @@ public:
 	class UMaterialInterface*                     HaloMaterial_NoBillboard_Black;                    // 0x0368(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMaterialInterface*                     HaloMaterial_Black;                                // 0x0370(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TranslucentSortPriority;                           // 0x0378(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         FrameCount;                                        // 0x037C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ELightQualityType                             Quality;                                           // 0x0380(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_381[0x3];                                      // 0x0381(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CurrentQuality;                                    // 0x0384(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BoundsScale;                                       // 0x0388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bNeedToShow;                                       // 0x038C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void GetHaloDrawParameters(float* MinDrawDistance_0, float* MaxDrawDistance_0, float* MinDrawRange_0, float* MaxDrawRange_0);
-	void UpdateHaloParameter(bool UpdateComponent);
-	void UserConstructionScript();
-	void ReceiveBeginPlay();
-	void HaloPointParaUpdate();
 	void ExecuteUbergraph_BP_HaloPointLight(int32 EntryPoint);
+	void UpdateQualitySwitch();
+	void ReceiveTick(float DeltaSeconds);
+	void HaloPointParaUpdate();
+	void ReceiveBeginPlay();
+	void UserConstructionScript();
+	void UpdateHaloParameter(bool UpdateComponent);
+	void GetHaloDrawParameters(float* MinDrawDistance_0, float* MaxDrawDistance_0, float* MinDrawRange_0, float* MaxDrawRange_0);
+	void SetQuality();
+
+	int32 GetPlacementSortOrder() const;
 
 public:
 	static class UClass* StaticClass()

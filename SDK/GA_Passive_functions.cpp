@@ -17,17 +17,23 @@
 namespace SDK
 {
 
-// Function GA_Passive.Ga_Passive_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
+// Function GA_Passive.Ga_Passive_C.ExecuteUbergraph_Ga_Passive
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGa_Passive_C::K2_ActivateAbility()
+void UGa_Passive_C::ExecuteUbergraph_Ga_Passive(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Ga_Passive_C", "K2_ActivateAbility");
+		Func = Class->GetFunction("Ga_Passive_C", "ExecuteUbergraph_Ga_Passive");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::Ga_Passive_C_ExecuteUbergraph_Ga_Passive Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -51,23 +57,17 @@ void UGa_Passive_C::K2_OnEndAbility(bool bWasCancelled)
 }
 
 
-// Function GA_Passive.Ga_Passive_C.ExecuteUbergraph_Ga_Passive
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function GA_Passive.Ga_Passive_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
 
-void UGa_Passive_C::ExecuteUbergraph_Ga_Passive(int32 EntryPoint)
+void UGa_Passive_C::K2_ActivateAbility()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Ga_Passive_C", "ExecuteUbergraph_Ga_Passive");
+		Func = Class->GetFunction("Ga_Passive_C", "K2_ActivateAbility");
 
-	Params::Ga_Passive_C_ExecuteUbergraph_Ga_Passive Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

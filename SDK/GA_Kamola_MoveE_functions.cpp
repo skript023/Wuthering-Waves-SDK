@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_Kamola_MoveE.GA_Kamola_MoveE_C.ExecuteUbergraph_GA_Kamola_MoveE
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

@@ -61,9 +61,9 @@ void UTsHotFixActionHandle_C::OnReleaseAction(const struct FKey& Key)
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const class FString&                    actionName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddPressBinding(const class FString& actionName, class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::AddPressBinding(const class FString& actionName, class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -83,9 +83,9 @@ void UTsHotFixActionHandle_C::AddPressBinding(const class FString& actionName, c
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const class FString&                    actionName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddReleaseBinding(const class FString& actionName, class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::AddReleaseBinding(const class FString& actionName, class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -104,9 +104,9 @@ void UTsHotFixActionHandle_C::AddReleaseBinding(const class FString& actionName,
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddTouchPressBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddTouchPressBinding(class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::AddTouchPressBinding(class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -124,9 +124,9 @@ void UTsHotFixActionHandle_C::AddTouchPressBinding(class ABasePlayerController* 
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddTouchReleaseBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddTouchReleaseBinding(class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::AddTouchReleaseBinding(class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -188,9 +188,9 @@ void UTsHotFixActionHandle_C::OnTouchReleaseAction(ETouchIndex touchIndex, const
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.ClearActionBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::ClearActionBinding(class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::ClearActionBinding(class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -230,9 +230,9 @@ void UTsHotFixActionHandle_C::OnTouchMoveAction(ETouchIndex touchindex, const st
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddTouchMoveBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddTouchMoveBinding(class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::AddTouchMoveBinding(class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -251,9 +251,9 @@ void UTsHotFixActionHandle_C::AddTouchMoveBinding(class ABasePlayerController* c
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // const class FString&                    axisName                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddAxisBinding(const class FString& axisName, class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::AddAxisBinding(const class FString& axisName, class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -292,9 +292,9 @@ void UTsHotFixActionHandle_C::OnAxisInput(float value)
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.ClearAxisBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::ClearAxisBinding(class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::ClearAxisBinding(class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 
@@ -312,10 +312,10 @@ void UTsHotFixActionHandle_C::ClearAxisBinding(class ABasePlayerController* cont
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.AddAnyKeyPress
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // const struct FInputChord&               chord                                                  (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::AddAnyKeyPress(class ABasePlayerController* controller, const struct FInputChord& chord)
+void UTsHotFixActionHandle_C::AddAnyKeyPress(class APlayerController* controller, const struct FInputChord& chord)
 {
 	static class UFunction* Func = nullptr;
 
@@ -334,9 +334,9 @@ void UTsHotFixActionHandle_C::AddAnyKeyPress(class ABasePlayerController* contro
 // Function TsHotFixActionHandle.TsHotFixActionHandle_C.ClearKeyBinding
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ABasePlayerController*            controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class APlayerController*                controller                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsHotFixActionHandle_C::ClearKeyBinding(class ABasePlayerController* controller)
+void UTsHotFixActionHandle_C::ClearKeyBinding(class APlayerController* controller)
 {
 	static class UFunction* Func = nullptr;
 

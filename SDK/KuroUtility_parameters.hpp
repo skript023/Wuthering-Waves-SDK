@@ -11,8 +11,9 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
+#include "KuroNetwork_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "Engine_structs.hpp"
 #include "KuroUtility_structs.hpp"
 #include "JsEnv_structs.hpp"
 
@@ -39,6 +40,17 @@ public:
 	class UObject*                                UserData;                                          // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AsyncLoadState_AsyncLoadObject;
+
+// Function KuroUtility.GameplayTagsManagerLibrary.GetOriginalTag
+// 0x0020 (0x0020 - 0x0000)
+struct GameplayTagsManagerLibrary_GetOriginalTag final
+{
+public:
+	class FName                                   TagName;                                           // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameplayTagsManagerLibrary_GetOriginalTag;
 
 // Function KuroUtility.HoldPreloadObject.AddCommonAsset
 // 0x0008 (0x0008 - 0x0000)
@@ -103,6 +115,18 @@ public:
 	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroActorComponent_EditorTickComponent;
+
+// Function KuroUtility.KuroActorManager.CalcUObjectMemory
+// 0x0010 (0x0010 - 0x0000)
+struct KuroActorManager_CalcUObjectMemory final
+{
+public:
+	class UObject*                                Object;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsGetDepends;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroActorManager_CalcUObjectMemory;
 
 // Function KuroUtility.KuroActorManager.ClearAcquiredComponents
 // 0x0010 (0x0010 - 0x0000)
@@ -312,6 +336,129 @@ public:
 };
 DUMPER7_ASSERTS_KuroApplicationLibrary_AddWindowActivationDelegate;
 
+// Function KuroUtility.KuroApplicationLibrary.ExitWithCode
+// 0x0020 (0x0020 - 0x0000)
+struct KuroApplicationLibrary_ExitWithCode final
+{
+public:
+	bool                                          bForceExit;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Reason;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ExitCode;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_ExitWithCode;
+
+// Function KuroUtility.KuroApplicationLibrary.ExitWithReason
+// 0x0018 (0x0018 - 0x0000)
+struct KuroApplicationLibrary_ExitWithReason final
+{
+public:
+	bool                                          bForceExit;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Reason;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_ExitWithReason;
+
+// Function KuroUtility.KuroApplicationLibrary.GetAppReleaseType
+// 0x0010 (0x0010 - 0x0000)
+struct KuroApplicationLibrary_GetAppReleaseType final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_GetAppReleaseType;
+
+// Function KuroUtility.KuroApplicationLibrary.GetCommandLine
+// 0x0010 (0x0010 - 0x0000)
+struct KuroApplicationLibrary_GetCommandLine final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_GetCommandLine;
+
+// Function KuroUtility.KuroApplicationLibrary.GetSessionCachedUserName
+// 0x0010 (0x0010 - 0x0000)
+struct KuroApplicationLibrary_GetSessionCachedUserName final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_GetSessionCachedUserName;
+
+// Function KuroUtility.KuroApplicationLibrary.IniPlatformName
+// 0x0010 (0x0010 - 0x0000)
+struct KuroApplicationLibrary_IniPlatformName final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_IniPlatformName;
+
+// Function KuroUtility.KuroApplicationLibrary.IniPlatformNameIncludeEditor
+// 0x0010 (0x0010 - 0x0000)
+struct KuroApplicationLibrary_IniPlatformNameIncludeEditor final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_IniPlatformNameIncludeEditor;
+
+// Function KuroUtility.KuroApplicationLibrary.IsAsyncLoadingThreadEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct KuroApplicationLibrary_IsAsyncLoadingThreadEnabled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_IsAsyncLoadingThreadEnabled;
+
+// Function KuroUtility.KuroApplicationLibrary.IsBuildShipping
+// 0x0001 (0x0001 - 0x0000)
+struct KuroApplicationLibrary_IsBuildShipping final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_IsBuildShipping;
+
+// Function KuroUtility.KuroApplicationLibrary.IsBuildTest
+// 0x0001 (0x0001 - 0x0000)
+struct KuroApplicationLibrary_IsBuildTest final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_IsBuildTest;
+
+// Function KuroUtility.KuroApplicationLibrary.IsWithEditor
+// 0x0001 (0x0001 - 0x0000)
+struct KuroApplicationLibrary_IsWithEditor final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_IsWithEditor;
+
+// Function KuroUtility.KuroApplicationLibrary.IsWithStat
+// 0x0001 (0x0001 - 0x0000)
+struct KuroApplicationLibrary_IsWithStat final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_IsWithStat;
+
+// Function KuroUtility.KuroApplicationLibrary.ProjectContentDir
+// 0x0010 (0x0010 - 0x0000)
+struct KuroApplicationLibrary_ProjectContentDir final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroApplicationLibrary_ProjectContentDir;
+
 // Function KuroUtility.KuroApplicationLibrary.Test
 // 0x0008 (0x0008 - 0x0000)
 struct KuroApplicationLibrary_Test final
@@ -331,6 +478,36 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroApplicationLibrary_UnBind;
+
+// Function KuroUtility.KuroCameraFunctionLibrary.DelaySetNearClipPlane
+// 0x0004 (0x0004 - 0x0000)
+struct KuroCameraFunctionLibrary_DelaySetNearClipPlane final
+{
+public:
+	float                                         distance;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCameraFunctionLibrary_DelaySetNearClipPlane;
+
+// Function KuroUtility.KuroCameraFunctionLibrary.GetNearClipPlane
+// 0x0004 (0x0004 - 0x0000)
+struct KuroCameraFunctionLibrary_GetNearClipPlane final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCameraFunctionLibrary_GetNearClipPlane;
+
+// Function KuroUtility.KuroCollectActorComponent.GetActorsWithTag
+// 0x0020 (0x0020 - 0x0000)
+struct KuroCollectActorComponent_GetActorsWithTag final
+{
+public:
+	class FName                                   Tag;                                               // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECollectActorType                             Type;                                              // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         OutResult;                                         // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCollectActorComponent_GetActorsWithTag;
 
 // Function KuroUtility.KuroCollectActorComponent.GetActorWithTag
 // 0x0018 (0x0018 - 0x0000)
@@ -374,6 +551,177 @@ public:
 };
 DUMPER7_ASSERTS_KuroCompressLibrary_CompressFilesOrFoldersAsync;
 
+// Function KuroUtility.KuroCycleCounterLibrary.CreateCycleCounter
+// 0x0010 (0x0010 - 0x0000)
+struct KuroCycleCounterLibrary_CreateCycleCounter final
+{
+public:
+	class FName                                   StatName;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCycleCounterLibrary_CreateCycleCounter;
+
+// Function KuroUtility.KuroCycleCounterLibrary.StartCycleCounter
+// 0x0004 (0x0004 - 0x0000)
+struct KuroCycleCounterLibrary_StartCycleCounter final
+{
+public:
+	int32                                         StatIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCycleCounterLibrary_StartCycleCounter;
+
+// Function KuroUtility.KuroCycleCounterLibrary.StartCycleCounterByName
+// 0x000C (0x000C - 0x0000)
+struct KuroCycleCounterLibrary_StartCycleCounterByName final
+{
+public:
+	class FName                                   StatName;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCycleCounterLibrary_StartCycleCounterByName;
+
+// Function KuroUtility.KuroDemoInteractiveActor.BroadcastMulticastDelegateProperty
+// 0x0010 (0x0010 - 0x0000)
+struct KuroDemoInteractiveActor_BroadcastMulticastDelegateProperty final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_BroadcastMulticastDelegateProperty;
+
+// Function KuroUtility.KuroDemoInteractiveActor.CallFunction
+// 0x0010 (0x0010 - 0x0000)
+struct KuroDemoInteractiveActor_CallFunction final
+{
+public:
+	class FName                                   FunctionName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_CallFunction;
+
+// Function KuroUtility.KuroDemoInteractiveActor.ExecuteSingleDelegateProperty
+// 0x0010 (0x0010 - 0x0000)
+struct KuroDemoInteractiveActor_ExecuteSingleDelegateProperty final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_ExecuteSingleDelegateProperty;
+
+// Function KuroUtility.KuroDemoInteractiveActor.GetBoolPropertyValue
+// 0x0010 (0x0010 - 0x0000)
+struct KuroDemoInteractiveActor_GetBoolPropertyValue final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OutValue;                                          // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000D(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_GetBoolPropertyValue;
+
+// Function KuroUtility.KuroDemoInteractiveActor.GetFloatPropertyValue
+// 0x0014 (0x0014 - 0x0000)
+struct KuroDemoInteractiveActor_GetFloatPropertyValue final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OutValue;                                          // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_GetFloatPropertyValue;
+
+// Function KuroUtility.KuroDemoInteractiveActor.GetIntPropertyValue
+// 0x0014 (0x0014 - 0x0000)
+struct KuroDemoInteractiveActor_GetIntPropertyValue final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OutValue;                                          // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_GetIntPropertyValue;
+
+// Function KuroUtility.KuroDemoInteractiveActor.GetPropertyOffsetFromContainer
+// 0x0014 (0x0014 - 0x0000)
+struct KuroDemoInteractiveActor_GetPropertyOffsetFromContainer final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OutOffset;                                         // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_GetPropertyOffsetFromContainer;
+
+// Function KuroUtility.KuroDemoInteractiveActor.GetStringPropertyValue
+// 0x0028 (0x0028 - 0x0000)
+struct KuroDemoInteractiveActor_GetStringPropertyValue final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OutValue;                                          // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_GetStringPropertyValue;
+
+// Function KuroUtility.KuroDemoInteractiveActor.SetBoolPropertyValue
+// 0x0010 (0x0010 - 0x0000)
+struct KuroDemoInteractiveActor_SetBoolPropertyValue final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Value;                                             // 0x000C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000D(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E[0x2];                                        // 0x000E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_SetBoolPropertyValue;
+
+// Function KuroUtility.KuroDemoInteractiveActor.SetFloatPropertyValue
+// 0x0014 (0x0014 - 0x0000)
+struct KuroDemoInteractiveActor_SetFloatPropertyValue final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x000C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_SetFloatPropertyValue;
+
+// Function KuroUtility.KuroDemoInteractiveActor.SetIntPropertyValue
+// 0x0014 (0x0014 - 0x0000)
+struct KuroDemoInteractiveActor_SetIntPropertyValue final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x000C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_SetIntPropertyValue;
+
+// Function KuroUtility.KuroDemoInteractiveActor.SetStringPropertyValue
+// 0x0028 (0x0028 - 0x0000)
+struct KuroDemoInteractiveActor_SetStringPropertyValue final
+{
+public:
+	class FName                                   PropertyName;                                      // 0x0000(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Value;                                             // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroDemoInteractiveActor_SetStringPropertyValue;
+
 // Function KuroUtility.KuroDemoInteractSubSystem.GetDemoInteractiveActor
 // 0x0018 (0x0018 - 0x0000)
 struct KuroDemoInteractSubSystem_GetDemoInteractiveActor final
@@ -384,6 +732,47 @@ public:
 	class AActor*                                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroDemoInteractSubSystem_GetDemoInteractiveActor;
+
+// Function KuroUtility.KuroGasStaticLibraryLibrary.SetMultiAttributesValue
+// 0x0038 (0x0038 - 0x0000)
+struct KuroGasStaticLibraryLibrary_SetMultiAttributesValue final
+{
+public:
+	class UBaseAttributeSet*                      AttributeSet;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 AttributeTypes;                                    // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 BaseValues;                                        // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<float>                                 CurrentValues;                                     // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGasStaticLibraryLibrary_SetMultiAttributesValue;
+
+// Function KuroUtility.KuroLoggingLibraryLibrary.GetLogFilename
+// 0x0010 (0x0010 - 0x0000)
+struct KuroLoggingLibraryLibrary_GetLogFilename final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLoggingLibraryLibrary_GetLogFilename;
+
+// Function KuroUtility.KuroLoggingLibraryLibrary.PromoteGlobalLogVerbosity
+// 0x0001 (0x0001 - 0x0000)
+struct KuroLoggingLibraryLibrary_PromoteGlobalLogVerbosity final
+{
+public:
+	uint8                                         Verbosity;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroLoggingLibraryLibrary_PromoteGlobalLogVerbosity;
+
+// Function KuroUtility.KuroLoggingLibraryLibrary.SetCategoryVerbosity
+// 0x0018 (0x0018 - 0x0000)
+struct KuroLoggingLibraryLibrary_SetCategoryVerbosity final
+{
+public:
+	class FString                                 CategoryName;                                      // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Verbosity;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroLoggingLibraryLibrary_SetCategoryVerbosity;
 
 // Function KuroUtility.KuroMathLibrary.BitwiseLeftShift
 // 0x0018 (0x0018 - 0x0000)
@@ -439,6 +828,42 @@ public:
 	class UObject*                                Object;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroMemoryLibrary_PrintUObjectMemoryInfo;
+
+// Function KuroUtility.KuroMemProbeLibrary.GetMemProbeDir
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMemProbeLibrary_GetMemProbeDir final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMemProbeLibrary_GetMemProbeDir;
+
+// Function KuroUtility.KuroMemProbeLibrary.MemDumpSmaps
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMemProbeLibrary_MemDumpSmaps final
+{
+public:
+	class FString                                 Marker;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMemProbeLibrary_MemDumpSmaps;
+
+// Function KuroUtility.KuroMemProbeLibrary.MemSnapshot
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMemProbeLibrary_MemSnapshot final
+{
+public:
+	class FString                                 Marker;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMemProbeLibrary_MemSnapshot;
+
+// Function KuroUtility.KuroMemProbeLibrary.MemSnapshotFull
+// 0x0010 (0x0010 - 0x0000)
+struct KuroMemProbeLibrary_MemSnapshotFull final
+{
+public:
+	class FString                                 Marker;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMemProbeLibrary_MemSnapshotFull;
 
 // Function KuroUtility.KuroMeshTextureFunctionLibrary.AddMeshesBundleStreamedAllMipsDelegate
 // 0x0030 (0x0030 - 0x0000)
@@ -580,6 +1005,273 @@ public:
 };
 DUMPER7_ASSERTS_KuroMeshTextureFunctionLibrary_UnbindStaticMeshStreamedAllMipsDelegate;
 
+// Function KuroUtility.KuroMmapConfigLibrary.MapConfig
+// 0x0030 (0x0030 - 0x0000)
+struct KuroMmapConfigLibrary_MapConfig final
+{
+public:
+	class FString                                 InPath;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PakChunkIndex;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         OutPtr;                                            // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         OutLength;                                         // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroMmapConfigLibrary_MapConfig;
+
+// Function KuroUtility.KuroMmapConfigLibrary.UnmapAllConfigs
+// 0x0004 (0x0004 - 0x0000)
+struct KuroMmapConfigLibrary_UnmapAllConfigs final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMmapConfigLibrary_UnmapAllConfigs;
+
+// Function KuroUtility.KuroMmapConfigLibrary.UnmapConfig
+// 0x0018 (0x0018 - 0x0000)
+struct KuroMmapConfigLibrary_UnmapConfig final
+{
+public:
+	class FString                                 InPath;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PakChunkIndex;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroMmapConfigLibrary_UnmapConfig;
+
+// Function KuroUtility.KuroOpenHarmonyLibrary.InitGamePerformance
+// 0x0048 (0x0048 - 0x0000)
+struct KuroOpenHarmonyLibrary_InitGamePerformance final
+{
+public:
+	struct FKuroHarmonyGamePackageInfo            PackageInfo;                                       // 0x0000(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroOpenHarmonyLibrary_InitGamePerformance;
+
+// Function KuroUtility.KuroOpenHarmonyLibrary.UpdateGameConfigInfo
+// 0x0040 (0x0040 - 0x0000)
+struct KuroOpenHarmonyLibrary_UpdateGameConfigInfo final
+{
+public:
+	struct FKuroHarmonyGameConfigInfo             ConfigInfo;                                        // 0x0000(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroOpenHarmonyLibrary_UpdateGameConfigInfo;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.BeginCallGraph
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPerfSightHelperLibrary_BeginCallGraph final
+{
+public:
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_BeginCallGraph;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.BeginExtTag
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPerfSightHelperLibrary_BeginExtTag final
+{
+public:
+	class FString                                 TagName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_BeginExtTag;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.EndCallGraph
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPerfSightHelperLibrary_EndCallGraph final
+{
+public:
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_EndCallGraph;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.EndExtTag
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPerfSightHelperLibrary_EndExtTag final
+{
+public:
+	class FString                                 TagName;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_EndExtTag;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.IsBeginCallGraphCalled
+// 0x0001 (0x0001 - 0x0000)
+struct KuroPerfSightHelperLibrary_IsBeginCallGraphCalled final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_IsBeginCallGraphCalled;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.IsOnFrameBeginRegistered
+// 0x0001 (0x0001 - 0x0000)
+struct KuroPerfSightHelperLibrary_IsOnFrameBeginRegistered final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_IsOnFrameBeginRegistered;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.PostFrame
+// 0x0004 (0x0004 - 0x0000)
+struct KuroPerfSightHelperLibrary_PostFrame final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_PostFrame;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.PostValueFloat1
+// 0x0028 (0x0028 - 0x0000)
+struct KuroPerfSightHelperLibrary_PostValueFloat1 final
+{
+public:
+	class FString                                 Category;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValueA;                                            // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_PostValueFloat1;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.PostValueFloat2
+// 0x0028 (0x0028 - 0x0000)
+struct KuroPerfSightHelperLibrary_PostValueFloat2 final
+{
+public:
+	class FString                                 Category;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValueA;                                            // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValueB;                                            // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_PostValueFloat2;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.PostValueFloat3
+// 0x0030 (0x0030 - 0x0000)
+struct KuroPerfSightHelperLibrary_PostValueFloat3 final
+{
+public:
+	class FString                                 Category;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValueA;                                            // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValueB;                                            // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ValueC;                                            // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_PostValueFloat3;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.PostValueInteger1
+// 0x0028 (0x0028 - 0x0000)
+struct KuroPerfSightHelperLibrary_PostValueInteger1 final
+{
+public:
+	class FString                                 Category;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ValueA;                                            // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_PostValueInteger1;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.PostValueInteger2
+// 0x0028 (0x0028 - 0x0000)
+struct KuroPerfSightHelperLibrary_PostValueInteger2 final
+{
+public:
+	class FString                                 Category;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ValueA;                                            // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ValueB;                                            // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_PostValueInteger2;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.PostValueInteger3
+// 0x0030 (0x0030 - 0x0000)
+struct KuroPerfSightHelperLibrary_PostValueInteger3 final
+{
+public:
+	class FString                                 Category;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ValueA;                                            // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ValueB;                                            // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ValueC;                                            // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_PostValueInteger3;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.PostValueString
+// 0x0030 (0x0030 - 0x0000)
+struct KuroPerfSightHelperLibrary_PostValueString final
+{
+public:
+	class FString                                 Category;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Key;                                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Value;                                             // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_PostValueString;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.RegisterOnFrameBegin
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPerfSightHelperLibrary_RegisterOnFrameBegin final
+{
+public:
+	class FString                                 CallGraphName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_RegisterOnFrameBegin;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.SafePopCall
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPerfSightHelperLibrary_SafePopCall final
+{
+public:
+	class FString                                 CallGraphName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_SafePopCall;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.SafePushCall
+// 0x0010 (0x0010 - 0x0000)
+struct KuroPerfSightHelperLibrary_SafePushCall final
+{
+public:
+	class FString                                 CallGraphName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_SafePushCall;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.SetFlameGraphDropThresholds
+// 0x0004 (0x0004 - 0x0000)
+struct KuroPerfSightHelperLibrary_SetFlameGraphDropThresholds final
+{
+public:
+	int32                                         Threshold;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_SetFlameGraphDropThresholds;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.SetFlameGraphQueueSize
+// 0x0004 (0x0004 - 0x0000)
+struct KuroPerfSightHelperLibrary_SetFlameGraphQueueSize final
+{
+public:
+	int32                                         Length;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_SetFlameGraphQueueSize;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.SetFlameGraphStrMapSize
+// 0x0004 (0x0004 - 0x0000)
+struct KuroPerfSightHelperLibrary_SetFlameGraphStrMapSize final
+{
+public:
+	int32                                         InSize;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_SetFlameGraphStrMapSize;
+
+// Function KuroUtility.KuroPerfSightHelperLibrary.SetStrategyById
+// 0x0008 (0x0008 - 0x0000)
+struct KuroPerfSightHelperLibrary_SetStrategyById final
+{
+public:
+	int32                                         StrategyId;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StrategyValue;                                     // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPerfSightHelperLibrary_SetStrategyById;
+
 // Function KuroUtility.KuroPhysicsLibrary.GetHitPoint
 // 0x0050 (0x0050 - 0x0000)
 struct KuroPhysicsLibrary_GetHitPoint final
@@ -626,6 +1318,150 @@ public:
 };
 DUMPER7_ASSERTS_KuroPolypartition_BuildTriangleByVertex2D;
 
+// Function KuroUtility.KuroScreenBlueprintFunctionLibrary.ComputePhysicalScreenDensity
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenBlueprintFunctionLibrary_ComputePhysicalScreenDensity final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenBlueprintFunctionLibrary_ComputePhysicalScreenDensity;
+
+// Function KuroUtility.KuroScreenBlueprintFunctionLibrary.GetDisplayScreenResolution
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenBlueprintFunctionLibrary_GetDisplayScreenResolution final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenBlueprintFunctionLibrary_GetDisplayScreenResolution;
+
+// Function KuroUtility.KuroScreenBlueprintFunctionLibrary.GetPhysicalScreenDensityDPI
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenBlueprintFunctionLibrary_GetPhysicalScreenDensityDPI final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenBlueprintFunctionLibrary_GetPhysicalScreenDensityDPI;
+
+// Function KuroUtility.KuroScreenBlueprintFunctionLibrary.GetPhysicalScreenResolution
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenBlueprintFunctionLibrary_GetPhysicalScreenResolution final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenBlueprintFunctionLibrary_GetPhysicalScreenResolution;
+
+// Function KuroUtility.KuroScreenBlueprintFunctionLibrary.GetPhysicalScreenResolutionV2
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenBlueprintFunctionLibrary_GetPhysicalScreenResolutionV2 final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenBlueprintFunctionLibrary_GetPhysicalScreenResolutionV2;
+
+// Function KuroUtility.KuroScreenBlueprintFunctionLibrary.GetScreenDensityDPI
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenBlueprintFunctionLibrary_GetScreenDensityDPI final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenBlueprintFunctionLibrary_GetScreenDensityDPI;
+
+// Function KuroUtility.KuroScreenBlueprintFunctionLibrary.GetScreenLogicalDensity
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenBlueprintFunctionLibrary_GetScreenLogicalDensity final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenBlueprintFunctionLibrary_GetScreenLogicalDensity;
+
+// Function KuroUtility.KuroScreenBlueprintFunctionLibrary.GetScreenScaledDensity
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenBlueprintFunctionLibrary_GetScreenScaledDensity final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenBlueprintFunctionLibrary_GetScreenScaledDensity;
+
+// Function KuroUtility.KuroScreenLibrary.ComputePhysicalScreenDensity
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenLibrary_ComputePhysicalScreenDensity final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenLibrary_ComputePhysicalScreenDensity;
+
+// Function KuroUtility.KuroScreenLibrary.GetDisplayScreenResolution
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenLibrary_GetDisplayScreenResolution final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenLibrary_GetDisplayScreenResolution;
+
+// Function KuroUtility.KuroScreenLibrary.GetPhysicalScreenDensityDPI
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenLibrary_GetPhysicalScreenDensityDPI final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenLibrary_GetPhysicalScreenDensityDPI;
+
+// Function KuroUtility.KuroScreenLibrary.GetPhysicalScreenResolution
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenLibrary_GetPhysicalScreenResolution final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenLibrary_GetPhysicalScreenResolution;
+
+// Function KuroUtility.KuroScreenLibrary.GetPhysicalScreenResolutionV2
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenLibrary_GetPhysicalScreenResolutionV2 final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenLibrary_GetPhysicalScreenResolutionV2;
+
+// Function KuroUtility.KuroScreenLibrary.GetScreenDensityDPI
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenLibrary_GetScreenDensityDPI final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenLibrary_GetScreenDensityDPI;
+
+// Function KuroUtility.KuroScreenLibrary.GetScreenLogicalDensity
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenLibrary_GetScreenLogicalDensity final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenLibrary_GetScreenLogicalDensity;
+
+// Function KuroUtility.KuroScreenLibrary.GetScreenScaledDensity
+// 0x0008 (0x0008 - 0x0000)
+struct KuroScreenLibrary_GetScreenScaledDensity final
+{
+public:
+	double                                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroScreenLibrary_GetScreenScaledDensity;
+
 // Function KuroUtility.KuroStaticAndroidLibrary.AddAndroidScreenChangeDelegate
 // 0x0028 (0x0028 - 0x0000)
 struct KuroStaticAndroidLibrary_AddAndroidScreenChangeDelegate final
@@ -661,6 +1497,24 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroStaticAndroidLibrary_GetDeviceIsRooted;
+
+// Function KuroUtility.KuroStaticAndroidLibrary.GetHarmonyOSVersion
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticAndroidLibrary_GetHarmonyOSVersion final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticAndroidLibrary_GetHarmonyOSVersion;
+
+// Function KuroUtility.KuroStaticAndroidLibrary.IsHarmonyOS
+// 0x0001 (0x0001 - 0x0000)
+struct KuroStaticAndroidLibrary_IsHarmonyOS final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticAndroidLibrary_IsHarmonyOS;
 
 // Function KuroUtility.KuroStaticAndroidLibrary.OpenAppWithUrl
 // 0x0020 (0x0020 - 0x0000)
@@ -1220,6 +2074,36 @@ public:
 };
 DUMPER7_ASSERTS_KuroStaticLibrary_GetEnableMobileLowStreaming;
 
+// Function KuroUtility.KuroStaticLibrary.GetFileAccessTime
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticLibrary_GetFileAccessTime final
+{
+public:
+	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_GetFileAccessTime;
+
+// Function KuroUtility.KuroStaticLibrary.GetFileCreationTime
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticLibrary_GetFileCreationTime final
+{
+public:
+	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_GetFileCreationTime;
+
+// Function KuroUtility.KuroStaticLibrary.GetFileModificationTime
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticLibrary_GetFileModificationTime final
+{
+public:
+	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_GetFileModificationTime;
+
 // Function KuroUtility.KuroStaticLibrary.GetFiles
 // 0x0030 (0x0030 - 0x0000)
 struct KuroStaticLibrary_GetFiles final
@@ -1294,6 +2178,17 @@ public:
 };
 DUMPER7_ASSERTS_KuroStaticLibrary_GetLevelPrefabShowActor;
 
+// Function KuroUtility.KuroStaticLibrary.GetLocalAdapterAddressesUint32
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticLibrary_GetLocalAdapterAddressesUint32 final
+{
+public:
+	TArray<int32>                                 OutAddresses;                                      // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_GetLocalAdapterAddressesUint32;
+
 // Function KuroUtility.KuroStaticLibrary.GetLocalHostAddresses
 // 0x0018 (0x0018 - 0x0000)
 struct KuroStaticLibrary_GetLocalHostAddresses final
@@ -1331,6 +2226,15 @@ public:
 	TArray<struct FVector>                        ReturnValue;                                       // 0x0040(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroStaticLibrary_GetNavPointData;
+
+// Function KuroUtility.KuroStaticLibrary.GetOSVersion
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticLibrary_GetOSVersion final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_GetOSVersion;
 
 // Function KuroUtility.KuroStaticLibrary.GetPIEStartTimeInSeconds
 // 0x0004 (0x0004 - 0x0000)
@@ -1450,6 +2354,15 @@ public:
 	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroStaticLibrary_GetVendorInfo;
+
+// Function KuroUtility.KuroStaticLibrary.GetVideoMemoryGB
+// 0x0004 (0x0004 - 0x0000)
+struct KuroStaticLibrary_GetVideoMemoryGB final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_GetVideoMemoryGB;
 
 // Function KuroUtility.KuroStaticLibrary.GetViewPortMousePosition
 // 0x0008 (0x0008 - 0x0000)
@@ -1655,6 +2568,20 @@ public:
 };
 DUMPER7_ASSERTS_KuroStaticLibrary_LoadFileToArray;
 
+// Function KuroUtility.KuroStaticLibrary.LoadFileToArrayPriorPakChunk
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticLibrary_LoadFileToArrayPriorPakChunk final
+{
+public:
+	class FString                                 Path;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PakchunkIndex;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<uint8>                                 OutArray;                                          // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_LoadFileToArrayPriorPakChunk;
+
 // Function KuroUtility.KuroStaticLibrary.LoadFileToString
 // 0x0028 (0x0028 - 0x0000)
 struct KuroStaticLibrary_LoadFileToString final
@@ -1718,6 +2645,19 @@ public:
 	class UAISenseConfig*                         AISenseConfig;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroStaticLibrary_PerceptionConfigureSense;
+
+// Function KuroUtility.KuroStaticLibrary.PingGateWay
+// 0x0050 (0x0050 - 0x0000)
+struct KuroStaticLibrary_PingGateWay final
+{
+public:
+	class FString                                 Address;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Timeout;                                           // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Payload;                                           // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const class FString& Address, int32 Port, double Time, EKuroNetworkPingResponseStatus Result)> PingDelegate; // 0x0028(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_PingGateWay;
 
 // Function KuroUtility.KuroStaticLibrary.RegisterCustomCommandProcessor
 // 0x0038 (0x0038 - 0x0000)
@@ -1793,6 +2733,38 @@ public:
 	class UPrimitiveComponent*                    NewBase;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroStaticLibrary_SetBaseAndSaveBaseLocation;
+
+// Function KuroUtility.KuroStaticLibrary.SetConsoleVariableWithCurrentPriority_Float
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticLibrary_SetConsoleVariableWithCurrentPriority_Float final
+{
+public:
+	class FString                                 InCVar;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InValue;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_SetConsoleVariableWithCurrentPriority_Float;
+
+// Function KuroUtility.KuroStaticLibrary.SetConsoleVariableWithCurrentPriority_Int
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticLibrary_SetConsoleVariableWithCurrentPriority_Int final
+{
+public:
+	class FString                                 InCVar;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InValue;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_SetConsoleVariableWithCurrentPriority_Int;
+
+// Function KuroUtility.KuroStaticLibrary.SetConsoleVariableWithCurrentPriority_String
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticLibrary_SetConsoleVariableWithCurrentPriority_String final
+{
+public:
+	class FString                                 InCVar;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InValue;                                           // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticLibrary_SetConsoleVariableWithCurrentPriority_String;
 
 // Function KuroUtility.KuroStaticLibrary.SetCursorVisibility
 // 0x0001 (0x0001 - 0x0000)
@@ -2421,6 +3393,19 @@ public:
 };
 DUMPER7_ASSERTS_KuroStaticPS5Library_GetStoreProducts;
 
+// Function KuroUtility.KuroStaticPS5Library.GetStoreProductsWithParams
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticPS5Library_GetStoreProductsWithParams final
+{
+public:
+	int32                                         ServiceLabel;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Offset;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Limit;                                             // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FProductData>                   ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticPS5Library_GetStoreProductsWithParams;
+
 // Function KuroUtility.KuroStaticPS5Library.GetTrophyList
 // 0x0040 (0x0040 - 0x0000)
 struct KuroStaticPS5Library_GetTrophyList final
@@ -2871,6 +3856,497 @@ public:
 };
 DUMPER7_ASSERTS_KuroStaticPS5Library_UpdateTrophyProgressWithContextIdAndHandleIdAsync;
 
+// Function KuroUtility.KuroStaticXSXLibrary.CheckXboxMultiplayerPrivilege
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticXSXLibrary_CheckXboxMultiplayerPrivilege final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FXboxMultiplayerPrivilegeResult        ReturnValue;                                       // 0x0008(0x000C)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_CheckXboxMultiplayerPrivilege;
+
+// Function KuroUtility.KuroStaticXSXLibrary.CheckXboxPermissionAsync
+// 0x0040 (0x0040 - 0x0000)
+struct KuroStaticXSXLibrary_CheckXboxPermissionAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         TargetXuid;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxPermission                               Permission;                                        // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const struct FXboxPermissionCheckResult& Result)> Callback;                       // 0x0018(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_CheckXboxPermissionAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.CheckXboxPrivilege
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticXSXLibrary_CheckXboxPrivilege final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxUserPrivilege                            Privilege;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxUserPrivilegeOptions                     Options;                                           // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FXboxMultiplayerPrivilegeResult        ReturnValue;                                       // 0x000C(0x000C)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_CheckXboxPrivilege;
+
+// Function KuroUtility.KuroStaticXSXLibrary.DeleteXboxMultiplayerActivityAsync
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticXSXLibrary_DeleteXboxMultiplayerActivityAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(bool bSuccess)>                Callback;                                          // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_DeleteXboxMultiplayerActivityAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.FlushXboxMultiplayerActivityRecentPlayersAsync
+// 0x0008 (0x0008 - 0x0000)
+struct KuroStaticXSXLibrary_FlushXboxMultiplayerActivityRecentPlayersAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_FlushXboxMultiplayerActivityRecentPlayersAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetLastXboxInviteInfo
+// 0x0058 (0x0058 - 0x0000)
+struct KuroStaticXSXLibrary_GetLastXboxInviteInfo final
+{
+public:
+	struct FXboxInviteInfo                        ReturnValue;                                       // 0x0000(0x0058)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetLastXboxInviteInfo;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxAchievementsAsync
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxAchievementsAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Xuid;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxAchievementType                          AchievementType;                                   // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUnlockedOnly;                                     // 0x0011(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxAchievementOrderBy                       OrderBy;                                           // 0x0012(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         SkipItems;                                         // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxItems;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxAchievementsAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxAvoidList
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxAvoidList final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FXboxAvoidListResult                   ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxAvoidList;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxAvoidListAsync
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxAvoidListAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FXboxAvoidListResult& Result)> Callback;                             // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxAvoidListAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxClassicGamertag
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxClassicGamertag final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutGamertag;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxClassicGamertag;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxDefaultUserHandle
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxDefaultUserHandle final
+{
+public:
+	int64                                         OutUserHandle;                                     // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxDefaultUserHandle;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxDefaultUserHandleStruct
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxDefaultUserHandleStruct final
+{
+public:
+	struct FXboxUserHandleResult                  ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxDefaultUserHandleStruct;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxGamertagAllComponents
+// 0x0050 (0x0050 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxGamertagAllComponents final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutModernGamertag;                                 // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutSuffix;                                         // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutUniqueModernGamertag;                           // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutClassicGamertag;                                // 0x0038(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0048(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxGamertagAllComponents;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxGamertagByType
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxGamertagByType final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxGamertagComponent                        Component;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 OutGamertag;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxGamertagByType;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxGamertagForDisplay
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxGamertagForDisplay final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxGamertagComponent                        Component;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FXboxGamertagResult                    ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxGamertagForDisplay;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxModernGamertag
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxModernGamertag final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutGamertag;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxModernGamertag;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxModernGamertagSuffix
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxModernGamertagSuffix final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutSuffix;                                         // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxModernGamertagSuffix;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxMultiplayerActivity
+// 0x0040 (0x0040 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxMultiplayerActivity final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         TargetXuid;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutConnectionString;                               // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OutMaxPlayers;                                     // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OutCurrentPlayers;                                 // 0x0024(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutGroupId;                                        // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxMultiplayerActivity;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxTokenAndSignatureAsync
+// 0x0040 (0x0040 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxTokenAndSignatureAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Url;                                               // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FXboxTokenAndSignatureResult& Result)> Callback;                     // 0x0018(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxTokenAndSignatureAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxUniqueModernGamertag
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxUniqueModernGamertag final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OutUniqueModernGamertag;                           // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxUniqueModernGamertag;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxUserCollectionsIdAsync
+// 0x0050 (0x0050 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxUserCollectionsIdAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ServiceTicket;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PublisherUserId;                                   // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FXboxUserStoreIdResult& Result)> Callback;                           // 0x0028(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxUserCollectionsIdAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxUserId
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxUserId final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FXboxUserIdResult                      ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxUserId;
+
+// Function KuroUtility.KuroStaticXSXLibrary.GetXboxUserPurchaseIdAsync
+// 0x0050 (0x0050 - 0x0000)
+struct KuroStaticXSXLibrary_GetXboxUserPurchaseIdAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ServiceTicket;                                     // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PublisherUserId;                                   // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FXboxUserStoreIdResult& Result)> Callback;                           // 0x0028(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_GetXboxUserPurchaseIdAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.InitXboxMultiplayerManager
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticXSXLibrary_InitXboxMultiplayerManager final
+{
+public:
+	class FString                                 LobbySessionTemplateName;                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_InitXboxMultiplayerManager;
+
+// Function KuroUtility.KuroStaticXSXLibrary.RegisterForXboxGameInviteEvent
+// 0x0001 (0x0001 - 0x0000)
+struct KuroStaticXSXLibrary_RegisterForXboxGameInviteEvent final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_RegisterForXboxGameInviteEvent;
+
+// Function KuroUtility.KuroStaticXSXLibrary.RegisterForXboxGameInviteEventWithCallback
+// 0x0030 (0x0030 - 0x0000)
+struct KuroStaticXSXLibrary_RegisterForXboxGameInviteEventWithCallback final
+{
+public:
+	TDelegate<void(const struct FXboxInviteInfo& Info)> Callback;                                    // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_RegisterForXboxGameInviteEventWithCallback;
+
+// Function KuroUtility.KuroStaticXSXLibrary.RegisterXboxAchievementsCallback
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticXSXLibrary_RegisterXboxAchievementsCallback final
+{
+public:
+	TDelegate<void(bool bSuccess, const TArray<struct FXboxAchievementInfo>& Achievements)> Callback; // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_RegisterXboxAchievementsCallback;
+
+// Function KuroUtility.KuroStaticXSXLibrary.RegisterXboxAchievementUpdatedCallback
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticXSXLibrary_RegisterXboxAchievementUpdatedCallback final
+{
+public:
+	TDelegate<void(bool bSuccess)>                Callback;                                          // 0x0000(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_RegisterXboxAchievementUpdatedCallback;
+
+// Function KuroUtility.KuroStaticXSXLibrary.ResolveXboxMultiplayerPrivilegeWithUi
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticXSXLibrary_ResolveXboxMultiplayerPrivilegeWithUi final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_ResolveXboxMultiplayerPrivilegeWithUi;
+
+// Function KuroUtility.KuroStaticXSXLibrary.ResolveXboxPrivilegeWithUi
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticXSXLibrary_ResolveXboxPrivilegeWithUi final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxUserPrivilege                            Privilege;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxUserPrivilegeOptions                     Options;                                           // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000A(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_ResolveXboxPrivilegeWithUi;
+
+// Function KuroUtility.KuroStaticXSXLibrary.SendXboxMultiplayerActivityInvites
+// 0x0038 (0x0038 - 0x0000)
+struct KuroStaticXSXLibrary_SendXboxMultiplayerActivityInvites final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int64>                                 TargetXuids;                                       // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bCrossNetwork;                                     // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ConnectionString;                                  // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_SendXboxMultiplayerActivityInvites;
+
+// Function KuroUtility.KuroStaticXSXLibrary.SetXboxMultiplayerActivityAsync
+// 0x0068 (0x0068 - 0x0000)
+struct KuroStaticXSXLibrary_SetXboxMultiplayerActivityAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         xuid;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ConnectionString;                                  // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxPlayers;                                        // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         CurrentPlayers;                                    // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GroupId;                                           // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EXboxMultiplayerActivityJoinRestriction       JoinRestriction;                                   // 0x0038(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAllowCrossPlatformJoin;                           // 0x0039(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(bool bSuccess)>                Callback;                                          // 0x0040(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_SetXboxMultiplayerActivityAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.ShowKeyBoard
+// 0x0002 (0x0002 - 0x0000)
+struct KuroStaticXSXLibrary_ShowKeyBoard final
+{
+public:
+	bool                                          State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_ShowKeyBoard;
+
+// Function KuroUtility.KuroStaticXSXLibrary.ShowXboxMultiplayerActivityGameInvite
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticXSXLibrary_ShowXboxMultiplayerActivityGameInvite final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_ShowXboxMultiplayerActivityGameInvite;
+
+// Function KuroUtility.KuroStaticXSXLibrary.ShowXboxPlayerProfileCard
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticXSXLibrary_ShowXboxPlayerProfileCard final
+{
+public:
+	int64                                         LocalUserHandle;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         TargetXuid;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_ShowXboxPlayerProfileCard;
+
+// Function KuroUtility.KuroStaticXSXLibrary.UpdateXboxAchievementAsync
+// 0x0028 (0x0028 - 0x0000)
+struct KuroStaticXSXLibrary_UpdateXboxAchievementAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         Xuid;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AchievementId;                                     // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PercentComplete;                                   // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_UpdateXboxAchievementAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.UpdateXboxMultiplayerActivityRecentPlayersAsync
+// 0x0040 (0x0040 - 0x0000)
+struct KuroStaticXSXLibrary_UpdateXboxMultiplayerActivityRecentPlayersAsync final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FXboxRecentPlayerUpdate>        Updates;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	TDelegate<void(bool bSuccess)>                Callback;                                          // 0x0018(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_UpdateXboxMultiplayerActivityRecentPlayersAsync;
+
+// Function KuroUtility.KuroStaticXSXLibrary.XboxMultiplayerManagerDoWork
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticXSXLibrary_XboxMultiplayerManagerDoWork final
+{
+public:
+	TArray<struct FXboxMultiplayerEvent>          ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_XboxMultiplayerManagerDoWork;
+
+// Function KuroUtility.KuroStaticXSXLibrary.XboxMultiplayerManagerJoinGameFromLobby
+// 0x0018 (0x0018 - 0x0000)
+struct KuroStaticXSXLibrary_XboxMultiplayerManagerJoinGameFromLobby final
+{
+public:
+	class FString                                 SessionTemplateName;                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_XboxMultiplayerManagerJoinGameFromLobby;
+
+// Function KuroUtility.KuroStaticXSXLibrary.XboxMultiplayerManagerJoinGameWithName
+// 0x0038 (0x0038 - 0x0000)
+struct KuroStaticXSXLibrary_XboxMultiplayerManagerJoinGameWithName final
+{
+public:
+	class FString                                 SessionName;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SessionTemplateName;                               // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int64>                                 Xuids;                                             // 0x0020(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0030(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_XboxMultiplayerManagerJoinGameWithName;
+
+// Function KuroUtility.KuroStaticXSXLibrary.XboxMultiplayerManagerJoinLobby
+// 0x0020 (0x0020 - 0x0000)
+struct KuroStaticXSXLibrary_XboxMultiplayerManagerJoinLobby final
+{
+public:
+	class FString                                 InviteHandleId;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         UserHandle;                                        // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_XboxMultiplayerManagerJoinLobby;
+
+// Function KuroUtility.KuroStaticXSXLibrary.XboxMultiplayerManagerLobbyAddLocalUser
+// 0x0010 (0x0010 - 0x0000)
+struct KuroStaticXSXLibrary_XboxMultiplayerManagerLobbyAddLocalUser final
+{
+public:
+	int64                                         UserHandle;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroStaticXSXLibrary_XboxMultiplayerManagerLobbyAddLocalUser;
+
 // Function KuroUtility.KuroSubLevelVisibleSubsystem.GetSubSystem
 // 0x0010 (0x0010 - 0x0000)
 struct KuroSubLevelVisibleSubsystem_GetSubSystem final
@@ -2951,6 +4427,15 @@ public:
 };
 DUMPER7_ASSERTS_KuroTencentCOSLibrary_GetSendedFileNum;
 
+// Function KuroUtility.KuroTencentCOSLibrary.IsAutoSendWhenExitRunning
+// 0x0001 (0x0001 - 0x0000)
+struct KuroTencentCOSLibrary_IsAutoSendWhenExitRunning final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroTencentCOSLibrary_IsAutoSendWhenExitRunning;
+
 // Function KuroUtility.KuroTencentCOSLibrary.IsSending
 // 0x0001 (0x0001 - 0x0000)
 struct KuroTencentCOSLibrary_IsSending final
@@ -2991,6 +4476,15 @@ public:
 	int32                                         SingleLogSizeInMb;                                 // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroTencentCOSLibrary_SetAdmissibleValue;
+
+// Function KuroUtility.KuroTencentCOSLibrary.SetCloudPath
+// 0x0010 (0x0010 - 0x0000)
+struct KuroTencentCOSLibrary_SetCloudPath final
+{
+public:
+	class FString                                 Name_0;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroTencentCOSLibrary_SetCloudPath;
 
 // Function KuroUtility.KuroTencentCOSLibrary.SetFilesToSend
 // 0x0010 (0x0010 - 0x0000)
@@ -3167,6 +4661,46 @@ public:
 	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_LoadMapNotify_UnloadStreamLevel;
+
+// Function KuroUtility.TpSafeProxyLibrary.GetAntiData
+// 0x0010 (0x0010 - 0x0000)
+struct TpSafeProxyLibrary_GetAntiData final
+{
+public:
+	struct FArrayBuffer                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TpSafeProxyLibrary_GetAntiData;
+
+// Function KuroUtility.TpSafeProxyLibrary.GetAntiData2
+// 0x0010 (0x0010 - 0x0000)
+struct TpSafeProxyLibrary_GetAntiData2 final
+{
+public:
+	struct FArrayBuffer                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TpSafeProxyLibrary_GetAntiData2;
+
+// Function KuroUtility.TpSafeProxyLibrary.RecvAntiData
+// 0x0010 (0x0010 - 0x0000)
+struct TpSafeProxyLibrary_RecvAntiData final
+{
+public:
+	struct FArrayBuffer                           Data;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TpSafeProxyLibrary_RecvAntiData;
+
+// Function KuroUtility.TpSafeProxyLibrary.SetUserInfo
+// 0x0020 (0x0020 - 0x0000)
+struct TpSafeProxyLibrary_SetUserInfo final
+{
+public:
+	int32                                         AccountType;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WorldId;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OpenId;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PlayerId;                                          // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TpSafeProxyLibrary_SetUserInfo;
 
 // Function KuroUtility.KuroTickManager.AddPrerequisiteActor
 // 0x0018 (0x0018 - 0x0000)

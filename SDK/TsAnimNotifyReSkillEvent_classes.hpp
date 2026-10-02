@@ -10,34 +10,36 @@
 
 #include "Basic.hpp"
 
+#include "TsAnimNotifyBase_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyReSkillEvent.TsAnimNotifyReSkillEvent_C
-// 0x0088 (0x00D0 - 0x0048)
-class UTsAnimNotifyReSkillEvent_C final : public UKuroAnimNotify
+// 0x0098 (0x00F0 - 0x0058)
+class UTsAnimNotifyReSkillEvent_C final : public UTsAnimNotifyBase_C
 {
 public:
-	bool                                          使用子弹id数组;                                    // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   子弹数据名;                                        // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class FString>                         子弹id数组;                                        // 0x0058(0x0010)(Edit, BlueprintVisible)
-	bool                                          使用召唤者子弹;                                    // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<float>                                 随机子弹权重数组;                                  // 0x0070(0x0010)(Edit, BlueprintVisible)
-	struct FVector                                子弹出生位置偏移;                                  // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        子弹出生位置偏移数组;                              // 0x0090(0x0010)(Edit, BlueprintVisible)
-	struct FRotator                               子弹初速度偏移;                                    // 0x00A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FRotator>                       子弹初速度偏移数组;                                // 0x00B0(0x0010)(Edit, BlueprintVisible)
-	bool                                          传入当前实体位置;                                  // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   骨骼名字;                                          // 0x00C4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          使用子弹id数组;                                    // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   子弹数据名;                                        // 0x005C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class FString>                         子弹id数组;                                        // 0x0068(0x0010)(Edit, BlueprintVisible)
+	bool                                          使用召唤者子弹;                                    // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<float>                                 随机子弹权重数组;                                  // 0x0080(0x0010)(Edit, BlueprintVisible)
+	struct FVector                                子弹出生位置偏移;                                  // 0x0090(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9C[0x4];                                       // 0x009C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        子弹出生位置偏移数组;                              // 0x00A0(0x0010)(Edit, BlueprintVisible)
+	struct FRotator                               子弹初速度偏移;                                    // 0x00B0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_BC[0x4];                                       // 0x00BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FRotator>                       子弹初速度偏移数组;                                // 0x00C0(0x0010)(Edit, BlueprintVisible)
+	bool                                          传入当前实体位置;                                  // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   骨骼名字;                                          // 0x00D4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   指定Tag的Component;                                // 0x00E0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          通知实体子弹动画帧事件;                            // 0x00EC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

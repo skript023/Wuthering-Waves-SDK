@@ -19,19 +19,19 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Switch_Seq_V2.ABP_Switch_Seq_V2_C
-// 0x0320 (0x0A30 - 0x0710)
+// 0x0320 (0x0B50 - 0x0830)
 class UABP_Switch_Seq_V2_C : public UAnimInstance
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0710(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0718(0x0038)()
-	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x0750(0x00B0)()
-	struct FAnimNode_PoseSnapshot                 AnimGraphNode_PoseSnapshot;                        // 0x0800(0x00B0)()
-	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x08B0(0x0138)()
-	struct FPoseSnapshot                          CachePose;                                         // 0x09E8(0x0040)(Edit, BlueprintVisible)
-	bool                                          EnableSwitchPose;                                  // 0x0A28(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A29[0x3];                                      // 0x0A29(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FalseBlendTime;                                    // 0x0A2C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0838(0x0038)()
+	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x0870(0x00B0)()
+	struct FAnimNode_PoseSnapshot                 AnimGraphNode_PoseSnapshot;                        // 0x0920(0x00B0)()
+	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x09D0(0x0138)()
+	struct FPoseSnapshot                          CachePose;                                         // 0x0B08(0x0040)(Edit, BlueprintVisible)
+	bool                                          EnableSwitchPose;                                  // 0x0B48(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B49[0x3];                                      // 0x0B49(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FalseBlendTime;                                    // 0x0B4C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_Switch_Seq_V2(int32 EntryPoint);

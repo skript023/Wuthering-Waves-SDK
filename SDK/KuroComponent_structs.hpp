@@ -137,6 +137,17 @@ public:
 };
 DUMPER7_ASSERTS_FGpuNpcConfig;
 
+// ScriptStruct KuroComponent.RegionDetectInfo
+// 0x00B0 (0x00B0 - 0x0000)
+struct FRegionDetectInfo final
+{
+public:
+	TMap<class FString, class UKuroRegionEventBinder*> RegionEventMap;                               // 0x0000(0x0050)(NativeAccessSpecifierPublic)
+	TArray<TWeakObjectPtr<class AActor>>          EventTargets;                                      // 0x0050(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	uint8                                         Pad_60[0x50];                                      // 0x0060(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FRegionDetectInfo;
+
 // ScriptStruct KuroComponent.RotateStepInfo
 // 0x0030 (0x0030 - 0x0000)
 struct alignas(0x10) FRotateStepInfo final
@@ -158,6 +169,15 @@ public:
 	uint8                                         Pad_20[0x18];                                      // 0x0020(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FTargetRotationData;
+
+// ScriptStruct KuroComponent.TrackMoveData
+// 0x0014 (0x0014 - 0x0000)
+struct alignas(0x04) FTrackMoveData final
+{
+public:
+	uint8                                         Pad_0[0x14];                                       // 0x0000(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FTrackMoveData;
 
 // ScriptStruct KuroComponent.SplineMoveStaticTimeDisData
 // 0x0020 (0x0020 - 0x0000)

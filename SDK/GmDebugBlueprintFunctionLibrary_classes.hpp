@@ -22,6 +22,7 @@ namespace SDK
 class UGmDebugBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
+	static void TsGmLoadSkillFightDt(int32 entityId, ECharacterLoadType dtLoadType, class UObject* __WorldContext);
 	static void TsSetFightDtTypeForDebug(ECharacterLoadType dtLoadType, class UObject* __WorldContext);
 	static int32 GetLevelRangeDebugMode(class UObject* __WorldContext);
 	static void SetLevelRangeDebugData(int32 type, bool enable, float r, float g, float b, class UObject* __WorldContext);

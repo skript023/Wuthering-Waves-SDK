@@ -19,16 +19,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Vision_WaitTag.GA_Vision_WaitTag_C
-// 0x00D0 (0x0660 - 0x0590)
+// 0x00D0 (0x06A8 - 0x05D8)
 class UGA_Vision_WaitTag_C final : public UGa_Passive_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitTag_C;                // 0x0590(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class UAbilityTask_WaitGameplayTagAdded*, struct FGameplayTag> 监听Tag添加;                 // 0x05A0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<class UAbilityTask_WaitGameplayTagRemoved*, struct FGameplayTag> 监听Tag删除;               // 0x05F0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class UAbilityTask_WaitGameplayTagAdded*> Tag添加任务;                                    // 0x0640(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<class UAbilityTask_WaitGameplayTagRemoved*> Tag移除任务;                                  // 0x0650(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Vision_WaitTag_C;                // 0x05D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class UAbilityTask_WaitGameplayTagAdded*, struct FGameplayTag> 监听Tag添加;                 // 0x05E8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class UAbilityTask_WaitGameplayTagRemoved*, struct FGameplayTag> 监听Tag删除;               // 0x0638(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class UAbilityTask_WaitGameplayTagAdded*> Tag添加任务;                                    // 0x0688(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<class UAbilityTask_WaitGameplayTagRemoved*> Tag移除任务;                                  // 0x0698(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_GA_Vision_WaitTag(int32 EntryPoint);

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_R5Gun501.ABP_R5Gun501_C
-// 0x0000 (0x2690 - 0x2690)
+// 0x0000 (0x28A0 - 0x28A0)
 class UABP_R5Gun501_C final : public UABP_GunCommon_C
 {
 public:

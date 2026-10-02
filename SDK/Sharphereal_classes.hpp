@@ -10,9 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "Sharphereal_structs.hpp"
 #include "Engine_classes.hpp"
+#include "Sharphereal_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 
 
 namespace SDK
@@ -24,11 +25,15 @@ class UCSharpBlueprintFunctionLibrary final : public UBlueprintFunctionLibrary
 {
 public:
 	static void CallCSharpFunction(const class FString& ImageName, const class FString& NameSpaceName, const class FString& ClassName, const class FString& MethodName, int32 ParamsCount, class UGameInstance* GameInstance);
+	static void CSharpDoMain(class UGameInstance* GameInstance);
+	static void CSharpTestSceneLogin(const class FString& LevelName);
 	static bool HasCSharpEnvironmentInitialized();
+	static bool HasEnableCSharpEnv();
 	static bool HasSharpherealModuleGreyBoxHit();
 	static bool HasSharpherealModuleStartup();
 	static void InitializeMonoEnvironment();
-	static bool IsPureCSharpEnvironment();
+	static bool IsPak1RestartPending();
+	static void LoadDeferredRuntimeAssemblies();
 	static void Test2(ETestEnumInt32BlueprintType TestEnumInt32BlueprintType);
 
 public:
@@ -68,11 +73,11 @@ public:
 DUMPER7_ASSERTS_UCSharpGeneratedClass;
 
 // Class Sharphereal.DelegateProxy
-// 0x0078 (0x00A8 - 0x0030)
+// 0x0080 (0x00B0 - 0x0030)
 class UDelegateProxy final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x78];                                      // 0x0030(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x80];                                      // 0x0030(0x0080)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ProxyFunction0();
@@ -242,6 +247,131 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UJsBridgetBlueprintFunctionLibrary;
+
+// Class Sharphereal.KooSharpRuntimeSettings
+// 0x0208 (0x0250 - 0x0048)
+class UKooSharpRuntimeSettings final : public UDeveloperSettings
+{
+public:
+	TArray<EKooSharpBuildConfiguration>           EnableDebugger;                                    // 0x0048(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           WaitForDebugger;                                   // 0x0058(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	uint16                                        DebuggerPort;                                      // 0x0068(0x0002)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKooSharpMonoTraceLevelRuntimeSettings MonoTraceLevel;                                    // 0x006A(0x0005)(Edit, Config, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6F[0x1];                                       // 0x006F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKooSharpMonoTraceMaskRuntimeSettings  MonoTraceMask;                                     // 0x0070(0x0050)(Edit, Config, NativeAccessSpecifierPublic)
+	int32                                         MonoDebuggerLogLevel;                              // 0x00C0(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 MonoDebuggerLogFile;                               // 0x00C8(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MonoGCDebugArgs;                                   // 0x00D8(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MonoGCParams;                                      // 0x00E8(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MonoGCParamsLowMemory;                             // 0x00F8(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForMemory;                           // 0x0108(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForJIT;                              // 0x0118(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForInvoke;                           // 0x0128(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForGC;                               // 0x0138(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableMonoStatForMethodTrace;                      // 0x0148(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         MonoMethodTraceSkipClasses;                        // 0x0158(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<EKooSharpBuildConfiguration>           EnableLogJitAddress;                               // 0x0168(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         ExtraMonoOptions;                                  // 0x0178(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	bool                                          bEnableCSharpEnvironment;                          // 0x0188(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseMMapLoadDLL;                                   // 0x0189(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18A[0x6];                                      // 0x018A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ScriptProjectName;                                 // 0x0190(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ScriptAssembliesPath;                              // 0x01A0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ScriptAssembliesEditorPath;                        // 0x01B0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ScriptAssembliesNonShippingPath;                   // 0x01C0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AOTAssembliesNonShippingPath;                      // 0x01D0(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMonoAotMode                                  MonoAOTMode;                                       // 0x01E0(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisableNonClientAOTRegistration;                  // 0x01E1(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDisableClientAOTRegistration;                     // 0x01E2(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E3[0x5];                                      // 0x01E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         EditorPreloadAssemblies;                           // 0x01E8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         RuntimeLoadAssemblies;                             // 0x01F8(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         DeferredRuntimeLoadAssemblies;                     // 0x0208(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<struct FSharpGameAssemblyConfig>       GameAssemblies;                                    // 0x0218(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         ExtraEnvironment;                                  // 0x0228(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FString>                         NoUseDangerousInternalCall;                        // 0x0238(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	uint8                                         Pad_248[0x8];                                      // 0x0248(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KooSharpRuntimeSettings")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KooSharpRuntimeSettings")
+	}
+	static class UKooSharpRuntimeSettings* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKooSharpRuntimeSettings>();
+	}
+};
+DUMPER7_ASSERTS_UKooSharpRuntimeSettings;
+
+// Class Sharphereal.SharpherealReflectionBPL
+// 0x0000 (0x0030 - 0x0030)
+class USharpherealReflectionBPL final : public UBlueprintFunctionLibrary
+{
+public:
+	static void GetAllBlueprintProxy(TArray<class UClass*>* Classes);
+	static bool GetClassDefine(class UClass* Class_0, struct FSharpherealReflectionClassGenerateDefine* OutDefine);
+	static bool GetStructDefine(class UStruct* Struct, struct FSharpherealReflectionStructGenerateDefine* OutDefine);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SharpherealReflectionBPL")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SharpherealReflectionBPL")
+	}
+	static class USharpherealReflectionBPL* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USharpherealReflectionBPL>();
+	}
+};
+DUMPER7_ASSERTS_USharpherealReflectionBPL;
+
+// Class Sharphereal.ConsoleCommandBPL
+// 0x0000 (0x0030 - 0x0030)
+class UConsoleCommandBPL final : public UBlueprintFunctionLibrary
+{
+public:
+	static bool GetConsoleBoolVariable(const class FString& Name_0, bool* Result);
+	static bool GetConsoleFloatVariable(const class FString& Name_0, float* Result);
+	static bool GetConsoleIntVariable(const class FString& Name_0, int32* Result);
+	static bool GetConsoleStringVariable(const class FString& Name_0, class FString* Result);
+	static void RegisterConsoleBoolVariable(const class FString& Name_0, bool DefaultValue, const class FString& Help, uint32 Flags_0);
+	static void RegisterConsoleCommand(const class FString& Name_0, const class FString& Help, const TDelegate<void()>& Command, uint32 Flags_0);
+	static void RegisterConsoleCommandWithArgs(const class FString& Name_0, const class FString& Help, const TDelegate<void(const TArray<class FString>& Args)>& Command, uint32 Flags_0);
+	static void RegisterConsoleCommandWithWorld(const class FString& Name_0, const class FString& Help, const TDelegate<void(class UWorld* World)>& Command, uint32 Flags_0);
+	static void RegisterConsoleCommandWithWorldAndArgs(const class FString& Name_0, const class FString& Help, const TDelegate<void(const TArray<class FString>& Args, class UWorld* World)>& Command, uint32 Flags_0);
+	static void RegisterConsoleFloatVariable(const class FString& Name_0, float DefaultValue, const class FString& Help, uint32 Flags_0);
+	static void RegisterConsoleIntVariable(const class FString& Name_0, int32 DefaultValue, const class FString& Help, uint32 Flags_0);
+	static void RegisterConsoleStringVariable(const class FString& Name_0, const class FString& DefaultValue, const class FString& Help, uint32 Flags_0);
+	static bool SetConsoleBoolVariable(const class FString& Name_0, bool Value, uint32 Flags_0);
+	static bool SetConsoleFloatVariable(const class FString& Name_0, float Value, uint32 Flags_0);
+	static bool SetConsoleIntVariable(const class FString& Name_0, int32 Value, uint32 Flags_0);
+	static bool SetConsoleStringVariable(const class FString& Name_0, const class FString& Value, uint32 Flags_0);
+	static void UnregisterConsoleObject(const class FString& Name_0);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ConsoleCommandBPL")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ConsoleCommandBPL")
+	}
+	static class UConsoleCommandBPL* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UConsoleCommandBPL>();
+	}
+};
+DUMPER7_ASSERTS_UConsoleCommandBPL;
 
 }
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelLight.EffectModelLight_C
-// 0x0000 (0x06F0 - 0x06F0)
+// 0x0000 (0x0820 - 0x0820)
 class UEffectModelLight_C final : public UEffectModelLight
 {
 public:

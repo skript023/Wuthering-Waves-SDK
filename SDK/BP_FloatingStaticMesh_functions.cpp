@@ -52,7 +52,7 @@ void ABP_FloatingStaticMesh_C::ReceiveBeginPlay()
 
 
 // Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
 void ABP_FloatingStaticMesh_C::UserConstructionScript()
 {
@@ -74,6 +74,54 @@ void ABP_FloatingStaticMesh_C::SetMaterialParams()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_FloatingStaticMesh_C", "SetMaterialParams");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.RefreshChildActors
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_FloatingStaticMesh_C::RefreshChildActors()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FloatingStaticMesh_C", "RefreshChildActors");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.CopyCustomPrimitiveData
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UStaticMeshComponent*             Target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FloatingStaticMesh_C::CopyCustomPrimitiveData(class UStaticMeshComponent* Target)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FloatingStaticMesh_C", "CopyCustomPrimitiveData");
+
+	Params::BP_FloatingStaticMesh_C_CopyCustomPrimitiveData Parms{};
+
+	Parms.Target = Target;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.SetCustomData
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_FloatingStaticMesh_C::SetCustomData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_FloatingStaticMesh_C", "SetCustomData");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

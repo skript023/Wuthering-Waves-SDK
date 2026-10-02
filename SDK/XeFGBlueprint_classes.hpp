@@ -24,9 +24,11 @@ class UXeFGBlueprintLibrary final : public UBlueprintFunctionLibrary
 public:
 	static TArray<EXeFGMode> GetSupportedXeFGModes();
 	static EXeFGMode GetXeFGMode();
+	static EXeFGUICompositionState GetXeFGUICompositionState();
 	static bool IfRelaunchRequiredByXeFG();
 	static bool IsXeFGSupported();
 	static void SetXeFGMode(EXeFGMode Mode);
+	static void SetXeFGUICompositionState(EXeFGUICompositionState State);
 
 public:
 	static class UClass* StaticClass()

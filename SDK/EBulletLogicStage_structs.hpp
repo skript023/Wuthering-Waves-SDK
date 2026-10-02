@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EBulletLogicStage.EBulletLogicStage
-// NumValues: 0x0008
+// NumValues: 0x0009
 enum class EBulletLogicStage : uint8
 {
 	NewEnumerator5                           = 0,
@@ -25,7 +25,8 @@ enum class EBulletLogicStage : uint8
 	NewEnumerator4                           = 4,
 	NewEnumerator6                           = 5,
 	NewEnumerator7                           = 6,
-	EBulletLogicStage_MAX                    = 7,
+	NewEnumerator10                          = 7,
+	EBulletLogicStage_MAX                    = 8,
 };
 
 }

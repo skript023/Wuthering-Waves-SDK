@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyAddBuff.TsAnimNotifyAddBuff_C
-// 0x0008 (0x0050 - 0x0048)
-class UTsAnimNotifyAddBuff_C final : public UKuroAnimNotify
+// 0x0008 (0x0060 - 0x0058)
+class UTsAnimNotifyAddBuff_C final : public UTsAnimNotifyBase_C
 {
 public:
-	int64                                         BuffId;                                            // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int64                                         BuffId;                                            // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

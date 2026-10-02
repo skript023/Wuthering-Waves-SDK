@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "EWeaponViewName_structs.hpp"
 #include "Engine_classes.hpp"
+#include "EWeaponViewName_structs.hpp"
 
 
 namespace SDK
@@ -22,7 +22,6 @@ namespace SDK
 class UUiBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void AreaBeginOverlap(float areaId, class UObject* __WorldContext);
 	static void TempModuleStart(class UObject* __WorldContext);
 	static void AreaEndOverlap(float areaId, class UObject* __WorldContext);
 	static TArray<class ATsBaseCharacter_C*> GetAllFormationRole(class UObject* __WorldContext);
@@ -82,7 +81,7 @@ public:
 	static class FText GetTopViewName(class UObject* __WorldContext);
 	static void SetUiStartSequenceFrame(float Frame, class UObject* __WorldContext);
 	static void SetUiEndSequenceFrame(float Frame, class UObject* __WorldContext);
-	static float GetUiWeaponBreachLevel(class UObject* __WorldContext);
+	static float GetUiWeaponBreachLevel(class USkeletalMeshComponent* OwnComp, class UObject* __WorldContext);
 	static EWeaponViewName GetWeaponViewName(class UObject* __WorldContext);
 	static void EndGachaScene(class UObject* __WorldContext);
 	static bool IsGamepadNow(class UObject* __WorldContext);
@@ -102,6 +101,7 @@ public:
 	static float GetUiWeaponEquippedRoleId(class UObject* __WorldContext);
 	static void EnablePhotographTimeDilation(float timeDilation, class UObject* __WorldContext);
 	static void DisablePhotographTimeDilation(class UObject* __WorldContext);
+	static class FString TestSceneLoadPlayer(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

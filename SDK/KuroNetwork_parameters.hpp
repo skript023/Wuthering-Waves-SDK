@@ -17,6 +17,18 @@
 namespace SDK::Params
 {
 
+// Function KuroNetwork.KuroDNS.DNSResolution
+// 0x0048 (0x0048 - 0x0000)
+struct KuroDNS_DNSResolution final
+{
+public:
+	class FString                                 DomainName;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Protocol;                                          // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 ErrorCode, const TArray<class FString>& IpList)> Callback;                  // 0x0020(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroDNS_DNSResolution;
+
 // Function KuroNetwork.KuroHttp.Get
 // 0x0090 (0x0090 - 0x0000)
 struct KuroHttp_Get final
@@ -171,6 +183,20 @@ public:
 };
 DUMPER7_ASSERTS_KuroKcpClient_Connect;
 
+// Function KuroNetwork.KuroKcpClient.DoConnect
+// 0x0018 (0x0018 - 0x0000)
+struct KuroKcpClient_DoConnect final
+{
+public:
+	class FString                                 Addr;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CrcCheckDisable;                                   // 0x0014(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAddTraceId;                                       // 0x0015(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0016(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17[0x1];                                       // 0x0017(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroKcpClient_DoConnect;
+
 // Function KuroNetwork.KuroKcpClient.GetDebugString
 // 0x0038 (0x0038 - 0x0000)
 struct KuroKcpClient_GetDebugString final
@@ -299,11 +325,13 @@ public:
 DUMPER7_ASSERTS_KuroKcpClient_SetKcpWndSize;
 
 // Function KuroNetwork.KuroKcpClient.StartTcpConnect
-// 0x0004 (0x0004 - 0x0000)
+// 0x0018 (0x0018 - 0x0000)
 struct KuroKcpClient_StartTcpConnect final
 {
 public:
-	int32                                         Port;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Addr;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroKcpClient_StartTcpConnect;
 
@@ -324,6 +352,33 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroKcpClient_IsTcpConnectStart;
+
+// Function KuroNetwork.SendHttpRequest.HttpRequest
+// 0x0030 (0x0030 - 0x0000)
+struct SendHttpRequest_HttpRequest final
+{
+public:
+	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHttpMethod                                   Method;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PostBody;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USendHttpRequest*                       ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SendHttpRequest_HttpRequest;
+
+// Function KuroNetwork.SendHttpRequest.HttpRequestEx
+// 0x0040 (0x0040 - 0x0000)
+struct SendHttpRequest_HttpRequestEx final
+{
+public:
+	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHttpMethod                                   Method;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 PostBody;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 HeaderParam;                                       // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USendHttpRequest*                       ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SendHttpRequest_HttpRequestEx;
 
 // Function KuroNetwork.KuroKcpTestWorker.OnRecvException
 // 0x0020 (0x0020 - 0x0000)
@@ -363,15 +418,6 @@ public:
 };
 DUMPER7_ASSERTS_KuroKcpTestWorker_OnRecvResponse;
 
-// Function KuroNetwork.KuroNetworkChange.GetNetworkType
-// 0x0001 (0x0001 - 0x0000)
-struct KuroNetworkChange_GetNetworkType final
-{
-public:
-	uint8                                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroNetworkChange_GetNetworkType;
-
 // Function KuroNetwork.KuroNetworkDetection.DetectionFinish
 // 0x0001 (0x0001 - 0x0000)
 struct KuroNetworkDetection_DetectionFinish final
@@ -380,6 +426,18 @@ public:
 	bool                                          bSuccess;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroNetworkDetection_DetectionFinish;
+
+// Function KuroNetwork.KuroNetworkDetection.GatewayUdpReachable
+// 0x0058 (0x0058 - 0x0000)
+struct KuroNetworkDetection_GatewayUdpReachable final
+{
+public:
+	class FString                                 IpAddress;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Ports;                                             // 0x0010(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	class FString                                 Payload;                                           // 0x0020(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate;                             // 0x0030(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroNetworkDetection_GatewayUdpReachable;
 
 // Function KuroNetwork.KuroNetworkDetection.GetCurrentProxyAddress
 // 0x0010 (0x0010 - 0x0000)
@@ -430,6 +488,15 @@ public:
 };
 DUMPER7_ASSERTS_KuroNetworkDetection_TestUdpReachable;
 
+// Function KuroNetwork.KuroNetworkChange.GetNetworkType
+// 0x0001 (0x0001 - 0x0000)
+struct KuroNetworkChange_GetNetworkType final
+{
+public:
+	uint8                                         ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroNetworkChange_GetNetworkType;
+
 // Function KuroNetwork.KuroTcpClient.Connect
 // 0x0018 (0x0018 - 0x0000)
 struct KuroTcpClient_Connect final
@@ -459,32 +526,30 @@ public:
 };
 DUMPER7_ASSERTS_KuroTcpClient_TickOutside;
 
-// Function KuroNetwork.SendHttpRequest.HttpRequest
-// 0x0030 (0x0030 - 0x0000)
-struct SendHttpRequest_HttpRequest final
+// Function KuroNetwork.KuroTraceroute.Traceroute
+// 0x0038 (0x0038 - 0x0000)
+struct KuroTraceroute_Traceroute final
 {
 public:
-	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHttpMethod                                   Method;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 PostBody;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USendHttpRequest*                       ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Target;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(bool IsReached)>               Callback;                                          // 0x0010(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_SendHttpRequest_HttpRequest;
+DUMPER7_ASSERTS_KuroTraceroute_Traceroute;
 
-// Function KuroNetwork.SendHttpRequest.HttpRequestEx
-// 0x0040 (0x0040 - 0x0000)
-struct SendHttpRequest_HttpRequestEx final
+// Function KuroNetwork.KuroUdp.SendUdpMessage
+// 0x0058 (0x0058 - 0x0000)
+struct KuroUdp_SendUdpMessage final
 {
 public:
-	class FString                                 URL;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EHttpMethod                                   Method;                                            // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 PostBody;                                          // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 HeaderParam;                                       // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USendHttpRequest*                       ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Ip;                                                // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Port;                                              // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 Message;                                           // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxRecvSize;                                       // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(bool IsSuccess, const class FString& Response)> Callback;                         // 0x0030(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_SendHttpRequest_HttpRequestEx;
+DUMPER7_ASSERTS_KuroUdp_SendUdpMessage;
 
 }
 

@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "ECameraModifyConditionType_structs.hpp"
 #include "GameplayTags_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SCameraModifier_Condition.SCameraModifier_Condition
-// 0x0070 (0x0070 - 0x0000)
+// 0x0078 (0x0078 - 0x0000)
 struct FSCameraModifier_Condition final
 {
 public:
@@ -42,6 +42,8 @@ public:
 	class FName                                   CameraTraceSocket_50_64F21E424C7DC6D281833882876A4514; // 0x0054(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CameraTraceRadius_53_D0093E184DA13FE2155BB8BD7EFFFA96; // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector                                CameraTraceOffset_56_7F0CE49441F258DDFDE48AA51904D00E; // 0x0064(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CharacterDeltaYawMin_63_8D2874F142F90EE1BE4E0C94D7227042; // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CharacterDeltaYawMax_64_302E042C4F3771492AEBFA8AE697537E; // 0x0074(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCameraModifier_Condition;
 

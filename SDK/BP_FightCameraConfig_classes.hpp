@@ -11,19 +11,21 @@
 #include "Basic.hpp"
 
 #include "EFightCameraDefault_structs.hpp"
-#include "EFightCameraGuide_structs.hpp"
-#include "EFightCameraInput_structs.hpp"
+#include "EFightCameraModify_structs.hpp"
 #include "EFightCameraAdjust_structs.hpp"
 #include "SBaseCurve_structs.hpp"
-#include "EFightCameraModify_structs.hpp"
+#include "EFightCameraGuide_structs.hpp"
 #include "EFightCameraAuto_structs.hpp"
 #include "EFightCameraFocus_structs.hpp"
+#include "EFightCameraInput_structs.hpp"
 #include "EFightCameraExplore_structs.hpp"
-#include "SSettlementCamera_structs.hpp"
 #include "EFightCameraDialogue_structs.hpp"
 #include "EFightCameraClimb_structs.hpp"
 #include "EFightCameraSidestep_structs.hpp"
 #include "EFightCameraHook_structs.hpp"
+#include "EFightCameraVehicle_structs.hpp"
+#include "SSettlementCamera_structs.hpp"
+#include "EFightCameraGravity_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -31,7 +33,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_FightCameraConfig.BP_FightCameraConfig_C
-// 0x08F0 (0x0928 - 0x0038)
+// 0x0A90 (0x0AC8 - 0x0038)
 class UBP_FightCameraConfig_C final : public UPrimaryDataAsset
 {
 public:
@@ -59,7 +61,11 @@ public:
 	TMap<EFightCameraSidestep, struct FSBaseCurve> 移动自动镜头曲线配置;                             // 0x06C8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraHook, float>                 钩锁镜头;                                          // 0x0718(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EFightCameraHook, struct FSBaseCurve>    钩锁镜头曲线配置;                                  // 0x0768(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FSSettlementCamera                     结算镜头;                                          // 0x07B8(0x0170)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TMap<EFightCameraVehicle, float>              载具镜头;                                          // 0x07B8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EFightCameraVehicle, struct FSBaseCurve> 载具镜头曲线配置;                                  // 0x0808(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSSettlementCamera                     结算镜头;                                          // 0x0858(0x01D0)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TMap<EFightCameraGravity, float>              镜头重力;                                          // 0x0A28(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EFightCameraGravity, struct FSBaseCurve> 镜头重力曲线配置;                                  // 0x0A78(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

@@ -25,199 +25,6 @@ public:
 };
 DUMPER7_ASSERTS_SpineBoneDriverComponent_BeforeUpdateWorldTransform;
 
-// Function SpinePlugin.SpineSkeletonComponent.GetAnimationDuration
-// 0x0018 (0x0018 - 0x0000)
-struct SpineSkeletonComponent_GetAnimationDuration final
-{
-public:
-	class FString                                 AnimationName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_GetAnimationDuration;
-
-// Function SpinePlugin.SpineSkeletonComponent.GetAnimations
-// 0x0010 (0x0010 - 0x0000)
-struct SpineSkeletonComponent_GetAnimations final
-{
-public:
-	TArray<class FString>                         Animations;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_GetAnimations;
-
-// Function SpinePlugin.SpineSkeletonComponent.GetBones
-// 0x0010 (0x0010 - 0x0000)
-struct SpineSkeletonComponent_GetBones final
-{
-public:
-	TArray<class FString>                         Bones;                                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_GetBones;
-
-// Function SpinePlugin.SpineSkeletonComponent.GetBoneWorldTransform
-// 0x0040 (0x0040 - 0x0000)
-struct SpineSkeletonComponent_GetBoneWorldTransform final
-{
-public:
-	class FString                                 BoneName;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             ReturnValue;                                       // 0x0010(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_GetBoneWorldTransform;
-
-// Function SpinePlugin.SpineSkeletonComponent.GetScaleX
-// 0x0004 (0x0004 - 0x0000)
-struct SpineSkeletonComponent_GetScaleX final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_GetScaleX;
-
-// Function SpinePlugin.SpineSkeletonComponent.GetScaleY
-// 0x0004 (0x0004 - 0x0000)
-struct SpineSkeletonComponent_GetScaleY final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_GetScaleY;
-
-// Function SpinePlugin.SpineSkeletonComponent.GetSkins
-// 0x0010 (0x0010 - 0x0000)
-struct SpineSkeletonComponent_GetSkins final
-{
-public:
-	TArray<class FString>                         Skins;                                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_GetSkins;
-
-// Function SpinePlugin.SpineSkeletonComponent.GetSlots
-// 0x0010 (0x0010 - 0x0000)
-struct SpineSkeletonComponent_GetSlots final
-{
-public:
-	TArray<class FString>                         Slots;                                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_GetSlots;
-
-// Function SpinePlugin.SpineSkeletonComponent.HasAnimation
-// 0x0018 (0x0018 - 0x0000)
-struct SpineSkeletonComponent_HasAnimation final
-{
-public:
-	class FString                                 AnimationName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_HasAnimation;
-
-// Function SpinePlugin.SpineSkeletonComponent.HasBone
-// 0x0018 (0x0018 - 0x0000)
-struct SpineSkeletonComponent_HasBone final
-{
-public:
-	class FString                                 BoneName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_HasBone;
-
-// Function SpinePlugin.SpineSkeletonComponent.HasSkin
-// 0x0018 (0x0018 - 0x0000)
-struct SpineSkeletonComponent_HasSkin final
-{
-public:
-	class FString                                 SkinName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_HasSkin;
-
-// Function SpinePlugin.SpineSkeletonComponent.HasSlot
-// 0x0018 (0x0018 - 0x0000)
-struct SpineSkeletonComponent_HasSlot final
-{
-public:
-	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_HasSlot;
-
-// Function SpinePlugin.SpineSkeletonComponent.SetAttachment
-// 0x0028 (0x0028 - 0x0000)
-struct SpineSkeletonComponent_SetAttachment final
-{
-public:
-	class FString                                 slotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 attachmentName;                                    // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_SetAttachment;
-
-// Function SpinePlugin.SpineSkeletonComponent.SetBoneWorldPosition
-// 0x0020 (0x0020 - 0x0000)
-struct SpineSkeletonComponent_SetBoneWorldPosition final
-{
-public:
-	class FString                                 BoneName;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                position;                                          // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_SetBoneWorldPosition;
-
-// Function SpinePlugin.SpineSkeletonComponent.SetScaleX
-// 0x0004 (0x0004 - 0x0000)
-struct SpineSkeletonComponent_SetScaleX final
-{
-public:
-	float                                         scaleX;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_SetScaleX;
-
-// Function SpinePlugin.SpineSkeletonComponent.SetScaleY
-// 0x0004 (0x0004 - 0x0000)
-struct SpineSkeletonComponent_SetScaleY final
-{
-public:
-	float                                         scaleY;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_SetScaleY;
-
-// Function SpinePlugin.SpineSkeletonComponent.SetSkin
-// 0x0018 (0x0018 - 0x0000)
-struct SpineSkeletonComponent_SetSkin final
-{
-public:
-	class FString                                 SkinName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_SetSkin;
-
-// Function SpinePlugin.SpineSkeletonComponent.SetSkins
-// 0x0018 (0x0018 - 0x0000)
-struct SpineSkeletonComponent_SetSkins final
-{
-public:
-	TArray<class FString>                         SkinNames;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_SetSkins;
-
-// Function SpinePlugin.SpineSkeletonComponent.SetSlotColor
-// 0x0018 (0x0018 - 0x0000)
-struct SpineSkeletonComponent_SetSlotColor final
-{
-public:
-	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 color;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SpineSkeletonComponent_SetSlotColor;
-
 // Function SpinePlugin.TrackEntry.GetAlpha
 // 0x0004 (0x0004 - 0x0000)
 struct TrackEntry_GetAlpha final
@@ -505,6 +312,199 @@ public:
 	float                                         trackTime;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_TrackEntry_SetTrackTime;
+
+// Function SpinePlugin.SpineSkeletonComponent.GetAnimationDuration
+// 0x0018 (0x0018 - 0x0000)
+struct SpineSkeletonComponent_GetAnimationDuration final
+{
+public:
+	class FString                                 AnimationName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_GetAnimationDuration;
+
+// Function SpinePlugin.SpineSkeletonComponent.GetAnimations
+// 0x0010 (0x0010 - 0x0000)
+struct SpineSkeletonComponent_GetAnimations final
+{
+public:
+	TArray<class FString>                         Animations;                                        // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_GetAnimations;
+
+// Function SpinePlugin.SpineSkeletonComponent.GetBones
+// 0x0010 (0x0010 - 0x0000)
+struct SpineSkeletonComponent_GetBones final
+{
+public:
+	TArray<class FString>                         Bones;                                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_GetBones;
+
+// Function SpinePlugin.SpineSkeletonComponent.GetBoneWorldTransform
+// 0x0040 (0x0040 - 0x0000)
+struct SpineSkeletonComponent_GetBoneWorldTransform final
+{
+public:
+	class FString                                 BoneName;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             ReturnValue;                                       // 0x0010(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_GetBoneWorldTransform;
+
+// Function SpinePlugin.SpineSkeletonComponent.GetScaleX
+// 0x0004 (0x0004 - 0x0000)
+struct SpineSkeletonComponent_GetScaleX final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_GetScaleX;
+
+// Function SpinePlugin.SpineSkeletonComponent.GetScaleY
+// 0x0004 (0x0004 - 0x0000)
+struct SpineSkeletonComponent_GetScaleY final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_GetScaleY;
+
+// Function SpinePlugin.SpineSkeletonComponent.GetSkins
+// 0x0010 (0x0010 - 0x0000)
+struct SpineSkeletonComponent_GetSkins final
+{
+public:
+	TArray<class FString>                         Skins;                                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_GetSkins;
+
+// Function SpinePlugin.SpineSkeletonComponent.GetSlots
+// 0x0010 (0x0010 - 0x0000)
+struct SpineSkeletonComponent_GetSlots final
+{
+public:
+	TArray<class FString>                         Slots;                                             // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_GetSlots;
+
+// Function SpinePlugin.SpineSkeletonComponent.HasAnimation
+// 0x0018 (0x0018 - 0x0000)
+struct SpineSkeletonComponent_HasAnimation final
+{
+public:
+	class FString                                 AnimationName;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_HasAnimation;
+
+// Function SpinePlugin.SpineSkeletonComponent.HasBone
+// 0x0018 (0x0018 - 0x0000)
+struct SpineSkeletonComponent_HasBone final
+{
+public:
+	class FString                                 BoneName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_HasBone;
+
+// Function SpinePlugin.SpineSkeletonComponent.HasSkin
+// 0x0018 (0x0018 - 0x0000)
+struct SpineSkeletonComponent_HasSkin final
+{
+public:
+	class FString                                 SkinName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_HasSkin;
+
+// Function SpinePlugin.SpineSkeletonComponent.HasSlot
+// 0x0018 (0x0018 - 0x0000)
+struct SpineSkeletonComponent_HasSlot final
+{
+public:
+	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_HasSlot;
+
+// Function SpinePlugin.SpineSkeletonComponent.SetAttachment
+// 0x0028 (0x0028 - 0x0000)
+struct SpineSkeletonComponent_SetAttachment final
+{
+public:
+	class FString                                 slotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 attachmentName;                                    // 0x0010(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_SetAttachment;
+
+// Function SpinePlugin.SpineSkeletonComponent.SetBoneWorldPosition
+// 0x0020 (0x0020 - 0x0000)
+struct SpineSkeletonComponent_SetBoneWorldPosition final
+{
+public:
+	class FString                                 BoneName;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                position;                                          // 0x0010(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_SetBoneWorldPosition;
+
+// Function SpinePlugin.SpineSkeletonComponent.SetScaleX
+// 0x0004 (0x0004 - 0x0000)
+struct SpineSkeletonComponent_SetScaleX final
+{
+public:
+	float                                         scaleX;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_SetScaleX;
+
+// Function SpinePlugin.SpineSkeletonComponent.SetScaleY
+// 0x0004 (0x0004 - 0x0000)
+struct SpineSkeletonComponent_SetScaleY final
+{
+public:
+	float                                         scaleY;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_SetScaleY;
+
+// Function SpinePlugin.SpineSkeletonComponent.SetSkin
+// 0x0018 (0x0018 - 0x0000)
+struct SpineSkeletonComponent_SetSkin final
+{
+public:
+	class FString                                 SkinName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_SetSkin;
+
+// Function SpinePlugin.SpineSkeletonComponent.SetSkins
+// 0x0018 (0x0018 - 0x0000)
+struct SpineSkeletonComponent_SetSkins final
+{
+public:
+	TArray<class FString>                         SkinNames;                                         // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_SetSkins;
+
+// Function SpinePlugin.SpineSkeletonComponent.SetSlotColor
+// 0x0018 (0x0018 - 0x0000)
+struct SpineSkeletonComponent_SetSlotColor final
+{
+public:
+	class FString                                 SlotName;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 color;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SpineSkeletonComponent_SetSlotColor;
 
 // Function SpinePlugin.SpineSkeletonAnimationComponent.AddAnimation
 // 0x0028 (0x0028 - 0x0000)

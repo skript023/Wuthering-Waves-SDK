@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Input_Shouanren.BP_Input_Shouanren_C
-// 0x0000 (0x0220 - 0x0220)
+// 0x0000 (0x0240 - 0x0240)
 class UBP_Input_Shouanren_C final : public UBP_InputComponent_C
 {
 public:

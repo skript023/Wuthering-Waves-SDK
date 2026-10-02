@@ -17,6 +17,25 @@
 namespace SDK
 {
 
+// Function KuroGameplayUI.DamageBatchView.OnPendingTextGeometryReady
+// (Final, Native, Private)
+
+void UDamageBatchView::OnPendingTextGeometryReady()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DamageBatchView", "OnPendingTextGeometryReady");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroGameplayUI.DamageUiManager.CreateInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -142,7 +161,7 @@ void UDamageUiManager::AddDamageInfo(const struct FDamageInfo& DamageInfo)
 // Function KuroGameplayUI.DamageUiManager.AddDamageViewData
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const struct FDamageViewData&           InDamageViewData                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDamageViewData&           InDamageViewData                                       (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UDamageUiManager::AddDamageViewData(const struct FDamageViewData& InDamageViewData)
 {
@@ -219,7 +238,7 @@ void UDamageUiManager::InitAllRes(class USceneComponent* Parent, class AUIBaseAc
 // Function KuroGameplayUI.DamageUiManager.InitDamageConfig
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const struct FDamageConfig&             InDamageConfig                                         (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FDamageConfig&             InDamageConfig                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
 void UDamageUiManager::InitDamageConfig(const struct FDamageConfig& InDamageConfig)
 {
@@ -265,6 +284,25 @@ void UDamageUiManager::Update(const float& DeltaTime, const struct FVectorDouble
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameplayUI.DamageUiManager.UpdateKscWorld
+// (Final, Native, Public, BlueprintCallable)
+
+void UDamageUiManager::UpdateKscWorld()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DamageUiManager", "UpdateKscWorld");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

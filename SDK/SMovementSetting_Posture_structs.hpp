@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // UserDefinedStruct SMovementSetting_Posture.SMovementSetting_Posture
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00C0 (0x00C0 - 0x0000)
 struct FSMovementSetting_Posture final
 {
 public:
-	struct FSMovementSetting                      Standing_2_3EC2D8FC456F71707D0F52A3B41D18E8;       // 0x0000(0x0058)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMovementSetting                      Crouching_4_B5EEC12A49881CC4C0D187A7B972DA18;      // 0x0058(0x0058)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMovementSetting                      Standing_2_3EC2D8FC456F71707D0F52A3B41D18E8;       // 0x0000(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMovementSetting                      Crouching_4_B5EEC12A49881CC4C0D187A7B972DA18;      // 0x0060(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSMovementSetting_Posture;
 

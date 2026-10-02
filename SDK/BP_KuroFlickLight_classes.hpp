@@ -17,9 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_KuroFlickLight.BP_KuroFlickLight_C
-// 0x0000 (0x03E0 - 0x03E0)
+// 0x0000 (0x0480 - 0x0480)
 class ABP_KuroFlickLight_C final : public AKuroFlickerLightActor
 {
+public:
+	int32 GetPlacementSortOrder() const;
+
 public:
 	static class UClass* StaticClass()
 	{

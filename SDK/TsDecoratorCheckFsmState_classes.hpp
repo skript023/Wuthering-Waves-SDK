@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsDecoratorCheckFsmState.TsDecoratorCheckFsmState_C
-// 0x0010 (0x00B8 - 0x00A8)
+// 0x0010 (0x00C0 - 0x00B0)
 class UTsDecoratorCheckFsmState_C final : public UBTDecorator_BlueprintBase
 {
 public:
-	class FString                                 State;                                             // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+	class FString                                 State;                                             // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
 	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);

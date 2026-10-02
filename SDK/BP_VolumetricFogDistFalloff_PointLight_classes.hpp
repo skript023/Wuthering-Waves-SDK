@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "CoreUObject_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 
 
@@ -41,6 +41,8 @@ public:
 	void ReceiveBeginPlay();
 	void UserConstructionScript();
 	void PointFunction();
+
+	int32 GetPlacementSortOrder() const;
 
 public:
 	static class UClass* StaticClass()

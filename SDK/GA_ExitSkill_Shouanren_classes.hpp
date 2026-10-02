@@ -18,16 +18,15 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_ExitSkill_Shouanren.GA_ExitSkill_ShouAnRen_C
-// 0x0008 (0x0590 - 0x0588)
+// 0x0008 (0x05D8 - 0x05D0)
 class UGA_ExitSkill_ShouAnRen_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_ExitSkill_ShouAnRen_C;           // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_ExitSkill_ShouAnRen_C;           // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_GA_ExitSkill_ShouAnRen(int32 EntryPoint);
 	void K2_ActivateAbility();
-	void OnFinish_341A06284C33B863C5092297E08414E9();
 
 public:
 	static class UClass* StaticClass()

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroAnim_classes.hpp"
 #include "Engine_structs.hpp"
+#include "KuroAnim_classes.hpp"
 
 
 namespace SDK
@@ -31,13 +31,13 @@ public:
 	float                                         ManualProcessTime;                                 // 0x02E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void TryAddEffectView();
-	void OnStop();
-	void OnPlay();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveTick(float DeltaSeconds);
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_TsRecordEffect(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void OnPlay();
+	void OnStop();
+	void TryAddEffectView();
 
 public:
 	static class UClass* StaticClass()

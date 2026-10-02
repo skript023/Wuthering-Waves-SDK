@@ -50,19 +50,5 @@ void UGA_ExitSkill_ShouAnRen_C::K2_ActivateAbility()
 	UObject::ProcessEvent(Func, nullptr);
 }
 
-
-// Function GA_ExitSkill_Shouanren.GA_ExitSkill_ShouAnRen_C.OnFinish_341A06284C33B863C5092297E08414E9
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_ExitSkill_ShouAnRen_C::OnFinish_341A06284C33B863C5092297E08414E9()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExitSkill_ShouAnRen_C", "OnFinish_341A06284C33B863C5092297E08414E9");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
 }
 

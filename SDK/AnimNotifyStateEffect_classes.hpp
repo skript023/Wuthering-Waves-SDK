@@ -10,41 +10,49 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "ESkillEffectType_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass AnimNotifyStateEffect.AnimNotifyStateEffect_C
-// 0x00D0 (0x0150 - 0x0080)
+// 0x00E8 (0x0170 - 0x0088)
 class UAnimNotifyStateEffect_C final : public UKuroEffectMakerANS
 {
 public:
-	bool                                          UseSocketTransform;                                // 0x0080(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          UseClipboardTransform;                             // 0x0081(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DetachWhenSkillEnd;                                // 0x0082(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	ESkillEffectType                              WhenSkillEnd;                                      // 0x0083(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          FasterStop;                                        // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UEffectModelBase>        EffectDataAssetRef;                                // 0x0088(0x0030)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash)
-	float                                         AutoDetachTime;                                    // 0x00B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          PlayOnEnd;                                         // 0x00BC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_BD[0x3];                                       // 0x00BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  WithOutTag;                                        // 0x00C0(0x0020)(Edit, BlueprintVisible)
-	bool                                          NeedAnyTag;                                        // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGameplayTag, bool>               PlayNeedTags;                                      // 0x00E8(0x0050)(Edit, BlueprintVisible)
-	bool                                          IsWeaponEffect;                                    // 0x0138(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          RecycleWhenEnd;                                    // 0x0139(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          AlwaysLoop;                                        // 0x013A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          SyncEventTimeToEffectTime;                         // 0x013B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          IgnoreWhenInvisible;                               // 0x013C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_13D[0x3];                                      // 0x013D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   EffectSlotName;                                    // 0x0140(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsSyncEffectTimeScale;                             // 0x014C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          UseSocketTransform;                                // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          UseClipboardTransform;                             // 0x0089(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DetachWhenSkillEnd;                                // 0x008A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESkillEffectType                              WhenSkillEnd;                                      // 0x008B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          FasterStop;                                        // 0x008C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UEffectModelBase>        EffectDataAssetRef;                                // 0x0090(0x0030)(Edit, BlueprintVisible, UObjectWrapper, HasGetValueTypeHash)
+	float                                         AutoDetachTime;                                    // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          PlayOnEnd;                                         // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  WithOutTag;                                        // 0x00C8(0x0020)(Edit, BlueprintVisible)
+	bool                                          NeedAnyTag;                                        // 0x00E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, bool>               PlayNeedTags;                                      // 0x00F0(0x0050)(Edit, BlueprintVisible)
+	bool                                          IsWeaponEffect;                                    // 0x0140(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          RecycleWhenEnd;                                    // 0x0141(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          AlwaysLoop;                                        // 0x0142(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          SyncEventTimeToEffectTime;                         // 0x0143(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IgnoreWhenInvisible;                               // 0x0144(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_145[0x3];                                      // 0x0145(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   EffectSlotName;                                    // 0x0148(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsSyncEffectTimeScale;                             // 0x0154(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          NotRealAttach;                                     // 0x0155(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          TagCheckWithOwner;                                 // 0x0156(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IgnoreWhenEntityNotInit;                           // 0x0157(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DisableOnVehicle;                                  // 0x0158(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          SyncEventTimeContinuous;                           // 0x0159(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_15A[0x2];                                      // 0x015A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   MultiInstanceKey;                                  // 0x015C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          InPlotIgnoreEffectURO;                             // 0x0168(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_ValidateAssets();
@@ -54,6 +62,8 @@ public:
 	bool K2_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime);
 	void AttachEffectToWeapon(class USkeletalMeshComponent* meshComp, class AActor* outer, float effectHandle);
 	void Init();
+	void CheckRealAttach();
+	bool StopEffectInternal(class USkeletalMeshComponent* meshComp, class UAnimSequenceBase* animation, const class FString& reason);
 
 	class FString GetNotifyName() const;
 

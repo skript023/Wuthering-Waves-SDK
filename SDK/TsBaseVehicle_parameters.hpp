@@ -16,14 +16,14 @@
 namespace SDK::Params
 {
 
-// Function TsBaseVehicle.TsBaseVehicle_C.GetEntityId
+// Function TsBaseVehicle.TsBaseVehicle_C.ExecuteUbergraph_TsBaseVehicle
 // 0x0004 (0x0004 - 0x0000)
-struct TsBaseVehicle_C_GetEntityId final
+struct TsBaseVehicle_C_ExecuteUbergraph_TsBaseVehicle final
 {
 public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_TsBaseVehicle_C_GetEntityId;
+DUMPER7_ASSERTS_TsBaseVehicle_C_ExecuteUbergraph_TsBaseVehicle;
 
 // Function TsBaseVehicle.TsBaseVehicle_C.SetDitherEffect
 // 0x0008 (0x0008 - 0x0000)
@@ -35,14 +35,14 @@ public:
 };
 DUMPER7_ASSERTS_TsBaseVehicle_C_SetDitherEffect;
 
-// Function TsBaseVehicle.TsBaseVehicle_C.ExecuteUbergraph_TsBaseVehicle
+// Function TsBaseVehicle.TsBaseVehicle_C.GetEntityId
 // 0x0004 (0x0004 - 0x0000)
-struct TsBaseVehicle_C_ExecuteUbergraph_TsBaseVehicle final
+struct TsBaseVehicle_C_GetEntityId final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_TsBaseVehicle_C_ExecuteUbergraph_TsBaseVehicle;
+DUMPER7_ASSERTS_TsBaseVehicle_C_GetEntityId;
 
 }
 

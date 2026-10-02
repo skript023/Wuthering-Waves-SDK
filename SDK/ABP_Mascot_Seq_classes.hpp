@@ -10,40 +10,43 @@
 
 #include "Basic.hpp"
 
-#include "AnimGraphRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroAnim_structs.hpp"
 
 
 namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Mascot_Seq.ABP_Mascot_Seq_C
-// 0x0860 (0x0F70 - 0x0710)
+// 0x0A50 (0x1280 - 0x0830)
 class UABP_Mascot_Seq_C final : public UAnimInstance
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0710(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0718(0x0038)()
-	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x0750(0x0138)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_2;                              // 0x0888(0x0060)()
-	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x08E8(0x0020)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x0908(0x0128)()
-	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x0A30(0x0128)()
-	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x0B58(0x0020)()
-	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive;                       // 0x0B78(0x00D8)()
-	struct FAnimNode_CurveSource                  AnimGraphNode_CurveSource;                         // 0x0C50(0x0040)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x0C90(0x0060)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x0CF0(0x0060)()
-	struct FAnimNode_CurveFix                     AnimGraphNode_CurveFix;                            // 0x0D50(0x0030)()
-	struct FAnimNode_RotationOffsetBlendSpace     AnimGraphNode_RotationOffsetBlendSpace;            // 0x0D80(0x01B8)()
-	struct FRotator                               Add_Spine;                                         // 0x0F38(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	struct FRotator                               Add_Spine_Head;                                    // 0x0F44(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          Enable_AimOffset;                                  // 0x0F50(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_F51[0x7];                                      // 0x0F51(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAimOffsetBlendSpace*                   AimOffset;                                         // 0x0F58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              LookXY;                                            // 0x0F60(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x0838(0x0138)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_2;                              // 0x0970(0x0060)()
+	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x09D0(0x0020)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone_1;                        // 0x09F0(0x0128)()
+	struct FAnimNode_ModifyBone                   AnimGraphNode_ModifyBone;                          // 0x0B18(0x0128)()
+	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x0C40(0x0020)()
+	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive;                       // 0x0C60(0x00D8)()
+	struct FAnimNode_CurveSource                  AnimGraphNode_CurveSource;                         // 0x0D38(0x0040)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x0D78(0x0060)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x0DD8(0x0060)()
+	struct FAnimNode_CurveFix                     AnimGraphNode_CurveFix;                            // 0x0E38(0x0030)()
+	struct FAnimNode_RotationOffsetBlendSpace     AnimGraphNode_RotationOffsetBlendSpace;            // 0x0E68(0x01C8)()
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x1030(0x0038)()
+	struct FAnimNode_KuroModifyBones              AnimGraphNode_KuroModifyBones;                     // 0x1068(0x0190)()
+	struct FRotator                               Add_Spine;                                         // 0x11F8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FRotator                               Add_Spine_Head;                                    // 0x1204(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          Enable_AimOffset;                                  // 0x1210(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1211[0x7];                                     // 0x1211(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAimOffsetBlendSpace*                   AimOffset;                                         // 0x1218(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              LookXY;                                            // 0x1220(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FName, struct FTransform>          Vector_Curve_Data;                                 // 0x1228(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_ABP_Mascot_Seq(int32 EntryPoint);

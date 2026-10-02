@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroMath_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroMath_structs.hpp"
 
 
 namespace SDK::Params

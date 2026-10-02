@@ -18,19 +18,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CustomDepthForToon.BP_CustomDepthForToon_C
-// 0x0010 (0x03B0 - 0x03A0)
+// 0x0010 (0x0450 - 0x0440)
 class ABP_CustomDepthForToon_C final : public AKuroEditorTickActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0440(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0448(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void DisableCustomDepthForToon();
-	void EnableCustomDepthForToon();
-	void ReceiveDestroyed();
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_BP_CustomDepthForToon(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	void ReceiveDestroyed();
+	void EnableCustomDepthForToon();
+	void DisableCustomDepthForToon();
 
 public:
 	static class UClass* StaticClass()

@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function ABP_BaseRole_Seq_V2.ABP_BaseRole_Seq_V2_C.ExecuteUbergraph_ABP_BaseRole_Seq_V2
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

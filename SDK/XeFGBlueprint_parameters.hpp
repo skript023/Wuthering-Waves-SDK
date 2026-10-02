@@ -34,6 +34,15 @@ public:
 };
 DUMPER7_ASSERTS_XeFGBlueprintLibrary_GetXeFGMode;
 
+// Function XeFGBlueprint.XeFGBlueprintLibrary.GetXeFGUICompositionState
+// 0x0001 (0x0001 - 0x0000)
+struct XeFGBlueprintLibrary_GetXeFGUICompositionState final
+{
+public:
+	EXeFGUICompositionState                       ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_XeFGBlueprintLibrary_GetXeFGUICompositionState;
+
 // Function XeFGBlueprint.XeFGBlueprintLibrary.IfRelaunchRequiredByXeFG
 // 0x0001 (0x0001 - 0x0000)
 struct XeFGBlueprintLibrary_IfRelaunchRequiredByXeFG final
@@ -60,6 +69,15 @@ public:
 	EXeFGMode                                     Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_XeFGBlueprintLibrary_SetXeFGMode;
+
+// Function XeFGBlueprint.XeFGBlueprintLibrary.SetXeFGUICompositionState
+// 0x0001 (0x0001 - 0x0000)
+struct XeFGBlueprintLibrary_SetXeFGUICompositionState final
+{
+public:
+	EXeFGUICompositionState                       State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_XeFGBlueprintLibrary_SetXeFGUICompositionState;
 
 }
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Kamola.ABP_Kamola_C
-// 0x0000 (0x2B060 - 0x2B060)
+// 0x0000 (0x2CBB0 - 0x2CBB0)
 class UABP_Kamola_C final : public UABP_BaseRole_C
 {
 public:

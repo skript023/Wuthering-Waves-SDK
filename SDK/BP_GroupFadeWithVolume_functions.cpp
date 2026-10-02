@@ -17,19 +17,157 @@
 namespace SDK
 {
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateFlickLight
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ExecuteUbergraph_BP_GroupFadeWithVolume
+// (Final, UbergraphFunction)
 // Parameters:
-// float                                   A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GroupFadeWithVolume_C::UpdateFlickLight(float A)
+void ABP_GroupFadeWithVolume_C::ExecuteUbergraph_BP_GroupFadeWithVolume(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateFlickLight");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ExecuteUbergraph_BP_GroupFadeWithVolume");
 
-	Params::BP_GroupFadeWithVolume_C_UpdateFlickLight Parms{};
+	Params::BP_GroupFadeWithVolume_C_ExecuteUbergraph_BP_GroupFadeWithVolume Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.BeforeCookForPC
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::BeforeCookForPC()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "BeforeCookForPC");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.BeforeCookForMobile
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::BeforeCookForMobile()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "BeforeCookForMobile");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheIntensity
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::CacheIntensity()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheIntensity");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GroupFadeWithVolume_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ReceiveTick");
+
+	Params::BP_GroupFadeWithVolume_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ClearInvalid
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::ClearInvalid()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ClearInvalid");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheLightInstensity
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::CacheLightInstensity()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheLightInstensity");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateLight
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GroupFadeWithVolume_C::UpdateLight(float A)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateLight");
+
+	Params::BP_GroupFadeWithVolume_C_UpdateLight Parms{};
 
 	Parms.A = A;
 
@@ -37,51 +175,187 @@ void ABP_GroupFadeWithVolume_C::UpdateFlickLight(float A)
 }
 
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheFlickLight
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheVolumeLightSphere
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_GroupFadeWithVolume_C::CacheFlickLight()
+void ABP_GroupFadeWithVolume_C::CacheVolumeLightSphere()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheFlickLight");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheVolumeLightSphere");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.MarkLightExcludeFromTOD
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateVolumeLightSphere
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::MarkLightExcludeFromTOD()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "MarkLightExcludeFromTOD");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ComputeWeight
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   B                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-float ABP_GroupFadeWithVolume_C::ComputeWeight()
+void ABP_GroupFadeWithVolume_C::UpdateVolumeLightSphere(float B)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ComputeWeight");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateVolumeLightSphere");
 
-	Params::BP_GroupFadeWithVolume_C_ComputeWeight Parms{};
+	Params::BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere Parms{};
+
+	Parms.B = B;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	return Parms.ReturnValue;
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheVolumeLightSphereFar
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::CacheVolumeLightSphereFar()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheVolumeLightSphereFar");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateVolumeLightSphereFar
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GroupFadeWithVolume_C::UpdateVolumeLightSphereFar(float A)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateVolumeLightSphereFar");
+
+	Params::BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar Parms{};
+
+	Parms.A = A;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheCloud
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::CacheCloud()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheCloud");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateCloud
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   B                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GroupFadeWithVolume_C::UpdateCloud(float B)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateCloud");
+
+	Params::BP_GroupFadeWithVolume_C_UpdateCloud Parms{};
+
+	Parms.B = B;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheCustomCloud
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::CacheCustomCloud()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheCustomCloud");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateCustomCloud
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   B                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GroupFadeWithVolume_C::UpdateCustomCloud(float B)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateCustomCloud");
+
+	Params::BP_GroupFadeWithVolume_C_UpdateCustomCloud Parms{};
+
+	Parms.B = B;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheSuperFarFog
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::CacheSuperFarFog()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheSuperFarFog");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateSuperFarFog
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GroupFadeWithVolume_C::UpdateSuperFarFog(float A)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateSuperFarFog");
+
+	Params::BP_GroupFadeWithVolume_C_UpdateSuperFarFog Parms{};
+
+	Parms.A = A;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CheckPlatform
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::CheckPlatform()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CheckPlatform");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -109,33 +383,67 @@ void ABP_GroupFadeWithVolume_C::CheckObjectPlatform(const class UObject* Object,
 }
 
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CheckPlatform
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ComputeWeight
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GroupFadeWithVolume_C::CheckPlatform()
+float ABP_GroupFadeWithVolume_C::ComputeWeight()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CheckPlatform");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ComputeWeight");
+
+	Params::BP_GroupFadeWithVolume_C_ComputeWeight Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.MarkLightExcludeFromTOD
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_GroupFadeWithVolume_C::MarkLightExcludeFromTOD()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "MarkLightExcludeFromTOD");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateSuperFarFog
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheFlickLight
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GroupFadeWithVolume_C::UpdateSuperFarFog(float A)
+void ABP_GroupFadeWithVolume_C::CacheFlickLight()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateSuperFarFog");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheFlickLight");
 
-	Params::BP_GroupFadeWithVolume_C_UpdateSuperFarFog Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateFlickLight
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_GroupFadeWithVolume_C::UpdateFlickLight(float A)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateFlickLight");
+
+	Params::BP_GroupFadeWithVolume_C_UpdateFlickLight Parms{};
 
 	Parms.A = A;
 
@@ -143,67 +451,33 @@ void ABP_GroupFadeWithVolume_C::UpdateSuperFarFog(float A)
 }
 
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheSuperFarFog
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheLightDecal
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_GroupFadeWithVolume_C::CacheSuperFarFog()
+void ABP_GroupFadeWithVolume_C::CacheLightDecal()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheSuperFarFog");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheLightDecal");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateCloud
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   B                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GroupFadeWithVolume_C::UpdateCloud(float B)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateCloud");
-
-	Params::BP_GroupFadeWithVolume_C_UpdateCloud Parms{};
-
-	Parms.B = B;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheCloud
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::CacheCloud()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheCloud");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateVolumeLightSphereFar
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateLightDecal
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GroupFadeWithVolume_C::UpdateVolumeLightSphereFar(float A)
+void ABP_GroupFadeWithVolume_C::UpdateLightDecal(float A)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateVolumeLightSphereFar");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateLightDecal");
 
-	Params::BP_GroupFadeWithVolume_C_UpdateVolumeLightSphereFar Parms{};
+	Params::BP_GroupFadeWithVolume_C_UpdateLightDecal Parms{};
 
 	Parms.A = A;
 
@@ -211,207 +485,35 @@ void ABP_GroupFadeWithVolume_C::UpdateVolumeLightSphereFar(float A)
 }
 
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheVolumeLightSphereFar
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheShadowDecal
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_GroupFadeWithVolume_C::CacheVolumeLightSphereFar()
+void ABP_GroupFadeWithVolume_C::CacheShadowDecal()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheVolumeLightSphereFar");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheShadowDecal");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateVolumeLightSphere
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   B                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GroupFadeWithVolume_C::UpdateVolumeLightSphere(float B)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateVolumeLightSphere");
-
-	Params::BP_GroupFadeWithVolume_C_UpdateVolumeLightSphere Parms{};
-
-	Parms.B = B;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheVolumeLightSphere
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::CacheVolumeLightSphere()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheVolumeLightSphere");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateLight
+// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UpdateShadowDecal
 // (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // float                                   A                                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_GroupFadeWithVolume_C::UpdateLight(float A)
+void ABP_GroupFadeWithVolume_C::UpdateShadowDecal(float A)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateLight");
+		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UpdateShadowDecal");
 
-	Params::BP_GroupFadeWithVolume_C_UpdateLight Parms{};
+	Params::BP_GroupFadeWithVolume_C_UpdateShadowDecal Parms{};
 
 	Parms.A = A;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheLightInstensity
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::CacheLightInstensity()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheLightInstensity");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ClearInvalid
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::ClearInvalid()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ClearInvalid");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GroupFadeWithVolume_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ReceiveTick");
-
-	Params::BP_GroupFadeWithVolume_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.CacheIntensity
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::CacheIntensity()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "CacheIntensity");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.BeforeCookForMobile
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::BeforeCookForMobile()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "BeforeCookForMobile");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.BeforeCookForPC
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_GroupFadeWithVolume_C::BeforeCookForPC()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "BeforeCookForPC");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_GroupFadeWithVolume.BP_GroupFadeWithVolume_C.ExecuteUbergraph_BP_GroupFadeWithVolume
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_GroupFadeWithVolume_C::ExecuteUbergraph_BP_GroupFadeWithVolume(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GroupFadeWithVolume_C", "ExecuteUbergraph_BP_GroupFadeWithVolume");
-
-	Params::BP_GroupFadeWithVolume_C_ExecuteUbergraph_BP_GroupFadeWithVolume Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -16,6 +16,55 @@
 namespace SDK::Params
 {
 
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ExecuteUbergraph_BP_VolumetricSphereLightSuperFar
+// 0x0040 (0x0040 - 0x0000)
+struct BP_VolumetricSphereLightSuperFar_C_ExecuteUbergraph_BP_VolumetricSphereLightSuperFar final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0028)(ZeroConstructor)
+	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x0030(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UGameUserSettings*                      CallFunc_GetGameUserSettings_ReturnValue;          // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_ExecuteUbergraph_BP_VolumetricSphereLightSuperFar;
+
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_VolumetricSphereLightSuperFar_C_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_EditorTick;
+
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_VolumetricSphereLightSuperFar_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_ReceiveTick;
+
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UserConstructionScript
+// 0x0048 (0x0048 - 0x0000)
+struct BP_VolumetricSphereLightSuperFar_C_UserConstructionScript final
+{
+public:
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_2; // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_3; // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_4; // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_5; // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_6; // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_7; // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_UserConstructionScript;
+
 // Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UpdateVolumetricSphereLight
 // 0x0068 (0x0068 - 0x0000)
 struct BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight final
@@ -35,51 +84,29 @@ public:
 };
 DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_UpdateVolumetricSphereLight;
 
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.UserConstructionScript
-// 0x0048 (0x0048 - 0x0000)
-struct BP_VolumetricSphereLightSuperFar_C_UserConstructionScript final
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.SetQuality
+// 0x0018 (0x0018 - 0x0000)
+struct BP_VolumetricSphereLightSuperFar_C_SetQuality final
 {
 public:
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_2; // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_3; // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_4; // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_5; // 0x0028(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_6; // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_7; // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UGameUserSettings*                      CallFunc_GetGameUserSettings_ReturnValue;          // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_ByteToInt_ReturnValue;               // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetGameQualitySettingLevel_ReturnValue;   // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Subtract_IntInt_ReturnValue;              // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_GreaterEqual_IntInt_ReturnValue;          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_EqualEqual_IntInt_ReturnValue;            // 0x0015(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_BooleanAND_ReturnValue;                   // 0x0016(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_UserConstructionScript;
+DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_SetQuality;
 
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ReceiveTick
+// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.GetPlacementSortOrder
 // 0x0004 (0x0004 - 0x0000)
-struct BP_VolumetricSphereLightSuperFar_C_ReceiveTick final
+struct BP_VolumetricSphereLightSuperFar_C_GetPlacementSortOrder final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_ReceiveTick;
-
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_VolumetricSphereLightSuperFar_C_EditorTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_EditorTick;
-
-// Function BP_VolumetricSphereLightSuperFar.BP_VolumetricSphereLightSuperFar_C.ExecuteUbergraph_BP_VolumetricSphereLightSuperFar
-// 0x000C (0x000C - 0x0000)
-struct BP_VolumetricSphereLightSuperFar_C_ExecuteUbergraph_BP_VolumetricSphereLightSuperFar final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds_1;                       // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_ExecuteUbergraph_BP_VolumetricSphereLightSuperFar;
+DUMPER7_ASSERTS_BP_VolumetricSphereLightSuperFar_C_GetPlacementSortOrder;
 
 }
 

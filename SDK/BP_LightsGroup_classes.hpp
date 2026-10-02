@@ -39,17 +39,19 @@ public:
 	bool                                          EnableLightsOnBeginPlay;                           // 0x0310(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void LightsColorChange(float ElapsedTime, const struct FLinearColor& ColorOriginal_0, const struct FLinearColor& ColorTarget_0);
-	void ToggleLightsColorChange();
-	void GetLightsIntensity();
-	void Timer(float* ElapsedTime);
-	void TurnOnLights(float ElapsedTime);
-	void TurnOffLights(float ElapsedTime);
-	void ToggleLightsIntensity();
-	void ToggleLights(bool inEnable);
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds_0);
 	void ExecuteUbergraph_BP_LightsGroup(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds_0);
+	void ReceiveBeginPlay();
+	void ToggleLights(bool inEnable);
+	void ToggleLightsIntensity();
+	void TurnOffLights(float ElapsedTime);
+	void TurnOnLights(float ElapsedTime);
+	void Timer(float* ElapsedTime);
+	void GetLightsIntensity();
+	void ToggleLightsColorChange();
+	void LightsColorChange(float ElapsedTime, const struct FLinearColor& ColorOriginal_0, const struct FLinearColor& ColorTarget_0);
+
+	int32 GetPlacementSortOrder() const;
 
 public:
 	static class UClass* StaticClass()

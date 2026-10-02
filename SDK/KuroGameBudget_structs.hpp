@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // Enum KuroGameBudget.EGameBudgetBlueprintGroup
-// NumValues: 0x000B
+// NumValues: 0x000D
 enum class EGameBudgetBlueprintGroup : uint8
 {
 	None                                     = 0,
@@ -29,8 +29,19 @@ enum class EGameBudgetBlueprintGroup : uint8
 	DynamicPhysicsInteractionActor           = 5,
 	StaticPhysicInteractionActor             = 6,
 	HighPriorityPhysicInteractionActor       = 8,
-	Max                                      = 9,
-	EGameBudgetBlueprintGroup_MAX            = 10,
+	SparseGridPhysicsInteractionActor        = 10,
+	SpecialBlueprintActor                    = 9,
+	Max                                      = 11,
+	EGameBudgetBlueprintGroup_MAX            = 12,
+};
+
+// Enum KuroGameBudget.EGameBudgetBlueprintEnvironment
+// NumValues: 0x0003
+enum class EGameBudgetBlueprintEnvironment : uint8
+{
+	Scene                                    = 0,
+	UIScene                                  = 1,
+	EGameBudgetBlueprintEnvironment_MAX      = 2,
 };
 
 // Enum KuroGameBudget.ESignificanceGroup
@@ -102,36 +113,61 @@ enum class EKuroPlatformFlags : uint8
 	EKuroPlatformFlags_MAX                   = 5,
 };
 
-// ScriptStruct KuroGameBudget.GameBudgetAllocatorTickDetailConfig
-// 0x0008 (0x0008 - 0x0000)
-struct FGameBudgetAllocatorTickDetailConfig final
+// ScriptStruct KuroGameBudget.CustomPlayerRangeEventState
+// 0x0058 (0x0058 - 0x0000)
+struct alignas(0x08) FCustomPlayerRangeEventState final
 {
 public:
-	uint32                                        MaxTickInterval;                                   // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionStartSize;                            // 0x0004(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint16                                        TickReductionIntervalSize;                         // 0x0006(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             OnEnterEvent;                                      // 0x0008(0x0028)(ZeroConstructor, Transient, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnLeaveEvent;                                      // 0x0030(0x0028)(ZeroConstructor, Transient, InstancedReference, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FGameBudgetAllocatorTickDetailConfig;
+DUMPER7_ASSERTS_FCustomPlayerRangeEventState;
+
+// ScriptStruct KuroGameBudget.CustomPlayerRangeConfig
+// 0x0014 (0x0014 - 0x0000)
+struct FCustomPlayerRangeConfig final
+{
+public:
+	class FName                                   RangeName;                                         // 0x0000(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EnterRange;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LeaveRange;                                        // 0x0010(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCustomPlayerRangeConfig;
 
 // ScriptStruct KuroGameBudget.KuroGameBudgetBlueprint
-// 0x0030 (0x0030 - 0x0000)
-struct alignas(0x08) FKuroGameBudgetBlueprint final
+// 0x00C0 (0x00C0 - 0x0000)
+struct FKuroGameBudgetBlueprint final
 {
 public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	EGameBudgetBlueprintGroup                     GroupType;                                         // 0x0008(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         SupportedPlatforms;                                // 0x0009(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bRegisterGameBudgetTick;                           // 0x000A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRegisterOnEnableChangeEvent;                      // 0x000B(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRegisterOnVisibilityChangeEvent;                  // 0x000C(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSyncComponentTick;                                // 0x000D(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUseBoundsCalculateDistance;                       // 0x000E(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F[0x21];                                       // 0x000F(0x0021)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bRegisterGameBudgetAfterTick;                      // 0x000B(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x1];                                        // 0x000C(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bRegisterOnEnableChangeEvent;                      // 0x000D(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRegisterOnVisibilityChangeEvent;                  // 0x000E(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRegisterOnEnvInteractChangeEvent;                 // 0x000F(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRegisterOnApplyWorldOffsetEvent;                  // 0x0010(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSyncComponentTick;                                // 0x0011(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseBoundsCalculateDistance;                       // 0x0012(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseScreenRadiusCalculateTickInterval;             // 0x0013(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseWasRecentlyPassVisibilityTest;                 // 0x0014(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOverrideLocationProxy;                            // 0x0015(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseCustomPlayerRange;                             // 0x0016(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17[0x1];                                       // 0x0017(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CustomPlayerEnterRange;                            // 0x0018(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CustomPlayerLeaveRange;                            // 0x001C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FCustomPlayerRangeConfig>       CustomPlayerRanges;                                // 0x0020(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FCustomPlayerRangeEventState> CustomPlayerRangeEventsInternal;          // 0x0040(0x0050)(Transient, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_90[0x30];                                      // 0x0090(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FKuroGameBudgetBlueprint;
 
 // ScriptStruct KuroGameBudget.GameBudgetAllocatorGroupConfig
-// 0x0078 (0x0078 - 0x0000)
+// 0x00D0 (0x00D0 - 0x0000)
 struct FGameBudgetAllocatorGroupConfig final
 {
 public:
@@ -142,9 +178,31 @@ public:
 	EDisableActorTickStrategy                     DisableActorTickStrategy;                          // 0x0014(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        DisableActorTickDistance;                          // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x5C];                                      // 0x001C(0x005C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1C[0xB4];                                      // 0x001C(0x00B4)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FGameBudgetAllocatorGroupConfig;
+
+// ScriptStruct KuroGameBudget.GameBudgetBoundsScreenRadiusConfig
+// 0x0008 (0x0008 - 0x0000)
+struct FGameBudgetBoundsScreenRadiusConfig final
+{
+public:
+	float                                         TickReductionStartScreenRatio;                     // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TickReductionIntervalScreenRatio;                  // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGameBudgetBoundsScreenRadiusConfig;
+
+// ScriptStruct KuroGameBudget.GameBudgetAllocatorTickDetailConfig
+// 0x0010 (0x0010 - 0x0000)
+struct FGameBudgetAllocatorTickDetailConfig final
+{
+public:
+	uint32                                        MaxTickInterval;                                   // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        TickReductionStartSize;                            // 0x0004(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint16                                        TickReductionIntervalSize;                         // 0x0006(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameBudgetBoundsScreenRadiusConfig    ScreenRadiusConfig;                                // 0x0008(0x0008)(NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FGameBudgetAllocatorTickDetailConfig;
 
 // ScriptStruct KuroGameBudget.GameBudgetAllocatorAfterTickFunction
 // 0x0008 (0x0030 - 0x0028)

@@ -54,6 +54,17 @@ public:
 };
 DUMPER7_ASSERTS_GameScreenshotTask_TakeScreenshot;
 
+// Function KuroGameScreenshot.GameScreenshotTask.TakeScreenshotHighRes
+// 0x0008 (0x0008 - 0x0000)
+struct GameScreenshotTask_TakeScreenshotHighRes final
+{
+public:
+	int32                                         MultiplierScale;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GameScreenshotTask_TakeScreenshotHighRes;
+
 // Function KuroGameScreenshot.KuroGameScreenshotBPLibrary.CompressConvertColorsToBitmap
 // 0x0028 (0x0028 - 0x0000)
 struct KuroGameScreenshotBPLibrary_CompressConvertColorsToBitmap final
@@ -99,7 +110,8 @@ public:
 	float                                         ScreenshotResolutionX;                             // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         ScreenshotResolutionY;                             // 0x002C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          SaveFile;                                          // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ResolutionMultiplier;                              // 0x0034(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UGameScreenshotTask*                    ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroGameScreenshotBPLibrary_PrepareTakeScreenshot;
@@ -125,6 +137,17 @@ public:
 	TArray<struct FColor>                         Colors;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroGameScreenshotBPLibrary_SaveColorArrayToIosAlbum;
+
+// Function KuroGameScreenshot.KuroGameScreenshotBPLibrary.SaveColorArrayToOpenHarmonyAlbum
+// 0x0018 (0x0018 - 0x0000)
+struct KuroGameScreenshotBPLibrary_SaveColorArrayToOpenHarmonyAlbum final
+{
+public:
+	int32                                         Width;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Height;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<uint8>                                 BitMap;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroGameScreenshotBPLibrary_SaveColorArrayToOpenHarmonyAlbum;
 
 // Function KuroGameScreenshot.KuroGameScreenshotBPLibrary.SaveScreenshot
 // 0x0028 (0x0028 - 0x0000)

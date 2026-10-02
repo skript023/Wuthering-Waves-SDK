@@ -878,6 +878,32 @@ bool UKuroLauncherLibrary::GetGConfigString(const class FString& Section, const 
 }
 
 
+// Function KuroHotPatch.KuroLauncherLibrary.GetMountedPaks
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class FString>*                  OutPakFilenames                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroLauncherLibrary::GetMountedPaks(TArray<class FString>* OutPakFilenames)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroLauncherLibrary", "GetMountedPaks");
+
+	Params::KuroLauncherLibrary_GetMountedPaks Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutPakFilenames != nullptr)
+		*OutPakFilenames = std::move(Parms.OutPakFilenames);
+}
+
+
 // Function KuroHotPatch.KuroLauncherLibrary.GetNetworkConnectionType
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:

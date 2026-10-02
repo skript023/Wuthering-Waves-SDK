@@ -11,23 +11,28 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "BP_KuroVolumeCloud_Global_classes.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
+#include "BP_KuroVolumeCloud_Global_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_KuroVolumeCloud_Local.BP_KuroVolumeCloud_Local_C
-// 0x0010 (0x05C0 - 0x05B0)
+// 0x0018 (0x0688 - 0x0670)
 class ABP_KuroVolumeCloud_Local_C final : public ABP_KuroVolumeCloud_Global_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_KuroVolumeCloud_Local_C;         // 0x05B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UMaterialInstanceConstant*              HighCloudMaterial;                                 // 0x05B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_KuroVolumeCloud_Local_C;         // 0x0670(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UMaterialInstanceConstant*              HighCloudMaterial;                                 // 0x0678(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bTickInUI;                                         // 0x0680(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bUseMPCRenderQueueOffset;                          // 0x0681(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bNoTick;                                           // 0x0682(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bUseMaterialSpeed;                                 // 0x0683(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_KuroVolumeCloud_Local(int32 EntryPoint);
+	void EditorTick();
 	void BeforeCookForPC();
 	void BeforeCookForMobile();
 	void BeforeSave();
@@ -35,6 +40,7 @@ public:
 	void ReceiveActorBeginOverlap(class AActor* OtherActor);
 	void ReceiveBeginPlay();
 	void UserConstructionScript();
+	void Update();
 
 public:
 	static class UClass* StaticClass()

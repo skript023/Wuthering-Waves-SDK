@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_InputComponent_Kamola.BP_InputComponent_Kamola_C
-// 0x0000 (0x0220 - 0x0220)
+// 0x0000 (0x0240 - 0x0240)
 class UBP_InputComponent_Kamola_C final : public UBP_InputComponent_C
 {
 public:

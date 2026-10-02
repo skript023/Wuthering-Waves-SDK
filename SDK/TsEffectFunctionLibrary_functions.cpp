@@ -656,5 +656,87 @@ int32 UTsEffectFunctionLibrary_C::SpawnEffectWithActor(class UObject* worldConte
 	return Parms.ReturnValue;
 }
 
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.StopAndDestroyEffect
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   handle                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          callObject                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    immediately                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsEffectFunctionLibrary_C::StopAndDestroyEffect(int32 handle, class UObject* callObject, const class FString& reason, bool immediately, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "StopAndDestroyEffect");
+
+	Params::TsEffectFunctionLibrary_C_StopAndDestroyEffect Parms{};
+
+	Parms.handle = handle;
+	Parms.callObject = callObject;
+	Parms.reason = std::move(reason);
+	Parms.immediately = immediately;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsEffectFunctionLibrary.TsEffectFunctionLibrary_C.SpawnEffectAttachToBone
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          worldContext                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          callObject                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class USkeletalMeshComponent*           skeletalMeshComponent                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             socketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    path                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FTransformDouble&          transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const class FString&                    reason                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// EEffectPlay                             playType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    disablePostProcess                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 UTsEffectFunctionLibrary_C::SpawnEffectAttachToBone(class UObject* worldContext, class UObject* callObject, class USkeletalMeshComponent* skeletalMeshComponent, class FName socketName, const class FString& path, const struct FTransformDouble& transform, const class FString& reason, EEffectPlay playType, bool disablePostProcess, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsEffectFunctionLibrary_C", "SpawnEffectAttachToBone");
+
+	Params::TsEffectFunctionLibrary_C_SpawnEffectAttachToBone Parms{};
+
+	Parms.worldContext = worldContext;
+	Parms.callObject = callObject;
+	Parms.skeletalMeshComponent = skeletalMeshComponent;
+	Parms.socketName = socketName;
+	Parms.path = std::move(path);
+	Parms.transform = std::move(transform);
+	Parms.reason = std::move(reason);
+	Parms.playType = playType;
+	Parms.disablePostProcess = disablePostProcess;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
 }
 

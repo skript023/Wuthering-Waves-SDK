@@ -10,34 +10,36 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateSubMeshControl.TsAnimNotifyStateSubMeshControl_C
-// 0x00A8 (0x00F0 - 0x0048)
-class UTsAnimNotifyStateSubMeshControl_C final : public UKuroAnimNotifyState
+// 0x00A8 (0x0100 - 0x0058)
+class UTsAnimNotifyStateSubMeshControl_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	class FString                                 MeshName;                                          // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          开始是否可见;                                      // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPD_CharacterControllerData_C*          开始材质;                                          // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TSoftObjectPtr<class UEffectModelBase>        开始特效;                                          // 0x0068(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	bool                                          结束是否可见;                                      // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_99[0x7];                                       // 0x0099(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPD_CharacterControllerData_C*          结束材质;                                          // 0x00A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TSoftObjectPtr<class UEffectModelBase>        结束特效;                                          // 0x00A8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	float                                         开始延迟时间;                                      // 0x00D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         结束延迟时间;                                      // 0x00DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FGameplayTag                           EnableTag;                                         // 0x00E0(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
+	class FString                                 MeshName;                                          // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          开始是否可见;                                      // 0x0068(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPD_CharacterControllerData_C*          开始材质;                                          // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSoftObjectPtr<class UEffectModelBase>        开始特效;                                          // 0x0078(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	bool                                          结束是否可见;                                      // 0x00A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UPD_CharacterControllerData_C*          结束材质;                                          // 0x00B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSoftObjectPtr<class UEffectModelBase>        结束特效;                                          // 0x00B8(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	float                                         开始延迟时间;                                      // 0x00E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         结束延迟时间;                                      // 0x00EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           EnableTag;                                         // 0x00F0(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
+
+	class FString GetNotifyName() const;
 
 public:
 	static class UClass* StaticClass()

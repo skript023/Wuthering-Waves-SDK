@@ -242,8 +242,9 @@ void ABP_MediaDissolveManagea_C::SetOpacity(class UMaterialInstanceDynamic* Mate
 // float                                   FadeinTime_0                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   FadeOutTime_0                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UMediaSource*                     MediaSource                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    SphereOrFullScreen                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_MediaDissolveManagea_C::PlayEffect(const class FString& Param_Name_0, const struct FVector2D& CenterPos_0, float MediaScale_0, float FadeinTime_0, float FadeOutTime_0, class UMediaSource* MediaSource)
+void ABP_MediaDissolveManagea_C::PlayEffect(const class FString& Param_Name_0, const struct FVector2D& CenterPos_0, float MediaScale_0, float FadeinTime_0, float FadeOutTime_0, class UMediaSource* MediaSource, bool SphereOrFullScreen)
 {
 	static class UFunction* Func = nullptr;
 
@@ -258,6 +259,7 @@ void ABP_MediaDissolveManagea_C::PlayEffect(const class FString& Param_Name_0, c
 	Parms.FadeinTime_0 = FadeinTime_0;
 	Parms.FadeOutTime_0 = FadeOutTime_0;
 	Parms.MediaSource = MediaSource;
+	Parms.SphereOrFullScreen = SphereOrFullScreen;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

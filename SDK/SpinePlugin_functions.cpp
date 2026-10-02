@@ -42,596 +42,6 @@ void USpineBoneDriverComponent::BeforeUpdateWorldTransform(class USpineSkeletonC
 }
 
 
-// Function SpinePlugin.SpineSkeletonComponent.GetAnimationDuration
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USpineSkeletonComponent::GetAnimationDuration(const class FString& AnimationName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "GetAnimationDuration");
-
-	Params::SpineSkeletonComponent_GetAnimationDuration Parms{};
-
-	Parms.AnimationName = std::move(AnimationName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.GetAnimations
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<class FString>*                  Animations                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void USpineSkeletonComponent::GetAnimations(TArray<class FString>* Animations)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "GetAnimations");
-
-	Params::SpineSkeletonComponent_GetAnimations Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (Animations != nullptr)
-		*Animations = std::move(Parms.Animations);
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.GetBones
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<class FString>*                  Bones                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void USpineSkeletonComponent::GetBones(TArray<class FString>* Bones)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "GetBones");
-
-	Params::SpineSkeletonComponent_GetBones Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (Bones != nullptr)
-		*Bones = std::move(Parms.Bones);
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.GetBoneWorldTransform
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const class FString&                    BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FTransform USpineSkeletonComponent::GetBoneWorldTransform(const class FString& BoneName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "GetBoneWorldTransform");
-
-	Params::SpineSkeletonComponent_GetBoneWorldTransform Parms{};
-
-	Parms.BoneName = std::move(BoneName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.GetScaleX
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USpineSkeletonComponent::GetScaleX()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "GetScaleX");
-
-	Params::SpineSkeletonComponent_GetScaleX Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.GetScaleY
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USpineSkeletonComponent::GetScaleY()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "GetScaleY");
-
-	Params::SpineSkeletonComponent_GetScaleY Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.GetSkins
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<class FString>*                  Skins                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void USpineSkeletonComponent::GetSkins(TArray<class FString>* Skins)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "GetSkins");
-
-	Params::SpineSkeletonComponent_GetSkins Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (Skins != nullptr)
-		*Skins = std::move(Parms.Skins);
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.GetSlots
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TArray<class FString>*                  Slots                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void USpineSkeletonComponent::GetSlots(TArray<class FString>* Slots)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "GetSlots");
-
-	Params::SpineSkeletonComponent_GetSlots Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (Slots != nullptr)
-		*Slots = std::move(Parms.Slots);
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.HasAnimation
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USpineSkeletonComponent::HasAnimation(const class FString& AnimationName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "HasAnimation");
-
-	Params::SpineSkeletonComponent_HasAnimation Parms{};
-
-	Parms.AnimationName = std::move(AnimationName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.HasBone
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    BoneName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USpineSkeletonComponent::HasBone(const class FString& BoneName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "HasBone");
-
-	Params::SpineSkeletonComponent_HasBone Parms{};
-
-	Parms.BoneName = std::move(BoneName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.HasSkin
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USpineSkeletonComponent::HasSkin(const class FString& SkinName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "HasSkin");
-
-	Params::SpineSkeletonComponent_HasSkin Parms{};
-
-	Parms.SkinName = std::move(SkinName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.HasSlot
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USpineSkeletonComponent::HasSlot(const class FString& SlotName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "HasSlot");
-
-	Params::SpineSkeletonComponent_HasSlot Parms{};
-
-	Parms.SlotName = std::move(SlotName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetAttachment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    slotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    attachmentName                                         (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USpineSkeletonComponent::SetAttachment(const class FString& slotName, const class FString& attachmentName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetAttachment");
-
-	Params::SpineSkeletonComponent_SetAttachment Parms{};
-
-	Parms.slotName = std::move(slotName);
-	Parms.attachmentName = std::move(attachmentName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetBonesToSetupPose
-// (Final, Native, Public, BlueprintCallable)
-
-void USpineSkeletonComponent::SetBonesToSetupPose()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetBonesToSetupPose");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetBoneWorldPosition
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const class FString&                    BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   position                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpineSkeletonComponent::SetBoneWorldPosition(const class FString& BoneName, const struct FVector& position)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetBoneWorldPosition");
-
-	Params::SpineSkeletonComponent_SetBoneWorldPosition Parms{};
-
-	Parms.BoneName = std::move(BoneName);
-	Parms.position = std::move(position);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetScaleX
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   scaleX                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpineSkeletonComponent::SetScaleX(float scaleX)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetScaleX");
-
-	Params::SpineSkeletonComponent_SetScaleX Parms{};
-
-	Parms.scaleX = scaleX;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetScaleY
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   scaleY                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpineSkeletonComponent::SetScaleY(float scaleY)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetScaleY");
-
-	Params::SpineSkeletonComponent_SetScaleY Parms{};
-
-	Parms.scaleY = scaleY;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetSkin
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USpineSkeletonComponent::SetSkin(const class FString& SkinName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetSkin");
-
-	Params::SpineSkeletonComponent_SetSkin Parms{};
-
-	Parms.SkinName = std::move(SkinName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetSkins
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<class FString>&                  SkinNames                                              (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USpineSkeletonComponent::SetSkins(TArray<class FString>& SkinNames)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetSkins");
-
-	Params::SpineSkeletonComponent_SetSkins Parms{};
-
-	Parms.SkinNames = std::move(SkinNames);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	SkinNames = std::move(Parms.SkinNames);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetSlotColor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const class FString&                    SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FColor&                    color                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USpineSkeletonComponent::SetSlotColor(const class FString& SlotName, const struct FColor& color)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetSlotColor");
-
-	Params::SpineSkeletonComponent_SetSlotColor Parms{};
-
-	Parms.SlotName = std::move(SlotName);
-	Parms.color = std::move(color);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetSlotsToSetupPose
-// (Final, Native, Public, BlueprintCallable)
-
-void USpineSkeletonComponent::SetSlotsToSetupPose()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetSlotsToSetupPose");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.SetToSetupPose
-// (Final, Native, Public, BlueprintCallable)
-
-void USpineSkeletonComponent::SetToSetupPose()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "SetToSetupPose");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SpinePlugin.SpineSkeletonComponent.UpdateWorldTransform
-// (Final, Native, Public, BlueprintCallable)
-
-void USpineSkeletonComponent::UpdateWorldTransform()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SpineSkeletonComponent", "UpdateWorldTransform");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function SpinePlugin.TrackEntry.GetAlpha
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -1427,6 +837,596 @@ void UTrackEntry::SetTrackTime(float trackTime)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.GetAnimationDuration
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USpineSkeletonComponent::GetAnimationDuration(const class FString& AnimationName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "GetAnimationDuration");
+
+	Params::SpineSkeletonComponent_GetAnimationDuration Parms{};
+
+	Parms.AnimationName = std::move(AnimationName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.GetAnimations
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<class FString>*                  Animations                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void USpineSkeletonComponent::GetAnimations(TArray<class FString>* Animations)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "GetAnimations");
+
+	Params::SpineSkeletonComponent_GetAnimations Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Animations != nullptr)
+		*Animations = std::move(Parms.Animations);
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.GetBones
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<class FString>*                  Bones                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void USpineSkeletonComponent::GetBones(TArray<class FString>* Bones)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "GetBones");
+
+	Params::SpineSkeletonComponent_GetBones Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Bones != nullptr)
+		*Bones = std::move(Parms.Bones);
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.GetBoneWorldTransform
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class FString&                    BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FTransform USpineSkeletonComponent::GetBoneWorldTransform(const class FString& BoneName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "GetBoneWorldTransform");
+
+	Params::SpineSkeletonComponent_GetBoneWorldTransform Parms{};
+
+	Parms.BoneName = std::move(BoneName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.GetScaleX
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USpineSkeletonComponent::GetScaleX()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "GetScaleX");
+
+	Params::SpineSkeletonComponent_GetScaleX Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.GetScaleY
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USpineSkeletonComponent::GetScaleY()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "GetScaleY");
+
+	Params::SpineSkeletonComponent_GetScaleY Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.GetSkins
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<class FString>*                  Skins                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void USpineSkeletonComponent::GetSkins(TArray<class FString>* Skins)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "GetSkins");
+
+	Params::SpineSkeletonComponent_GetSkins Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Skins != nullptr)
+		*Skins = std::move(Parms.Skins);
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.GetSlots
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TArray<class FString>*                  Slots                                                  (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void USpineSkeletonComponent::GetSlots(TArray<class FString>* Slots)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "GetSlots");
+
+	Params::SpineSkeletonComponent_GetSlots Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Slots != nullptr)
+		*Slots = std::move(Parms.Slots);
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.HasAnimation
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    AnimationName                                          (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USpineSkeletonComponent::HasAnimation(const class FString& AnimationName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "HasAnimation");
+
+	Params::SpineSkeletonComponent_HasAnimation Parms{};
+
+	Parms.AnimationName = std::move(AnimationName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.HasBone
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    BoneName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USpineSkeletonComponent::HasBone(const class FString& BoneName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "HasBone");
+
+	Params::SpineSkeletonComponent_HasBone Parms{};
+
+	Parms.BoneName = std::move(BoneName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.HasSkin
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USpineSkeletonComponent::HasSkin(const class FString& SkinName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "HasSkin");
+
+	Params::SpineSkeletonComponent_HasSkin Parms{};
+
+	Parms.SkinName = std::move(SkinName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.HasSlot
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USpineSkeletonComponent::HasSlot(const class FString& SlotName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "HasSlot");
+
+	Params::SpineSkeletonComponent_HasSlot Parms{};
+
+	Parms.SlotName = std::move(SlotName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetAttachment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    slotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    attachmentName                                         (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USpineSkeletonComponent::SetAttachment(const class FString& slotName, const class FString& attachmentName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetAttachment");
+
+	Params::SpineSkeletonComponent_SetAttachment Parms{};
+
+	Parms.slotName = std::move(slotName);
+	Parms.attachmentName = std::move(attachmentName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetBonesToSetupPose
+// (Final, Native, Public, BlueprintCallable)
+
+void USpineSkeletonComponent::SetBonesToSetupPose()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetBonesToSetupPose");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetBoneWorldPosition
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class FString&                    BoneName                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   position                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpineSkeletonComponent::SetBoneWorldPosition(const class FString& BoneName, const struct FVector& position)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetBoneWorldPosition");
+
+	Params::SpineSkeletonComponent_SetBoneWorldPosition Parms{};
+
+	Parms.BoneName = std::move(BoneName);
+	Parms.position = std::move(position);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetScaleX
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   scaleX                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpineSkeletonComponent::SetScaleX(float scaleX)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetScaleX");
+
+	Params::SpineSkeletonComponent_SetScaleX Parms{};
+
+	Parms.scaleX = scaleX;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetScaleY
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   scaleY                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpineSkeletonComponent::SetScaleY(float scaleY)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetScaleY");
+
+	Params::SpineSkeletonComponent_SetScaleY Parms{};
+
+	Parms.scaleY = scaleY;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetSkin
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    SkinName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USpineSkeletonComponent::SetSkin(const class FString& SkinName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetSkin");
+
+	Params::SpineSkeletonComponent_SetSkin Parms{};
+
+	Parms.SkinName = std::move(SkinName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetSkins
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<class FString>&                  SkinNames                                              (Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USpineSkeletonComponent::SetSkins(TArray<class FString>& SkinNames)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetSkins");
+
+	Params::SpineSkeletonComponent_SetSkins Parms{};
+
+	Parms.SkinNames = std::move(SkinNames);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	SkinNames = std::move(Parms.SkinNames);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetSlotColor
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const class FString&                    SlotName                                               (ConstParm, Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FColor&                    color                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USpineSkeletonComponent::SetSlotColor(const class FString& SlotName, const struct FColor& color)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetSlotColor");
+
+	Params::SpineSkeletonComponent_SetSlotColor Parms{};
+
+	Parms.SlotName = std::move(SlotName);
+	Parms.color = std::move(color);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetSlotsToSetupPose
+// (Final, Native, Public, BlueprintCallable)
+
+void USpineSkeletonComponent::SetSlotsToSetupPose()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetSlotsToSetupPose");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.SetToSetupPose
+// (Final, Native, Public, BlueprintCallable)
+
+void USpineSkeletonComponent::SetToSetupPose()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "SetToSetupPose");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SpinePlugin.SpineSkeletonComponent.UpdateWorldTransform
+// (Final, Native, Public, BlueprintCallable)
+
+void USpineSkeletonComponent::UpdateWorldTransform()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SpineSkeletonComponent", "UpdateWorldTransform");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

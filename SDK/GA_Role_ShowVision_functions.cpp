@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_Role_ShowVision.GA_Role_ShowVision_C.ExecuteUbergraph_GA_Role_ShowVision
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
@@ -68,6 +68,130 @@ void UGA_Role_ShowVision_C::K2_ActivateAbility()
 		Func = Class->GetFunction("GA_Role_ShowVision_C", "K2_ActivateAbility");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_ShowVision.GA_Role_ShowVision_C.OnFinish_EB6C77C54CC3097D3F8C1CB75EDD641B
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_ShowVision_C::OnFinish_EB6C77C54CC3097D3F8C1CB75EDD641B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_ShowVision_C", "OnFinish_EB6C77C54CC3097D3F8C1CB75EDD641B");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_ShowVision.GA_Role_ShowVision_C.EventReceived_7827A09144808811E6A718B5B2F58484
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Role_ShowVision_C::EventReceived_7827A09144808811E6A718B5B2F58484(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_ShowVision_C", "EventReceived_7827A09144808811E6A718B5B2F58484");
+
+	Params::GA_Role_ShowVision_C_EventReceived_7827A09144808811E6A718B5B2F58484 Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Role_ShowVision.GA_Role_ShowVision_C.OnCompleted_5D118C384AE61F1C80292E8175A3FDF5
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_ShowVision_C::OnCompleted_5D118C384AE61F1C80292E8175A3FDF5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_ShowVision_C", "OnCompleted_5D118C384AE61F1C80292E8175A3FDF5");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_ShowVision.GA_Role_ShowVision_C.OnBlendOut_5D118C384AE61F1C80292E8175A3FDF5
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_ShowVision_C::OnBlendOut_5D118C384AE61F1C80292E8175A3FDF5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_ShowVision_C", "OnBlendOut_5D118C384AE61F1C80292E8175A3FDF5");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_ShowVision.GA_Role_ShowVision_C.OnInterrupted_5D118C384AE61F1C80292E8175A3FDF5
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_ShowVision_C::OnInterrupted_5D118C384AE61F1C80292E8175A3FDF5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_ShowVision_C", "OnInterrupted_5D118C384AE61F1C80292E8175A3FDF5");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_ShowVision.GA_Role_ShowVision_C.OnCancelled_5D118C384AE61F1C80292E8175A3FDF5
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_ShowVision_C::OnCancelled_5D118C384AE61F1C80292E8175A3FDF5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_ShowVision_C", "OnCancelled_5D118C384AE61F1C80292E8175A3FDF5");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_ShowVision.GA_Role_ShowVision_C.OnTick_5D118C384AE61F1C80292E8175A3FDF5
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_ShowVision_C::OnTick_5D118C384AE61F1C80292E8175A3FDF5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_ShowVision_C", "OnTick_5D118C384AE61F1C80292E8175A3FDF5");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_ShowVision.GA_Role_ShowVision_C.EventReceived_18B59F5945020DB23C42FD88288C716A
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_Role_ShowVision_C::EventReceived_18B59F5945020DB23C42FD88288C716A(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_ShowVision_C", "EventReceived_18B59F5945020DB23C42FD88288C716A");
+
+	Params::GA_Role_ShowVision_C_EventReceived_18B59F5945020DB23C42FD88288C716A Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

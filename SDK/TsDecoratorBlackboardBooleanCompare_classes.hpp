@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsDecoratorBlackboardBooleanCompare.TsDecoratorBlackboardBooleanCompare_C
-// 0x0018 (0x00C0 - 0x00A8)
+// 0x0018 (0x00C8 - 0x00B0)
 class UTsDecoratorBlackboardBooleanCompare_C final : public UBTDecorator_BlueprintBase
 {
 public:
-	class FString                                 BlackboardKey;                                     // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CompareValue;                                      // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class FString                                 BlackboardKey;                                     // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CompareValue;                                      // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);

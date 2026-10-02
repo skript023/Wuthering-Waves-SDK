@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "EInputAction_structs.hpp"
-#include "sInputCommand_structs.hpp"
 #include "SSkillBehaviorCondition_structs.hpp"
+#include "sInputCommand_structs.hpp"
 #include "EInputState_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
@@ -33,6 +33,7 @@ public:
 	TArray<struct FSSkillBehaviorCondition>       BehaviorConditionGroup_16_3DC0C63E4FAACBA04C5755A9D8887A44; // 0x0020(0x0010)(Edit, BlueprintVisible)
 	class FString                                 BehaviorConditionFormula_20_A2A5CE3947819059351FDAB1C848414C; // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	struct FSInputCommand                         Command_23_061595D1437A329EE2E95EB7542A6A0B;       // 0x0040(0x0014)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
+	bool                                          PriorityBelowExploreDerive_26_9FBD5EFD465A5BDF63B0E8A88005A490; // 0x0054(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_FSInputCommandTransform;
 

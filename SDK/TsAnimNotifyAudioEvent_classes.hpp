@@ -11,22 +11,22 @@
 #include "Basic.hpp"
 
 #include "SAudioEventProbabilityCooldownInfo_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyAudioEvent.TsAnimNotifyAudioEvent_C
-// 0x0058 (0x00A0 - 0x0048)
-class UTsAnimNotifyAudioEvent_C final : public UKuroAnimNotify
+// 0x0058 (0x00B0 - 0x0058)
+class UTsAnimNotifyAudioEvent_C final : public UTsAnimNotifyBase_C
 {
 public:
-	TSoftObjectPtr<class UAkAudioEvent>           AudioEvent;                                        // 0x0048(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	class FName                                   SocketName;                                        // 0x0078(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Follow;                                            // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSAudioEventProbabilityCooldownInfo    TagProbabilityInfo;                                // 0x0088(0x0018)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class UAkAudioEvent>           AudioEvent;                                        // 0x0058(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class FName                                   SocketName;                                        // 0x0088(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Follow;                                            // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSAudioEventProbabilityCooldownInfo    TagProbabilityInfo;                                // 0x0098(0x0018)(Edit, BlueprintVisible, HasGetValueTypeHash)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

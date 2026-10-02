@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function TsEntityBase.TsEntityBase_C.EditorInit
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ATsEntityBase_C::EditorInit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsEntityBase_C", "EditorInit");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function TsEntityBase.TsEntityBase_C.ReceiveBeginPlay
 // (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 
@@ -62,6 +48,20 @@ void ATsEntityBase_C::ExecuteUbergraph_TsEntityBase(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function TsEntityBase.TsEntityBase_C.EditorInit
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ATsEntityBase_C::EditorInit()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsEntityBase_C", "EditorInit");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

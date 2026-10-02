@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsStartupPlayerController.TsStartupPlayerController_C
-// 0x0000 (0x0788 - 0x0788)
+// 0x0000 (0x0798 - 0x0798)
 class ATsStartupPlayerController_C : public ATsBasePlayerController_C
 {
 public:

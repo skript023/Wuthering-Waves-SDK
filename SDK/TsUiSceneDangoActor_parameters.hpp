@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function TsUiSceneDangoActor.TsUiSceneDangoActor_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct TsUiSceneDangoActor_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsUiSceneDangoActor_C_ReceiveTick;
-
 // Function TsUiSceneDangoActor.TsUiSceneDangoActor_C.ExecuteUbergraph_TsUiSceneDangoActor
 // 0x0008 (0x0008 - 0x0000)
 struct TsUiSceneDangoActor_C_ExecuteUbergraph_TsUiSceneDangoActor final
@@ -32,6 +23,15 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsUiSceneDangoActor_C_ExecuteUbergraph_TsUiSceneDangoActor;
+
+// Function TsUiSceneDangoActor.TsUiSceneDangoActor_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct TsUiSceneDangoActor_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsUiSceneDangoActor_C_ReceiveTick;
 
 }
 

@@ -22,9 +22,8 @@ namespace SDK
 class ABP_Vision_ML1ShiXiangGui_C final : public ABP_BaseVision_C
 {
 public:
-	uint8                                         Pad_772[0x6];                                      // 0x0772(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Vision_ML1ShiXiangGui_C;         // 0x0778(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USkeletalMeshComponent*                 Mark2;                                             // 0x0780(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Vision_ML1ShiXiangGui_C;         // 0x0780(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USkeletalMeshComponent*                 Mark2;                                             // 0x0788(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Vision_ML1ShiXiangGui(int32 EntryPoint);

@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_Kamola_Burst.GA_Kamola_Burst_C.ExecuteUbergraph_GA_Kamola_Burst
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

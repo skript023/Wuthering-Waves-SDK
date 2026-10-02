@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "ECamp_structs.hpp"
-#include "SPointsRow_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
-#include "SNpcPathPoint_structs.hpp"
 #include "ERelation_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SPointsRow_structs.hpp"
+#include "ECamp_structs.hpp"
+#include "Engine_structs.hpp"
 #include "SCamp_structs.hpp"
+#include "SNpcPathPoint_structs.hpp"
 
 
 namespace SDK::Params
@@ -989,6 +989,37 @@ public:
 	class UKuroActorEventBinder*                  CallFunc_SpawnObject_ReturnValue;                  // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_KFC_AICommon_C_创建物件破坏监听;
+
+// Function KFC_AICommon.KFC_AICommon_C.获取黑板 Float
+// 0x0040 (0x0040 - 0x0000)
+struct KFC_AICommon_C_获取黑板_Float final
+{
+public:
+	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         值;                                                // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetFloatValueByEntity_ReturnValue;        // 0x003C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_KFC_AICommon_C_获取黑板_Float;
+
+// Function KFC_AICommon.KFC_AICommon_C.设置黑板Float
+// 0x0040 (0x0040 - 0x0000)
+struct KFC_AICommon_C_设置黑板Float final
+{
+public:
+	class ATsBaseCharacter_C*                     角色;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	float                                         值;                                                // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0038(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_KFC_AICommon_C_设置黑板Float;
 
 }
 

@@ -18,16 +18,18 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PerformanceDisableLight.BP_PerformanceDisableLight_C
-// 0x0018 (0x03B8 - 0x03A0)
+// 0x0020 (0x0460 - 0x0440)
 class ABP_PerformanceDisableLight_C final : public AKuroEditorTickActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	bool                                          DisableLight;                                      // 0x03B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
-	bool                                          IsEnableDisable;                                   // 0x03B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          IsEnableToonDisable;                               // 0x03B2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DisableToonLight;                                  // 0x03B3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0440(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0448(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         SceneLightIntensity;                               // 0x0450(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	float                                         ToonLightIntensity;                                // 0x0454(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	bool                                          DisableLight_Store;                                // 0x0458(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, Interp, NoDestructor)
+	bool                                          DisableLight;                                      // 0x0459(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
+	bool                                          DisableToonLight;                                  // 0x045A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
+	bool                                          DisableToonLight_Store;                            // 0x045B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, Interp, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_PerformanceDisableLight(int32 EntryPoint);
@@ -38,6 +40,7 @@ public:
 	void UserConstructionScript();
 	void DisableLightFun();
 	void DisableToonLightFun();
+	void TickFunction();
 
 public:
 	static class UClass* StaticClass()

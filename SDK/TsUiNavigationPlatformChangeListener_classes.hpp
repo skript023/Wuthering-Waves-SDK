@@ -26,7 +26,7 @@ public:
 
 public:
 	void ExecuteUbergraph_TsUiNavigationPlatformChangeListener(int32 EntryPoint);
-	void OnDestroyBP();
+	void OnPreDestroyBP();
 	void AwakeBP();
 
 public:

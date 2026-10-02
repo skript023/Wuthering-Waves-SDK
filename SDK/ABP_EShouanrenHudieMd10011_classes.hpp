@@ -20,21 +20,21 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_EShouanrenHudieMd10011.ABP_EShouanrenHudieMd10011_C
-// 0x0880 (0x0F90 - 0x0710)
+// 0x0970 (0x11A0 - 0x0830)
 class UABP_EShouanrenHudieMd10011_C final : public UAnimInstance
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0710(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0718(0x0038)()
-	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x0750(0x0020)()
-	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0770(0x0020)()
-	struct FAnimNode_KawaiiPhysicsGroup           AnimGraphNode_KawaiiPhysicsGroup_1;                // 0x0790(0x02A0)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0A30(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0B08(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0B40(0x0198)()
-	uint8                                         Pad_CD8[0x8];                                      // 0x0CD8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAnimNode_KawaiiPhysicsGroup           AnimGraphNode_KawaiiPhysicsGroup;                  // 0x0CE0(0x02A0)()
-	class ATsBaseCharacter_C*                     当前角色;                                          // 0x0F80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0838(0x0038)()
+	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x0870(0x0020)()
+	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x0890(0x0020)()
+	struct FAnimNode_KawaiiPhysicsGroup           AnimGraphNode_KawaiiPhysicsGroup_1;                // 0x08B0(0x02F0)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x0BA0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x0C78(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x0CB0(0x01E8)()
+	uint8                                         Pad_E98[0x8];                                      // 0x0E98(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAnimNode_KawaiiPhysicsGroup           AnimGraphNode_KawaiiPhysicsGroup;                  // 0x0EA0(0x02F0)()
+	class ATsBaseCharacter_C*                     当前角色;                                          // 0x1190(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_EShouanrenHudieMd10011(int32 EntryPoint);

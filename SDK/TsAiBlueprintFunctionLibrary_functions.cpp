@@ -663,9 +663,13 @@ void UTsAiBlueprintFunctionLibrary_C::OnPlayerImpactBegin(int32 entityId, class 
 // bool&                                   isImpacted                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
 // float&                                  direction                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float&                                  strength                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool&                                   isRegionMoveMode1                                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// bool&                                   isEnableTurnMove                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// float&                                  turnYawRateRef1                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool&                                   forceUpdateSourceAnimation                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsAiBlueprintFunctionLibrary_C::UpdateNpcPerformData(int32 entityId, bool& isAttacked1, bool& isImpacted, float& direction, float& strength, class UObject* __WorldContext)
+void UTsAiBlueprintFunctionLibrary_C::UpdateNpcPerformData(int32 entityId, bool& isAttacked1, bool& isImpacted, float& direction, float& strength, bool& isRegionMoveMode1, bool& isEnableTurnMove, float& turnYawRateRef1, bool& forceUpdateSourceAnimation, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -679,6 +683,10 @@ void UTsAiBlueprintFunctionLibrary_C::UpdateNpcPerformData(int32 entityId, bool&
 	Parms.isImpacted = isImpacted;
 	Parms.direction = direction;
 	Parms.strength = strength;
+	Parms.isRegionMoveMode1 = isRegionMoveMode1;
+	Parms.isEnableTurnMove = isEnableTurnMove;
+	Parms.turnYawRateRef1 = turnYawRateRef1;
+	Parms.forceUpdateSourceAnimation = forceUpdateSourceAnimation;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -692,6 +700,10 @@ void UTsAiBlueprintFunctionLibrary_C::UpdateNpcPerformData(int32 entityId, bool&
 	isImpacted = Parms.isImpacted;
 	direction = Parms.direction;
 	strength = Parms.strength;
+	isRegionMoveMode1 = Parms.isRegionMoveMode1;
+	isEnableTurnMove = Parms.isEnableTurnMove;
+	turnYawRateRef1 = Parms.turnYawRateRef1;
+	forceUpdateSourceAnimation = Parms.forceUpdateSourceAnimation;
 }
 
 

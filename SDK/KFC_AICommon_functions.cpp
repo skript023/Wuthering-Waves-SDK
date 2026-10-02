@@ -1235,5 +1235,59 @@ class UKuroActorEventBinder* UKFC_AICommon_C::创建物件破坏监听(class UOb
 	return Parms.ReturnValue;
 }
 
+
+// Function KFC_AICommon.KFC_AICommon_C.获取黑板 Float
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UKFC_AICommon_C::获取黑板_Float(class ATsBaseCharacter_C* 角色, const class FString& key, class UObject* __WorldContext, float* 值)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KFC_AICommon_C", "获取黑板 Float");
+
+	Params::KFC_AICommon_C_获取黑板_Float Parms{};
+
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+	Parms.__WorldContext = __WorldContext;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (值 != nullptr)
+		*值 = Parms.值;
+}
+
+
+// Function KFC_AICommon.KFC_AICommon_C.设置黑板Float
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// float                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UKFC_AICommon_C::设置黑板Float(class ATsBaseCharacter_C* 角色, const class FString& key, float 值, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KFC_AICommon_C", "设置黑板Float");
+
+	Params::KFC_AICommon_C_设置黑板Float Parms{};
+
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+	Parms.值 = 值;
+	Parms.__WorldContext = __WorldContext;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
 }
 

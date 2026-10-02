@@ -79,6 +79,18 @@ public:
 };
 DUMPER7_ASSERTS_AnimNotifyStateEffect_C_AttachEffectToWeapon;
 
+// Function AnimNotifyStateEffect.AnimNotifyStateEffect_C.StopEffectInternal
+// 0x0028 (0x0028 - 0x0000)
+struct AnimNotifyStateEffect_C_StopEffectInternal final
+{
+public:
+	class USkeletalMeshComponent*                 meshComp;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimSequenceBase*                      animation;                                         // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 reason;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_AnimNotifyStateEffect_C_StopEffectInternal;
+
 // Function AnimNotifyStateEffect.AnimNotifyStateEffect_C.GetNotifyName
 // 0x0010 (0x0010 - 0x0000)
 struct AnimNotifyStateEffect_C_GetNotifyName final

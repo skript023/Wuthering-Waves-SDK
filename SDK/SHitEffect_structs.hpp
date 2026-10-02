@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "EHitAnim_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "EVelocityCurveType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SHitWhirlpool_structs.hpp"
 
 
@@ -20,7 +20,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SHitEffect.SHitEffect
-// 0x00A0 (0x00A0 - 0x0000)
+// 0x00A4 (0x00A4 - 0x0000)
 struct FSHitEffect final
 {
 public:
@@ -40,14 +40,16 @@ public:
 	float                                         上升标量_50_D13A3F10480B10C0AF74B8B876166E9A;      // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         弧顶标量_51_87A0628E4AB279D6431674B97DEA37F0;      // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         下落标量_52_BA8EB7004757A4A6235D24AC8BE245AD;      // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                落地反弹_34_88FE3D3640F5D544CAB685854CEADD27;      // 0x0048(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         落地反弹上升重力标量_53_6792C67B4ED7CEDD49408BA8DF14C3B2; // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         落地反弹弧顶重力标量_54_AA0534354653084B802241A67FB89159; // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         落地反弹下落重力标量_55_BB52CA8844625D355234228DE9820B72; // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         落地反弹速度阈值_58_9E334D9847405C0081221AB2391D9776; // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         落地反弹时长_61_5D206DD54780F5632AEEDC86F35A8B5E;  // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSHitWhirlpool                         地面受击滞空_104_A62A966B46FE474D7153B3823A32BA5F; // 0x0068(0x001C)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSHitWhirlpool                         空中受击滞空_106_2FB4F79849299BEE9382DA807188B19B; // 0x0084(0x001C)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          到达弧顶清除速度_109_06549284478D89892FAABD9DE8BA39B7; // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                落地反弹_34_88FE3D3640F5D544CAB685854CEADD27;      // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         落地反弹上升重力标量_53_6792C67B4ED7CEDD49408BA8DF14C3B2; // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         落地反弹弧顶重力标量_54_AA0534354653084B802241A67FB89159; // 0x005C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         落地反弹下落重力标量_55_BB52CA8844625D355234228DE9820B72; // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         落地反弹速度阈值_58_9E334D9847405C0081221AB2391D9776; // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         落地反弹时长_61_5D206DD54780F5632AEEDC86F35A8B5E;  // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSHitWhirlpool                         地面受击滞空_104_A62A966B46FE474D7153B3823A32BA5F; // 0x006C(0x001C)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSHitWhirlpool                         空中受击滞空_106_2FB4F79849299BEE9382DA807188B19B; // 0x0088(0x001C)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSHitEffect;
 

@@ -26,9 +26,9 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	class FString GetTagDebugStrings();
-	void ReceiveBeginPlay();
 	void ExecuteUbergraph_TsBaseItem(int32 EntryPoint);
+	void ReceiveBeginPlay();
+	class FString GetTagDebugStrings();
 
 public:
 	static class UClass* StaticClass()

@@ -21,9 +21,10 @@ namespace SDK
 class UKuroDataTableFunctionLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	static void AddOnDataTableChangedDelegate(class UDataTable* Table, class UObject* Object, const TDelegate<void()>& OnDataTableChanged);
+	static int32 AddOnDataTableChangedDelegate(class UDataTable* Table, class UObject* Object, const TDelegate<void()>& OnDataTableChanged);
 	static bool GetDataTableRowFromName(class UDataTable* Table, const class FString& RowName, struct FTableRowBase* OutRow);
 	static void RemoveOnDataTableChangedDelegate(class UDataTable* Table, class UObject* Object);
+	static void RemoveOnDataTableChangedDelegateById(int32 HandleId);
 
 public:
 	static class UClass* StaticClass()

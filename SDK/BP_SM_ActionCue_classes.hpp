@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "SMSystem_classes.hpp"
 
 
@@ -17,11 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SM_ActionCue.BP_SM_ActionCue_C
-// 0x0010 (0x0040 - 0x0030)
+// 0x0020 (0x0050 - 0x0030)
 class UBP_SM_ActionCue_C final : public UASMAction
 {
 public:
 	TArray<int64>                                 CueIds;                                            // 0x0030(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FGameplayTag                           ConfigReplaceTag;                                  // 0x0040(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

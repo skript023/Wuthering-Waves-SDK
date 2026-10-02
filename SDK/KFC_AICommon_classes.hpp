@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "ECamp_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "ECamp_structs.hpp"
 #include "ERelation_structs.hpp"
 
 
@@ -67,6 +67,8 @@ public:
 	class UKuroBooleanEventBinder* 创建AIC监听(class UObject* AIC自身对象, const TDelegate<void(bool bContent)>& Event, class UObject* __WorldContext);
 	class UKuroPerceptionEventBinder* 创建仇恨感知监听(class UObject* AIC自身对象, const TDelegate<void(const TArray<class AActor*>& AddActor, const TArray<class AActor*>& RemoveActor, const TArray<int32>& RemoveActorIds, int32 Num)>& Event1, class UObject* __WorldContext);
 	class UKuroActorEventBinder* 创建物件破坏监听(class UObject* AIC自身对象, const TDelegate<void(class AActor* Actor, bool bContent)>& Event, class UObject* __WorldContext);
+	void 获取黑板_Float(class ATsBaseCharacter_C* 角色, const class FString& key, class UObject* __WorldContext, float* 值);
+	void 设置黑板Float(class ATsBaseCharacter_C* 角色, const class FString& key, float 值, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

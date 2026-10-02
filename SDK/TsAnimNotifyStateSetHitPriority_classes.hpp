@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateSetHitPriority.TsAnimNotifyStateSetHitPriority_C
-// 0x0008 (0x0050 - 0x0048)
-class UTsAnimNotifyStateSetHitPriority_C final : public UKuroAnimNotifyState
+// 0x0008 (0x0060 - 0x0058)
+class UTsAnimNotifyStateSetHitPriority_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	int32                                         HitPriority;                                       // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	int32                                         HitPriority;                                       // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

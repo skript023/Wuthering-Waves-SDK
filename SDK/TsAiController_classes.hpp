@@ -73,6 +73,8 @@ public:
 	void AicApplyBuffToTarget(int32 targetId, int64 buffId);
 	void AddLevelVarBoolEventBinder(const struct FSAiLevelVar& levelVar, class UKuroBooleanEventBinder* eventBinder);
 	void AddLevelVarIntEventBinder(const struct FSAiLevelVar& levelVar, class UKuroIntEventBinder* eventBinder);
+	void 渲染状态改变时(bool wasRendered);
+	void BindPlayerDamageEvents();
 
 public:
 	static class UClass* StaticClass()

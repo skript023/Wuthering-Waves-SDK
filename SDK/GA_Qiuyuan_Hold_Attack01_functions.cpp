@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_Qiuyuan_Hold_Attack01.GA_Qiuyuan_Hold_Attack01_C.ExecuteUbergraph_GA_Qiuyuan_Hold_Attack01
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

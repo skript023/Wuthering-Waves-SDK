@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum EInitialVelocityDirection.EInitialVelocityDirection
-// NumValues: 0x000E
+// NumValues: 0x0011
 enum class EInitialVelocityDirection : uint8
 {
 	NewEnumerator0                           = 0,
@@ -31,7 +31,10 @@ enum class EInitialVelocityDirection : uint8
 	NewEnumerator11                          = 10,
 	NewEnumerator12                          = 11,
 	NewEnumerator13                          = 12,
-	EInitialVelocityDirection_MAX            = 13,
+	NewEnumerator14                          = 13,
+	NewEnumerator15                          = 14,
+	NewEnumerator16                          = 15,
+	EInitialVelocityDirection_MAX            = 16,
 };
 
 }

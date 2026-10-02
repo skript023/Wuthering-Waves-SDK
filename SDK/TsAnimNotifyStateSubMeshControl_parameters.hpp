@@ -37,5 +37,14 @@ public:
 };
 DUMPER7_ASSERTS_TsAnimNotifyStateSubMeshControl_C_K2_NotifyBegin;
 
+// Function TsAnimNotifyStateSubMeshControl.TsAnimNotifyStateSubMeshControl_C.GetNotifyName
+// 0x0010 (0x0010 - 0x0000)
+struct TsAnimNotifyStateSubMeshControl_C_GetNotifyName final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsAnimNotifyStateSubMeshControl_C_GetNotifyName;
+
 }
 

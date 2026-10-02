@@ -18,14 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C
-// 0x0010 (0x0598 - 0x0588)
+// 0x0010 (0x05E0 - 0x05D0)
 class UGA_QiuYuan_Skill_Land_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_QiuYuan_Skill_Land_C;            // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          落地攻击;                                          // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_591[0x3];                                      // 0x0591(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BlockTime;                                         // 0x0594(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_QiuYuan_Skill_Land_C;            // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          落地攻击;                                          // 0x05D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5D9[0x3];                                      // 0x05D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BlockTime;                                         // 0x05DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_QiuYuan_Skill_Land(int32 EntryPoint);
@@ -36,16 +36,16 @@ public:
 	void OnInterrupted_5D118C384AE61F1C80292E812D950E0A();
 	void OnCancelled_5D118C384AE61F1C80292E812D950E0A();
 	void OnTick_5D118C384AE61F1C80292E812D950E0A();
-	void OnCompleted_5D118C384AE61F1C80292E81C8193FCE();
-	void OnBlendOut_5D118C384AE61F1C80292E81C8193FCE();
-	void OnInterrupted_5D118C384AE61F1C80292E81C8193FCE();
-	void OnCancelled_5D118C384AE61F1C80292E81C8193FCE();
-	void OnTick_5D118C384AE61F1C80292E81C8193FCE();
 	void OnCompleted_5D118C384AE61F1C80292E815258B1FC();
 	void OnBlendOut_5D118C384AE61F1C80292E815258B1FC();
 	void OnInterrupted_5D118C384AE61F1C80292E815258B1FC();
 	void OnCancelled_5D118C384AE61F1C80292E815258B1FC();
 	void OnTick_5D118C384AE61F1C80292E815258B1FC();
+	void OnCompleted_5D118C384AE61F1C80292E81C8193FCE();
+	void OnBlendOut_5D118C384AE61F1C80292E81C8193FCE();
+	void OnInterrupted_5D118C384AE61F1C80292E81C8193FCE();
+	void OnCancelled_5D118C384AE61F1C80292E81C8193FCE();
+	void OnTick_5D118C384AE61F1C80292E81C8193FCE();
 
 public:
 	static class UClass* StaticClass()

@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // UserDefinedEnum ECommonQteViewType_Drag.ECommonQteViewType_Drag
-// NumValues: 0x0007
+// NumValues: 0x000B
 enum class ECommonQteViewType_Drag : uint8
 {
 	NewEnumerator0                           = 0,
@@ -24,7 +24,11 @@ enum class ECommonQteViewType_Drag : uint8
 	NewEnumerator3                           = 3,
 	NewEnumerator4                           = 4,
 	NewEnumerator5                           = 5,
-	ECommonQteViewType_MAX                   = 6,
+	NewEnumerator6                           = 6,
+	NewEnumerator7                           = 7,
+	NewEnumerator8                           = 8,
+	NewEnumerator9                           = 9,
+	ECommonQteViewType_MAX                   = 10,
 };
 
 }

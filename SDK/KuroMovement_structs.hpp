@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "KuroVehicle_structs.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -48,6 +49,29 @@ enum class EClimbingArriveType : uint8
 	EClimbingArriveType_MAX                  = 5,
 };
 
+// Enum KuroMovement.EKDMCustomMovement
+// NumValues: 0x0011
+enum class EKDMCustomMovement : uint8
+{
+	Climb                                    = 0,
+	Swim                                     = 1,
+	Glide                                    = 2,
+	Pendulum                                 = 3,
+	Slide                                    = 4,
+	UpToWalkOnWater                          = 5,
+	Leisure                                  = 6,
+	Soar                                     = 7,
+	Ski                                      = 8,
+	Roll                                     = 9,
+	Kite                                     = 10,
+	Ride                                     = 11,
+	RailSlide                                = 12,
+	SplineClimb                              = 13,
+	Swing                                    = 14,
+	Floating                                 = 15,
+	EKDMCustomMovement_MAX                   = 16,
+};
+
 // Enum KuroMovement.EKDMRecordType
 // NumValues: 0x0007
 enum class EKDMRecordType : uint8
@@ -71,6 +95,17 @@ enum class EKDMDrawDebugType : uint8
 	EKDMDrawDebugType_MAX                    = 3,
 };
 
+// Enum KuroMovement.EMoveSlideType
+// NumValues: 0x0005
+enum class EMoveSlideType : uint8
+{
+	Free                                     = 0,
+	Planar                                   = 1,
+	RemovePositive                           = 2,
+	NoSlide                                  = 3,
+	EMoveSlideType_MAX                       = 4,
+};
+
 // Enum KuroMovement.EMoveHitType
 // NumValues: 0x0004
 enum class EMoveHitType : uint8
@@ -80,32 +115,6 @@ enum class EMoveHitType : uint8
 	Floor                                    = 2,
 	EMoveHitType_MAX                         = 3,
 };
-
-// ScriptStruct KuroMovement.BaseRecord
-// 0x0044 (0x0044 - 0x0000)
-struct FBaseRecord final
-{
-public:
-	struct FVector                                ActorLocation;                                     // 0x0000(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               ActorRotation;                                     // 0x000C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                MeshLocation;                                      // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CustomVector01;                                    // 0x0024(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CustomVector02;                                    // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EMovementMode                                 MovementMode;                                      // 0x003C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x7];                                       // 0x003D(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBaseRecord;
-
-// ScriptStruct KuroMovement.DebugModifyRecord
-// 0x0058 (0x0058 - 0x0000)
-struct FDebugModifyRecord final
-{
-public:
-	class FString                                 Context;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FBaseRecord                            Record;                                            // 0x0010(0x0044)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FDebugModifyRecord;
 
 // ScriptStruct KuroMovement.OverlapActorRecord
 // 0x0018 (0x0018 - 0x0000)
@@ -120,26 +129,54 @@ public:
 };
 DUMPER7_ASSERTS_FOverlapActorRecord;
 
+// ScriptStruct KuroMovement.BaseRecord
+// 0x0070 (0x0070 - 0x0000)
+struct FBaseRecord final
+{
+public:
+	struct FVectorDouble                          ActorLocation;                                     // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               ActorRotation;                                     // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          MeshLocation;                                      // 0x0028(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CustomVector01;                                    // 0x0040(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CustomVector02;                                    // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMovementMode                                 MovementMode;                                      // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKDMCustomMovement                            CustomMovementMode;                                // 0x0059(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsVehicle;                                        // 0x005A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKuroVehicleMovementMode                      VehicleMovementMode;                               // 0x005B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5C[0x14];                                      // 0x005C(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBaseRecord;
+
+// ScriptStruct KuroMovement.DebugModifyRecord
+// 0x0080 (0x0080 - 0x0000)
+struct FDebugModifyRecord final
+{
+public:
+	class FString                                 Context;                                           // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FBaseRecord                            Record;                                            // 0x0010(0x0070)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FDebugModifyRecord;
+
 // ScriptStruct KuroMovement.DebugTickGroupRecord
-// 0x0058 (0x0058 - 0x0000)
+// 0x0080 (0x0080 - 0x0000)
 struct FDebugTickGroupRecord final
 {
 public:
-	struct FBaseRecord                            Record;                                            // 0x0000(0x0044)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FDebugModifyRecord>             ModifyRecords;                                     // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FBaseRecord                            Record;                                            // 0x0000(0x0070)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<struct FDebugModifyRecord>             ModifyRecords;                                     // 0x0070(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FDebugTickGroupRecord;
 
 // ScriptStruct KuroMovement.SingleFrameDebugInfo
-// 0x0108 (0x0108 - 0x0000)
+// 0x0158 (0x0158 - 0x0000)
 struct FSingleFrameDebugInfo final
 {
 public:
 	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDebugTickGroupRecord                  TickStartRecord;                                   // 0x0008(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FDebugTickGroupRecord                  PositionTickEnd;                                   // 0x0060(0x0058)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<ETickingGroup, struct FDebugTickGroupRecord> TickGroupDebugPositionInfo;                    // 0x00B8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FDebugTickGroupRecord                  TickStartRecord;                                   // 0x0008(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FDebugTickGroupRecord                  PositionTickEnd;                                   // 0x0088(0x0080)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<ETickingGroup, struct FDebugTickGroupRecord> TickGroupDebugPositionInfo;                    // 0x0108(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FSingleFrameDebugInfo;
 

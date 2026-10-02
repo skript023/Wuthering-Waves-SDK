@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Role_Move_F_Net.GA_Role_Move_F_Net_C
-// 0x0010 (0x0598 - 0x0588)
+// 0x0010 (0x05E0 - 0x05D0)
 class UGA_Role_Move_F_Net_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_Move_F_Net_C;               // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_Move_F_Net_C;               // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x05D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Role_Move_F_Net(int32 EntryPoint);

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function BP_Fx_Control_Obj.BP_Fx_Control_Obj_C.ExecuteUbergraph_BP_Fx_Control_Obj
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_Fx_Control_Obj_C::ExecuteUbergraph_BP_Fx_Control_Obj(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Fx_Control_Obj_C", "ExecuteUbergraph_BP_Fx_Control_Obj");
-
-	Params::BP_Fx_Control_Obj_C_ExecuteUbergraph_BP_Fx_Control_Obj Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_Fx_Control_Obj.BP_Fx_Control_Obj_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -52,6 +32,26 @@ void ABP_Fx_Control_Obj_C::ReceiveTick(float DeltaSeconds)
 	Params::BP_Fx_Control_Obj_C_ReceiveTick Parms{};
 
 	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Fx_Control_Obj.BP_Fx_Control_Obj_C.ExecuteUbergraph_BP_Fx_Control_Obj
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Fx_Control_Obj_C::ExecuteUbergraph_BP_Fx_Control_Obj(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Fx_Control_Obj_C", "ExecuteUbergraph_BP_Fx_Control_Obj");
+
+	Params::BP_Fx_Control_Obj_C_ExecuteUbergraph_BP_Fx_Control_Obj Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

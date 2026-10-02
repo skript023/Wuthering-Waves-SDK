@@ -17,180 +17,136 @@
 namespace SDK
 {
 
-// Function GA_Base.GA_Base_C.移除召唤物
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Base.GA_Base_C.ExecuteUbergraph_GA_Base
+// (Final, UbergraphFunction)
 // Parameters:
-// int32                                   召唤者ID                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   移除召唤物ID                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::移除召唤物(int32 召唤者ID, int32 移除召唤物ID)
+void UGA_Base_C::ExecuteUbergraph_GA_Base(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "移除召唤物");
+		Func = Class->GetFunction("GA_Base_C", "ExecuteUbergraph_GA_Base");
 
-	Params::GA_Base_C_移除召唤物 Parms{};
+	Params::GA_Base_C_ExecuteUbergraph_GA_Base Parms{};
 
-	Parms.召唤者ID = 召唤者ID;
-	Parms.移除召唤物ID = 移除召唤物ID;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.根据子弹实体ID销毁子弹
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Base.GA_Base_C.K2_OnEndAbility
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   子弹ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    isSummonChildBullet                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Base_C::根据子弹实体ID销毁子弹(int32 子弹ID, bool isSummonChildBullet)
+void UGA_Base_C::K2_OnEndAbility(bool bWasCancelled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "根据子弹实体ID销毁子弹");
+		Func = Class->GetFunction("GA_Base_C", "K2_OnEndAbility");
 
-	Params::GA_Base_C_根据子弹实体ID销毁子弹 Parms{};
+	Params::GA_Base_C_K2_OnEndAbility Parms{};
 
-	Parms.子弹ID = 子弹ID;
-	Parms.isSummonChildBullet = isSummonChildBullet;
+	Parms.bWasCancelled = bWasCancelled;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.获取角色ID
+// Function GA_Base.GA_Base_C.K2_ActivateAbility
+// (Event, Protected, BlueprintEvent)
+
+void UGA_Base_C::K2_ActivateAbility()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "K2_ActivateAbility");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Base.GA_Base_C.获取施法者
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float*                                  RoleID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C**              施法者                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取角色ID(class ATsBaseCharacter_C* 目标, float* RoleID)
+void UGA_Base_C::获取施法者(class ATsBaseCharacter_C** 施法者)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取角色ID");
+		Func = Class->GetFunction("GA_Base_C", "获取施法者");
 
-	Params::GA_Base_C_获取角色ID Parms{};
-
-	Parms.目标 = 目标;
+	Params::GA_Base_C_获取施法者 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (RoleID != nullptr)
-		*RoleID = Parms.RoleID;
+	if (施法者 != nullptr)
+		*施法者 = Parms.施法者;
 }
 
 
-// Function GA_Base.GA_Base_C.获取游戏事件管理器
+// Function GA_Base.GA_Base_C.获取施法载具
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class UBP_EventManager_C**              事件管理器                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class ATsBaseVehicle_C**                施法载具                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取游戏事件管理器(class UBP_EventManager_C** 事件管理器)
+void UGA_Base_C::获取施法载具(class ATsBaseVehicle_C** 施法载具)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取游戏事件管理器");
+		Func = Class->GetFunction("GA_Base_C", "获取施法载具");
 
-	Params::GA_Base_C_获取游戏事件管理器 Parms{};
+	Params::GA_Base_C_获取施法载具 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (事件管理器 != nullptr)
-		*事件管理器 = Parms.事件管理器;
+	if (施法载具 != nullptr)
+		*施法载具 = Parms.施法载具;
 }
 
 
-// Function GA_Base.GA_Base_C.获取黑板String
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function GA_Base.GA_Base_C.获取施法单位EntityId
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class FString*                          String                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+// int32*                                  EntityId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, class FString* String)
+void UGA_Base_C::获取施法单位EntityId(int32* EntityId)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取黑板String");
+		Func = Class->GetFunction("GA_Base_C", "获取施法单位EntityId");
 
-	Params::GA_Base_C_获取黑板String Parms{};
-
-	Parms.角色 = 角色;
-	Parms.Key = std::move(Key);
+	Params::GA_Base_C_获取施法单位EntityId Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (String != nullptr)
-		*String = std::move(Parms.String);
+	if (EntityId != nullptr)
+		*EntityId = Parms.EntityId;
 }
 
 
-// Function GA_Base.GA_Base_C.设置黑板String
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const class FString&                    值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-
-void UGA_Base_C::设置黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, const class FString& 值)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置黑板String");
-
-	Params::GA_Base_C_设置黑板String Parms{};
-
-	Parms.角色 = 角色;
-	Parms.Key = std::move(Key);
-	Parms.值 = std::move(值);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Base.GA_Base_C.子弹冻结
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FString&                    子弹Id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// float                                   冻结时间                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::子弹冻结(const class FString& 子弹Id, float 冻结时间)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "子弹冻结");
-
-	Params::GA_Base_C_子弹冻结 Parms{};
-
-	Parms.子弹Id = std::move(子弹Id);
-	Parms.冻结时间 = 冻结时间;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Base.GA_Base_C.获取当前GA的技能数据名
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function GA_Base.GA_Base_C.获取当前技能配置Id
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class FString*                          当前技能数据名_0                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取当前GA的技能数据名(class FString* 当前技能数据名_0)
+void UGA_Base_C::获取当前技能配置Id(class FString* 当前技能数据名_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取当前GA的技能数据名");
+		Func = Class->GetFunction("GA_Base_C", "获取当前技能配置Id");
 
-	Params::GA_Base_C_获取当前GA的技能数据名 Parms{};
+	Params::GA_Base_C_获取当前技能配置Id Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -199,211 +155,245 @@ void UGA_Base_C::获取当前GA的技能数据名(class FString* 当前技能数
 }
 
 
-// Function GA_Base.GA_Base_C.获取当前操作角色Actor
+// Function GA_Base.GA_Base_C.获取当前技能配置
+// (Protected, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// struct FSSkillInfo*                     当前技能数据_0                                         (Parm, OutParm, HasGetValueTypeHash)
+
+void UGA_Base_C::获取当前技能配置(struct FSSkillInfo* 当前技能数据_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取当前技能配置");
+
+	Params::GA_Base_C_获取当前技能配置 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (当前技能数据_0 != nullptr)
+		*当前技能数据_0 = std::move(Parms.当前技能数据_0);
+}
+
+
+// Function GA_Base.GA_Base_C.获取技能动画
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   编号                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UAnimMontage**                    动画                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::获取技能动画(int32 编号, class UAnimMontage** 动画)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取技能动画");
+
+	Params::GA_Base_C_获取技能动画 Parms{};
+
+	Parms.编号 = 编号;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (动画 != nullptr)
+		*动画 = Parms.动画;
+}
+
+
+// Function GA_Base.GA_Base_C.获取技能所有动画
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// TArray<class UAnimMontage*>*            技能动画数组                                           (Parm, OutParm)
+
+void UGA_Base_C::获取技能所有动画(TArray<class UAnimMontage*>* 技能动画数组)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取技能所有动画");
+
+	Params::GA_Base_C_获取技能所有动画 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (技能动画数组 != nullptr)
+		*技能动画数组 = std::move(Parms.技能动画数组);
+}
+
+
+// Function GA_Base.GA_Base_C.获取技能标签
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// TArray<struct FGameplayTag>*            技能标签                                               (Parm, OutParm)
+
+void UGA_Base_C::获取技能标签(TArray<struct FGameplayTag>* 技能标签)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取技能标签");
+
+	Params::GA_Base_C_获取技能标签 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (技能标签 != nullptr)
+		*技能标签 = std::move(Parms.技能标签);
+}
+
+
+// Function GA_Base.GA_Base_C.获取AbilitySystemComponent
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C**              当前角色                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBaseAbilitySystemComponent**     AbilitySystemComponent                                 (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取当前操作角色Actor(class ATsBaseCharacter_C** 当前角色)
+void UGA_Base_C::获取AbilitySystemComponent(class UBaseAbilitySystemComponent** AbilitySystemComponent)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取当前操作角色Actor");
+		Func = Class->GetFunction("GA_Base_C", "获取AbilitySystemComponent");
 
-	Params::GA_Base_C_获取当前操作角色Actor Parms{};
+	Params::GA_Base_C_获取AbilitySystemComponent Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (当前角色 != nullptr)
-		*当前角色 = Parms.当前角色;
+	if (AbilitySystemComponent != nullptr)
+		*AbilitySystemComponent = Parms.AbilitySystemComponent;
 }
 
 
-// Function GA_Base.GA_Base_C.设置黑板Vector
+// Function GA_Base.GA_Base_C.获取技能目标
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor**                          技能目标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::获取技能目标(class ATsBaseCharacter_C* 目标, class AActor** 技能目标)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取技能目标");
+
+	Params::GA_Base_C_获取技能目标 Parms{};
+
+	Parms.目标 = 目标;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (技能目标 != nullptr)
+		*技能目标 = Parms.技能目标;
+}
+
+
+// Function GA_Base.GA_Base_C.获取技能目标距离
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// bool                                    平面2D                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float*                                  距离                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::获取技能目标距离(bool 平面2D, float* 距离)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取技能目标距离");
+
+	Params::GA_Base_C_获取技能目标距离 Parms{};
+
+	Parms.平面2D = 平面2D;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (距离 != nullptr)
+		*距离 = Parms.距离;
+}
+
+
+// Function GA_Base.GA_Base_C.是否拥有任意标签
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTagContainer&     标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
+// bool*                                   是否存在                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Base_C::是否拥有任意标签(class ATsBaseCharacter_C* 目标, const struct FGameplayTagContainer& 标签, bool* 是否存在)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "是否拥有任意标签");
+
+	Params::GA_Base_C_是否拥有任意标签 Parms{};
+
+	Parms.目标 = 目标;
+	Parms.标签 = std::move(标签);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (是否存在 != nullptr)
+		*是否存在 = Parms.是否存在;
+}
+
+
+// Function GA_Base.GA_Base_C.设置强制速度
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const struct FVectorDouble&             值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             速度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::设置黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, const struct FVectorDouble& 值)
+void UGA_Base_C::设置强制速度(const struct FVectorDouble& 速度)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置黑板Vector");
+		Func = Class->GetFunction("GA_Base_C", "设置强制速度");
 
-	Params::GA_Base_C_设置黑板Vector Parms{};
+	Params::GA_Base_C_设置强制速度 Parms{};
 
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
-	Parms.值 = std::move(值);
+	Parms.速度 = std::move(速度);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.获取黑板Vector
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// struct FVectorDouble*                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::获取黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, struct FVectorDouble* 值)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取黑板Vector");
-
-	Params::GA_Base_C_获取黑板Vector Parms{};
-
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (值 != nullptr)
-		*值 = std::move(Parms.值);
-}
-
-
-// Function GA_Base.GA_Base_C.设置黑板EntityId
+// Function GA_Base.GA_Base_C.设置通道的碰撞响应
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int32                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UPrimitiveComponent*              目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECollisionChannel                       Channel                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECollisionResponse                      NewResponse                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::设置黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值)
+void UGA_Base_C::设置通道的碰撞响应(class UPrimitiveComponent* 目标, ECollisionChannel Channel, ECollisionResponse NewResponse)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置黑板EntityId");
+		Func = Class->GetFunction("GA_Base_C", "设置通道的碰撞响应");
 
-	Params::GA_Base_C_设置黑板EntityId Parms{};
+	Params::GA_Base_C_设置通道的碰撞响应 Parms{};
 
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
-	Parms.值 = 值;
+	Parms.目标 = 目标;
+	Parms.Channel = Channel;
+	Parms.NewResponse = NewResponse;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.获取黑板EntityId
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int32*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-
-void UGA_Base_C::获取黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取黑板EntityId");
-
-	Params::GA_Base_C_获取黑板EntityId Parms{};
-
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (值 != nullptr)
-		*值 = Parms.值;
-}
-
-
-// Function GA_Base.GA_Base_C.查询特定子弹数量
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FName                             子弹名字                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32*                                  子弹数量                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::查询特定子弹数量(class FName 子弹名字, int32* 子弹数量)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "查询特定子弹数量");
-
-	Params::GA_Base_C_查询特定子弹数量 Parms{};
-
-	Parms.子弹名字 = 子弹名字;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (子弹数量 != nullptr)
-		*子弹数量 = Parms.子弹数量;
-}
-
-
-// Function GA_Base.GA_Base_C.获取当前技能攻速
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float*                                  SpeedRatio                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::获取当前技能攻速(float* SpeedRatio)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取当前技能攻速");
-
-	Params::GA_Base_C_获取当前技能攻速 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (SpeedRatio != nullptr)
-		*SpeedRatio = Parms.SpeedRatio;
-}
-
-
-// Function GA_Base.GA_Base_C.通过ID获取对象Buff层数
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    enforceOnGoingCheck                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// int32*                                  层数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::通过ID获取对象Buff层数(int64 buffId, bool enforceOnGoingCheck, int32* 层数)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "通过ID获取对象Buff层数");
-
-	Params::GA_Base_C_通过ID获取对象Buff层数 Parms{};
-
-	Parms.buffId = buffId;
-	Parms.enforceOnGoingCheck = enforceOnGoingCheck;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (层数 != nullptr)
-		*层数 = Parms.层数;
-}
-
-
-// Function GA_Base.GA_Base_C.施法者移除标签
+// Function GA_Base.GA_Base_C.通过Tag移除自身Buff
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
-void UGA_Base_C::施法者移除标签(const struct FGameplayTag& tag)
+void UGA_Base_C::通过Tag移除自身Buff(const struct FGameplayTag& tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "施法者移除标签");
+		Func = Class->GetFunction("GA_Base_C", "通过Tag移除自身Buff");
 
-	Params::GA_Base_C_施法者移除标签 Parms{};
+	Params::GA_Base_C_通过Tag移除自身Buff Parms{};
 
 	Parms.tag = std::move(tag);
 
@@ -411,464 +401,189 @@ void UGA_Base_C::施法者移除标签(const struct FGameplayTag& tag)
 }
 
 
-// Function GA_Base.GA_Base_C.施法者添加标签
+// Function GA_Base.GA_Base_C.通过 ID给对象添加Buff
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FGameplayTag&              Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               Buff对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int64                                   BuffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   Buff层数                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::施法者添加标签(const struct FGameplayTag& Tag)
+void UGA_Base_C::通过_ID给对象添加Buff(class ATsBaseCharacter_C* Buff对象, int64 BuffId, int32 Buff层数)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "施法者添加标签");
+		Func = Class->GetFunction("GA_Base_C", "通过 ID给对象添加Buff");
 
-	Params::GA_Base_C_施法者添加标签 Parms{};
+	Params::GA_Base_C_通过_ID给对象添加Buff Parms{};
 
-	Parms.Tag = std::move(Tag);
+	Parms.Buff对象 = Buff对象;
+	Parms.BuffId = BuffId;
+	Parms.Buff层数 = Buff层数;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.创建并播放特效
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class UObject*                    DA文件名                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FTransformDouble&          transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// bool                                    AttachToCharacter                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-int32 UGA_Base_C::创建并播放特效(const class UObject* DA文件名, const struct FTransformDouble& transform, bool AttachToCharacter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "创建并播放特效");
-
-	Params::GA_Base_C_创建并播放特效 Parms{};
-
-	Parms.DA文件名 = DA文件名;
-	Parms.transform = std::move(transform);
-	Parms.AttachToCharacter = AttachToCharacter;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GA_Base.GA_Base_C.获取两者距离
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class AActor*                           目标A                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           目标B                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-float UGA_Base_C::获取两者距离(class AActor* 目标A, class AActor* 目标B)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取两者距离");
-
-	Params::GA_Base_C_获取两者距离 Parms{};
-
-	Parms.目标A = 目标A;
-	Parms.目标B = 目标B;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function GA_Base.GA_Base_C.发送事件
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           发送目标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FGameplayTag&              事件Tag                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::发送事件(class AActor* 发送目标, const struct FGameplayTag& 事件Tag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "发送事件");
-
-	Params::GA_Base_C_发送事件 Parms{};
-
-	Parms.发送目标 = 发送目标;
-	Parms.事件Tag = std::move(事件Tag);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Base.GA_Base_C.结束异步任务
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class UGameplayTask*                    任务                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// bool*                                   有效                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Base_C::结束异步任务(class UGameplayTask* 任务, bool* 有效)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "结束异步任务");
-
-	Params::GA_Base_C_结束异步任务 Parms{};
-
-	Parms.任务 = 任务;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (有效 != nullptr)
-		*有效 = Parms.有效;
-}
-
-
-// Function GA_Base.GA_Base_C.设置当前技能打断等级
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   打断等级                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-
-void UGA_Base_C::设置当前技能打断等级(int32 打断等级)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置当前技能打断等级");
-
-	Params::GA_Base_C_设置当前技能打断等级 Parms{};
-
-	Parms.打断等级 = 打断等级;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Base.GA_Base_C.获取地面坐标点
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// const struct FVectorDouble&             指定点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   深度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FVectorDouble*                   地面坐标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   是否存在                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Base_C::获取地面坐标点(const struct FVectorDouble& 指定点, float 深度, struct FVectorDouble* 地面坐标, bool* 是否存在)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取地面坐标点");
-
-	Params::GA_Base_C_获取地面坐标点 Parms{};
-
-	Parms.指定点 = std::move(指定点);
-	Parms.深度 = 深度;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (地面坐标 != nullptr)
-		*地面坐标 = std::move(Parms.地面坐标);
-
-	if (是否存在 != nullptr)
-		*是否存在 = Parms.是否存在;
-}
-
-
-// Function GA_Base.GA_Base_C.获取目标Tag层数
+// Function GA_Base.GA_Base_C.获取Base属性值
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FGameplayTag&              Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-// int32*                                  层数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取目标Tag层数(class ATsBaseCharacter_C* 目标, const struct FGameplayTag& Tag, int32* 层数)
+void UGA_Base_C::获取Base属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取目标Tag层数");
+		Func = Class->GetFunction("GA_Base_C", "获取Base属性值");
 
-	Params::GA_Base_C_获取目标Tag层数 Parms{};
+	Params::GA_Base_C_获取Base属性值 Parms{};
 
 	Parms.目标 = 目标;
-	Parms.Tag = std::move(Tag);
+	Parms.属性id = 属性id;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (层数 != nullptr)
-		*层数 = Parms.层数;
+	if (属性值 != nullptr)
+		*属性值 = Parms.属性值;
 }
 
 
-// Function GA_Base.GA_Base_C.销毁特定子弹
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class FName                             子弹名字                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    是否召唤子子弹                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Base_C::销毁特定子弹(class FName 子弹名字, bool 是否召唤子子弹)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "销毁特定子弹");
-
-	Params::GA_Base_C_销毁特定子弹 Parms{};
-
-	Parms.子弹名字 = 子弹名字;
-	Parms.是否召唤子子弹 = 是否召唤子子弹;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Base.GA_Base_C.面向目标
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Base.GA_Base_C.获取Current属性值
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           面向目标_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::面向目标(class ATsBaseCharacter_C* 目标, class AActor* 面向目标_0)
+void UGA_Base_C::获取Current属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "面向目标");
+		Func = Class->GetFunction("GA_Base_C", "获取Current属性值");
 
-	Params::GA_Base_C_面向目标 Parms{};
+	Params::GA_Base_C_获取Current属性值 Parms{};
 
 	Parms.目标 = 目标;
-	Parms.面向目标_0 = 面向目标_0;
+	Parms.属性id = 属性id;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (属性值 != nullptr)
+		*属性值 = Parms.属性值;
 }
 
 
-// Function GA_Base.GA_Base_C.设置技能目标
+// Function GA_Base.GA_Base_C.通过 ID移除目标Buff
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           SkillTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int64                                   BuffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   移除层数                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::设置技能目标(class AActor* SkillTarget)
+void UGA_Base_C::通过_ID移除目标Buff(int64 BuffId, int32 移除层数, class ATsBaseCharacter_C* 目标)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置技能目标");
+		Func = Class->GetFunction("GA_Base_C", "通过 ID移除目标Buff");
 
-	Params::GA_Base_C_设置技能目标 Parms{};
+	Params::GA_Base_C_通过_ID移除目标Buff Parms{};
 
-	Parms.SkillTarget = SkillTarget;
+	Parms.BuffId = BuffId;
+	Parms.移除层数 = 移除层数;
+	Parms.目标 = 目标;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.获取黑板指定Key值关联对象
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// class ATsBaseCharacter_C**              对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Base_C::获取黑板指定Key值关联对象(class ATsBaseCharacter_C* 角色, const class FString& key, class ATsBaseCharacter_C** 对象, bool* 是否找到对象)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取黑板指定Key值关联对象");
-
-	Params::GA_Base_C_获取黑板指定Key值关联对象 Parms{};
-
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (对象 != nullptr)
-		*对象 = Parms.对象;
-
-	if (是否找到对象 != nullptr)
-		*是否找到对象 = Parms.是否找到对象;
-}
-
-
-// Function GA_Base.GA_Base_C.根据实体ID获取对象
+// Function GA_Base.GA_Base_C.设置材质效果
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   实体ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class ATsBaseCharacter_C**              对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class ATsBaseCharacter_C*               设置对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UPD_CharacterControllerData_C*    材质配置                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::根据实体ID获取对象(int32 实体ID, class ATsBaseCharacter_C** 对象, bool* 是否找到对象)
+void UGA_Base_C::设置材质效果(class ATsBaseCharacter_C* 设置对象, class UPD_CharacterControllerData_C* 材质配置, int32* Handle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "根据实体ID获取对象");
+		Func = Class->GetFunction("GA_Base_C", "设置材质效果");
 
-	Params::GA_Base_C_根据实体ID获取对象 Parms{};
+	Params::GA_Base_C_设置材质效果 Parms{};
 
-	Parms.实体ID = 实体ID;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (对象 != nullptr)
-		*对象 = Parms.对象;
-
-	if (是否找到对象 != nullptr)
-		*是否找到对象 = Parms.是否找到对象;
-}
-
-
-// Function GA_Base.GA_Base_C.获取实体ID
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class ATsBaseCharacter_C*               对象                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32*                                  实体ID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::获取实体ID(class ATsBaseCharacter_C* 对象, int32* 实体ID)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取实体ID");
-
-	Params::GA_Base_C_获取实体ID Parms{};
-
-	Parms.对象 = 对象;
+	Parms.设置对象 = 设置对象;
+	Parms.材质配置 = 材质配置;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (实体ID != nullptr)
-		*实体ID = Parms.实体ID;
+	if (Handle != nullptr)
+		*Handle = Parms.Handle;
 }
 
 
-// Function GA_Base.GA_Base_C.设置黑板Long
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int64                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::设置黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64 值)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置黑板Long");
-
-	Params::GA_Base_C_设置黑板Long Parms{};
-
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
-	Parms.值 = 值;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Base.GA_Base_C.获取黑板Long
+// Function GA_Base.GA_Base_C.创建子弹
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int64*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               施法者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    子弹ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FTransformDouble&          初始变换                                               (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// const struct FVectorDouble&             目标点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  子弹                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64* 值)
+void UGA_Base_C::创建子弹(class ATsBaseCharacter_C* 施法者, const class FString& 子弹ID, const struct FTransformDouble& 初始变换, const struct FVectorDouble& 目标点, int32* 子弹)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取黑板Long");
+		Func = Class->GetFunction("GA_Base_C", "创建子弹");
 
-	Params::GA_Base_C_获取黑板Long Parms{};
+	Params::GA_Base_C_创建子弹 Parms{};
 
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
+	Parms.施法者 = 施法者;
+	Parms.子弹ID = std::move(子弹ID);
+	Parms.初始变换 = std::move(初始变换);
+	Parms.目标点 = std::move(目标点);
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (值 != nullptr)
-		*值 = Parms.值;
+	if (子弹 != nullptr)
+		*子弹 = Parms.子弹;
 }
 
 
-// Function GA_Base.GA_Base_C.设置黑板Int
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int32                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::设置黑板Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置黑板Int");
-
-	Params::GA_Base_C_设置黑板Int Parms{};
-
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
-	Parms.值 = 值;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_Base.GA_Base_C.获取黑板 Int
+// Function GA_Base.GA_Base_C.使用技能
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// int32*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               释放者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             技能ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           技能目标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FName                             Socket                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否成功释放                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 
-void UGA_Base_C::获取黑板_Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值)
+void UGA_Base_C::使用技能(class ATsBaseCharacter_C* 释放者, class FName 技能ID, class AActor* 技能目标, class FName Socket, bool* 是否成功释放)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取黑板 Int");
+		Func = Class->GetFunction("GA_Base_C", "使用技能");
 
-	Params::GA_Base_C_获取黑板_Int Parms{};
+	Params::GA_Base_C_使用技能 Parms{};
 
-	Parms.角色 = 角色;
-	Parms.key = std::move(key);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (值 != nullptr)
-		*值 = Parms.值;
-}
-
-
-// Function GA_Base.GA_Base_C.是否联网
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool*                                   联网                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Base_C::是否联网(bool* 联网)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "是否联网");
-
-	Params::GA_Base_C_是否联网 Parms{};
+	Parms.释放者 = 释放者;
+	Parms.技能ID = 技能ID;
+	Parms.技能目标 = 技能目标;
+	Parms.Socket = Socket;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (联网 != nullptr)
-		*联网 = Parms.联网;
+	if (是否成功释放 != nullptr)
+		*是否成功释放 = Parms.是否成功释放;
 }
 
 
@@ -906,205 +621,480 @@ void UGA_Base_C::召唤(int32 配置表ID, const struct FTransformDouble& 出生
 }
 
 
-// Function GA_Base.GA_Base_C.使用技能
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function GA_Base.GA_Base_C.是否联网
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               释放者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FName                             技能ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor*                           技能目标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class FName                             Socket                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool*                                   是否成功释放                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+// bool*                                   联网                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Base_C::使用技能(class ATsBaseCharacter_C* 释放者, class FName 技能ID, class AActor* 技能目标, class FName Socket, bool* 是否成功释放)
+void UGA_Base_C::是否联网(bool* 联网)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "使用技能");
+		Func = Class->GetFunction("GA_Base_C", "是否联网");
 
-	Params::GA_Base_C_使用技能 Parms{};
-
-	Parms.释放者 = 释放者;
-	Parms.技能ID = 技能ID;
-	Parms.技能目标 = 技能目标;
-	Parms.Socket = Socket;
+	Params::GA_Base_C_是否联网 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (是否成功释放 != nullptr)
-		*是否成功释放 = Parms.是否成功释放;
+	if (联网 != nullptr)
+		*联网 = Parms.联网;
 }
 
 
-// Function GA_Base.GA_Base_C.创建子弹
+// Function GA_Base.GA_Base_C.获取黑板 Int
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               施法者                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const class FString&                    子弹ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const struct FTransformDouble&          初始变换                                               (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// const struct FVectorDouble&             目标点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32*                                  子弹                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::创建子弹(class ATsBaseCharacter_C* 施法者, const class FString& 子弹ID, const struct FTransformDouble& 初始变换, const struct FVectorDouble& 目标点, int32* 子弹)
+void UGA_Base_C::获取黑板_Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "创建子弹");
+		Func = Class->GetFunction("GA_Base_C", "获取黑板 Int");
 
-	Params::GA_Base_C_创建子弹 Parms{};
+	Params::GA_Base_C_获取黑板_Int Parms{};
 
-	Parms.施法者 = 施法者;
-	Parms.子弹ID = std::move(子弹ID);
-	Parms.初始变换 = std::move(初始变换);
-	Parms.目标点 = std::move(目标点);
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (子弹 != nullptr)
-		*子弹 = Parms.子弹;
+	if (值 != nullptr)
+		*值 = Parms.值;
 }
 
 
-// Function GA_Base.GA_Base_C.设置材质效果
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ATsBaseCharacter_C*               设置对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UPD_CharacterControllerData_C*    材质配置                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32*                                  Handle                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::设置材质效果(class ATsBaseCharacter_C* 设置对象, class UPD_CharacterControllerData_C* 材质配置, int32* Handle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置材质效果");
-
-	Params::GA_Base_C_设置材质效果 Parms{};
-
-	Parms.设置对象 = 设置对象;
-	Parms.材质配置 = 材质配置;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (Handle != nullptr)
-		*Handle = Parms.Handle;
-}
-
-
-// Function GA_Base.GA_Base_C.通过 ID移除目标Buff
+// Function GA_Base.GA_Base_C.设置黑板Int
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int64                                   BuffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   移除层数                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::通过_ID移除目标Buff(int64 BuffId, int32 移除层数, class ATsBaseCharacter_C* 目标)
+void UGA_Base_C::设置黑板Int(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "通过 ID移除目标Buff");
+		Func = Class->GetFunction("GA_Base_C", "设置黑板Int");
 
-	Params::GA_Base_C_通过_ID移除目标Buff Parms{};
+	Params::GA_Base_C_设置黑板Int Parms{};
 
-	Parms.BuffId = BuffId;
-	Parms.移除层数 = 移除层数;
-	Parms.目标 = 目标;
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+	Parms.值 = 值;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.获取Current属性值
+// Function GA_Base.GA_Base_C.获取黑板Long
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int64*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void UGA_Base_C::获取黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64* 值)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取黑板Long");
+
+	Params::GA_Base_C_获取黑板Long Parms{};
+
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (值 != nullptr)
+		*值 = Parms.值;
+}
+
+
+// Function GA_Base.GA_Base_C.设置黑板Long
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int64                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::设置黑板Long(class ATsBaseCharacter_C* 角色, const class FString& key, int64 值)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "设置黑板Long");
+
+	Params::GA_Base_C_设置黑板Long Parms{};
+
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+	Parms.值 = 值;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.获取实体ID
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class ATsBaseCharacter_C*               对象                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  实体ID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::获取实体ID(class ATsBaseCharacter_C* 对象, int32* 实体ID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取实体ID");
+
+	Params::GA_Base_C_获取实体ID Parms{};
+
+	Parms.对象 = 对象;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (实体ID != nullptr)
+		*实体ID = Parms.实体ID;
+}
+
+
+// Function GA_Base.GA_Base_C.根据实体ID获取对象
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   实体ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C**              对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Base_C::根据实体ID获取对象(int32 实体ID, class ATsBaseCharacter_C** 对象, bool* 是否找到对象)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "根据实体ID获取对象");
+
+	Params::GA_Base_C_根据实体ID获取对象 Parms{};
+
+	Parms.实体ID = 实体ID;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (对象 != nullptr)
+		*对象 = Parms.对象;
+
+	if (是否找到对象 != nullptr)
+		*是否找到对象 = Parms.是否找到对象;
+}
+
+
+// Function GA_Base.GA_Base_C.获取黑板指定Key值关联对象
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C**              对象                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否找到对象                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Base_C::获取黑板指定Key值关联对象(class ATsBaseCharacter_C* 角色, const class FString& key, class ATsBaseCharacter_C** 对象, bool* 是否找到对象)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取黑板指定Key值关联对象");
+
+	Params::GA_Base_C_获取黑板指定Key值关联对象 Parms{};
+
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (对象 != nullptr)
+		*对象 = Parms.对象;
+
+	if (是否找到对象 != nullptr)
+		*是否找到对象 = Parms.是否找到对象;
+}
+
+
+// Function GA_Base.GA_Base_C.设置技能目标
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           SkillTarget                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::设置技能目标(class AActor* SkillTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "设置技能目标");
+
+	Params::GA_Base_C_设置技能目标 Parms{};
+
+	Parms.SkillTarget = SkillTarget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.面向目标
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           面向目标_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::面向目标(class ATsBaseCharacter_C* 目标, class AActor* 面向目标_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "面向目标");
+
+	Params::GA_Base_C_面向目标 Parms{};
+
+	Parms.目标 = 目标;
+	Parms.面向目标_0 = 面向目标_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.销毁特定子弹
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             子弹名字                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    是否召唤子子弹                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Base_C::销毁特定子弹(class FName 子弹名字, bool 是否召唤子子弹)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "销毁特定子弹");
+
+	Params::GA_Base_C_销毁特定子弹 Parms{};
+
+	Parms.子弹名字 = 子弹名字;
+	Parms.是否召唤子子弹 = 是否召唤子子弹;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.获取目标Tag层数
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
 // class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float*                                  属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// int32*                                  层数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取Current属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值)
+void UGA_Base_C::获取目标Tag层数(class ATsBaseCharacter_C* 目标, const struct FGameplayTag& Tag, int32* 层数)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取Current属性值");
+		Func = Class->GetFunction("GA_Base_C", "获取目标Tag层数");
 
-	Params::GA_Base_C_获取Current属性值 Parms{};
+	Params::GA_Base_C_获取目标Tag层数 Parms{};
 
 	Parms.目标 = 目标;
-	Parms.属性id = 属性id;
+	Parms.Tag = std::move(Tag);
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (属性值 != nullptr)
-		*属性值 = Parms.属性值;
+	if (层数 != nullptr)
+		*层数 = Parms.层数;
 }
 
 
-// Function GA_Base.GA_Base_C.获取Base属性值
+// Function GA_Base.GA_Base_C.获取地面坐标点
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// const struct FVectorDouble&             指定点                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   深度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   地面坐标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool*                                   是否存在                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Base_C::获取地面坐标点(const struct FVectorDouble& 指定点, float 深度, struct FVectorDouble* 地面坐标, bool* 是否存在)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取地面坐标点");
+
+	Params::GA_Base_C_获取地面坐标点 Parms{};
+
+	Parms.指定点 = std::move(指定点);
+	Parms.深度 = 深度;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (地面坐标 != nullptr)
+		*地面坐标 = std::move(Parms.地面坐标);
+
+	if (是否存在 != nullptr)
+		*是否存在 = Parms.是否存在;
+}
+
+
+// Function GA_Base.GA_Base_C.设置当前技能打断等级
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   打断等级                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void UGA_Base_C::设置当前技能打断等级(int32 打断等级)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "设置当前技能打断等级");
+
+	Params::GA_Base_C_设置当前技能打断等级 Parms{};
+
+	Parms.打断等级 = 打断等级;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.结束异步任务
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UGameplayTask*                    任务                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// bool*                                   有效                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UGA_Base_C::结束异步任务(class UGameplayTask* 任务, bool* 有效)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "结束异步任务");
+
+	Params::GA_Base_C_结束异步任务 Parms{};
+
+	Parms.任务 = 任务;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (有效 != nullptr)
+		*有效 = Parms.有效;
+}
+
+
+// Function GA_Base.GA_Base_C.发送事件
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           发送目标                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              事件Tag                                                (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::发送事件(class AActor* 发送目标, const struct FGameplayTag& 事件Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "发送事件");
+
+	Params::GA_Base_C_发送事件 Parms{};
+
+	Parms.发送目标 = 发送目标;
+	Parms.事件Tag = std::move(事件Tag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.获取两者距离
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   属性id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float*                                  属性值                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           目标A                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           目标B                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取Base属性值(class ATsBaseCharacter_C* 目标, int32 属性id, float* 属性值)
+float UGA_Base_C::获取两者距离(class AActor* 目标A, class AActor* 目标B)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取Base属性值");
+		Func = Class->GetFunction("GA_Base_C", "获取两者距离");
 
-	Params::GA_Base_C_获取Base属性值 Parms{};
+	Params::GA_Base_C_获取两者距离 Parms{};
 
-	Parms.目标 = 目标;
-	Parms.属性id = 属性id;
+	Parms.目标A = 目标A;
+	Parms.目标B = 目标B;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (属性值 != nullptr)
-		*属性值 = Parms.属性值;
+	return Parms.ReturnValue;
 }
 
 
-// Function GA_Base.GA_Base_C.通过 ID给对象添加Buff
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function GA_Base.GA_Base_C.创建并播放特效
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C*               Buff对象                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int64                                   BuffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   Buff层数                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class UObject*                    DA文件名                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FTransformDouble&          transform                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// bool                                    AttachToCharacter                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::通过_ID给对象添加Buff(class ATsBaseCharacter_C* Buff对象, int64 BuffId, int32 Buff层数)
+int32 UGA_Base_C::创建并播放特效(const class UObject* DA文件名, const struct FTransformDouble& transform, bool AttachToCharacter)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "通过 ID给对象添加Buff");
+		Func = Class->GetFunction("GA_Base_C", "创建并播放特效");
 
-	Params::GA_Base_C_通过_ID给对象添加Buff Parms{};
+	Params::GA_Base_C_创建并播放特效 Parms{};
 
-	Parms.Buff对象 = Buff对象;
-	Parms.BuffId = BuffId;
-	Parms.Buff层数 = Buff层数;
+	Parms.DA文件名 = DA文件名;
+	Parms.transform = std::move(transform);
+	Parms.AttachToCharacter = AttachToCharacter;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GA_Base.GA_Base_C.施法者添加标签
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayTag&              Tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::施法者添加标签(const struct FGameplayTag& Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "施法者添加标签");
+
+	Params::GA_Base_C_施法者添加标签 Parms{};
+
+	Parms.Tag = std::move(Tag);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.通过Tag移除自身Buff
+// Function GA_Base.GA_Base_C.施法者移除标签
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::通过Tag移除自身Buff(const struct FGameplayTag& tag)
+void UGA_Base_C::施法者移除标签(const struct FGameplayTag& tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "通过Tag移除自身Buff");
+		Func = Class->GetFunction("GA_Base_C", "施法者移除标签");
 
-	Params::GA_Base_C_通过Tag移除自身Buff Parms{};
+	Params::GA_Base_C_施法者移除标签 Parms{};
 
 	Parms.tag = std::move(tag);
 
@@ -1112,245 +1102,211 @@ void UGA_Base_C::通过Tag移除自身Buff(const struct FGameplayTag& tag)
 }
 
 
-// Function GA_Base.GA_Base_C.设置通道的碰撞响应
+// Function GA_Base.GA_Base_C.通过ID获取对象Buff层数
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    enforceOnGoingCheck                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32*                                  层数                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::通过ID获取对象Buff层数(int64 buffId, bool enforceOnGoingCheck, int32* 层数)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "通过ID获取对象Buff层数");
+
+	Params::GA_Base_C_通过ID获取对象Buff层数 Parms{};
+
+	Parms.buffId = buffId;
+	Parms.enforceOnGoingCheck = enforceOnGoingCheck;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (层数 != nullptr)
+		*层数 = Parms.层数;
+}
+
+
+// Function GA_Base.GA_Base_C.获取当前技能攻速
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float*                                  SpeedRatio                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::获取当前技能攻速(float* SpeedRatio)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取当前技能攻速");
+
+	Params::GA_Base_C_获取当前技能攻速 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (SpeedRatio != nullptr)
+		*SpeedRatio = Parms.SpeedRatio;
+}
+
+
+// Function GA_Base.GA_Base_C.查询特定子弹数量
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             子弹名字                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  子弹数量                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::查询特定子弹数量(class FName 子弹名字, int32* 子弹数量)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "查询特定子弹数量");
+
+	Params::GA_Base_C_查询特定子弹数量 Parms{};
+
+	Parms.子弹名字 = 子弹名字;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (子弹数量 != nullptr)
+		*子弹数量 = Parms.子弹数量;
+}
+
+
+// Function GA_Base.GA_Base_C.获取黑板EntityId
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32*                                  值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void UGA_Base_C::获取黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32* 值)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取黑板EntityId");
+
+	Params::GA_Base_C_获取黑板EntityId Parms{};
+
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (值 != nullptr)
+		*值 = Parms.值;
+}
+
+
+// Function GA_Base.GA_Base_C.设置黑板EntityId
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class UPrimitiveComponent*              目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECollisionChannel                       Channel                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// ECollisionResponse                      NewResponse                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32                                   值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::设置通道的碰撞响应(class UPrimitiveComponent* 目标, ECollisionChannel Channel, ECollisionResponse NewResponse)
+void UGA_Base_C::设置黑板EntityId(class ATsBaseCharacter_C* 角色, const class FString& key, int32 值)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置通道的碰撞响应");
+		Func = Class->GetFunction("GA_Base_C", "设置黑板EntityId");
 
-	Params::GA_Base_C_设置通道的碰撞响应 Parms{};
+	Params::GA_Base_C_设置黑板EntityId Parms{};
 
-	Parms.目标 = 目标;
-	Parms.Channel = Channel;
-	Parms.NewResponse = NewResponse;
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+	Parms.值 = 值;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.设置强制速度
+// Function GA_Base.GA_Base_C.获取黑板Vector
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// struct FVectorDouble*                   值                                                     (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::获取黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, struct FVectorDouble* 值)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取黑板Vector");
+
+	Params::GA_Base_C_获取黑板Vector Parms{};
+
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (值 != nullptr)
+		*值 = std::move(Parms.值);
+}
+
+
+// Function GA_Base.GA_Base_C.设置黑板Vector
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FVectorDouble&             速度                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FVectorDouble&             值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::设置强制速度(const struct FVectorDouble& 速度)
+void UGA_Base_C::设置黑板Vector(class ATsBaseCharacter_C* 角色, const class FString& key, const struct FVectorDouble& 值)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "设置强制速度");
+		Func = Class->GetFunction("GA_Base_C", "设置黑板Vector");
 
-	Params::GA_Base_C_设置强制速度 Parms{};
+	Params::GA_Base_C_设置黑板Vector Parms{};
 
-	Parms.速度 = std::move(速度);
+	Parms.角色 = 角色;
+	Parms.key = std::move(key);
+	Parms.值 = std::move(值);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.获取技能目标
+// Function GA_Base.GA_Base_C.获取当前操作角色Actor
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class AActor**                          技能目标                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C**              当前角色                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取技能目标(class ATsBaseCharacter_C* 目标, class AActor** 技能目标)
+void UGA_Base_C::获取当前操作角色Actor(class ATsBaseCharacter_C** 当前角色)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取技能目标");
+		Func = Class->GetFunction("GA_Base_C", "获取当前操作角色Actor");
 
-	Params::GA_Base_C_获取技能目标 Parms{};
-
-	Parms.目标 = 目标;
+	Params::GA_Base_C_获取当前操作角色Actor Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (技能目标 != nullptr)
-		*技能目标 = Parms.技能目标;
+	if (当前角色 != nullptr)
+		*当前角色 = Parms.当前角色;
 }
 
 
-// Function GA_Base.GA_Base_C.是否拥有任意标签
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FGameplayTagContainer&     标签                                                   (BlueprintVisible, BlueprintReadOnly, Parm)
-// bool*                                   是否存在                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Base_C::是否拥有任意标签(class ATsBaseCharacter_C* 目标, const struct FGameplayTagContainer& 标签, bool* 是否存在)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "是否拥有任意标签");
-
-	Params::GA_Base_C_是否拥有任意标签 Parms{};
-
-	Parms.目标 = 目标;
-	Parms.标签 = std::move(标签);
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (是否存在 != nullptr)
-		*是否存在 = Parms.是否存在;
-}
-
-
-// Function GA_Base.GA_Base_C.获取AbilitySystemComponent
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// class UBaseAbilitySystemComponent**     AbilitySystemComponent                                 (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::获取AbilitySystemComponent(class UBaseAbilitySystemComponent** AbilitySystemComponent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取AbilitySystemComponent");
-
-	Params::GA_Base_C_获取AbilitySystemComponent Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (AbilitySystemComponent != nullptr)
-		*AbilitySystemComponent = Parms.AbilitySystemComponent;
-}
-
-
-// Function GA_Base.GA_Base_C.获取技能目标距离
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// bool                                    平面2D                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// float*                                  距离                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::获取技能目标距离(bool 平面2D, float* 距离)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取技能目标距离");
-
-	Params::GA_Base_C_获取技能目标距离 Parms{};
-
-	Parms.平面2D = 平面2D;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (距离 != nullptr)
-		*距离 = Parms.距离;
-}
-
-
-// Function GA_Base.GA_Base_C.获取技能标签
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// TArray<struct FGameplayTag>*            技能标签                                               (Parm, OutParm)
-
-void UGA_Base_C::获取技能标签(TArray<struct FGameplayTag>* 技能标签)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取技能标签");
-
-	Params::GA_Base_C_获取技能标签 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (技能标签 != nullptr)
-		*技能标签 = std::move(Parms.技能标签);
-}
-
-
-// Function GA_Base.GA_Base_C.获取技能所有动画
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// TArray<class UAnimMontage*>*            技能动画数组                                           (Parm, OutParm)
-
-void UGA_Base_C::获取技能所有动画(TArray<class UAnimMontage*>* 技能动画数组)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取技能所有动画");
-
-	Params::GA_Base_C_获取技能所有动画 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (技能动画数组 != nullptr)
-		*技能动画数组 = std::move(Parms.技能动画数组);
-}
-
-
-// Function GA_Base.GA_Base_C.获取技能动画
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// int32                                   编号                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UAnimMontage**                    动画                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UGA_Base_C::获取技能动画(int32 编号, class UAnimMontage** 动画)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取技能动画");
-
-	Params::GA_Base_C_获取技能动画 Parms{};
-
-	Parms.编号 = 编号;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (动画 != nullptr)
-		*动画 = Parms.动画;
-}
-
-
-// Function GA_Base.GA_Base_C.获取当前技能配置
-// (Protected, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// struct FSSkillInfo*                     当前技能数据_0                                         (Parm, OutParm, HasGetValueTypeHash)
-
-void UGA_Base_C::获取当前技能配置(struct FSSkillInfo* 当前技能数据_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取当前技能配置");
-
-	Params::GA_Base_C_获取当前技能配置 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (当前技能数据_0 != nullptr)
-		*当前技能数据_0 = std::move(Parms.当前技能数据_0);
-}
-
-
-// Function GA_Base.GA_Base_C.获取当前技能配置Id
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function GA_Base.GA_Base_C.获取当前GA的技能数据名
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class FString*                          当前技能数据名_0                                       (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取当前技能配置Id(class FString* 当前技能数据名_0)
+void UGA_Base_C::获取当前GA的技能数据名(class FString* 当前技能数据名_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取当前技能配置Id");
+		Func = Class->GetFunction("GA_Base_C", "获取当前GA的技能数据名");
 
-	Params::GA_Base_C_获取当前技能配置Id Parms{};
+	Params::GA_Base_C_获取当前GA的技能数据名 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -1359,118 +1315,162 @@ void UGA_Base_C::获取当前技能配置Id(class FString* 当前技能数据名
 }
 
 
-// Function GA_Base.GA_Base_C.获取施法单位EntityId
+// Function GA_Base.GA_Base_C.子弹冻结
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    子弹Id                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// float                                   冻结时间                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UGA_Base_C::子弹冻结(const class FString& 子弹Id, float 冻结时间)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "子弹冻结");
+
+	Params::GA_Base_C_子弹冻结 Parms{};
+
+	Parms.子弹Id = std::move(子弹Id);
+	Parms.冻结时间 = 冻结时间;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.设置黑板String
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    值                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void UGA_Base_C::设置黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, const class FString& 值)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "设置黑板String");
+
+	Params::GA_Base_C_设置黑板String Parms{};
+
+	Parms.角色 = 角色;
+	Parms.Key = std::move(Key);
+	Parms.值 = std::move(值);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_Base.GA_Base_C.获取黑板String
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseCharacter_C*               角色                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    Key                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class FString*                          String                                                 (Parm, OutParm, ZeroConstructor, HasGetValueTypeHash)
+
+void UGA_Base_C::获取黑板String(class ATsBaseCharacter_C* 角色, const class FString& Key, class FString* String)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Base_C", "获取黑板String");
+
+	Params::GA_Base_C_获取黑板String Parms{};
+
+	Parms.角色 = 角色;
+	Parms.Key = std::move(Key);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (String != nullptr)
+		*String = std::move(Parms.String);
+}
+
+
+// Function GA_Base.GA_Base_C.获取游戏事件管理器
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int32*                                  EntityId                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UBP_EventManager_C**              事件管理器                                             (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
-void UGA_Base_C::获取施法单位EntityId(int32* EntityId)
+void UGA_Base_C::获取游戏事件管理器(class UBP_EventManager_C** 事件管理器)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取施法单位EntityId");
+		Func = Class->GetFunction("GA_Base_C", "获取游戏事件管理器");
 
-	Params::GA_Base_C_获取施法单位EntityId Parms{};
+	Params::GA_Base_C_获取游戏事件管理器 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (EntityId != nullptr)
-		*EntityId = Parms.EntityId;
+	if (事件管理器 != nullptr)
+		*事件管理器 = Parms.事件管理器;
 }
 
 
-// Function GA_Base.GA_Base_C.获取施法载具
+// Function GA_Base.GA_Base_C.获取角色ID
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// class ATsBaseVehicle_C**                施法载具                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               目标                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float*                                  RoleID                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::获取施法载具(class ATsBaseVehicle_C** 施法载具)
+void UGA_Base_C::获取角色ID(class ATsBaseCharacter_C* 目标, float* RoleID)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取施法载具");
+		Func = Class->GetFunction("GA_Base_C", "获取角色ID");
 
-	Params::GA_Base_C_获取施法载具 Parms{};
+	Params::GA_Base_C_获取角色ID Parms{};
+
+	Parms.目标 = 目标;
 
 	UObject::ProcessEvent(Func, &Parms);
 
-	if (施法载具 != nullptr)
-		*施法载具 = Parms.施法载具;
+	if (RoleID != nullptr)
+		*RoleID = Parms.RoleID;
 }
 
 
-// Function GA_Base.GA_Base_C.获取施法者
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function GA_Base.GA_Base_C.根据子弹实体ID销毁子弹
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class ATsBaseCharacter_C**              施法者                                                 (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   子弹ID                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    isSummonChildBullet                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UGA_Base_C::获取施法者(class ATsBaseCharacter_C** 施法者)
+void UGA_Base_C::根据子弹实体ID销毁子弹(int32 子弹ID, bool isSummonChildBullet)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "获取施法者");
+		Func = Class->GetFunction("GA_Base_C", "根据子弹实体ID销毁子弹");
 
-	Params::GA_Base_C_获取施法者 Parms{};
+	Params::GA_Base_C_根据子弹实体ID销毁子弹 Parms{};
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (施法者 != nullptr)
-		*施法者 = Parms.施法者;
-}
-
-
-// Function GA_Base.GA_Base_C.K2_ActivateAbility
-// (Event, Protected, BlueprintEvent)
-
-void UGA_Base_C::K2_ActivateAbility()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "K2_ActivateAbility");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Base.GA_Base_C.K2_OnEndAbility
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bWasCancelled                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UGA_Base_C::K2_OnEndAbility(bool bWasCancelled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "K2_OnEndAbility");
-
-	Params::GA_Base_C_K2_OnEndAbility Parms{};
-
-	Parms.bWasCancelled = bWasCancelled;
+	Parms.子弹ID = 子弹ID;
+	Parms.isSummonChildBullet = isSummonChildBullet;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function GA_Base.GA_Base_C.ExecuteUbergraph_GA_Base
-// (Final, UbergraphFunction)
+// Function GA_Base.GA_Base_C.移除召唤物
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   召唤者ID                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   移除召唤物ID                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UGA_Base_C::ExecuteUbergraph_GA_Base(int32 EntryPoint)
+void UGA_Base_C::移除召唤物(int32 召唤者ID, int32 移除召唤物ID)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Base_C", "ExecuteUbergraph_GA_Base");
+		Func = Class->GetFunction("GA_Base_C", "移除召唤物");
 
-	Params::GA_Base_C_ExecuteUbergraph_GA_Base Parms{};
+	Params::GA_Base_C_移除召唤物 Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.召唤者ID = 召唤者ID;
+	Parms.移除召唤物ID = 移除召唤物ID;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

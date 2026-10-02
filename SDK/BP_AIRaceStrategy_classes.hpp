@@ -13,8 +13,8 @@
 #include "SAiRaceStrategyCorrectionByDistance_structs.hpp"
 #include "SAiRaceStrategyCorrectionBySpeed_structs.hpp"
 #include "SAiRaceStrategyCorrectionByTime_structs.hpp"
-#include "SAiRaceStrategyMultiParamFunction_structs.hpp"
 #include "Engine_classes.hpp"
+#include "SAiRaceStrategyMultiParamFunction_structs.hpp"
 
 
 namespace SDK

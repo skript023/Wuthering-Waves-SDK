@@ -37,20 +37,6 @@ void ABP_KuroVolumeCloud_Global_C::ExecuteUbergraph_BP_KuroVolumeCloud_Global(in
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.HideInLowQuality
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_KuroVolumeCloud_Global_C::HideInLowQuality()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "HideInLowQuality");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ReceiveEndPlay
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -127,20 +113,6 @@ void ABP_KuroVolumeCloud_Global_C::BeforeCookForMobile()
 }
 
 
-// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_KuroVolumeCloud_Global_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.EditorTick
 // (BlueprintCallable, BlueprintEvent)
 
@@ -150,6 +122,40 @@ void ABP_KuroVolumeCloud_Global_C::EditorTick()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "EditorTick");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_KuroVolumeCloud_Global_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "ReceiveTick");
+
+	Params::BP_KuroVolumeCloud_Global_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroVolumeCloud_Global.BP_KuroVolumeCloud_Global_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Global_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Global_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

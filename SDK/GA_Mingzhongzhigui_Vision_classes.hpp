@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "SCameraModifier_Settings_structs.hpp"
 #include "SCameraModifier_Condition_structs.hpp"
+#include "Engine_structs.hpp"
 #include "GA_Base_classes.hpp"
 
 
@@ -20,19 +20,19 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Mingzhongzhigui_Vision.GA_Mingzhongzhigui_Vision_C
-// 0x0150 (0x06D8 - 0x0588)
+// 0x01A0 (0x0770 - 0x05D0)
 class UGA_Mingzhongzhigui_Vision_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Mingzhongzhigui_Vision_C;        // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     角色;                                              // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CreateBulletDelay;                                 // 0x0598(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_59C[0x4];                                      // 0x059C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameplayTask_WaitDelay*                异步任务_创建子弹;                                 // 0x05A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         幻象Level;                                         // 0x05A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         幻象ID;                                            // 0x05AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSCameraModifier_Settings              Camera_Modify_Settings;                            // 0x05B0(0x0118)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TArray<struct FSCameraModifier_Condition>     Camera_Modifier_Contions;                          // 0x06C8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Mingzhongzhigui_Vision_C;        // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     角色;                                              // 0x05D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CreateBulletDelay;                                 // 0x05E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5E4[0x4];                                      // 0x05E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameplayTask_WaitDelay*                异步任务_创建子弹;                                 // 0x05E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         幻象Level;                                         // 0x05F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         幻象ID;                                            // 0x05F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCameraModifier_Settings              Camera_Modify_Settings;                            // 0x05F8(0x0168)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TArray<struct FSCameraModifier_Condition>     Camera_Modifier_Contions;                          // 0x0760(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_GA_Mingzhongzhigui_Vision(int32 EntryPoint);

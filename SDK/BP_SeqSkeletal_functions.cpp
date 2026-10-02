@@ -253,5 +253,51 @@ void ABP_SeqSkeletal_C::GetSeqAudio(class USeqAudio_Seq_V2_C** SeqAudio)
 		*SeqAudio = Parms.SeqAudio;
 }
 
+
+// Function BP_SeqSkeletal.BP_SeqSkeletal_C.GetSeqMouthAnimInstance
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAnimInstance**                   AnimInstance                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqSkeletal_C::GetSeqMouthAnimInstance(class UAnimInstance** AnimInstance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqSkeletal_C", "GetSeqMouthAnimInstance");
+
+	Params::BP_SeqSkeletal_C_GetSeqMouthAnimInstance Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimInstance != nullptr)
+		*AnimInstance = Parms.AnimInstance;
+}
+
+
+// Function BP_SeqSkeletal.BP_SeqSkeletal_C.GetSeqTalkId
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32*                                  TalkID_0                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  TalkID_SP_0                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqSkeletal_C::GetSeqTalkId(int32* TalkID_0, int32* TalkID_SP_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqSkeletal_C", "GetSeqTalkId");
+
+	Params::BP_SeqSkeletal_C_GetSeqTalkId Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TalkID_0 != nullptr)
+		*TalkID_0 = Parms.TalkID_0;
+
+	if (TalkID_SP_0 != nullptr)
+		*TalkID_SP_0 = Parms.TalkID_SP_0;
+}
+
 }
 

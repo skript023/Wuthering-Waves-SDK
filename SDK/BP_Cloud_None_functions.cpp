@@ -93,29 +93,41 @@ void ABP_Cloud_None_C::ReceiveBeginPlay()
 
 // Function BP_Cloud_None.BP_Cloud_None_C.Active
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bInstantHide_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Cloud_None_C::Active()
+void ABP_Cloud_None_C::Active(bool bInstantHide_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Cloud_None_C", "Active");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_Cloud_None_C_Active Parms{};
+
+	Parms.bInstantHide_0 = bInstantHide_0;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
 // Function BP_Cloud_None.BP_Cloud_None_C.Hidden
 // (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    InstantHide                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Cloud_None_C::Hidden()
+void ABP_Cloud_None_C::Hidden(bool InstantHide)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_Cloud_None_C", "Hidden");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_Cloud_None_C_Hidden Parms{};
+
+	Parms.InstantHide = InstantHide;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CinematicCamera_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SUiCameraAnimationSettings_structs.hpp"
 
 
@@ -61,7 +61,7 @@ public:
 DUMPER7_ASSERTS_BP_CineCamera_C_BeginAutoTransform;
 
 // Function BP_CineCamera.BP_CineCamera_C.ApplyUiCameraSettings
-// 0x0368 (0x0368 - 0x0000)
+// 0x0380 (0x0380 - 0x0000)
 struct BP_CineCamera_C_ApplyUiCameraSettings final
 {
 public:
@@ -73,17 +73,17 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   CallFunc_Conv_NameToText_ReturnValue;              // 0x0020(0x0018)()
 	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0038(0x0040)(HasGetValueTypeHash)
-	struct FSUiCameraAnimationSettings            CallFunc_GetDataTableRowFromName_OutRow;           // 0x0078(0x01A8)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_221[0x7];                                      // 0x0221(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0228(0x0010)(ReferenceParm)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0238(0x0018)()
-	struct FCameraFocusSettings                   K2Node_MakeStruct_CameraFocusSettings;             // 0x0250(0x0060)()
-	bool                                          CallFunc_K2_SetActorRotation_ReturnValue;          // 0x02B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B1[0x7];                                      // 0x02B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          CallFunc_Conv_VectorToVectorDouble_ReturnValue;    // 0x02B8(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FHitResult                             CallFunc_D_K2_SetActorLocation_SweepHitResult;     // 0x02D0(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
-	bool                                          CallFunc_D_K2_SetActorLocation_ReturnValue;        // 0x0364(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSUiCameraAnimationSettings            CallFunc_GetDataTableRowFromName_OutRow;           // 0x0078(0x01C0)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_239[0x7];                                      // 0x0239(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0240(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0250(0x0018)()
+	struct FCameraFocusSettings                   K2Node_MakeStruct_CameraFocusSettings;             // 0x0268(0x0060)()
+	bool                                          CallFunc_K2_SetActorRotation_ReturnValue;          // 0x02C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2C9[0x7];                                      // 0x02C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          CallFunc_Conv_VectorToVectorDouble_ReturnValue;    // 0x02D0(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             CallFunc_D_K2_SetActorLocation_SweepHitResult;     // 0x02E8(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          CallFunc_D_K2_SetActorLocation_ReturnValue;        // 0x037C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_CineCamera_C_ApplyUiCameraSettings;
 

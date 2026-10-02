@@ -18,13 +18,49 @@ namespace SDK::Params
 {
 
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.ExecuteUbergraph_BP_BaseRole_Seq_V2
-// 0x0004 (0x0004 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct BP_BaseRole_Seq_V2_C_ExecuteUbergraph_BP_BaseRole_Seq_V2 final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 K2Node_Event_From;                                 // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 K2Node_Event_To_1;                                 // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_SwitchTime;                           // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 K2Node_Event_To;                                   // 0x0020(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         K2Node_Event_State;                                // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_ExecuteUbergraph_BP_BaseRole_Seq_V2;
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.ApplySeqCostumeState
+// 0x0004 (0x0004 - 0x0000)
+struct BP_BaseRole_Seq_V2_C_ApplySeqCostumeState final
+{
+public:
+	int32                                         State;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_ApplySeqCostumeState;
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.EndSeqSwitchPose
+// 0x0008 (0x0008 - 0x0000)
+struct BP_BaseRole_Seq_V2_C_EndSeqSwitchPose final
+{
+public:
+	class AActor*                                 To;                                                // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_EndSeqSwitchPose;
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.BeginSeqSwitchPose
+// 0x0018 (0x0018 - 0x0000)
+struct BP_BaseRole_Seq_V2_C_BeginSeqSwitchPose final
+{
+public:
+	class AActor*                                 From;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 To;                                                // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         SwitchTime;                                        // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_BeginSeqSwitchPose;
 
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.UserConstructionScript
 // 0x0008 (0x0008 - 0x0000)
@@ -181,7 +217,7 @@ public:
 DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_Begin_Switch_Pose_to_Seq;
 
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.BeginSwitchPose_ToBP
-// 0x00C0 (0x00C0 - 0x0000)
+// 0x00D8 (0x00D8 - 0x0000)
 struct BP_BaseRole_Seq_V2_C_BeginSwitchPose_ToBP final
 {
 public:
@@ -201,11 +237,14 @@ public:
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_2;              // 0x0078(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class FString                                 CallFunc_Concat_StrStr_ReturnValue_3;              // 0x0088(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 	class UAnimInstance*                          CallFunc_GetLinkedAnimGraphInstanceByTag_ReturnValue; // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UABP_BaseRole_C*                        K2Node_DynamicCast_AsABP_Base_Role;                // 0x00A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UABP_BaseRoleNPC_C*                     K2Node_DynamicCast_AsABP_Base_Role_NPC;            // 0x00B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_SequenceBlend_C>  K2Node_DynamicCast_AsBPI_Sequence_Blend;           // 0x00A0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UABP_BaseRoleNPC_C*                     K2Node_DynamicCast_AsABP_Base_Role_NPC;            // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UABP_BaseRole_C*                        K2Node_DynamicCast_AsABP_Base_Role;                // 0x00C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_BeginSwitchPose_ToBP;
 
@@ -227,7 +266,7 @@ public:
 DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_EndSwitchPose_ToSeq;
 
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.EndSwitchPose_ToBP
-// 0x0050 (0x0050 - 0x0000)
+// 0x0068 (0x0068 - 0x0000)
 struct BP_BaseRole_Seq_V2_C_EndSwitchPose_ToBP final
 {
 public:
@@ -241,8 +280,11 @@ public:
 	class UABP_BaseRole_C*                        K2Node_DynamicCast_AsABP_Base_Role;                // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UABP_BaseRoleNPC_C*                     K2Node_DynamicCast_AsABP_Base_Role_NPC;            // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	TScriptInterface<class IBPI_SequenceBlend_C>  K2Node_DynamicCast_AsBPI_Sequence_Blend;           // 0x0040(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UABP_BaseRoleNPC_C*                     K2Node_DynamicCast_AsABP_Base_Role_NPC;            // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_EndSwitchPose_ToBP;
 
@@ -342,6 +384,53 @@ public:
 	class USeqAudio_Seq_V2_C*                     SeqAudio;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_GetSeqAudio;
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqBindingTag
+// 0x000C (0x000C - 0x0000)
+struct BP_BaseRole_Seq_V2_C_GetSeqBindingTag final
+{
+public:
+	class FName                                   Tag;                                               // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_GetSeqBindingTag;
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqBlendMesh
+// 0x0008 (0x0008 - 0x0000)
+struct BP_BaseRole_Seq_V2_C_GetSeqBlendMesh final
+{
+public:
+	class USkeletalMeshComponent*                 Mesh;                                              // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_GetSeqBlendMesh;
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqMouthAnimInstance
+// 0x0010 (0x0010 - 0x0000)
+struct BP_BaseRole_Seq_V2_C_GetSeqMouthAnimInstance final
+{
+public:
+	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimInstance*                          CallFunc_GetLinkedAnimGraphInstanceByTag_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_GetSeqMouthAnimInstance;
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqTalkId
+// 0x0008 (0x0008 - 0x0000)
+struct BP_BaseRole_Seq_V2_C_GetSeqTalkId final
+{
+public:
+	int32                                         TalkID_0;                                          // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         TalkID_SP_0;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_GetSeqTalkId;
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqMeshRef
+// 0x0030 (0x0030 - 0x0000)
+struct BP_BaseRole_Seq_V2_C_GetSeqMeshRef final
+{
+public:
+	TSoftObjectPtr<class USkeletalMesh>           MeshRef_0;                                         // 0x0000(0x0030)(Parm, OutParm, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseRole_Seq_V2_C_GetSeqMeshRef;
 
 }
 

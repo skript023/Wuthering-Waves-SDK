@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SCharacterMorphInfo.SCharacterMorphInfo
-// 0x0168 (0x0168 - 0x0000)
+// 0x01B8 (0x01B8 - 0x0000)
 struct FSCharacterMorphInfo final
 {
 public:
@@ -29,7 +29,8 @@ public:
 	struct FSoftClassPath                         InputComponentClass_20_0FD69A094FD3A1700738B19B0C95A282; // 0x0098(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 	TMap<class FString, float>                    ComponentFloatParams_32_6A753755476D47407590F9BF7B4E14C5; // 0x00B8(0x0050)(Edit, BlueprintVisible)
 	TMap<class FString, struct FVector>           ComponentVectorParams_53_C0A8581049F160B04B67A682CF9BEFCB; // 0x0108(0x0050)(Edit, BlueprintVisible)
-	TArray<class FString>                         MontageSubPathNames_76_783C9DE54B7B0BFF4DB9A68F0DCE4BD5; // 0x0158(0x0010)(Edit, BlueprintVisible)
+	TMap<class FString, class FString>            ComponentStringParams_81_785632194DDA5BBE214E41AF0046530A; // 0x0158(0x0050)(Edit, BlueprintVisible)
+	TArray<class FString>                         MontageSubPathNames_76_783C9DE54B7B0BFF4DB9A68F0DCE4BD5; // 0x01A8(0x0010)(Edit, BlueprintVisible)
 };
 DUMPER7_ASSERTS_FSCharacterMorphInfo;
 

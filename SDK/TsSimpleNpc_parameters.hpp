@@ -16,63 +16,6 @@
 namespace SDK::Params
 {
 
-// Function TsSimpleNpc.TsSimpleNpc_C.DebugSetNpcDitherValue
-// 0x0004 (0x0004 - 0x0000)
-struct TsSimpleNpc_C_DebugSetNpcDitherValue final
-{
-public:
-	float                                         value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsSimpleNpc_C_DebugSetNpcDitherValue;
-
-// Function TsSimpleNpc.TsSimpleNpc_C.HandleLoadedDaConfig
-// 0x0010 (0x0010 - 0x0000)
-struct TsSimpleNpc_C_HandleLoadedDaConfig final
-{
-public:
-	class UPD_NpcSetupData_C*                     daConfig1;                                         // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          isEditor;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-};
-DUMPER7_ASSERTS_TsSimpleNpc_C_HandleLoadedDaConfig;
-
-// Function TsSimpleNpc.TsSimpleNpc_C.TryPlayMontage
-// 0x0018 (0x0018 - 0x0000)
-struct TsSimpleNpc_C_TryPlayMontage final
-{
-public:
-	class FString                                 montagePath;                                       // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_TsSimpleNpc_C_TryPlayMontage;
-
-// Function TsSimpleNpc.TsSimpleNpc_C.ShowDialog
-// 0x0018 (0x0018 - 0x0000)
-struct TsSimpleNpc_C_ShowDialog final
-{
-public:
-	class FString                                 text1;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
-	float                                         removeFrame1;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsSimpleNpc_C_ShowDialog;
-
-// Function TsSimpleNpc.TsSimpleNpc_C.ReceiveEndPlay
-// 0x0001 (0x0001 - 0x0000)
-struct TsSimpleNpc_C_ReceiveEndPlay final
-{
-public:
-	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsSimpleNpc_C_ReceiveEndPlay;
-
-// Function TsSimpleNpc.TsSimpleNpc_C.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct TsSimpleNpc_C_EditorTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsSimpleNpc_C_EditorTick;
-
 // Function TsSimpleNpc.TsSimpleNpc_C.ExecuteUbergraph_TsSimpleNpc
 // 0x000C (0x000C - 0x0000)
 struct TsSimpleNpc_C_ExecuteUbergraph_TsSimpleNpc final
@@ -84,6 +27,53 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsSimpleNpc_C_ExecuteUbergraph_TsSimpleNpc;
+
+// Function TsSimpleNpc.TsSimpleNpc_C.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct TsSimpleNpc_C_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsSimpleNpc_C_EditorTick;
+
+// Function TsSimpleNpc.TsSimpleNpc_C.ReceiveEndPlay
+// 0x0001 (0x0001 - 0x0000)
+struct TsSimpleNpc_C_ReceiveEndPlay final
+{
+public:
+	EEndPlayReason                                EndPlayReason;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsSimpleNpc_C_ReceiveEndPlay;
+
+// Function TsSimpleNpc.TsSimpleNpc_C.ShowDialog
+// 0x0018 (0x0018 - 0x0000)
+struct TsSimpleNpc_C_ShowDialog final
+{
+public:
+	class FString                                 text1;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+	float                                         removeFrame1;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsSimpleNpc_C_ShowDialog;
+
+// Function TsSimpleNpc.TsSimpleNpc_C.TryPlayMontage
+// 0x0018 (0x0018 - 0x0000)
+struct TsSimpleNpc_C_TryPlayMontage final
+{
+public:
+	class FString                                 montagePath;                                       // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, UObjectWrapper, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_TsSimpleNpc_C_TryPlayMontage;
+
+// Function TsSimpleNpc.TsSimpleNpc_C.DebugSetNpcDitherValue
+// 0x0004 (0x0004 - 0x0000)
+struct TsSimpleNpc_C_DebugSetNpcDitherValue final
+{
+public:
+	float                                         value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsSimpleNpc_C_DebugSetNpcDitherValue;
 
 }
 

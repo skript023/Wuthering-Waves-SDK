@@ -16,25 +16,25 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass KuroSceneInteraction_47.TPrefab_SM_Gat_50A_C
+// BlueprintGeneratedClass KuroSceneInteraction_47.TPrefab_2_1_LLDL_Hack_C
 // 0x0000 (0x02B8 - 0x02B8)
-class KuroSceneInteraction_47::ATPrefab_SM_Gat_50A_C final : public ALevelScriptActor
+class KuroSceneInteraction_47::ATPrefab_2_1_LLDL_Hack_C final : public ALevelScriptActor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_47.TPrefab_SM_Gat_50A_C")
+		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_47.TPrefab_2_1_LLDL_Hack_C")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"TPrefab_SM_Gat_50A_C")
+		STATIC_NAME_IMPL(L"TPrefab_2_1_LLDL_Hack_C")
 	}
-	static class KuroSceneInteraction_47::ATPrefab_SM_Gat_50A_C* GetDefaultObj()
+	static class KuroSceneInteraction_47::ATPrefab_2_1_LLDL_Hack_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<KuroSceneInteraction_47::ATPrefab_SM_Gat_50A_C>();
+		return GetDefaultObjImpl<KuroSceneInteraction_47::ATPrefab_2_1_LLDL_Hack_C>();
 	}
 };
-DUMPER7_ASSERTS_KuroSceneInteraction_47__ATPrefab_SM_Gat_50A_C;
+DUMPER7_ASSERTS_KuroSceneInteraction_47__ATPrefab_2_1_LLDL_Hack_C;
 
 }
 

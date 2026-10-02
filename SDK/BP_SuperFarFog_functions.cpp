@@ -17,34 +17,6 @@
 namespace SDK
 {
 
-// Function BP_SuperFarFog.BP_SuperFarFog_C.UserConstructionScript
-// (Event, Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_SuperFarFog_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SuperFarFog_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_SuperFarFog.BP_SuperFarFog_C.Refresh
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_SuperFarFog_C::Refresh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SuperFarFog_C", "Refresh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_SuperFarFog.BP_SuperFarFog_C.ExecuteUbergraph_BP_SuperFarFog
 // (Final, UbergraphFunction)
 // Parameters:
@@ -62,6 +34,34 @@ void ABP_SuperFarFog_C::ExecuteUbergraph_BP_SuperFarFog(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_SuperFarFog.BP_SuperFarFog_C.Refresh
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_SuperFarFog_C::Refresh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SuperFarFog_C", "Refresh");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_SuperFarFog.BP_SuperFarFog_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_SuperFarFog_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SuperFarFog_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

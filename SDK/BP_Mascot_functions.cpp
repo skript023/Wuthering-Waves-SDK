@@ -347,5 +347,51 @@ void ABP_Mascot_C::GetAddSpineHeadValue(struct FRotator* AddSpineHead)
 		*AddSpineHead = std::move(Parms.AddSpineHead);
 }
 
+
+// Function BP_Mascot.BP_Mascot_C.GetSeqMouthAnimInstance
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAnimInstance**                   AnimInstance                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Mascot_C::GetSeqMouthAnimInstance(class UAnimInstance** AnimInstance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Mascot_C", "GetSeqMouthAnimInstance");
+
+	Params::BP_Mascot_C_GetSeqMouthAnimInstance Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimInstance != nullptr)
+		*AnimInstance = Parms.AnimInstance;
+}
+
+
+// Function BP_Mascot.BP_Mascot_C.GetSeqTalkId
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32*                                  TalkID_0                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  TalkID_SP_0                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Mascot_C::GetSeqTalkId(int32* TalkID_0, int32* TalkID_SP_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Mascot_C", "GetSeqTalkId");
+
+	Params::BP_Mascot_C_GetSeqTalkId Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TalkID_0 != nullptr)
+		*TalkID_0 = Parms.TalkID_0;
+
+	if (TalkID_SP_0 != nullptr)
+		*TalkID_SP_0 = Parms.TalkID_SP_0;
+}
+
 }
 

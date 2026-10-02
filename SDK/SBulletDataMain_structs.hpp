@@ -10,14 +10,14 @@
 
 #include "Basic.hpp"
 
-#include "SBulletDataExe_structs.hpp"
-#include "SBulletDataMove_structs.hpp"
-#include "SBulletDataBase_structs.hpp"
 #include "SBulletDataChild_structs.hpp"
+#include "SBulletDataBase_structs.hpp"
+#include "SBulletDataMove_structs.hpp"
 #include "SBulletDataEffect_structs.hpp"
 #include "SBulletDataTime_structs.hpp"
-#include "SBulletDataScale_structs.hpp"
 #include "SBulletDataCollision_structs.hpp"
+#include "SBulletDataExe_structs.hpp"
+#include "SBulletDataScale_structs.hpp"
 
 
 namespace SDK

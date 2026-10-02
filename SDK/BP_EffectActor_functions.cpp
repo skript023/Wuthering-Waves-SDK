@@ -323,6 +323,26 @@ void ABP_EffectActor_C::StopEffect()
 }
 
 
+// Function BP_EffectActor.BP_EffectActor_C.AfterSpawnEffect
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EffectHandle                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_EffectActor_C::AfterSpawnEffect(int32 EffectHandle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_EffectActor_C", "AfterSpawnEffect");
+
+	Params::BP_EffectActor_C_AfterSpawnEffect Parms{};
+
+	Parms.EffectHandle = EffectHandle;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_EffectActor.BP_EffectActor_C.GetHandle
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:

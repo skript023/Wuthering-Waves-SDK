@@ -28,12 +28,12 @@ public:
 	bool                                          IsUsePool;                                         // 0x011C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void OnDestroyBP();
-	void StartBP();
-	void AwakeBP();
-	void OnEnableBP();
-	void OnDisableBP();
 	void ExecuteUbergraph_TsUiHotKeyActorComponent(int32 EntryPoint);
+	void OnPreDestroyBP();
+	void OnDisableBP();
+	void OnEnableBP();
+	void AwakeBP();
+	void StartBP();
 
 public:
 	static class UClass* StaticClass()

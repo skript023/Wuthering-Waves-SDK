@@ -15,13 +15,15 @@ namespace SDK
 {
 
 // UserDefinedEnum ECommonQteViewType_SingleButtonLongPress.ECommonQteViewType_SingleButtonLongPress
-// NumValues: 0x0004
+// NumValues: 0x0006
 enum class ECommonQteViewType_SingleButtonLongPress : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
 	NewEnumerator2                           = 2,
-	ECommonQteViewType_MAX                   = 3,
+	NewEnumerator3                           = 3,
+	NewEnumerator4                           = 4,
+	ECommonQteViewType_MAX                   = 5,
 };
 
 }

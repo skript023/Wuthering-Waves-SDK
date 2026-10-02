@@ -22,7 +22,6 @@ namespace SDK
 class UCharacterBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void SetPartCollisionSwitch(class ATsBaseCharacter_C* character, const class FString& compName, bool isBlockPawn, bool isBulletDetect, bool isBlockCamera, class UObject* __WorldContext);
 	static class ATsBaseCharacter_C* GetCharacterActorByEntityId(int32 id, class UObject* __WorldContext);
 	static void CharacterOperationRecord(bool open, class UObject* __WorldContext);
 	static bool SaveCharacterOperationRecord(class UObject* __WorldContext);
@@ -58,6 +57,14 @@ public:
 	static bool IsSelfCenteredModeEnabled(ESelfCenteredMode selfCenteredMode, class UObject* __WorldContext);
 	static bool IsAnySelfCenteredModeEnabled(class UObject* __WorldContext);
 	static void SetPlanarReflectionShowPlayers(class UPlanarReflectionComponent* comp, class UObject* __WorldContext);
+	static void SetCharacterDirectlySightLockEnableState(int32 id, bool bEnable, class UObject* __WorldContext);
+	static void RestoreSightLockBoneLimit(int32 id, class UObject* __WorldContext);
+	static void SetCharacterSightLockBoneLimit(int32 id, float yawMin, float yawMax, float pitchMin, float pitchMax, float assistLimit, const struct FVector& sightDirectInSightBone, const struct FVector& upAxisInSightBone, class UObject* __WorldContext);
+	static class FString GetCharacterMovementModeInfo(int32 id, class UObject* __WorldContext);
+	static class FString GetCharacterMovementStateInfo(int32 id, class UObject* __WorldContext);
+	static void SetPartCollisionSwitch(class ATsBaseCharacter_C* character, const class FString& compName, bool isBlockPawn, bool isBulletDetect, bool isBlockCamera, bool isActiveOcclusionDither, class UObject* __WorldContext);
+	static class FString GetVehicleMovementModeInfo(int32 id, class UObject* __WorldContext);
+	static class FString GetVehicleMovementStateInfo(int32 id, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

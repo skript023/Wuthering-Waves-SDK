@@ -17,6 +17,122 @@
 namespace SDK
 {
 
+// Function BP_HaloPointLight.BP_HaloPointLight_C.ExecuteUbergraph_BP_HaloPointLight
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_HaloPointLight_C::ExecuteUbergraph_BP_HaloPointLight(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "ExecuteUbergraph_BP_HaloPointLight");
+
+	Params::BP_HaloPointLight_C_ExecuteUbergraph_BP_HaloPointLight Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.UpdateQualitySwitch
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_HaloPointLight_C::UpdateQualitySwitch()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "UpdateQualitySwitch");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_HaloPointLight_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "ReceiveTick");
+
+	Params::BP_HaloPointLight_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.HaloPointParaUpdate
+// (Event, Public, BlueprintEvent)
+
+void ABP_HaloPointLight_C::HaloPointParaUpdate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "HaloPointParaUpdate");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_HaloPointLight_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_HaloPointLight_C::UserConstructionScript()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.UpdateHaloParameter
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    UpdateComponent                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_HaloPointLight_C::UpdateHaloParameter(bool UpdateComponent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "UpdateHaloParameter");
+
+	Params::BP_HaloPointLight_C_UpdateHaloParameter Parms{};
+
+	Parms.UpdateComponent = UpdateComponent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_HaloPointLight.BP_HaloPointLight_C.GetHaloDrawParameters
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -50,85 +166,37 @@ void ABP_HaloPointLight_C::GetHaloDrawParameters(float* MinDrawDistance_0, float
 }
 
 
-// Function BP_HaloPointLight.BP_HaloPointLight_C.UpdateHaloParameter
+// Function BP_HaloPointLight.BP_HaloPointLight_C.SetQuality
 // (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    UpdateComponent                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_HaloPointLight_C::UpdateHaloParameter(bool UpdateComponent)
+void ABP_HaloPointLight_C::SetQuality()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "UpdateHaloParameter");
+		Func = Class->GetFunction("BP_HaloPointLight_C", "SetQuality");
 
-	Params::BP_HaloPointLight_C_UpdateHaloParameter Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.UpdateComponent = UpdateComponent;
+
+// Function BP_HaloPointLight.BP_HaloPointLight_C.GetPlacementSortOrder
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 ABP_HaloPointLight_C::GetPlacementSortOrder() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_HaloPointLight_C", "GetPlacementSortOrder");
+
+	Params::BP_HaloPointLight_C_GetPlacementSortOrder Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
-}
 
-
-// Function BP_HaloPointLight.BP_HaloPointLight_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_HaloPointLight_C::UserConstructionScript()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "UserConstructionScript");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_HaloPointLight.BP_HaloPointLight_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_HaloPointLight_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_HaloPointLight.BP_HaloPointLight_C.HaloPointParaUpdate
-// (Event, Public, BlueprintEvent)
-
-void ABP_HaloPointLight_C::HaloPointParaUpdate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "HaloPointParaUpdate");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_HaloPointLight.BP_HaloPointLight_C.ExecuteUbergraph_BP_HaloPointLight
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_HaloPointLight_C::ExecuteUbergraph_BP_HaloPointLight(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HaloPointLight_C", "ExecuteUbergraph_BP_HaloPointLight");
-
-	Params::BP_HaloPointLight_C_ExecuteUbergraph_BP_HaloPointLight Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	return Parms.ReturnValue;
 }
 
 }

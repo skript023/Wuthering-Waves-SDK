@@ -19,58 +19,6 @@
 namespace SDK
 {
 
-// Class AnimGraphRuntime.SequencerAnimationSupport
-// 0x0000 (0x0000 - 0x0000)
-class ISequencerAnimationSupport final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SequencerAnimationSupport")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SequencerAnimationSupport")
-	}
-	static class ISequencerAnimationSupport* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ISequencerAnimationSupport>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ISequencerAnimationSupport;
-
-// Class AnimGraphRuntime.AnimSequencerInstance
-// 0x0010 (0x0720 - 0x0710)
-class UAnimSequencerInstance : public UAnimInstance
-{
-public:
-	uint8                                         Pad_710[0x10];                                     // 0x0710(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AnimSequencerInstance")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AnimSequencerInstance")
-	}
-	static class UAnimSequencerInstance* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UAnimSequencerInstance>();
-	}
-};
-DUMPER7_ASSERTS_UAnimSequencerInstance;
-
 // Class AnimGraphRuntime.AnimNotify_PlayMontageNotify
 // 0x0010 (0x0050 - 0x0040)
 class UAnimNotify_PlayMontageNotify final : public UAnimNotify
@@ -94,6 +42,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAnimNotify_PlayMontageNotify;
+
+// Class AnimGraphRuntime.AnimSequencerInstance
+// 0x0010 (0x0840 - 0x0830)
+class UAnimSequencerInstance : public UAnimInstance
+{
+public:
+	uint8                                         Pad_830[0x10];                                     // 0x0830(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AnimSequencerInstance")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AnimSequencerInstance")
+	}
+	static class UAnimSequencerInstance* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAnimSequencerInstance>();
+	}
+};
+DUMPER7_ASSERTS_UAnimSequencerInstance;
 
 // Class AnimGraphRuntime.AnimNotify_PlayMontageNotifyWindow
 // 0x0010 (0x0050 - 0x0040)
@@ -186,6 +157,35 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UPlayMontageCallbackProxy;
+
+// Class AnimGraphRuntime.SequencerAnimationSupport
+// 0x0000 (0x0000 - 0x0000)
+class ISequencerAnimationSupport final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SequencerAnimationSupport")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SequencerAnimationSupport")
+	}
+	static class ISequencerAnimationSupport* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ISequencerAnimationSupport>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ISequencerAnimationSupport;
 
 }
 

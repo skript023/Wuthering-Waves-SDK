@@ -10,16 +10,16 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "EBulletType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SCharacterPart.SCharacterPart
-// 0x0118 (0x0118 - 0x0000)
+// 0x0170 (0x0170 - 0x0000)
 struct FSCharacterPart final
 {
 public:
@@ -35,20 +35,24 @@ public:
 	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TSet<EBulletType>                             弱点攻击类型_38_B44245454F03B67F7B9720AC632C55A8;  // 0x0048(0x0050)(Edit, BlueprintVisible)
 	float                                         弱点受击角度_34_02644BFB40E4F421B0444EBD980BE344;  // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          是否盾牌_50_C6329D80406FFD88EF6664B040CCC15C;      // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          精准弱点受击角度判定_85_B0CBB62D4F07427509CD2BADA8803B7A; // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         格挡判定角度_53_E92C679B42F3EC2949407A8BB73649C0;  // 0x00A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          是否传递伤害_56_4227F4124093B8725B7F14A9E2F16607;  // 0x00A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   部位状态条骨骼插槽_45_C79E7AA94E2ED746B826F28630D76DFD; // 0x00A8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          是否在目标创建时显示部位状态条_46_9D882A9A4BEEC5534C7C59A87AB3B2B1; // 0x00B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int64>                                 属性快照Buff列表_61_37032C9442C4C285A7FF8CAD48EC3719; // 0x00B8(0x0010)(Edit, BlueprintVisible)
-	class UEffectModelBase*                       扫描特效_75_88FDB5514FC905F24EBDB69ACE40B87A;      // 0x00C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSoftObjectPath                        被扫描播放特效_74_22B564E4464F7F409528FDA4534A9A25; // 0x00D0(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 扫描特效绑定骨骼名_68_850DA0084A00F63CD5EF59A35623CCBC; // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	class UPD_CharacterControllerData_C*          扫描材质特效_71_60B296F542BE89890DF6A1AFFB8E6DEF;  // 0x0100(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   合体骨骼名_79_68A02C4E4D9C34C73DD2D2AA6950F1DF;    // 0x0108(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FString, class FString>            碰撞框朝向_89_FFF74EF34F6A281113758BA5ACCB71E7;    // 0x00A0(0x0050)(Edit, BlueprintVisible)
+	bool                                          是否盾牌_50_C6329D80406FFD88EF6664B040CCC15C;      // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F1[0x3];                                       // 0x00F1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         格挡判定角度_53_E92C679B42F3EC2949407A8BB73649C0;  // 0x00F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          是否传递伤害_56_4227F4124093B8725B7F14A9E2F16607;  // 0x00F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          是否在目标创建时显示部位状态条_46_9D882A9A4BEEC5534C7C59A87AB3B2B1; // 0x00F9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_FA[0x2];                                       // 0x00FA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   部位状态条骨骼插槽_45_C79E7AA94E2ED746B826F28630D76DFD; // 0x00FC(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         受击后血条显示时长_82_F7EFF18347C03CB3168C679A82E0D4DF; // 0x0108(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int64>                                 属性快照Buff列表_61_37032C9442C4C285A7FF8CAD48EC3719; // 0x0110(0x0010)(Edit, BlueprintVisible)
+	class UEffectModelBase*                       扫描特效_75_88FDB5514FC905F24EBDB69ACE40B87A;      // 0x0120(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSoftObjectPath                        被扫描播放特效_74_22B564E4464F7F409528FDA4534A9A25; // 0x0128(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 扫描特效绑定骨骼名_68_850DA0084A00F63CD5EF59A35623CCBC; // 0x0148(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class UPD_CharacterControllerData_C*          扫描材质特效_71_60B296F542BE89890DF6A1AFFB8E6DEF;  // 0x0158(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   合体骨骼名_79_68A02C4E4D9C34C73DD2D2AA6950F1DF;    // 0x0160(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCharacterPart;
 

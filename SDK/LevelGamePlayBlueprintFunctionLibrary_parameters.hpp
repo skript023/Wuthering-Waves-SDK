@@ -107,5 +107,24 @@ public:
 };
 DUMPER7_ASSERTS_LevelGamePlayBlueprintFunctionLibrary_C_PolygonsOpenPathsDifferenceViaSplines;
 
+// Function LevelGamePlayBlueprintFunctionLibrary.LevelGamePlayBlueprintFunctionLibrary_C.UseNewScanSystem
+// 0x0010 (0x0010 - 0x0000)
+struct LevelGamePlayBlueprintFunctionLibrary_C_UseNewScanSystem final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_LevelGamePlayBlueprintFunctionLibrary_C_UseNewScanSystem;
+
+// Function LevelGamePlayBlueprintFunctionLibrary.LevelGamePlayBlueprintFunctionLibrary_C.StartScan
+// 0x0008 (0x0008 - 0x0000)
+struct LevelGamePlayBlueprintFunctionLibrary_C_StartScan final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_LevelGamePlayBlueprintFunctionLibrary_C_StartScan;
+
 }
 

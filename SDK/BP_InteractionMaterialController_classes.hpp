@@ -33,12 +33,12 @@ public:
 	struct FLinearColor                           Vector;                                            // 0x02F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_BP_InteractionMaterialController(int32 EntryPoint);
-	void ReceiveBeginPlay();
-	void Test();
-	void ForEach();
-	void ChangeScalarParameter(float FloatParameter, const class FString& FloatParameterName);
 	void ChangeVectorParameter(const struct FLinearColor& VectorParameter, const class FString& VectorParameterName);
+	void ChangeScalarParameter(float FloatParameter, const class FString& FloatParameterName);
+	void ForEach();
+	void Test();
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_InteractionMaterialController(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

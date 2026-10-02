@@ -11,18 +11,17 @@
 #include "Basic.hpp"
 
 #include "KuroInteractionEffect_structs.hpp"
-#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function KuroInteractionEffect.KuroEnviInteractionComponent.GetEnviInteractionData
-// 0x0098 (0x0098 - 0x0000)
+// 0x00E8 (0x00E8 - 0x0000)
 struct KuroEnviInteractionComponent_GetEnviInteractionData final
 {
 public:
-	struct FKuroEnviInteractionData               ReturnValue;                                       // 0x0000(0x0098)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKuroEnviInteractionData               ReturnValue;                                       // 0x0000(0x00E8)(Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroEnviInteractionComponent_GetEnviInteractionData;
 
@@ -66,6 +65,15 @@ public:
 };
 DUMPER7_ASSERTS_KuroEnviInteractionComponent_UpdateRainOcclusion;
 
+// Function KuroInteractionEffect.KuroEnviInteractionComponent.IsOccludedInRain
+// 0x0001 (0x0001 - 0x0000)
+struct KuroEnviInteractionComponent_IsOccludedInRain final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroEnviInteractionComponent_IsOccludedInRain;
+
 // Function KuroInteractionEffect.KuroInteractionEffectSystem.GetKuroInteractionEffectSystem
 // 0x0010 (0x0010 - 0x0000)
 struct KuroInteractionEffectSystem_GetKuroInteractionEffectSystem final
@@ -96,15 +104,54 @@ public:
 };
 DUMPER7_ASSERTS_KuroInteractionEffectSystem_RegisterSPModelCharacterEIComp;
 
-// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionPlacementTriggerActor
-// 0x0028 (0x0028 - 0x0000)
-struct KuroInteractionEffectSystem_SearchInteractionPlacementTriggerActor final
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionFoliage
+// 0x0018 (0x0018 - 0x0000)
+struct KuroInteractionEffectSystem_SearchInteractionFoliage final
 {
 public:
-	class UStaticMesh*                            PlacementMesh;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSoftObjectPath                        ReturnValue;                                       // 0x0008(0x0020)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 FoliageTypeName;                                   // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_KuroInteractionEffectSystem_SearchInteractionPlacementTriggerActor;
+DUMPER7_ASSERTS_KuroInteractionEffectSystem_SearchInteractionFoliage;
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionFoliageArray
+// 0x0020 (0x0020 - 0x0000)
+struct KuroInteractionEffectSystem_SearchInteractionFoliageArray final
+{
+public:
+	TArray<class FString>                         FoliageTypeNames;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInteractionEffectSystem_SearchInteractionFoliageArray;
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionStaticMeshConfig
+// 0x0070 (0x0070 - 0x0000)
+struct KuroInteractionEffectSystem_SearchInteractionStaticMeshConfig final
+{
+public:
+	class UStaticMesh*                            StaticMesh;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroInteractionEffectTraceStaticMesh  ReturnValue;                                       // 0x0008(0x0068)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInteractionEffectSystem_SearchInteractionStaticMeshConfig;
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SetGlobalUINiagaraPause
+// 0x0001 (0x0001 - 0x0000)
+struct KuroInteractionEffectSystem_SetGlobalUINiagaraPause final
+{
+public:
+	bool                                          bPause;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInteractionEffectSystem_SetGlobalUINiagaraPause;
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.GetGlobalUINiagaraPause
+// 0x0001 (0x0001 - 0x0000)
+struct KuroInteractionEffectSystem_GetGlobalUINiagaraPause final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInteractionEffectSystem_GetGlobalUINiagaraPause;
 
 }
 

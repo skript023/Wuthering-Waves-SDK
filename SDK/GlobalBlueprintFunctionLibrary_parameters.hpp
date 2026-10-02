@@ -14,16 +14,6 @@
 namespace SDK::Params
 {
 
-// Function GlobalBlueprintFunctionLibrary.GlobalBlueprintFunctionLibrary_C.GetBpFightManager
-// 0x0010 (0x0010 - 0x0000)
-struct GlobalBlueprintFunctionLibrary_C_GetBpFightManager final
-{
-public:
-	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_GlobalBlueprintFunctionLibrary_C_GetBpFightManager;
-
 // Function GlobalBlueprintFunctionLibrary.GlobalBlueprintFunctionLibrary_C.GetBpEventManager
 // 0x0010 (0x0010 - 0x0000)
 struct GlobalBlueprintFunctionLibrary_C_GetBpEventManager final
@@ -33,6 +23,16 @@ public:
 	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_GlobalBlueprintFunctionLibrary_C_GetBpEventManager;
+
+// Function GlobalBlueprintFunctionLibrary.GlobalBlueprintFunctionLibrary_C.GetBpFightManager
+// 0x0010 (0x0010 - 0x0000)
+struct GlobalBlueprintFunctionLibrary_C_GetBpFightManager final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_GlobalBlueprintFunctionLibrary_C_GetBpFightManager;
 
 }
 

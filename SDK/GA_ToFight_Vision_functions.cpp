@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_ToFight_Vision.GA_ToFight_Vision_C.ExecuteUbergraph_GA_ToFight_Vision
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

@@ -10,27 +10,27 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_CloudPrefab_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Cloud_None.BP_Cloud_None_C
-// 0x0008 (0x0580 - 0x0578)
+// 0x0008 (0x0628 - 0x0620)
 class ABP_Cloud_None_C final : public ABP_CloudPrefab_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Cloud_None_C;                    // 0x0578(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Cloud_None_C;                    // 0x0620(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_Cloud_None(int32 EntryPoint);
 	void EditorTick(float DeltaSeconds);
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
-	void Active();
-	void Hidden();
+	void Active(bool bInstantHide_0);
+	void Hidden(bool InstantHide);
 
 public:
 	static class UClass* StaticClass()

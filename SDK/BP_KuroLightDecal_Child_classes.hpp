@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_KuroLightDecal_Child.BP_KuroLightDecal_Child_C
-// 0x0000 (0x03B8 - 0x03B8)
+// 0x0000 (0x03C8 - 0x03C8)
 class ABP_KuroLightDecal_Child_C final : public ABP_KuroLightDecal_C
 {
 public:

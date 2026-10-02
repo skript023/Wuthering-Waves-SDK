@@ -159,6 +159,34 @@ bool UGameScreenshotTask::TakeScreenshot()
 }
 
 
+// Function KuroGameScreenshot.GameScreenshotTask.TakeScreenshotHighRes
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   MultiplierScale                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGameScreenshotTask::TakeScreenshotHighRes(int32 MultiplierScale)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameScreenshotTask", "TakeScreenshotHighRes");
+
+	Params::GameScreenshotTask_TakeScreenshotHighRes Parms{};
+
+	Parms.MultiplierScale = MultiplierScale;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroGameScreenshot.KuroGameScreenshotBPLibrary.CompressConvertColorsToBitmap
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -260,9 +288,10 @@ bool UKuroGameScreenshotBPLibrary::IsPhotoLibraryAuthorized()
 // float                                   ScreenshotResolutionX                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   ScreenshotResolutionY                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    SaveFile                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ResolutionMultiplier                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UGameScreenshotTask*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UGameScreenshotTask* UKuroGameScreenshotBPLibrary::PrepareTakeScreenshot(class UObject* Outer_0, const class FString& InFilename, const struct FVector2D& MinCaptureRegion, const struct FVector2D& MaxCaptureRegion, float ScreenshotResolutionX, float ScreenshotResolutionY, bool SaveFile)
+class UGameScreenshotTask* UKuroGameScreenshotBPLibrary::PrepareTakeScreenshot(class UObject* Outer_0, const class FString& InFilename, const struct FVector2D& MinCaptureRegion, const struct FVector2D& MaxCaptureRegion, float ScreenshotResolutionX, float ScreenshotResolutionY, bool SaveFile, int32 ResolutionMultiplier)
 {
 	static class UFunction* Func = nullptr;
 
@@ -278,6 +307,7 @@ class UGameScreenshotTask* UKuroGameScreenshotBPLibrary::PrepareTakeScreenshot(c
 	Parms.ScreenshotResolutionX = ScreenshotResolutionX;
 	Parms.ScreenshotResolutionY = ScreenshotResolutionY;
 	Parms.SaveFile = SaveFile;
+	Parms.ResolutionMultiplier = ResolutionMultiplier;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -338,6 +368,35 @@ void UKuroGameScreenshotBPLibrary::SaveColorArrayToIosAlbum(int32 Width, int32 H
 	Parms.Width = Width;
 	Parms.Height = Height;
 	Parms.Colors = std::move(Colors);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroGameScreenshot.KuroGameScreenshotBPLibrary.SaveColorArrayToOpenHarmonyAlbum
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Width                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Height                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<uint8>&                    BitMap                                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroGameScreenshotBPLibrary::SaveColorArrayToOpenHarmonyAlbum(int32 Width, int32 Height, const TArray<uint8>& BitMap)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroGameScreenshotBPLibrary", "SaveColorArrayToOpenHarmonyAlbum");
+
+	Params::KuroGameScreenshotBPLibrary_SaveColorArrayToOpenHarmonyAlbum Parms{};
+
+	Parms.Width = Width;
+	Parms.Height = Height;
+	Parms.BitMap = std::move(BitMap);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

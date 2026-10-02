@@ -141,76 +141,6 @@ void UGA_QiuYuan_Skill_Land_C::OnTick_5D118C384AE61F1C80292E812D950E0A()
 }
 
 
-// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnCompleted_5D118C384AE61F1C80292E81C8193FCE
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_QiuYuan_Skill_Land_C::OnCompleted_5D118C384AE61F1C80292E81C8193FCE()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnCompleted_5D118C384AE61F1C80292E81C8193FCE");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnBlendOut_5D118C384AE61F1C80292E81C8193FCE
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_QiuYuan_Skill_Land_C::OnBlendOut_5D118C384AE61F1C80292E81C8193FCE()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnBlendOut_5D118C384AE61F1C80292E81C8193FCE");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnInterrupted_5D118C384AE61F1C80292E81C8193FCE
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_QiuYuan_Skill_Land_C::OnInterrupted_5D118C384AE61F1C80292E81C8193FCE()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnInterrupted_5D118C384AE61F1C80292E81C8193FCE");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnCancelled_5D118C384AE61F1C80292E81C8193FCE
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_QiuYuan_Skill_Land_C::OnCancelled_5D118C384AE61F1C80292E81C8193FCE()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnCancelled_5D118C384AE61F1C80292E81C8193FCE");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnTick_5D118C384AE61F1C80292E81C8193FCE
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_QiuYuan_Skill_Land_C::OnTick_5D118C384AE61F1C80292E81C8193FCE()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnTick_5D118C384AE61F1C80292E81C8193FCE");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnCompleted_5D118C384AE61F1C80292E815258B1FC
 // (BlueprintCallable, BlueprintEvent)
 
@@ -276,6 +206,76 @@ void UGA_QiuYuan_Skill_Land_C::OnTick_5D118C384AE61F1C80292E815258B1FC()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnTick_5D118C384AE61F1C80292E815258B1FC");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnCompleted_5D118C384AE61F1C80292E81C8193FCE
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_QiuYuan_Skill_Land_C::OnCompleted_5D118C384AE61F1C80292E81C8193FCE()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnCompleted_5D118C384AE61F1C80292E81C8193FCE");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnBlendOut_5D118C384AE61F1C80292E81C8193FCE
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_QiuYuan_Skill_Land_C::OnBlendOut_5D118C384AE61F1C80292E81C8193FCE()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnBlendOut_5D118C384AE61F1C80292E81C8193FCE");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnInterrupted_5D118C384AE61F1C80292E81C8193FCE
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_QiuYuan_Skill_Land_C::OnInterrupted_5D118C384AE61F1C80292E81C8193FCE()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnInterrupted_5D118C384AE61F1C80292E81C8193FCE");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnCancelled_5D118C384AE61F1C80292E81C8193FCE
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_QiuYuan_Skill_Land_C::OnCancelled_5D118C384AE61F1C80292E81C8193FCE()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnCancelled_5D118C384AE61F1C80292E81C8193FCE");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_QiuYuan_Skill_Land.GA_QiuYuan_Skill_Land_C.OnTick_5D118C384AE61F1C80292E81C8193FCE
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_QiuYuan_Skill_Land_C::OnTick_5D118C384AE61F1C80292E81C8193FCE()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_QiuYuan_Skill_Land_C", "OnTick_5D118C384AE61F1C80292E81C8193FCE");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

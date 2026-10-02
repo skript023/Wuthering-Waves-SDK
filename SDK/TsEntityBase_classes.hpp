@@ -27,9 +27,9 @@ public:
 	int32                                         Id;                                                // 0x02C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
-	void EditorInit();
 	void ReceiveBeginPlay();
 	void ExecuteUbergraph_TsEntityBase(int32 EntryPoint);
+	void EditorInit();
 
 public:
 	static class UClass* StaticClass()

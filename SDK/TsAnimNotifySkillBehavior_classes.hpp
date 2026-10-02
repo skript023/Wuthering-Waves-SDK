@@ -11,18 +11,18 @@
 #include "Basic.hpp"
 
 #include "SSkillBehavior_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifySkillBehavior.TsAnimNotifySkillBehavior_C
-// 0x0010 (0x0058 - 0x0048)
-class UTsAnimNotifySkillBehavior_C final : public UKuroAnimNotify
+// 0x0010 (0x0068 - 0x0058)
+class UTsAnimNotifySkillBehavior_C final : public UTsAnimNotifyBase_C
 {
 public:
-	TArray<struct FSSkillBehavior>                技能行为;                                          // 0x0048(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FSSkillBehavior>                技能行为;                                          // 0x0058(0x0010)(Edit, BlueprintVisible)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

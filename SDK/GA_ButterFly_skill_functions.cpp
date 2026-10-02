@@ -265,6 +265,46 @@ void UGA_ButterFly_skill_C::OnTick_5D118C384AE61F1C80292E81C8B68653()
 }
 
 
+// Function GA_ButterFly_skill.GA_ButterFly_skill_C.EventReceived_18B59F5945020DB23C42FD885B1CDFB2
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_ButterFly_skill_C::EventReceived_18B59F5945020DB23C42FD885B1CDFB2(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_ButterFly_skill_C", "EventReceived_18B59F5945020DB23C42FD885B1CDFB2");
+
+	Params::GA_ButterFly_skill_C_EventReceived_18B59F5945020DB23C42FD885B1CDFB2 Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GA_ButterFly_skill.GA_ButterFly_skill_C.EventReceived_18B59F5945020DB23C42FD885D280D86
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
+
+void UGA_ButterFly_skill_C::EventReceived_18B59F5945020DB23C42FD885D280D86(const struct FGameplayEventData& Payload)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_ButterFly_skill_C", "EventReceived_18B59F5945020DB23C42FD885D280D86");
+
+	Params::GA_ButterFly_skill_C_EventReceived_18B59F5945020DB23C42FD885D280D86 Parms{};
+
+	Parms.Payload = std::move(Payload);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function GA_ButterFly_skill.GA_ButterFly_skill_C.OnCompleted_5D118C384AE61F1C80292E8191C4F51B
 // (BlueprintCallable, BlueprintEvent)
 
@@ -332,46 +372,6 @@ void UGA_ButterFly_skill_C::OnTick_5D118C384AE61F1C80292E8191C4F51B()
 		Func = Class->GetFunction("GA_ButterFly_skill_C", "OnTick_5D118C384AE61F1C80292E8191C4F51B");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_ButterFly_skill.GA_ButterFly_skill_C.EventReceived_18B59F5945020DB23C42FD885B1CDFB2
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UGA_ButterFly_skill_C::EventReceived_18B59F5945020DB23C42FD885B1CDFB2(const struct FGameplayEventData& Payload)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ButterFly_skill_C", "EventReceived_18B59F5945020DB23C42FD885B1CDFB2");
-
-	Params::GA_ButterFly_skill_C_EventReceived_18B59F5945020DB23C42FD885B1CDFB2 Parms{};
-
-	Parms.Payload = std::move(Payload);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function GA_ButterFly_skill.GA_ButterFly_skill_C.EventReceived_18B59F5945020DB23C42FD885D280D86
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FGameplayEventData&        Payload                                                (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UGA_ButterFly_skill_C::EventReceived_18B59F5945020DB23C42FD885D280D86(const struct FGameplayEventData& Payload)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ButterFly_skill_C", "EventReceived_18B59F5945020DB23C42FD885D280D86");
-
-	Params::GA_ButterFly_skill_C_EventReceived_18B59F5945020DB23C42FD885D280D86 Parms{};
-
-	Parms.Payload = std::move(Payload);
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 

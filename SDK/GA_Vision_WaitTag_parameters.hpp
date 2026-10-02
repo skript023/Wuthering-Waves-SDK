@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "SVisionData_structs.hpp"
+#include "GameplayTags_structs.hpp"
 
 
 namespace SDK::Params

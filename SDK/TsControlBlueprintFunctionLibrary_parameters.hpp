@@ -114,18 +114,6 @@ public:
 };
 DUMPER7_ASSERTS_TsControlBlueprintFunctionLibrary_C_BpInputReceiveEndPlay;
 
-// Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetUseControllerRotationPitch
-// 0x0010 (0x0010 - 0x0000)
-struct TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationPitch final
-{
-public:
-	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          value;                                             // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationPitch;
-
 // Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetUseControllerRotationYaw
 // 0x0010 (0x0010 - 0x0000)
 struct TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationYaw final
@@ -137,18 +125,6 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationYaw;
-
-// Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetUseControllerRotationRoll
-// 0x0010 (0x0010 - 0x0000)
-struct TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll final
-{
-public:
-	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          value;                                             // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll;
 
 // Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetBpInputComponent
 // 0x0018 (0x0018 - 0x0000)

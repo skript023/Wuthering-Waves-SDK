@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "SWeaponLevelMaterialData_structs.hpp"
-#include "SWeaponMaterialParams_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "SWeaponMaterialParams_structs.hpp"
 
 
 namespace SDK::Params

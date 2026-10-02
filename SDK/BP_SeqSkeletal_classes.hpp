@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "CoreUObject_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -17,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SeqSkeletal.BP_SeqSkeletal_C
-// 0x0030 (0x02E0 - 0x02B0)
+// 0x0080 (0x0330 - 0x02B0)
 class ABP_SeqSkeletal_C final : public AActor
 {
 public:
@@ -28,6 +29,7 @@ public:
 	class USkeletalMesh*                          Mesh;                                              // 0x02D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TalkID;                                            // 0x02D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TalkID_SP;                                         // 0x02DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	TMap<class FName, struct FTransform>          BoneData;                                          // 0x02E0(0x0050)(Edit, BlueprintVisible)
 
 public:
 	void UserConstructionScript();
@@ -41,6 +43,8 @@ public:
 	bool GetAnimDataTransform(TMap<class FName, struct FTransform>* FloatCurveData);
 	void GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2_0);
 	void GetSeqAudio(class USeqAudio_Seq_V2_C** SeqAudio);
+	void GetSeqMouthAnimInstance(class UAnimInstance** AnimInstance);
+	void GetSeqTalkId(int32* TalkID_0, int32* TalkID_SP_0);
 
 public:
 	static class UClass* StaticClass()

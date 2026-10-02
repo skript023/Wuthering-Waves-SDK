@@ -42,6 +42,25 @@ void UTsUiAutoPlayLevelSequenceComponent_C::ExecuteUbergraph_TsUiAutoPlayLevelSe
 }
 
 
+// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.OnPreDestroyBP
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+
+void UTsUiAutoPlayLevelSequenceComponent_C::OnPreDestroyBP()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "OnPreDestroyBP");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.OnUIActiveInHierarchyBP
 // (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -62,25 +81,6 @@ void UTsUiAutoPlayLevelSequenceComponent_C::OnUIActiveInHierarchyBP(bool activeO
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.OnDestroyBP
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
-
-void UTsUiAutoPlayLevelSequenceComponent_C::OnDestroyBP()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "OnDestroyBP");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -120,6 +120,25 @@ void UTsUiAutoPlayLevelSequenceComponent_C::AwakeBP()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "AwakeBP");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsUiAutoPlayLevelSequenceComponent.TsUiAutoPlayLevelSequenceComponent_C.TryRefresh
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void UTsUiAutoPlayLevelSequenceComponent_C::TryRefresh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TsUiAutoPlayLevelSequenceComponent_C", "TryRefresh");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

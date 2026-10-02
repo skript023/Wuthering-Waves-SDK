@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "SpineThingsInfo_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "SpineThingsInfo_structs.hpp"
 
 
 namespace SDK::Params
@@ -208,12 +208,13 @@ DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_CloseUiView;
 struct PlotBlueprintFunctionLibrary_C_OpenUiView final
 {
 public:
-	class FString                                 maleAssetName1;                                    // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 femaleAssetName1;                                  // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 maleSpineName1;                                    // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 femaleSpineName1;                                  // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          needLoop;                                          // 0x0040(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 maleAssetName;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 femaleAssetName;                                   // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 maleSpineName;                                     // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 femaleSpineName;                                   // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          needLoop1;                                         // 0x0040(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          useFullscreenAdaptAnchor;                          // 0x0041(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_OpenUiView;
@@ -266,15 +267,17 @@ public:
 DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_PlaySpineAnim;
 
 // Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenUiViewInArray
-// 0x0048 (0x0048 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct PlotBlueprintFunctionLibrary_C_OpenUiViewInArray final
 {
 public:
-	class FString                                 maleAssetName1;                                    // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 femaleAssetName1;                                  // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	TArray<struct FSpineThingsInfo>               maleSpineArray1;                                   // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	TArray<struct FSpineThingsInfo>               femaleSpineArray1;                                 // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UObject*                                __WorldContext;                                    // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 maleAssetName;                                     // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 femaleAssetName;                                   // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	TArray<struct FSpineThingsInfo>               maleSpineArray;                                    // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	TArray<struct FSpineThingsInfo>               femaleSpineArray;                                  // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	bool                                          useFullscreenAdaptAnchor;                          // 0x0040(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_OpenUiViewInArray;
 
@@ -383,6 +386,93 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_BindItemInspectActor;
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.EnablePlotInteract
+// 0x0010 (0x0010 - 0x0000)
+struct PlotBlueprintFunctionLibrary_C_EnablePlotInteract final
+{
+public:
+	bool                                          bEnable;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_EnablePlotInteract;
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.EnableCameraShake
+// 0x0040 (0x0040 - 0x0000)
+struct PlotBlueprintFunctionLibrary_C_EnableCameraShake final
+{
+public:
+	bool                                          bEnable1;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftClassPtr<class UClass>                   cameraShakePtr;                                    // 0x0008(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0038(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_EnableCameraShake;
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.NeedFlowAdaption
+// 0x0010 (0x0010 - 0x0000)
+struct PlotBlueprintFunctionLibrary_C_NeedFlowAdaption final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_NeedFlowAdaption;
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenCaptionImage
+// 0x0040 (0x0040 - 0x0000)
+struct PlotBlueprintFunctionLibrary_C_OpenCaptionImage final
+{
+public:
+	class FString                                 uiPrefabId;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	float                                         duration;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 uiStartAnimName;                                   // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 uiEndAnimName;                                     // 0x0028(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0038(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_OpenCaptionImage;
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenMultiTextCaption
+// 0x0020 (0x0020 - 0x0000)
+struct PlotBlueprintFunctionLibrary_C_OpenMultiTextCaption final
+{
+public:
+	class FString                                 textId;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	float                                         duration;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_OpenMultiTextCaption;
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenArtWord2dView
+// 0x0018 (0x0018 - 0x0000)
+struct PlotBlueprintFunctionLibrary_C_OpenArtWord2dView final
+{
+public:
+	class FString                                 sequenceName;                                      // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_OpenArtWord2dView;
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.SwitchArtWord2dMark
+// 0x0008 (0x0008 - 0x0000)
+struct PlotBlueprintFunctionLibrary_C_SwitchArtWord2dMark final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_SwitchArtWord2dMark;
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.CloseArtWord2dView
+// 0x0008 (0x0008 - 0x0000)
+struct PlotBlueprintFunctionLibrary_C_CloseArtWord2dView final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_PlotBlueprintFunctionLibrary_C_CloseArtWord2dView;
 
 }
 

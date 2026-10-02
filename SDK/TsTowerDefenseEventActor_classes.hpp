@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0378(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void OnLevelShown();
 	void ExecuteUbergraph_TsTowerDefenseEventActor(int32 EntryPoint);
+	void OnLevelShown();
 
 public:
 	static class UClass* StaticClass()

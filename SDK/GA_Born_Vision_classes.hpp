@@ -18,13 +18,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Born_Vision.GA_Born_Vision_C
-// 0x0018 (0x05A0 - 0x0588)
+// 0x0018 (0x05E8 - 0x05D0)
 class UGA_Born_Vision_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Born_Vision_C;                   // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class AActor*                                 技能目标;                                          // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     召唤者;                                            // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Born_Vision_C;                   // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class AActor*                                 技能目标;                                          // 0x05D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     召唤者;                                            // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Born_Vision(int32 EntryPoint);

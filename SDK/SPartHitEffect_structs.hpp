@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SPartHitEffect.SPartHitEffect
-// 0x00D0 (0x00D0 - 0x0000)
+// 0x00D8 (0x00D8 - 0x0000)
 struct FSPartHitEffect final
 {
 public:
@@ -25,14 +25,17 @@ public:
 	bool                                          IsBlockPawn_18_0CB2E9434D64A135D4718A8F0F5930C5;   // 0x0010(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsBulletDetect_23_F154CEAA451D9AFFDE01C6BFD7BD74DE; // 0x0011(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsBlockCamera_22_D6D277294065842B127BB7B99775DE21; // 0x0012(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_13[0x1];                                       // 0x0013(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                Size_30_DC47F386426EEC9B42EA338920A8BD2D;          // 0x0014(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                Location_31_408187B541400244A10EC1B648D29196;      // 0x0020(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FRotator                               Rotation_33_F3539A04434E79BCE554E7A695C21644;      // 0x002C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	TSoftObjectPtr<class UEffectModelBase>        Effect_43_AE655DD04CD628496758049C2507566F;        // 0x0038(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TSoftObjectPtr<class UPD_CharacterControllerData_C> MaterialEffect_50_D3ED0F1C4876A118C156739ACC1B3ABB; // 0x0068(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TSoftObjectPtr<class UEffectModelAudio_C>     Audio_40_E45E0E954689F2D19E643087BB447DF1;         // 0x0098(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	bool                                          ReplaceBulletHitEffect_42_6B34C17A48089EBCB961A7A725DE02EF; // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsActiveOcclusionDither_53_ACBD17F44705C985D3081FB484F7A97A; // 0x0013(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsIgnoreAllChannel_55_893B9E204B57024CF9716195F9615AF7; // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                Size_30_DC47F386426EEC9B42EA338920A8BD2D;          // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                Location_31_408187B541400244A10EC1B648D29196;      // 0x0024(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               Rotation_33_F3539A04434E79BCE554E7A695C21644;      // 0x0030(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UEffectModelBase>        Effect_43_AE655DD04CD628496758049C2507566F;        // 0x0040(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class UPD_CharacterControllerData_C> MaterialEffect_50_D3ED0F1C4876A118C156739ACC1B3ABB; // 0x0070(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TSoftObjectPtr<class UEffectModelAudio_C>     Audio_40_E45E0E954689F2D19E643087BB447DF1;         // 0x00A0(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	bool                                          ReplaceBulletHitEffect_42_6B34C17A48089EBCB961A7A725DE02EF; // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_FSPartHitEffect;
 

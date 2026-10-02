@@ -16,15 +16,6 @@
 namespace SDK::Params
 {
 
-// Function BPI_AnimalEcological.BPI_AnimalEcological_C.FeedStart
-// 0x000C (0x000C - 0x0000)
-struct BPI_AnimalEcological_C_FeedStart final
-{
-public:
-	struct FGameplayTag                           GameplayTag;                                       // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPI_AnimalEcological_C_FeedStart;
-
 // Function BPI_AnimalEcological.BPI_AnimalEcological_C.GetCurrentActionTime
 // 0x0004 (0x0004 - 0x0000)
 struct BPI_AnimalEcological_C_GetCurrentActionTime final
@@ -33,6 +24,15 @@ public:
 	float                                         ActionTime;                                        // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPI_AnimalEcological_C_GetCurrentActionTime;
+
+// Function BPI_AnimalEcological.BPI_AnimalEcological_C.FeedStart
+// 0x000C (0x000C - 0x0000)
+struct BPI_AnimalEcological_C_FeedStart final
+{
+public:
+	struct FGameplayTag                           GameplayTag;                                       // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPI_AnimalEcological_C_FeedStart;
 
 }
 

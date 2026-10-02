@@ -14,13 +14,25 @@
 namespace SDK
 {
 
-// Enum XeFGBlueprint.EXeFGMode
+// Enum XeFGBlueprint.EXeFGUICompositionState
 // NumValues: 0x0003
+enum class EXeFGUICompositionState : uint8
+{
+	Disabled                                 = 0,
+	Enabled                                  = 1,
+	EXeFGUICompositionState_MAX              = 2,
+};
+
+// Enum XeFGBlueprint.EXeFGMode
+// NumValues: 0x0006
 enum class EXeFGMode : uint8
 {
 	Off                                      = 0,
 	On                                       = 1,
-	EXeFGMode_MAX                            = 2,
+	On2x                                     = 2,
+	On3x                                     = 3,
+	On4x                                     = 4,
+	EXeFGMode_MAX                            = 5,
 };
 
 }

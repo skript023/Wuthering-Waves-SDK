@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "KuroAnim_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
-#include "KuroAnim_structs.hpp"
 #include "GameplayTags_structs.hpp"
 
 
@@ -150,17 +150,18 @@ public:
 DUMPER7_ASSERTS_KuroAnimInstance_CalculateStandRate;
 
 // Function KuroAnim.KuroAnimInstance.CalculateStepLengthMixed
-// 0x0028 (0x0028 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct KuroAnimInstance_CalculateStepLengthMixed final
 {
 public:
-	class UCurveFloat*                            AngleToStepLength;                                 // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            WalkCurve;                                         // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            RunCurve;                                          // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Speed;                                             // 0x0018(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Slop;                                              // 0x001C(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0020(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class ACharacter*                             Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AngleToStepLength;                                 // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            WalkCurve;                                         // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            RunCurve;                                          // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Speed;                                             // 0x0020(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Slop;                                              // 0x0024(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0028(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroAnimInstance_CalculateStepLengthMixed;
 
@@ -243,6 +244,15 @@ public:
 };
 DUMPER7_ASSERTS_KuroAnimInstance_ClimbIKProcess;
 
+// Function KuroAnim.KuroAnimInstance.FreezeExtraFollowAtWorldTransform
+// 0x0030 (0x0030 - 0x0000)
+struct KuroAnimInstance_FreezeExtraFollowAtWorldTransform final
+{
+public:
+	struct FTransform                             WorldTransform;                                    // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimInstance_FreezeExtraFollowAtWorldTransform;
+
 // Function KuroAnim.KuroAnimInstance.GetDebugAnimNodeString
 // 0x0010 (0x0010 - 0x0000)
 struct KuroAnimInstance_GetDebugAnimNodeString final
@@ -251,6 +261,15 @@ public:
 	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroAnimInstance_GetDebugAnimNodeString;
+
+// Function KuroAnim.KuroAnimInstance.GetStateMachineCurrentStatesString
+// 0x0010 (0x0010 - 0x0000)
+struct KuroAnimInstance_GetStateMachineCurrentStatesString final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimInstance_GetStateMachineCurrentStatesString;
 
 // Function KuroAnim.KuroAnimInstance.GroundIKProcess
 // 0x0190 (0x0190 - 0x0000)
@@ -392,6 +411,15 @@ public:
 	EDrawDebugTrace                               ClimbTrace;                                        // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroAnimInstance_SetDebugTraceType;
+
+// Function KuroAnim.KuroAnimInstance.SetExtraFollowFreeze
+// 0x0001 (0x0001 - 0x0000)
+struct KuroAnimInstance_SetExtraFollowFreeze final
+{
+public:
+	bool                                          bFreeze;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimInstance_SetExtraFollowFreeze;
 
 // Function KuroAnim.KuroAnimInstance.SetFootOffset
 // 0x00E0 (0x00E0 - 0x0000)
@@ -588,24 +616,25 @@ public:
 DUMPER7_ASSERTS_KuroAnimInstance_UpdateIKInfoLocalValue;
 
 // Function KuroAnim.KuroAnimInstance.UpdateMoveInfoMixed
-// 0x0048 (0x0048 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct KuroAnimInstance_UpdateMoveInfoMixed final
 {
 public:
-	float                                         WalkRunMixed;                                      // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DeltaTime;                                         // 0x0004(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Slop;                                              // 0x0008(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UCurveFloat*                            AngleToStepFrequency;                              // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            AngleToStepLength;                                 // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            WalkCurve;                                         // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            RunCurve;                                          // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SpeedSize;                                         // 0x0030(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StepLengthMixed;                                   // 0x0034(0x0004)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimWalkSpeed;                                     // 0x0038(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimRunSpeed;                                      // 0x003C(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SprintSpeed;                                       // 0x0040(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StandRate;                                         // 0x0044(0x0004)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ACharacter*                             Character;                                         // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WalkRunMixed;                                      // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DeltaTime;                                         // 0x000C(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Slop;                                              // 0x0010(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            AngleToStepFrequency;                              // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            AngleToStepLength;                                 // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            WalkCurve;                                         // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            RunCurve;                                          // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SpeedSize;                                         // 0x0038(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StepLengthMixed;                                   // 0x003C(0x0004)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimWalkSpeed;                                     // 0x0040(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimRunSpeed;                                      // 0x0044(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SprintSpeed;                                       // 0x0048(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StandRate;                                         // 0x004C(0x0004)(Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroAnimInstance_UpdateMoveInfoMixed;
 
@@ -657,6 +686,81 @@ public:
 };
 DUMPER7_ASSERTS_KuroAnimInstance_UpdateSkillMoveInfo;
 
+// Function KuroAnim.KuroAnimInstance.IsSyncGroupBetweenMarkersCoarse
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAnimInstance_IsSyncGroupBetweenMarkersCoarse final
+{
+public:
+	class FName                                   InSyncGroupName;                                   // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   PreviousMarker;                                    // 0x000C(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NextMarker;                                        // 0x0018(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRespectMarkerOrder;                               // 0x0024(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0025(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_26[0x2];                                       // 0x0026(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAnimInstance_IsSyncGroupBetweenMarkersCoarse;
+
+// Function KuroAnim.KuroAnimJsSubsystemProxy.RegisterEntity
+// 0x0010 (0x0010 - 0x0000)
+struct KuroAnimJsSubsystemProxy_RegisterEntity final
+{
+public:
+	const class UGameInstance*                    World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EntityId;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAnimJsSubsystemProxy_RegisterEntity;
+
+// Function KuroAnim.KuroAnimJsSubsystemProxy.RegisterUpdateAnimInfoCsFunction
+// 0x0030 (0x0030 - 0x0000)
+struct KuroAnimJsSubsystemProxy_RegisterUpdateAnimInfoCsFunction final
+{
+public:
+	const class UGameInstance*                    World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId)>               UpdateAnimInfoCsFunction;                          // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimJsSubsystemProxy_RegisterUpdateAnimInfoCsFunction;
+
+// Function KuroAnim.KuroAnimJsSubsystemProxy.RegisterUpdateMonsterInfoCsFunction
+// 0x0030 (0x0030 - 0x0000)
+struct KuroAnimJsSubsystemProxy_RegisterUpdateMonsterInfoCsFunction final
+{
+public:
+	const class UGameInstance*                    World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId)>               UpdateAnimInfoCsFunction;                          // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimJsSubsystemProxy_RegisterUpdateMonsterInfoCsFunction;
+
+// Function KuroAnim.KuroAnimJsSubsystemProxy.RegisterUpdateNpcInfoCsFunction
+// 0x0030 (0x0030 - 0x0000)
+struct KuroAnimJsSubsystemProxy_RegisterUpdateNpcInfoCsFunction final
+{
+public:
+	const class UGameInstance*                    World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void(int32 EntityId)>               UpdateAnimInfoCsFunction;                          // 0x0008(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimJsSubsystemProxy_RegisterUpdateNpcInfoCsFunction;
+
+// Function KuroAnim.KuroAnimJsSubsystemProxy.UnregisterEntity
+// 0x0010 (0x0010 - 0x0000)
+struct KuroAnimJsSubsystemProxy_UnregisterEntity final
+{
+public:
+	const class UGameInstance*                    World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EntityId;                                          // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAnimJsSubsystemProxy_UnregisterEntity;
+
+// Function KuroAnim.KuroAnimJsSubsystemProxy.UnregisterUpdateAnimInfoFunction
+// 0x0008 (0x0008 - 0x0000)
+struct KuroAnimJsSubsystemProxy_UnregisterUpdateAnimInfoFunction final
+{
+public:
+	const class UGameInstance*                    World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimJsSubsystemProxy_UnregisterUpdateAnimInfoFunction;
+
 // Function KuroAnim.KuroAnimLibrary.EndAnimNotifyStates
 // 0x0008 (0x0008 - 0x0000)
 struct KuroAnimLibrary_EndAnimNotifyStates final
@@ -689,6 +793,53 @@ public:
 	struct FTransform                             ReturnValue;                                       // 0x0020(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroAnimLibrary_GetDefaultBoneLocalPoseByName;
+
+// Function KuroAnim.KuroAnimLibrary.GetGameplayAbpPath
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAnimLibrary_GetGameplayAbpPath final
+{
+public:
+	class UObject*                                BaseAbp;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 GameplayTypeName;                                  // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimLibrary_GetGameplayAbpPath;
+
+// Function KuroAnim.KuroAnimMathLibrary.FindBetween
+// 0x0030 (0x0030 - 0x0000)
+struct KuroAnimMathLibrary_FindBetween final
+{
+public:
+	struct FVector                                V1;                                                // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                V2;                                                // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimMathLibrary_FindBetween;
+
+// Function KuroAnim.KuroAnimMathLibrary.LookQuat_ForwardFirst
+// 0x0030 (0x0030 - 0x0000)
+struct KuroAnimMathLibrary_LookQuat_ForwardFirst final
+{
+public:
+	struct FVector                                Forward;                                           // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Up;                                                // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimMathLibrary_LookQuat_ForwardFirst;
+
+// Function KuroAnim.KuroAnimMathLibrary.LookQuat_UpFirst
+// 0x0030 (0x0030 - 0x0000)
+struct KuroAnimMathLibrary_LookQuat_UpFirst final
+{
+public:
+	struct FVector                                Forward;                                           // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Up;                                                // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  ReturnValue;                                       // 0x0020(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimMathLibrary_LookQuat_UpFirst;
 
 // Function KuroAnim.KuroAnimMathLibrary.LookRotation_ForwardFirst
 // 0x0024 (0x0024 - 0x0000)
@@ -723,6 +874,19 @@ public:
 };
 DUMPER7_ASSERTS_KuroAnimMathLibrary_Quat_FindBetween;
 
+// Function KuroAnim.KuroAnimMathLibrary.Slerp
+// 0x0040 (0x0040 - 0x0000)
+struct KuroAnimMathLibrary_Slerp final
+{
+public:
+	struct FQuat                                  From;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FQuat                                  To;                                                // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         Slerp_0;                                           // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0xC];                                       // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FQuat                                  ReturnValue;                                       // 0x0030(0x0010)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAnimMathLibrary_Slerp;
+
 // Function KuroAnim.KuroTrackRecorder.GetMainGuid
 // 0x0010 (0x0010 - 0x0000)
 struct KuroTrackRecorder_GetMainGuid final
@@ -740,6 +904,15 @@ public:
 	class AActor*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroTrackRecorder_GetShadow;
+
+// Function KuroAnim.KuroPredictionAnimInstanceRole.CallOnComponentStart
+// 0x0008 (0x0008 - 0x0000)
+struct KuroPredictionAnimInstanceRole_CallOnComponentStart final
+{
+public:
+	class UKuroAnimInstance*                      InInstance;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroPredictionAnimInstanceRole_CallOnComponentStart;
 
 // Function KuroAnim.KuroRecorderLibrary.ChangeAttachTrack
 // 0x0030 (0x0030 - 0x0000)

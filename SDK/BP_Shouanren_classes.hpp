@@ -18,16 +18,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Shouanren.BP_Shouanren_C
-// 0x0030 (0x0780 - 0x0750)
+// 0x0030 (0x0790 - 0x0760)
 class ABP_Shouanren_C final : public ATsBaseCharacter_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Shouanren_C;                     // 0x0750(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UKuroAdjustableCapsuleComponent*        Bip001Spine2;                                      // 0x0758(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UKuroAdjustableCapsuleComponent*        Bip001LThighTwist;                                 // 0x0760(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UKuroAdjustableCapsuleComponent*        Bip001RThighTwist;                                 // 0x0768(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 OtherCase1;                                        // 0x0770(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 WeaponCase0;                                       // 0x0778(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Shouanren_C;                     // 0x0758(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UKuroAdjustableCapsuleComponent*        Bip001Spine2;                                      // 0x0760(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UKuroAdjustableCapsuleComponent*        Bip001LThighTwist;                                 // 0x0768(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UKuroAdjustableCapsuleComponent*        Bip001RThighTwist;                                 // 0x0770(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 OtherCase1;                                        // 0x0778(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 WeaponCase0;                                       // 0x0780(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Shouanren(int32 EntryPoint);

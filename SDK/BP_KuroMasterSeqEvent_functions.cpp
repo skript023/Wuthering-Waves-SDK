@@ -291,8 +291,9 @@ void ABP_KuroMasterSeqEvent_C::展示游戏Logo(float time)
 // const class FString&                    maleSpineName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // const class FString&                    femaleSpineName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // bool                                    needLoop                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    useFullscreenAdaptAnchor                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_KuroMasterSeqEvent_C::显示预览图(const class FString& MaleAssetPath, const class FString& FemaleAssetPath, const class FString& maleSpineName, const class FString& femaleSpineName, bool needLoop)
+void ABP_KuroMasterSeqEvent_C::显示预览图(const class FString& MaleAssetPath, const class FString& FemaleAssetPath, const class FString& maleSpineName, const class FString& femaleSpineName, bool needLoop, bool useFullscreenAdaptAnchor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -306,6 +307,7 @@ void ABP_KuroMasterSeqEvent_C::显示预览图(const class FString& MaleAssetPat
 	Parms.maleSpineName = std::move(maleSpineName);
 	Parms.femaleSpineName = std::move(femaleSpineName);
 	Parms.needLoop = needLoop;
+	Parms.useFullscreenAdaptAnchor = useFullscreenAdaptAnchor;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -318,8 +320,9 @@ void ABP_KuroMasterSeqEvent_C::显示预览图(const class FString& MaleAssetPat
 // const class FString&                    FemaleAssetPath                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 // TArray<struct FSpineThingsInfo>&        maleSpineArray                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 // TArray<struct FSpineThingsInfo>&        femaleSpineArray                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool                                    useFullscreenAdaptAnchor                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_KuroMasterSeqEvent_C::显示预览图_数组_(const class FString& MaleAssetPath, const class FString& FemaleAssetPath, TArray<struct FSpineThingsInfo>& maleSpineArray, TArray<struct FSpineThingsInfo>& femaleSpineArray)
+void ABP_KuroMasterSeqEvent_C::显示预览图_数组_(const class FString& MaleAssetPath, const class FString& FemaleAssetPath, TArray<struct FSpineThingsInfo>& maleSpineArray, TArray<struct FSpineThingsInfo>& femaleSpineArray, bool useFullscreenAdaptAnchor)
 {
 	static class UFunction* Func = nullptr;
 
@@ -332,6 +335,7 @@ void ABP_KuroMasterSeqEvent_C::显示预览图_数组_(const class FString& Male
 	Parms.FemaleAssetPath = std::move(FemaleAssetPath);
 	Parms.maleSpineArray = std::move(maleSpineArray);
 	Parms.femaleSpineArray = std::move(femaleSpineArray);
+	Parms.useFullscreenAdaptAnchor = useFullscreenAdaptAnchor;
 
 	UObject::ProcessEvent(Func, &Parms);
 
@@ -586,6 +590,74 @@ void ABP_KuroMasterSeqEvent_C::绑定物品检视Actor(const struct FMovieSceneO
 	Params::BP_KuroMasterSeqEvent_C_绑定物品检视Actor Parms{};
 
 	Parms.binding = std::move(binding);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.启用剧情交互按钮
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bEnable                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void ABP_KuroMasterSeqEvent_C::启用剧情交互按钮(bool bEnable)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroMasterSeqEvent_C", "启用剧情交互按钮");
+
+	Params::BP_KuroMasterSeqEvent_C_启用剧情交互按钮 Parms{};
+
+	Parms.bEnable = bEnable;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.打开报幕界面
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    uiPrefabId                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// float                                   duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    uiStartAnimName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    uiEndAnimName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ABP_KuroMasterSeqEvent_C::打开报幕界面(const class FString& uiPrefabId, float duration, const class FString& uiStartAnimName, const class FString& uiEndAnimName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroMasterSeqEvent_C", "打开报幕界面");
+
+	Params::BP_KuroMasterSeqEvent_C_打开报幕界面 Parms{};
+
+	Parms.uiPrefabId = std::move(uiPrefabId);
+	Parms.duration = duration;
+	Parms.uiStartAnimName = std::move(uiStartAnimName);
+	Parms.uiEndAnimName = std::move(uiEndAnimName);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_KuroMasterSeqEvent.BP_KuroMasterSeqEvent_C.相机振动
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    启用                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// TSoftClassPtr<class UClass>             资产                                                   (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+
+void ABP_KuroMasterSeqEvent_C::相机振动(bool 启用, TSoftClassPtr<class UClass> 资产)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroMasterSeqEvent_C", "相机振动");
+
+	Params::BP_KuroMasterSeqEvent_C_相机振动 Parms{};
+
+	Parms.启用 = 启用;
+	Parms.资产 = 资产;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

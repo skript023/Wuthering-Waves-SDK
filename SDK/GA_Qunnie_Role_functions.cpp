@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_Qunnie_Role.GA_Qunnie_Role_C.ExecuteUbergraph_GA_Qunnie_Role
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

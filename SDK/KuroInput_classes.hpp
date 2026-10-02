@@ -21,14 +21,15 @@ namespace SDK
 {
 
 // Class KuroInput.BasePlayerController
-// 0x0060 (0x06D0 - 0x0670)
+// 0x0060 (0x06E0 - 0x0680)
 class ABasePlayerController : public APlayerController
 {
 public:
-	uint8                                         Pad_670[0x60];                                     // 0x0670(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_680[0x60];                                     // 0x0680(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static void SetKuroForceFeedbackConfig(EGlobalKuroForceFeedbackType FeedbackConfig, int32 GlobalFeedbackCoef);
+	static void SetUseGamepadState(bool value);
 	static void SetUseSonyGamepadState(bool value);
 
 	void AddActionBinding(const class FName& ActionName, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName);
@@ -97,14 +98,23 @@ DUMPER7_ASSERTS_UKuroForceFeedbackEffect;
 class UKuroInputFunctionLibrary final : public UBlueprintFunctionLibrary
 {
 public:
+	static void AddActionBinding(class APlayerController* PlayerController, const class FName& ActionName, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName);
+	static void AddAxisBinding(class APlayerController* PlayerController, const class FName& AxisName, class UObject* Object, const class FName& FuncName);
+	static void AddKeyBinding(class APlayerController* PlayerController, const struct FInputChord& Chord, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName);
+	static void AddTouchBinding(class APlayerController* PlayerController, const EInputEvent KeyEvent, class UObject* Object, const class FName& FuncName);
 	static void ApplyInputMode(class APlayerController* InPlayerController);
+	static void ClearActionBindings(class APlayerController* PlayerController);
+	static void ClearAxisBindings(class APlayerController* PlayerController);
 	static void ClearInputModeReply();
+	static void ClearKeyBindings(class APlayerController* PlayerController);
+	static void ClearTouchBindings(class APlayerController* PlayerController);
 	static bool HasInputModeReply(const struct FInputModeReply& InputModeReply);
 	static void ReplyInputMode(class APlayerController* InPlayerController, const struct FInputModeReply& InputModeReply);
 	static void ResetInputMode(class APlayerController* InPlayerController);
 	static struct FInputModeReply SetGameAndUIInputMode(class APlayerController* InPlayerController, const class FString& Reason, bool bLockMouseToViewport, bool bHideCursorDuringCapture);
 	static struct FInputModeReply SetGameOnlyInputMode(class APlayerController* InPlayerController, const class FString& Reason);
 	static struct FInputModeReply SetUIOnlyInputMode(class APlayerController* InPlayerController, const class FString& Reason, bool bLockMouseToViewport);
+	static void TryUseHighPrecisionMouseMovement(const class APlayerController* InPlayerController, bool bUse);
 
 public:
 	static class UClass* StaticClass()
@@ -130,12 +140,13 @@ public:
 	EGlobalKuroForceFeedbackType                  FeedbackConfig;                                    // 0x0030(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x3];                                       // 0x0031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         GlobalFeedbackSize;                                // 0x0034(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsUseSonyFeedback;                                 // 0x0038(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EInputMode                                    DefaultInputMode;                                  // 0x0039(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsDefaultLockMouseToViewport;                      // 0x003A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsDefaultHideCursorDuringCapture;                  // 0x003B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsPrintDebugLog;                                   // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D[0x3];                                       // 0x003D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          IsUseGamepad;                                      // 0x0038(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsUseSonyFeedback;                                 // 0x0039(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInputMode                                    DefaultInputMode;                                  // 0x003A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsDefaultLockMouseToViewport;                      // 0x003B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsDefaultHideCursorDuringCapture;                  // 0x003C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsPrintDebugLog;                                   // 0x003D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3E[0x2];                                       // 0x003E(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

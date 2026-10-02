@@ -17,17 +17,6 @@
 namespace SDK::Params
 {
 
-// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.AreaBeginOverlap
-// 0x0010 (0x0010 - 0x0000)
-struct UiBlueprintFunctionLibrary_C_AreaBeginOverlap final
-{
-public:
-	float                                         areaId;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_UiBlueprintFunctionLibrary_C_AreaBeginOverlap;
-
 // Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.TempModuleStart
 // 0x0008 (0x0008 - 0x0000)
 struct UiBlueprintFunctionLibrary_C_TempModuleStart final
@@ -656,12 +645,13 @@ public:
 DUMPER7_ASSERTS_UiBlueprintFunctionLibrary_C_SetUiEndSequenceFrame;
 
 // Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.GetUiWeaponBreachLevel
-// 0x0010 (0x0010 - 0x0000)
+// 0x0018 (0x0018 - 0x0000)
 struct UiBlueprintFunctionLibrary_C_GetUiWeaponBreachLevel final
 {
 public:
-	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 OwnComp;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_UiBlueprintFunctionLibrary_C_GetUiWeaponBreachLevel;
 
@@ -858,6 +848,16 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_UiBlueprintFunctionLibrary_C_DisablePhotographTimeDilation;
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.TestSceneLoadPlayer
+// 0x0018 (0x0018 - 0x0000)
+struct UiBlueprintFunctionLibrary_C_TestSceneLoadPlayer final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_UiBlueprintFunctionLibrary_C_TestSceneLoadPlayer;
 
 }
 

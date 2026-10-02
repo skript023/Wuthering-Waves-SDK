@@ -26,8 +26,8 @@ public:
 	class UBP_EventManager_C*                     事件管理器;                                        // 0x0040(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void OnLeaveWorld();
 	void 初始化(class UBP_MainGameInstance_C* 游戏实例_0);
+	void OnLeaveWorld();
 
 public:
 	static class UClass* StaticClass()

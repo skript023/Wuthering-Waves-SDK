@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTriggerVolume.TsTriggerVolume_C
-// 0x0140 (0x03F8 - 0x02B8)
+// 0x0148 (0x0400 - 0x02B8)
 class ATsTriggerVolume_C final : public AKuroEffectActor
 {
 public:
@@ -61,14 +61,15 @@ public:
 	uint8                                         Pad_3E1[0x3];                                      // 0x03E1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         FootStepMaterialId;                                // 0x03E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class ABrush*>                         TriggerItems;                                      // 0x03E8(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	int32                                         SeasonAreaId;                                      // 0x03F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void TryReportSelfBuffDamageLog();
-	void AddBuffInner(int64 buffId);
-	void ReceiveBeginPlay();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
-	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_TsTriggerVolume(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void ReceiveBeginPlay();
+	void AddBuffInner(int64 buffId);
+	void TryReportSelfBuffDamageLog();
 
 public:
 	static class UClass* StaticClass()

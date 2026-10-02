@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroCurve_structs.hpp"
+#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass ItemMaterialControllerActorData.ItemMaterialControllerActorData_C
-// 0x2AA0 (0x2AD8 - 0x0038)
+// 0x2AF8 (0x2B30 - 0x0038)
 class UItemMaterialControllerActorData_C final : public UPrimaryDataAsset
 {
 public:
@@ -91,6 +91,8 @@ public:
 	struct FKuroCurveLinearColor                  TransparentColorQuanXiFengSuo;                     // 0x2818(0x0220)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, struct FKuroCurveFloat>     CustomScalarParMap;                                // 0x2A38(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<class FName, struct FKuroCurveLinearColor> CustomColorParMap;                               // 0x2A88(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<class FName, class UTexture*>            CustomTexParMap;                                   // 0x2AD8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          RevertCustomTexParOnDestroy;                       // 0x2B28(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()

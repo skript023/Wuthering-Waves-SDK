@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_EParagliderMd10011.ABP_EParagliderMd10011_C
-// 0x0000 (0x0CA0 - 0x0CA0)
+// 0x0000 (0x0E20 - 0x0E20)
 class UABP_EParagliderMd10011_C final : public UABP_ParaglidingBase_C
 {
 public:

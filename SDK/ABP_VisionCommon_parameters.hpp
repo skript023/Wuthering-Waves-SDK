@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "KuroAnim_structs.hpp"
 #include "Engine_structs.hpp"
 #include "EMovementDirection_structs.hpp"
+#include "KuroAnim_structs.hpp"
 
 
 namespace SDK::Params

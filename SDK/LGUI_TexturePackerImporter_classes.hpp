@@ -19,7 +19,7 @@ namespace SDK
 {
 
 // Class LGUI_TexturePackerImporter.LGUITexturePackerImporterData
-// 0x0160 (0x0190 - 0x0030)
+// 0x01B8 (0x01E8 - 0x0030)
 class ULGUITexturePackerImporterData final : public ULGUISpriteData_BaseImporter
 {
 public:
@@ -29,13 +29,16 @@ public:
 	TArray<struct FSoftObjectPath>                SoftAtlasTextures;                                 // 0x0060(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
 	TMap<uint16, uint8>                           SpriteAtlasTextureMap;                             // 0x0070(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
 	TMap<uint16, struct FLGUISpriteInfo>          SpriteInfoMap;                                     // 0x00C0(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
-	TMap<class FName, struct FIntPoint>           SpriteFrameInfoMap;                                // 0x0110(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
+	TMap<class FString, struct FIntPoint>         SpriteFrameInfoMapNew;                             // 0x0110(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
 	TArray<class ULGUISpriteData_BaseObject*>     SpriteDatas;                                       // 0x0160(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_170[0x4];                                      // 0x0170(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         MaxTextureSize;                                    // 0x0174(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bCanAddToDynamicAtlas;                             // 0x0178(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 CustomDynamicAtlasTag;                             // 0x0180(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bPackDiscreteSprites;                              // 0x0190(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FString, class FString>            DiscreteSpritesMD5MapNew;                          // 0x0198(0x0050)(Edit, EditConst, AdvancedDisplay, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -54,7 +57,7 @@ public:
 DUMPER7_ASSERTS_ULGUITexturePackerImporterData;
 
 // Class LGUI_TexturePackerImporter.LGUITexturePackerSpriteData
-// 0x00E0 (0x0110 - 0x0030)
+// 0x00E8 (0x0118 - 0x0030)
 class ULGUITexturePackerSpriteData final : public ULGUISpriteData_BaseObject
 {
 public:
@@ -73,8 +76,10 @@ public:
 	float                                         CustomUVOffsetX;                                   // 0x0068(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         CustomUVOffsetY;                                   // 0x006C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	class ULGUITexturePackerImporterData*         Importer;                                          // 0x0070(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UTexture2D*                             Texture2D;                                         // 0x0078(0x0008)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UTexture2D*                             Texture2D;                                         // 0x0078(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FLGUISpriteInfo                        CacheSpriteInfo;                                   // 0x0080(0x0090)(Edit, Transient, EditConst, NativeAccessSpecifierPrivate)
+	int16                                         Version;                                           // 0x0110(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_112[0x6];                                      // 0x0112(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

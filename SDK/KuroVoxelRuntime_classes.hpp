@@ -11,59 +11,14 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "KuroWorldPartition_classes.hpp"
+#include "KuroVoxelRuntime_structs.hpp"
+#include "NavigationSystem_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroWorldPartition_classes.hpp"
 
 
 namespace SDK
 {
-
-// Class KuroVoxelRuntime.KuroVoxelGlobalActor
-// 0x0008 (0x02B8 - 0x02B0)
-class AKuroVoxelGlobalActor final : public AActor
-{
-public:
-	class UKuroVoxelGlobalComponent*              KuroVoxelGlobalComp;                               // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroVoxelGlobalActor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroVoxelGlobalActor")
-	}
-	static class AKuroVoxelGlobalActor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AKuroVoxelGlobalActor>();
-	}
-};
-DUMPER7_ASSERTS_AKuroVoxelGlobalActor;
-
-// Class KuroVoxelRuntime.KuroVoxelGlobalComponent
-// 0x0070 (0x0290 - 0x0220)
-class UKuroVoxelGlobalComponent final : public USceneComponent
-{
-public:
-	uint8                                         Pad_218[0x74];                                     // 0x0218(0x0074)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Version;                                           // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroVoxelGlobalComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroVoxelGlobalComponent")
-	}
-	static class UKuroVoxelGlobalComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroVoxelGlobalComponent>();
-	}
-};
-DUMPER7_ASSERTS_UKuroVoxelGlobalComponent;
 
 // Class KuroVoxelRuntime.KuroVoxelPartitionActor
 // 0x0010 (0x02C8 - 0x02B8)
@@ -90,6 +45,32 @@ public:
 };
 DUMPER7_ASSERTS_AKuroVoxelPartitionActor;
 
+// Class KuroVoxelRuntime.KuroCaveVolumeSubsystem
+// 0x0050 (0x0088 - 0x0038)
+class UKuroCaveVolumeSubsystem final : public UWorldSubsystem
+{
+public:
+	uint8                                         Pad_38[0x50];                                      // 0x0038(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static uint8 D_QueryVoxelCaveType(class UObject* WorldContext, const struct FVectorDouble& UELocation, bool bTraceDown);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroCaveVolumeSubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroCaveVolumeSubsystem")
+	}
+	static class UKuroCaveVolumeSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroCaveVolumeSubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UKuroCaveVolumeSubsystem;
+
 // Class KuroVoxelRuntime.KuroVoxelPartitionComponent
 // 0x0018 (0x00D8 - 0x00C0)
 class UKuroVoxelPartitionComponent final : public UActorComponent
@@ -114,6 +95,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroVoxelPartitionComponent;
+
+// Class KuroVoxelRuntime.KuroVoxelGlobalActor
+// 0x0008 (0x02B8 - 0x02B0)
+class AKuroVoxelGlobalActor final : public AActor
+{
+public:
+	class UKuroVoxelGlobalComponent*              KuroVoxelGlobalComp;                               // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroVoxelGlobalActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVoxelGlobalActor")
+	}
+	static class AKuroVoxelGlobalActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroVoxelGlobalActor>();
+	}
+};
+DUMPER7_ASSERTS_AKuroVoxelGlobalActor;
 
 // Class KuroVoxelRuntime.KuroVoxelSystem
 // 0x00F8 (0x0130 - 0x0038)
@@ -152,6 +156,54 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroVoxelSystem;
+
+// Class KuroVoxelRuntime.KuroVoxelGlobalComponent
+// 0x0070 (0x0290 - 0x0220)
+class UKuroVoxelGlobalComponent final : public USceneComponent
+{
+public:
+	uint8                                         Pad_218[0x74];                                     // 0x0218(0x0074)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Version;                                           // 0x028C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroVoxelGlobalComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVoxelGlobalComponent")
+	}
+	static class UKuroVoxelGlobalComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroVoxelGlobalComponent>();
+	}
+};
+DUMPER7_ASSERTS_UKuroVoxelGlobalComponent;
+
+// Class KuroVoxelRuntime.KuroVoxelModifierVolume
+// 0x0008 (0x0308 - 0x0300)
+class AKuroVoxelModifierVolume final : public ANavModifierVolume
+{
+public:
+	EKuroVoxelCaveType                            CaveType;                                          // 0x0300(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_301[0x7];                                      // 0x0301(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroVoxelModifierVolume")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroVoxelModifierVolume")
+	}
+	static class AKuroVoxelModifierVolume* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKuroVoxelModifierVolume>();
+	}
+};
+DUMPER7_ASSERTS_AKuroVoxelModifierVolume;
 
 }
 

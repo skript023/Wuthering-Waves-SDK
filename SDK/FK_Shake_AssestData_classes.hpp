@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "KuroAnim_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass FK_Shake_AssestData.FK_Shake_AssestData_C
-// 0x0038 (0x0070 - 0x0038)
+// 0x0048 (0x0080 - 0x0038)
 class UFK_Shake_AssestData_C final : public UPrimaryDataAsset
 {
 public:
@@ -27,6 +27,8 @@ public:
 	float                                         ShakeTime;                                         // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         ShakeAmplitude;                                    // 0x0064(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         ShakeRange;                                        // 0x0068(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBoneFeedbackAnimConfigGroup           FeedbackAnim;                                      // 0x0070(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

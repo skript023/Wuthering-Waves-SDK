@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_XA.GA_XA_C
-// 0x0010 (0x0598 - 0x0588)
+// 0x0010 (0x05E0 - 0x05D0)
 class UGA_XA_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_XA_C;                            // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	EMovementMode                                 运动模式;                                          // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_XA_C;                            // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	EMovementMode                                 运动模式;                                          // 0x05D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_XA(int32 EntryPoint);

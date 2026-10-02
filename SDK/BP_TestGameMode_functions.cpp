@@ -127,20 +127,6 @@ void ABP_TestGameMode_C::Check()
 }
 
 
-// Function BP_TestGameMode.BP_TestGameMode_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_TestGameMode_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TestGameMode_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_TestGameMode.BP_TestGameMode_C.ReceiveTick
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -226,6 +212,20 @@ void ABP_TestGameMode_C::ExecuteUbergraph_BP_TestGameMode(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_TestGameMode.BP_TestGameMode_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_TestGameMode_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_TestGameMode_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

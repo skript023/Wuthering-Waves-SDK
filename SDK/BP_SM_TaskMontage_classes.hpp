@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "SMSystem_classes.hpp"
 
 
@@ -17,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SM_TaskMontage.BP_SM_TaskMontage_C
-// 0x0018 (0x0048 - 0x0030)
+// 0x0028 (0x0058 - 0x0030)
 class UBP_SM_TaskMontage_C final : public UASMTask
 {
 public:
@@ -26,6 +27,9 @@ public:
 	bool                                          允许打断;                                          // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_42[0x2];                                       // 0x0042(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         BlendInTime;                                       // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          生态蒙太奇强制Push到服务器;                        // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           ConfigReplaceTag;                                  // 0x004C(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

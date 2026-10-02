@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateSetWalkOff.TsAnimNotifyStateSetWalkOff_C
-// 0x0000 (0x0048 - 0x0048)
-class UTsAnimNotifyStateSetWalkOff_C final : public UKuroAnimNotifyState
+// 0x0000 (0x0058 - 0x0058)
+class UTsAnimNotifyStateSetWalkOff_C final : public UTsAnimNotifyStateBase_C
 {
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

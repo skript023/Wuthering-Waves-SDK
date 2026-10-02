@@ -17,7 +17,7 @@ namespace SDK::Params
 {
 
 // Function GA_BurstEnd_Kamola.GA_BurstEnd_Kamola_C.ExecuteUbergraph_GA_BurstEnd_Kamola
-// 0x0330 (0x0330 - 0x0000)
+// 0x03A8 (0x03A8 - 0x0000)
 struct GA_BurstEnd_Kamola_C_ExecuteUbergraph_GA_BurstEnd_Kamola final
 {
 public:
@@ -33,7 +33,7 @@ public:
 	int32                                         CallFunc_____ID___ID;                              // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_54[0x4];                                       // 0x0054(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class ATsBaseCharacter_C*                     CallFunc___________2;                              // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSkillBehaviorAction                  K2Node_MakeStruct_SSkillBehaviorAction;            // 0x0060(0x02D0)(HasGetValueTypeHash)
+	struct FSSkillBehaviorAction                  K2Node_MakeStruct_SSkillBehaviorAction;            // 0x0060(0x0348)(HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_GA_BurstEnd_Kamola_C_ExecuteUbergraph_GA_BurstEnd_Kamola;
 

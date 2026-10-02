@@ -10,8 +10,6 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 
 
@@ -19,16 +17,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_KuroSkeletalMeshDestructibleActor.BP_KuroSkeletalMeshDestructibleActor_C
-// 0x0018 (0x0310 - 0x02F8)
+// 0x0000 (0x0418 - 0x0418)
 class ABP_KuroSkeletalMeshDestructibleActor_C final : public AKuroDestructibleActor
 {
 public:
-	uint8                                         Pad_2F8[0x8];                                      // 0x02F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector4                               TempCustomPrimitiveDataIndex0;                     // 0x0300(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-public:
-	void 可视化物理破碎表现参数();
-	void Apply_Custom_Primitive_Data();
+	void 编辑时预览破碎效果();
+	void 显示或隐藏代理静态模型();
+	void 显示或隐藏所有的物理模拟碎块();
+	void 显示或隐藏破碎时渲染模型();
 
 public:
 	static class UClass* StaticClass()

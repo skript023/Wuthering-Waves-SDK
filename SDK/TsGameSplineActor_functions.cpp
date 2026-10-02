@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsGameSplineActor.TsGameSplineActor_C.GetPatrolSpeedByIndex
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   index                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -34,14 +34,19 @@ float ATsGameSplineActor_C::GetPatrolSpeedByIndex(int32 index)
 
 	Parms.index = index;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
 
 
 // Function TsGameSplineActor.TsGameSplineActor_C.GetPointRotatorByIndex
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   index                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 // struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
@@ -57,7 +62,12 @@ struct FRotator ATsGameSplineActor_C::GetPointRotatorByIndex(int32 index)
 
 	Parms.index = index;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "EAnimNotifyEffectLocationType_structs.hpp"
 #include "ESkillEffectType_structs.hpp"
+#include "EAnimNotifyEffectLocationType_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "GameplayTags_structs.hpp"
 
 
 namespace SDK
@@ -42,6 +42,8 @@ public:
 	bool                                          NeedAnyTag;                                        // 0x0128(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 	bool                                          IgnoreWhenInvisible;                               // 0x0129(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          IsSyncEffectTimeScale;                             // 0x012A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DisableOnVehicle;                                  // 0x012B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         AttachTimeLength;                                  // 0x012C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_ValidateAssets();

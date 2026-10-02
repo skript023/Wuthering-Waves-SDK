@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_R5Device004.ABP_R5Device004_C
-// 0x0000 (0x2690 - 0x2690)
+// 0x0000 (0x28A0 - 0x28A0)
 class UABP_R5Device004_C final : public UABP_Device_Common_C
 {
 public:

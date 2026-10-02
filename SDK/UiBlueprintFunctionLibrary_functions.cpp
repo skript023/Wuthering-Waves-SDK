@@ -17,33 +17,6 @@
 namespace SDK
 {
 
-// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.AreaBeginOverlap
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   areaId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UUiBlueprintFunctionLibrary_C::AreaBeginOverlap(float areaId, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UiBlueprintFunctionLibrary_C", "AreaBeginOverlap");
-
-	Params::UiBlueprintFunctionLibrary_C_AreaBeginOverlap Parms{};
-
-	Parms.areaId = areaId;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.TempModuleStart
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1680,10 +1653,11 @@ void UUiBlueprintFunctionLibrary_C::SetUiEndSequenceFrame(float Frame, class UOb
 // Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.GetUiWeaponBreachLevel
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
+// class USkeletalMeshComponent*           OwnComp                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-float UUiBlueprintFunctionLibrary_C::GetUiWeaponBreachLevel(class UObject* __WorldContext)
+float UUiBlueprintFunctionLibrary_C::GetUiWeaponBreachLevel(class USkeletalMeshComponent* OwnComp, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -1692,6 +1666,7 @@ float UUiBlueprintFunctionLibrary_C::GetUiWeaponBreachLevel(class UObject* __Wor
 
 	Params::UiBlueprintFunctionLibrary_C_GetUiWeaponBreachLevel Parms{};
 
+	Parms.OwnComp = OwnComp;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -2223,6 +2198,34 @@ void UUiBlueprintFunctionLibrary_C::DisablePhotographTimeDilation(class UObject*
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function UiBlueprintFunctionLibrary.UiBlueprintFunctionLibrary_C.TestSceneLoadPlayer
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+
+class FString UUiBlueprintFunctionLibrary_C::TestSceneLoadPlayer(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UiBlueprintFunctionLibrary_C", "TestSceneLoadPlayer");
+
+	Params::UiBlueprintFunctionLibrary_C_TestSceneLoadPlayer Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

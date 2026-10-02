@@ -15,7 +15,7 @@ namespace SDK
 {
 
 // Enum KuroHotPatch.EKuroDownloadState
-// NumValues: 0x0009
+// NumValues: 0x000A
 enum class EKuroDownloadState : uint8
 {
 	None                                     = 0,
@@ -26,7 +26,8 @@ enum class EKuroDownloadState : uint8
 	NotEnoughSpace                           = 5,
 	DownloadCanceled                         = 6,
 	DownloadSuccess                          = 7,
-	EKuroDownloadState_MAX                   = 8,
+	ChangeToCell                             = 8,
+	EKuroDownloadState_MAX                   = 9,
 };
 
 // ScriptStruct KuroHotPatch.KuroCheckInfoEntry

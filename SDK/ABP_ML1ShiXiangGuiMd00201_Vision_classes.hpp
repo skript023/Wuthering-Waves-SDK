@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_ML1ShiXiangGuiMd00201_Vision.ABP_ML1ShiXiangGuiMd00201_Vision_C
-// 0x0000 (0x2AB0 - 0x2AB0)
+// 0x0000 (0x2E00 - 0x2E00)
 class UABP_ML1ShiXiangGuiMd00201_Vision_C final : public UABP_VisionCommon_C
 {
 public:

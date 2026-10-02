@@ -72,31 +72,6 @@ bool UThinkingAnalytics::CreateSimpleInstance(const struct FCreateInstanceParam&
 }
 
 
-// Function TASdkPlugin.ThinkingAnalytics.DestroyAllInstance
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const bool                              Flush_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UThinkingAnalytics::DestroyAllInstance(const bool Flush_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("ThinkingAnalytics", "DestroyAllInstance");
-
-	Params::ThinkingAnalytics_DestroyAllInstance Parms{};
-
-	Parms.Flush_0 = Flush_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function TASdkPlugin.ThinkingAnalytics.DestroyInstance
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1280,6 +1255,63 @@ void UThinkingAnalytics::UserUnset(const class FString& Property, int32 Index_0)
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TASdkPlugin.ThinkingAnalyticsLibrary.Flush
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UThinkingAnalyticsLibrary::Flush(int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ThinkingAnalyticsLibrary", "Flush");
+
+	Params::ThinkingAnalyticsLibrary_Flush Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TASdkPlugin.ThinkingAnalyticsLibrary.Track
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    EventName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Properties                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UThinkingAnalyticsLibrary::Track(const class FString& EventName, const class FString& Properties, int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("ThinkingAnalyticsLibrary", "Track");
+
+	Params::ThinkingAnalyticsLibrary_Track Parms{};
+
+	Parms.EventName = std::move(EventName);
+	Parms.Properties = std::move(Properties);
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

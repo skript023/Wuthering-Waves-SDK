@@ -37,34 +37,6 @@ void UABP_R2T1ShouanrenMd10011_PC_C::ExecuteUbergraph_ABP_R2T1ShouanrenMd10011_P
 }
 
 
-// Function ABP_R2T1ShouanrenMd10011_PC.ABP_R2T1ShouanrenMd10011_PC_C.BlueprintBeginPlay
-// (Event, Public, BlueprintEvent)
-
-void UABP_R2T1ShouanrenMd10011_PC_C::BlueprintBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_R2T1ShouanrenMd10011_PC_C", "BlueprintBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function ABP_R2T1ShouanrenMd10011_PC.ABP_R2T1ShouanrenMd10011_PC_C.BindGameplayVariable
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UABP_R2T1ShouanrenMd10011_PC_C::BindGameplayVariable()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_R2T1ShouanrenMd10011_PC_C", "BindGameplayVariable");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_R2T1ShouanrenMd10011_PC.ABP_R2T1ShouanrenMd10011_PC_C.AnimGraph
 // (HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:

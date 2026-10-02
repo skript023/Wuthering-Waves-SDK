@@ -12,20 +12,20 @@
 
 #include "KuroAudio_structs.hpp"
 #include "E_FoleyVariant_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateFoleyAudioEvent.TsAnimNotifyStateFoleyAudioEvent_C
-// 0x0008 (0x0050 - 0x0048)
-class UTsAnimNotifyStateFoleyAudioEvent_C final : public UKuroAnimNotifyState
+// 0x0008 (0x0060 - 0x0058)
+class UTsAnimNotifyStateFoleyAudioEvent_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	int32                                         FadeDuration;                                      // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EAudioFadeCurve                               FadeCurve;                                         // 0x004C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	E_FoleyVariant                                Variant;                                           // 0x004D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         FadeDuration;                                      // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAudioFadeCurve                               FadeCurve;                                         // 0x005C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	E_FoleyVariant                                Variant;                                           // 0x005D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

@@ -10,24 +10,59 @@
 
 #include "Basic.hpp"
 
+#include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
 
 
 namespace SDK
 {
 
+// Class CrashSight.CrashSightProxyLibrary
+// 0x0000 (0x0030 - 0x0030)
+class UCrashSightProxyLibrary final : public UBlueprintFunctionLibrary
+{
+public:
+	static class FString GetSdkDeviceId();
+	static void ReportException(const int32 Type, const class FString& Name_0, const class FString& Message, const class FString& Stack, const class FString& Extras, const bool Async, const bool Quit, const int32 DumpNativeType);
+	static void SetBranchInfo(const class FString& Stream, const class FString& Changelist);
+	static void SetCustomData(const class FString& Key, const class FString& Value);
+	static void SetCustomDataByFName(const class FName& Key, const class FString& Value);
+	static void SetCustomDataCache(const class FString& Key, const class FString& Value);
+	static void SetUserId(const class FString& UserId);
+	static void Test();
+	static void TestCriticalError();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrashSightProxyLibrary")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrashSightProxyLibrary")
+	}
+	static class UCrashSightProxyLibrary* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrashSightProxyLibrary>();
+	}
+};
+DUMPER7_ASSERTS_UCrashSightProxyLibrary;
+
 // Class CrashSight.CrashSightSetting
-// 0x0048 (0x0078 - 0x0030)
+// 0x0068 (0x0098 - 0x0030)
 class UCrashSightSetting final : public UObject
 {
 public:
 	bool                                          bNeedUploadLog;                                    // 0x0030(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInternational;                                    // 0x0031(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIOSInitCrashHandler;                              // 0x0032(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_33[0x5];                                       // 0x0033(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 AndroidAppID;                                      // 0x0038(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 AndroidUploadURL;                                  // 0x0048(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 IOSAppID;                                          // 0x0058(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FString                                 IOSUploadURL;                                      // 0x0068(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OpenHarmonyAppID;                                  // 0x0078(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OpenHarmonyUploadURL;                              // 0x0088(0x0010)(Edit, ZeroConstructor, Config, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

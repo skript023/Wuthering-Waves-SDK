@@ -39,6 +39,7 @@ public:
 	bool                                          SuitableListenerByNoDynamic_73_6A9C22AC4AEBD5FBED8A56949F348D31; // 0x00AF(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          SlideToLeftOrTop_80_63C5FE8F41E05692709BD1A3D98B0D41; // 0x00B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	bool                                          SlideToRightOrDown_79_46E6936D4A0CD3430D6D05AABF8AAB69; // 0x00B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          WaitScrollAnimation_86_342E5FFC4478662E45DDCCB60F579432; // 0x00B2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_FSNavigationGroup;
 

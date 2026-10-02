@@ -59,6 +59,17 @@ public:
 };
 DUMPER7_ASSERTS_FChaosPhysicsCollisionInfo;
 
+// ScriptStruct ChaosSolverEngine.ChaosDebugSubstepControl
+// 0x0003 (0x0003 - 0x0000)
+struct FChaosDebugSubstepControl final
+{
+public:
+	bool                                          bPause;                                            // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSubstep;                                          // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStep;                                             // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FChaosDebugSubstepControl;
+
 // ScriptStruct ChaosSolverEngine.ChaosBreakEvent
 // 0x0030 (0x0030 - 0x0000)
 struct FChaosBreakEvent final
@@ -80,17 +91,6 @@ public:
 	uint8                                         Pad_0[0x40];                                       // 0x0000(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FBreakEventCallbackWrapper;
-
-// ScriptStruct ChaosSolverEngine.ChaosDebugSubstepControl
-// 0x0003 (0x0003 - 0x0000)
-struct FChaosDebugSubstepControl final
-{
-public:
-	bool                                          bPause;                                            // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSubstep;                                          // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStep;                                             // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FChaosDebugSubstepControl;
 
 }
 

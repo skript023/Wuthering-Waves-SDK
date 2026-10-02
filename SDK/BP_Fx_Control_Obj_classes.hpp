@@ -28,8 +28,8 @@ public:
 	bool                                          CanShow;                                           // 0x02C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_BP_Fx_Control_Obj(int32 EntryPoint);
 	void ReceiveTick(float DeltaSeconds);
+	void ExecuteUbergraph_BP_Fx_Control_Obj(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

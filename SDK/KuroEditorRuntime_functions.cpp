@@ -232,8 +232,9 @@ void UEditorRuntimeOperations::ReadFileAsync(const class FString& FilePath, TDel
 // const TMap<class FString, class FString>&HeaderParam                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 // const class FString&                    Content                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TDelegate<void(bool Success, int32 Code, const class FString& Data)>Handler                                                (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// float                                   Timeout                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UEditorRuntimeOperations::SendHttpRequest(const class FString& Method, const class FString& Url, const TMap<class FString, class FString>& HeaderParam, const class FString& Content, TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handler)
+void UEditorRuntimeOperations::SendHttpRequest(const class FString& Method, const class FString& Url, const TMap<class FString, class FString>& HeaderParam, const class FString& Content, TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handler, float Timeout)
 {
 	static class UFunction* Func = nullptr;
 
@@ -247,6 +248,7 @@ void UEditorRuntimeOperations::SendHttpRequest(const class FString& Method, cons
 	Parms.HeaderParam = std::move(HeaderParam);
 	Parms.Content = std::move(Content);
 	Parms.Handler = Handler;
+	Parms.Timeout = Timeout;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

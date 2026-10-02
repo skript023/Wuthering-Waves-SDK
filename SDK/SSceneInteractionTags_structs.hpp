@@ -11,17 +11,18 @@
 #include "Basic.hpp"
 
 #include "SSceneInteractionMaterialController_structs.hpp"
+#include "Engine_structs.hpp"
 #include "SSceneInteractionitemIndestructibleEffectsParameters_structs.hpp"
 #include "SSceneInteractionSequence_structs.hpp"
 #include "SSceneInteractionAudio_structs.hpp"
-#include "Engine_structs.hpp"
+#include "SSceneInteractionDestructibleInfo_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SSceneInteractionTags.SSceneInteractionTags
-// 0x0158 (0x0158 - 0x0000)
+// 0x0180 (0x0180 - 0x0000)
 struct FSSceneInteractionTags final
 {
 public:
@@ -36,9 +37,10 @@ public:
 	struct FSSceneInteractionAudio                AkEvent_125_7879183C4C0DC27CD1AFB7A4C9432BC3;      // 0x0080(0x0010)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<class ADestructibleActor*>             DestructibleActors_129_305813044966887DDDDCAA843C2C5D04; // 0x0090(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
 	TArray<class AKuroDestructibleActor*>         SkeletalMeshDestructibleActors_146_BC87412E48A5F0B3BAAE5BB20F680D4C; // 0x00A0(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TMap<class AActor*, struct FCollisionProfileName> AddTagActorCollisionProfile_144_39945B1C47B214D9502E8E86231330BB; // 0x00B0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TMap<class AActor*, struct FCollisionProfileName> RemoveTagActorCollisionProfile_145_51E1BFB54A329920C26E1A9E49316517; // 0x0100(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	class UPD_CharacterControllerDataGroup_C*     CharacterDataGroupForOrgan_152_48D88E674DCC628631BFF9ACA9A51DFE; // 0x0150(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSceneInteractionDestructibleInfo     HitInfo_155_3789428A4141F01BB517398C1E98959A;      // 0x00B0(0x0028)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class AActor*, struct FCollisionProfileName> AddTagActorCollisionProfile_144_39945B1C47B214D9502E8E86231330BB; // 0x00D8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TMap<class AActor*, struct FCollisionProfileName> RemoveTagActorCollisionProfile_145_51E1BFB54A329920C26E1A9E49316517; // 0x0128(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	class UPD_CharacterControllerDataGroup_C*     CharacterDataGroupForOrgan_152_48D88E674DCC628631BFF9ACA9A51DFE; // 0x0178(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSSceneInteractionTags;
 

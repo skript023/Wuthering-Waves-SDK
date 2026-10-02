@@ -10,16 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateTurnAdd.TsAnimNotifyStateTurnAdd_C
-// 0x0000 (0x0048 - 0x0048)
-class UTsAnimNotifyStateTurnAdd_C final : public UKuroAnimNotifyState
+// 0x0008 (0x0060 - 0x0058)
+class UTsAnimNotifyStateTurnAdd_C final : public UTsAnimNotifyStateBase_C
 {
+public:
+	int32                                         AffectType;                                        // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
 	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

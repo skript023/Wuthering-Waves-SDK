@@ -17,6 +17,31 @@
 namespace SDK
 {
 
+// Function SequenceDialogue.MovieSceneDialogueSection.GetEmotionNames
+// (Final, Native, Private, Const)
+// Parameters:
+// TArray<class FString>                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FString> UMovieSceneDialogueSection::GetEmotionNames() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MovieSceneDialogueSection", "GetEmotionNames");
+
+	Params::MovieSceneDialogueSection_GetEmotionNames Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function SequenceDialogue.MovieSceneDialogueSubsystem.ShowDialogue
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -27,8 +52,9 @@ namespace SDK
 // const int32                             AudioTransitionDuration                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const ELanguageAudio                    LanguageType                                           (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             AutoPlayDelay                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    UnisonIdList                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UMovieSceneDialogueSubsystem::ShowDialogue(bool bShow, const class FText& DialogueID, const int32 GuardTime, const int32 AudioDelay, const int32 AudioTransitionDuration, const ELanguageAudio LanguageType, const int32 AutoPlayDelay)
+void UMovieSceneDialogueSubsystem::ShowDialogue(bool bShow, const class FText& DialogueID, const int32 GuardTime, const int32 AudioDelay, const int32 AudioTransitionDuration, const ELanguageAudio LanguageType, const int32 AutoPlayDelay, const TArray<int32>& UnisonIdList)
 {
 	static class UFunction* Func = nullptr;
 
@@ -44,6 +70,7 @@ void UMovieSceneDialogueSubsystem::ShowDialogue(bool bShow, const class FText& D
 	Parms.AudioTransitionDuration = AudioTransitionDuration;
 	Parms.LanguageType = LanguageType;
 	Parms.AutoPlayDelay = AutoPlayDelay;
+	Parms.UnisonIdList = std::move(UnisonIdList);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -88,9 +115,10 @@ void UMovieSceneDialogueSubsystem::ShowDialogueAudio(bool bShow, const class FSt
 // Parameters:
 // struct FTransform*                      OutTrans                                               (Parm, OutParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 // float                                   OffsetTime                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bApplyCameraProperties                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UMovieSceneDialogueSubsystem::TryGetAutoTransformByOffsetTime(struct FTransform* OutTrans, float OffsetTime)
+bool UMovieSceneDialogueSubsystem::TryGetAutoTransformByOffsetTime(struct FTransform* OutTrans, float OffsetTime, bool bApplyCameraProperties)
 {
 	static class UFunction* Func = nullptr;
 
@@ -100,6 +128,7 @@ bool UMovieSceneDialogueSubsystem::TryGetAutoTransformByOffsetTime(struct FTrans
 	Params::MovieSceneDialogueSubsystem_TryGetAutoTransformByOffsetTime Parms{};
 
 	Parms.OffsetTime = OffsetTime;
+	Parms.bApplyCameraProperties = bApplyCameraProperties;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

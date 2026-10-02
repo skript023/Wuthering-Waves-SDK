@@ -18,14 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_VisionCoordination_mingzhong.GA_VisionCoordination_mingzhong_C
-// 0x0020 (0x05A8 - 0x0588)
+// 0x0020 (0x05F0 - 0x05D0)
 class UGA_VisionCoordination_mingzhong_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_VisionCoordination_mingzhong_C;  // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UObject*                                变身结束_材质特效;                                 // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UBP_VisionLocalVariables_C*             幻象坐标;                                          // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         召唤者实体ID;                                      // 0x05A0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_VisionCoordination_mingzhong_C;  // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UObject*                                变身结束_材质特效;                                 // 0x05D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBP_VisionLocalVariables_C*             幻象坐标;                                          // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         召唤者实体ID;                                      // 0x05E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_VisionCoordination_mingzhong(int32 EntryPoint);

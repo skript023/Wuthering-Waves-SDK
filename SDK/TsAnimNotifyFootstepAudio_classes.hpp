@@ -11,18 +11,18 @@
 #include "Basic.hpp"
 
 #include "E_FootstepVariant_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyFootstepAudio.TsAnimNotifyFootstepAudio_C
-// 0x0008 (0x0050 - 0x0048)
-class UTsAnimNotifyFootstepAudio_C final : public UKuroAnimNotify
+// 0x0008 (0x0060 - 0x0058)
+class UTsAnimNotifyFootstepAudio_C final : public UTsAnimNotifyBase_C
 {
 public:
-	E_FootstepVariant                             Variant;                                           // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	E_FootstepVariant                             Variant;                                           // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

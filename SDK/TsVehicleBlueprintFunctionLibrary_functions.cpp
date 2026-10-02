@@ -375,28 +375,63 @@ void UTsVehicleBlueprintFunctionLibrary_C::SmoothVehicleRotation(int32 entityId1
 }
 
 
-// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.SlerpQuat
-// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.AddBuffToVehicleFromGA
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FQuat&                     from                                                   (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// const struct FQuat&                     to                                                     (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-// float                                   slerp                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// struct FQuat&                           outQuat                                                (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseVehicle_C*                 target                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int64                                   buffId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// int32                                   addCount                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UTsVehicleBlueprintFunctionLibrary_C::SlerpQuat(const struct FQuat& from, const struct FQuat& to, float slerp, struct FQuat& outQuat, class UObject* __WorldContext)
+void UTsVehicleBlueprintFunctionLibrary_C::AddBuffToVehicleFromGA(int32 entityId, class ATsBaseVehicle_C* target, int64 buffId, const class FString& skillId, int32 addCount, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "SlerpQuat");
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "AddBuffToVehicleFromGA");
 
-	Params::TsVehicleBlueprintFunctionLibrary_C_SlerpQuat Parms{};
+	Params::TsVehicleBlueprintFunctionLibrary_C_AddBuffToVehicleFromGA Parms{};
 
-	Parms.from = std::move(from);
-	Parms.to = std::move(to);
-	Parms.slerp = slerp;
-	Parms.outQuat = std::move(outQuat);
+	Parms.entityId = entityId;
+	Parms.target = target;
+	Parms.buffId = buffId;
+	Parms.skillId = std::move(skillId);
+	Parms.addCount = addCount;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.GetVehicleImpactInfo
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool&                                   isImpacted                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// struct FVector&                         impactVelocity                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FHitResult&                      impactHitResult                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsVehicleBlueprintFunctionLibrary_C::GetVehicleImpactInfo(int32 entityId, bool& isImpacted, struct FVector& impactVelocity, struct FHitResult& impactHitResult, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "GetVehicleImpactInfo");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_GetVehicleImpactInfo Parms{};
+
+	Parms.entityId = entityId;
+	Parms.isImpacted = isImpacted;
+	Parms.impactVelocity = std::move(impactVelocity);
+	Parms.impactHitResult = std::move(impactHitResult);
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -406,7 +441,352 @@ void UTsVehicleBlueprintFunctionLibrary_C::SlerpQuat(const struct FQuat& from, c
 
 	Func->FunctionFlags = Flgs;
 
-	outQuat = std::move(Parms.outQuat);
+	isImpacted = Parms.isImpacted;
+	impactVelocity = std::move(Parms.impactVelocity);
+	impactHitResult = std::move(Parms.impactHitResult);
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.GetDrivingVehicleImpactInfo
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool&                                   isImpacted                                             (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// struct FVector&                         impactVelocity                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FHitResult&                      impactHitResult                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsVehicleBlueprintFunctionLibrary_C::GetDrivingVehicleImpactInfo(int32 entityId, bool& isImpacted, struct FVector& impactVelocity, struct FHitResult& impactHitResult, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "GetDrivingVehicleImpactInfo");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_GetDrivingVehicleImpactInfo Parms{};
+
+	Parms.entityId = entityId;
+	Parms.isImpacted = isImpacted;
+	Parms.impactVelocity = std::move(impactVelocity);
+	Parms.impactHitResult = std::move(impactHitResult);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	isImpacted = Parms.isImpacted;
+	impactVelocity = std::move(Parms.impactVelocity);
+	impactHitResult = std::move(Parms.impactHitResult);
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.ClearMotorTimer
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsVehicleBlueprintFunctionLibrary_C::ClearMotorTimer(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "ClearMotorTimer");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_ClearMotorTimer Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.TryGetPlayerMotorEntityId
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+int32 UTsVehicleBlueprintFunctionLibrary_C::TryGetPlayerMotorEntityId(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "TryGetPlayerMotorEntityId");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_TryGetPlayerMotorEntityId Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.ClearMotorAppearanceTag
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ATsBaseVehicle_C*                 motor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsVehicleBlueprintFunctionLibrary_C::ClearMotorAppearanceTag(class ATsBaseVehicle_C* motor, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "ClearMotorAppearanceTag");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_ClearMotorAppearanceTag Parms{};
+
+	Parms.motor = motor;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.MotorAppearance
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseVehicle_C*                 motor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    skillId                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    forceBrake                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float                                   hangTimeAfterAppear                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int64                                   endHangBuffId                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   disappearDistance                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   disappearTime                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int64                                   disappearBuffId                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsVehicleBlueprintFunctionLibrary_C::MotorAppearance(int32 entityId, class ATsBaseVehicle_C* motor, const class FString& skillId, bool forceBrake, float hangTimeAfterAppear, int64 endHangBuffId, float disappearDistance, float disappearTime, int64 disappearBuffId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "MotorAppearance");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_MotorAppearance Parms{};
+
+	Parms.entityId = entityId;
+	Parms.motor = motor;
+	Parms.skillId = std::move(skillId);
+	Parms.forceBrake = forceBrake;
+	Parms.hangTimeAfterAppear = hangTimeAfterAppear;
+	Parms.endHangBuffId = endHangBuffId;
+	Parms.disappearDistance = disappearDistance;
+	Parms.disappearTime = disappearTime;
+	Parms.disappearBuffId = disappearBuffId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.GetPassengerOnVehicle
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   seat                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseCharacter_C*               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class ATsBaseCharacter_C* UTsVehicleBlueprintFunctionLibrary_C::GetPassengerOnVehicle(int32 entityId, int32 seat, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "GetPassengerOnVehicle");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_GetPassengerOnVehicle Parms{};
+
+	Parms.entityId = entityId;
+	Parms.seat = seat;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.SummonAndRideMotorcycle
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FTransform&                seatTrans                                              (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+// int64                                   motorSkillId                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ATsBaseVehicle_C*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class ATsBaseVehicle_C* UTsVehicleBlueprintFunctionLibrary_C::SummonAndRideMotorcycle(int32 entityId, const struct FTransform& seatTrans, int64 motorSkillId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "SummonAndRideMotorcycle");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_SummonAndRideMotorcycle Parms{};
+
+	Parms.entityId = entityId;
+	Parms.seatTrans = std::move(seatTrans);
+	Parms.motorSkillId = motorSkillId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.SetMotorAndroidInitParams
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UKuroVehicleMovementComponent*    vehicleMove                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UTsVehicleBlueprintFunctionLibrary_C::SetMotorAndroidInitParams(class UKuroVehicleMovementComponent* vehicleMove, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "SetMotorAndroidInitParams");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_SetMotorAndroidInitParams Parms{};
+
+	Parms.vehicleMove = vehicleMove;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.NeedSimulateMotorIk
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsVehicleBlueprintFunctionLibrary_C::NeedSimulateMotorIk(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "NeedSimulateMotorIk");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_NeedSimulateMotorIk Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.IsVehicleInCatapult
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsVehicleBlueprintFunctionLibrary_C::IsVehicleInCatapult(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "IsVehicleInCatapult");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_IsVehicleInCatapult Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.HasVehicleCatapultReachedTarget
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UTsVehicleBlueprintFunctionLibrary_C::HasVehicleCatapultReachedTarget(int32 entityId, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("TsVehicleBlueprintFunctionLibrary_C", "HasVehicleCatapultReachedTarget");
+
+	Params::TsVehicleBlueprintFunctionLibrary_C_HasVehicleCatapultReachedTarget Parms{};
+
+	Parms.entityId = entityId;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 }

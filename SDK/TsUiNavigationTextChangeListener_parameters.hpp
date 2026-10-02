@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C.OnNotifyTextChangeBP
-// 0x0010 (0x0010 - 0x0000)
-struct TsUiNavigationTextChangeListener_C_OnNotifyTextChangeBP final
-{
-public:
-	class FString                                 NotifyText;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsUiNavigationTextChangeListener_C_OnNotifyTextChangeBP;
-
 // Function TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C.ExecuteUbergraph_TsUiNavigationTextChangeListener
 // 0x0018 (0x0018 - 0x0000)
 struct TsUiNavigationTextChangeListener_C_ExecuteUbergraph_TsUiNavigationTextChangeListener final
@@ -33,6 +24,15 @@ public:
 	class FString                                 K2Node_Event_NotifyText;                           // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsUiNavigationTextChangeListener_C_ExecuteUbergraph_TsUiNavigationTextChangeListener;
+
+// Function TsUiNavigationTextChangeListener.TsUiNavigationTextChangeListener_C.OnNotifyTextChangeBP
+// 0x0010 (0x0010 - 0x0000)
+struct TsUiNavigationTextChangeListener_C_OnNotifyTextChangeBP final
+{
+public:
+	class FString                                 NotifyText;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsUiNavigationTextChangeListener_C_OnNotifyTextChangeBP;
 
 }
 

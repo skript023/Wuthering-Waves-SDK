@@ -18,34 +18,37 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ScreenEffectSystem.BP_ScreenEffectSystem_C
-// 0x00C0 (0x0450 - 0x0390)
+// 0x00D0 (0x0500 - 0x0430)
 class ABP_ScreenEffectSystem_C final : public AKuroBPActor
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0390(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0398(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UEffectScreenPlayData_C*                DebugData;                                         // 0x03A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class UEffectScreenPlayData_C*, class ABP_ScreenEffectPlayer_C*> Effects;                   // 0x03A8(0x0050)(Edit, BlueprintVisible)
-	TArray<class UEffectScreenPlayData_C*>        OrderDatas;                                        // 0x03F8(0x0010)(Edit, BlueprintVisible)
-	TArray<class UEffectScreenPlayData_C*>        IndependentDatas;                                  // 0x0408(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          bEvaluateOrderEffects;                             // 0x0418(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_419[0x7];                                      // 0x0419(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AUIContainerActor*                      EditorScreenRoot;                                  // 0x0420(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AUIContainerActor*                      ScreenEffectFightRoot;                             // 0x0428(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AUIContainerActor*                      ScreenEffectPlotRoot;                              // 0x0430(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         EnvironmentFactorDebug;                            // 0x0438(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_43C[0x4];                                      // 0x043C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AUIContainerActor*                      ScreenEffectGeneralRoot;                           // 0x0440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         DebugExtraState;                                   // 0x0448(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         NiagaraFrameDeltaTime;                             // 0x044C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0430(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0438(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UEffectScreenPlayData_C*                DebugData;                                         // 0x0440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class UEffectScreenPlayData_C*, class ABP_ScreenEffectPlayer_C*> Effects;                   // 0x0448(0x0050)(Edit, BlueprintVisible)
+	TArray<class UEffectScreenPlayData_C*>        OrderDatas;                                        // 0x0498(0x0010)(Edit, BlueprintVisible)
+	TArray<class UEffectScreenPlayData_C*>        IndependentDatas;                                  // 0x04A8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bEvaluateOrderEffects;                             // 0x04B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4B9[0x7];                                      // 0x04B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AUIContainerActor*                      EditorScreenRoot;                                  // 0x04C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AUIContainerActor*                      ScreenEffectFightRoot;                             // 0x04C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AUIContainerActor*                      ScreenEffectPlotRoot;                              // 0x04D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         EnvironmentFactorDebug;                            // 0x04D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4DC[0x4];                                      // 0x04DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AUIContainerActor*                      ScreenEffectGeneralRoot;                           // 0x04E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         DebugExtraState;                                   // 0x04E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4EC[0x4];                                      // 0x04EC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AUIContainerActor*                      ScreenEffectCoverLoadingRoot;                      // 0x04F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NiagaraFrameDeltaTime;                             // 0x04F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_ScreenEffectSystem(int32 EntryPoint);
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
-	void AddEffect(class UEffectScreenPlayData_C* Data, class ABP_ScreenEffectPlayer_C** EffectPlayer);
+	void AddEffect(class UEffectScreenPlayData_C* Data, bool TickWhenPaused, class ABP_ScreenEffectPlayer_C** EffectPlayer);
 	void PlayScreenEffect(class UEffectScreenPlayData_C* Data);
 	void PlayEffectDebug();
+	void PlayScreenEffectNoPaused(class UEffectScreenPlayData_C* Data);
 	void EvaluateOrderEffects();
 	void EndScreenEffect(class UEffectScreenPlayData_C* Data);
 	void EndEffectDebug();
@@ -58,6 +61,8 @@ public:
 	void GetScreenEffectPlotRoot(class AUIContainerActor** ScreenEffectPlotRoot_0);
 	void Init_SEGeneralRoot();
 	void GetScreenEffectGeneralRoot(class AUIContainerActor** ScreenEffectGeneralRoot_0);
+	void Init_SECoverLoadingRoot();
+	void GetScreenEffectCoverLoadingRoot(class AUIContainerActor** ScreenEffectCoverLoadingRoot_0);
 	void SpawnPlayer(class UEffectScreenPlayData_C* Data, class ABP_ScreenEffectPlayer_C** OutputPlayer);
 	void DestroyScreenEffect(class UEffectScreenPlayData_C* Data);
 	void UpdateSEEnvironmentFactor(class UEffectScreenPlayData_C* Data, float EnvironmentFactor);

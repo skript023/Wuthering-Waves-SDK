@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsDecoratorWaitSwitchControl.TsDecoratorWaitSwitchControl_C
-// 0x0000 (0x00A8 - 0x00A8)
+// 0x0000 (0x00B0 - 0x00B0)
 class UTsDecoratorWaitSwitchControl_C final : public UBTDecorator_BlueprintBase
 {
 public:

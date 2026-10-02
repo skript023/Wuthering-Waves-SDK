@@ -37,20 +37,6 @@ void UABP_R2T1KamolaMd10011_PC_C::ExecuteUbergraph_ABP_R2T1KamolaMd10011_PC(int3
 }
 
 
-// Function ABP_R2T1KamolaMd10011_PC.ABP_R2T1KamolaMd10011_PC_C.BlueprintBeginPlay
-// (Event, Public, BlueprintEvent)
-
-void UABP_R2T1KamolaMd10011_PC_C::BlueprintBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_R2T1KamolaMd10011_PC_C", "BlueprintBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function ABP_R2T1KamolaMd10011_PC.ABP_R2T1KamolaMd10011_PC_C.BlueprintInitializeAnimation
 // (Event, Public, BlueprintEvent)
 
@@ -82,20 +68,6 @@ void UABP_R2T1KamolaMd10011_PC_C::BlueprintUpdateAnimation(float DeltaTimeX)
 	Parms.DeltaTimeX = DeltaTimeX;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function ABP_R2T1KamolaMd10011_PC.ABP_R2T1KamolaMd10011_PC_C.BindGameplayVariable
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void UABP_R2T1KamolaMd10011_PC_C::BindGameplayVariable()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_R2T1KamolaMd10011_PC_C", "BindGameplayVariable");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "KuroCurve_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroCurve_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Mascot.BP_Mascot_C
-// 0x00E0 (0x0390 - 0x02B0)
+// 0x0130 (0x03E0 - 0x02B0)
 class ABP_Mascot_C final : public AActor
 {
 public:
@@ -34,6 +34,7 @@ public:
 	struct FKuroCurveFloat                        KuroFixCurve;                                      // 0x02F8(0x0090)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         TalkID;                                            // 0x0388(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         TalkID_SP;                                         // 0x038C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	TMap<class FName, struct FTransform>          Float_Curve_Data;                                  // 0x0390(0x0050)(Edit, BlueprintVisible)
 
 public:
 	void UserConstructionScript();
@@ -51,6 +52,8 @@ public:
 	bool GetAnimDataTransform(TMap<class FName, struct FTransform>* FloatCurveData);
 	void GetAddSpineValue(struct FRotator* AddSpine);
 	void GetAddSpineHeadValue(struct FRotator* AddSpineHead);
+	void GetSeqMouthAnimInstance(class UAnimInstance** AnimInstance);
+	void GetSeqTalkId(int32* TalkID_0, int32* TalkID_SP_0);
 
 public:
 	static class UClass* StaticClass()

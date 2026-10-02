@@ -47,6 +47,16 @@ enum class ELandscapeClearMode : uint8
 	Clear_MAX                                = 4,
 };
 
+// Enum Landscape.EKuroIndexmapMipOption
+// NumValues: 0x0004
+enum class EKuroIndexmapMipOption : uint8
+{
+	KuroIndexmapMipOption_Default            = 0,
+	KuroIndexmapMipOption_NoMips             = 1,
+	KuroIndexmapMipOption_UseMips            = 2,
+	KuroIndexmapMipOption_MAX                = 3,
+};
+
 // Enum Landscape.ELandscapeGizmoType
 // NumValues: 0x0004
 enum class ELandscapeGizmoType : uint8

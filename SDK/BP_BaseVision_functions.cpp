@@ -17,57 +17,49 @@
 namespace SDK
 {
 
-// Function BP_BaseVision.BP_BaseVision_C.获取召唤角色
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Function BP_BaseVision.BP_BaseVision_C.ExecuteUbergraph_BP_BaseVision
+// (Final, UbergraphFunction)
 // Parameters:
-// class ATsBaseCharacter_C**              召唤角色                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_BaseVision_C::获取召唤角色(class ATsBaseCharacter_C** 召唤角色)
+void ABP_BaseVision_C::ExecuteUbergraph_BP_BaseVision(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "获取召唤角色");
+		Func = Class->GetFunction("BP_BaseVision_C", "ExecuteUbergraph_BP_BaseVision");
 
-	Params::BP_BaseVision_C_获取召唤角色 Parms{};
+	Params::BP_BaseVision_C_ExecuteUbergraph_BP_BaseVision Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	if (召唤角色 != nullptr)
-		*召唤角色 = Parms.召唤角色;
 }
 
 
-// Function BP_BaseVision.BP_BaseVision_C.获取幻象数据
-// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
-// Parameters:
-// struct FSVisionData*                    幻象数据                                               (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
+// Function BP_BaseVision.BP_BaseVision_C.显像结束
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_BaseVision_C::获取幻象数据(struct FSVisionData* 幻象数据)
+void ABP_BaseVision_C::显像结束()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "获取幻象数据");
+		Func = Class->GetFunction("BP_BaseVision_C", "显像结束");
 
-	Params::BP_BaseVision_C_获取幻象数据 Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	if (幻象数据 != nullptr)
-		*幻象数据 = std::move(Parms.幻象数据);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_BaseVision.BP_BaseVision_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_BaseVision.BP_BaseVision_C.显像初始化
+// (BlueprintCallable, BlueprintEvent)
 
-void ABP_BaseVision_C::ReceiveBeginPlay()
+void ABP_BaseVision_C::显像初始化()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_BaseVision_C", "显像初始化");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -93,51 +85,59 @@ void ABP_BaseVision_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_BaseVision.BP_BaseVision_C.显像初始化
-// (BlueprintCallable, BlueprintEvent)
+// Function BP_BaseVision.BP_BaseVision_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
 
-void ABP_BaseVision_C::显像初始化()
+void ABP_BaseVision_C::ReceiveBeginPlay()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "显像初始化");
+		Func = Class->GetFunction("BP_BaseVision_C", "ReceiveBeginPlay");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function BP_BaseVision.BP_BaseVision_C.显像结束
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_BaseVision_C::显像结束()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "显像结束");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_BaseVision.BP_BaseVision_C.ExecuteUbergraph_BP_BaseVision
-// (Final, UbergraphFunction)
+// Function BP_BaseVision.BP_BaseVision_C.获取幻象数据
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// struct FSVisionData*                    幻象数据                                               (Parm, OutParm, ContainsInstancedReference, HasGetValueTypeHash)
 
-void ABP_BaseVision_C::ExecuteUbergraph_BP_BaseVision(int32 EntryPoint)
+void ABP_BaseVision_C::获取幻象数据(struct FSVisionData* 幻象数据)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseVision_C", "ExecuteUbergraph_BP_BaseVision");
+		Func = Class->GetFunction("BP_BaseVision_C", "获取幻象数据");
 
-	Params::BP_BaseVision_C_ExecuteUbergraph_BP_BaseVision Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Params::BP_BaseVision_C_获取幻象数据 Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	if (幻象数据 != nullptr)
+		*幻象数据 = std::move(Parms.幻象数据);
+}
+
+
+// Function BP_BaseVision.BP_BaseVision_C.获取召唤角色
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// class ATsBaseCharacter_C**              召唤角色                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseVision_C::获取召唤角色(class ATsBaseCharacter_C** 召唤角色)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseVision_C", "获取召唤角色");
+
+	Params::BP_BaseVision_C_获取召唤角色 Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (召唤角色 != nullptr)
+		*召唤角色 = Parms.召唤角色;
 }
 
 }

@@ -10,29 +10,29 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "Engine_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
+#include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTaskBlackBoardSetValues.TsTaskBlackBoardSetValues_C
-// 0x0198 (0x0250 - 0x00B8)
+// 0x0198 (0x0258 - 0x00C0)
 class UTsTaskBlackBoardSetValues_C final : public UTsTaskAbortImmediatelyBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskBlackBoardSetValues_C;        // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	TMap<class FString, class FString>            StringMap;                                         // 0x00C0(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, float>                    FloatMap;                                          // 0x0110(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, bool>                     BooleanMap;                                        // 0x0160(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, struct FVector>           VectorMap;                                         // 0x01B0(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, int32>                    IntMap;                                            // 0x0200(0x0050)(Edit, BlueprintVisible)
+	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskBlackBoardSetValues_C;        // 0x00C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	TMap<class FString, class FString>            StringMap;                                         // 0x00C8(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, float>                    FloatMap;                                          // 0x0118(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, bool>                     BooleanMap;                                        // 0x0168(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, struct FVector>           VectorMap;                                         // 0x01B8(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, int32>                    IntMap;                                            // 0x0208(0x0050)(Edit, BlueprintVisible)
 
 public:
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_TsTaskBlackBoardSetValues(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 
 public:
 	static class UClass* StaticClass()

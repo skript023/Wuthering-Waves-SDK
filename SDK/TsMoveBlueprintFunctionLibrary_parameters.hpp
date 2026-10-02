@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "SMovementSetting_structs.hpp"
-#include "Engine_structs.hpp"
-#include "KuroAnim_structs.hpp"
-#include "EExitClimb_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "EClimbState_structs.hpp"
-#include "EMovementDirection_structs.hpp"
-#include "EEnterClimb_structs.hpp"
 #include "SClimbInfo_structs.hpp"
-#include "SClimbState_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "KuroAnim_structs.hpp"
+#include "EMovementDirection_structs.hpp"
+#include "SMovementSetting_structs.hpp"
+#include "EClimbState_structs.hpp"
 #include "SMovementSetting_State_structs.hpp"
+#include "EExitClimb_structs.hpp"
+#include "EEnterClimb_structs.hpp"
+#include "SClimbState_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -207,14 +207,14 @@ public:
 DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_GetAimYawRate;
 
 // Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.GetMovementData
-// 0x0658 (0x0658 - 0x0000)
+// 0x06E8 (0x06E8 - 0x0000)
 struct TsMoveBlueprintFunctionLibrary_C_GetMovementData final
 {
 public:
 	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSMovementSetting_State                ReturnValue;                                       // 0x0010(0x0648)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+	struct FSMovementSetting_State                ReturnValue;                                       // 0x0010(0x06D8)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_GetMovementData;
 
@@ -645,14 +645,14 @@ public:
 DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_SetUseDebugMovementSetting;
 
 // Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.SetDebugMovementSetting
-// 0x0068 (0x0068 - 0x0000)
+// 0x0070 (0x0070 - 0x0000)
 struct TsMoveBlueprintFunctionLibrary_C_SetDebugMovementSetting final
 {
 public:
 	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSMovementSetting                      newSetting;                                        // 0x0008(0x0058)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                __WorldContext;                                    // 0x0060(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSMovementSetting                      newSetting;                                        // 0x0008(0x0060)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0068(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_SetDebugMovementSetting;
 
@@ -1315,6 +1315,84 @@ public:
 	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_LeftEndSwing;
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.ResetClimbConfig
+// 0x0020 (0x0020 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_ResetClimbConfig final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 key;                                               // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_ResetClimbConfig;
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.EnableGoThrough
+// 0x0010 (0x0010 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_EnableGoThrough final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         goThroughPriority;                                 // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_EnableGoThrough;
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.DisableGoThrough
+// 0x0010 (0x0010 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_DisableGoThrough final
+{
+public:
+	int32                                         entityId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_DisableGoThrough;
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.EnterAssistedWalking
+// 0x0010 (0x0010 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_EnterAssistedWalking final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_EnterAssistedWalking;
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.LeftAssistedWalking
+// 0x0010 (0x0010 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_LeftAssistedWalking final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_LeftAssistedWalking;
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.StartAssistedWalk
+// 0x0010 (0x0010 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_StartAssistedWalk final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_StartAssistedWalk;
+
+// Function TsMoveBlueprintFunctionLibrary.TsMoveBlueprintFunctionLibrary_C.EnterAssistedWalkIdle
+// 0x0010 (0x0010 - 0x0000)
+struct TsMoveBlueprintFunctionLibrary_C_EnterAssistedWalkIdle final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsMoveBlueprintFunctionLibrary_C_EnterAssistedWalkIdle;
 
 }
 

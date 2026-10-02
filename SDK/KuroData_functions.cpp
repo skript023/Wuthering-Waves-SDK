@@ -17,6 +17,221 @@
 namespace SDK
 {
 
+// Function KuroData.KuroDerivedDataTable.MarkFieldOverridden
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             PropertyName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroDerivedDataTable::MarkFieldOverridden(class FName RowName, class FName PropertyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDerivedDataTable", "MarkFieldOverridden");
+
+	Params::KuroDerivedDataTable_MarkFieldOverridden Parms{};
+
+	Parms.RowName = RowName;
+	Parms.PropertyName = PropertyName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroData.KuroDerivedDataTable.MarkRowFullyOverridden
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroDerivedDataTable::MarkRowFullyOverridden(class FName RowName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDerivedDataTable", "MarkRowFullyOverridden");
+
+	Params::KuroDerivedDataTable_MarkRowFullyOverridden Parms{};
+
+	Parms.RowName = RowName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroData.KuroDerivedDataTable.RevertRowToParent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroDerivedDataTable::RevertRowToParent(class FName RowName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDerivedDataTable", "RevertRowToParent");
+
+	Params::KuroDerivedDataTable_RevertRowToParent Parms{};
+
+	Parms.RowName = RowName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroData.KuroDerivedDataTable.UnmarkFieldOverridden
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             PropertyName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroDerivedDataTable::UnmarkFieldOverridden(class FName RowName, class FName PropertyName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDerivedDataTable", "UnmarkFieldOverridden");
+
+	Params::KuroDerivedDataTable_UnmarkFieldOverridden Parms{};
+
+	Parms.RowName = RowName;
+	Parms.PropertyName = PropertyName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroData.KuroDerivedDataTable.GetAllResolvedRowNames
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TArray<class FName>                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<class FName> UKuroDerivedDataTable::GetAllResolvedRowNames() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDerivedDataTable", "GetAllResolvedRowNames");
+
+	Params::KuroDerivedDataTable_GetAllResolvedRowNames Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroData.KuroDerivedDataTable.HasAnyOverrideInRow
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroDerivedDataTable::HasAnyOverrideInRow(class FName RowName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDerivedDataTable", "HasAnyOverrideInRow");
+
+	Params::KuroDerivedDataTable_HasAnyOverrideInRow Parms{};
+
+	Parms.RowName = RowName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroData.KuroDerivedDataTable.IsChildOnlyRow
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroDerivedDataTable::IsChildOnlyRow(class FName RowName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDerivedDataTable", "IsChildOnlyRow");
+
+	Params::KuroDerivedDataTable_IsChildOnlyRow Parms{};
+
+	Parms.RowName = RowName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroData.KuroDerivedDataTable.IsFieldOverridden
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FName                             RowName                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             PropertyName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroDerivedDataTable::IsFieldOverridden(class FName RowName, class FName PropertyName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroDerivedDataTable", "IsFieldOverridden");
+
+	Params::KuroDerivedDataTable_IsFieldOverridden Parms{};
+
+	Parms.RowName = RowName;
+	Parms.PropertyName = PropertyName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroData.KuroHitResult.Clear
 // (Final, Native, Public, BlueprintCallable)
 
@@ -656,6 +871,35 @@ void UTraceBoxElement::SetBoxOrientation(float Pitch, float Yaw, float Roll)
 		Func = Class->GetFunction("TraceBoxElement", "SetBoxOrientation");
 
 	Params::TraceBoxElement_SetBoxOrientation Parms{};
+
+	Parms.Pitch = Pitch;
+	Parms.Yaw = Yaw;
+	Parms.Roll = Roll;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroData.TraceCapsuleElement.SetCapsuleOrientation
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Pitch                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Yaw                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Roll                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTraceCapsuleElement::SetCapsuleOrientation(float Pitch, float Yaw, float Roll)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TraceCapsuleElement", "SetCapsuleOrientation");
+
+	Params::TraceCapsuleElement_SetCapsuleOrientation Parms{};
 
 	Parms.Pitch = Pitch;
 	Parms.Yaw = Yaw;

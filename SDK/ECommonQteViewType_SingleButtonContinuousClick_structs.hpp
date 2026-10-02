@@ -15,12 +15,13 @@ namespace SDK
 {
 
 // UserDefinedEnum ECommonQteViewType_SingleButtonContinuousClick.ECommonQteViewType_SingleButtonContinuousClick
-// NumValues: 0x0003
+// NumValues: 0x0004
 enum class ECommonQteViewType_SingleButtonContinuousClick : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
-	ECommonQteViewType_MAX                   = 2,
+	NewEnumerator2                           = 2,
+	ECommonQteViewType_MAX                   = 3,
 };
 
 }

@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function TsBaseItem.TsBaseItem_C.GetTagDebugStrings
-// 0x0010 (0x0010 - 0x0000)
-struct TsBaseItem_C_GetTagDebugStrings final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsBaseItem_C_GetTagDebugStrings;
-
 // Function TsBaseItem.TsBaseItem_C.ExecuteUbergraph_TsBaseItem
 // 0x0004 (0x0004 - 0x0000)
 struct TsBaseItem_C_ExecuteUbergraph_TsBaseItem final
@@ -31,6 +22,15 @@ public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsBaseItem_C_ExecuteUbergraph_TsBaseItem;
+
+// Function TsBaseItem.TsBaseItem_C.GetTagDebugStrings
+// 0x0010 (0x0010 - 0x0000)
+struct TsBaseItem_C_GetTagDebugStrings final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsBaseItem_C_GetTagDebugStrings;
 
 }
 

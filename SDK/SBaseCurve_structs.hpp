@@ -17,13 +17,14 @@ namespace SDK
 {
 
 // UserDefinedStruct SBaseCurve.SBaseCurve
-// 0x0008 (0x0008 - 0x0000)
+// 0x0010 (0x0010 - 0x0000)
 struct FSBaseCurve final
 {
 public:
 	EBaseCurveType                                CurveType_4_A660E42245DE5A4982B9C1BAB3F4D355;      // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         N_9_7CEB15CF49A05BD4117208970B830890;              // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCurveFloat*                            FloatCurve_39_C3CDCAD649FDFAF6F82CA5B48EF8CC0C;    // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSBaseCurve;
 

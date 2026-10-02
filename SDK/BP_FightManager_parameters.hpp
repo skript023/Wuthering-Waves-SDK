@@ -11,14 +11,150 @@
 #include "Basic.hpp"
 
 #include "SHitMapping_structs.hpp"
-#include "Engine_structs.hpp"
 #include "ECamp_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ERelation_structs.hpp"
 #include "SCamp_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function BP_FightManager.BP_FightManager_C.ExecuteUbergraph_BP_FightManager
+// 0x0008 (0x0008 - 0x0000)
+struct BP_FightManager_C_ExecuteUbergraph_BP_FightManager final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_ExecuteUbergraph_BP_FightManager;
+
+// Function BP_FightManager.BP_FightManager_C.Tick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_FightManager_C_Tick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_Tick;
+
+// Function BP_FightManager.BP_FightManager_C.战斗初始化
+// 0x0010 (0x0010 - 0x0000)
+struct BP_FightManager_C_战斗初始化 final
+{
+public:
+	class UBP_ActorManager_C*                     CallFunc_SpawnObject_ReturnValue;                  // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_战斗初始化;
+
+// Function BP_FightManager.BP_FightManager_C.初始化
+// 0x0008 (0x0008 - 0x0000)
+struct BP_FightManager_C_初始化 final
+{
+public:
+	class UBP_MainGameInstance_C*                 游戏实例_0;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_初始化;
+
+// Function BP_FightManager.BP_FightManager_C.阵营判断
+// 0x0050 (0x0050 - 0x0000)
+struct BP_FightManager_C_阵营判断 final
+{
+public:
+	ECamp                                         自身阵营;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECamp                                         目标阵营;                                          // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ERelation                                     关系;                                              // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         关系整数;                                          // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCamp                                 找到的阵营数据;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Conv_ByteToInt_ReturnValue;               // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x002C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCamp                                 CallFunc_GetDataTableRowFromName_OutRow;           // 0x0038(0x0010)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0049(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x004A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_阵营判断;
+
+// Function BP_FightManager.BP_FightManager_C.烈度返回NPC
+// 0x0048 (0x0048 - 0x0000)
+struct BP_FightManager_C_烈度返回NPC final
+{
+public:
+	class FString                                 烈度加npc;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	int32                                         循环烈度;                                          // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          同时攻击达到上限;                                  // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         怪物攻击权重局部;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UObject*>                        怪物aic局部数组;                                   // 0x0020(0x0010)(Edit, BlueprintVisible)
+	class UObject*                                角色实体局部;                                      // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UObject*>                        角色数组局部;                                      // 0x0038(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_烈度返回NPC;
+
+// Function BP_FightManager.BP_FightManager_C.烈度获取所有Actor
+// 0x0018 (0x0018 - 0x0000)
+struct BP_FightManager_C_烈度获取所有Actor final
+{
+public:
+	int32                                         当前怪物索引;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                怪物临时变量;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                角色临时变量;                                      // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_烈度获取所有Actor;
+
+// Function BP_FightManager.BP_FightManager_C.注册BPai
+// 0x0008 (0x0008 - 0x0000)
+struct BP_FightManager_C_注册BPai final
+{
+public:
+	class UObject*                                BPAI对象;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_注册BPai;
+
+// Function BP_FightManager.BP_FightManager_C.添加Debug的对象
+// 0x0048 (0x0048 - 0x0000)
+struct BP_FightManager_C_添加Debug的对象 final
+{
+public:
+	const class ABaseCharacter*                   baseChar;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_添加Debug的对象;
+
+// Function BP_FightManager.BP_FightManager_C.删除Debug的对象
+// 0x0050 (0x0050 - 0x0000)
+struct BP_FightManager_C_删除Debug的对象 final
+{
+public:
+	const class ABaseCharacter*                   baseChar;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0008(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Remove_ReturnValue;                   // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_删除Debug的对象;
+
+// Function BP_FightManager.BP_FightManager_C.站位控制
+// 0x0020 (0x0020 - 0x0000)
+struct BP_FightManager_C_站位控制 final
+{
+public:
+	TArray<class UObject*>                        怪物数组;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                临时选中结果;                                      // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                站位临时数组对象;                                  // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FightManager_C_站位控制;
 
 // Function BP_FightManager.BP_FightManager_C.查询受击类型覆盖
 // 0x0128 (0x0128 - 0x0000)
@@ -43,147 +179,34 @@ public:
 };
 DUMPER7_ASSERTS_BP_FightManager_C_查询受击类型覆盖;
 
-// Function BP_FightManager.BP_FightManager_C.站位控制
-// 0x0020 (0x0020 - 0x0000)
-struct BP_FightManager_C_站位控制 final
-{
-public:
-	TArray<class UObject*>                        怪物数组;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UObject*                                临时选中结果;                                      // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                站位临时数组对象;                                  // 0x0018(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_站位控制;
-
-// Function BP_FightManager.BP_FightManager_C.删除Debug的对象
-// 0x0068 (0x0068 - 0x0000)
-struct BP_FightManager_C_删除Debug的对象 final
-{
-public:
-	const class ATsBaseCharacter_C*               baseChar;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0008(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0050(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Map_Remove_ReturnValue;                   // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_删除Debug的对象;
-
-// Function BP_FightManager.BP_FightManager_C.添加Debug的对象
-// 0x0060 (0x0060 - 0x0000)
-struct BP_FightManager_C_添加Debug的对象 final
-{
-public:
-	const class ATsBaseCharacter_C*               baseChar;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TScriptInterface<class IBPI_CreatureInterface_C> CallFunc_GetEntityId_self_CastInput;            // 0x0008(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CallFunc_GetObjectName_ReturnValue;                // 0x0020(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0030(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0040(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0050(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_添加Debug的对象;
-
-// Function BP_FightManager.BP_FightManager_C.注册BPai
-// 0x0008 (0x0008 - 0x0000)
-struct BP_FightManager_C_注册BPai final
-{
-public:
-	class UObject*                                BPAI对象;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_注册BPai;
-
-// Function BP_FightManager.BP_FightManager_C.烈度获取所有Actor
-// 0x0018 (0x0018 - 0x0000)
-struct BP_FightManager_C_烈度获取所有Actor final
-{
-public:
-	int32                                         当前怪物索引;                                      // 0x0000(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                怪物临时变量;                                      // 0x0008(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                角色临时变量;                                      // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_烈度获取所有Actor;
-
-// Function BP_FightManager.BP_FightManager_C.烈度返回NPC
+// Function BP_FightManager.BP_FightManager_C.AddDebugEntity
 // 0x0048 (0x0048 - 0x0000)
-struct BP_FightManager_C_烈度返回NPC final
+struct BP_FightManager_C_AddDebugEntity final
 {
 public:
-	class FString                                 烈度加npc;                                         // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	int32                                         循环烈度;                                          // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          同时攻击达到上限;                                  // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         怪物攻击权重局部;                                  // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UObject*>                        怪物aic局部数组;                                   // 0x0020(0x0010)(Edit, BlueprintVisible)
-	class UObject*                                角色实体局部;                                      // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UObject*>                        角色数组局部;                                      // 0x0038(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ObjectName;                                        // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_FightManager_C_烈度返回NPC;
+DUMPER7_ASSERTS_BP_FightManager_C_AddDebugEntity;
 
-// Function BP_FightManager.BP_FightManager_C.阵营判断
+// Function BP_FightManager.BP_FightManager_C.RemoveDebugEntity
 // 0x0050 (0x0050 - 0x0000)
-struct BP_FightManager_C_阵营判断 final
+struct BP_FightManager_C_RemoveDebugEntity final
 {
 public:
-	ECamp                                         自身阵营;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECamp                                         目标阵营;                                          // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ERelation                                     关系;                                              // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         关系整数;                                          // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSCamp                                 找到的阵营数据;                                    // 0x0008(0x0010)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetEnumeratorUserFriendlyName_ReturnValue; // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	int32                                         CallFunc_Conv_ByteToInt_ReturnValue;               // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   CallFunc_Conv_StringToName_ReturnValue;            // 0x002C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSCamp                                 CallFunc_GetDataTableRowFromName_OutRow;           // 0x0038(0x0010)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_Array_IsValidIndex_ReturnValue;           // 0x0049(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchInteger_CmpSuccess;                   // 0x004A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         EntityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ObjectName;                                        // 0x0008(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue;                // 0x0018(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Conv_IntToString_ReturnValue;             // 0x0028(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_Concat_StrStr_ReturnValue_1;              // 0x0038(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Map_Remove_ReturnValue;                   // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_BP_FightManager_C_阵营判断;
-
-// Function BP_FightManager.BP_FightManager_C.初始化
-// 0x0008 (0x0008 - 0x0000)
-struct BP_FightManager_C_初始化 final
-{
-public:
-	class UBP_MainGameInstance_C*                 游戏实例_0;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_初始化;
-
-// Function BP_FightManager.BP_FightManager_C.战斗初始化
-// 0x0010 (0x0010 - 0x0000)
-struct BP_FightManager_C_战斗初始化 final
-{
-public:
-	class UBP_ActorManager_C*                     CallFunc_SpawnObject_ReturnValue;                  // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0009(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_战斗初始化;
-
-// Function BP_FightManager.BP_FightManager_C.Tick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_FightManager_C_Tick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_Tick;
-
-// Function BP_FightManager.BP_FightManager_C.ExecuteUbergraph_BP_FightManager
-// 0x0008 (0x0008 - 0x0000)
-struct BP_FightManager_C_ExecuteUbergraph_BP_FightManager final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_FightManager_C_ExecuteUbergraph_BP_FightManager;
+DUMPER7_ASSERTS_BP_FightManager_C_RemoveDebugEntity;
 
 }
 

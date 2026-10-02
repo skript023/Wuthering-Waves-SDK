@@ -19,14 +19,14 @@ namespace SDK
 {
 
 // UserDefinedStruct SCommonQte.SCommonQte
-// 0x0600 (0x0600 - 0x0000)
+// 0x06A8 (0x06A8 - 0x0000)
 struct FSCommonQte final
 {
 public:
 	class FString                                 Desc_53_6B8C0CB642021EB9D51335982CA9F4DC;          // 0x0000(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	struct FSCommonQte_Base                       BaseConfig_63_E8D6B9FF44D5542A9E8D28A4FC938C5F;    // 0x0010(0x0358)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	struct FSCommonQte_Extra                      ExtraConfig_62_8104938448C7A7014CA101BCE7BDEF60;   // 0x0368(0x00D8)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
-	struct FSCommonQte_Audio                      AudioConfig_76_8707BEDB4FF65B5D306DF8988491C10E;   // 0x0440(0x01C0)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_Base                       BaseConfig_63_E8D6B9FF44D5542A9E8D28A4FC938C5F;    // 0x0010(0x03D0)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_Extra                      ExtraConfig_62_8104938448C7A7014CA101BCE7BDEF60;   // 0x03E0(0x0108)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FSCommonQte_Audio                      AudioConfig_76_8707BEDB4FF65B5D306DF8988491C10E;   // 0x04E8(0x01C0)(Edit, BlueprintVisible, ContainsInstancedReference, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCommonQte;
 

@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "ECamp_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
@@ -49,6 +49,7 @@ public:
 	static void LoadAiWeaponSocket(class FName RowName, class UObject* __WorldContext, struct FSAiWeaponSocket* Out_Row);
 	static void LoadAiWeaponSocketConfigs(class FName RowName, const int32& Key, class UObject* __WorldContext, struct FSWeaponSocketItem* Weapon);
 	static void GetDataTableOnEditor(const class FString& path, class UObject* __WorldContext, class UDataTable** Return);
+	static void LoadDecorationConfig(const class FString& Row, class UObject* __WorldContext, bool* bSucc, struct FSDecorationConfig* result);
 
 public:
 	static class UClass* StaticClass()

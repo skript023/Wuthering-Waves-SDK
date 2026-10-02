@@ -17,13 +17,15 @@ namespace SDK::Params
 {
 
 // Function KuroPuertsWrapper.KuroDataTableFunctionLibrary.AddOnDataTableChangedDelegate
-// 0x0038 (0x0038 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct KuroDataTableFunctionLibrary_AddOnDataTableChangedDelegate final
 {
 public:
 	class UDataTable*                             Table;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UObject*                                Object;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void()>                             OnDataTableChanged;                                // 0x0010(0x0028)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0038(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroDataTableFunctionLibrary_AddOnDataTableChangedDelegate;
 
@@ -49,6 +51,15 @@ public:
 	class UObject*                                Object;                                            // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroDataTableFunctionLibrary_RemoveOnDataTableChangedDelegate;
+
+// Function KuroPuertsWrapper.KuroDataTableFunctionLibrary.RemoveOnDataTableChangedDelegateById
+// 0x0004 (0x0004 - 0x0000)
+struct KuroDataTableFunctionLibrary_RemoveOnDataTableChangedDelegateById final
+{
+public:
+	int32                                         HandleId;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroDataTableFunctionLibrary_RemoveOnDataTableChangedDelegateById;
 
 }
 

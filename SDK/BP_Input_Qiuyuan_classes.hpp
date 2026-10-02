@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Input_Qiuyuan.BP_Input_Qiuyuan_C
-// 0x0008 (0x0228 - 0x0220)
+// 0x0008 (0x0248 - 0x0240)
 class UBP_Input_Qiuyuan_C final : public UBP_InputComponent_C
 {
 public:
-	float                                         距离检测变量;                                      // 0x0220(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         距离检测变量;                                      // 0x0240(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	struct FSInputCommand 攻击按下(float time);

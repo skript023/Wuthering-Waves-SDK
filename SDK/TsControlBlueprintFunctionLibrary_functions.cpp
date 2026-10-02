@@ -258,35 +258,6 @@ void UTsControlBlueprintFunctionLibrary_C::BpInputReceiveEndPlay(int32 entityId,
 }
 
 
-// Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetUseControllerRotationPitch
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// bool                                    value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsControlBlueprintFunctionLibrary_C::SetUseControllerRotationPitch(int32 entityId, bool value, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsControlBlueprintFunctionLibrary_C", "SetUseControllerRotationPitch");
-
-	Params::TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationPitch Parms{};
-
-	Parms.entityId = entityId;
-	Parms.value = value;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetUseControllerRotationYaw
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -302,35 +273,6 @@ void UTsControlBlueprintFunctionLibrary_C::SetUseControllerRotationYaw(int32 ent
 		Func = StaticClass()->GetFunction("TsControlBlueprintFunctionLibrary_C", "SetUseControllerRotationYaw");
 
 	Params::TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationYaw Parms{};
-
-	Parms.entityId = entityId;
-	Parms.value = value;
-	Parms.__WorldContext = __WorldContext;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function TsControlBlueprintFunctionLibrary.TsControlBlueprintFunctionLibrary_C.SetUseControllerRotationRoll
-// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   entityId                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// bool                                    value                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UTsControlBlueprintFunctionLibrary_C::SetUseControllerRotationRoll(int32 entityId, bool value, class UObject* __WorldContext)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("TsControlBlueprintFunctionLibrary_C", "SetUseControllerRotationRoll");
-
-	Params::TsControlBlueprintFunctionLibrary_C_SetUseControllerRotationRoll Parms{};
 
 	Parms.entityId = entityId;
 	Parms.value = value;

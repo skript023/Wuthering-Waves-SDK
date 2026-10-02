@@ -16,25 +16,25 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass KuroSceneInteraction_13.TPrefab_SM_Pro_Mine_6_C
+// BlueprintGeneratedClass KuroSceneInteraction_13.TPrefab_SM_Pro_Box_2_0_04_Monser_C
 // 0x0000 (0x02B8 - 0x02B8)
-class KuroSceneInteraction_13::ATPrefab_SM_Pro_Mine_6_C final : public ALevelScriptActor
+class KuroSceneInteraction_13::ATPrefab_SM_Pro_Box_2_0_04_Monser_C final : public ALevelScriptActor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_13.TPrefab_SM_Pro_Mine_6_C")
+		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_13.TPrefab_SM_Pro_Box_2_0_04_Monser_C")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"TPrefab_SM_Pro_Mine_6_C")
+		STATIC_NAME_IMPL(L"TPrefab_SM_Pro_Box_2_0_04_Monser_C")
 	}
-	static class KuroSceneInteraction_13::ATPrefab_SM_Pro_Mine_6_C* GetDefaultObj()
+	static class KuroSceneInteraction_13::ATPrefab_SM_Pro_Box_2_0_04_Monser_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<KuroSceneInteraction_13::ATPrefab_SM_Pro_Mine_6_C>();
+		return GetDefaultObjImpl<KuroSceneInteraction_13::ATPrefab_SM_Pro_Box_2_0_04_Monser_C>();
 	}
 };
-DUMPER7_ASSERTS_KuroSceneInteraction_13__ATPrefab_SM_Pro_Mine_6_C;
+DUMPER7_ASSERTS_KuroSceneInteraction_13__ATPrefab_SM_Pro_Box_2_0_04_Monser_C;
 
 }
 

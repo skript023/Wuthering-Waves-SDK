@@ -14,22 +14,22 @@
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "KuroSimpleCombat_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "KuroSimpleCombat_structs.hpp"
 
 
 namespace SDK
 {
 
 // Class KuroSimpleCombat.InstanceCapsuleComponent
-// 0x0020 (0x0550 - 0x0530)
+// 0x0020 (0x05B0 - 0x0590)
 class UInstanceCapsuleComponent final : public UPrimitiveComponent
 {
 public:
-	float                                         CapsuleHalfHeight;                                 // 0x0528(0x0004)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         CapsuleRadius;                                     // 0x052C(0x0004)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UBodySetup*                             ShapeBodySetup;                                    // 0x0530(0x0008)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_538[0x18];                                     // 0x0538(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         CapsuleHalfHeight;                                 // 0x0590(0x0004)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         CapsuleRadius;                                     // 0x0594(0x0004)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UBodySetup*                             ShapeBodySetup;                                    // 0x0598(0x0008)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_5A0[0x10];                                     // 0x05A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	int32 AddNewInstanceData(const struct FTransform& WorldSpaceInstanceTransform);
@@ -76,23 +76,110 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_BaseObject;
 
+// Class KuroSimpleCombat.KSC_BuffEffectBase
+// 0x0008 (0x0040 - 0x0038)
+class UKSC_BuffEffectBase : public UKSC_BaseObject
+{
+public:
+	class UKSC_Buff_WithEffect*                   OwnerBuff;                                         // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_BuffEffectBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_BuffEffectBase")
+	}
+	static class UKSC_BuffEffectBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_BuffEffectBase>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_BuffEffectBase;
+
+// Class KuroSimpleCombat.KSC_AddBuffToFactionEntities
+// 0x0058 (0x0098 - 0x0040)
+class UKSC_AddBuffToFactionEntities final : public UKSC_BuffEffectBase
+{
+public:
+	class UKSC_DA_AddBuffToFactionEntities*       DaBuffEffect;                                      // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TSet<EKSC_Faction>                            Factions;                                          // 0x0048(0x0050)(NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_AddBuffToFactionEntities")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_AddBuffToFactionEntities")
+	}
+	static class UKSC_AddBuffToFactionEntities* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_AddBuffToFactionEntities>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_AddBuffToFactionEntities;
+
+// Class KuroSimpleCombat.KSC_Anim
+// 0x0008 (0x0040 - 0x0038)
+class UKSC_Anim : public UKSC_BaseObject
+{
+public:
+	class AKSC_Entity*                            Owner_;                                            // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Anim")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Anim")
+	}
+	static class UKSC_Anim* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Anim>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Anim;
+
 // Class KuroSimpleCombat.KSC_AttrSet
-// 0x02A8 (0x02E0 - 0x0038)
+// 0x03F8 (0x0430 - 0x0038)
 class UKSC_AttrSet final : public UKSC_BaseObject
 {
 public:
 	class UKSC_SkillComp*                         Owner_;                                            // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<EKSC_AttrType, int32>                    Attrs_;                                            // 0x0040(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	TMap<class UObject*, int32>                   MoveReduceAttrs;                                   // 0x0090(0x0050)(Protected, NativeAccessSpecifierProtected)
-	class UObject*                                CurMoveReduceObject;                               // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_E8[0x50];                                      // 0x00E8(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EKSC_AttrType, int32>                    AttrsLockLowerBound;                               // 0x0138(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	TMap<int32, struct FKSC_AttrBoundLocker>      LowerBoundLockerMap;                               // 0x0188(0x0050)(Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1D8[0x108];                                    // 0x01D8(0x0108)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<EKSC_AttrType, int32>                    SourceAttrs_;                                      // 0x0040(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TMap<EKSC_AttrType, int32>                    Attrs_;                                            // 0x0090(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TMap<class UObject*, int32>                   MoveReduceAttrs;                                   // 0x00E0(0x0050)(Protected, NativeAccessSpecifierProtected)
+	class UObject*                                CurMoveReduceObject;                               // 0x0130(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_138[0x60];                                     // 0x0138(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EKSC_AttrType, int32>                    AttrsLockLowerBound;                               // 0x0198(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TMap<EKSC_AttrType, int32>                    AttrsLockUpperBound;                               // 0x01E8(0x0050)(BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	TMap<int32, struct FKSC_AttrBoundLocker>      LowerBoundLockerMap;                               // 0x0238(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<int32, struct FKSC_AttrBoundLocker>      UpperBoundLockerMap;                               // 0x0288(0x0050)(Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2D8[0x8];                                      // 0x02D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EKSC_AttrType, int32>                    LockedAttrValues_;                                 // 0x02E0(0x0050)(Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_330[0x100];                                    // 0x0330(0x0100)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	int32 AddLowerBoundLocker(EKSC_AttrType Id, int32 Value);
+	int32 AddUpperBoundLocker(EKSC_AttrType Id, int32 Value);
+	void AssignAllAttrListen(const TDelegate<void(EKSC_AttrType AttrType, int32 OldValue, int32 NewValue)>& InDelegate);
 	void AssignAttrListen(EKSC_AttrType Id, const TDelegate<void(EKSC_AttrType AttrType, int32 Value)>& InDelegate);
+	void ClearAllLockedAttrValues();
+	void LockAttrValue(EKSC_AttrType Id, int32 Value);
+	void RemoveAllAttrListen(const TDelegate<void(EKSC_AttrType AttrType, int32 OldValue, int32 NewValue)>& InDelegate);
 	void RemoveAttrListen(EKSC_AttrType Id, const TDelegate<void(EKSC_AttrType AttrType, int32 Value)>& InDelegate);
+	void RemoveLowerBoundLocker(EKSC_AttrType Id, int32 HandleId);
+	void RemoveUpperBoundLocker(EKSC_AttrType Id, int32 HandleId);
+	void UnlockAttrValue(EKSC_AttrType Id);
+
+	bool GetLockedAttrValue(EKSC_AttrType Id, int32* Value) const;
+	bool IsAttrValueLocked(EKSC_AttrType Id) const;
 
 public:
 	static class UClass* StaticClass()
@@ -133,6 +220,87 @@ public:
 };
 DUMPER7_ASSERTS_AKSC_BaseActor;
 
+// Class KuroSimpleCombat.KSC_Skill
+// 0x0070 (0x00A8 - 0x0038)
+class UKSC_Skill : public UKSC_BaseObject
+{
+public:
+	class UKSC_DA_Skill*                          DaSkill_;                                          // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_SkillComp*                         Caster_;                                           // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_SkillComp*                         Target_;                                           // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class UKSC_SkillComp*>                 Targets_;                                          // 0x0050(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_60[0x30];                                      // 0x0060(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	EKSC_Skill_State                              SkillState_;                                       // 0x0090(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_91[0x17];                                      // 0x0091(0x0017)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	float GetSkillCoolDownMax();
+	float GetSkillCoolDownRemain();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill")
+	}
+	static class UKSC_Skill* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill;
+
+// Class KuroSimpleCombat.KSC_Skill_Anim
+// 0x0010 (0x00B8 - 0x00A8)
+class UKSC_Skill_Anim : public UKSC_Skill
+{
+public:
+	class UKSC_DA_Skill_Anim*                     DaSkillAnim_;                                      // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_Anim")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_Anim")
+	}
+	static class UKSC_Skill_Anim* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_Anim>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_Anim;
+
+// Class KuroSimpleCombat.KSC_Skill_Dash
+// 0x0020 (0x00D8 - 0x00B8)
+class UKSC_Skill_Dash final : public UKSC_Skill_Anim
+{
+public:
+	class UKSC_DA_Skill_Dash*                     Dash;                                              // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_C0[0x18];                                      // 0x00C0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_Dash")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_Dash")
+	}
+	static class UKSC_Skill_Dash* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_Dash>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_Dash;
+
 // Class KuroSimpleCombat.KSC_BossHeadUiHandle
 // 0x0010 (0x0048 - 0x0038)
 class UKSC_BossHeadUiHandle final : public UKSC_BaseObject
@@ -167,6 +335,9 @@ public:
 	uint8                                         Pad_50[0x10];                                      // 0x0050(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	class FString Debug_GetInfo() const;
+
+public:
 	static class UClass* StaticClass()
 	{
 		STATIC_CLASS_IMPL("KSC_Buff")
@@ -181,6 +352,144 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_Buff;
+
+// Class KuroSimpleCombat.KSC_DA_Buff
+// 0x0178 (0x01B0 - 0x0038)
+#pragma pack(push, 0x1)
+class alignas(0x10) UKSC_DA_Buff : public UDataAsset
+{
+public:
+	TSubclassOf<class UKSC_Buff>                  RuntimeClass;                                      // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKSC_TagFilter                         TagFilter;                                         // 0x0040(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_Buff_DurationType                        DurationType;                                      // 0x0068(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Duration;                                          // 0x006C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RefreshTagWhenBuffRefresh;                         // 0x0070(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          InstantNeedUpdate;                                 // 0x0071(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_72[0x6];                                       // 0x0072(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  BuffTags;                                          // 0x0078(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<class UKSC_DA_Buff*>                   BuffAddBuffs;                                      // 0x0098(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          RemoveChildBuffWhenEnd;                            // 0x00A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       BuffFX;                                            // 0x00B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             BuffFX_Offset;                                     // 0x00C0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FName                                   Socket;                                            // 0x00F0(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackLocation;                             // 0x00FC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackRotation;                             // 0x00FD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackScale;                                // 0x00FE(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_DetachOnEnd;                                // 0x00FF(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          MobileInvisible;                                   // 0x0100(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       BuffFX_Add;                                        // 0x0108(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             BuffFX_Offset_Add;                                 // 0x0110(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FName                                   Socket_Add;                                        // 0x0140(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackLocation_Add;                         // 0x014C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackRotation_Add;                         // 0x014D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackScale_Add;                            // 0x014E(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14F[0x1];                                      // 0x014F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       BuffFX_Remove;                                     // 0x0150(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_158[0x8];                                      // 0x0158(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             BuffFX_Offset_Remove;                              // 0x0160(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FName                                   Socket_Remove;                                     // 0x0190(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackLocation_Remove;                      // 0x019C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackRotation_Remove;                      // 0x019D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackScale_Remove;                         // 0x019E(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19F[0x1];                                      // 0x019F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroMaterialControllerDataAsset*       Material;                                          // 0x01A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff")
+	}
+	static class UKSC_DA_Buff* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff>();
+	}
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_UKSC_DA_Buff;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_AddMaterial
+// 0x0010 (0x01C0 - 0x01B0)
+class UKSC_DA_Buff_AddMaterial final : public UKSC_DA_Buff
+{
+public:
+	class UKuroMaterialControllerDataAsset*       DataAsset;                                         // 0x01A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLoop;                                             // 0x01B0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B1[0xF];                                      // 0x01B1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_AddMaterial")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_AddMaterial")
+	}
+	static class UKSC_DA_Buff_AddMaterial* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_AddMaterial>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_AddMaterial;
+
+// Class KuroSimpleCombat.KSC_Skill_ManualBulletAttack
+// 0x0058 (0x0100 - 0x00A8)
+class alignas(0x10) UKSC_Skill_ManualBulletAttack final : public UKSC_Skill
+{
+public:
+	class UKSC_DA_Skill_ManualBulletAttack*       DaSkillManualBulletAttack_;                        // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x50];                                      // 0x00B0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnBulletHit(const struct FKSC_BulletTargetContext& TargetContext);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_ManualBulletAttack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_ManualBulletAttack")
+	}
+	static class UKSC_Skill_ManualBulletAttack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_ManualBulletAttack>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_ManualBulletAttack;
+
+// Class KuroSimpleCombat.KSC_Buff_AddMaterial
+// 0x0010 (0x0070 - 0x0060)
+class UKSC_Buff_AddMaterial final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_AddMaterial*               DaBuffAddMaterial_;                                // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_AddMaterial")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_AddMaterial")
+	}
+	static class UKSC_Buff_AddMaterial* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_AddMaterial>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_AddMaterial;
 
 // Class KuroSimpleCombat.KSC_Buff_AddSkill
 // 0x0008 (0x0068 - 0x0060)
@@ -228,53 +537,118 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_AddTargetFaction;
 
-// Class KuroSimpleCombat.KSC_Buff_AttrLockLowerBound
-// 0x0010 (0x0070 - 0x0060)
-class UKSC_Buff_AttrLockLowerBound final : public UKSC_Buff
+// Class KuroSimpleCombat.KSC_DA_Buff_Stack
+// 0x0020 (0x01D0 - 0x01B0)
+#pragma pack(push, 0x1)
+class alignas(0x10) UKSC_DA_Buff_Stack : public UKSC_DA_Buff
 {
 public:
-	class UKSC_DA_Buff_AttrLockLowerBound*        DaBuffAttrLockLowerBound_;                         // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         StackNum;                                          // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          StackOverflowRemoveSelf;                           // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UKSC_DA_Buff*>                   StackOverflowBuffs;                                // 0x01B0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          MultiStackTime;                                    // 0x01C0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          OneSourceOneStack;                                 // 0x01C1(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseStackTimeType;                                  // 0x01C2(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Buff_StackTimeType                       StackTimeType;                                     // 0x01C3(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ChangeTagCountByStack;                             // 0x01C4(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C5[0x3];                                      // 0x01C5(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Buff_AttrLockLowerBound")
+		STATIC_CLASS_IMPL("KSC_DA_Buff_Stack")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Buff_AttrLockLowerBound")
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_Stack")
 	}
-	static class UKSC_Buff_AttrLockLowerBound* GetDefaultObj()
+	static class UKSC_DA_Buff_Stack* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Buff_AttrLockLowerBound>();
+		return GetDefaultObjImpl<UKSC_DA_Buff_Stack>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Buff_AttrLockLowerBound;
+#pragma pack(pop)
+DUMPER7_ASSERTS_UKSC_DA_Buff_Stack;
 
-// Class KuroSimpleCombat.KSC_Buff_Aura
-// 0x0010 (0x0070 - 0x0060)
-class UKSC_Buff_Aura final : public UKSC_Buff
+// Class KuroSimpleCombat.KSC_Skill_RangeAttack
+// 0x0038 (0x00E0 - 0x00A8)
+class alignas(0x10) UKSC_Skill_RangeAttack : public UKSC_Skill
 {
 public:
-	class UKSC_DA_Buff_Aura*                      DaBuffAura_;                                       // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Skill_RangeAttack*              DaSkillRangeAttack_;                               // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x30];                                      // 0x00B0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Buff_Aura")
+		STATIC_CLASS_IMPL("KSC_Skill_RangeAttack")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Buff_Aura")
+		STATIC_NAME_IMPL(L"KSC_Skill_RangeAttack")
 	}
-	static class UKSC_Buff_Aura* GetDefaultObj()
+	static class UKSC_Skill_RangeAttack* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Buff_Aura>();
+		return GetDefaultObjImpl<UKSC_Skill_RangeAttack>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Buff_Aura;
+DUMPER7_ASSERTS_UKSC_Skill_RangeAttack;
+
+// Class KuroSimpleCombat.KSC_Skill_RangePersistentAttack
+// 0x0010 (0x00F0 - 0x00E0)
+class UKSC_Skill_RangePersistentAttack final : public UKSC_Skill_RangeAttack
+{
+public:
+	class UKSC_DA_Skill_RangePersistentAttack*    DaSkillRangePersistentAttack_;                     // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E8[0x8];                                       // 0x00E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_RangePersistentAttack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_RangePersistentAttack")
+	}
+	static class UKSC_Skill_RangePersistentAttack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_RangePersistentAttack>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_RangePersistentAttack;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_AttrDivClamped
+// 0x0020 (0x01F0 - 0x01D0)
+class UKSC_DA_Buff_AttrDivClamped final : public UKSC_DA_Buff_Stack
+{
+public:
+	EKSC_AttrDivFormula                           Formula;                                           // 0x01C8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 SourceAttrA;                                       // 0x01C9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 SourceAttrB;                                       // 0x01CA(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1CB[0x1];                                      // 0x01CB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Factor;                                            // 0x01CC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<EKSC_AttrType>                         TargetAttrs;                                       // 0x01D0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         MinValue;                                          // 0x01E0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxValue;                                          // 0x01E4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E8[0x8];                                      // 0x01E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_AttrDivClamped")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_AttrDivClamped")
+	}
+	static class UKSC_DA_Buff_AttrDivClamped* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_AttrDivClamped>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_AttrDivClamped;
 
 // Class KuroSimpleCombat.KSC_Buff_Stack
 // 0x0080 (0x00E0 - 0x0060)
@@ -299,6 +673,145 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_Buff_Stack;
+
+// Class KuroSimpleCombat.KSC_Buff_AttrDivClamped
+// 0x0080 (0x0160 - 0x00E0)
+class UKSC_Buff_AttrDivClamped final : public UKSC_Buff_Stack
+{
+public:
+	uint8                                         Pad_E0[0x78];                                      // 0x00E0(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Buff_AttrDivClamped*            DaConfig;                                          // 0x0158(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	void OnAttrChange(EKSC_AttrType AttrType, int32 Value);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_AttrDivClamped")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_AttrDivClamped")
+	}
+	static class UKSC_Buff_AttrDivClamped* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_AttrDivClamped>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_AttrDivClamped;
+
+// Class KuroSimpleCombat.KSC_Buff_AttrLockLowerBound
+// 0x0010 (0x0070 - 0x0060)
+class UKSC_Buff_AttrLockLowerBound final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_AttrLockLowerBound*        DaBuffAttrLockLowerBound_;                         // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_AttrLockLowerBound")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_AttrLockLowerBound")
+	}
+	static class UKSC_Buff_AttrLockLowerBound* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_AttrLockLowerBound>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_AttrLockLowerBound;
+
+// Class KuroSimpleCombat.KSC_StaticMeshInstanceActor
+// 0x0230 (0x04E0 - 0x02B0)
+class AKSC_StaticMeshInstanceActor final : public AActor
+{
+public:
+	uint8                                         Pad_2B0[0x10];                                     // 0x02B0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 RemovedIndices;                                    // 0x02C0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
+	TMap<int32, float>                            DelayRemovedIndices;                               // 0x02D0(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_320[0x10];                                     // 0x0320(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 InstanceAnim;                                      // 0x0330(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
+	TArray<struct FTransform>                     InstanceTransform;                                 // 0x0340(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
+	TMap<int32, int32>                            EntityToInstanceMap;                               // 0x0350(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3A0[0xB0];                                     // 0x03A0(0x00B0)(Fixing Size After Last Property [ Dumper-7 ])
+	class UInstancedStaticMeshComponent*          InstancedStaticMeshComponent;                      // 0x0450(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_458[0x8];                                      // 0x0458(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             RelativeTrans;                                     // 0x0460(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TMap<EKSC_GPUNPCAnimState, int32>             AnimMap;                                           // 0x0490(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+
+public:
+	void InitRenderActor();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_StaticMeshInstanceActor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_StaticMeshInstanceActor")
+	}
+	static class AKSC_StaticMeshInstanceActor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_StaticMeshInstanceActor>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_StaticMeshInstanceActor;
+
+// Class KuroSimpleCombat.KSC_Buff_AttrLockUpperBound
+// 0x0010 (0x0070 - 0x0060)
+class UKSC_Buff_AttrLockUpperBound final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_AttrLockUpperBound*        DaBuffAttrLockUpperBound_;                         // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_AttrLockUpperBound")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_AttrLockUpperBound")
+	}
+	static class UKSC_Buff_AttrLockUpperBound* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_AttrLockUpperBound>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_AttrLockUpperBound;
+
+// Class KuroSimpleCombat.KSC_Buff_Aura
+// 0x0040 (0x00A0 - 0x0060)
+class UKSC_Buff_Aura final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_Aura*                      DaBuffAura_;                                       // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x38];                                      // 0x0068(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnAttrChange(EKSC_AttrType AttrType, int32 Value);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_Aura")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_Aura")
+	}
+	static class UKSC_Buff_Aura* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_Aura>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_Aura;
 
 // Class KuroSimpleCombat.KSC_Buff_AuraWithStack
 // 0x0018 (0x00F8 - 0x00E0)
@@ -325,12 +838,12 @@ public:
 DUMPER7_ASSERTS_UKSC_Buff_AuraWithStack;
 
 // Class KuroSimpleCombat.KSC_Buff_ChainLightning
-// 0x0058 (0x00B8 - 0x0060)
+// 0x0070 (0x00D0 - 0x0060)
 class UKSC_Buff_ChainLightning final : public UKSC_Buff
 {
 public:
 	class UKSC_DA_Buff_ChainLightning*            DaBuff_ChainLightning_;                            // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_68[0x50];                                      // 0x0068(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x68];                                      // 0x0068(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -347,6 +860,52 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_Buff_ChainLightning;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_CreateBullet_OnDead
+// 0x0000 (0x01B0 - 0x01B0)
+class UKSC_DA_Buff_CreateBullet_OnDead final : public UKSC_DA_Buff
+{
+public:
+	int64                                         BulletID;                                          // 0x01A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_CreateBullet_OnDead")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_CreateBullet_OnDead")
+	}
+	static class UKSC_DA_Buff_CreateBullet_OnDead* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_CreateBullet_OnDead>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_CreateBullet_OnDead;
+
+// Class KuroSimpleCombat.KSC_Buff_CreateBullet_OnDead
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_Buff_CreateBullet_OnDead final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_CreateBullet_OnDead*       DaBuff_CreateBullet_OnDead_;                       // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_CreateBullet_OnDead")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_CreateBullet_OnDead")
+	}
+	static class UKSC_Buff_CreateBullet_OnDead* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_CreateBullet_OnDead>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_CreateBullet_OnDead;
 
 // Class KuroSimpleCombat.KSC_Buff_Damage
 // 0x0008 (0x0068 - 0x0060)
@@ -421,6 +980,137 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_DiffTransferAddAttr;
 
+// Class KuroSimpleCombat.KSC_DA_Buff_DotSpread
+// 0x0020 (0x01D0 - 0x01B0)
+class UKSC_DA_Buff_DotSpread final : public UKSC_DA_Buff
+{
+public:
+	class UKSC_DA_Buff*                           DotBuff;                                           // 0x01A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 RandomTargetCountAttrType;                         // 0x01B0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B1[0x3];                                      // 0x01B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RandomTargetRange;                                 // 0x01B4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<EKSC_Faction>                          IgnoreFactions;                                    // 0x01B8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C8[0x8];                                      // 0x01C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_DotSpread")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_DotSpread")
+	}
+	static class UKSC_DA_Buff_DotSpread* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_DotSpread>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_DotSpread;
+
+// Class KuroSimpleCombat.KSC_Buff_DotSpread
+// 0x0010 (0x0070 - 0x0060)
+class UKSC_Buff_DotSpread final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_DotSpread*                 DaBuffDotSpread_;                                  // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_DotSpread")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_DotSpread")
+	}
+	static class UKSC_Buff_DotSpread* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_DotSpread>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_DotSpread;
+
+// Class KuroSimpleCombat.KSC_Buff_EventHandler
+// 0x0010 (0x0070 - 0x0060)
+class UKSC_Buff_EventHandler final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_EventHandler*              DaConfig;                                          // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_EventHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_EventHandler")
+	}
+	static class UKSC_Buff_EventHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_EventHandler>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_EventHandler;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_IdleTimer
+// 0x0160 (0x0310 - 0x01B0)
+class UKSC_DA_Buff_IdleTimer final : public UKSC_DA_Buff
+{
+public:
+	float                                         IdleTimeThreshold;                                 // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Buff_IdleTimer_CheckType                 CheckType;                                         // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MovementThreshold;                                 // 0x01B0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationThreshold;                                 // 0x01B4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TriggerCoolDown;                                   // 0x01B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxTriggerCount;                                   // 0x01BC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKuroResponseConfig                    IdleTriggerConfig;                                 // 0x01C0(0x00A8)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FKuroResponseConfig                    BreakIdleTriggerConfig;                            // 0x0268(0x00A8)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_IdleTimer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_IdleTimer")
+	}
+	static class UKSC_DA_Buff_IdleTimer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_IdleTimer>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_IdleTimer;
+
+// Class KuroSimpleCombat.KSC_Buff_IdleTimer
+// 0x0038 (0x0098 - 0x0060)
+class UKSC_Buff_IdleTimer final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_IdleTimer*                 DaBuffIdleTimer_;                                  // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x30];                                      // 0x0068(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_IdleTimer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_IdleTimer")
+	}
+	static class UKSC_Buff_IdleTimer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_IdleTimer>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_IdleTimer;
+
 // Class KuroSimpleCombat.KSC_Buff_ImmuneBuff
 // 0x0008 (0x0068 - 0x0060)
 class UKSC_Buff_ImmuneBuff final : public UKSC_Buff
@@ -467,6 +1157,127 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_Invisible;
 
+// Class KuroSimpleCombat.KSC_DA_Buff_KnockDamage
+// 0x0000 (0x01B0 - 0x01B0)
+class UKSC_DA_Buff_KnockDamage final : public UKSC_DA_Buff
+{
+public:
+	int32                                         DamageID;                                          // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 IntervalAttrType;                                  // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_KnockDamage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_KnockDamage")
+	}
+	static class UKSC_DA_Buff_KnockDamage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_KnockDamage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_KnockDamage;
+
+// Class KuroSimpleCombat.KSC_DelayKnockDamage
+// 0x0018 (0x0050 - 0x0038)
+class UKSC_DelayKnockDamage final : public UKSC_BaseObject
+{
+public:
+	uint8                                         Pad_38[0x18];                                      // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DelayKnockDamage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DelayKnockDamage")
+	}
+	static class UKSC_DelayKnockDamage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DelayKnockDamage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DelayKnockDamage;
+
+// Class KuroSimpleCombat.KSC_Buff_KnockDamage
+// 0x0018 (0x0078 - 0x0060)
+class UKSC_Buff_KnockDamage final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_KnockDamage*               DaBuffKnockDamage_;                                // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class UKSC_DelayKnockDamage*>          DelayKnockDamageList;                              // 0x0068(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_KnockDamage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_KnockDamage")
+	}
+	static class UKSC_Buff_KnockDamage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_KnockDamage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_KnockDamage;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_KuroBulletPattern
+// 0x0010 (0x01C0 - 0x01B0)
+class UKSC_DA_Buff_KuroBulletPattern final : public UKSC_DA_Buff
+{
+public:
+	class UKuroBulletPatternDataAsset*            PatternDA;                                         // 0x01A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PatternDestroyOnEnd;                               // 0x01B0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B1[0xF];                                      // 0x01B1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_KuroBulletPattern")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_KuroBulletPattern")
+	}
+	static class UKSC_DA_Buff_KuroBulletPattern* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_KuroBulletPattern>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_KuroBulletPattern;
+
+// Class KuroSimpleCombat.KSC_Buff_KuroBulletPattern
+// 0x0010 (0x0070 - 0x0060)
+class UKSC_Buff_KuroBulletPattern final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_KuroBulletPattern*         Da_Buff_KuroBulletPattern;                         // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_KuroBulletPattern")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_KuroBulletPattern")
+	}
+	static class UKSC_Buff_KuroBulletPattern* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_KuroBulletPattern>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_KuroBulletPattern;
+
 // Class KuroSimpleCombat.KSC_Buff_LandFireSpawner
 // 0x0008 (0x0068 - 0x0060)
 class UKSC_Buff_LandFireSpawner final : public UKSC_Buff
@@ -490,30 +1301,41 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_LandFireSpawner;
 
+// Class KuroSimpleCombat.KSC_Buff_ListenCollisionEvent
+// 0x0050 (0x00B0 - 0x0060)
+class UKSC_Buff_ListenCollisionEvent final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_ListenCollisionEvent*      DaBuffListenCollisionEvent_;                       // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_Shape2D_World*                     KscShapeWorld;                                     // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_70[0x40];                                      // 0x0070(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_ListenCollisionEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_ListenCollisionEvent")
+	}
+	static class UKSC_Buff_ListenCollisionEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_ListenCollisionEvent>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_ListenCollisionEvent;
+
 // Class KuroSimpleCombat.KSC_Buff_ListenEvent
-// 0x00B0 (0x0110 - 0x0060)
+// 0x0048 (0x00A8 - 0x0060)
 class UKSC_Buff_ListenEvent final : public UKSC_Buff
 {
 public:
 	class UKSC_DA_Buff_ListenEvent*               DaBuffListenEvent_;                                // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EKSC_Buff_ListenEvent_ListenType              ListenEvent;                                       // 0x0068(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EKSC_Buff_ListenEvent_Response                ListenEvent_Response;                              // 0x0069(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_6A[0x6];                                       // 0x006A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_TagFilter                         ResponseCheckTagFilter;                            // 0x0070(0x0028)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x0098(0x0018)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x00B0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  ResponseTag;                                       // 0x00B8(0x0020)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           ListenTag;                                         // 0x00D8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ListenTagCount;                                    // 0x00E4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          ClearListenTag;                                    // 0x00E8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CheckTagOnBeginBuff;                               // 0x00E9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_EA[0x6];                                       // 0x00EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_Buff*                           AddOrRemoveBuff;                                   // 0x00F0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         BuffStackNum;                                      // 0x00F8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x0100(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x40];                                      // 0x0068(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnAttrChange(EKSC_AttrType AttrType, int32 Value);
 
 public:
 	static class UClass* StaticClass()
@@ -530,6 +1352,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_Buff_ListenEvent;
+
+// Class KuroSimpleCombat.KSC_Buff_MenuAutoCastSkill
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_Buff_MenuAutoCastSkill final : public UKSC_Buff
+{
+public:
+	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_MenuAutoCastSkill")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_MenuAutoCastSkill")
+	}
+	static class UKSC_Buff_MenuAutoCastSkill* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_MenuAutoCastSkill>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_MenuAutoCastSkill;
 
 // Class KuroSimpleCombat.KSC_Buff_ModifyAttr
 // 0x0008 (0x0068 - 0x0060)
@@ -579,22 +1424,23 @@ public:
 DUMPER7_ASSERTS_UKSC_Buff_ModifyAttr_BeforeAfterApplyBuff;
 
 // Class KuroSimpleCombat.KSC_Buff_ModifyAttr_BeforeAfterHit
-// 0x00C0 (0x0120 - 0x0060)
+// 0x00E0 (0x0140 - 0x0060)
 class UKSC_Buff_ModifyAttr_BeforeAfterHit final : public UKSC_Buff
 {
 public:
 	class UKSC_DA_Buff_ModifyAttr_BeforeAfterHit* DaBuffModifyAttr_;                                 // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	EKSC_Buff_ModifyAttr_BeforeAfterHit_CheckType CheckType;                                         // 0x0068(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x0070(0x0018)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x0088(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	EKSC_Event_HitTarget                          ModifyTarget;                                      // 0x0089(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_8A[0x6];                                       // 0x008A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_TagFilter                         CheckTagFilter;                                    // 0x0090(0x0028)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	struct FGameplayTag                           CheckCountTag;                                     // 0x00B8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         TagCount;                                          // 0x00C4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<EKSC_AttrType, int32>                    ModifyMap;                                         // 0x00C8(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x0070(0x0030)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x00A0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	EKSC_Event_HitTarget                          ModifyTarget;                                      // 0x00A1(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_A2[0x6];                                       // 0x00A2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         CheckTagFilter;                                    // 0x00A8(0x0028)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	struct FGameplayTag                           CheckCountTag;                                     // 0x00D0(0x000C)(Edit, DisableEditOnInstance, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         TagCount;                                          // 0x00DC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMap<EKSC_AttrType, int32>                    ModifyMap;                                         // 0x00E0(0x0050)(Edit, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	int32                                         ModifyCount;                                       // 0x0130(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_134[0xC];                                      // 0x0134(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -636,6 +1482,59 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_ModifyAttr_ByWorldAttr;
 
+// Class KuroSimpleCombat.KSC_DA_Buff_ModifyAttr_Random
+// 0x0010 (0x01C0 - 0x01B0)
+class UKSC_DA_Buff_ModifyAttr_Random final : public UKSC_DA_Buff
+{
+public:
+	bool                                          bIsRevertAttr;                                     // 0x01A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 AttrType;                                          // 0x01A9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AA[0x2];                                      // 0x01AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         RandomMin;                                         // 0x01AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RandomMax;                                         // 0x01B0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RandomStep;                                        // 0x01B4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B8[0x8];                                      // 0x01B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_ModifyAttr_Random")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_ModifyAttr_Random")
+	}
+	static class UKSC_DA_Buff_ModifyAttr_Random* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_ModifyAttr_Random>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_ModifyAttr_Random;
+
+// Class KuroSimpleCombat.KSC_Buff_ModifyAttr_Random
+// 0x0010 (0x0070 - 0x0060)
+class UKSC_Buff_ModifyAttr_Random final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_ModifyAttr_Random*         DaBuffModifyAttrRandom_;                           // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_ModifyAttr_Random")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_ModifyAttr_Random")
+	}
+	static class UKSC_Buff_ModifyAttr_Random* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_ModifyAttr_Random>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_ModifyAttr_Random;
+
 // Class KuroSimpleCombat.KSC_Buff_ModifyAttrRatio
 // 0x0058 (0x00B8 - 0x0060)
 class UKSC_Buff_ModifyAttrRatio final : public UKSC_Buff
@@ -659,6 +1558,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_Buff_ModifyAttrRatio;
+
+// Class KuroSimpleCombat.KSC_Buff_ModifyHitDamage
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_Buff_ModifyHitDamage final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_ModifyHitDamage*           DaBuffModifyHitDamage_;                            // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_ModifyHitDamage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_ModifyHitDamage")
+	}
+	static class UKSC_Buff_ModifyHitDamage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_ModifyHitDamage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_ModifyHitDamage;
 
 // Class KuroSimpleCombat.KSC_Buff_ModifyLifeRatio
 // 0x0010 (0x0070 - 0x0060)
@@ -684,13 +1606,139 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_ModifyLifeRatio;
 
+// Class KuroSimpleCombat.KSC_Buff_ModifyWorldAttr
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_Buff_ModifyWorldAttr final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_ModifyWorldAttr*           DaBuffModifyAttr_;                                 // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_ModifyWorldAttr")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_ModifyWorldAttr")
+	}
+	static class UKSC_Buff_ModifyWorldAttr* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_ModifyWorldAttr>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_ModifyWorldAttr;
+
+// Class KuroSimpleCombat.KSC_Move
+// 0x01B0 (0x01E8 - 0x0038)
+class UKSC_Move : public UKSC_BaseObject
+{
+public:
+	class AKSC_Entity*                            Owner_;                                            // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_DA_Move*                           Move_;                                             // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_48[0x1A0];                                     // 0x0048(0x01A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move")
+	}
+	static class UKSC_Move* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move;
+
+// Class KuroSimpleCombat.KSC_Move_Approach
+// 0x0028 (0x0210 - 0x01E8)
+class UKSC_Move_Approach final : public UKSC_Move
+{
+public:
+	uint8                                         Pad_1E8[0x28];                                     // 0x01E8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetTargetEntity(class AKSC_Entity* Entity);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_Approach")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_Approach")
+	}
+	static class UKSC_Move_Approach* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_Approach>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_Approach;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_OnDotOwnerDead
+// 0x0010 (0x01C0 - 0x01B0)
+class UKSC_DA_Buff_OnDotOwnerDead final : public UKSC_DA_Buff
+{
+public:
+	int32                                         DamageID;                                          // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Range;                                             // 0x01AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<EKSC_Faction>                          IgnoreFactions;                                    // 0x01B0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_OnDotOwnerDead")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_OnDotOwnerDead")
+	}
+	static class UKSC_DA_Buff_OnDotOwnerDead* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_OnDotOwnerDead>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_OnDotOwnerDead;
+
+// Class KuroSimpleCombat.KSC_Buff_OnDotOwnerDead
+// 0x0020 (0x0080 - 0x0060)
+class UKSC_Buff_OnDotOwnerDead final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_OnDotOwnerDead*            DaBuff_OnDotOwnerDead_;                            // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x18];                                      // 0x0068(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_OnDotOwnerDead")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_OnDotOwnerDead")
+	}
+	static class UKSC_Buff_OnDotOwnerDead* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_OnDotOwnerDead>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_OnDotOwnerDead;
+
 // Class KuroSimpleCombat.KSC_Buff_Period
-// 0x0018 (0x0078 - 0x0060)
+// 0x0048 (0x00A8 - 0x0060)
 class UKSC_Buff_Period : public UKSC_Buff
 {
 public:
 	class UKSC_DA_Buff_Period*                    DaBuffPeriod_;                                     // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_68[0x10];                                      // 0x0068(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_68[0x40];                                      // 0x0068(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnAttackSpeedChange(EKSC_AttrType AttrType, int32 Value);
 
 public:
 	static class UClass* StaticClass()
@@ -709,11 +1757,11 @@ public:
 DUMPER7_ASSERTS_UKSC_Buff_Period;
 
 // Class KuroSimpleCombat.KSC_Buff_Period_Action
-// 0x0008 (0x0080 - 0x0078)
+// 0x0008 (0x00B0 - 0x00A8)
 class UKSC_Buff_Period_Action final : public UKSC_Buff_Period
 {
 public:
-	class UKSC_DA_Buff_Period_Action*             DaBuffPeriodAction_;                               // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_DA_Buff_Period_Action*             DaBuffPeriodAction_;                               // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -730,6 +1778,258 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_Buff_Period_Action;
+
+// Class KuroSimpleCombat.KSC_Move_Random
+// 0x0048 (0x0230 - 0x01E8)
+class UKSC_Move_Random final : public UKSC_Move
+{
+public:
+	uint8                                         Pad_1E8[0x48];                                     // 0x01E8(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_Random")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_Random")
+	}
+	static class UKSC_Move_Random* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_Random>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_Random;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_Period
+// 0x00B0 (0x0260 - 0x01B0)
+class UKSC_DA_Buff_Period : public UKSC_DA_Buff
+{
+public:
+	float                                         Period;                                            // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinPeriod;                                         // 0x01AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PeriodImmediately;                                 // 0x01B0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B1[0x7];                                      // 0x01B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, float>              TagPeriodInCrease;                                 // 0x01B8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_PeriodBuffTagEffect                      TagPeriodInCreaseEffect;                           // 0x0208(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AffectByAttackSpeed;                               // 0x0209(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_20A[0x6];                                      // 0x020A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, int8>               TagCountInCrease;                                  // 0x0210(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_Period")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_Period")
+	}
+	static class UKSC_DA_Buff_Period* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_Period>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_Period;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_Period_DotPeriodic
+// 0x0050 (0x02B0 - 0x0260)
+class UKSC_DA_Buff_Period_DotPeriodic final : public UKSC_DA_Buff_Period
+{
+public:
+	int32                                         DamageID;                                          // 0x0260(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSCDamage                             Damage;                                            // 0x0268(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 IntervalAttrType;                                  // 0x0290(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCountAsDotBuff;                                   // 0x0291(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_292[0x6];                                      // 0x0292(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FKSC_DotPeriodic_BuffOnCasterTag> BuffsOnCasterTag;                                // 0x0298(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_Period_DotPeriodic")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_Period_DotPeriodic")
+	}
+	static class UKSC_DA_Buff_Period_DotPeriodic* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_Period_DotPeriodic>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_Period_DotPeriodic;
+
+// Class KuroSimpleCombat.KSC_Buff_Period_DotPeriodic
+// 0x0010 (0x00B8 - 0x00A8)
+class UKSC_Buff_Period_DotPeriodic final : public UKSC_Buff_Period
+{
+public:
+	class UKSC_DA_Buff_Period_DotPeriodic*        DaBuffDotPeriodic_;                                // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_Period_DotPeriodic")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_Period_DotPeriodic")
+	}
+	static class UKSC_Buff_Period_DotPeriodic* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_Period_DotPeriodic>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_Period_DotPeriodic;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_Period_FaceNearestEnemy
+// 0x0020 (0x0280 - 0x0260)
+class UKSC_DA_Buff_Period_FaceNearestEnemy final : public UKSC_DA_Buff_Period
+{
+public:
+	float                                         Range;                                             // 0x0260(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_264[0x4];                                      // 0x0264(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<EKSC_Faction>                          IgnoreFaction;                                     // 0x0268(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_278[0x8];                                      // 0x0278(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_Period_FaceNearestEnemy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_Period_FaceNearestEnemy")
+	}
+	static class UKSC_DA_Buff_Period_FaceNearestEnemy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_Period_FaceNearestEnemy>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_Period_FaceNearestEnemy;
+
+// Class KuroSimpleCombat.KSC_Move_Stage
+// 0x0008 (0x01F0 - 0x01E8)
+class UKSC_Move_Stage : public UKSC_Move
+{
+public:
+	class UKSC_DA_Move_Stage*                     DA_MoveStage;                                      // 0x01E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_Stage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_Stage")
+	}
+	static class UKSC_Move_Stage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_Stage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_Stage;
+
+// Class KuroSimpleCombat.KSC_Move_StageApproach3D
+// 0x0028 (0x0218 - 0x01F0)
+class UKSC_Move_StageApproach3D final : public UKSC_Move_Stage
+{
+public:
+	uint8                                         Pad_1F0[0x28];                                     // 0x01F0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_StageApproach3D")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_StageApproach3D")
+	}
+	static class UKSC_Move_StageApproach3D* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_StageApproach3D>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_StageApproach3D;
+
+// Class KuroSimpleCombat.KSC_Buff_Period_FaceNearestEnemy
+// 0x0010 (0x00B8 - 0x00A8)
+class UKSC_Buff_Period_FaceNearestEnemy final : public UKSC_Buff_Period
+{
+public:
+	class UKSC_DA_Buff_Period_FaceNearestEnemy*   DaBuffPeriodFaceNearestEnemy_;                     // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_Period_FaceNearestEnemy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_Period_FaceNearestEnemy")
+	}
+	static class UKSC_Buff_Period_FaceNearestEnemy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_Period_FaceNearestEnemy>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_Period_FaceNearestEnemy;
+
+// Class KuroSimpleCombat.KSC_Buff_Period_Heal
+// 0x0010 (0x00B8 - 0x00A8)
+class UKSC_Buff_Period_Heal final : public UKSC_Buff_Period
+{
+public:
+	class UKSC_DA_Buff_Period_Heal*               DaBuffPeriodHeal_;                                 // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_Period_Heal")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_Period_Heal")
+	}
+	static class UKSC_Buff_Period_Heal* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_Period_Heal>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_Period_Heal;
+
+// Class KuroSimpleCombat.KSC_Buff_Period_MonsterImpact
+// 0x0068 (0x0110 - 0x00A8)
+class UKSC_Buff_Period_MonsterImpact final : public UKSC_Buff_Period
+{
+public:
+	class UKSC_DA_Buff_Period_MonsterImpact*      DaBuffPeriodMonsterImpact_;                        // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x60];                                      // 0x00B0(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_Period_MonsterImpact")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_Period_MonsterImpact")
+	}
+	static class UKSC_Buff_Period_MonsterImpact* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_Period_MonsterImpact>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_Period_MonsterImpact;
 
 // Class KuroSimpleCombat.KSC_Buff_Pull
 // 0x0090 (0x00F0 - 0x0060)
@@ -755,6 +2055,30 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_Pull;
 
+// Class KuroSimpleCombat.KSC_Move_StageSpline
+// 0x0010 (0x0200 - 0x01F0)
+class UKSC_Move_StageSpline final : public UKSC_Move_Stage
+{
+public:
+	class USplineComponent*                       SplineComponent;                                   // 0x01F0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1F8[0x8];                                      // 0x01F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_StageSpline")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_StageSpline")
+	}
+	static class UKSC_Move_StageSpline* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_StageSpline>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_StageSpline;
+
 // Class KuroSimpleCombat.KSC_Buff_Push
 // 0x0038 (0x0098 - 0x0060)
 class UKSC_Buff_Push final : public UKSC_Buff
@@ -779,6 +2103,29 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_Push;
 
+// Class KuroSimpleCombat.KSC_Buff_RecordDamage
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_Buff_RecordDamage final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_RecordDamage*              DaBuffRecordDamage_;                               // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_RecordDamage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_RecordDamage")
+	}
+	static class UKSC_Buff_RecordDamage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_RecordDamage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_RecordDamage;
+
 // Class KuroSimpleCombat.KSC_Buff_RemoveBuffByTags
 // 0x0008 (0x0068 - 0x0060)
 class UKSC_Buff_RemoveBuffByTags final : public UKSC_Buff
@@ -801,6 +2148,58 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_Buff_RemoveBuffByTags;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_SetAttrFromAttr
+// 0x0010 (0x01C0 - 0x01B0)
+class UKSC_DA_Buff_SetAttrFromAttr final : public UKSC_DA_Buff
+{
+public:
+	EKSC_AttrType                                 SourceAttr;                                        // 0x01A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 TargetAttr;                                        // 0x01A9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AA[0x2];                                      // 0x01AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Factor;                                            // 0x01AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsRevertAttr;                                     // 0x01B0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B1[0xF];                                      // 0x01B1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_SetAttrFromAttr")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_SetAttrFromAttr")
+	}
+	static class UKSC_DA_Buff_SetAttrFromAttr* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_SetAttrFromAttr>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_SetAttrFromAttr;
+
+// Class KuroSimpleCombat.KSC_Buff_SetAttrFromAttr
+// 0x0010 (0x0070 - 0x0060)
+class UKSC_Buff_SetAttrFromAttr final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_SetAttrFromAttr*           DaBuffSetAttrFromAttr_;                            // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_SetAttrFromAttr")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_SetAttrFromAttr")
+	}
+	static class UKSC_Buff_SetAttrFromAttr* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_SetAttrFromAttr>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_SetAttrFromAttr;
 
 // Class KuroSimpleCombat.KSC_Buff_ShieldEffect
 // 0x0008 (0x0068 - 0x0060)
@@ -897,6 +2296,53 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_StopAction;
 
+// Class KuroSimpleCombat.KSC_Buff_Summon
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_Buff_Summon final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_Summon*                    DaBuffSummon_;                                     // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_Summon")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_Summon")
+	}
+	static class UKSC_Buff_Summon* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_Summon>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_Summon;
+
+// Class KuroSimpleCombat.KSC_Buff_SummonLink
+// 0x0018 (0x0078 - 0x0060)
+class UKSC_Buff_SummonLink final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_SummonLink*                DaBuffSummonLink_;                                 // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_68[0x10];                                      // 0x0068(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_SummonLink")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_SummonLink")
+	}
+	static class UKSC_Buff_SummonLink* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_SummonLink>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_SummonLink;
+
 // Class KuroSimpleCombat.KSC_Buff_TransferAddAttr
 // 0x0080 (0x0160 - 0x00E0)
 class UKSC_Buff_TransferAddAttr final : public UKSC_Buff_Stack
@@ -947,6 +2393,124 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Buff_Unattackable_Spline;
 
+// Class KuroSimpleCombat.KSC_Buff_WithEffect
+// 0x0028 (0x0088 - 0x0060)
+class UKSC_Buff_WithEffect final : public UKSC_Buff
+{
+public:
+	class UKSC_DA_Buff_WithEffect*                DaBuffWithEffect;                                  // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TArray<class UKSC_BuffEffectBase*>            BuffEffectInstances;                               // 0x0068(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_78[0x10];                                      // 0x0078(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Buff_WithEffect")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Buff_WithEffect")
+	}
+	static class UKSC_Buff_WithEffect* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Buff_WithEffect>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Buff_WithEffect;
+
+// Class KuroSimpleCombat.KSC_BuffEffectIgnoreCollision
+// 0x0008 (0x0048 - 0x0040)
+class UKSC_BuffEffectIgnoreCollision final : public UKSC_BuffEffectBase
+{
+public:
+	class UKSC_DA_BuffEffectIgnoreCollision*      DaBuffEffect;                                      // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_BuffEffectIgnoreCollision")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_BuffEffectIgnoreCollision")
+	}
+	static class UKSC_BuffEffectIgnoreCollision* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_BuffEffectIgnoreCollision>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_BuffEffectIgnoreCollision;
+
+// Class KuroSimpleCombat.KSC_BuffEffectSetShape
+// 0x0008 (0x0048 - 0x0040)
+class UKSC_BuffEffectSetShape final : public UKSC_BuffEffectBase
+{
+public:
+	class UKSC_DA_BuffEffectSetShape*             DaBuffEffect;                                      // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_BuffEffectSetShape")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_BuffEffectSetShape")
+	}
+	static class UKSC_BuffEffectSetShape* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_BuffEffectSetShape>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_BuffEffectSetShape;
+
+// Class KuroSimpleCombat.KSC_BuffEffectTimeScale
+// 0x0010 (0x0050 - 0x0040)
+class UKSC_BuffEffectTimeScale final : public UKSC_BuffEffectBase
+{
+public:
+	class UKSC_DA_BuffEffectTimeScale*            DaBuffEffect;                                      // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_BuffEffectTimeScale")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_BuffEffectTimeScale")
+	}
+	static class UKSC_BuffEffectTimeScale* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_BuffEffectTimeScale>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_BuffEffectTimeScale;
+
+// Class KuroSimpleCombat.KSC_BuffGateUiHandle
+// 0x0010 (0x0048 - 0x0038)
+class UKSC_BuffGateUiHandle final : public UKSC_BaseObject
+{
+public:
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_BuffGateUiHandle")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_BuffGateUiHandle")
+	}
+	static class UKSC_BuffGateUiHandle* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_BuffGateUiHandle>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_BuffGateUiHandle;
+
 // Class KuroSimpleCombat.KSC_BuffId
 // 0x0050 (0x0080 - 0x0030)
 class UKSC_BuffId final : public UObject
@@ -973,6 +2537,30 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_BuffId;
+
+// Class KuroSimpleCombat.KSC_BuffShieldEffect
+// 0x0010 (0x0050 - 0x0040)
+class UKSC_BuffShieldEffect final : public UKSC_BuffEffectBase
+{
+public:
+	class UKSC_DA_AddShield*                      DaBuffEffect;                                      // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_BuffShieldEffect")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_BuffShieldEffect")
+	}
+	static class UKSC_BuffShieldEffect* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_BuffShieldEffect>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_BuffShieldEffect;
 
 // Class KuroSimpleCombat.KSC_Bullet
 // 0x00E8 (0x0120 - 0x0038)
@@ -1004,6 +2592,36 @@ public:
 };
 #pragma pack(pop)
 DUMPER7_ASSERTS_UKSC_Bullet;
+
+// Class KuroSimpleCombat.KSC_Bullet_Context
+// 0x0048 (0x0078 - 0x0030)
+class UKSC_Bullet_Context final : public UObject
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TWeakObjectPtr<class AKSC_Entity>             Owner;                                             // 0x0038(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TWeakObjectPtr<class AKSC_Entity>             SkillTarget;                                       // 0x0040(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SkillTargetEntityId;                               // 0x0048(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVectorDouble                          SkillTargetLocation;                               // 0x0050(0x0018)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDataTable*                             OwnerBulletDataTable;                              // 0x0068(0x0008)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_70[0x8];                                       // 0x0070(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Bullet_Context")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Bullet_Context")
+	}
+	static class UKSC_Bullet_Context* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Bullet_Context>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Bullet_Context;
 
 // Class KuroSimpleCombat.KSC_BulletPierce
 // 0x0030 (0x0150 - 0x0120)
@@ -1053,8 +2671,9 @@ public:
 DUMPER7_ASSERTS_UKSC_CompBase;
 
 // Class KuroSimpleCombat.KSC_DA_Entity
-// 0x00C0 (0x00F8 - 0x0038)
-class UKSC_DA_Entity : public UDataAsset
+// 0x0148 (0x0180 - 0x0038)
+#pragma pack(push, 0x1)
+class alignas(0x10) UKSC_DA_Entity : public UDataAsset
 {
 public:
 	TSubclassOf<class AKSC_Entity>                RuntimeClass;                                      // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1066,15 +2685,21 @@ public:
 	class UKSC_DA_SkillComp*                      SkillComp;                                         // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKSC_DA_EntityRender*                   Render;                                            // 0x0070(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UKSC_DA_Move*                           Move;                                              // 0x0078(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RemoveDelay;                                       // 0x0080(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          EnableHeadUI;                                      // 0x0084(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_HeadUiType                               HeadUiType;                                        // 0x0085(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_86[0x2];                                       // 0x0086(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                HeadUiOffset;                                      // 0x0088(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         HalfHeight;                                        // 0x0094(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         EnemyUIType;                                       // 0x0098(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   EntityTypeName;                                    // 0x009C(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<class FName, struct FTransform>          SocketTransform;                                   // 0x00A8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UKSC_DA_Anim*                           Anim;                                              // 0x0080(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RemoveDelay;                                       // 0x0088(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AppearDelay;                                       // 0x008C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UEffectModelBase>        AppearWarningFX;                                   // 0x0090(0x0030)(Edit, DisableEditOnInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransformDouble                       AppearWarningFX_Offset;                            // 0x00C0(0x0040)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          EnableHeadUI;                                      // 0x0100(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_HeadUiType                               HeadUiType;                                        // 0x0101(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_102[0x2];                                      // 0x0102(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                HeadUiOffset;                                      // 0x0104(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         HalfHeight;                                        // 0x0110(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         EnemyUIType;                                       // 0x0114(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   EntityTypeName;                                    // 0x0118(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_EntityType                               EntityType;                                        // 0x0124(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_125[0x3];                                      // 0x0125(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FTransform>          SocketTransform;                                   // 0x0128(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1090,6 +2715,7 @@ public:
 		return GetDefaultObjImpl<UKSC_DA_Entity>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UKSC_DA_Entity;
 
 // Class KuroSimpleCombat.KSC_DA_CompBase
@@ -1117,7 +2743,8 @@ DUMPER7_ASSERTS_UKSC_DA_CompBase;
 
 // Class KuroSimpleCombat.KSC_DA_SceneComp
 // 0x0090 (0x00D0 - 0x0040)
-class UKSC_DA_SceneComp final : public UKSC_DA_CompBase
+#pragma pack(push, 0x1)
+class alignas(0x10) UKSC_DA_SceneComp : public UKSC_DA_CompBase
 {
 public:
 	EKSC_SearchType                               SelfNeighborsType;                                 // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1133,7 +2760,7 @@ public:
 	uint8                                         Pad_6B[0x5];                                       // 0x006B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKSC_Range                             OverrideNeighborRange;                             // 0x0070(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
 	bool                                          CheckWorldObstacles;                               // 0x00C0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C1[0xF];                                       // 0x00C1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C1[0x7];                                       // 0x00C1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1149,19 +2776,23 @@ public:
 		return GetDefaultObjImpl<UKSC_DA_SceneComp>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UKSC_DA_SceneComp;
 
 // Class KuroSimpleCombat.KSC_DA_SkillComp
-// 0x0050 (0x0090 - 0x0040)
+// 0x0058 (0x0098 - 0x0040)
 class UKSC_DA_SkillComp final : public UKSC_DA_CompBase
 {
 public:
 	class UKSC_DA_AttrSet*                        AttrSet;                                           // 0x0040(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UKSC_DA_Skill*>                  Skills;                                            // 0x0048(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<class UKSC_DA_Buff*>                   Buffs;                                             // 0x0058(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  Tags;                                              // 0x0068(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	bool                                          bAddHitInfo;                                       // 0x0088(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EKSC_SkillCastMode                            SkillCastMode;                                     // 0x0048(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UKSC_DA_Skill*>                  Skills;                                            // 0x0050(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<class UKSC_DA_Buff*>                   Buffs;                                             // 0x0060(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTagContainer                  Tags;                                              // 0x0070(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          bAddHitInfo;                                       // 0x0090(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 DodgeAttrType;                                     // 0x0091(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_92[0x6];                                       // 0x0092(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1208,7 +2839,7 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_EntityRender;
 
 // Class KuroSimpleCombat.KSC_DA_Move
-// 0x0018 (0x0050 - 0x0038)
+// 0x0028 (0x0060 - 0x0038)
 class UKSC_DA_Move : public UDataAsset
 {
 public:
@@ -1217,6 +2848,11 @@ public:
 	float                                         MoveSpeedDeviation;                                // 0x0044(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         TrunRate;                                          // 0x0048(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Height;                                            // 0x004C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KnockSpeed;                                        // 0x0050(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KnockInterval;                                     // 0x0054(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         KnockDistance;                                     // 0x0058(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DeadOnArrival;                                     // 0x005C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1234,8 +2870,31 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Move;
 
+// Class KuroSimpleCombat.KSC_DA_Anim
+// 0x0008 (0x0040 - 0x0038)
+class UKSC_DA_Anim : public UDataAsset
+{
+public:
+	TSubclassOf<class UKSC_Anim>                  RuntimeClass;                                      // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Anim")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Anim")
+	}
+	static class UKSC_DA_Anim* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Anim>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Anim;
+
 // Class KuroSimpleCombat.KSC_DA_Skill
-// 0x0118 (0x0150 - 0x0038)
+// 0x0148 (0x0180 - 0x0038)
 class UKSC_DA_Skill : public UDataAsset
 {
 public:
@@ -1243,34 +2902,42 @@ public:
 	EKSC_TargetFaction                            TargetFaction;                                     // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         TargetNum;                                         // 0x0044(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          GenerateStateEvent;                                // 0x0048(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsAutoCast;                                        // 0x0049(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseAttrCD;                                         // 0x004A(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4B[0x1];                                       // 0x004B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CoolDown;                                          // 0x004C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CostMP;                                            // 0x0050(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PreDelay;                                          // 0x0054(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PreCastDelay;                                      // 0x0058(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PostDelay;                                         // 0x005C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CastRange;                                         // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKSCDamage                             Damage;                                            // 0x0064(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         DamageID;                                          // 0x0070(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DamageMaterial;                                    // 0x0074(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_75[0x3];                                       // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x0078(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKSC_DA_Buff*                           AddBuff;                                           // 0x0080(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UKSC_DA_Buff*>                   AddBuffs;                                          // 0x0088(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class UEffectModelBase*                       KuroSkillFX;                                       // 0x0098(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             KuroSkillFX_Offset;                                // 0x00A0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          KuroSkillFX_BindingTarget;                         // 0x00D0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelBase*                       KuroCastFX;                                        // 0x00D8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             KuroCastFX_Offset;                                 // 0x00E0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          KuroCastFX_BindingTarget;                          // 0x0110(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_111[0x3];                                      // 0x0111(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         KuroHitFX_MaxNum;                                  // 0x0114(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEffectModelBase*                       KuroHitFX;                                         // 0x0118(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             KuroHitFX_Offset;                                  // 0x0120(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          CheckTarget;                                       // 0x0048(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CheckTargetVisible;                                // 0x0049(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          GenerateStateEvent;                                // 0x004A(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsAutoCast;                                        // 0x004B(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseAttrCD;                                         // 0x004C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4D[0x3];                                       // 0x004D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CoolDown;                                          // 0x0050(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CostMP;                                            // 0x0054(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PreDelay;                                          // 0x0058(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PreCastDelay;                                      // 0x005C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PostDelay;                                         // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SkillCompSleep;                                    // 0x0064(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CastRange;                                         // 0x0068(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseCustomCost;                                     // 0x006C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 CustomCostType;                                    // 0x006D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6E[0x2];                                       // 0x006E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CustomCostValue;                                   // 0x0070(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSCDamage                             Damage;                                            // 0x0078(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         DamageID;                                          // 0x00A0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DamageMaterial;                                    // 0x00A4(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x00A8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           AddBuff;                                           // 0x00B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UKSC_DA_Buff*>                   AddBuffs;                                          // 0x00B8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       KuroSkillFX;                                       // 0x00C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             KuroSkillFX_Offset;                                // 0x00D0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          KuroSkillFX_BindingTarget;                         // 0x0100(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0x7];                                      // 0x0101(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       KuroCastFX;                                        // 0x0108(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             KuroCastFX_Offset;                                 // 0x0110(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          KuroCastFX_BindingTarget;                          // 0x0140(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         KuroHitFX_MaxNum;                                  // 0x0144(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       KuroHitFX;                                         // 0x0148(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             KuroHitFX_Offset;                                  // 0x0150(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1287,66 +2954,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_DA_Skill;
-
-// Class KuroSimpleCombat.KSC_DA_Buff
-// 0x0178 (0x01B0 - 0x0038)
-#pragma pack(push, 0x1)
-class alignas(0x10) UKSC_DA_Buff : public UDataAsset
-{
-public:
-	TSubclassOf<class UKSC_Buff>                  RuntimeClass;                                      // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKSC_TagFilter                         TagFilter;                                         // 0x0040(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	EKSC_Buff_DurationType                        DurationType;                                      // 0x0068(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Duration;                                          // 0x006C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          InstantNeedUpdate;                                 // 0x0070(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  BuffTags;                                          // 0x0078(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<class UKSC_DA_Buff*>                   BuffAddBuffs;                                      // 0x0098(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	bool                                          RemoveChildBuffWhenEnd;                            // 0x00A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A9[0x7];                                       // 0x00A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelBase*                       BuffFX;                                            // 0x00B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             BuffFX_Offset;                                     // 0x00C0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class FName                                   Socket;                                            // 0x00F0(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackLocation;                             // 0x00FC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackRotation;                             // 0x00FD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackScale;                                // 0x00FE(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_DetachOnEnd;                                // 0x00FF(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEffectModelBase*                       BuffFX_Add;                                        // 0x0100(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             BuffFX_Offset_Add;                                 // 0x0110(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class FName                                   Socket_Add;                                        // 0x0140(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackLocation_Add;                         // 0x014C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackRotation_Add;                         // 0x014D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackScale_Add;                            // 0x014E(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14F[0x1];                                      // 0x014F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelBase*                       BuffFX_Remove;                                     // 0x0150(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_158[0x8];                                      // 0x0158(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             BuffFX_Offset_Remove;                              // 0x0160(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class FName                                   Socket_Remove;                                     // 0x0190(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackLocation_Remove;                      // 0x019C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackRotation_Remove;                      // 0x019D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackScale_Remove;                         // 0x019E(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19F[0x1];                                      // 0x019F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKuroMaterialControllerDataAsset*       Material;                                          // 0x01A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_DA_Buff")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_DA_Buff")
-	}
-	static class UKSC_DA_Buff* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_DA_Buff>();
-	}
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_UKSC_DA_Buff;
 
 // Class KuroSimpleCombat.KSC_DA_Decorator
 // 0x0030 (0x0068 - 0x0038)
@@ -1401,7 +3008,7 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_FX;
 
 // Class KuroSimpleCombat.KSC_DA_AdditionalAttack
-// 0x0118 (0x0150 - 0x0038)
+// 0x0128 (0x0160 - 0x0038)
 class UKSC_DA_AdditionalAttack final : public UDataAsset
 {
 public:
@@ -1412,19 +3019,18 @@ public:
 	class FName                                   AdditionalAttackSocket;                            // 0x0050(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKSC_Range                             AdditionalAttackRange;                             // 0x0060(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKSCDamage                             Damage;                                            // 0x00B0(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         DamageID;                                          // 0x00BC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          DamageMaterial;                                    // 0x00C0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          TriggerHitEvent;                                   // 0x00C1(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C2[0x6];                                       // 0x00C2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_Buff*                           AddBuff;                                           // 0x00C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEffectModelBase*                       KuroCastFX;                                        // 0x00D0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             KuroCastFX_Offset;                                 // 0x00E0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         KuroHitFX_MaxNum;                                  // 0x0110(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelBase*                       KuroHitFX;                                         // 0x0118(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             KuroHitFX_Offset;                                  // 0x0120(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKSCDamage                             Damage;                                            // 0x00B0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         DamageID;                                          // 0x00D8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          DamageMaterial;                                    // 0x00DC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          TriggerHitEvent;                                   // 0x00DD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DE[0x2];                                       // 0x00DE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Buff*                           AddBuff;                                           // 0x00E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       KuroCastFX;                                        // 0x00E8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             KuroCastFX_Offset;                                 // 0x00F0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         KuroHitFX_MaxNum;                                  // 0x0120(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_124[0x4];                                      // 0x0124(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       KuroHitFX;                                         // 0x0128(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             KuroHitFX_Offset;                                  // 0x0130(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1468,6 +3074,62 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_DA_Bullet;
+
+// Class KuroSimpleCombat.KSC_EventResponder
+// 0x0038 (0x0068 - 0x0030)
+class UKSC_EventResponder : public UObject
+{
+public:
+	int32                                         Priority;                                          // 0x0030(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         TargetTagFilter;                                   // 0x0038(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UKSC_Buff_EventHandler*                 Handler;                                           // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	void Execute(const struct FKSC_EventContext& Context);
+
+	bool CanExecute(const struct FKSC_EventContext& Context) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_EventResponder")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_EventResponder")
+	}
+	static class UKSC_EventResponder* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_EventResponder>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_EventResponder;
+
+// Class KuroSimpleCombat.KSC_Responder_RemoveBuff
+// 0x0010 (0x0078 - 0x0068)
+class UKSC_Responder_RemoveBuff final : public UKSC_EventResponder
+{
+public:
+	class UKSC_DA_Buff*                           BuffToRemove;                                      // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         StackNumToRemove;                                  // 0x0070(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_RemoveBuff")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_RemoveBuff")
+	}
+	static class UKSC_Responder_RemoveBuff* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_RemoveBuff>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_RemoveBuff;
 
 // Class KuroSimpleCombat.KSC_DA_BulletPierce
 // 0x0000 (0x0050 - 0x0050)
@@ -1513,17 +3175,967 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_AttrSet;
 
+// Class KuroSimpleCombat.KSC_EventListener
+// 0x0010 (0x0040 - 0x0030)
+class UKSC_EventListener : public UObject
+{
+public:
+	EKSC_ListenerTarget                           ListenTarget;                                      // 0x0030(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCheckOnBeginBuff;                                 // 0x0031(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_32[0x6];                                       // 0x0032(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_Buff_EventHandler*                 Handler;                                           // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_EventListener")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_EventListener")
+	}
+	static class UKSC_EventListener* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_EventListener>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_EventListener;
+
+// Class KuroSimpleCombat.KSC_Listener_OnDodge
+// 0x0008 (0x0048 - 0x0040)
+class UKSC_Listener_OnDodge final : public UKSC_EventListener
+{
+public:
+	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnDodgeCallback(const class UKSC_SkillComp* Attacker, const class UKSC_SkillComp* DodgeComp);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnDodge")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnDodge")
+	}
+	static class UKSC_Listener_OnDodge* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnDodge>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnDodge;
+
+// Class KuroSimpleCombat.KSC_DA_SceneSegment
+// 0x0010 (0x0048 - 0x0038)
+class UKSC_DA_SceneSegment final : public UDataAsset
+{
+public:
+	TSubclassOf<class AKSC_SceneSegment>          RuntimeClass;                                      // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AKSC_SceneSegment>          SegmentActorClass;                                 // 0x0040(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_SceneSegment")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_SceneSegment")
+	}
+	static class UKSC_DA_SceneSegment* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_SceneSegment>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_SceneSegment;
+
+// Class KuroSimpleCombat.KSC_DA_SceneSegmentContainer
+// 0x0010 (0x0048 - 0x0038)
+class UKSC_DA_SceneSegmentContainer final : public UDataAsset
+{
+public:
+	TArray<class UKSC_DA_SceneSegment*>           SubSceneSegments;                                  // 0x0038(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_SceneSegmentContainer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_SceneSegmentContainer")
+	}
+	static class UKSC_DA_SceneSegmentContainer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_SceneSegmentContainer>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_SceneSegmentContainer;
+
+// Class KuroSimpleCombat.KSC_Responder_TryStartSkill
+// 0x0010 (0x0078 - 0x0068)
+class UKSC_Responder_TryStartSkill final : public UKSC_EventResponder
+{
+public:
+	TArray<int32>                                 SkillIndices;                                      // 0x0068(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_TryStartSkill")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_TryStartSkill")
+	}
+	static class UKSC_Responder_TryStartSkill* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_TryStartSkill>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_TryStartSkill;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_EventHandler
+// 0x0060 (0x0210 - 0x01B0)
+class UKSC_DA_Buff_EventHandler final : public UKSC_DA_Buff
+{
+public:
+	TArray<class UKSC_EventListener*>             Listeners;                                         // 0x01A8(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UKSC_EventResponder*>            Responders;                                        // 0x01B8(0x0010)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	float                                         CoolDown;                                          // 0x01C8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Probability;                                       // 0x01CC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUseAttrProbability;                               // 0x01D0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 ProbabilityAttr;                                   // 0x01D1(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D2[0x2];                                      // 0x01D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ResponseCount;                                     // 0x01D4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFinishAfterResponse;                              // 0x01D8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D9[0x7];                                      // 0x01D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         ResponseTagFilter;                                 // 0x01E0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_208[0x8];                                      // 0x0208(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_EventHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_EventHandler")
+	}
+	static class UKSC_DA_Buff_EventHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_EventHandler>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_EventHandler;
+
+// Class KuroSimpleCombat.KSC_DA_BuffEffectBase
+// 0x0008 (0x0040 - 0x0038)
+class UKSC_DA_BuffEffectBase : public UDataAsset
+{
+public:
+	TSubclassOf<class UKSC_BuffEffectBase>        RuntimeClass;                                      // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_BuffEffectBase")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_BuffEffectBase")
+	}
+	static class UKSC_DA_BuffEffectBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_BuffEffectBase>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_BuffEffectBase;
+
+// Class KuroSimpleCombat.KSC_Entity
+// 0x00E0 (0x0398 - 0x02B8)
+class AKSC_Entity : public AKSC_BaseActor
+{
+public:
+	class UKSC_SceneComp*                         SceneComp_;                                        // 0x02B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_Move*                              Move_;                                             // 0x02C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_Anim*                              Anim_;                                             // 0x02C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_SkillComp*                         SkillComp_;                                        // 0x02D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_TimeScaleComp*                     TimeScaleComp_;                                    // 0x02D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_DA_Entity*                         DaEntity_;                                         // 0x02E0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TMap<class FName, struct FVector>             SocketOffsets;                                     // 0x02E8(0x0050)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
+	int32                                         EntityId_;                                         // 0x0338(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_33C[0x6];                                      // 0x033C(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          IsKscEnable;                                       // 0x0342(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_343[0x2D];                                     // 0x0343(0x002D)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IKSC_HeadUiHandle>     HeadUiHandle;                                      // 0x0370(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	uint8                                         Pad_380[0x8];                                      // 0x0380(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 RenderActor_;                                      // 0x0388(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_390[0x8];                                      // 0x0390(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ApplyBuffByOther(class UKSC_DA_Buff* DaBuff, int32 EntityId);
+	void ApplyBuffSelf(class UKSC_DA_Buff* DaBuff);
+	void Dead(int32 KillBy);
+	class UKSC_Anim* GetAnimComponent();
+	class UKSC_Move* GetMoveComponent();
+	class AActor* GetRenderActor();
+	void RemoveBuffSelf(class UKSC_DA_Buff* DaBuff);
+	void RemoveDaBuffImmediately(class UKSC_DA_Buff* DaBuff);
+	bool SetEntityActive(const bool InActive);
+	void SetFaction(EKSC_Faction Faction);
+	void SetIgnoreFactions(const TArray<EKSC_Faction>& Factions);
+	void SetLocationByWorld(const struct FVectorDouble& D_Location);
+	void SetRenderActor(class AActor* RenderActor);
+	void SetTransformByWorld(const struct FTransformDouble& D_Transform);
+	void TryActiveSKill(const int32 SkillIndex);
+	void UpdateBuffWithStackNumSelf(class UKSC_DA_Buff* DaBuff, int32 StackNum);
+
+	void AddAttr(EKSC_AttrType Type, int32 Delta) const;
+	class UKSC_SceneComp* GetSceneComp() const;
+	class UKSC_SkillComp* GetSkillComp() const;
+	float GetTimeScale() const;
+	void SetAttr(EKSC_AttrType Type, int32 Value) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Entity")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Entity")
+	}
+	static class AKSC_Entity* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_Entity>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_Entity;
+
+// Class KuroSimpleCombat.KSC_Shape2D_Entity
+// 0x00C8 (0x0460 - 0x0398)
+class AKSC_Shape2D_Entity : public AKSC_Entity
+{
+public:
+	uint8                                         Pad_398[0x10];                                     // 0x0398(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_Shape2D_World*                     KscShapeWorld;                                     // 0x03A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_Shape2DComp*                       ShapeComp_;                                        // 0x03B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_Shape2DAnim*                       AnimComp_;                                         // 0x03B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_Shape2DMove*                       MoveComp_;                                         // 0x03C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C8[0x98];                                     // 0x03C8(0x0098)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AssignSkillStateChange(const TDelegate<void(int32 SkillIndex, EKSC_Skill_State State)>& InDelegate);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2D_Entity")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2D_Entity")
+	}
+	static class AKSC_Shape2D_Entity* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_Shape2D_Entity>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_Shape2D_Entity;
+
+// Class KuroSimpleCombat.KSC_Shape2D_Entity_Machine
+// 0x00B8 (0x0518 - 0x0460)
+class AKSC_Shape2D_Entity_Machine final : public AKSC_Shape2D_Entity
+{
+public:
+	uint8                                         Pad_460[0xB8];                                     // 0x0460(0x00B8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2D_Entity_Machine")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2D_Entity_Machine")
+	}
+	static class AKSC_Shape2D_Entity_Machine* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_Shape2D_Entity_Machine>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_Shape2D_Entity_Machine;
+
+// Class KuroSimpleCombat.KSC_DA_AddBuffToFactionEntities
+// 0x0018 (0x0058 - 0x0040)
+class UKSC_DA_AddBuffToFactionEntities final : public UKSC_DA_BuffEffectBase
+{
+public:
+	TArray<EKSC_Faction>                          Factions;                                          // 0x0040(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           AddBuff;                                           // 0x0050(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_AddBuffToFactionEntities")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_AddBuffToFactionEntities")
+	}
+	static class UKSC_DA_AddBuffToFactionEntities* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_AddBuffToFactionEntities>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_AddBuffToFactionEntities;
+
+// Class KuroSimpleCombat.KSC_DA_AddShield
+// 0x0060 (0x00A0 - 0x0040)
+class UKSC_DA_AddShield final : public UKSC_DA_BuffEffectBase
+{
+public:
+	int32                                         ShieldHp;                                          // 0x0040(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_KuroFX                            ShieldStackBreakFX;                                // 0x0050(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_AddShield")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_AddShield")
+	}
+	static class UKSC_DA_AddShield* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_AddShield>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_AddShield;
+
+// Class KuroSimpleCombat.KSC_Responder_ModifyGold
+// 0x0008 (0x0070 - 0x0068)
+class UKSC_Responder_ModifyGold final : public UKSC_EventResponder
+{
+public:
+	int32                                         GoldValue;                                         // 0x0068(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_ModifyGold")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_ModifyGold")
+	}
+	static class UKSC_Responder_ModifyGold* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_ModifyGold>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_ModifyGold;
+
+// Class KuroSimpleCombat.KSC_DA_BuffEffectSetShape
+// 0x0018 (0x0058 - 0x0040)
+class UKSC_DA_BuffEffectSetShape final : public UKSC_DA_BuffEffectBase
+{
+public:
+	EKSC_SetShapeType                             SetType;                                           // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              Size;                                              // 0x0044(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Scale;                                             // 0x004C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Revert;                                            // 0x0050(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x7];                                       // 0x0051(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_BuffEffectSetShape")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_BuffEffectSetShape")
+	}
+	static class UKSC_DA_BuffEffectSetShape* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_BuffEffectSetShape>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_BuffEffectSetShape;
+
+// Class KuroSimpleCombat.KSC_DA_BuffEffectTimeScale
+// 0x0008 (0x0048 - 0x0040)
+class UKSC_DA_BuffEffectTimeScale final : public UKSC_DA_BuffEffectBase
+{
+public:
+	float                                         TimeScale;                                         // 0x0040(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Revert;                                            // 0x0044(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_BuffEffectTimeScale")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_BuffEffectTimeScale")
+	}
+	static class UKSC_DA_BuffEffectTimeScale* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_BuffEffectTimeScale>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_BuffEffectTimeScale;
+
+// Class KuroSimpleCombat.KSC_Responder_ClearTag
+// 0x0020 (0x0088 - 0x0068)
+class UKSC_Responder_ClearTag final : public UKSC_EventResponder
+{
+public:
+	struct FGameplayTagContainer                  TagsToClear;                                       // 0x0068(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_ClearTag")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_ClearTag")
+	}
+	static class UKSC_Responder_ClearTag* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_ClearTag>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_ClearTag;
+
+// Class KuroSimpleCombat.KSC_DA_BuffEffectIgnoreCollision
+// 0x0008 (0x0048 - 0x0040)
+class UKSC_DA_BuffEffectIgnoreCollision final : public UKSC_DA_BuffEffectBase
+{
+public:
+	EKSC_ShapeCollisionObjType                    IgnoreObjType;                                     // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_BuffEffectIgnoreCollision")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_BuffEffectIgnoreCollision")
+	}
+	static class UKSC_DA_BuffEffectIgnoreCollision* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_BuffEffectIgnoreCollision>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_BuffEffectIgnoreCollision;
+
+// Class KuroSimpleCombat.KSC_DA_Move_Stage
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_DA_Move_Stage : public UKSC_DA_Move
+{
+public:
+	bool                                          IsSendStageEnd;                                    // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          FinishOnBattleEnd;                                 // 0x0061(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_62[0x6];                                       // 0x0062(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Move_Stage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Move_Stage")
+	}
+	static class UKSC_DA_Move_Stage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Move_Stage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Move_Stage;
+
+// Class KuroSimpleCombat.KSC_DA_HitContextText
+// 0x0050 (0x0088 - 0x0038)
+class UKSC_DA_HitContextText final : public UDataAsset
+{
+public:
+	TMap<EHitContextTextType, struct FKSC_HitContextTextData> HitContextTextMap;                     // 0x0038(0x0050)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_HitContextText")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_HitContextText")
+	}
+	static class UKSC_DA_HitContextText* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_HitContextText>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_HitContextText;
+
+// Class KuroSimpleCombat.KSC_DA_Move_MultiStage
+// 0x0018 (0x0078 - 0x0060)
+class UKSC_DA_Move_MultiStage final : public UKSC_DA_Move
+{
+public:
+	TArray<class UKSC_DA_Move_Stage*>             Stages;                                            // 0x0060(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          ManualStageSwitch;                                 // 0x0070(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Move_MultiStage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Move_MultiStage")
+	}
+	static class UKSC_DA_Move_MultiStage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Move_MultiStage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Move_MultiStage;
+
+// Class KuroSimpleCombat.KSC_DA_MoveStageSpline
+// 0x0000 (0x0068 - 0x0068)
+class UKSC_DA_MoveStageSpline final : public UKSC_DA_Move_Stage
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_MoveStageSpline")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_MoveStageSpline")
+	}
+	static class UKSC_DA_MoveStageSpline* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_MoveStageSpline>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_MoveStageSpline;
+
+// Class KuroSimpleCombat.KSC_Listener_OnTagChange
+// 0x0028 (0x0068 - 0x0040)
+class UKSC_Listener_OnTagChange final : public UKSC_EventListener
+{
+public:
+	struct FGameplayTagContainer                  ListenTags;                                        // 0x0040(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          bListenAdd;                                        // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bListenRemove;                                     // 0x0061(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_62[0x6];                                       // 0x0062(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnTagAddCallback(const class UKSC_SkillComp* SkillComp, const struct FGameplayTag& Tag, int32 CountDelta);
+	void OnTagRemoveCallback(const class UKSC_SkillComp* SkillComp, const struct FGameplayTag& Tag, int32 CountDelta);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnTagChange")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnTagChange")
+	}
+	static class UKSC_Listener_OnTagChange* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnTagChange>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnTagChange;
+
+// Class KuroSimpleCombat.KSC_DA_MoveStageImmovable
+// 0x0008 (0x0070 - 0x0068)
+class UKSC_DA_MoveStageImmovable final : public UKSC_DA_Move_Stage
+{
+public:
+	float                                         Duration;                                          // 0x0068(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_MoveStageImmovable")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_MoveStageImmovable")
+	}
+	static class UKSC_DA_MoveStageImmovable* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_MoveStageImmovable>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_MoveStageImmovable;
+
+// Class KuroSimpleCombat.KSC_DA_MoveStageRandom
+// 0x0020 (0x0088 - 0x0068)
+class UKSC_DA_MoveStageRandom final : public UKSC_DA_Move_Stage
+{
+public:
+	TArray<float>                                 DistanceRight;                                     // 0x0068(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         BeginIndex;                                        // 0x0078(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsStopSkillCast;                                   // 0x007C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7D[0x3];                                       // 0x007D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Cd;                                                // 0x0080(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_84[0x4];                                       // 0x0084(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_MoveStageRandom")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_MoveStageRandom")
+	}
+	static class UKSC_DA_MoveStageRandom* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_MoveStageRandom>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_MoveStageRandom;
+
+// Class KuroSimpleCombat.KuroSimpleCombatSubsystem
+// 0x0010 (0x0048 - 0x0038)
+class UKuroSimpleCombatSubsystem final : public UGameInstanceSubsystem
+{
+public:
+	class UKSC_World*                             KscWorld;                                          // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_World*                             OldKscWorld;                                       // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	class UKSC_World* CreateWorld(TSubclassOf<class UKSC_World> WorldClass);
+	void DestoryWorld();
+	void DestroyWorld();
+	class UKSC_World* GetKSCWorld();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroSimpleCombatSubsystem")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroSimpleCombatSubsystem")
+	}
+	static class UKuroSimpleCombatSubsystem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroSimpleCombatSubsystem>();
+	}
+};
+DUMPER7_ASSERTS_UKuroSimpleCombatSubsystem;
+
+// Class KuroSimpleCombat.KSC_DA_MoveStageApproach
+// 0x0020 (0x0088 - 0x0068)
+class UKSC_DA_MoveStageApproach final : public UKSC_DA_Move_Stage
+{
+public:
+	TArray<float>                                 DistanceRight;                                     // 0x0068(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         BeginIndex;                                        // 0x0078(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DistLimit;                                         // 0x007C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsFollow;                                          // 0x0080(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsStopSkillCast;                                   // 0x0081(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_82[0x2];                                       // 0x0082(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Cd;                                                // 0x0084(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_MoveStageApproach")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_MoveStageApproach")
+	}
+	static class UKSC_DA_MoveStageApproach* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_MoveStageApproach>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_MoveStageApproach;
+
+// Class KuroSimpleCombat.KSC_DA_MoveStageMoveWithScene
+// 0x0000 (0x0068 - 0x0068)
+class UKSC_DA_MoveStageMoveWithScene final : public UKSC_DA_Move_Stage
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_MoveStageMoveWithScene")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_MoveStageMoveWithScene")
+	}
+	static class UKSC_DA_MoveStageMoveWithScene* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_MoveStageMoveWithScene>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_MoveStageMoveWithScene;
+
+// Class KuroSimpleCombat.KSC_Responder_HealByProbability
+// 0x0048 (0x00B0 - 0x0068)
+class UKSC_Responder_HealByProbability final : public UKSC_EventResponder
+{
+public:
+	class UEffectModelBase*                       HealFX;                                            // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             HealFX_Offset;                                     // 0x0070(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         HealFX_MaxNum;                                     // 0x00A0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A4[0xC];                                       // 0x00A4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_HealByProbability")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_HealByProbability")
+	}
+	static class UKSC_Responder_HealByProbability* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_HealByProbability>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_HealByProbability;
+
+// Class KuroSimpleCombat.KSC_DA_MoveStageWaypoint
+// 0x0000 (0x0068 - 0x0068)
+class UKSC_DA_MoveStageWaypoint final : public UKSC_DA_Move_Stage
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_MoveStageWaypoint")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_MoveStageWaypoint")
+	}
+	static class UKSC_DA_MoveStageWaypoint* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_MoveStageWaypoint>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_MoveStageWaypoint;
+
+// Class KuroSimpleCombat.KSC_DA_MoveStageApproach3D
+// 0x0018 (0x0080 - 0x0068)
+class UKSC_DA_MoveStageApproach3D final : public UKSC_DA_Move_Stage
+{
+public:
+	float                                         MaxDistance;                                       // 0x0068(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinDistance;                                       // 0x006C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Acc;                                               // 0x0070(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimChangeThreshold;                               // 0x0074(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AngleTurning;                                      // 0x0078(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_MoveStageApproach3D")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_MoveStageApproach3D")
+	}
+	static class UKSC_DA_MoveStageApproach3D* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_MoveStageApproach3D>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_MoveStageApproach3D;
+
+// Class KuroSimpleCombat.KSC_DA_Move_Around
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_DA_Move_Around final : public UKSC_DA_Move
+{
+public:
+	float                                         Radius;                                            // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OffsetZ;                                           // 0x0064(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Move_Around")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Move_Around")
+	}
+	static class UKSC_DA_Move_Around* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Move_Around>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Move_Around;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_MenuAutoCastSkill
+// 0x0000 (0x01B0 - 0x01B0)
+class UKSC_DA_Buff_MenuAutoCastSkill final : public UKSC_DA_Buff
+{
+public:
+	int32                                         SkillIndex;                                        // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bEnableAutoCast;                                   // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRestoreOnEnd;                                     // 0x01AD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AE[0x2];                                      // 0x01AE(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_MenuAutoCastSkill")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_MenuAutoCastSkill")
+	}
+	static class UKSC_DA_Buff_MenuAutoCastSkill* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_MenuAutoCastSkill>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_MenuAutoCastSkill;
+
+// Class KuroSimpleCombat.KSC_Listener_OnWorldAttrChange
+// 0x0008 (0x0048 - 0x0040)
+class UKSC_Listener_OnWorldAttrChange final : public UKSC_EventListener
+{
+public:
+	EKSC_WorldAttrType                            ListenWorldAttr;                                   // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnWorldAttrChangeCallback(EKSC_WorldAttrType AttrType, int32 OldValue, int32 NewValue);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnWorldAttrChange")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnWorldAttrChange")
+	}
+	static class UKSC_Listener_OnWorldAttrChange* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnWorldAttrChange>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnWorldAttrChange;
+
+// Class KuroSimpleCombat.KSC_DA_Entity_Weapon
+// 0x0000 (0x0180 - 0x0180)
+class UKSC_DA_Entity_Weapon final : public UKSC_DA_Entity
+{
+public:
+	bool                                          bRedirectTimeScaleToSummoner;                      // 0x0178(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Entity_Weapon")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Entity_Weapon")
+	}
+	static class UKSC_DA_Entity_Weapon* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Entity_Weapon>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Entity_Weapon;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_Period_MonsterImpact
+// 0x0040 (0x02A0 - 0x0260)
+class UKSC_DA_Buff_Period_MonsterImpact final : public UKSC_DA_Buff_Period
+{
+public:
+	TArray<struct FMonsterImpactInfo>             MonsterImpactInfoList;                             // 0x0260(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<EKSC_Faction>                          IgnoreFaction;                                     // 0x0270(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         MaxHitCountPerPeriod;                              // 0x0280(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxTargetCount;                                    // 0x0284(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ImmunityTag;                                       // 0x0288(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_294[0xC];                                      // 0x0294(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_Period_MonsterImpact")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_Period_MonsterImpact")
+	}
+	static class UKSC_DA_Buff_Period_MonsterImpact* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_Period_MonsterImpact>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_Period_MonsterImpact;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_RecordDamage
+// 0x0030 (0x01E0 - 0x01B0)
+class UKSC_DA_Buff_RecordDamage final : public UKSC_DA_Buff
+{
+public:
+	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x01A8(0x0030)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 AttrId;                                            // 0x01D8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D9[0x7];                                      // 0x01D9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_RecordDamage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_RecordDamage")
+	}
+	static class UKSC_DA_Buff_RecordDamage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_RecordDamage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_RecordDamage;
+
 // Class KuroSimpleCombat.KSC_DA_Move_Approach
-// 0x0018 (0x0068 - 0x0050)
+// 0x0018 (0x0078 - 0x0060)
 class UKSC_DA_Move_Approach final : public UKSC_DA_Move
 {
 public:
-	float                                         MaxDistance;                                       // 0x0050(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinDistance;                                       // 0x0054(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Acc;                                               // 0x0058(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AnimChangeThreshold;                               // 0x005C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AngleTurning;                                      // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         MaxDistance;                                       // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinDistance;                                       // 0x0064(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Acc;                                               // 0x0068(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AnimChangeThreshold;                               // 0x006C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AngleTurning;                                      // 0x0070(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1541,17 +4153,40 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Move_Approach;
 
+// Class KuroSimpleCombat.KSC_MarbleHeadUiHandle
+// 0x0010 (0x0048 - 0x0038)
+class UKSC_MarbleHeadUiHandle final : public UKSC_BaseObject
+{
+public:
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_MarbleHeadUiHandle")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_MarbleHeadUiHandle")
+	}
+	static class UKSC_MarbleHeadUiHandle* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_MarbleHeadUiHandle>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_MarbleHeadUiHandle;
+
 // Class KuroSimpleCombat.KSC_DA_Move_Random
-// 0x0018 (0x0068 - 0x0050)
+// 0x0018 (0x0078 - 0x0060)
 class UKSC_DA_Move_Random final : public UKSC_DA_Move
 {
 public:
-	float                                         MinInterval;                                       // 0x0050(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxInterval;                                       // 0x0054(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MinDistance;                                       // 0x0058(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxDistance;                                       // 0x005C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DegSpeed;                                          // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         MinInterval;                                       // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxInterval;                                       // 0x0064(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MinDistance;                                       // 0x0068(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxDistance;                                       // 0x006C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         DegSpeed;                                          // 0x0070(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1570,16 +4205,16 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Move_Random;
 
 // Class KuroSimpleCombat.KSC_DA_Skill_Anim
-// 0x0010 (0x0160 - 0x0150)
+// 0x0010 (0x0190 - 0x0180)
 class UKSC_DA_Skill_Anim : public UKSC_DA_Skill
 {
 public:
-	EKSC_GPUNPCAnimState                          AnimState;                                         // 0x0150(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_151[0x3];                                      // 0x0151(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         AnimDuration;                                      // 0x0154(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_GPUNPCAnimState                          AnimStateIdle;                                     // 0x0158(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsStopMoveBeingSkill;                              // 0x0159(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15A[0x6];                                      // 0x015A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EKSC_GPUNPCAnimState                          AnimState;                                         // 0x0180(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_181[0x3];                                      // 0x0181(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         AnimDuration;                                      // 0x0184(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_GPUNPCAnimState                          AnimStateIdle;                                     // 0x0188(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsStopMoveBeingSkill;                              // 0x0189(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18A[0x6];                                      // 0x018A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1603,7 +4238,7 @@ class UKSC_DA_WorldBounds : public UDataAsset
 {
 public:
 	TSubclassOf<class UKSC_WorldBounds>           RuntimeClass;                                      // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         GroundPositionZ;                                   // 0x0040(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         GroundPositionZ;                                   // 0x0040(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
@@ -1627,9 +4262,9 @@ DUMPER7_ASSERTS_UKSC_DA_WorldBounds;
 class UKSC_DA_WorldBoundsRound final : public UKSC_DA_WorldBounds
 {
 public:
-	float                                         WorldRadius;                                       // 0x0048(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WorldRadius;                                       // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVectorDouble                          WorldCenterOffset;                                 // 0x0050(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVectorDouble                          WorldCenterOffset;                                 // 0x0050(0x0018)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -1646,6 +4281,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_DA_WorldBoundsRound;
+
+// Class KuroSimpleCombat.KSC_Responder_AdditionalAttack
+// 0x0008 (0x0070 - 0x0068)
+class UKSC_Responder_AdditionalAttack final : public UKSC_EventResponder
+{
+public:
+	class UKSC_DA_AdditionalAttack*               AdditionalAttackConfig;                            // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_AdditionalAttack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_AdditionalAttack")
+	}
+	static class UKSC_Responder_AdditionalAttack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_AdditionalAttack>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_AdditionalAttack;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_AddSkill
 // 0x0000 (0x01B0 - 0x01B0)
@@ -1695,44 +4353,64 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_AttrLockLowerBound;
 
-// Class KuroSimpleCombat.KSC_DA_Buff_Stack
-// 0x0010 (0x01C0 - 0x01B0)
-#pragma pack(push, 0x1)
-class alignas(0x10) UKSC_DA_Buff_Stack : public UKSC_DA_Buff
+// Class KuroSimpleCombat.KSC_PlayerHeadUiHandle
+// 0x0040 (0x0078 - 0x0038)
+class UKSC_PlayerHeadUiHandle final : public UKSC_BaseObject
 {
 public:
-	int32                                         StackNum;                                          // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          MultiStackTime;                                    // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          OneSourceOneStack;                                 // 0x01AD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseStackTimeType;                                  // 0x01AE(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Buff_StackTimeType                       StackTimeType;                                     // 0x01AF(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ChangeTagCountByStack;                             // 0x01B0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B1[0x7];                                      // 0x01B1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x40];                                      // 0x0038(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnAttrChange(EKSC_AttrType AttrType, int32 Value);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_DA_Buff_Stack")
+		STATIC_CLASS_IMPL("KSC_PlayerHeadUiHandle")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_DA_Buff_Stack")
+		STATIC_NAME_IMPL(L"KSC_PlayerHeadUiHandle")
 	}
-	static class UKSC_DA_Buff_Stack* GetDefaultObj()
+	static class UKSC_PlayerHeadUiHandle* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_DA_Buff_Stack>();
+		return GetDefaultObjImpl<UKSC_PlayerHeadUiHandle>();
 	}
 };
-#pragma pack(pop)
-DUMPER7_ASSERTS_UKSC_DA_Buff_Stack;
+DUMPER7_ASSERTS_UKSC_PlayerHeadUiHandle;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_AttrLockUpperBound
+// 0x0000 (0x01B0 - 0x01B0)
+class UKSC_DA_Buff_AttrLockUpperBound final : public UKSC_DA_Buff
+{
+public:
+	EKSC_AttrType                                 Id;                                                // 0x01A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A9[0x3];                                      // 0x01A9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Value;                                             // 0x01AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_AttrLockUpperBound")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_AttrLockUpperBound")
+	}
+	static class UKSC_DA_Buff_AttrLockUpperBound* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_AttrLockUpperBound>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_AttrLockUpperBound;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_TransferAddAttr
-// 0x0050 (0x0210 - 0x01C0)
+// 0x0050 (0x0220 - 0x01D0)
 class UKSC_DA_Buff_TransferAddAttr final : public UKSC_DA_Buff_Stack
 {
 public:
-	TMap<EKSC_AttrType, struct FKSC_TransferAddAttr> Addition;                                       // 0x01B8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                         Pad_208[0x8];                                      // 0x0208(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<EKSC_AttrType, struct FKSC_TransferAddAttr> Addition;                                       // 0x01C8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_218[0x8];                                      // 0x0218(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1751,12 +4429,12 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Buff_TransferAddAttr;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_DiffTransferAddAttr
-// 0x0050 (0x0210 - 0x01C0)
+// 0x0050 (0x0220 - 0x01D0)
 class UKSC_DA_Buff_DiffTransferAddAttr final : public UKSC_DA_Buff_Stack
 {
 public:
-	TMap<EKSC_AttrType, struct FKSC_DiffTransferAddAttr> Addition;                                   // 0x01B8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                         Pad_208[0x8];                                      // 0x0208(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<EKSC_AttrType, struct FKSC_DiffTransferAddAttr> Addition;                                   // 0x01C8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_218[0x8];                                      // 0x0218(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1799,12 +4477,36 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_ModifyAttrRatio;
 
+// Class KuroSimpleCombat.KSC_SceneSegment
+// 0x0048 (0x0300 - 0x02B8)
+class AKSC_SceneSegment final : public AKSC_BaseActor
+{
+public:
+	uint8                                         Pad_2B8[0x48];                                     // 0x02B8(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_SceneSegment")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_SceneSegment")
+	}
+	static class AKSC_SceneSegment* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_SceneSegment>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_SceneSegment;
+
 // Class KuroSimpleCombat.KSC_DA_Entity_Tower
-// 0x0050 (0x0148 - 0x00F8)
+// 0x0050 (0x01D0 - 0x0180)
 class UKSC_DA_Entity_Tower final : public UKSC_DA_Entity
 {
 public:
-	TMap<EKSC_Skill_State, class FName>           SkillStateMap;                                     // 0x00F8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<EKSC_Skill_State, class FName>           SkillStateMap;                                     // 0x0178(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C8[0x8];                                      // 0x01C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1823,7 +4525,7 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Entity_Tower;
 
 // Class KuroSimpleCombat.KSC_DA_Entity_Enemy
-// 0x0000 (0x00F8 - 0x00F8)
+// 0x0000 (0x0180 - 0x0180)
 class UKSC_DA_Entity_Enemy final : public UKSC_DA_Entity
 {
 public:
@@ -1843,9 +4545,13 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Entity_Enemy;
 
 // Class KuroSimpleCombat.KSC_DA_Entity_Player
-// 0x0000 (0x00F8 - 0x00F8)
+// 0x0000 (0x0180 - 0x0180)
 class UKSC_DA_Entity_Player final : public UKSC_DA_Entity
 {
+public:
+	float                                         TurnRateScale;                                     // 0x0178(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_17C[0x4];                                      // 0x017C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -1863,7 +4569,7 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Entity_Player;
 
 // Class KuroSimpleCombat.KSC_DA_Entity_Coin
-// 0x0000 (0x00F8 - 0x00F8)
+// 0x0000 (0x0180 - 0x0180)
 class UKSC_DA_Entity_Coin final : public UKSC_DA_Entity
 {
 public:
@@ -1882,13 +4588,47 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Entity_Coin;
 
+// Class KuroSimpleCombat.KSC_Shape2D_Entity_Bar
+// 0x0050 (0x04B0 - 0x0460)
+class AKSC_Shape2D_Entity_Bar final : public AKSC_Shape2D_Entity
+{
+public:
+	uint8                                         Pad_460[0x1];                                      // 0x0460(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	EKSC_ShapeBarSide                             Side;                                              // 0x0461(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsShowLaunchDirection;                             // 0x0462(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_463[0x1];                                      // 0x0463(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                LaunchStartPoint;                                  // 0x0464(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchRotation;                                    // 0x0470(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_474[0x34];                                     // 0x0474(0x0034)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            DirectionCurve;                                    // 0x04A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	void TriggerBar();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2D_Entity_Bar")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2D_Entity_Bar")
+	}
+	static class AKSC_Shape2D_Entity_Bar* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_Shape2D_Entity_Bar>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_Shape2D_Entity_Bar;
+
 // Class KuroSimpleCombat.KSC_DA_Entity_Projectile
-// 0x0010 (0x0108 - 0x00F8)
+// 0x0030 (0x01B0 - 0x0180)
 class UKSC_DA_Entity_Projectile final : public UKSC_DA_Entity
 {
 public:
-	struct FKSCDamage                             Damage;                                            // 0x00F8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         DamageID;                                          // 0x0104(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKSCDamage                             Damage;                                            // 0x0178(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         DamageID;                                          // 0x01A0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A4[0xC];                                      // 0x01A4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1907,7 +4647,7 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Entity_Projectile;
 
 // Class KuroSimpleCombat.KSC_DA_Entity_AssistMachine
-// 0x0000 (0x00F8 - 0x00F8)
+// 0x0000 (0x0180 - 0x0180)
 class UKSC_DA_Entity_AssistMachine final : public UKSC_DA_Entity
 {
 public:
@@ -1926,10 +4666,34 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Entity_AssistMachine;
 
+// Class KuroSimpleCombat.KSC_Move_Straight
+// 0x0000 (0x01E8 - 0x01E8)
+class UKSC_Move_Straight final : public UKSC_Move
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_Straight")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_Straight")
+	}
+	static class UKSC_Move_Straight* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_Straight>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_Straight;
+
 // Class KuroSimpleCombat.KSC_DA_Move_Spline
-// 0x0000 (0x0050 - 0x0050)
+// 0x0008 (0x0068 - 0x0060)
 class UKSC_DA_Move_Spline final : public UKSC_DA_Move
 {
+public:
+	bool                                          RunAnim;                                           // 0x0060(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -1947,7 +4711,7 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Move_Spline;
 
 // Class KuroSimpleCombat.KSC_DA_Move_Straight
-// 0x0000 (0x0050 - 0x0050)
+// 0x0000 (0x0060 - 0x0060)
 class UKSC_DA_Move_Straight final : public UKSC_DA_Move
 {
 public:
@@ -1966,8 +4730,35 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Move_Straight;
 
+// Class KuroSimpleCombat.KSC_Shape2D_Entity_TeamPlayer
+// 0x0030 (0x03C8 - 0x0398)
+class AKSC_Shape2D_Entity_TeamPlayer final : public AKSC_Entity
+{
+public:
+	class UKSC_Shape2D_World*                     KscShapeWorld;                                     // 0x0398(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_3A0[0x28];                                     // 0x03A0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void UseSkill(const int32 SkillIndex, const bool IsUseMainPlayerSkill);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2D_Entity_TeamPlayer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2D_Entity_TeamPlayer")
+	}
+	static class AKSC_Shape2D_Entity_TeamPlayer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_Shape2D_Entity_TeamPlayer>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_Shape2D_Entity_TeamPlayer;
+
 // Class KuroSimpleCombat.KSC_DA_Move_Follow
-// 0x0000 (0x0050 - 0x0050)
+// 0x0000 (0x0060 - 0x0060)
 class UKSC_DA_Move_Follow final : public UKSC_DA_Move
 {
 public:
@@ -1986,14 +4777,57 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Move_Follow;
 
+// Class KuroSimpleCombat.KSC_DA_Move_Target
+// 0x0000 (0x0060 - 0x0060)
+class UKSC_DA_Move_Target final : public UKSC_DA_Move
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Move_Target")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Move_Target")
+	}
+	static class UKSC_DA_Move_Target* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Move_Target>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Move_Target;
+
+// Class KuroSimpleCombat.KSC_Move_Follow
+// 0x0020 (0x0208 - 0x01E8)
+class UKSC_Move_Follow final : public UKSC_Move
+{
+public:
+	uint8                                         Pad_1E8[0x20];                                     // 0x01E8(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_Follow")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_Follow")
+	}
+	static class UKSC_Move_Follow* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_Follow>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_Follow;
+
 // Class KuroSimpleCombat.KSC_DA_Skill_Attack
-// 0x0060 (0x01B0 - 0x0150)
+// 0x0060 (0x01E0 - 0x0180)
 class UKSC_DA_Skill_Attack final : public UKSC_DA_Skill
 {
 public:
-	bool                                          OverrideCheckRange;                                // 0x0150(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_151[0xF];                                      // 0x0151(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_Range                             CheckRange;                                        // 0x0160(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          OverrideCheckRange;                                // 0x0180(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_181[0xF];                                      // 0x0181(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_Range                             CheckRange;                                        // 0x0190(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2012,14 +4846,14 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Skill_Attack;
 
 // Class KuroSimpleCombat.KSC_DA_Skill_Attack_Persistent
-// 0x0010 (0x0160 - 0x0150)
+// 0x0010 (0x0190 - 0x0180)
 class UKSC_DA_Skill_Attack_Persistent : public UKSC_DA_Skill
 {
 public:
-	float                                         PersistentTime;                                    // 0x0150(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Period;                                            // 0x0154(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          PeriodImmediately;                                 // 0x0158(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_159[0x7];                                      // 0x0159(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         PersistentTime;                                    // 0x0180(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Period;                                            // 0x0184(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PeriodImmediately;                                 // 0x0188(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_189[0x7];                                      // 0x0189(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2037,14 +4871,42 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Skill_Attack_Persistent;
 
+// Class KuroSimpleCombat.KSC_Listener_OnCrit
+// 0x0038 (0x0078 - 0x0040)
+class UKSC_Listener_OnCrit final : public UKSC_EventListener
+{
+public:
+	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x0040(0x0030)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x0070(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0x7];                                       // 0x0071(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnCritCallback(const class UKSC_SkillComp* FromComp, const class UKSC_SkillComp* ToComp, const struct FKSCDamage& Damage);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnCrit")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnCrit")
+	}
+	static class UKSC_Listener_OnCrit* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnCrit>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnCrit;
+
 // Class KuroSimpleCombat.KSC_DA_Skill_Attack_Persistent_Cannon
-// 0x0010 (0x0170 - 0x0160)
+// 0x0010 (0x01A0 - 0x0190)
 class UKSC_DA_Skill_Attack_Persistent_Cannon final : public UKSC_DA_Skill_Attack_Persistent
 {
 public:
-	float                                         RotSpeed;                                          // 0x0160(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CannonLength;                                      // 0x0164(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_168[0x8];                                      // 0x0168(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         RotSpeed;                                          // 0x0190(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CannonLength;                                      // 0x0194(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_198[0x8];                                      // 0x0198(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2063,12 +4925,12 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Skill_Attack_Persistent_Cannon;
 
 // Class KuroSimpleCombat.KSC_DA_Skill_BulletAttack
-// 0x0010 (0x0160 - 0x0150)
+// 0x0010 (0x0190 - 0x0180)
 class UKSC_DA_Skill_BulletAttack final : public UKSC_DA_Skill
 {
 public:
-	class UKSC_DA_Bullet*                         Bullet;                                            // 0x0150(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_158[0x8];                                      // 0x0158(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Bullet*                         Bullet;                                            // 0x0180(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_188[0x8];                                      // 0x0188(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2086,18 +4948,47 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Skill_BulletAttack;
 
+// Class KuroSimpleCombat.KSC_Shape2DCustomMoveInterface
+// 0x0000 (0x0000 - 0x0000)
+class IKSC_Shape2DCustomMoveInterface final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2DCustomMoveInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2DCustomMoveInterface")
+	}
+	static class IKSC_Shape2DCustomMoveInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IKSC_Shape2DCustomMoveInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IKSC_Shape2DCustomMoveInterface;
+
 // Class KuroSimpleCombat.KSC_DA_Skill_ManualBulletAttack
-// 0x0020 (0x0170 - 0x0150)
+// 0x0020 (0x01A0 - 0x0180)
 class UKSC_DA_Skill_ManualBulletAttack final : public UKSC_DA_Skill
 {
 public:
-	class UKSC_DA_Bullet*                         Bullet;                                            // 0x0150(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AttackDist;                                        // 0x0158(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TraceAngle;                                        // 0x015C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_LockTarget                               LockTargetType;                                    // 0x0160(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_ManualSkillAttack                        AttackType;                                        // 0x0161(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Faction                                  SelectTargetFaction;                               // 0x0162(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_163[0xD];                                      // 0x0163(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Bullet*                         Bullet;                                            // 0x0180(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AttackDist;                                        // 0x0188(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TraceAngle;                                        // 0x018C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_LockTarget                               LockTargetType;                                    // 0x0190(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_ManualSkillAttack                        AttackType;                                        // 0x0191(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Faction                                  SelectTargetFaction;                               // 0x0192(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_193[0xD];                                      // 0x0193(0x000D)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2116,12 +5007,12 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Skill_ManualBulletAttack;
 
 // Class KuroSimpleCombat.KSC_DA_Skill_MultiAttack
-// 0x0010 (0x0160 - 0x0150)
+// 0x0010 (0x0190 - 0x0180)
 class UKSC_DA_Skill_MultiAttack final : public UKSC_DA_Skill
 {
 public:
-	int32                                         MultiNum;                                          // 0x0150(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_154[0xC];                                      // 0x0154(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         MultiNum;                                          // 0x0180(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_184[0xC];                                      // 0x0184(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2139,13 +5030,40 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Skill_MultiAttack;
 
+// Class KuroSimpleCombat.KSC_Listener_OnAttrChange
+// 0x0040 (0x0080 - 0x0040)
+class UKSC_Listener_OnAttrChange final : public UKSC_EventListener
+{
+public:
+	struct FKSC_ListenAttrEventBuff               ListenConfig;                                      // 0x0040(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_50[0x30];                                      // 0x0050(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnAttrChangeCallback(EKSC_AttrType AttrType, int32 Value);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnAttrChange")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnAttrChange")
+	}
+	static class UKSC_Listener_OnAttrChange* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnAttrChange>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnAttrChange;
+
 // Class KuroSimpleCombat.KSC_DA_Skill_ChainAttack
-// 0x0010 (0x0160 - 0x0150)
+// 0x0010 (0x0190 - 0x0180)
 class UKSC_DA_Skill_ChainAttack final : public UKSC_DA_Skill
 {
 public:
-	int32                                         ChainNum;                                          // 0x0150(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_154[0xC];                                      // 0x0154(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         ChainNum;                                          // 0x0180(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_184[0xC];                                      // 0x0184(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2164,15 +5082,15 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Skill_ChainAttack;
 
 // Class KuroSimpleCombat.KSC_DA_Skill_RangeAttack
-// 0x00B0 (0x0200 - 0x0150)
+// 0x00B0 (0x0230 - 0x0180)
 #pragma pack(push, 0x1)
 class alignas(0x10) UKSC_DA_Skill_RangeAttack : public UKSC_DA_Skill
 {
 public:
-	struct FKSC_Range                             CheckRange;                                        // 0x0150(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKSC_Range                             DamageRange;                                       // 0x01A0(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ForceDoSkill;                                      // 0x01F0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F1[0x7];                                      // 0x01F1(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FKSC_Range                             CheckRange;                                        // 0x0180(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKSC_Range                             DamageRange;                                       // 0x01D0(0x0050)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ForceDoSkill;                                      // 0x0220(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_221[0x7];                                      // 0x0221(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2191,12 +5109,32 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_UKSC_DA_Skill_RangeAttack;
 
+// Class KuroSimpleCombat.KSC_Move_StageMoveWithScene
+// 0x0000 (0x01F0 - 0x01F0)
+class UKSC_Move_StageMoveWithScene final : public UKSC_Move_Stage
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_StageMoveWithScene")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_StageMoveWithScene")
+	}
+	static class UKSC_Move_StageMoveWithScene* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_StageMoveWithScene>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_StageMoveWithScene;
+
 // Class KuroSimpleCombat.KSC_DA_Skill_RangeAttackApplyBuffToFriend
-// 0x0000 (0x0200 - 0x0200)
+// 0x0000 (0x0230 - 0x0230)
 class UKSC_DA_Skill_RangeAttackApplyBuffToFriend final : public UKSC_DA_Skill_RangeAttack
 {
 public:
-	class UKSC_DA_Buff*                           ApplyBuffToFriend;                                 // 0x01F8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           ApplyBuffToFriend;                                 // 0x0228(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2215,12 +5153,12 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Skill_RangeAttackApplyBuffToFriend;
 
 // Class KuroSimpleCombat.KSC_DA_Skill_RangePersistentAttack
-// 0x0000 (0x0200 - 0x0200)
+// 0x0000 (0x0230 - 0x0230)
 class UKSC_DA_Skill_RangePersistentAttack final : public UKSC_DA_Skill_RangeAttack
 {
 public:
-	float                                         PersistentTime;                                    // 0x01F8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Period;                                            // 0x01FC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PersistentTime;                                    // 0x0228(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Period;                                            // 0x022C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2238,13 +5176,40 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Skill_RangePersistentAttack;
 
+// Class KuroSimpleCombat.KSC_Listener_OnLifeChangeDown
+// 0x0030 (0x0070 - 0x0040)
+class UKSC_Listener_OnLifeChangeDown final : public UKSC_EventListener
+{
+public:
+	float                                         ThresholdPercent;                                  // 0x0040(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0x2C];                                      // 0x0044(0x002C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnAttrChangeCallback(EKSC_AttrType AttrType, int32 Value);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnLifeChangeDown")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnLifeChangeDown")
+	}
+	static class UKSC_Listener_OnLifeChangeDown* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnLifeChangeDown>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnLifeChangeDown;
+
 // Class KuroSimpleCombat.KSC_DA_Skill_RangeSectionAttack
-// 0x0000 (0x0200 - 0x0200)
+// 0x0000 (0x0230 - 0x0230)
 class UKSC_DA_Skill_RangeSectionAttack final : public UKSC_DA_Skill_RangeAttack
 {
 public:
-	int32                                         SectionCount;                                      // 0x01F8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SectionTime;                                       // 0x01FC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SectionCount;                                      // 0x0228(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SectionTime;                                       // 0x022C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2263,16 +5228,16 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Skill_RangeSectionAttack;
 
 // Class KuroSimpleCombat.KSC_DA_Skill_LandFire
-// 0x0020 (0x0220 - 0x0200)
+// 0x0020 (0x0250 - 0x0230)
 class UKSC_DA_Skill_LandFire final : public UKSC_DA_Skill_RangeAttack
 {
 public:
-	struct FGameplayTag                           ListenTag;                                         // 0x01F8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ListenRange;                                       // 0x0204(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ListenTagIncTime;                                  // 0x0208(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20C[0x4];                                      // 0x020C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_Buff*                           AddBuff6;                                          // 0x0210(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKSC_DA_Buff*                           AddBuff7;                                          // 0x0218(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ListenTag;                                         // 0x0228(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ListenRange;                                       // 0x0234(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ListenTagIncTime;                                  // 0x0238(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_23C[0x4];                                      // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Buff*                           AddBuff6;                                          // 0x0240(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           AddBuff7;                                          // 0x0248(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2290,30 +5255,190 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Skill_LandFire;
 
+// Class KuroSimpleCombat.KSC_World
+// 0x0890 (0x08C0 - 0x0030)
+class alignas(0x10) UKSC_World : public UObject
+{
+public:
+	TArray<class UKSC_SceneComp*>                 SceneComps_;                                       // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class AKSC_Entity*>                    Entities_;                                         // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<int32, class AKSC_Entity*>               EntityIdMap;                                       // 0x0050(0x0050)(NativeAccessSpecifierPublic)
+	TArray<class AKSC_Entity*>                    DeadEntities_;                                     // 0x00A0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<class AKSC_Entity*>                    ShowHeadUIEntities_;                               // 0x00B0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
+	TArray<class AKSC_Entity*>                    ToRemoveEntities_;                                 // 0x00C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class AKSC_Entity*>                    ToAddEntities_;                                    // 0x00D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<struct FKSC_LandFireContext>           ToAddLandFire_;                                    // 0x00E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	TMap<class AKSC_Entity*, class AActor*>       RenderActorMap_;                                   // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class UKSC_DA_EntityRender*, class AActor*> SharedRenderActorDaMap_;                        // 0x0140(0x0050)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_190[0x80];                                     // 0x0190(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
+	class AKSC_GPUHeadUI*                         GPUHeadUI;                                         // 0x0210(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_HitContextTextHandle*              HitContextTextHandle;                              // 0x0218(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<EKSC_AttrType, EKSC_AttrType>            AttributeIdsWithMax;                               // 0x0220(0x0050)(NativeAccessSpecifierPublic)
+	TMap<EKSC_AttrType, int32>                    AttributeEffectiveDamageType;                      // 0x0270(0x0050)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C0[0x60];                                     // 0x02C0(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const TArray<struct FKSC_RemoveContext>& RemoveContext)> OnKSCBatchRemoveAfter;   // 0x0320(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const TArray<struct FKSC_LandFireContext>& LandFireContext)> OnKSCLandFireSpawn;  // 0x0348(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FTransformDouble& OwnerTransform, const TArray<struct FKSC_SpawnEntity>& SpawnEntities)> OnKSCEntitySpawn; // 0x0370(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void(const struct FTransformDouble& OwnerTransform, const TArray<struct FKSC_SpawnEntity>& SummonEntities, int32 SummonerID)> OnKSCEntitySummon; // 0x0398(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TArray<class UKSC_Decorator*>                 Decorators;                                        // 0x03C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D0[0x50];                                     // 0x03D0(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EKSC_HeadUiType, class UClass*>          HeadUiHandleClassMap;                              // 0x0420(0x0050)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_470[0x160];                                    // 0x0470(0x0160)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DamageHandler*                     DamageHandler;                                     // 0x05D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5D8[0x68];                                     // 0x05D8(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class UObject*>                          PoolHelper_;                                       // 0x0640(0x0050)(NativeAccessSpecifierPrivate)
+	uint8                                         Pad_690[0xB8];                                     // 0x0690(0x00B8)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_WorldBounds*                       WorldBounds;                                       // 0x0748(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_750[0x8];                                      // 0x0750(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class UKSC_DA_Buff*, int32>              LoadedBuffDa;                                      // 0x0758(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class UKSC_DA_Entity*, int32>            LoadedEntityDa;                                    // 0x07A8(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class UKSC_DA_Skill*, int32>             LoadedSkillDa;                                     // 0x07F8(0x0050)(NativeAccessSpecifierPublic)
+	class UKSC_DamageId*                          DamageData;                                        // 0x0848(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_BuffId*                            BuffData;                                          // 0x0850(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSet<int32>                                   BroadcastBuffIdSet;                                // 0x0858(0x0050)(NativeAccessSpecifierPublic)
+	class UKSC_SceneMovement*                     SceneMovement;                                     // 0x08A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroFastCollisionAlgorithm*            KFCAlgorithm;                                      // 0x08B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8B8[0x8];                                      // 0x08B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class AKSC_Entity* AddDaEntity(class UKSC_DA_Entity* DaEntity, const struct FTransform& Transform, bool IsPreview, int32 CreatureId);
+	bool AddDecorator(class UKSC_DA_Decorator* DaDecorator);
+	bool AddHeadUI(TSubclassOf<class AKSC_GPUHeadUI> InHeadUIClass);
+	void AddHitContextText(EHitContextTextType TextType, const struct FVector& Location, int32 EntityId);
+	void AssignBatchRemoveDelegate(const TDelegate<void(const TArray<struct FKSC_RemoveContext>& RemoveContext)>& InDelegate);
+	void AssignKSCEntitySpawn(const TDelegate<void(const struct FTransformDouble& OwnerTransform, const TArray<struct FKSC_SpawnEntity>& SpawnEntities)>& InDelegate);
+	void AssignKSCEntitySummon(const TDelegate<void(const struct FTransformDouble& OwnerTransform, const TArray<struct FKSC_SpawnEntity>& SummonEntities, int32 SummonerID)>& InDelegate);
+	void AssignLandFireSpawnDelegate(const TDelegate<void(const TArray<struct FKSC_LandFireContext>& LandFireContext)>& InDelegate);
+	void AssignWorldAttrListen(EKSC_WorldAttrType Id, const TDelegate<void(EKSC_WorldAttrType AttrType, int32 OldValue, int32 NewValue)>& InDelegate);
+	void ClearDecorator();
+	class AKSC_Entity* D_AddDaEntity(class UKSC_DA_Entity* DaEntity, const struct FTransformDouble& Transform, bool InIsPreview, int32 CreatureId);
+	bool Debug_GetEntityAttr(int32 EntityId, TMap<EKSC_AttrType, int32>* Attr);
+	bool Debug_GetEntityBuffs(int32 EntityId, TMap<class UKSC_DA_Buff*, int32>* Buffs);
+	bool Debug_GetEntityLockedAttr(int32 EntityId, TMap<EKSC_AttrType, int32>* Attr);
+	bool Debug_GetEntityTags(int32 EntityId, TMap<struct FGameplayTag, int32>* Tags);
+	class FString Debug_GetOriginalTagName(const class FName& TagName);
+	bool Debug_GetWorldAttr(TMap<EKSC_WorldAttrType, int32>* Attr);
+	bool Debug_IsEntityAlive(int32 EntityId);
+	bool Debug_SetEntityAttr(int32 EntityId, const EKSC_AttrType& Attr, int32 Value);
+	bool Debug_SetEntityTag(int32 EntityId, const struct FGameplayTag& Attr, int32 TagCount);
+	class AKSC_Entity* GetEntityById(int32 EntityId);
+	void GetEntityPositionsEx(TArray<struct FKSC_MiniMapContext>* EntityPositions);
+	void GetHeadHpInfos(TArray<struct FKSC_HeadHpContext>* HpInfos);
+	int32 GetWorldAttr(EKSC_WorldAttrType Type);
+	void InitHeadUiClassMap();
+	void ModifyWorldAttr(EKSC_WorldAttrType Type, int32 Value);
+	TArray<struct FKSC_HitContext> PopHitInfos();
+	bool RemoveDecorator(class UKSC_DA_Decorator* DaDecorator);
+	void RemoveEntity(class AKSC_Entity* Entity);
+	void RemoveEntityReason(class AKSC_Entity* Entity, class FName Reason);
+	void RemoveWorldAttrListen(EKSC_WorldAttrType Id, const TDelegate<void(EKSC_WorldAttrType AttrType, int32 OldValue, int32 NewValue)>& InDelegate);
+	void SetBroadcastBuffIdList(const TArray<int32>& InBuffIdList);
+	void SetDamageHandler(TSubclassOf<class UKSC_DamageHandler> HandlerClass);
+	void SetHitContextTextData(class UKSC_DA_HitContextText* InDataAsset);
+	void SetKFCAlgorithm(class UKuroFastCollisionAlgorithm* Algorithm);
+	void SetObstacleSegments(const TArray<struct FKSC_Segment>& InObstacleSegments);
+	void SetWorldAttr(EKSC_WorldAttrType Type, int32 Value);
+	void SetWorldBounds(class UKSC_DA_WorldBounds* DAWorldBounds);
+	void SetWorldTimeDilation(float NewTimeDilation);
+
+	class UKSC_BuffId* GetBuffData() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_World")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_World")
+	}
+	static class UKSC_World* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_World>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_World;
+
+// Class KuroSimpleCombat.KSC_Shape2D_World
+// 0x03F0 (0x0CB0 - 0x08C0)
+class UKSC_Shape2D_World final : public UKSC_World
+{
+public:
+	uint8                                         Pad_8C0[0x38];                                     // 0x08C0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	class UDataTable*                             ShapeMaterialDataTable;                            // 0x08F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_900[0x150];                                    // 0x0900(0x0150)(Fixing Size After Last Property [ Dumper-7 ])
+	class AKSC_Shape2D_Entity_Player*             CurrentPlayer;                                     // 0x0A50(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class AKSC_Shape2D_Entity_Player*             MainPlayer;                                        // 0x0A58(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class AKSC_Shape2D_Entity_TeamPlayer*         TeamPlayer;                                        // 0x0A60(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<class AKSC_Shape2D_Entity_Player*>     TeamPlayerEntities;                                // 0x0A68(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<int32>                                 TeamPlayerEntityIds;                               // 0x0A78(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	TArray<int32>                                 TeamPlayerEntityIdsOriginal;                       // 0x0A88(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	class UKSC_DA_Shape2D_World*                  DA_Shape2D_World;                                  // 0x0A98(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UKSC_DA_WorldBounds*                    Temp_DA_WorldBounds;                               // 0x0AA0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_AA8[0x40];                                     // 0x0AA8(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FKSC_Shape2D_CollisionListenContext> CollisionListenContexts;                      // 0x0AE8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_AF8[0xB8];                                     // 0x0AF8(0x00B8)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DamageHandler_WF*                  DamageHandler_WF;                                  // 0x0BB0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_BB8[0xF8];                                     // 0x0BB8(0x00F8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddDamageEffectData(const int32 DamageId, const struct FKSC_Shape2D_DamageEffect& Data);
+	void AssignRelaunchPlayer(const TDelegate<void()>& InDelegate);
+	void AssignTeamAllDead(const TDelegate<void()>& InDelegate);
+	void AssignWorldUpdateOnce(const TDelegate<void()>& InDelegate);
+	void ClearDamageInfo();
+	void ClearDamageTotalInfo();
+	void GetDamageInfo(TMap<int32, int32>* OutInfos);
+	void GetDamageTotalInfo(TArray<struct FKSC_Shape2D_DamageTotalInfo>* OutInfos);
+	void InitTeamPlayerEntityIds(const TArray<int32>& PlayerEntityIds);
+	void RebuildWorldBounds(class UKSC_DA_WorldBounds* DA_WorldBounds);
+	void ReviveTeam();
+	void SetGameEnd();
+	void SetShape2DWorldDA(class UKSC_DA_Shape2D_World* DA_ShapeWorld);
+	void SetShapeMaterialDT(class UDataTable* DataTable);
+	void SetVictory();
+	void SetWorldOrigin(const struct FVectorDouble& NewOrigin);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2D_World")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2D_World")
+	}
+	static class UKSC_Shape2D_World* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Shape2D_World>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Shape2D_World;
+
 // Class KuroSimpleCombat.KSC_DA_Skill_LoadBomb
-// 0x00A0 (0x02A0 - 0x0200)
+// 0x00A0 (0x02D0 - 0x0230)
 class UKSC_DA_Skill_LoadBomb final : public UKSC_DA_Skill_RangeAttack
 {
 public:
-	int32                                         MaxBombNum;                                        // 0x01F8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BombEndRadius;                                     // 0x01FC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BombStartOffset1;                                  // 0x0200(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BombStartOffset2;                                  // 0x020C(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BombStartOffset3;                                  // 0x0218(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BombStartOffset4;                                  // 0x0224(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BombEndOffset1;                                    // 0x0230(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BombEndOffset2;                                    // 0x023C(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BombEndOffset3;                                    // 0x0248(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                BombEndOffset4;                                    // 0x0254(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BombLifeTimeOffset1;                               // 0x0260(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BombLifeTimeOffset2;                               // 0x0264(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BombLifeTimeOffset3;                               // 0x0268(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BombLifeTimeOffset4;                               // 0x026C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEffectModelBase*                       KuroLoadBombFX;                                    // 0x0270(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LaunchBombSize;                                    // 0x0278(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LaunchOffset;                                      // 0x027C(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<EObjectTypeQuery>                      ObjectTypes;                                       // 0x0288(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                         Pad_298[0x8];                                      // 0x0298(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         MaxBombNum;                                        // 0x0228(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BombEndRadius;                                     // 0x022C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BombStartOffset1;                                  // 0x0230(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BombStartOffset2;                                  // 0x023C(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BombStartOffset3;                                  // 0x0248(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BombStartOffset4;                                  // 0x0254(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BombEndOffset1;                                    // 0x0260(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BombEndOffset2;                                    // 0x026C(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BombEndOffset3;                                    // 0x0278(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                BombEndOffset4;                                    // 0x0284(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BombLifeTimeOffset1;                               // 0x0290(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BombLifeTimeOffset2;                               // 0x0294(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BombLifeTimeOffset3;                               // 0x0298(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BombLifeTimeOffset4;                               // 0x029C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       KuroLoadBombFX;                                    // 0x02A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchBombSize;                                    // 0x02A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LaunchOffset;                                      // 0x02AC(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<EObjectTypeQuery>                      ObjectTypes;                                       // 0x02B8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C8[0x8];                                      // 0x02C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2332,12 +5457,12 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Skill_LoadBomb;
 
 // Class KuroSimpleCombat.KSC_DA_Skill_Projectile
-// 0x0010 (0x0160 - 0x0150)
+// 0x0010 (0x0190 - 0x0180)
 class UKSC_DA_Skill_Projectile final : public UKSC_DA_Skill
 {
 public:
-	class UKSC_DA_Entity_Projectile*              Projectile;                                        // 0x0150(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_158[0x8];                                      // 0x0158(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Entity_Projectile*              Projectile;                                        // 0x0180(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_188[0x8];                                      // 0x0188(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2355,16 +5480,39 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Skill_Projectile;
 
+// Class KuroSimpleCombat.KSC_Responder_AddTag
+// 0x0020 (0x0088 - 0x0068)
+class UKSC_Responder_AddTag final : public UKSC_EventResponder
+{
+public:
+	struct FGameplayTagContainer                  TagsToAdd;                                         // 0x0068(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_AddTag")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_AddTag")
+	}
+	static class UKSC_Responder_AddTag* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_AddTag>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_AddTag;
+
 // Class KuroSimpleCombat.KSC_DA_Skill_BulletPierceAttack
-// 0x0020 (0x0170 - 0x0150)
+// 0x0020 (0x01A0 - 0x0180)
 class UKSC_DA_Skill_BulletPierceAttack final : public UKSC_DA_Skill
 {
 public:
-	class UKSC_DA_BulletPierce*                   Bullet;                                            // 0x0150(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         BulletRadius;                                      // 0x0158(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PierceNum;                                         // 0x015C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PierceRange;                                       // 0x0160(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_164[0xC];                                      // 0x0164(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_BulletPierce*                   Bullet;                                            // 0x0180(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BulletRadius;                                      // 0x0188(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PierceNum;                                         // 0x018C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PierceRange;                                       // 0x0190(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_194[0xC];                                      // 0x0194(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2415,6 +5563,31 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_Push;
+
+// Class KuroSimpleCombat.KSC_SceneComp
+// 0x0190 (0x01E0 - 0x0050)
+class alignas(0x10) UKSC_SceneComp : public UKSC_CompBase
+{
+public:
+	uint8                                         Pad_50[0x178];                                     // 0x0050(0x0178)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_SceneComp*                      Da_SceneComp;                                      // 0x01C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1D0[0x10];                                     // 0x01D0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_SceneComp")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_SceneComp")
+	}
+	static class UKSC_SceneComp* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_SceneComp>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_SceneComp;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_Pull
 // 0x0020 (0x01D0 - 0x01B0)
@@ -2519,22 +5692,23 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Buff_ModifyAttr;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_ModifyAttr_BeforeAfterHit
-// 0x00B0 (0x0260 - 0x01B0)
+// 0x00D0 (0x0280 - 0x01B0)
 class UKSC_DA_Buff_ModifyAttr_BeforeAfterHit final : public UKSC_DA_Buff
 {
 public:
 	EKSC_Buff_ModifyAttr_BeforeAfterHit_CheckType CheckType;                                         // 0x01A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1A9[0x7];                                      // 0x01A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x01B0(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x01C8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Event_HitTarget                          ModifyTarget;                                      // 0x01C9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ListenZeroDamage;                                  // 0x01CA(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CB[0x5];                                      // 0x01CB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_TagFilter                         CheckTagFilter;                                    // 0x01D0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           CheckCountTag;                                     // 0x01F8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TagCount;                                          // 0x0204(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMap<EKSC_AttrType, int32>                    ModifyMap;                                         // 0x0208(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	uint8                                         Pad_258[0x8];                                      // 0x0258(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x01B0(0x0030)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x01E0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Event_HitTarget                          ModifyTarget;                                      // 0x01E1(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ListenZeroDamage;                                  // 0x01E2(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E3[0x5];                                      // 0x01E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         CheckTagFilter;                                    // 0x01E8(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           CheckCountTag;                                     // 0x0210(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TagCount;                                          // 0x021C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMap<EKSC_AttrType, int32>                    ModifyMap;                                         // 0x0220(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         ModifyCount;                                       // 0x0270(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_274[0xC];                                      // 0x0274(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2581,6 +5755,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_ModifyAttr_ByWorldAttr;
+
+// Class KuroSimpleCombat.KSC_Skill_MultiAttack
+// 0x0008 (0x00B0 - 0x00A8)
+class UKSC_Skill_MultiAttack final : public UKSC_Skill
+{
+public:
+	class UKSC_DA_Skill_MultiAttack*              DaSkillMultiAttack_;                               // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_MultiAttack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_MultiAttack")
+	}
+	static class UKSC_Skill_MultiAttack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_MultiAttack>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_MultiAttack;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_ModifyAttr_BeforeAfterApplyBuff
 // 0x0070 (0x0220 - 0x01B0)
@@ -2631,20 +5828,46 @@ public:
 };
 DUMPER7_ASSERTS_UKsc_Da_Buff_ModifyLifeRatio;
 
-// Class KuroSimpleCombat.KSC_DA_Buff_Damage
+// Class KuroSimpleCombat.KSC_DA_Buff_ModifyWorldAttr
 // 0x0050 (0x0200 - 0x01B0)
+class UKSC_DA_Buff_ModifyWorldAttr final : public UKSC_DA_Buff
+{
+public:
+	bool                                          bIsRevertAttr;                                     // 0x01A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A9[0x7];                                      // 0x01A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EKSC_WorldAttrType, int32>               ModifyMap;                                         // 0x01B0(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_ModifyWorldAttr")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_ModifyWorldAttr")
+	}
+	static class UKSC_DA_Buff_ModifyWorldAttr* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_ModifyWorldAttr>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_ModifyWorldAttr;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_Damage
+// 0x0090 (0x0240 - 0x01B0)
 class UKSC_DA_Buff_Damage final : public UKSC_DA_Buff
 {
 public:
 	int32                                         Probability;                                       // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKSCDamage                             Damage;                                            // 0x01AC(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         DamageID;                                          // 0x01B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCheckSpTarget;                                    // 0x01BC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BD[0x3];                                      // 0x01BD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_TagFilter                         SpTagFilter;                                       // 0x01C0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FKSCDamage                             SpDamage;                                          // 0x01E8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         SpDamageID;                                        // 0x01F4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F8[0x8];                                      // 0x01F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1AC[0x4];                                      // 0x01AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSCDamage                             Damage;                                            // 0x01B0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         DamageID;                                          // 0x01D8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCheckSpTarget;                                    // 0x01DC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1DD[0x3];                                      // 0x01DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         SpTagFilter;                                       // 0x01E0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FKSCDamage                             SpDamage;                                          // 0x0208(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         SpDamageID;                                        // 0x0230(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_234[0xC];                                      // 0x0234(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2662,13 +5885,37 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_Damage;
 
+// Class KuroSimpleCombat.KSC_Skill_RangeSectionAttack
+// 0x0070 (0x0150 - 0x00E0)
+class UKSC_Skill_RangeSectionAttack final : public UKSC_Skill_RangeAttack
+{
+public:
+	class UKSC_DA_Skill_RangeSectionAttack*       DaSkillRangeSectionAttack_;                        // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E8[0x18];                                      // 0x00E8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class UKSC_SkillComp*>                   ProcessedTargets_;                                 // 0x0100(0x0050)(Protected, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_RangeSectionAttack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_RangeSectionAttack")
+	}
+	static class UKSC_Skill_RangeSectionAttack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_RangeSectionAttack>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_RangeSectionAttack;
+
 // Class KuroSimpleCombat.KSC_DA_Buff_DamageAllEnemy
-// 0x0010 (0x01C0 - 0x01B0)
+// 0x0020 (0x01D0 - 0x01B0)
 class UKSC_DA_Buff_DamageAllEnemy final : public UKSC_DA_Buff
 {
 public:
-	struct FKSCDamage                             Damage;                                            // 0x01A8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1B4[0xC];                                      // 0x01B4(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FKSCDamage                             Damage;                                            // 0x01A8(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2686,41 +5933,15 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_DamageAllEnemy;
 
-// Class KuroSimpleCombat.KSC_DA_Buff_Period
-// 0x0050 (0x0200 - 0x01B0)
-class UKSC_DA_Buff_Period : public UKSC_DA_Buff
-{
-public:
-	float                                         Period;                                            // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          PeriodImmediately;                                 // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGameplayTag, float>              TagPeriodInCrease;                                 // 0x01B0(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_DA_Buff_Period")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_DA_Buff_Period")
-	}
-	static class UKSC_DA_Buff_Period* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_DA_Buff_Period>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_DA_Buff_Period;
-
 // Class KuroSimpleCombat.KSC_DA_Buff_Stack_ModifyAttr
-// 0x00A0 (0x0260 - 0x01C0)
+// 0x00A0 (0x0270 - 0x01D0)
 class UKSC_DA_Buff_Stack_ModifyAttr final : public UKSC_DA_Buff_Stack
 {
 public:
-	TMap<EKSC_AttrType, int32>                    ModifyMap;                                         // 0x01B8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	bool                                          IsFullStackModify;                                 // 0x0208(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_209[0x7];                                      // 0x0209(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EKSC_AttrType, int32>                    FullStackModifyMap;                                // 0x0210(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<EKSC_AttrType, int32>                    ModifyMap;                                         // 0x01C8(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          IsFullStackModify;                                 // 0x0218(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_219[0x7];                                      // 0x0219(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EKSC_AttrType, int32>                    FullStackModifyMap;                                // 0x0220(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2738,13 +5959,43 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_Stack_ModifyAttr;
 
+// Class KuroSimpleCombat.KSC_DA_Skill_Dash
+// 0x0030 (0x01C0 - 0x0190)
+class UKSC_DA_Skill_Dash final : public UKSC_DA_Skill_Anim
+{
+public:
+	TArray<struct FKSC_SkillDashBullet>           Bullets;                                           // 0x0190(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_SkillTarget                              Target;                                            // 0x01A0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_SkillDirection                           Direction;                                         // 0x01A1(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A2[0x2];                                      // 0x01A2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Speed;                                             // 0x01A4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIgnoreKnock;                                      // 0x01A8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A9[0x7];                                      // 0x01A9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UKSC_DA_Buff*>                   AddBuffsToSelf;                                    // 0x01B0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Skill_Dash")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Skill_Dash")
+	}
+	static class UKSC_DA_Skill_Dash* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Skill_Dash>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Skill_Dash;
+
 // Class KuroSimpleCombat.KSC_DA_Buff_Stack_ModifyLifeRatio
-// 0x0000 (0x01C0 - 0x01C0)
+// 0x0000 (0x01D0 - 0x01D0)
 class UKSC_DA_Buff_Stack_ModifyLifeRatio final : public UKSC_DA_Buff_Stack
 {
 public:
-	int32                                         LifeRatio;                                         // 0x01B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BC[0x4];                                      // 0x01BC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         LifeRatio;                                         // 0x01C8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1CC[0x4];                                      // 0x01CC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2763,22 +6014,23 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Buff_Stack_ModifyLifeRatio;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_Period_Action
-// 0x0070 (0x0270 - 0x0200)
+// 0x00A0 (0x0300 - 0x0260)
 class UKSC_DA_Buff_Period_Action final : public UKSC_DA_Buff_Period
 {
 public:
-	bool                                          ApplyDamage;                                       // 0x0200(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_201[0x3];                                      // 0x0201(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSCDamage                             Damage;                                            // 0x0204(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         DamageID;                                          // 0x0210(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_214[0x4];                                      // 0x0214(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_Buff*                           ToDoBuff;                                          // 0x0218(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x0220(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         KuroBuffHitFX_MaxNum;                              // 0x0228(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_22C[0x4];                                      // 0x022C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelBase*                       KuroBuffHitFX;                                     // 0x0230(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_238[0x8];                                      // 0x0238(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             KuroBuffHitFX_Offset;                              // 0x0240(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ApplyDamage;                                       // 0x0260(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_261[0x7];                                      // 0x0261(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSCDamage                             Damage;                                            // 0x0268(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         DamageID;                                          // 0x0290(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Buff*                           ToDoBuff;                                          // 0x0298(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x02A0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FKSC_ModifyAttrFromOthers>      ModifyAttr;                                        // 0x02A8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         KuroBuffHitFX_MaxNum;                              // 0x02B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2BC[0x4];                                      // 0x02BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       KuroBuffHitFX;                                     // 0x02C0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C8[0x8];                                      // 0x02C8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             KuroBuffHitFX_Offset;                              // 0x02D0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2795,6 +6047,65 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_Period_Action;
+
+// Class KuroSimpleCombat.KSC_SummonedEntity
+// 0x0000 (0x0000 - 0x0000)
+class IKSC_SummonedEntity final
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_SummonedEntity")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_SummonedEntity")
+	}
+	static class IKSC_SummonedEntity* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IKSC_SummonedEntity>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IKSC_SummonedEntity;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_Period_Heal
+// 0x0050 (0x02B0 - 0x0260)
+class UKSC_DA_Buff_Period_Heal final : public UKSC_DA_Buff_Period
+{
+public:
+	int32                                         Probability;                                       // 0x0260(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HealFX_MaxNum;                                     // 0x0264(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       HealFX;                                            // 0x0268(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             HealFX_Offset;                                     // 0x0270(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 FromAttrId;                                        // 0x02A0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A1[0x3];                                      // 0x02A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Amplify;                                           // 0x02A4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_Period_Heal")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_Period_Heal")
+	}
+	static class UKSC_DA_Buff_Period_Heal* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_Period_Heal>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_Period_Heal;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_LandFireSpawner
 // 0x0050 (0x0200 - 0x01B0)
@@ -2820,33 +6131,86 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_LandFireSpawner;
 
+// Class KuroSimpleCombat.KSC_Shape2DAnim
+// 0x0198 (0x01D8 - 0x0040)
+class UKSC_Shape2DAnim final : public UKSC_Anim
+{
+public:
+	uint8                                         Pad_40[0x28];                                      // 0x0040(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	class USpineSkeletonAnimationComponent*       SpineAnimComp_;                                    // 0x0068(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class USpineSkeletonRendererComponent*        SpineRenderComp_;                                  // 0x0070(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_78[0x160];                                     // 0x0078(0x0160)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void MarkAnimStateDirty();
+	void OnSpineAnimComplete(class UTrackEntry* entry);
+	void SetBaseStateAndClearOverrideStates(EKSC_Shape2D_BaseAnimState InBaseState);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2DAnim")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2DAnim")
+	}
+	static class UKSC_Shape2DAnim* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Shape2DAnim>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Shape2DAnim;
+
 // Class KuroSimpleCombat.KSC_DA_Buff_ListenEvent
-// 0x00A0 (0x0250 - 0x01B0)
+// 0x01B0 (0x0360 - 0x01B0)
 class UKSC_DA_Buff_ListenEvent final : public UKSC_DA_Buff
 {
 public:
 	float                                         ListenEventCoolDown;                               // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EKSC_Buff_ListenEvent_ListenType              ListenEvent;                                       // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x01B0(0x0018)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x01C8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ListenZeroDamage;                                  // 0x01C9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CA[0x2];                                      // 0x01CA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTag                           ListenTag;                                         // 0x01CC(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ListenTagCount;                                    // 0x01D8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ClearListenTag;                                    // 0x01DC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          CheckOnBeginBuff;                                  // 0x01DD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1DE[0x2];                                      // 0x01DE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         LifeChangeDownValue;                               // 0x01E0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Buff_ListenEvent_Response                ListenEvent_Response;                              // 0x01E4(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E5[0x3];                                      // 0x01E5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_TagFilter                         ResponseCheckTagFilter;                            // 0x01E8(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FGameplayTagContainer                  ResponseTag;                                       // 0x0210(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	class UKSC_DA_Buff*                           AddBuff;                                           // 0x0230(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         BuffStackNum;                                      // 0x0238(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_23C[0x4];                                      // 0x023C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x0240(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_248[0x8];                                      // 0x0248(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EKSC_Buff_ListenEvent_ListenTarget            ListenTarget;                                      // 0x01AD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsFinishAfterResponse;                             // 0x01AE(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AF[0x1];                                      // 0x01AF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x01B0(0x0030)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x01E0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ListenZeroDamage;                                  // 0x01E1(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E2[0x6];                                      // 0x01E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	int64                                         CheckBulletConfigId;                               // 0x01E8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKSC_TagFilter                         KillTargetTagFilter;                               // 0x01F0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ListenTag;                                         // 0x0218(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ListenTagCount;                                    // 0x0224(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ClearListenTag;                                    // 0x0228(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CheckOnBeginBuff;                                  // 0x0229(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22A[0x2];                                      // 0x022A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LifeChangeDownValue;                               // 0x022C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Buff_ListenEvent_Response                ListenEvent_Response;                              // 0x0230(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_231[0x7];                                      // 0x0231(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         ResponseCheckTagFilter;                            // 0x0238(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         Probability;                                       // 0x0260(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseAttrProbability;                                // 0x0264(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 ProbabilityAttr;                                   // 0x0265(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_266[0x2];                                      // 0x0266(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ResponseCount;                                     // 0x0268(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_26C[0x4];                                      // 0x026C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  ResponseTag;                                       // 0x0270(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           AddBuff;                                           // 0x0290(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UKSC_DA_Buff*>                   AddMultiBuff;                                      // 0x0298(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         BuffStackNum;                                      // 0x02A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2AC[0x4];                                      // 0x02AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_AdditionalAttack*               AdditionalAttack;                                  // 0x02B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FKSC_SpawnEntity>               SpawnEntity;                                       // 0x02B8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<int32>                                 SkillIndexTryStart;                                // 0x02C8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         MoveStageIndex;                                    // 0x02D8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         HealFX_MaxNum;                                     // 0x02DC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       HealFX;                                            // 0x02E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2E8[0x8];                                      // 0x02E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             HealFX_Offset;                                     // 0x02F0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKSC_ListenAttrEventBuff               ListenAttrChanged;                                 // 0x0320(0x0010)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         DelayTimeSec;                                      // 0x0330(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_334[0x4];                                      // 0x0334(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  ListenAddOrRemoveTags;                             // 0x0338(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_358[0x8];                                      // 0x0358(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2865,33 +6229,37 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Buff_ListenEvent;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_Aura
-// 0x00B0 (0x0260 - 0x01B0)
+// 0x00D0 (0x0280 - 0x01B0)
 class UKSC_DA_Buff_Aura final : public UKSC_DA_Buff
 {
 public:
 	float                                         UpdateFeq;                                         // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         Range;                                             // 0x01AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         MaxRangeOffset;                                    // 0x01B0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxAuraCount;                                      // 0x01B4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Buff_Aura_TargetType                     TargetType;                                        // 0x01B8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Faction                                  SelectFaction;                                     // 0x01B9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Buff_Aura_EnableType                     EnableType;                                        // 0x01BA(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1BB[0x5];                                      // 0x01BB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	EKSC_Buff_Aura_AttrEffectType                 AttrEffectType;                                    // 0x01B4(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_AttrType                                 AttrType;                                          // 0x01B5(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLimitAuraEffectCount;                             // 0x01B6(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B7[0x1];                                      // 0x01B7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MaxAuraCount;                                      // 0x01B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Buff_Aura_TargetType                     TargetType;                                        // 0x01BC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Faction                                  SelectFaction;                                     // 0x01BD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Buff_Aura_EnableType                     EnableType;                                        // 0x01BE(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1BF[0x1];                                      // 0x01BF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FKSC_TagFilter                         EnableTypeTagFilter;                               // 0x01C0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TArray<class UKSC_DA_Buff*>                   AddBuffs;                                          // 0x01E8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	bool                                          ApplyDamage;                                       // 0x01F8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F9[0x3];                                      // 0x01F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSCDamage                             Damage;                                            // 0x01FC(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         DamageID;                                          // 0x0208(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20C[0x4];                                      // 0x020C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelBase*                       BuffFX_Check;                                      // 0x0210(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_218[0x8];                                      // 0x0218(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             BuffFX_Offset_Check;                               // 0x0220(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	class FName                                   Socket_Check;                                      // 0x0250(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackLocation_Check;                       // 0x025C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackRotation_Check;                       // 0x025D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          BuffFX_AttackScale_Check;                          // 0x025E(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25F[0x1];                                      // 0x025F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1F9[0x7];                                      // 0x01F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSCDamage                             Damage;                                            // 0x0200(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         DamageID;                                          // 0x0228(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_22C[0x4];                                      // 0x022C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       BuffFX_Check;                                      // 0x0230(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_238[0x8];                                      // 0x0238(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             BuffFX_Offset_Check;                               // 0x0240(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class FName                                   Socket_Check;                                      // 0x0270(0x000C)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackLocation_Check;                       // 0x027C(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackRotation_Check;                       // 0x027D(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          BuffFX_AttackScale_Check;                          // 0x027E(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_27F[0x1];                                      // 0x027F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -2910,25 +6278,27 @@ public:
 DUMPER7_ASSERTS_UKSC_DA_Buff_Aura;
 
 // Class KuroSimpleCombat.KSC_DA_Buff_AuraWithStack
-// 0x0060 (0x0220 - 0x01C0)
+// 0x0080 (0x0250 - 0x01D0)
 class UKSC_DA_Buff_AuraWithStack final : public UKSC_DA_Buff_Stack
 {
 public:
-	float                                         UpdateFeq;                                         // 0x01B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Range;                                             // 0x01BC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxRangeOffset;                                    // 0x01C0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxAuraCount;                                      // 0x01C4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Buff_Aura_TargetType                     TargetType;                                        // 0x01C8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Faction                                  SelectFaction;                                     // 0x01C9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EKSC_Buff_Aura_EnableType                     EnableType;                                        // 0x01CA(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1CB[0x5];                                      // 0x01CB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSC_TagFilter                         EnableTypeTagFilter;                               // 0x01D0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	TArray<class UKSC_DA_Buff*>                   AddBuffs;                                          // 0x01F8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	bool                                          ApplyDamage;                                       // 0x0208(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_209[0x3];                                      // 0x0209(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FKSCDamage                             Damage;                                            // 0x020C(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         DamageID;                                          // 0x0218(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RangeIncreasePerStack;                             // 0x021C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         UpdateFeq;                                         // 0x01C8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Range;                                             // 0x01CC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxRangeOffset;                                    // 0x01D0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLimitAuraEffectCount;                             // 0x01D4(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D5[0x3];                                      // 0x01D5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MaxAuraCount;                                      // 0x01D8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Buff_Aura_TargetType                     TargetType;                                        // 0x01DC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Faction                                  SelectFaction;                                     // 0x01DD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_Buff_Aura_EnableType                     EnableType;                                        // 0x01DE(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1DF[0x1];                                      // 0x01DF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         EnableTypeTagFilter;                               // 0x01E0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TArray<class UKSC_DA_Buff*>                   AddBuffs;                                          // 0x0208(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          ApplyDamage;                                       // 0x0218(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_219[0x7];                                      // 0x0219(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSCDamage                             Damage;                                            // 0x0220(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         DamageID;                                          // 0x0248(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RangeIncreasePerStack;                             // 0x024C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -2973,30 +6343,57 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_AddTargetFaction;
 
+// Class KuroSimpleCombat.KSC_Skill_RangeAttackApplyBuffToFriend
+// 0x0020 (0x0100 - 0x00E0)
+class UKSC_Skill_RangeAttackApplyBuffToFriend final : public UKSC_Skill_RangeAttack
+{
+public:
+	class UKSC_DA_Skill_RangeAttackApplyBuffToFriend* DaSkillRangeAttackApplyBuffToFaction_;         // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E8[0x18];                                      // 0x00E8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_RangeAttackApplyBuffToFriend")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_RangeAttackApplyBuffToFriend")
+	}
+	static class UKSC_Skill_RangeAttackApplyBuffToFriend* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_RangeAttackApplyBuffToFriend>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_RangeAttackApplyBuffToFriend;
+
 // Class KuroSimpleCombat.KSC_DA_Buff_ChainLightning
-// 0x00E0 (0x0290 - 0x01B0)
+// 0x0120 (0x02D0 - 0x01B0)
 class UKSC_DA_Buff_ChainLightning final : public UKSC_DA_Buff
 {
 public:
 	float                                         AttackRange;                                       // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         ChainkNum;                                         // 0x01AC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKSCDamage                             BaseDamage;                                        // 0x01B0(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         BaseDamageID;                                      // 0x01BC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKSC_TagFilter                         TargetTagFilter;                                   // 0x01C0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	bool                                          ListenZeroDamage;                                  // 0x01E8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1E9[0x7];                                      // 0x01E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_Buff*                           AddBuffHitBefore;                                  // 0x01F0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKSC_DA_Buff*                           AddBuffHitAfter;                                   // 0x01F8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinCheckHP;                                        // 0x0200(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FKSCDamage                             AdditionalDamage;                                  // 0x0204(0x000C)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         AdditionalDamageID;                                // 0x0210(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_214[0x4];                                      // 0x0214(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelBase*                       KuroCastFX;                                        // 0x0218(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             KuroCastFX_Offset;                                 // 0x0220(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         KuroHitFX_MaxNum;                                  // 0x0250(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKSCDamage                             BaseDamage;                                        // 0x01B0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         BaseDamageID;                                      // 0x01D8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1DC[0x4];                                      // 0x01DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         TargetTagFilter;                                   // 0x01E0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_Faction                                  TargetFaction;                                     // 0x0208(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ListenZeroDamage;                                  // 0x0209(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_20A[0x6];                                      // 0x020A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Buff*                           AddBuffHitBefore;                                  // 0x0210(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           AddBuffHitAfter;                                   // 0x0218(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinCheckHP;                                        // 0x0220(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_224[0x4];                                      // 0x0224(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSCDamage                             AdditionalDamage;                                  // 0x0228(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	int32                                         AdditionalDamageID;                                // 0x0250(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_254[0x4];                                      // 0x0254(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UEffectModelBase*                       KuroHitFX;                                         // 0x0258(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             KuroHitFX_Offset;                                  // 0x0260(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       KuroCastFX;                                        // 0x0258(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             KuroCastFX_Offset;                                 // 0x0260(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         KuroHitFX_MaxNum;                                  // 0x0290(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_294[0x4];                                      // 0x0294(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UEffectModelBase*                       KuroHitFX;                                         // 0x0298(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             KuroHitFX_Offset;                                  // 0x02A0(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -3088,6 +6485,54 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_Unattackable_Spline;
 
+// Class KuroSimpleCombat.KSC_Skill_Attack_Persistent
+// 0x0010 (0x00B8 - 0x00A8)
+class UKSC_Skill_Attack_Persistent : public UKSC_Skill
+{
+public:
+	class UKSC_DA_Skill_Attack_Persistent*        DaSkillAttackPersistent_;                          // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x8];                                       // 0x00B0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_Attack_Persistent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_Attack_Persistent")
+	}
+	static class UKSC_Skill_Attack_Persistent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_Attack_Persistent>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_Attack_Persistent;
+
+// Class KuroSimpleCombat.KSC_Skill_Attack_Persistent_Cannon
+// 0x0058 (0x0110 - 0x00B8)
+class alignas(0x10) UKSC_Skill_Attack_Persistent_Cannon final : public UKSC_Skill_Attack_Persistent
+{
+public:
+	class UKSC_DA_Skill_Attack_Persistent_Cannon* DaSkillAttackPersistentCannon_;                    // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_C0[0x50];                                      // 0x00C0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_Attack_Persistent_Cannon")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_Attack_Persistent_Cannon")
+	}
+	static class UKSC_Skill_Attack_Persistent_Cannon* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_Attack_Persistent_Cannon>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_Attack_Persistent_Cannon;
+
 // Class KuroSimpleCombat.KSC_DA_Buff_ImmuneBuff
 // 0x0020 (0x01D0 - 0x01B0)
 class UKSC_DA_Buff_ImmuneBuff final : public UKSC_DA_Buff
@@ -3112,6 +6557,30 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Buff_ImmuneBuff;
 
+// Class KuroSimpleCombat.KSC_DA_Buff_ModifyHitDamage
+// 0x0000 (0x01B0 - 0x01B0)
+class UKSC_DA_Buff_ModifyHitDamage final : public UKSC_DA_Buff
+{
+public:
+	int32                                         ModifyValue;                                       // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AC[0x4];                                      // 0x01AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_ModifyHitDamage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_ModifyHitDamage")
+	}
+	static class UKSC_DA_Buff_ModifyHitDamage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_ModifyHitDamage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_ModifyHitDamage;
+
 // Class KuroSimpleCombat.KSC_DA_Decorator_AddSkill
 // 0x0008 (0x0070 - 0x0068)
 class UKSC_DA_Decorator_AddSkill final : public UKSC_DA_Decorator
@@ -3135,6 +6604,655 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DA_Decorator_AddSkill;
 
+// Class KuroSimpleCombat.KSC_DA_Buff_WithEffect
+// 0x0020 (0x01D0 - 0x01B0)
+class UKSC_DA_Buff_WithEffect final : public UKSC_DA_Buff
+{
+public:
+	float                                         Period;                                            // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          PeriodImmediately;                                 // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MaxStack;                                          // 0x01B0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         DefaultStack;                                      // 0x01B4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UKSC_DA_BuffEffectBase*>         AdditionalEffects;                                 // 0x01B8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          ImmuneEntityTimeScale;                             // 0x01C8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C9[0x7];                                      // 0x01C9(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_WithEffect")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_WithEffect")
+	}
+	static class UKSC_DA_Buff_WithEffect* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_WithEffect>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_WithEffect;
+
+// Class KuroSimpleCombat.KSC_TopBossHeadUiHandle
+// 0x0040 (0x0078 - 0x0038)
+class UKSC_TopBossHeadUiHandle final : public UKSC_BaseObject
+{
+public:
+	uint8                                         Pad_38[0x40];                                      // 0x0038(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnAttrChange(EKSC_AttrType AttrType, int32 Value);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_TopBossHeadUiHandle")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_TopBossHeadUiHandle")
+	}
+	static class UKSC_TopBossHeadUiHandle* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_TopBossHeadUiHandle>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_TopBossHeadUiHandle;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_SummonLink
+// 0x00A0 (0x0250 - 0x01B0)
+class UKSC_DA_Buff_SummonLink final : public UKSC_DA_Buff
+{
+public:
+	float                                         LifeTime;                                          // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseLifeTag;                                        // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           LifeTag;                                           // 0x01B0(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           SyncTag;                                           // 0x01BC(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          KillOnSummonerDead;                                // 0x01C8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsUseSummonerAttr;                                 // 0x01C9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsSyncAllAttr;                                     // 0x01CA(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1CB[0x5];                                      // 0x01CB(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<EKSC_AttrType>                           SyncAttrSet;                                       // 0x01D0(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           AddTagToSummonerOnDead;                            // 0x0220(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           RemoveTagToSummonerOnDead;                         // 0x022C(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           AddBuffToSummonerOnDead;                           // 0x0238(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           RemoveBuffToSummonerOnDead;                        // 0x0240(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsRemoveBuffStacks;                                // 0x0248(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_249[0x7];                                      // 0x0249(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_SummonLink")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_SummonLink")
+	}
+	static class UKSC_DA_Buff_SummonLink* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_SummonLink>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_SummonLink;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_Summon
+// 0x0010 (0x01C0 - 0x01B0)
+class UKSC_DA_Buff_Summon final : public UKSC_DA_Buff
+{
+public:
+	TArray<struct FKSC_SpawnEntity>               SummonEntities;                                    // 0x01A8(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1B8[0x8];                                      // 0x01B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_Summon")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_Summon")
+	}
+	static class UKSC_DA_Buff_Summon* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_Summon>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_Summon;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2D_World
+// 0x0178 (0x01B0 - 0x0038)
+class UKSC_DA_Shape2D_World final : public UDataAsset
+{
+public:
+	float                                         Gravity;                                           // 0x0038(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              GravityDir;                                        // 0x003C(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotateRange;                                       // 0x0044(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotateDuration;                                    // 0x0048(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LaunchSpeed;                                       // 0x004C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            DirectionCurve;                                    // 0x0050(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       LaunchHitEffect;                                   // 0x0058(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       LaunchHitEffectPower1;                             // 0x0060(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       LaunchHitEffectPower2;                             // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       LaunchHitEffectPower3;                             // 0x0070(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_78[0x8];                                       // 0x0078(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             LaunchHitEffectOffset;                             // 0x0080(0x0030)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector2D                              InitLocation;                                      // 0x00B0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveDelaySeconds;                                  // 0x00B8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveDelayMaxDistance;                              // 0x00BC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveMaxDistanceNeedSpeed;                          // 0x00C0(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveDistanceInertialSpeed;                         // 0x00C4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         CollisionDamageId0;                                // 0x00C8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         CollisionDamageId1;                                // 0x00D0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         CollisionDamageId2;                                // 0x00D8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int64                                         CollisionDamageId3;                                // 0x00E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           PowerCollisionTag1;                                // 0x00E8(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           PowerCollisionTag2;                                // 0x00F4(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           PowerCollisionTag3;                                // 0x0100(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Buff*                           PowerCollisionBuff1;                               // 0x0110(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           PowerCollisionBuff2;                               // 0x0118(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKSC_DA_Buff*                           PowerCollisionBuff3;                               // 0x0120(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       CollisionDamageEffect0;                            // 0x0128(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       CollisionDamageEffect1;                            // 0x0130(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       CollisionDamageEffect2;                            // 0x0138(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEffectModelBase*                       CollisionDamageEffect3;                            // 0x0140(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         CollisionDamageEffectMaxCount;                     // 0x0148(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_149[0x3];                                      // 0x0149(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         PowerCollisionCount1;                              // 0x014C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PowerCollisionCount2;                              // 0x0150(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PowerCollisionCount3;                              // 0x0154(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RecoverSprintEnergy;                               // 0x0158(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RecoverSprintEnergyCD;                             // 0x015C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CollisionDamageCD;                                 // 0x0160(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CollisionDamageCDInIgnore;                         // 0x0164(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           DisableCollisionDamageTag;                         // 0x0168(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           DeadTag;                                           // 0x0174(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           PlayerBeHitColor;                                  // 0x0180(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PlayerBeHitColorCD;                                // 0x0190(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           EnemyBeHitColor;                                   // 0x0194(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EnemyBeHitColorCD;                                 // 0x01A4(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BeHitColorDuration;                                // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AC[0x4];                                      // 0x01AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2D_World")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2D_World")
+	}
+	static class UKSC_DA_Shape2D_World* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2D_World>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2D_World;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2D_Entity
+// 0x0000 (0x0180 - 0x0180)
+#pragma pack(push, 0x1)
+class alignas(0x10) UKSC_DA_Shape2D_Entity : public UKSC_DA_Entity
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2D_Entity")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2D_Entity")
+	}
+	static class UKSC_DA_Shape2D_Entity* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2D_Entity>();
+	}
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_UKSC_DA_Shape2D_Entity;
+
+// Class KuroSimpleCombat.KSC_Skill_LoadBomb
+// 0x0080 (0x0160 - 0x00E0)
+class UKSC_Skill_LoadBomb final : public UKSC_Skill_RangeAttack
+{
+public:
+	class UKSC_DA_Skill_LoadBomb*                 DaSkillLoadBomb_;                                  // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E8[0x78];                                      // 0x00E8(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_LoadBomb")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_LoadBomb")
+	}
+	static class UKSC_Skill_LoadBomb* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_LoadBomb>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_LoadBomb;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2D_Entity_Player
+// 0x0000 (0x0180 - 0x0180)
+class UKSC_DA_Shape2D_Entity_Player final : public UKSC_DA_Shape2D_Entity
+{
+public:
+	bool                                          IsEnableBeHitColor;                                // 0x0178(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2D_Entity_Player")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2D_Entity_Player")
+	}
+	static class UKSC_DA_Shape2D_Entity_Player* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2D_Entity_Player>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2D_Entity_Player;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2D_Entity_Enemy
+// 0x0000 (0x0180 - 0x0180)
+class UKSC_DA_Shape2D_Entity_Enemy final : public UKSC_DA_Shape2D_Entity
+{
+public:
+	bool                                          IsEnableBeHitColor;                                // 0x0178(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2D_Entity_Enemy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2D_Entity_Enemy")
+	}
+	static class UKSC_DA_Shape2D_Entity_Enemy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2D_Entity_Enemy>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2D_Entity_Enemy;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2D_Entity_Bar
+// 0x0000 (0x0180 - 0x0180)
+class UKSC_DA_Shape2D_Entity_Bar final : public UKSC_DA_Shape2D_Entity
+{
+public:
+	EKSC_ShapeBarSide                             Side;                                              // 0x0178(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2D_Entity_Bar")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2D_Entity_Bar")
+	}
+	static class UKSC_DA_Shape2D_Entity_Bar* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2D_Entity_Bar>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2D_Entity_Bar;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2D_Entity_Machine
+// 0x0010 (0x0190 - 0x0180)
+class UKSC_DA_Shape2D_Entity_Machine final : public UKSC_DA_Shape2D_Entity
+{
+public:
+	class FString                                 TriggerAnimName;                                   // 0x0178(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_188[0x8];                                      // 0x0188(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2D_Entity_Machine")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2D_Entity_Machine")
+	}
+	static class UKSC_DA_Shape2D_Entity_Machine* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2D_Entity_Machine>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2D_Entity_Machine;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2D_Entity_TeamPlayer
+// 0x0000 (0x0180 - 0x0180)
+class UKSC_DA_Shape2D_Entity_TeamPlayer final : public UKSC_DA_Shape2D_Entity
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2D_Entity_TeamPlayer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2D_Entity_TeamPlayer")
+	}
+	static class UKSC_DA_Shape2D_Entity_TeamPlayer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2D_Entity_TeamPlayer>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2D_Entity_TeamPlayer;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2DComp
+// 0x0010 (0x00E0 - 0x00D0)
+class UKSC_DA_Shape2DComp final : public UKSC_DA_SceneComp
+{
+public:
+	EKSC_ShapeCompType                            ShapeType;                                         // 0x00C8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C9[0x3];                                       // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              Size;                                              // 0x00CC(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Pivot;                                             // 0x00D4(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaterialID;                                        // 0x00DC(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2DComp")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2DComp")
+	}
+	static class UKSC_DA_Shape2DComp* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2DComp>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2DComp;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2DMove
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_DA_Shape2DMove final : public UKSC_DA_Move
+{
+public:
+	float                                         GravityRatio;                                      // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         BounceRandomOffset;                                // 0x0064(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2DMove")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2DMove")
+	}
+	static class UKSC_DA_Shape2DMove* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2DMove>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2DMove;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2DMove_Enemy
+// 0x0008 (0x0068 - 0x0060)
+class UKSC_DA_Shape2DMove_Enemy final : public UKSC_DA_Move
+{
+public:
+	float                                         LimitY;                                            // 0x0060(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2DMove_Enemy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2DMove_Enemy")
+	}
+	static class UKSC_DA_Shape2DMove_Enemy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2DMove_Enemy>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2DMove_Enemy;
+
+// Class KuroSimpleCombat.KSC_GPUHeadUI
+// 0x00A0 (0x0350 - 0x02B0)
+class AKSC_GPUHeadUI final : public AActor
+{
+public:
+	uint8                                         Pad_2B0[0x10];                                     // 0x02B0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<int32>                                 InstanceIndices;                                   // 0x02C0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
+	TArray<int32>                                 RemovedIndices;                                    // 0x02D0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
+	TArray<struct FTransform>                     InstanceTransform;                                 // 0x02E0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
+	TMap<int32, int32>                            EntityToInstanceMap;                               // 0x02F0(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
+	class UInstancedStaticMeshComponent*          Comp;                                              // 0x0340(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UMaterialInstanceDynamic*               MI;                                                // 0x0348(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	void InitHeadUI();
+	void InitHeadUIInternal(class UInstancedStaticMeshComponent* InComp, class UMaterialInstanceDynamic* InMI);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_GPUHeadUI")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_GPUHeadUI")
+	}
+	static class AKSC_GPUHeadUI* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_GPUHeadUI>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_GPUHeadUI;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2D_WorldBounds
+// 0x0028 (0x0070 - 0x0048)
+class UKSC_DA_Shape2D_WorldBounds final : public UKSC_DA_WorldBounds
+{
+public:
+	TArray<struct FKSC_DA_Shape2D_WorldBounds_Item> BoundItems;                                      // 0x0048(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FVectorDouble                          WorldCenterOffset;                                 // 0x0058(0x0018)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2D_WorldBounds")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2D_WorldBounds")
+	}
+	static class UKSC_DA_Shape2D_WorldBounds* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2D_WorldBounds>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2D_WorldBounds;
+
+// Class KuroSimpleCombat.KSC_DA_Shape2DAnim
+// 0x00F8 (0x0138 - 0x0040)
+class UKSC_DA_Shape2DAnim final : public UKSC_DA_Anim
+{
+public:
+	TMap<EKSC_Shape2D_BaseAnimState, struct FKSC_SpineAnimItem> BaseStateAnimMap;                    // 0x0040(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<EKSC_Shape2D_SpecialAnimState, struct FKSC_SpineAnimItem> SpecialStateAnimMap;              // 0x0090(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	TMap<EKSC_Shape2D_SpecialAnimState, struct FGameplayTagContainer> SpecialStateAnimTagMap;        // 0x00E0(0x0050)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          RemoveOnDeathAnimComplete;                         // 0x0130(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_131[0x7];                                      // 0x0131(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Shape2DAnim")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Shape2DAnim")
+	}
+	static class UKSC_DA_Shape2DAnim* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Shape2DAnim>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Shape2DAnim;
+
+// Class KuroSimpleCombat.KSC_DA_SpineAnimTimeline
+// 0x0030 (0x0068 - 0x0038)
+class UKSC_DA_SpineAnimTimeline final : public UDataAsset
+{
+public:
+	class FString                                 AnimName;                                          // 0x0038(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsLoop;                                            // 0x0048(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_49[0x3];                                       // 0x0049(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LoopTime;                                          // 0x004C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsIgnoreAnim;                                      // 0x0050(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         IgnoreAnimTime;                                    // 0x0054(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FKSC_SpineAnimNotify>           AnimNotifies;                                      // 0x0058(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_SpineAnimTimeline")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_SpineAnimTimeline")
+	}
+	static class UKSC_DA_SpineAnimTimeline* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_SpineAnimTimeline>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_SpineAnimTimeline;
+
+// Class KuroSimpleCombat.KSC_DA_Skill_SpineAnimFlow
+// 0x0080 (0x0200 - 0x0180)
+class UKSC_DA_Skill_SpineAnimFlow final : public UKSC_DA_Skill
+{
+public:
+	TArray<class UKSC_DA_SpineAnimTimeline*>      AnimTimelines;                                     // 0x0180(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          IsBreakable;                                       // 0x0190(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_191[0x7];                                      // 0x0191(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         BreakCondition;                                    // 0x0198(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          IsPassive;                                         // 0x01C0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C1[0x7];                                      // 0x01C1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         PassiveCondition;                                  // 0x01C8(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	bool                                          IsBeginWithCD;                                     // 0x01F0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1F1[0xF];                                      // 0x01F1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Skill_SpineAnimFlow")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Skill_SpineAnimFlow")
+	}
+	static class UKSC_DA_Skill_SpineAnimFlow* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Skill_SpineAnimFlow>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Skill_SpineAnimFlow;
+
+// Class KuroSimpleCombat.KSC_DA_Buff_ListenCollisionEvent
+// 0x0040 (0x01F0 - 0x01B0)
+class UKSC_DA_Buff_ListenCollisionEvent final : public UKSC_DA_Buff
+{
+public:
+	float                                         ListenEventCoolDown;                               // 0x01A8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_ListenCollisionEvent_ListenType          ListenEvent;                                       // 0x01AC(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_ListenCollisionEvent_CollisionType       CollisionType;                                     // 0x01AD(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsFinishAfterResponse;                             // 0x01AE(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1AF[0x1];                                      // 0x01AF(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_TagFilter                         ResponseCheckTagFilter;                            // 0x01B0(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_ListenCollisionEvent_Response            Response;                                          // 0x01D8(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_ListenCollisionEvent_ResponseTarget      ResponseTarget;                                    // 0x01D9(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1DA[0x6];                                      // 0x01DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Buff*                           AddBuff;                                           // 0x01E0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         BulletID;                                          // 0x01E8(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1EC[0x4];                                      // 0x01EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DA_Buff_ListenCollisionEvent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DA_Buff_ListenCollisionEvent")
+	}
+	static class UKSC_DA_Buff_ListenCollisionEvent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DA_Buff_ListenCollisionEvent>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DA_Buff_ListenCollisionEvent;
+
+// Class KuroSimpleCombat.KSC_DamageHandler
+// 0x0000 (0x0030 - 0x0030)
+class UKSC_DamageHandler : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DamageHandler")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DamageHandler")
+	}
+	static class UKSC_DamageHandler* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DamageHandler>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DamageHandler;
+
+// Class KuroSimpleCombat.KSC_DamageHandler_WF
+// 0x0018 (0x0048 - 0x0030)
+class UKSC_DamageHandler_WF final : public UKSC_DamageHandler
+{
+public:
+	class UKSC_Shape2D_World*                     Shape2DWorld;                                      // 0x0030(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<class UKSC_SkillComp*>                 TempSkillComps;                                    // 0x0038(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_DamageHandler_WF")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_DamageHandler_WF")
+	}
+	static class UKSC_DamageHandler_WF* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_DamageHandler_WF>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_DamageHandler_WF;
+
 // Class KuroSimpleCombat.KSC_DamageId
 // 0x0050 (0x0080 - 0x0030)
 class UKSC_DamageId final : public UObject
@@ -3145,6 +7263,7 @@ public:
 public:
 	void AddDamageData(const int32 DamageId, const struct FKSCDamage& Data);
 	void ClearDamageData();
+	void UpdateDamageAmplify(const int32 DamageId, const float Amplify);
 
 public:
 	static class UClass* StaticClass()
@@ -3209,6 +7328,26 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Decorator_AddSkill;
 
+// Class KuroSimpleCombat.KSC_WorldBounds
+// 0x0000 (0x0030 - 0x0030)
+class UKSC_WorldBounds : public UObject
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_WorldBounds")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_WorldBounds")
+	}
+	static class UKSC_WorldBounds* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_WorldBounds>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_WorldBounds;
+
 // Class KuroSimpleCombat.KSC_DefaultHeadUiHandle
 // 0x0018 (0x0050 - 0x0038)
 class UKSC_DefaultHeadUiHandle final : public UKSC_BaseObject
@@ -3232,59 +7371,28 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_DefaultHeadUiHandle;
 
-// Class KuroSimpleCombat.KSC_Entity
-// 0x00D0 (0x0388 - 0x02B8)
-class AKSC_Entity : public AKSC_BaseActor
+// Class KuroSimpleCombat.KSC_DigitalHeadUiHandle
+// 0x0010 (0x0048 - 0x0038)
+class UKSC_DigitalHeadUiHandle final : public UKSC_BaseObject
 {
 public:
-	class UKSC_SceneComp*                         SceneComp_;                                        // 0x02B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UKSC_Move*                              Move_;                                             // 0x02C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UKSC_SkillComp*                         SkillComp_;                                        // 0x02C8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UKSC_DA_Entity*                         DaEntity_;                                         // 0x02D0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TMap<class FName, struct FVector>             SocketOffsets;                                     // 0x02D8(0x0050)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
-	int32                                         EntityId_;                                         // 0x0328(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_32C[0x6];                                      // 0x032C(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          IsKscEnable;                                       // 0x0332(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_333[0x25];                                     // 0x0333(0x0025)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IKSC_HeadUiHandle>     HeadUiHandle;                                      // 0x0358(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	uint8                                         Pad_368[0x8];                                      // 0x0368(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 RenderActor_;                                      // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_378[0x10];                                     // 0x0378(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void ApplyBuffSelf(class UKSC_DA_Buff* DaBuff);
-	void Dead(int32 KillBy);
-	class UKSC_Move* GetMoveComponent();
-	class AActor* GetRenderActor();
-	void RemoveBuffSelf(class UKSC_DA_Buff* DaBuff);
-	void RemoveDaBuffImmediately(class UKSC_DA_Buff* DaBuff);
-	void SetAttr(EKSC_AttrType Type, int32 Value);
-	void SetFaction(EKSC_Faction Faction);
-	void SetIgnoreFactions(const TArray<EKSC_Faction>& Factions);
-	void SetLocationByWorld(const struct FVectorDouble& D_Location);
-	void SetRenderActor(class AActor* RenderActor);
-	void SetTransformByWorld(const struct FTransformDouble& D_Transform);
-	void TryActiveSKill(const int32 SkillIndex);
-	void UpdateBuffWithStackNumSelf(class UKSC_DA_Buff* DaBuff, int32 StackNum);
-
-	class UKSC_SceneComp* GetSceneComp() const;
-	class UKSC_SkillComp* GetSkillComp() const;
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Entity")
+		STATIC_CLASS_IMPL("KSC_DigitalHeadUiHandle")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Entity")
+		STATIC_NAME_IMPL(L"KSC_DigitalHeadUiHandle")
 	}
-	static class AKSC_Entity* GetDefaultObj()
+	static class UKSC_DigitalHeadUiHandle* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AKSC_Entity>();
+		return GetDefaultObjImpl<UKSC_DigitalHeadUiHandle>();
 	}
 };
-DUMPER7_ASSERTS_AKSC_Entity;
+DUMPER7_ASSERTS_UKSC_DigitalHeadUiHandle;
 
 // Class KuroSimpleCombat.KSC_RenderEntityInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -3323,6 +7431,36 @@ public:
 };
 DUMPER7_ASSERTS_IKSC_RenderEntityInterface;
 
+// Class KuroSimpleCombat.KSC_Shape2DMove
+// 0x0148 (0x0330 - 0x01E8)
+class UKSC_Shape2DMove final : public UKSC_Move
+{
+public:
+	uint8                                         Pad_1E8[0x10];                                     // 0x01E8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_Shape2D_World*                     KscShapeWorld;                                     // 0x01F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_200[0xD8];                                     // 0x0200(0x00D8)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            MovementCurve;                                     // 0x02D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2E0[0x50];                                     // 0x02E0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void Launch(float LaunchSpeed, const struct FVector2D& Direction, bool ResetFilter, bool PlayEffect);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2DMove")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2DMove")
+	}
+	static class UKSC_Shape2DMove* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Shape2DMove>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Shape2DMove;
+
 // Class KuroSimpleCombat.KSC_RenderEntityHeadUIInterface
 // 0x0000 (0x0000 - 0x0000)
 class IKSC_RenderEntityHeadUIInterface final
@@ -3359,18 +7497,18 @@ public:
 DUMPER7_ASSERTS_IKSC_RenderEntityHeadUIInterface;
 
 // Class KuroSimpleCombat.KSC_Entity_AssistMachine
-// 0x0070 (0x03F8 - 0x0388)
+// 0x0070 (0x0408 - 0x0398)
 class AKSC_Entity_AssistMachine final : public AKSC_Entity
 {
 public:
-	class UKSC_DA_Entity_AssistMachine*           DaEntity_AssistMachine_;                           // 0x0388(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_390[0x8];                                      // 0x0390(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         ListenCDSkillIndex;                                // 0x0398(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39C[0x4];                                      // 0x039C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(int32 skillIndex, float cd)>   OnSkillCD;                                         // 0x03A0(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	int32                                         ListenSkillReadyIndex;                             // 0x03C8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3CC[0x4];                                      // 0x03CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             OnSkillReady;                                      // 0x03D0(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	class UKSC_DA_Entity_AssistMachine*           DaEntity_AssistMachine_;                           // 0x0398(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_3A0[0x8];                                      // 0x03A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ListenCDSkillIndex;                                // 0x03A8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3AC[0x4];                                      // 0x03AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(int32 skillIndex, float cd)>   OnSkillCD;                                         // 0x03B0(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	int32                                         ListenSkillReadyIndex;                             // 0x03D8(0x0004)(BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3DC[0x4];                                      // 0x03DC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             OnSkillReady;                                      // 0x03E0(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 
 public:
 	void D_Fire(const struct FTransformDouble& D_FireTrans, const int32 SkillIndex);
@@ -3393,7 +7531,7 @@ public:
 DUMPER7_ASSERTS_AKSC_Entity_AssistMachine;
 
 // Class KuroSimpleCombat.KSC_Entity_Coin
-// 0x0000 (0x0388 - 0x0388)
+// 0x0000 (0x0398 - 0x0398)
 class AKSC_Entity_Coin final : public AKSC_Entity
 {
 public:
@@ -3413,14 +7551,14 @@ public:
 DUMPER7_ASSERTS_AKSC_Entity_Coin;
 
 // Class KuroSimpleCombat.KSC_Entity_Enemy
-// 0x0078 (0x0400 - 0x0388)
+// 0x0078 (0x0410 - 0x0398)
 class AKSC_Entity_Enemy final : public AKSC_Entity
 {
 public:
-	TMap<struct FGameplayTag, struct FKSC_Enemy_Delay_KuroMatFX> DelayDeadTagMaterialMap;            // 0x0388(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FKSC_Enemy_Delay_KuroMatFX             DelayDeadMaterial;                                 // 0x03D8(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FKSC_Enemy_Delay_KuroMatFX             DelayArrivalMaterial;                              // 0x03E8(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3F8[0x8];                                      // 0x03F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, struct FKSC_Enemy_Delay_KuroMatFX> DelayDeadTagMaterialMap;            // 0x0398(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FKSC_Enemy_Delay_KuroMatFX             DelayDeadMaterial;                                 // 0x03E8(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FKSC_Enemy_Delay_KuroMatFX             DelayArrivalMaterial;                              // 0x03F8(0x0010)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_408[0x8];                                      // 0x0408(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -3437,6 +7575,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AKSC_Entity_Enemy;
+
+// Class KuroSimpleCombat.KSC_Skill_Attack
+// 0x0008 (0x00B0 - 0x00A8)
+class UKSC_Skill_Attack final : public UKSC_Skill
+{
+public:
+	class UKSC_DA_Skill_Attack*                   DaSkillAttack_;                                    // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_Attack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_Attack")
+	}
+	static class UKSC_Skill_Attack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_Attack>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_Attack;
 
 // Class KuroSimpleCombat.KSC_RenderEntityAnimInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -3508,7 +7669,7 @@ public:
 DUMPER7_ASSERTS_IKSC_RenderEntityMaterialInterface;
 
 // Class KuroSimpleCombat.KSC_Entity_Player
-// 0x0000 (0x0388 - 0x0388)
+// 0x0000 (0x0398 - 0x0398)
 class AKSC_Entity_Player final : public AKSC_Entity
 {
 public:
@@ -3528,11 +7689,11 @@ public:
 DUMPER7_ASSERTS_AKSC_Entity_Player;
 
 // Class KuroSimpleCombat.KSC_Projectile
-// 0x0008 (0x0390 - 0x0388)
+// 0x0008 (0x03A0 - 0x0398)
 class AKSC_Projectile final : public AKSC_Entity
 {
 public:
-	class UKSC_DA_Entity_Projectile*              DaEntityProjectile_;                               // 0x0388(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_DA_Entity_Projectile*              DaEntityProjectile_;                               // 0x0398(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -3550,13 +7711,40 @@ public:
 };
 DUMPER7_ASSERTS_AKSC_Projectile;
 
+// Class KuroSimpleCombat.KSC_Skill_BulletPierceAttack
+// 0x0018 (0x00C0 - 0x00A8)
+class alignas(0x10) UKSC_Skill_BulletPierceAttack final : public UKSC_Skill
+{
+public:
+	class UKSC_DA_Skill_BulletPierceAttack*       DaSkillBulletPierceAttack_;                        // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x10];                                      // 0x00B0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnBulletHits(const TArray<class UKSC_SkillComp*>& Hits);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Skill_BulletPierceAttack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Skill_BulletPierceAttack")
+	}
+	static class UKSC_Skill_BulletPierceAttack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Skill_BulletPierceAttack>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Skill_BulletPierceAttack;
+
 // Class KuroSimpleCombat.KSC_Entity_Tower
-// 0x0010 (0x0398 - 0x0388)
+// 0x0010 (0x03A8 - 0x0398)
 class AKSC_Entity_Tower final : public AKSC_Entity
 {
 public:
-	uint8                                         Pad_388[0x8];                                      // 0x0388(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_Entity_Tower*                   DaEntity_Tower_;                                   // 0x0390(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_398[0x8];                                      // 0x0398(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Entity_Tower*                   DaEntity_Tower_;                                   // 0x03A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -3574,8 +7762,372 @@ public:
 };
 DUMPER7_ASSERTS_AKSC_Entity_Tower;
 
+// Class KuroSimpleCombat.KSC_Entity_Weapon
+// 0x0130 (0x04C8 - 0x0398)
+class AKSC_Entity_Weapon final : public AKSC_Entity
+{
+public:
+	uint8                                         Pad_398[0x130];                                    // 0x0398(0x0130)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddInheritScaleItem(EKSC_AttrType AttrType, float Radio);
+	void AddInheritSourceItem(EKSC_AttrType SelfAttrType, EKSC_AttrType SummonerAttrType);
+	void OnSummonerAttrChange(EKSC_AttrType AttrType, int32 OldValue, int32 NewValue);
+	void SetSummonerEntity(class AKSC_Entity* Entity);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Entity_Weapon")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Entity_Weapon")
+	}
+	static class AKSC_Entity_Weapon* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AKSC_Entity_Weapon>();
+	}
+};
+DUMPER7_ASSERTS_AKSC_Entity_Weapon;
+
+// Class KuroSimpleCombat.KSC_Listener_OnDead
+// 0x0000 (0x0040 - 0x0040)
+class UKSC_Listener_OnDead final : public UKSC_EventListener
+{
+public:
+	void OnDeadCallback(const class UKSC_SkillComp* FromComp, const class UKSC_SkillComp* DeadComp);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnDead")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnDead")
+	}
+	static class UKSC_Listener_OnDead* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnDead>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnDead;
+
+// Class KuroSimpleCombat.KSC_Listener_OnHit
+// 0x0040 (0x0080 - 0x0040)
+class UKSC_Listener_OnHit final : public UKSC_EventListener
+{
+public:
+	bool                                          bHitBefore;                                        // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FKSC_DamageTypeFilter                  DamageTypeFilter;                                  // 0x0048(0x0030)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x0078(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bListenZeroDamage;                                 // 0x0079(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7A[0x6];                                       // 0x007A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnHitCallback(const class UKSC_SkillComp* FromComp, const class UKSC_SkillComp* ToComp, const struct FKSCDamage& Damage);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnHit")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnHit")
+	}
+	static class UKSC_Listener_OnHit* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnHit>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnHit;
+
+// Class KuroSimpleCombat.KSC_Listener_OnTagCount
+// 0x0020 (0x0060 - 0x0040)
+class UKSC_Listener_OnTagCount final : public UKSC_EventListener
+{
+public:
+	struct FGameplayTag                           ListenTag;                                         // 0x0040(0x000C)(Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TargetTagCount;                                    // 0x004C(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bClearTagOnReach;                                  // 0x0050(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EKSC_ComparisonSymbols                        CompareType;                                       // 0x0051(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         ListenType;                                        // 0x0052(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_53[0x5];                                       // 0x0053(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_SkillComp*                         CachedListenTarget;                                // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	void OnTagCountAddCallback(const class UKSC_SkillComp* Comp);
+	void OnTagCountRemoveCallback(const class UKSC_SkillComp* Comp);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnTagCount")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnTagCount")
+	}
+	static class UKSC_Listener_OnTagCount* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnTagCount>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnTagCount;
+
+// Class KuroSimpleCombat.KSC_Listener_OnCast
+// 0x0008 (0x0048 - 0x0040)
+class UKSC_Listener_OnCast final : public UKSC_EventListener
+{
+public:
+	bool                                          bCastBefore;                                       // 0x0040(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnCastCallback(const class UKSC_SkillComp* FromComp, const class UKSC_Skill* CastSkill);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnCast")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnCast")
+	}
+	static class UKSC_Listener_OnCast* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnCast>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnCast;
+
+// Class KuroSimpleCombat.KSC_Listener_OnKill
+// 0x0030 (0x0070 - 0x0040)
+class UKSC_Listener_OnKill final : public UKSC_EventListener
+{
+public:
+	struct FKSC_TagFilter                         TargetTagFilter;                                   // 0x0040(0x0028)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	EKSC_Event_HitTarget                          CheckTarget;                                       // 0x0068(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_69[0x7];                                       // 0x0069(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnKillCallback(const class UKSC_SkillComp* FromComp, const class UKSC_SkillComp* DeadComp);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnKill")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnKill")
+	}
+	static class UKSC_Listener_OnKill* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnKill>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnKill;
+
+// Class KuroSimpleCombat.KSC_Listener_OnBulletCreate
+// 0x0008 (0x0048 - 0x0040)
+class UKSC_Listener_OnBulletCreate final : public UKSC_EventListener
+{
+public:
+	int64                                         BulletConfigId;                                    // 0x0040(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	void OnBulletCreateCallback(int64 ConfigId);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_OnBulletCreate")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_OnBulletCreate")
+	}
+	static class UKSC_Listener_OnBulletCreate* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_OnBulletCreate>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_OnBulletCreate;
+
+// Class KuroSimpleCombat.KSC_Listener_DelayTime
+// 0x0010 (0x0050 - 0x0040)
+class UKSC_Listener_DelayTime final : public UKSC_EventListener
+{
+public:
+	float                                         DelaySeconds;                                      // 0x0040(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_44[0xC];                                       // 0x0044(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnDelayFinished();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Listener_DelayTime")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Listener_DelayTime")
+	}
+	static class UKSC_Listener_DelayTime* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Listener_DelayTime>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Listener_DelayTime;
+
+// Class KuroSimpleCombat.KSC_Responder_RemoveTag
+// 0x0020 (0x0088 - 0x0068)
+class UKSC_Responder_RemoveTag final : public UKSC_EventResponder
+{
+public:
+	struct FGameplayTagContainer                  TagsToRemove;                                      // 0x0068(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_RemoveTag")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_RemoveTag")
+	}
+	static class UKSC_Responder_RemoveTag* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_RemoveTag>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_RemoveTag;
+
+// Class KuroSimpleCombat.KSC_Responder_AddBuff
+// 0x0008 (0x0070 - 0x0068)
+class UKSC_Responder_AddBuff final : public UKSC_EventResponder
+{
+public:
+	class UKSC_DA_Buff*                           BuffToAdd;                                         // 0x0068(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_AddBuff")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_AddBuff")
+	}
+	static class UKSC_Responder_AddBuff* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_AddBuff>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_AddBuff;
+
+// Class KuroSimpleCombat.KSC_Responder_AddMultiBuff
+// 0x0010 (0x0078 - 0x0068)
+class UKSC_Responder_AddMultiBuff final : public UKSC_EventResponder
+{
+public:
+	TArray<class UKSC_DA_Buff*>                   BuffsToAdd;                                        // 0x0068(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_AddMultiBuff")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_AddMultiBuff")
+	}
+	static class UKSC_Responder_AddMultiBuff* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_AddMultiBuff>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_AddMultiBuff;
+
+// Class KuroSimpleCombat.KSC_Responder_SpawnEntity
+// 0x0010 (0x0078 - 0x0068)
+class UKSC_Responder_SpawnEntity final : public UKSC_EventResponder
+{
+public:
+	TArray<struct FKSC_SpawnEntity>               SpawnConfigs;                                      // 0x0068(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_SpawnEntity")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_SpawnEntity")
+	}
+	static class UKSC_Responder_SpawnEntity* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_SpawnEntity>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_SpawnEntity;
+
+// Class KuroSimpleCombat.KSC_Responder_SwitchMoveStage
+// 0x0008 (0x0070 - 0x0068)
+class UKSC_Responder_SwitchMoveStage final : public UKSC_EventResponder
+{
+public:
+	int32                                         StageIndex;                                        // 0x0068(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_SwitchMoveStage")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_SwitchMoveStage")
+	}
+	static class UKSC_Responder_SwitchMoveStage* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_SwitchMoveStage>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_SwitchMoveStage;
+
+// Class KuroSimpleCombat.KSC_Responder_CameraShake
+// 0x0008 (0x0070 - 0x0068)
+class UKSC_Responder_CameraShake final : public UKSC_EventResponder
+{
+public:
+	int32                                         ShakeKey;                                          // 0x0068(0x0004)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Responder_CameraShake")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Responder_CameraShake")
+	}
+	static class UKSC_Responder_CameraShake* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Responder_CameraShake>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Responder_CameraShake;
+
 // Class KuroSimpleCombat.KSC_GPUNPCActor
-// 0x0420 (0x06F0 - 0x02D0)
+// 0x0510 (0x07E0 - 0x02D0)
 class AKSC_GPUNPCActor final : public ABakedBoneMeshActor
 {
 public:
@@ -3587,20 +8139,22 @@ public:
 	TArray<int32>                                 InstanceAnim;                                      // 0x0360(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
 	TArray<struct FTransform>                     InstanceTransform;                                 // 0x0370(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
 	TMap<int32, int32>                            EntityToInstanceMap;                               // 0x0380(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3D0[0xB8];                                     // 0x03D0(0x00B8)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBakedBoneMeshComponent*                MeshComp;                                          // 0x0488(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UKuroMaterialControllerComponent*       MaterialComp;                                      // 0x0490(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_498[0x50];                                     // 0x0498(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<int32, float>                            DelayAddMatIndices;                                // 0x04E8(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
-	TMap<int32, class UKuroMaterialControllerDataAsset*> DelayAddMatMap;                             // 0x0538(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_588[0x10];                                     // 0x0588(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<int32, struct FVector2D>                 CurTimeLineData;                                   // 0x0598(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5E8[0x28];                                     // 0x05E8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             RelativeTrans;                                     // 0x0610(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	TMap<EKSC_GPUNPCAnimState, int32>             AnimMap;                                           // 0x0640(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	TMap<class UKuroMaterialControllerDataAsset*, int32> MaterialMap;                                // 0x0690(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class UKuroMaterialControllerDataAsset*       BeHitMaterialDataAsset;                            // 0x06E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6E8[0x8];                                      // 0x06E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D0[0x108];                                    // 0x03D0(0x0108)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBakedBoneMeshComponent*                MeshComp;                                          // 0x04D8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UKuroMaterialControllerComponent*       MaterialComp;                                      // 0x04E0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_4E8[0x50];                                     // 0x04E8(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, float>                            DelayAddMatIndices;                                // 0x0538(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
+	TMap<int32, class UKuroMaterialControllerDataAsset*> DelayAddMatMap;                             // 0x0588(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5D8[0x10];                                     // 0x05D8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<int32, struct FVector2D>                 CurTimeLineData;                                   // 0x05E8(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_638[0x28];                                     // 0x0638(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             RelativeTrans;                                     // 0x0660(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TMap<EKSC_GPUNPCAnimState, int32>             AnimMap;                                           // 0x0690(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6E0[0x50];                                     // 0x06E0(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<EKSC_GPUNPCAnimState>                    DisableAnimLoopSet;                                // 0x0730(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	TMap<class UKuroMaterialControllerDataAsset*, int32> MaterialMap;                                // 0x0780(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class UKuroMaterialControllerDataAsset*       BeHitMaterialDataAsset;                            // 0x07D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7D8[0x8];                                      // 0x07D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void InitGPUNPC();
@@ -3620,39 +8174,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_AKSC_GPUNPCActor;
-
-// Class KuroSimpleCombat.KSC_GPUHeadUI
-// 0x00A0 (0x0350 - 0x02B0)
-class AKSC_GPUHeadUI final : public AActor
-{
-public:
-	uint8                                         Pad_2B0[0x10];                                     // 0x02B0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 InstanceIndices;                                   // 0x02C0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
-	TArray<int32>                                 RemovedIndices;                                    // 0x02D0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
-	TArray<struct FTransform>                     InstanceTransform;                                 // 0x02E0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
-	TMap<int32, int32>                            EntityToInstanceMap;                               // 0x02F0(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
-	class UInstancedStaticMeshComponent*          Comp;                                              // 0x0340(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UMaterialInstanceDynamic*               MI;                                                // 0x0348(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	void InitHeadUI();
-	void InitHeadUIInternal(class UInstancedStaticMeshComponent* InComp, class UMaterialInstanceDynamic* InMI);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_GPUHeadUI")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_GPUHeadUI")
-	}
-	static class AKSC_GPUHeadUI* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<AKSC_GPUHeadUI>();
-	}
-};
-DUMPER7_ASSERTS_AKSC_GPUHeadUI;
 
 // Class KuroSimpleCombat.KSC_HeadUiHandle
 // 0x0000 (0x0000 - 0x0000)
@@ -3683,109 +8204,100 @@ public:
 };
 DUMPER7_ASSERTS_IKSC_HeadUiHandle;
 
-// Class KuroSimpleCombat.KSC_Move
-// 0x00F0 (0x0128 - 0x0038)
-class UKSC_Move : public UKSC_BaseObject
+// Class KuroSimpleCombat.KSC_HitContextTextHandle
+// 0x0058 (0x0088 - 0x0030)
+class UKSC_HitContextTextHandle final : public UObject
 {
 public:
-	class AKSC_Entity*                            Owner_;                                            // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_40[0xE8];                                      // 0x0040(0x00E8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_HitContextText*                 DataAsset;                                         // 0x0030(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TMap<EHitContextTextType, float>              NextAddTimeMap;                                    // 0x0038(0x0050)(Transient, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Move")
+		STATIC_CLASS_IMPL("KSC_HitContextTextHandle")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Move")
+		STATIC_NAME_IMPL(L"KSC_HitContextTextHandle")
 	}
-	static class UKSC_Move* GetDefaultObj()
+	static class UKSC_HitContextTextHandle* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Move>();
+		return GetDefaultObjImpl<UKSC_HitContextTextHandle>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Move;
+DUMPER7_ASSERTS_UKSC_HitContextTextHandle;
 
-// Class KuroSimpleCombat.KSC_Move_Approach
-// 0x0028 (0x0150 - 0x0128)
-class UKSC_Move_Approach final : public UKSC_Move
+// Class KuroSimpleCombat.KSC_Move_Around
+// 0x0040 (0x0228 - 0x01E8)
+class UKSC_Move_Around final : public UKSC_Move
 {
 public:
-	uint8                                         Pad_128[0x28];                                     // 0x0128(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1E8[0x40];                                     // 0x01E8(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void SetAroundTarget(class AKSC_Entity* InTargetEntity);
+	void SetBasis(const struct FVector& InBasisX, const struct FVector& InBasisY, const struct FVector& InBasisZ);
+	void SetIndexInfo(int32 InTotalCount, int32 InAroundIndex);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_Around")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_Around")
+	}
+	static class UKSC_Move_Around* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_Around>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_Around;
+
+// Class KuroSimpleCombat.KSC_Move_MultiStage
+// 0x0050 (0x0238 - 0x01E8)
+class UKSC_Move_MultiStage final : public UKSC_Move
+{
+public:
+	class UKSC_Move_Stage*                        CurrentStage;                                      // 0x01E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<class UKSC_Move_Stage*>                Stages;                                            // 0x01F0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	class UKSC_DA_Move_MultiStage*                DA_Stages;                                         // 0x0200(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_208[0x8];                                      // 0x0208(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class USplineComponent*                       SplineComponent;                                   // 0x0210(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_218[0x20];                                     // 0x0218(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddWaypoint(double X, double Y);
+	void SetSpline(class USplineComponent* SplineComp);
 	void SetTargetEntity(class AKSC_Entity* Entity);
+	void SetWaypointLoop(bool Loop);
+	void SwitchStage(int32 index);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Move_Approach")
+		STATIC_CLASS_IMPL("KSC_Move_MultiStage")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Move_Approach")
+		STATIC_NAME_IMPL(L"KSC_Move_MultiStage")
 	}
-	static class UKSC_Move_Approach* GetDefaultObj()
+	static class UKSC_Move_MultiStage* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Move_Approach>();
+		return GetDefaultObjImpl<UKSC_Move_MultiStage>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Move_Approach;
-
-// Class KuroSimpleCombat.KSC_Move_Follow
-// 0x0020 (0x0148 - 0x0128)
-class UKSC_Move_Follow final : public UKSC_Move
-{
-public:
-	uint8                                         Pad_128[0x20];                                     // 0x0128(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Move_Follow")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Move_Follow")
-	}
-	static class UKSC_Move_Follow* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Move_Follow>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Move_Follow;
-
-// Class KuroSimpleCombat.KSC_Move_Random
-// 0x0048 (0x0170 - 0x0128)
-class UKSC_Move_Random final : public UKSC_Move
-{
-public:
-	uint8                                         Pad_128[0x48];                                     // 0x0128(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Move_Random")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Move_Random")
-	}
-	static class UKSC_Move_Random* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Move_Random>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Move_Random;
+DUMPER7_ASSERTS_UKSC_Move_MultiStage;
 
 // Class KuroSimpleCombat.KSC_Move_Spline
-// 0x0040 (0x0168 - 0x0128)
+// 0x0040 (0x0228 - 0x01E8)
 class UKSC_Move_Spline final : public UKSC_Move
 {
 public:
-	class USplineComponent*                       SplineComp_;                                       // 0x0128(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_130[0x38];                                     // 0x0130(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USplineComponent*                       SplineComp_;                                       // 0x01E8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1F0[0x38];                                     // 0x01F0(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetSpline(class USplineComponent* SplineComp);
@@ -3808,51 +8320,128 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Move_Spline;
 
-// Class KuroSimpleCombat.KSC_Move_Straight
-// 0x0000 (0x0128 - 0x0128)
-class UKSC_Move_Straight final : public UKSC_Move
+// Class KuroSimpleCombat.KSC_Move_StageApproach
+// 0x0038 (0x0228 - 0x01F0)
+class UKSC_Move_StageApproach final : public UKSC_Move_Stage
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Move_Straight")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Move_Straight")
-	}
-	static class UKSC_Move_Straight* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Move_Straight>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Move_Straight;
-
-// Class KuroSimpleCombat.KSC_PlayerHeadUiHandle
-// 0x0040 (0x0078 - 0x0038)
-class UKSC_PlayerHeadUiHandle final : public UKSC_BaseObject
-{
-public:
-	uint8                                         Pad_38[0x40];                                      // 0x0038(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnAttrChange(EKSC_AttrType AttrType, int32 Value);
+	class UKSC_DA_MoveStageApproach*              DA_Move;                                           // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<struct FVector>                        MovePoints;                                        // 0x01F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_208[0x20];                                     // 0x0208(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_PlayerHeadUiHandle")
+		STATIC_CLASS_IMPL("KSC_Move_StageApproach")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_PlayerHeadUiHandle")
+		STATIC_NAME_IMPL(L"KSC_Move_StageApproach")
 	}
-	static class UKSC_PlayerHeadUiHandle* GetDefaultObj()
+	static class UKSC_Move_StageApproach* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_PlayerHeadUiHandle>();
+		return GetDefaultObjImpl<UKSC_Move_StageApproach>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_PlayerHeadUiHandle;
+DUMPER7_ASSERTS_UKSC_Move_StageApproach;
+
+// Class KuroSimpleCombat.KSC_Move_StageImmovable
+// 0x0010 (0x0200 - 0x01F0)
+class UKSC_Move_StageImmovable final : public UKSC_Move_Stage
+{
+public:
+	class UKSC_DA_MoveStageImmovable*             DA_Move;                                           // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1F8[0x8];                                      // 0x01F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_StageImmovable")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_StageImmovable")
+	}
+	static class UKSC_Move_StageImmovable* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_StageImmovable>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_StageImmovable;
+
+// Class KuroSimpleCombat.KSC_Move_StageRandom
+// 0x0028 (0x0218 - 0x01F0)
+class UKSC_Move_StageRandom final : public UKSC_Move_Stage
+{
+public:
+	class UKSC_DA_MoveStageRandom*                DA_Move;                                           // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<struct FVector>                        MovePoints;                                        // 0x01F8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_208[0x10];                                     // 0x0208(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_StageRandom")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_StageRandom")
+	}
+	static class UKSC_Move_StageRandom* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_StageRandom>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_StageRandom;
+
+// Class KuroSimpleCombat.KSC_Move_StageWaypoint
+// 0x0028 (0x0218 - 0x01F0)
+class UKSC_Move_StageWaypoint final : public UKSC_Move_Stage
+{
+public:
+	uint8                                         Pad_1F0[0x28];                                     // 0x01F0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddWaypoint(double X, double Y);
+	void ClearWaypoints();
+	void SetLoop(bool Loop);
+	void StartMove();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_StageWaypoint")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_StageWaypoint")
+	}
+	static class UKSC_Move_StageWaypoint* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_StageWaypoint>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_StageWaypoint;
+
+// Class KuroSimpleCombat.KSC_Move_Target
+// 0x0000 (0x01E8 - 0x01E8)
+class UKSC_Move_Target final : public UKSC_Move
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Move_Target")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Move_Target")
+	}
+	static class UKSC_Move_Target* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Move_Target>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Move_Target;
 
 // Class KuroSimpleCombat.KSC_RenderActor
 // 0x0010 (0x02C0 - 0x02B0)
@@ -3877,164 +8466,244 @@ public:
 };
 DUMPER7_ASSERTS_AKSC_RenderActor;
 
-// Class KuroSimpleCombat.KSC_SceneComp
-// 0x0180 (0x01D0 - 0x0050)
-class alignas(0x10) UKSC_SceneComp final : public UKSC_CompBase
+// Class KuroSimpleCombat.KSC_SceneMovement
+// 0x0118 (0x0150 - 0x0038)
+class UKSC_SceneMovement final : public UKSC_BaseObject
 {
 public:
-	uint8                                         Pad_50[0x168];                                     // 0x0050(0x0168)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_DA_SceneComp*                      Da_SceneComp;                                      // 0x01B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_1C0[0x10];                                     // 0x01C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMap<class UKSC_DA_SceneSegmentContainer*, int32> LoadedSceneSegmentDa;                          // 0x0038(0x0050)(NativeAccessSpecifierPublic)
+	struct FVector                                MovementDirection;                                 // 0x0088(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MovementRight;                                     // 0x0094(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MovementUp;                                        // 0x00A0(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                MovementTarget;                                    // 0x00AC(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               SegmentRotation;                                   // 0x00B8(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         SceneSegmentLength;                                // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SceneSegmentCount;                                 // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SceneSegmentGenerateCount;                         // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveDistance;                                      // 0x00D0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             OnSceneSegmentFinish;                              // 0x00D8(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnSceneMoveThreshold;                              // 0x0100(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	float                                         MoveDistanceThreshold;                             // 0x0128(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MoveSpeed;                                         // 0x012C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AKSC_SceneSegment*>              SceneSegments;                                     // 0x0130(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_140[0x8];                                      // 0x0140(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_SceneSegmentContainer*          SceneSegmentContainer;                             // 0x0148(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+
+public:
+	void D_SetMovementTarget(const struct FVectorDouble& NewMovementTarget);
+	void SetMovementDirection(const struct FVector& NewMovementDirection);
+	void SetSceneSegment(class UKSC_DA_SceneSegmentContainer* NewSceneSegment, int32 GenerateCount);
+	void SetSegmentRotation(const struct FRotator& NewSegmentRotation);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_SceneComp")
+		STATIC_CLASS_IMPL("KSC_SceneMovement")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_SceneComp")
+		STATIC_NAME_IMPL(L"KSC_SceneMovement")
 	}
-	static class UKSC_SceneComp* GetDefaultObj()
+	static class UKSC_SceneMovement* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_SceneComp>();
+		return GetDefaultObjImpl<UKSC_SceneMovement>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_SceneComp;
+DUMPER7_ASSERTS_UKSC_SceneMovement;
 
-// Class KuroSimpleCombat.KSC_Skill
-// 0x0060 (0x0098 - 0x0038)
-class UKSC_Skill : public UKSC_BaseObject
+// Class KuroSimpleCombat.KSC_ShapeCollisionInterface
+// 0x0000 (0x0000 - 0x0000)
+class IKSC_ShapeCollisionInterface final
 {
 public:
-	class UKSC_DA_Skill*                          DaSkill_;                                          // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UKSC_SkillComp*                         Caster_;                                           // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UKSC_SkillComp*                         Target_;                                           // 0x0048(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TArray<class UKSC_SkillComp*>                 Targets_;                                          // 0x0050(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_60[0x38];                                      // 0x0060(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_ShapeCollisionInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_ShapeCollisionInterface")
+	}
+	static class IKSC_ShapeCollisionInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IKSC_ShapeCollisionInterface>();
+	}
 
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IKSC_ShapeCollisionInterface;
+
+// Class KuroSimpleCombat.KSC_Shape2D_Entity_Enemy
+// 0x0028 (0x0488 - 0x0460)
+class AKSC_Shape2D_Entity_Enemy final : public AKSC_Shape2D_Entity
+{
 public:
-	float GetSkillCoolDownMax();
-	float GetSkillCoolDownRemain();
+	uint8                                         Pad_460[0x28];                                     // 0x0460(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Skill")
+		STATIC_CLASS_IMPL("KSC_Shape2D_Entity_Enemy")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Skill")
+		STATIC_NAME_IMPL(L"KSC_Shape2D_Entity_Enemy")
 	}
-	static class UKSC_Skill* GetDefaultObj()
+	static class AKSC_Shape2D_Entity_Enemy* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Skill>();
+		return GetDefaultObjImpl<AKSC_Shape2D_Entity_Enemy>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Skill;
+DUMPER7_ASSERTS_AKSC_Shape2D_Entity_Enemy;
 
-// Class KuroSimpleCombat.KSC_Skill_Anim
-// 0x0010 (0x00A8 - 0x0098)
-class UKSC_Skill_Anim : public UKSC_Skill
+// Class KuroSimpleCombat.KSC_Shape2D_Entity_Player
+// 0x00B8 (0x0518 - 0x0460)
+class AKSC_Shape2D_Entity_Player final : public AKSC_Shape2D_Entity
 {
 public:
-	class UKSC_DA_Skill_Anim*                     DaSkillAnim_;                                      // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          IsPlayerAlive;                                     // 0x0460(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_461[0xB7];                                     // 0x0461(0x00B7)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AssignPlayerStateChange(const TDelegate<void(bool IsAlive)>& InDelegate);
+	void OnLifeChange(EKSC_AttrType AttrType, int32 Value);
+	void SetEntityTransformDebug(const struct FTransform& Transform);
+	void SetIsEnable(bool InIsEnable);
+	void UseSkill(const int32 SkillIndex);
+
+	bool GetIsEnable() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Skill_Anim")
+		STATIC_CLASS_IMPL("KSC_Shape2D_Entity_Player")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Skill_Anim")
+		STATIC_NAME_IMPL(L"KSC_Shape2D_Entity_Player")
 	}
-	static class UKSC_Skill_Anim* GetDefaultObj()
+	static class AKSC_Shape2D_Entity_Player* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Skill_Anim>();
+		return GetDefaultObjImpl<AKSC_Shape2D_Entity_Player>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Skill_Anim;
+DUMPER7_ASSERTS_AKSC_Shape2D_Entity_Player;
 
-// Class KuroSimpleCombat.KSC_Skill_Attack
-// 0x0008 (0x00A0 - 0x0098)
-class UKSC_Skill_Attack final : public UKSC_Skill
+// Class KuroSimpleCombat.KSC_Shape2D_WorldBounds_Item
+// 0x0048 (0x0078 - 0x0030)
+class UKSC_Shape2D_WorldBounds_Item final : public UObject
 {
 public:
-	class UKSC_DA_Skill_Attack*                   DaSkillAttack_;                                    // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_30[0x48];                                      // 0x0030(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Skill_Attack")
+		STATIC_CLASS_IMPL("KSC_Shape2D_WorldBounds_Item")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Skill_Attack")
+		STATIC_NAME_IMPL(L"KSC_Shape2D_WorldBounds_Item")
 	}
-	static class UKSC_Skill_Attack* GetDefaultObj()
+	static class UKSC_Shape2D_WorldBounds_Item* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Skill_Attack>();
+		return GetDefaultObjImpl<UKSC_Shape2D_WorldBounds_Item>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Skill_Attack;
+DUMPER7_ASSERTS_UKSC_Shape2D_WorldBounds_Item;
 
-// Class KuroSimpleCombat.KSC_Skill_Attack_Persistent
-// 0x0010 (0x00A8 - 0x0098)
-class UKSC_Skill_Attack_Persistent : public UKSC_Skill
+// Class KuroSimpleCombat.KSC_Shape2D_WorldBounds
+// 0x0028 (0x0058 - 0x0030)
+class UKSC_Shape2D_WorldBounds final : public UKSC_WorldBounds
 {
 public:
-	class UKSC_DA_Skill_Attack_Persistent*        DaSkillAttackPersistent_;                          // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class UKSC_Shape2D_WorldBounds_Item*>  BoundItemObjs;                                     // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class UKSC_Shape2D_World*                     KscShapeWorld;                                     // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48[0x8];                                       // 0x0048(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Shape2D_WorldBounds*            DA_WorldBounds;                                    // 0x0050(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Skill_Attack_Persistent")
+		STATIC_CLASS_IMPL("KSC_Shape2D_WorldBounds")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Skill_Attack_Persistent")
+		STATIC_NAME_IMPL(L"KSC_Shape2D_WorldBounds")
 	}
-	static class UKSC_Skill_Attack_Persistent* GetDefaultObj()
+	static class UKSC_Shape2D_WorldBounds* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Skill_Attack_Persistent>();
+		return GetDefaultObjImpl<UKSC_Shape2D_WorldBounds>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Skill_Attack_Persistent;
+DUMPER7_ASSERTS_UKSC_Shape2D_WorldBounds;
 
-// Class KuroSimpleCombat.KSC_Skill_Attack_Persistent_Cannon
-// 0x0058 (0x0100 - 0x00A8)
-class alignas(0x10) UKSC_Skill_Attack_Persistent_Cannon final : public UKSC_Skill_Attack_Persistent
+// Class KuroSimpleCombat.KSC_Shape2DComp
+// 0x0030 (0x0210 - 0x01E0)
+class UKSC_Shape2DComp final : public UKSC_SceneComp
 {
 public:
-	class UKSC_DA_Skill_Attack_Persistent_Cannon* DaSkillAttackPersistentCannon_;                    // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_B0[0x50];                                      // 0x00B0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_Shape2D_World*                     KscShapeWorld;                                     // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E8[0x28];                                     // 0x01E8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Skill_Attack_Persistent_Cannon")
+		STATIC_CLASS_IMPL("KSC_Shape2DComp")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Skill_Attack_Persistent_Cannon")
+		STATIC_NAME_IMPL(L"KSC_Shape2DComp")
 	}
-	static class UKSC_Skill_Attack_Persistent_Cannon* GetDefaultObj()
+	static class UKSC_Shape2DComp* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Skill_Attack_Persistent_Cannon>();
+		return GetDefaultObjImpl<UKSC_Shape2DComp>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Skill_Attack_Persistent_Cannon;
+DUMPER7_ASSERTS_UKSC_Shape2DComp;
+
+// Class KuroSimpleCombat.KSC_Shape2DMove_Enemy
+// 0x00A8 (0x0290 - 0x01E8)
+class UKSC_Shape2DMove_Enemy final : public UKSC_Move
+{
+public:
+	uint8                                         Pad_1E8[0x8];                                      // 0x01E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_Shape2D_World*                     KscShapeWorld;                                     // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1F8[0x28];                                     // 0x01F8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            MovementCurve;                                     // 0x0220(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_228[0x68];                                     // 0x0228(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KSC_Shape2DMove_Enemy")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KSC_Shape2DMove_Enemy")
+	}
+	static class UKSC_Shape2DMove_Enemy* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKSC_Shape2DMove_Enemy>();
+	}
+};
+DUMPER7_ASSERTS_UKSC_Shape2DMove_Enemy;
 
 // Class KuroSimpleCombat.KSC_Skill_BulletAttack
-// 0x0018 (0x00B0 - 0x0098)
+// 0x0018 (0x00C0 - 0x00A8)
 class alignas(0x10) UKSC_Skill_BulletAttack final : public UKSC_Skill
 {
 public:
-	class UKSC_DA_Skill_BulletAttack*             DaSkillBulletAttack_;                              // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Skill_BulletAttack*             DaSkillBulletAttack_;                              // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B0[0x10];                                      // 0x00B0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnBulletHit(const struct FKSC_BulletTargetContext& TargetContext);
@@ -4055,39 +8724,12 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Skill_BulletAttack;
 
-// Class KuroSimpleCombat.KSC_Skill_BulletPierceAttack
-// 0x0018 (0x00B0 - 0x0098)
-class alignas(0x10) UKSC_Skill_BulletPierceAttack final : public UKSC_Skill
-{
-public:
-	class UKSC_DA_Skill_BulletPierceAttack*       DaSkillBulletPierceAttack_;                        // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnBulletHits(const TArray<class UKSC_SkillComp*>& Hits);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Skill_BulletPierceAttack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Skill_BulletPierceAttack")
-	}
-	static class UKSC_Skill_BulletPierceAttack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Skill_BulletPierceAttack>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Skill_BulletPierceAttack;
-
 // Class KuroSimpleCombat.KSC_Skill_ChainAttack
-// 0x0008 (0x00A0 - 0x0098)
+// 0x0008 (0x00B0 - 0x00A8)
 class UKSC_Skill_ChainAttack final : public UKSC_Skill
 {
 public:
-	class UKSC_DA_Skill_ChainAttack*              DaSkillChainAttack_;                               // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_DA_Skill_ChainAttack*              DaSkillChainAttack_;                               // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -4105,37 +8747,13 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Skill_ChainAttack;
 
-// Class KuroSimpleCombat.KSC_Skill_RangeAttack
-// 0x0038 (0x00D0 - 0x0098)
-class alignas(0x10) UKSC_Skill_RangeAttack : public UKSC_Skill
-{
-public:
-	class UKSC_DA_Skill_RangeAttack*              DaSkillRangeAttack_;                               // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A0[0x30];                                      // 0x00A0(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Skill_RangeAttack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Skill_RangeAttack")
-	}
-	static class UKSC_Skill_RangeAttack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Skill_RangeAttack>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Skill_RangeAttack;
-
 // Class KuroSimpleCombat.KSC_Skill_LandFire
-// 0x0010 (0x00E0 - 0x00D0)
+// 0x0010 (0x00F0 - 0x00E0)
 class UKSC_Skill_LandFire final : public UKSC_Skill_RangeAttack
 {
 public:
-	class UKSC_DA_Skill_LandFire*                 DaSkillLandFire_;                                  // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Skill_LandFire*                 DaSkillLandFire_;                                  // 0x00E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_E8[0x8];                                       // 0x00E8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -4153,86 +8771,12 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Skill_LandFire;
 
-// Class KuroSimpleCombat.KSC_Skill_LoadBomb
-// 0x0080 (0x0150 - 0x00D0)
-class UKSC_Skill_LoadBomb final : public UKSC_Skill_RangeAttack
-{
-public:
-	class UKSC_DA_Skill_LoadBomb*                 DaSkillLoadBomb_;                                  // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D8[0x78];                                      // 0x00D8(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Skill_LoadBomb")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Skill_LoadBomb")
-	}
-	static class UKSC_Skill_LoadBomb* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Skill_LoadBomb>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Skill_LoadBomb;
-
-// Class KuroSimpleCombat.KSC_Skill_ManualBulletAttack
-// 0x0058 (0x00F0 - 0x0098)
-class alignas(0x10) UKSC_Skill_ManualBulletAttack final : public UKSC_Skill
-{
-public:
-	class UKSC_DA_Skill_ManualBulletAttack*       DaSkillManualBulletAttack_;                        // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_A0[0x50];                                      // 0x00A0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void OnBulletHit(const struct FKSC_BulletTargetContext& TargetContext);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Skill_ManualBulletAttack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Skill_ManualBulletAttack")
-	}
-	static class UKSC_Skill_ManualBulletAttack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Skill_ManualBulletAttack>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Skill_ManualBulletAttack;
-
-// Class KuroSimpleCombat.KSC_Skill_MultiAttack
-// 0x0008 (0x00A0 - 0x0098)
-class UKSC_Skill_MultiAttack final : public UKSC_Skill
-{
-public:
-	class UKSC_DA_Skill_MultiAttack*              DaSkillMultiAttack_;                               // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Skill_MultiAttack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Skill_MultiAttack")
-	}
-	static class UKSC_Skill_MultiAttack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Skill_MultiAttack>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Skill_MultiAttack;
-
 // Class KuroSimpleCombat.KSC_Skill_Projectile
-// 0x0008 (0x00A0 - 0x0098)
+// 0x0008 (0x00B0 - 0x00A8)
 class UKSC_Skill_Projectile final : public UKSC_Skill
 {
 public:
-	class UKSC_DA_Skill_Projectile*               DaSkillProjectile_;                                // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_DA_Skill_Projectile*               DaSkillProjectile_;                                // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:
 	static class UClass* StaticClass()
@@ -4250,81 +8794,33 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_Skill_Projectile;
 
-// Class KuroSimpleCombat.KSC_Skill_RangeAttackApplyBuffToFriend
-// 0x0020 (0x00F0 - 0x00D0)
-class UKSC_Skill_RangeAttackApplyBuffToFriend final : public UKSC_Skill_RangeAttack
+// Class KuroSimpleCombat.KSC_Skill_SpineAnimFlow
+// 0x00C0 (0x0168 - 0x00A8)
+class UKSC_Skill_SpineAnimFlow final : public UKSC_Skill
 {
 public:
-	class UKSC_DA_Skill_RangeAttackApplyBuffToFriend* DaSkillRangeAttackApplyBuffToFaction_;         // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D8[0x18];                                      // 0x00D8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_Skill_SpineAnimFlow*            DA_SpineAnimFlow_;                                 // 0x00A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UKSC_Shape2D_World*                     KscShapeWorld;                                     // 0x00B0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_B8[0xB0];                                      // 0x00B8(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_Skill_RangeAttackApplyBuffToFriend")
+		STATIC_CLASS_IMPL("KSC_Skill_SpineAnimFlow")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_Skill_RangeAttackApplyBuffToFriend")
+		STATIC_NAME_IMPL(L"KSC_Skill_SpineAnimFlow")
 	}
-	static class UKSC_Skill_RangeAttackApplyBuffToFriend* GetDefaultObj()
+	static class UKSC_Skill_SpineAnimFlow* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UKSC_Skill_RangeAttackApplyBuffToFriend>();
+		return GetDefaultObjImpl<UKSC_Skill_SpineAnimFlow>();
 	}
 };
-DUMPER7_ASSERTS_UKSC_Skill_RangeAttackApplyBuffToFriend;
-
-// Class KuroSimpleCombat.KSC_Skill_RangePersistentAttack
-// 0x0010 (0x00E0 - 0x00D0)
-class UKSC_Skill_RangePersistentAttack final : public UKSC_Skill_RangeAttack
-{
-public:
-	class UKSC_DA_Skill_RangePersistentAttack*    DaSkillRangePersistentAttack_;                     // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D8[0x8];                                       // 0x00D8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Skill_RangePersistentAttack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Skill_RangePersistentAttack")
-	}
-	static class UKSC_Skill_RangePersistentAttack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Skill_RangePersistentAttack>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Skill_RangePersistentAttack;
-
-// Class KuroSimpleCombat.KSC_Skill_RangeSectionAttack
-// 0x0070 (0x0140 - 0x00D0)
-class UKSC_Skill_RangeSectionAttack final : public UKSC_Skill_RangeAttack
-{
-public:
-	class UKSC_DA_Skill_RangeSectionAttack*       DaSkillRangeSectionAttack_;                        // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_D8[0x18];                                      // 0x00D8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class UKSC_SkillComp*>                   ProcessedTargets_;                                 // 0x00F0(0x0050)(Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_Skill_RangeSectionAttack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_Skill_RangeSectionAttack")
-	}
-	static class UKSC_Skill_RangeSectionAttack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_Skill_RangeSectionAttack>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_Skill_RangeSectionAttack;
+DUMPER7_ASSERTS_UKSC_Skill_SpineAnimFlow;
 
 // Class KuroSimpleCombat.KSC_SkillComp
-// 0x0630 (0x0680 - 0x0050)
+// 0x07F8 (0x0848 - 0x0050)
 class UKSC_SkillComp final : public UKSC_CompBase
 {
 public:
@@ -4333,21 +8829,29 @@ public:
 	TMap<class UKSC_DA_Skill*, class UKSC_Skill*> SkillMap;                                          // 0x0188(0x0050)(Protected, NativeAccessSpecifierProtected)
 	TArray<class UKSC_Skill*>                     Skills_;                                           // 0x01D8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_1E8[0x50];                                     // 0x01E8(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class UKSC_Bullet*, class UKSC_Skill*>   Bullets_;                                          // 0x0238(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TArray<class UKSC_Bullet*>                    ToRemoveBullets_;                                  // 0x0288(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TMap<class UKSC_DA_Buff*, class UKSC_Buff*>   Buffs_;                                            // 0x0298(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<class UKSC_DA_Buff*, class UKSC_Buff*>   ToAddBuffs_;                                       // 0x02E8(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<class UKSC_DA_Buff*, class UKSC_Buff*>   ToRemoveBuffs_;                                    // 0x0338(0x0050)(Protected, NativeAccessSpecifierProtected)
-	TMap<class UKSC_DA_Buff*, class UKSC_Buff*>   UnEndRemoveBuffs_;                                 // 0x0388(0x0050)(Protected, NativeAccessSpecifierProtected)
-	class UKSC_DA_SkillComp*                      DA_SkillComp;                                      // 0x03D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_3E0[0x140];                                    // 0x03E0(0x0140)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class UObject*>                          StopCastSkill;                                     // 0x0520(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class UObject*, struct FGameplayTagContainer> InvisibleTagMap;                              // 0x0570(0x0050)(NativeAccessSpecifierPublic)
-	TSet<class UObject*>                          UnattackableSet;                                   // 0x05C0(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class UObject*, struct FGameplayTagContainer> ImmuneBuffMap;                                // 0x0610(0x0050)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_660[0x20];                                     // 0x0660(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TSet<class UKSC_Skill*>                       ToActiveSkills_;                                   // 0x0238(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class UKSC_Bullet*, class UKSC_Skill*>   Bullets_;                                          // 0x0288(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TArray<class UKSC_Bullet*>                    ToRemoveBullets_;                                  // 0x02D8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TMap<class UKSC_DA_Buff*, class UKSC_Buff*>   Buffs_;                                            // 0x02E8(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class UKSC_DA_Buff*, class UKSC_Buff*>   ToAddBuffs_;                                       // 0x0338(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class UKSC_DA_Buff*, class UKSC_Buff*>   ToRemoveBuffs_;                                    // 0x0388(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TMap<class UKSC_DA_Buff*, class UKSC_Buff*>   UnEndRemoveBuffs_;                                 // 0x03D8(0x0050)(Protected, NativeAccessSpecifierProtected)
+	TArray<class UKSC_Buff*>                      InstantBuffs_;                                     // 0x0428(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<class UKSC_Buff*>                      ToAddInstantBuffs_;                                // 0x0438(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_448[0x50];                                     // 0x0448(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_DA_SkillComp*                      DA_SkillComp;                                      // 0x0498(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_4A0[0x220];                                    // 0x04A0(0x0220)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const class UKSC_DA_Buff* BuffDa, int32 Count)> OnKSCBuffChange;   // 0x06C0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6D0[0x18];                                     // 0x06D0(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class UObject*>                          StopCastSkill;                                     // 0x06E8(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class UObject*, struct FGameplayTagContainer> InvisibleTagMap;                              // 0x0738(0x0050)(NativeAccessSpecifierPublic)
+	TSet<class UObject*>                          UnattackableSet;                                   // 0x0788(0x0050)(NativeAccessSpecifierPublic)
+	TMap<class UObject*, struct FGameplayTagContainer> ImmuneBuffMap;                                // 0x07D8(0x0050)(NativeAccessSpecifierPublic)
+	uint8                                         Pad_828[0x20];                                     // 0x0828(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
+	void Debug_GetAllBuffInfo(TArray<class FString>* OutBuffs) const;
+	void GetAllBuffs(TMap<class UKSC_DA_Buff*, int32>* OutBuffs) const;
 	float GetSkillCollDown() const;
 
 public:
@@ -4366,144 +8870,28 @@ public:
 };
 DUMPER7_ASSERTS_UKSC_SkillComp;
 
-// Class KuroSimpleCombat.KSC_StaticMeshInstanceActor
-// 0x0230 (0x04E0 - 0x02B0)
-class AKSC_StaticMeshInstanceActor final : public AActor
+// Class KuroSimpleCombat.KSC_TimeScaleComp
+// 0x0040 (0x0090 - 0x0050)
+class UKSC_TimeScaleComp final : public UKSC_CompBase
 {
 public:
-	uint8                                         Pad_2B0[0x10];                                     // 0x02B0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 RemovedIndices;                                    // 0x02C0(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
-	TMap<int32, float>                            DelayRemovedIndices;                               // 0x02D0(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_320[0x10];                                     // 0x0320(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<int32>                                 InstanceAnim;                                      // 0x0330(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
-	TArray<struct FTransform>                     InstanceTransform;                                 // 0x0340(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPrivate)
-	TMap<int32, int32>                            EntityToInstanceMap;                               // 0x0350(0x0050)(Edit, EditConst, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_3A0[0xB0];                                     // 0x03A0(0x00B0)(Fixing Size After Last Property [ Dumper-7 ])
-	class UInstancedStaticMeshComponent*          InstancedStaticMeshComponent;                      // 0x0450(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_458[0x8];                                      // 0x0458(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             RelativeTrans;                                     // 0x0460(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	TMap<EKSC_GPUNPCAnimState, int32>             AnimMap;                                           // 0x0490(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-
-public:
-	void InitRenderActor();
+	uint8                                         Pad_50[0x40];                                      // 0x0050(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("KSC_StaticMeshInstanceActor")
+		STATIC_CLASS_IMPL("KSC_TimeScaleComp")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"KSC_StaticMeshInstanceActor")
+		STATIC_NAME_IMPL(L"KSC_TimeScaleComp")
 	}
-	static class AKSC_StaticMeshInstanceActor* GetDefaultObj()
+	static class UKSC_TimeScaleComp* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AKSC_StaticMeshInstanceActor>();
+		return GetDefaultObjImpl<UKSC_TimeScaleComp>();
 	}
 };
-DUMPER7_ASSERTS_AKSC_StaticMeshInstanceActor;
-
-// Class KuroSimpleCombat.KSC_WorldBounds
-// 0x0000 (0x0030 - 0x0030)
-class UKSC_WorldBounds : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_WorldBounds")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_WorldBounds")
-	}
-	static class UKSC_WorldBounds* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_WorldBounds>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_WorldBounds;
-
-// Class KuroSimpleCombat.KSC_World
-// 0x06D0 (0x0700 - 0x0030)
-class alignas(0x10) UKSC_World final : public UObject
-{
-public:
-	TArray<class UKSC_SceneComp*>                 SceneComps_;                                       // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class AKSC_Entity*>                    Entities_;                                         // 0x0040(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TMap<int32, class AKSC_Entity*>               EntityIdMap;                                       // 0x0050(0x0050)(NativeAccessSpecifierPublic)
-	TArray<class AKSC_Entity*>                    DeadEntities_;                                     // 0x00A0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	TArray<class AKSC_Entity*>                    ShowHeadUIEntities_;                               // 0x00B0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
-	TArray<class AKSC_Entity*>                    ToRemoveEntities_;                                 // 0x00C0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class AKSC_Entity*>                    ToAddEntities_;                                    // 0x00D0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<struct FKSC_LandFireContext>           ToAddLandFire_;                                    // 0x00E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	TMap<class AKSC_Entity*, class AActor*>       RenderActorMap_;                                   // 0x00F0(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class UKSC_DA_EntityRender*, class AActor*> SharedRenderActorDaMap_;                        // 0x0140(0x0050)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_190[0x80];                                     // 0x0190(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
-	class AKSC_GPUHeadUI*                         GPUHeadUI;                                         // 0x0210(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_218[0x60];                                     // 0x0218(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const TArray<struct FKSC_RemoveContext>& RemoveContext)> OnKSCBatchRemoveAfter;   // 0x0278(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TDelegate<void(const TArray<struct FKSC_LandFireContext>& LandFireContext)> OnKSCLandFireSpawn;  // 0x02A0(0x0028)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	TArray<class UKSC_Decorator*>                 Decorators;                                        // 0x02C8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D8[0x50];                                     // 0x02D8(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EKSC_HeadUiType, class UClass*>          HeadUiHandleClassMap;                              // 0x0328(0x0050)(NativeAccessSpecifierPublic)
-	uint8                                         Pad_378[0x170];                                    // 0x0378(0x0170)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class UObject*>                          PoolHelper_;                                       // 0x04E8(0x0050)(NativeAccessSpecifierPrivate)
-	uint8                                         Pad_538[0x10];                                     // 0x0538(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_WorldBounds*                       WorldBounds;                                       // 0x0548(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_550[0xB0];                                     // 0x0550(0x00B0)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class UKSC_DA_Buff*, int32>              LoadedBuffDa;                                      // 0x0600(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class UKSC_DA_Entity*, int32>            LoadedEntityDa;                                    // 0x0650(0x0050)(NativeAccessSpecifierPublic)
-	TMap<class UKSC_DA_Skill*, int32>             LoadedSkillDa;                                     // 0x06A0(0x0050)(NativeAccessSpecifierPublic)
-	class UKSC_DamageId*                          DamageData;                                        // 0x06F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKSC_BuffId*                            BuffData;                                          // 0x06F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-public:
-	class AKSC_Entity* AddDaEntity(class UKSC_DA_Entity* DaEntity, const struct FTransform& Transform, bool IsPreview, int32 CreatureId);
-	bool AddDecorator(class UKSC_DA_Decorator* DaDecorator);
-	bool AddHeadUI(TSubclassOf<class AKSC_GPUHeadUI> InHeadUIClass);
-	void AssignBatchRemoveDelegate(const TDelegate<void(const TArray<struct FKSC_RemoveContext>& RemoveContext)>& InDelegate);
-	void AssignLandFireSpawnDelegate(const TDelegate<void(const TArray<struct FKSC_LandFireContext>& LandFireContext)>& InDelegate);
-	void ClearDecorator();
-	class AKSC_Entity* D_AddDaEntity(class UKSC_DA_Entity* DaEntity, const struct FTransformDouble& Transform, bool InIsPreview, int32 CreatureId);
-	bool Debug_GetEntityAttr(int32 EntityId, TMap<EKSC_AttrType, int32>* Attr);
-	bool Debug_GetEntityBuffs(int32 EntityId, TMap<class UKSC_DA_Buff*, int32>* Buffs);
-	bool Debug_GetEntityTags(int32 EntityId, TMap<struct FGameplayTag, int32>* Tags);
-	class FString Debug_GetOriginalTagName(const class FName& TagName);
-	bool Debug_GetWorldAttr(TMap<EKSC_WorldAttrType, int32>* Attr);
-	bool Debug_IsEntityAlive(int32 EntityId);
-	bool Debug_SetEntityAttr(int32 EntityId, const EKSC_AttrType& Attr, int32 Value);
-	bool Debug_SetEntityTag(int32 EntityId, const struct FGameplayTag& Attr, int32 TagCount);
-	class AKSC_Entity* GetEntityById(int32 EntityId);
-	void GetEntityPositionsEx(TArray<struct FKSC_MiniMapContext>* EntityPositions);
-	void GetHeadHpInfos(TArray<struct FKSC_HeadHpContext>* HpInfos);
-	int32 GetWorldAttr(EKSC_WorldAttrType Type);
-	void InitHeadUiClassMap();
-	TArray<struct FKSC_HitContext> PopHitInfos();
-	bool RemoveDecorator(class UKSC_DA_Decorator* DaDecorator);
-	void RemoveEntity(class AKSC_Entity* Entity);
-	void RemoveEntityReason(class AKSC_Entity* Entity, class FName Reason);
-	void SetObstacleSegments(const TArray<struct FKSC_Segment>& InObstacleSegments);
-	void SetWorldAttr(EKSC_WorldAttrType Type, int32 Value);
-	void SetWorldBounds(class UKSC_DA_WorldBounds* DAWorldBounds);
-	void SetWorldTimeDilation(float NewTimeDilation);
-
-	class UKSC_BuffId* GetBuffData() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KSC_World")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KSC_World")
-	}
-	static class UKSC_World* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKSC_World>();
-	}
-};
-DUMPER7_ASSERTS_UKSC_World;
+DUMPER7_ASSERTS_UKSC_TimeScaleComp;
 
 // Class KuroSimpleCombat.KSC_WorldBoundsRound
 // 0x0008 (0x0038 - 0x0030)
@@ -4527,36 +8915,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKSC_WorldBoundsRound;
-
-// Class KuroSimpleCombat.KuroSimpleCombatSubsystem
-// 0x0010 (0x0048 - 0x0038)
-class UKuroSimpleCombatSubsystem final : public UGameInstanceSubsystem
-{
-public:
-	class UKSC_World*                             KscWorld;                                          // 0x0038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	class UKSC_World*                             OldKscWorld;                                       // 0x0040(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-
-public:
-	class UKSC_World* CreateWorld();
-	void DestoryWorld();
-	void DestroyWorld();
-	class UKSC_World* GetKSCWorld();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroSimpleCombatSubsystem")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroSimpleCombatSubsystem")
-	}
-	static class UKuroSimpleCombatSubsystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroSimpleCombatSubsystem>();
-	}
-};
-DUMPER7_ASSERTS_UKuroSimpleCombatSubsystem;
 
 }
 

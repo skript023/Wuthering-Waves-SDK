@@ -16,6 +16,84 @@
 namespace SDK::Params
 {
 
+// Function KuroCollision.KuroBodySetupLibrary.AddClearWpBodySetupBlackList
+// 0x000C (0x000C - 0x0000)
+struct KuroBodySetupLibrary_AddClearWpBodySetupBlackList final
+{
+public:
+	class FName                                   StaticMeshName;                                    // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroBodySetupLibrary_AddClearWpBodySetupBlackList;
+
+// Function KuroCollision.KuroBodySetupLibrary.InitClearWpBodySetupBlackList
+// 0x0050 (0x0050 - 0x0000)
+struct KuroBodySetupLibrary_InitClearWpBodySetupBlackList final
+{
+public:
+	TSet<class FName>                             InClearWpBodySetupBlackList;                       // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroBodySetupLibrary_InitClearWpBodySetupBlackList;
+
+// Function KuroCollision.KuroBodySetupLibrary.RemoveClearWpBodySetupBlackList
+// 0x000C (0x000C - 0x0000)
+struct KuroBodySetupLibrary_RemoveClearWpBodySetupBlackList final
+{
+public:
+	class FName                                   StaticMeshName;                                    // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroBodySetupLibrary_RemoveClearWpBodySetupBlackList;
+
+// Function KuroCollision.KuroCollisionLibrary.ActorHasTag
+// 0x0020 (0x0020 - 0x0000)
+struct KuroCollisionLibrary_ActorHasTag final
+{
+public:
+	class AActor*                                 InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Tag;                                               // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceIndex;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_ActorHasTag;
+
+// Function KuroCollision.KuroCollisionLibrary.CanCharacterStandOn
+// 0x0010 (0x0010 - 0x0000)
+struct KuroCollisionLibrary_CanCharacterStandOn final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceIndex;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_CanCharacterStandOn;
+
+// Function KuroCollision.KuroCollisionLibrary.CanCharacterStepUp
+// 0x0018 (0x0018 - 0x0000)
+struct KuroCollisionLibrary_CanCharacterStepUp final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceIndex;                                     // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_CanCharacterStepUp;
+
+// Function KuroCollision.KuroCollisionLibrary.ComponentHasTag
+// 0x0020 (0x0020 - 0x0000)
+struct KuroCollisionLibrary_ComponentHasTag final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Tag;                                               // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceIndex;                                     // 0x0014(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_ComponentHasTag;
+
 // Function KuroCollision.KuroCollisionLibrary.GetBodyInstance
 // 0x0188 (0x0188 - 0x0000)
 struct KuroCollisionLibrary_GetBodyInstance final
@@ -27,6 +105,78 @@ public:
 	struct FBodyInstance                          ReturnValue;                                       // 0x0010(0x0178)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroCollisionLibrary_GetBodyInstance;
+
+// Function KuroCollision.KuroCollisionLibrary.GetCollisionProfileName
+// 0x0018 (0x0018 - 0x0000)
+struct KuroCollisionLibrary_GetCollisionProfileName final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceIndex;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ReturnValue;                                       // 0x000C(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_GetCollisionProfileName;
+
+// Function KuroCollision.KuroCollisionLibrary.GetCollisionResponseToChannel
+// 0x0018 (0x0018 - 0x0000)
+struct KuroCollisionLibrary_GetCollisionResponseToChannel final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECollisionChannel                             Channel;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InstanceIndex;                                     // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECollisionResponse                            ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_GetCollisionResponseToChannel;
+
+// Function KuroCollision.KuroCollisionLibrary.GetHitResultBodyInstance
+// 0x0210 (0x0210 - 0x0000)
+struct KuroCollisionLibrary_GetHitResultBodyInstance final
+{
+public:
+	struct FHitResult                             HitResult;                                         // 0x0000(0x0094)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_94[0x4];                                       // 0x0094(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBodyInstance                          ReturnValue;                                       // 0x0098(0x0178)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_GetHitResultBodyInstance;
+
+// Function KuroCollision.KuroCollisionLibrary.GetOverlappingComponents
+// 0x0028 (0x0028 - 0x0000)
+struct KuroCollisionLibrary_GetOverlappingComponents final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UPrimitiveComponent*>            OutOverlappingComponents;                          // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<int32>                                 OutOverlappingBodyIndices;                         // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_GetOverlappingComponents;
+
+// Function KuroCollision.KuroCollisionLibrary.GetWalkableSlopeOverride
+// 0x0020 (0x0020 - 0x0000)
+struct KuroCollisionLibrary_GetWalkableSlopeOverride final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InstanceIndex;                                     // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FWalkableSlopeOverride                 ReturnValue;                                       // 0x000C(0x0010)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_GetWalkableSlopeOverride;
+
+// Function KuroCollision.KuroCollisionLibrary.SetCollisionResponseToChannel
+// 0x0010 (0x0010 - 0x0000)
+struct KuroCollisionLibrary_SetCollisionResponseToChannel final
+{
+public:
+	class UPrimitiveComponent*                    PrimitiveComponent;                                // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECollisionChannel                             Channel;                                           // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECollisionResponse                            NewResponse;                                       // 0x0009(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x2];                                        // 0x000A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InstanceIndex;                                     // 0x000C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroCollisionLibrary_SetCollisionResponseToChannel;
 
 }
 

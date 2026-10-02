@@ -40,16 +40,16 @@ public:
 	float                                         FloatPar_End;                                      // 0x02EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void Timer(float* ElapsedTime);
-	void MaterialParameterGradient(float DeltalTime);
-	void SeyLogicallyShowForAllChildren();
-	void SeyLogicallyHiddenForAllChildren();
-	void EditorValidCheck();
-	void IsEditor(bool* IsEditor_0);
-	void UserConstructionScript();
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds_0);
 	void ExecuteUbergraph_BP_KuroISMGroup(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds_0);
+	void ReceiveBeginPlay();
+	void UserConstructionScript();
+	void IsEditor(bool* IsEditor_0);
+	void EditorValidCheck();
+	void SeyLogicallyHiddenForAllChildren();
+	void SeyLogicallyShowForAllChildren();
+	void MaterialParameterGradient(float DeltalTime);
+	void Timer(float* ElapsedTime);
 
 public:
 	static class UClass* StaticClass()

@@ -17,6 +17,35 @@
 namespace SDK
 {
 
+// Function KuroNetwork.KuroDNS.DNSResolution
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    DomainName                                             (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      Protocol                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(int32 ErrorCode, const TArray<class FString>& IpList)>Callback                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroDNS::DNSResolution(const class FString& DomainName, const class FName& Protocol, TDelegate<void(int32 ErrorCode, const TArray<class FString>& IpList)> Callback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroDNS", "DNSResolution");
+
+	Params::KuroDNS_DNSResolution Parms{};
+
+	Parms.DomainName = std::move(DomainName);
+	Parms.Protocol = Protocol;
+	Parms.Callback = Callback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroNetwork.KuroHttp.Get
 // (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -455,6 +484,40 @@ void UKuroKcpClient::Disconnect()
 }
 
 
+// Function KuroNetwork.KuroKcpClient.DoConnect
+// (Final, Native, Public)
+// Parameters:
+// const class FString&                    Addr                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Port                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              CrcCheckDisable                                        (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bAddTraceId                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroKcpClient::DoConnect(const class FString& Addr, const int32 Port, const bool CrcCheckDisable, const bool bAddTraceId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroKcpClient", "DoConnect");
+
+	Params::KuroKcpClient_DoConnect Parms{};
+
+	Parms.Addr = std::move(Addr);
+	Parms.Port = Port;
+	Parms.CrcCheckDisable = CrcCheckDisable;
+	Parms.bAddTraceId = bAddTraceId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroNetwork.KuroKcpClient.GetDebugString
 // (Final, Native, Public, HasOutParams)
 // Parameters:
@@ -814,9 +877,10 @@ void UKuroKcpClient::SetKcpWndSize(int32 SndWnd, int32 RcvWnd)
 // Function KuroNetwork.KuroKcpClient.StartTcpConnect
 // (Final, Native, Public)
 // Parameters:
+// const class FString&                    Addr                                                   (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const int32                             Port                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroKcpClient::StartTcpConnect(const int32 Port)
+void UKuroKcpClient::StartTcpConnect(const class FString& Addr, const int32 Port)
 {
 	static class UFunction* Func = nullptr;
 
@@ -825,6 +889,7 @@ void UKuroKcpClient::StartTcpConnect(const int32 Port)
 
 	Params::KuroKcpClient_StartTcpConnect Parms{};
 
+	Parms.Addr = std::move(Addr);
 	Parms.Port = Port;
 
 	auto Flgs = Func->FunctionFlags;
@@ -879,6 +944,72 @@ bool UKuroKcpClient::IsTcpConnectStart() const
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroNetwork.SendHttpRequest.HttpRequest
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EHttpMethod                             Method                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PostBody                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USendHttpRequest*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USendHttpRequest* USendHttpRequest::HttpRequest(const class FString& URL, EHttpMethod Method, const class FString& PostBody)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SendHttpRequest", "HttpRequest");
+
+	Params::SendHttpRequest_HttpRequest Parms{};
+
+	Parms.URL = std::move(URL);
+	Parms.Method = Method;
+	Parms.PostBody = std::move(PostBody);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroNetwork.SendHttpRequest.HttpRequestEx
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EHttpMethod                             Method                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    PostBody                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    HeaderParam                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class USendHttpRequest*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class USendHttpRequest* USendHttpRequest::HttpRequestEx(const class FString& URL, EHttpMethod Method, const class FString& PostBody, const class FString& HeaderParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("SendHttpRequest", "HttpRequestEx");
+
+	Params::SendHttpRequest_HttpRequestEx Parms{};
+
+	Parms.URL = std::move(URL);
+	Parms.Method = Method;
+	Parms.PostBody = std::move(PostBody);
+	Parms.HeaderParam = std::move(HeaderParam);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -1002,28 +1133,22 @@ void UKuroKcpTestWorker::OnRecvResponse(int32 SeqNo, int16 RpcId, uint16 Message
 }
 
 
-// Function KuroNetwork.KuroNetworkChange.GetNetworkType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function KuroNetwork.KuroNetworkDetection.AbortGatewayUdpReachable
+// (Final, Native, Static, Public, BlueprintCallable)
 
-uint8 UKuroNetworkChange::GetNetworkType()
+void UKuroNetworkDetection::AbortGatewayUdpReachable()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroNetworkChange", "GetNetworkType");
-
-	Params::KuroNetworkChange_GetNetworkType Parms{};
+		Func = StaticClass()->GetFunction("KuroNetworkDetection", "AbortGatewayUdpReachable");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -1042,6 +1167,37 @@ void UKuroNetworkDetection::DetectionFinish(bool bSuccess)
 	Params::KuroNetworkDetection_DetectionFinish Parms{};
 
 	Parms.bSuccess = bSuccess;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroNetwork.KuroNetworkDetection.GatewayUdpReachable
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FString&                    IpAddress                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    Ports                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const class FString&                    Payload                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(int32 SuccessCount, int32 ErrorCode)>ResultDelegate                                         (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroNetworkDetection::GatewayUdpReachable(const class FString& IpAddress, const TArray<int32>& Ports, const class FString& Payload, TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroNetworkDetection", "GatewayUdpReachable");
+
+	Params::KuroNetworkDetection_GatewayUdpReachable Parms{};
+
+	Parms.IpAddress = std::move(IpAddress);
+	Parms.Ports = std::move(Ports);
+	Parms.Payload = std::move(Payload);
+	Parms.ResultDelegate = ResultDelegate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1205,6 +1361,31 @@ void UKuroNetworkDetection::TestUdpReachable(const class FString& IpAddress, con
 }
 
 
+// Function KuroNetwork.KuroNetworkChange.GetNetworkType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 UKuroNetworkChange::GetNetworkType()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroNetworkChange", "GetNetworkType");
+
+	Params::KuroNetworkChange_GetNetworkType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroNetwork.KuroTcpClient.CloseSocket
 // (Final, Native, Public)
 
@@ -1339,60 +1520,75 @@ void UKuroTcpClient::TickOutside(float DeltaSeconds)
 }
 
 
-// Function KuroNetwork.SendHttpRequest.HttpRequest
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EHttpMethod                             Method                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    PostBody                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USendHttpRequest*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function KuroNetwork.KuroTraceroute.Abort
+// (Final, Native, Public, BlueprintCallable)
 
-class USendHttpRequest* USendHttpRequest::HttpRequest(const class FString& URL, EHttpMethod Method, const class FString& PostBody)
+void UKuroTraceroute::Abort()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SendHttpRequest", "HttpRequest");
-
-	Params::SendHttpRequest_HttpRequest Parms{};
-
-	Parms.URL = std::move(URL);
-	Parms.Method = Method;
-	Parms.PostBody = std::move(PostBody);
+		Func = Class->GetFunction("KuroTraceroute", "Abort");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function KuroNetwork.SendHttpRequest.HttpRequestEx
-// (Final, Native, Static, Public, BlueprintCallable)
+// Function KuroNetwork.KuroTraceroute.Traceroute
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// const class FString&                    URL                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EHttpMethod                             Method                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    PostBody                                               (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    HeaderParam                                            (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class USendHttpRequest*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Target                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(bool IsReached)>         Callback                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 
-class USendHttpRequest* USendHttpRequest::HttpRequestEx(const class FString& URL, EHttpMethod Method, const class FString& PostBody, const class FString& HeaderParam)
+void UKuroTraceroute::Traceroute(const class FString& Target, TDelegate<void(bool IsReached)> Callback)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("SendHttpRequest", "HttpRequestEx");
+		Func = Class->GetFunction("KuroTraceroute", "Traceroute");
 
-	Params::SendHttpRequest_HttpRequestEx Parms{};
+	Params::KuroTraceroute_Traceroute Parms{};
 
-	Parms.URL = std::move(URL);
-	Parms.Method = Method;
-	Parms.PostBody = std::move(PostBody);
-	Parms.HeaderParam = std::move(HeaderParam);
+	Parms.Target = std::move(Target);
+	Parms.Callback = Callback;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroNetwork.KuroUdp.SendUdpMessage
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// const class FString&                    Ip                                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Port                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Message                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   MaxRecvSize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TDelegate<void(bool IsSuccess, const class FString& Response)>Callback                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UKuroUdp::SendUdpMessage(const class FString& Ip, int32 Port, const class FString& Message, int32 MaxRecvSize, TDelegate<void(bool IsSuccess, const class FString& Response)> Callback)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroUdp", "SendUdpMessage");
+
+	Params::KuroUdp_SendUdpMessage Parms{};
+
+	Parms.Ip = std::move(Ip);
+	Parms.Port = Port;
+	Parms.Message = std::move(Message);
+	Parms.MaxRecvSize = MaxRecvSize;
+	Parms.Callback = Callback;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1400,8 +1596,6 @@ class USendHttpRequest* USendHttpRequest::HttpRequestEx(const class FString& URL
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 }

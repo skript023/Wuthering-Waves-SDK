@@ -10,32 +10,32 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTaskSkillWander.TsTaskSkillWander_C
-// 0x0020 (0x00D8 - 0x00B8)
+// 0x0020 (0x00E0 - 0x00C0)
 class UTsTaskSkillWander_C final : public UTsTaskAbortImmediatelyBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskSkillWander_C;                // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	float                                         CheckSkillPeriod;                                  // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ForwardFirst;                                      // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MoveState;                                         // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         SkillType;                                         // 0x00CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          DebugLog;                                          // 0x00D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          WalkOff;                                           // 0x00D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskSkillWander_C;                // 0x00C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	float                                         CheckSkillPeriod;                                  // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ForwardFirst;                                      // 0x00CC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_CD[0x3];                                       // 0x00CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MoveState;                                         // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         SkillType;                                         // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          DebugLog;                                          // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          WalkOff;                                           // 0x00D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
 
 public:
-	void OnClear();
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_TsTaskSkillWander(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
+	void OnClear();
 
 public:
 	static class UClass* StaticClass()

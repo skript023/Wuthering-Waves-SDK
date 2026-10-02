@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_KuroLightDecal.BP_KuroLightDecal_C
-// 0x0100 (0x03B8 - 0x02B8)
+// 0x0110 (0x03C8 - 0x02B8)
 class ABP_KuroLightDecal_C : public ADecalActor
 {
 public:
@@ -28,10 +28,16 @@ public:
 	TMap<class FName, float>                      Scalars;                                           // 0x02C8(0x0050)(Edit, BlueprintVisible)
 	TMap<class FName, class UTexture*>            Textures;                                          // 0x0318(0x0050)(Edit, BlueprintVisible)
 	TMap<class FName, struct FLinearColor>        Vectors;                                           // 0x0368(0x0050)(Edit, BlueprintVisible)
+	float                                         最小显示距离;                                      // 0x03B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         最大显示距离;                                      // 0x03BC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         最小Fade距离;                                      // 0x03C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         最大Fade距离;                                      // 0x03C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void updateMaterialParameters();
 	void UserConstructionScript();
+	void updateMaterialParameters();
+
+	int32 GetPlacementSortOrder() const;
 
 public:
 	static class UClass* StaticClass()

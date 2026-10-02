@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_ToFight_Vision.GA_ToFight_Vision_C
-// 0x0010 (0x0598 - 0x0588)
+// 0x0010 (0x05E0 - 0x05D0)
 class UGA_ToFight_Vision_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_ToFight_Vision_C;                // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     召唤者;                                            // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_ToFight_Vision_C;                // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     召唤者;                                            // 0x05D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_ToFight_Vision(int32 EntryPoint);

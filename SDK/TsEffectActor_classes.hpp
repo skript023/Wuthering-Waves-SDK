@@ -26,12 +26,11 @@ public:
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x02B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void GetHandle(int32* Handle);
-	class FString GetEffectPath();
-	void SetHandle(int32 Handle);
-	void RemoveHandle();
-	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
 	void ExecuteUbergraph_TsEffectActor(int32 EntryPoint);
+	void ReceiveEndPlay(EEndPlayReason EndPlayReason);
+	void RemoveHandle();
+	void SetHandle(int32 Handle);
+	void GetHandle(int32* Handle);
 
 public:
 	static class UClass* StaticClass()

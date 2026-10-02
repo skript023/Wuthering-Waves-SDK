@@ -14,32 +14,15 @@
 namespace SDK::Params
 {
 
-// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.SetMovementDebug
-// 0x0001 (0x0001 - 0x0000)
-struct TsCharacterDebugComponent_C_SetMovementDebug final
+// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.ExecuteUbergraph_TsCharacterDebugComponent
+// 0x0008 (0x0008 - 0x0000)
+struct TsCharacterDebugComponent_C_ExecuteUbergraph_TsCharacterDebugComponent final
 {
 public:
-	bool                                          newDebug;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_TsCharacterDebugComponent_C_SetMovementDebug;
-
-// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.SetDebugRiseEnable
-// 0x0001 (0x0001 - 0x0000)
-struct TsCharacterDebugComponent_C_SetDebugRiseEnable final
-{
-public:
-	bool                                          enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-};
-DUMPER7_ASSERTS_TsCharacterDebugComponent_C_SetDebugRiseEnable;
-
-// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.ActivateDebugSpeed
-// 0x0001 (0x0001 - 0x0000)
-struct TsCharacterDebugComponent_C_ActivateDebugSpeed final
-{
-public:
-	bool                                          activate;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_TsCharacterDebugComponent_C_ActivateDebugSpeed;
+DUMPER7_ASSERTS_TsCharacterDebugComponent_C_ExecuteUbergraph_TsCharacterDebugComponent;
 
 // Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)
@@ -50,15 +33,32 @@ public:
 };
 DUMPER7_ASSERTS_TsCharacterDebugComponent_C_ReceiveTick;
 
-// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.ExecuteUbergraph_TsCharacterDebugComponent
-// 0x0008 (0x0008 - 0x0000)
-struct TsCharacterDebugComponent_C_ExecuteUbergraph_TsCharacterDebugComponent final
+// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.ActivateDebugSpeed
+// 0x0001 (0x0001 - 0x0000)
+struct TsCharacterDebugComponent_C_ActivateDebugSpeed final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          activate;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_TsCharacterDebugComponent_C_ExecuteUbergraph_TsCharacterDebugComponent;
+DUMPER7_ASSERTS_TsCharacterDebugComponent_C_ActivateDebugSpeed;
+
+// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.SetDebugRiseEnable
+// 0x0001 (0x0001 - 0x0000)
+struct TsCharacterDebugComponent_C_SetDebugRiseEnable final
+{
+public:
+	bool                                          enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+};
+DUMPER7_ASSERTS_TsCharacterDebugComponent_C_SetDebugRiseEnable;
+
+// Function TsCharacterDebugComponent.TsCharacterDebugComponent_C.SetMovementDebug
+// 0x0001 (0x0001 - 0x0000)
+struct TsCharacterDebugComponent_C_SetMovementDebug final
+{
+public:
+	bool                                          newDebug;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_TsCharacterDebugComponent_C_SetMovementDebug;
 
 }
 

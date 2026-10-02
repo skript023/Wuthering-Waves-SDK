@@ -10,13 +10,49 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 namespace SDK
 {
+
+// Class KuroData.KuroDerivedDataTable
+// 0x00A8 (0x0160 - 0x00B8)
+class UKuroDerivedDataTable final : public UDataTable
+{
+public:
+	class UDataTable*                             ParentDataTable;                                   // 0x00B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSet<class FString>                           OverriddenFields;                                  // 0x00C0(0x0050)(NativeAccessSpecifierPublic)
+	TSet<class FName>                             ChildOnlyRows;                                     // 0x0110(0x0050)(NativeAccessSpecifierPublic)
+
+public:
+	void MarkFieldOverridden(class FName RowName, class FName PropertyName);
+	void MarkRowFullyOverridden(class FName RowName);
+	void RevertRowToParent(class FName RowName);
+	void UnmarkFieldOverridden(class FName RowName, class FName PropertyName);
+
+	TArray<class FName> GetAllResolvedRowNames() const;
+	bool HasAnyOverrideInRow(class FName RowName) const;
+	bool IsChildOnlyRow(class FName RowName) const;
+	bool IsFieldOverridden(class FName RowName, class FName PropertyName) const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroDerivedDataTable")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroDerivedDataTable")
+	}
+	static class UKuroDerivedDataTable* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroDerivedDataTable>();
+	}
+};
+DUMPER7_ASSERTS_UKuroDerivedDataTable;
 
 // Class KuroData.KuroHitResult
 // 0x0218 (0x0248 - 0x0030)
@@ -131,8 +167,9 @@ public:
 	bool                                          bIgnoreSelf;                                       // 0x00CD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsSingle;                                         // 0x00CE(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsBoth;                                           // 0x00CF(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsProfile;                                        // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIsTraceCapsuleAsSphere;                           // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsProfile;                                        // 0x00D1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D2[0x2];                                       // 0x00D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	class FName                                   ProfileName;                                       // 0x00D4(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_E0[0x8];                                       // 0x00E0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -217,12 +254,19 @@ public:
 DUMPER7_ASSERTS_UTraceBoxElement;
 
 // Class KuroData.TraceCapsuleElement
-// 0x0008 (0x00F0 - 0x00E8)
+// 0x0018 (0x0100 - 0x00E8)
 class UTraceCapsuleElement final : public UTraceBaseElement
 {
 public:
 	float                                         Radius;                                            // 0x00E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         HalfHeight;                                        // 0x00EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OrientationPitch;                                  // 0x00F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OrientationYaw;                                    // 0x00F4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OrientationRoll;                                   // 0x00F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_FC[0x4];                                       // 0x00FC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetCapsuleOrientation(float Pitch, float Yaw, float Roll);
 
 public:
 	static class UClass* StaticClass()

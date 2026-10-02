@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_Kamola_EnergyHold.GA_Kamola_EnergyHold_C.ExecuteUbergraph_GA_Kamola_EnergyHold
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // Class KuroGameplayUI.DamageBatchView
-// 0x0090 (0x00C0 - 0x0030)
+// 0x0110 (0x0140 - 0x0030)
 class alignas(0x10) UDamageBatchView final : public UObject
 {
 public:
@@ -31,7 +31,12 @@ public:
 	uint8                                         Pad_88[0x8];                                       // 0x0088(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class USimpleDamageViewInfo*>          UnusedSimpleDamageViewInfoList;                    // 0x0090(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	TArray<class USimpleDamageViewInfo*>          SimpleDamageViewInfoList;                          // 0x00A0(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_B0[0x10];                                      // 0x00B0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_B0[0x58];                                      // 0x00B0(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
+	class USimpleDamageViewInfo*                  PendingBakeViewInfo;                               // 0x0108(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_110[0x30];                                     // 0x0110(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void OnPendingTextGeometryReady();
 
 public:
 	static class UClass* StaticClass()
@@ -50,16 +55,16 @@ public:
 DUMPER7_ASSERTS_UDamageBatchView;
 
 // Class KuroGameplayUI.DamageUiManager
-// 0x00C0 (0x00F0 - 0x0030)
+// 0x0180 (0x01B0 - 0x0030)
 class alignas(0x10) UDamageUiManager final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x98];                                      // 0x0030(0x0098)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UNiagaraSystem*>                 CritNiagaraList;                                   // 0x00C8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	class UDamageBatchView*                       DamageBatchView;                                   // 0x00D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bDamageViewVisible;                                // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UKSC_World*                             KscWorld;                                          // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_30[0x158];                                     // 0x0030(0x0158)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UNiagaraSystem*>                 CritNiagaraList;                                   // 0x0188(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	class UDamageBatchView*                       DamageBatchView;                                   // 0x0198(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bDamageViewVisible;                                // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A1[0x7];                                      // 0x01A1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKSC_World*                             KscWorld;                                          // 0x01A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UDamageUiManager* CreateInstance(class UObject* Outer_0);
@@ -73,6 +78,7 @@ public:
 	void InitAllRes(class USceneComponent* Parent, class AUIBaseActor* DynamicBatchActor, class AUIBaseActor* DamageActor, int32 PreloadCount, bool bMobilePlatform);
 	void InitDamageConfig(const struct FDamageConfig& InDamageConfig);
 	void Update(const float& DeltaTime, const struct FVectorDouble& CameraLocation, class APlayerController* Player);
+	void UpdateKscWorld();
 
 public:
 	static class UClass* StaticClass()
@@ -208,14 +214,14 @@ public:
 DUMPER7_ASSERTS_USimpleDamageView;
 
 // Class KuroGameplayUI.SimpleDamageViewInfo
-// 0x0078 (0x00A8 - 0x0030)
+// 0x0088 (0x00B8 - 0x0030)
 class USimpleDamageViewInfo final : public UObject
 {
 public:
-	uint8                                         Pad_30[0x50];                                      // 0x0030(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	class USimpleDamageView*                      SimpleDamageView;                                  // 0x0080(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UGeometryHandle*                        GeometryHandle;                                    // 0x0088(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_90[0x18];                                      // 0x0090(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x60];                                      // 0x0030(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
+	class USimpleDamageView*                      SimpleDamageView;                                  // 0x0090(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGeometryHandle*                        GeometryHandle;                                    // 0x0098(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A0[0x18];                                      // 0x00A0(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

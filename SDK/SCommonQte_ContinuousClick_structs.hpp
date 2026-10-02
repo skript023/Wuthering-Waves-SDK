@@ -10,36 +10,41 @@
 
 #include "Basic.hpp"
 
+#include "SCommonQte_Attach_structs.hpp"
 #include "ECommonQteViewType_SingleButtonContinuousClick_structs.hpp"
 #include "SCommonQteButton_structs.hpp"
 #include "ECommonQteInteractiveTiming_structs.hpp"
-#include "SCommonQte_Attach_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SCommonQte_ContinuousClick.SCommonQte_ContinuousClick
-// 0x00C8 (0x00C8 - 0x0000)
+// 0x00E8 (0x00E8 - 0x0000)
 struct FSCommonQte_ContinuousClick final
 {
 public:
 	ECommonQteViewType_SingleButtonContinuousClick ViewType_31_18444E3942D5E78BD3CCE2853B53FED6;     // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCommonQteButton                      UIConfig_24_17F2A82548DE4864C1C98DAD76E7E0B1;      // 0x0008(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	ECommonQteInteractiveTiming                   InteractiveTiming_30_E8AC86F443D02F74858377A1C94A1910; // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsShowBorder_29_1520ECF942FF61AC7AC266951688E335;  // 0x0061(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          IsShowTip_35_15E22DD34E6478130985D2AA7DFACC42;     // 0x0062(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_63[0x5];                                       // 0x0063(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 TipTextId_47_A70E38514FB4B63902B907B4A0B3671B;     // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	float                                         InitialEnergyPercent_2_7BDE45A34B820A0E374DCA86A172B0AA; // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         TargetEnergyPercent_4_1B0F6C9144FFF585CBC089BB46E09FB5; // 0x007C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         DeltaEnergyPercentPerSecond_6_373E96854E6E56C83204A19E0C7CBB51; // 0x0080(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         DeltaEnergyPercentPerClick_18_44F348D34D4251A1E52FD180679FA777; // 0x0084(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         PerformInterpSpeedForEnergyPercent_43_0770FFC944A5AB55B47ED780FF88E456; // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsAttachToActor_50_7779AE344D4CEA721634BCA6C741B87E; // 0x008C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCommonQte_Attach                     AttachConfig_52_31DB5C0A40171D2B53D3ED875FFEDEB3;  // 0x0090(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCommonQteButton                      UIConfig_24_17F2A82548DE4864C1C98DAD76E7E0B1;      // 0x0008(0x0068)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	ECommonQteInteractiveTiming                   InteractiveTiming_30_E8AC86F443D02F74858377A1C94A1910; // 0x0070(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsShowBorder_29_1520ECF942FF61AC7AC266951688E335;  // 0x0071(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsShowTip_35_15E22DD34E6478130985D2AA7DFACC42;     // 0x0072(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_73[0x5];                                       // 0x0073(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 TipTextId_47_A70E38514FB4B63902B907B4A0B3671B;     // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	float                                         InitialEnergyPercent_2_7BDE45A34B820A0E374DCA86A172B0AA; // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         TargetEnergyPercent_4_1B0F6C9144FFF585CBC089BB46E09FB5; // 0x008C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaEnergyPercentPerSecond_6_373E96854E6E56C83204A19E0C7CBB51; // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaEnergyPercentPerClick_18_44F348D34D4251A1E52FD180679FA777; // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         PerformInterpSpeedForEnergyPercent_43_0770FFC944A5AB55B47ED780FF88E456; // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsAttachToActor_50_7779AE344D4CEA721634BCA6C741B87E; // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSCommonQte_Attach                     AttachConfig_52_31DB5C0A40171D2B53D3ED875FFEDEB3;  // 0x00A0(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HideProgressBar_54_66AB049243380AE5F6C3A484EBD4270C; // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ProgressOnBegin_56_A949BF564C1B050E9DDF53A3928B2C77; // 0x00D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_DA[0x2];                                       // 0x00DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MaxComboInterval_59_774777A345D22A4118C5A69F10F53546; // 0x00DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InterpSpeedForEnergyPercent_62_0410308242D3CCB84801F8AD929A68EE; // 0x00E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCommonQte_ContinuousClick;
 

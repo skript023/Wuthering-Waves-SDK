@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyRoleSitDown.TsAnimNotifyRoleSitDown_C
-// 0x0000 (0x0048 - 0x0048)
-class UTsAnimNotifyRoleSitDown_C final : public UKuroAnimNotify
+// 0x0000 (0x0058 - 0x0058)
+class UTsAnimNotifyRoleSitDown_C final : public UTsAnimNotifyBase_C
 {
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

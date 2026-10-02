@@ -43,5 +43,23 @@ public:
 };
 DUMPER7_ASSERTS_BP_Cloud_None_C_ReceiveTick;
 
+// Function BP_Cloud_None.BP_Cloud_None_C.Active
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Cloud_None_C_Active final
+{
+public:
+	bool                                          bInstantHide_0;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_Cloud_None_C_Active;
+
+// Function BP_Cloud_None.BP_Cloud_None_C.Hidden
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Cloud_None_C_Hidden final
+{
+public:
+	bool                                          InstantHide;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_Cloud_None_C_Hidden;
+
 }
 

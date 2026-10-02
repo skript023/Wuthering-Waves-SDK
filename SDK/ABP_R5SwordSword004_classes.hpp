@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_R5SwordSword004.ABP_R5SwordSword004_C
-// 0x0000 (0x2650 - 0x2650)
+// 0x0000 (0x2860 - 0x2860)
 class UABP_R5SwordSword004_C final : public UABP_SwordSwordCommon_C
 {
 public:

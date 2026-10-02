@@ -23,8 +23,9 @@ namespace SDK
 // class UDataTable*                       Table                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UObject*                          Object                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const TDelegate<void()>&                OnDataTableChanged                                     (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UKuroDataTableFunctionLibrary::AddOnDataTableChangedDelegate(class UDataTable* Table, class UObject* Object, const TDelegate<void()>& OnDataTableChanged)
+int32 UKuroDataTableFunctionLibrary::AddOnDataTableChangedDelegate(class UDataTable* Table, class UObject* Object, const TDelegate<void()>& OnDataTableChanged)
 {
 	static class UFunction* Func = nullptr;
 
@@ -43,6 +44,8 @@ void UKuroDataTableFunctionLibrary::AddOnDataTableChangedDelegate(class UDataTab
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -97,6 +100,31 @@ void UKuroDataTableFunctionLibrary::RemoveOnDataTableChangedDelegate(class UData
 
 	Parms.Table = Table;
 	Parms.Object = Object;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroPuertsWrapper.KuroDataTableFunctionLibrary.RemoveOnDataTableChangedDelegateById
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// int32                                   HandleId                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroDataTableFunctionLibrary::RemoveOnDataTableChangedDelegateById(int32 HandleId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroDataTableFunctionLibrary", "RemoveOnDataTableChangedDelegateById");
+
+	Params::KuroDataTableFunctionLibrary_RemoveOnDataTableChangedDelegateById Parms{};
+
+	Parms.HandleId = HandleId;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

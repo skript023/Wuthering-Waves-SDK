@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Role_ManipulateThrow.GA_Role_ManipulateThrow_C
-// 0x0010 (0x0598 - 0x0588)
+// 0x0010 (0x05E0 - 0x05D0)
 class UGA_Role_ManipulateThrow_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_ManipulateThrow_C;          // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	int32                                         Entity_Id;                                         // 0x0590(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_ManipulateThrow_C;          // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	int32                                         Entity_Id;                                         // 0x05D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Role_ManipulateThrow(int32 EntryPoint);

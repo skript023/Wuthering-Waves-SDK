@@ -16,19 +16,24 @@
 namespace SDK::Params
 {
 
-// Function BP_BaseVision.BP_BaseVision_C.获取召唤角色
-// 0x0028 (0x0028 - 0x0000)
-struct BP_BaseVision_C_获取召唤角色 final
+// Function BP_BaseVision.BP_BaseVision_C.ExecuteUbergraph_BP_BaseVision
+// 0x0008 (0x0008 - 0x0000)
+struct BP_BaseVision_C_ExecuteUbergraph_BP_BaseVision final
 {
 public:
-	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_GetSummonerEntityId_ReturnValue;          // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class AActor*                                 CallFunc_GetDynamicEntity_ReturnValue;             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BP_BaseVision_C_获取召唤角色;
+DUMPER7_ASSERTS_BP_BaseVision_C_ExecuteUbergraph_BP_BaseVision;
+
+// Function BP_BaseVision.BP_BaseVision_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_BaseVision_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_BaseVision_C_ReceiveTick;
 
 // Function BP_BaseVision.BP_BaseVision_C.获取幻象数据
 // 0x0160 (0x0160 - 0x0000)
@@ -46,24 +51,19 @@ public:
 };
 DUMPER7_ASSERTS_BP_BaseVision_C_获取幻象数据;
 
-// Function BP_BaseVision.BP_BaseVision_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_BaseVision_C_ReceiveTick final
+// Function BP_BaseVision.BP_BaseVision_C.获取召唤角色
+// 0x0028 (0x0028 - 0x0000)
+struct BP_BaseVision_C_获取召唤角色 final
 {
 public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     召唤角色;                                          // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetEntityId_ReturnValue;                  // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_GetSummonerEntityId_ReturnValue;          // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class AActor*                                 CallFunc_GetDynamicEntity_ReturnValue;             // 0x0010(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     K2Node_DynamicCast_AsTs_Base_Character;            // 0x0018(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_BP_BaseVision_C_ReceiveTick;
-
-// Function BP_BaseVision.BP_BaseVision_C.ExecuteUbergraph_BP_BaseVision
-// 0x0008 (0x0008 - 0x0000)
-struct BP_BaseVision_C_ExecuteUbergraph_BP_BaseVision final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_BaseVision_C_ExecuteUbergraph_BP_BaseVision;
+DUMPER7_ASSERTS_BP_BaseVision_C_获取召唤角色;
 
 }
 

@@ -16,34 +16,6 @@
 namespace SDK::Params
 {
 
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ExecuteUbergraph_BP_Miaozhunxian
-// 0x0008 (0x0008 - 0x0000)
-struct BP_Miaozhunxian_C_ExecuteUbergraph_BP_Miaozhunxian final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Miaozhunxian_C_ExecuteUbergraph_BP_Miaozhunxian;
-
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ReceiveTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Miaozhunxian_C_ReceiveTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_Miaozhunxian_C_ReceiveTick;
-
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.Init
-// 0x0001 (0x0001 - 0x0000)
-struct BP_Miaozhunxian_C_Init final
-{
-public:
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_BP_Miaozhunxian_C_Init;
-
 // Function BP_Miaozhunxian.BP_Miaozhunxian_C.UpdateMesh
 // 0x0070 (0x0070 - 0x0000)
 struct BP_Miaozhunxian_C_UpdateMesh final
@@ -67,6 +39,34 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Miaozhunxian_C_UpdateMesh;
+
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.Init
+// 0x0001 (0x0001 - 0x0000)
+struct BP_Miaozhunxian_C_Init final
+{
+public:
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_Miaozhunxian_C_Init;
+
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ReceiveTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Miaozhunxian_C_ReceiveTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Miaozhunxian_C_ReceiveTick;
+
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ExecuteUbergraph_BP_Miaozhunxian
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Miaozhunxian_C_ExecuteUbergraph_BP_Miaozhunxian final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Miaozhunxian_C_ExecuteUbergraph_BP_Miaozhunxian;
 
 }
 

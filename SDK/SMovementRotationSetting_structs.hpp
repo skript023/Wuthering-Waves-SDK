@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SMovementRotationSetting.SMovementRotationSetting
-// 0x0018 (0x0018 - 0x0000)
+// 0x0020 (0x0020 - 0x0000)
 struct FSMovementRotationSetting final
 {
 public:
@@ -25,7 +25,7 @@ public:
 	float                                         最大旋转速度_4_2A78C2A54DD035CB44EF24B26C435670;   // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         最小角度差_6_1201515F4B55190A65300085E598BB55;     // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         最大角度差_8_7A9F8FE04A55339AC02AAEB090EA895C;     // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSBaseCurve                            渐变曲线_12_9C61E50E499F38ACF124D5B988CF40CC;      // 0x0010(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSBaseCurve                            渐变曲线_12_9C61E50E499F38ACF124D5B988CF40CC;      // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSMovementRotationSetting;
 

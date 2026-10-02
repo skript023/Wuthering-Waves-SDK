@@ -14,6 +14,16 @@
 namespace SDK
 {
 
+// Enum KuroNetwork.EKuroNetworkPingResponseStatus
+// NumValues: 0x0004
+enum class EKuroNetworkPingResponseStatus : uint8
+{
+	Success                                  = 0,
+	Error                                    = 1,
+	Miss                                     = 2,
+	EKuroNetworkPingResponseStatus_MAX       = 3,
+};
+
 // Enum KuroNetwork.EHttpMethod
 // NumValues: 0x0003
 enum class EHttpMethod : uint8

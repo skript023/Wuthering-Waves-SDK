@@ -14,27 +14,6 @@
 namespace SDK::Params
 {
 
-// Function TsTaskWander.TsTaskWander_C.ReceiveTickAI
-// 0x0018 (0x0018 - 0x0000)
-struct TsTaskWander_C_ReceiveTickAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         DeltaSeconds;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsTaskWander_C_ReceiveTickAI;
-
-// Function TsTaskWander.TsTaskWander_C.ReceiveExecuteAI
-// 0x0010 (0x0010 - 0x0000)
-struct TsTaskWander_C_ReceiveExecuteAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsTaskWander_C_ReceiveExecuteAI;
-
 // Function TsTaskWander.TsTaskWander_C.ExecuteUbergraph_TsTaskWander
 // 0x0030 (0x0030 - 0x0000)
 struct TsTaskWander_C_ExecuteUbergraph_TsTaskWander final
@@ -49,6 +28,27 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0028(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsTaskWander_C_ExecuteUbergraph_TsTaskWander;
+
+// Function TsTaskWander.TsTaskWander_C.ReceiveExecuteAI
+// 0x0010 (0x0010 - 0x0000)
+struct TsTaskWander_C_ReceiveExecuteAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsTaskWander_C_ReceiveExecuteAI;
+
+// Function TsTaskWander.TsTaskWander_C.ReceiveTickAI
+// 0x0018 (0x0018 - 0x0000)
+struct TsTaskWander_C_ReceiveTickAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsTaskWander_C_ReceiveTickAI;
 
 }
 

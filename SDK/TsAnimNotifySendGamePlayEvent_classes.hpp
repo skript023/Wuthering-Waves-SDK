@@ -10,19 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifySendGamePlayEvent.TsAnimNotifySendGamePlayEvent_C
-// 0x0010 (0x0058 - 0x0048)
-class UTsAnimNotifySendGamePlayEvent_C final : public UKuroAnimNotify
+// 0x0010 (0x0068 - 0x0058)
+class UTsAnimNotifySendGamePlayEvent_C final : public UTsAnimNotifyBase_C
 {
 public:
-	struct FGameplayTag                           事件Tag;                                           // 0x0048(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           事件Tag;                                           // 0x0058(0x000C)(Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

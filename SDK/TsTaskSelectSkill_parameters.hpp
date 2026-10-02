@@ -14,17 +14,6 @@
 namespace SDK::Params
 {
 
-// Function TsTaskSelectSkill.TsTaskSelectSkill_C.ReceiveTickAI
-// 0x0018 (0x0018 - 0x0000)
-struct TsTaskSelectSkill_C_ReceiveTickAI final
-{
-public:
-	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         DeltaSeconds;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsTaskSelectSkill_C_ReceiveTickAI;
-
 // Function TsTaskSelectSkill.TsTaskSelectSkill_C.ExecuteUbergraph_TsTaskSelectSkill
 // 0x0020 (0x0020 - 0x0000)
 struct TsTaskSelectSkill_C_ExecuteUbergraph_TsTaskSelectSkill final
@@ -37,6 +26,17 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsTaskSelectSkill_C_ExecuteUbergraph_TsTaskSelectSkill;
+
+// Function TsTaskSelectSkill.TsTaskSelectSkill_C.ReceiveTickAI
+// 0x0018 (0x0018 - 0x0000)
+struct TsTaskSelectSkill_C_ReceiveTickAI final
+{
+public:
+	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class APawn*                                  ControlledPawn;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         DeltaSeconds;                                      // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsTaskSelectSkill_C_ReceiveTickAI;
 
 }
 

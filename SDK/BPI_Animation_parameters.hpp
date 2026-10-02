@@ -16,23 +16,14 @@
 namespace SDK::Params
 {
 
-// Function BPI_Animation.BPI_Animation_C.InterfaceManipulateInteractDirection
+// Function BPI_Animation.BPI_Animation_C.InterfaceJumpPressed
 // 0x0004 (0x0004 - 0x0000)
-struct BPI_Animation_C_InterfaceManipulateInteractDirection final
+struct BPI_Animation_C_InterfaceJumpPressed final
 {
 public:
-	float                                         角度;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Speed;                                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BPI_Animation_C_InterfaceManipulateInteractDirection;
-
-// Function BPI_Animation.BPI_Animation_C.InterfaceFixHookDirect
-// 0x000C (0x000C - 0x0000)
-struct BPI_Animation_C_InterfaceFixHookDirect final
-{
-public:
-	struct FVector                                Offset;                                            // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPI_Animation_C_InterfaceFixHookDirect;
+DUMPER7_ASSERTS_BPI_Animation_C_InterfaceJumpPressed;
 
 // Function BPI_Animation.BPI_Animation_C.InterfaceSimulateJump
 // 0x0004 (0x0004 - 0x0000)
@@ -43,14 +34,32 @@ public:
 };
 DUMPER7_ASSERTS_BPI_Animation_C_InterfaceSimulateJump;
 
-// Function BPI_Animation.BPI_Animation_C.InterfaceJumpPressed
-// 0x0004 (0x0004 - 0x0000)
-struct BPI_Animation_C_InterfaceJumpPressed final
+// Function BPI_Animation.BPI_Animation_C.InterfaceFixHookDirect
+// 0x000C (0x000C - 0x0000)
+struct BPI_Animation_C_InterfaceFixHookDirect final
 {
 public:
-	float                                         Speed;                                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                Offset;                                            // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_BPI_Animation_C_InterfaceJumpPressed;
+DUMPER7_ASSERTS_BPI_Animation_C_InterfaceFixHookDirect;
+
+// Function BPI_Animation.BPI_Animation_C.InterfaceManipulateInteractDirection
+// 0x0004 (0x0004 - 0x0000)
+struct BPI_Animation_C_InterfaceManipulateInteractDirection final
+{
+public:
+	float                                         角度;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPI_Animation_C_InterfaceManipulateInteractDirection;
+
+// Function BPI_Animation.BPI_Animation_C.InterfaceControlPoint
+// 0x000C (0x000C - 0x0000)
+struct BPI_Animation_C_InterfaceControlPoint final
+{
+public:
+	struct FVector                                Offset;                                            // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPI_Animation_C_InterfaceControlPoint;
 
 }
 

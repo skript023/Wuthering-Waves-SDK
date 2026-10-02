@@ -50,35 +50,29 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayTask;
 
-// Class GameplayTasks.GameplayTask_WaitDelay
-// 0x0028 (0x0098 - 0x0070)
-class UGameplayTask_WaitDelay final : public UGameplayTask
+// Class GameplayTasks.GameplayTask_ClaimResource
+// 0x0000 (0x0070 - 0x0070)
+class UGameplayTask_ClaimResource final : public UGameplayTask
 {
 public:
-	TMulticastInlineDelegate<void()>              OnTick;                                            // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnFinish;                                          // 0x0080(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_90[0x8];                                       // 0x0090(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UGameplayTask_WaitDelay* TaskWaitDelay(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, float Time, const uint8 Priority, bool NeedTick);
-
-	void TickTask(float DeltaTime);
+	static class UGameplayTask_ClaimResource* ClaimResource(TScriptInterface<class IGameplayTaskOwnerInterface> InTaskOwner, TSubclassOf<class UGameplayTaskResource> ResourceClass, const uint8 Priority, const class FName TaskInstanceName);
+	static class UGameplayTask_ClaimResource* ClaimResources(TScriptInterface<class IGameplayTaskOwnerInterface> InTaskOwner, const TArray<TSubclassOf<class UGameplayTaskResource>>& ResourceClasses, const uint8 Priority, const class FName TaskInstanceName);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("GameplayTask_WaitDelay")
+		STATIC_CLASS_IMPL("GameplayTask_ClaimResource")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"GameplayTask_WaitDelay")
+		STATIC_NAME_IMPL(L"GameplayTask_ClaimResource")
 	}
-	static class UGameplayTask_WaitDelay* GetDefaultObj()
+	static class UGameplayTask_ClaimResource* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UGameplayTask_WaitDelay>();
+		return GetDefaultObjImpl<UGameplayTask_ClaimResource>();
 	}
 };
-DUMPER7_ASSERTS_UGameplayTask_WaitDelay;
+DUMPER7_ASSERTS_UGameplayTask_ClaimResource;
 
 // Class GameplayTasks.GameplayTasksComponent
 // 0x0070 (0x0130 - 0x00C0)
@@ -117,6 +111,33 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayTasksComponent;
 
+// Class GameplayTasks.GameplayTaskResource
+// 0x0010 (0x0040 - 0x0030)
+class UGameplayTaskResource : public UObject
+{
+public:
+	int32                                         ManualResourceID;                                  // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int8                                          AutoResourceID;                                    // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bManuallySetID : 1;                                // 0x0038(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameplayTaskResource")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameplayTaskResource")
+	}
+	static class UGameplayTaskResource* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameplayTaskResource>();
+	}
+};
+DUMPER7_ASSERTS_UGameplayTaskResource;
+
 // Class GameplayTasks.GameplayTask_SpawnActor
 // 0x0040 (0x00B0 - 0x0070)
 class UGameplayTask_SpawnActor final : public UGameplayTask
@@ -149,30 +170,6 @@ public:
 };
 DUMPER7_ASSERTS_UGameplayTask_SpawnActor;
 
-// Class GameplayTasks.GameplayTask_ClaimResource
-// 0x0000 (0x0070 - 0x0070)
-class UGameplayTask_ClaimResource final : public UGameplayTask
-{
-public:
-	static class UGameplayTask_ClaimResource* ClaimResource(TScriptInterface<class IGameplayTaskOwnerInterface> InTaskOwner, TSubclassOf<class UGameplayTaskResource> ResourceClass, const uint8 Priority, const class FName TaskInstanceName);
-	static class UGameplayTask_ClaimResource* ClaimResources(TScriptInterface<class IGameplayTaskOwnerInterface> InTaskOwner, const TArray<TSubclassOf<class UGameplayTaskResource>>& ResourceClasses, const uint8 Priority, const class FName TaskInstanceName);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameplayTask_ClaimResource")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameplayTask_ClaimResource")
-	}
-	static class UGameplayTask_ClaimResource* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameplayTask_ClaimResource>();
-	}
-};
-DUMPER7_ASSERTS_UGameplayTask_ClaimResource;
-
 // Class GameplayTasks.GameplayTask_TimeLimitedExecution
 // 0x0030 (0x00A0 - 0x0070)
 class UGameplayTask_TimeLimitedExecution final : public UGameplayTask
@@ -197,6 +194,36 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameplayTask_TimeLimitedExecution;
+
+// Class GameplayTasks.GameplayTask_WaitDelay
+// 0x0028 (0x0098 - 0x0070)
+class UGameplayTask_WaitDelay final : public UGameplayTask
+{
+public:
+	TMulticastInlineDelegate<void()>              OnTick;                                            // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnFinish;                                          // 0x0080(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_90[0x8];                                       // 0x0090(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UGameplayTask_WaitDelay* TaskWaitDelay(TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, float Time, const uint8 Priority, bool NeedTick);
+
+	void TickTask(float DeltaTime);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameplayTask_WaitDelay")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameplayTask_WaitDelay")
+	}
+	static class UGameplayTask_WaitDelay* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGameplayTask_WaitDelay>();
+	}
+};
+DUMPER7_ASSERTS_UGameplayTask_WaitDelay;
 
 // Class GameplayTasks.GameplayTaskOwnerInterface
 // 0x0000 (0x0000 - 0x0000)
@@ -226,33 +253,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IGameplayTaskOwnerInterface;
-
-// Class GameplayTasks.GameplayTaskResource
-// 0x0010 (0x0040 - 0x0030)
-class UGameplayTaskResource : public UObject
-{
-public:
-	int32                                         ManualResourceID;                                  // 0x0030(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int8                                          AutoResourceID;                                    // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bManuallySetID : 1;                                // 0x0038(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameplayTaskResource")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameplayTaskResource")
-	}
-	static class UGameplayTaskResource* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGameplayTaskResource>();
-	}
-};
-DUMPER7_ASSERTS_UGameplayTaskResource;
 
 }
 

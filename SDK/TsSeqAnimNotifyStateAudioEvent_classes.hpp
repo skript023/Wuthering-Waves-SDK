@@ -11,31 +11,30 @@
 #include "Basic.hpp"
 
 #include "KuroAudio_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsSeqAnimNotifyStateAudioEvent.TsSeqAnimNotifyStateAudioEvent_C
-// 0x00C8 (0x0110 - 0x0048)
-class UTsSeqAnimNotifyStateAudioEvent_C final : public UKuroAnimNotifyState
+// 0x0078 (0x00D0 - 0x0058)
+class UTsSeqAnimNotifyStateAudioEvent_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	TSoftObjectPtr<class UAkAudioEvent>           AudioEvent;                                        // 0x0048(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	class FName                                   SocketName;                                        // 0x0078(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Follow;                                            // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          KeepAlive;                                         // 0x0085(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_86[0x2];                                       // 0x0086(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         FadeDuration;                                      // 0x0088(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EAudioFadeCurve                               FadeCurve;                                         // 0x008C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8D[0x3];                                       // 0x008D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UAkAudioEvent>           TrailingAudioEvent;                                // 0x0090(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TMap<class AActor*, float>                    HandleMap;                                         // 0x00C0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate, Transient, DisableEditOnInstance)
+	TSoftObjectPtr<class UAkAudioEvent>           AudioEvent;                                        // 0x0058(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class FName                                   SocketName;                                        // 0x0088(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Follow;                                            // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          KeepAlive;                                         // 0x0095(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_96[0x2];                                       // 0x0096(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         FadeDuration;                                      // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EAudioFadeCurve                               FadeCurve;                                         // 0x009C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9D[0x3];                                       // 0x009D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UAkAudioEvent>           TrailingAudioEvent;                                // 0x00A0(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
 
 public:
-	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
+	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 
 	class FString GetNotifyName() const;
 

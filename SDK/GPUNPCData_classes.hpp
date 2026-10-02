@@ -17,23 +17,24 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GPUNPCData.GPUNPCData_C
-// 0x0018 (0x0060 - 0x0048)
+// 0x0020 (0x0068 - 0x0048)
 class UGPUNPCData_C final : public UBakedBoneInstanceDataAsset
 {
 public:
 	class USkeletalMesh*                          SkeletalMesh;                                      // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UPD_NpcSetupData_C*                     NpcSetupData;                                      // 0x0050(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UBakedBoneTexture2D*                    Combined_Texture;                                  // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBakedBoneMontageInfoAsset*             BakedBoneMontageInfoAsset;                         // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void 清空非合批资源();
-	void HasCombinedBakedBoneTexture(bool* Result);
-	void GetTotalNumFrames(int32* OutTotalNumFrames);
-	void GetMaxNumTracks(int32* OutMaxNumTracks);
-	void GetMeshesFromNPCSetupData(class USkeletalMesh** OutMainMesh, TArray<class USkeletalMesh*>* OutSubMeshes);
-	void HasSetSkeletalMesh(bool* HasSet);
-	void 生成MainMesh和SubMeshes(class USkeletalMesh** OutMainMesh, TArray<class USkeletalMesh*>* OutSubMeshes);
 	void 随机起始动画时间噪声贴图(class UTexture2D** OutNoiseTex, int32* OutNoiseIndex);
+	void 生成MainMesh和SubMeshes(class USkeletalMesh** OutMainMesh, TArray<class USkeletalMesh*>* OutSubMeshes);
+	void HasSetSkeletalMesh(bool* HasSet);
+	void GetMeshesFromNPCSetupData(class USkeletalMesh** OutMainMesh, TArray<class USkeletalMesh*>* OutSubMeshes);
+	void GetMaxNumTracks(int32* OutMaxNumTracks);
+	void GetTotalNumFrames(int32* OutTotalNumFrames);
+	void HasCombinedBakedBoneTexture(bool* Result);
+	void 清空非合批资源();
 
 public:
 	static class UClass* StaticClass()

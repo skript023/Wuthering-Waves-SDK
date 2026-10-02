@@ -17,6 +17,40 @@
 namespace SDK
 {
 
+// Function PD_NpcSetupData.PD_NpcSetupData_C.ExecuteUbergraph_PD_NpcSetupData
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPD_NpcSetupData_C::ExecuteUbergraph_PD_NpcSetupData(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "ExecuteUbergraph_PD_NpcSetupData");
+
+	Params::PD_NpcSetupData_C_ExecuteUbergraph_PD_NpcSetupData Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function PD_NpcSetupData.PD_NpcSetupData_C.OnPreSave
+// (Event, Public, BlueprintEvent)
+
+void UPD_NpcSetupData_C::OnPreSave()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "OnPreSave");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function PD_NpcSetupData.PD_NpcSetupData_C.IsEmpty
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -203,6 +237,128 @@ void UPD_NpcSetupData_C::GetAllPartMaterials(TArray<class UMaterialInstance*>* R
 
 	if (Results != nullptr)
 		*Results = std::move(Parms.Results);
+}
+
+
+// Function PD_NpcSetupData.PD_NpcSetupData_C.Set Override
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UPD_NpcSetupData_C::Set_Override()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "Set Override");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PD_NpcSetupData.PD_NpcSetupData_C.Set Single Override
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USkeletalMesh*&                   skel_mesh                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInstance*&               mat                                                    (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<class UMaterialInstance*>&       mat_extra                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UPD_NpcSetupData_C::Set_Single_Override(class USkeletalMesh*& skel_mesh, class UMaterialInstance*& mat, TArray<class UMaterialInstance*>& mat_extra)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "Set Single Override");
+
+	Params::PD_NpcSetupData_C_Set_Single_Override Parms{};
+
+	Parms.skel_mesh = skel_mesh;
+	Parms.mat = mat;
+	Parms.mat_extra = std::move(mat_extra);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	skel_mesh = Parms.skel_mesh;
+	mat = Parms.mat;
+	mat_extra = std::move(Parms.mat_extra);
+}
+
+
+// Function PD_NpcSetupData.PD_NpcSetupData_C.FixNPCOutline
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void UPD_NpcSetupData_C::FixNPCOutline()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "FixNPCOutline");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PD_NpcSetupData.PD_NpcSetupData_C.GetOutlineReference
+// (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bSeq                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class USkeletalMesh*                    Skel                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMaterialInterface*               mat                                                    (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// TArray<class UMaterialInterface*>&      mat_extra                                              (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<class UMaterialInterface*>&      OutOLMat                                               (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UPD_NpcSetupData_C::GetOutlineReference(bool bSeq, class USkeletalMesh* Skel, class UMaterialInterface* mat, TArray<class UMaterialInterface*>& mat_extra, TArray<class UMaterialInterface*>& OutOLMat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "GetOutlineReference");
+
+	Params::PD_NpcSetupData_C_GetOutlineReference Parms{};
+
+	Parms.bSeq = bSeq;
+	Parms.Skel = Skel;
+	Parms.mat = mat;
+	Parms.mat_extra = std::move(mat_extra);
+	Parms.OutOLMat = std::move(OutOLMat);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	mat_extra = std::move(Parms.mat_extra);
+	OutOLMat = std::move(Parms.OutOLMat);
+}
+
+
+// Function PD_NpcSetupData.PD_NpcSetupData_C.SetOLReference
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UPD_NpcSetupData_C::SetOLReference()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "SetOLReference");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function PD_NpcSetupData.PD_NpcSetupData_C.IsSeq
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool*                                   bSeq                                                   (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UPD_NpcSetupData_C::IsSeq(bool* bSeq)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PD_NpcSetupData_C", "IsSeq");
+
+	Params::PD_NpcSetupData_C_IsSeq Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (bSeq != nullptr)
+		*bSeq = Parms.bSeq;
 }
 
 }

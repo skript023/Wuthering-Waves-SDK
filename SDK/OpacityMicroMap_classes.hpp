@@ -10,10 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "DeveloperSettings_classes.hpp"
 #include "OpacityMicroMap_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 
 
 namespace SDK
@@ -123,7 +124,7 @@ public:
 DUMPER7_ASSERTS_UOMMBlueprintLibrary;
 
 // Class OpacityMicroMap.OpacityMicromapPluginSettings
-// 0x0020 (0x0068 - 0x0048)
+// 0x0030 (0x0078 - 0x0048)
 class UOpacityMicromapPluginSettings final : public UDeveloperSettings
 {
 public:
@@ -134,7 +135,12 @@ public:
 	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FOpacityMaskTextureDesc>        OpacityMaskTextureParams;                          // 0x0050(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 	int32                                         OmmCookMaxLod;                                     // 0x0060(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EOpacityMicromapFormat                        OmmCookFormat;                                     // 0x0064(0x0002)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_66[0x2];                                       // 0x0066(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         OmmCookMaxKBPerLOD;                                // 0x0068(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         OmmCookDynamicSubdivisionScale;                    // 0x006C(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OmmCookSubdivisionLevel;                           // 0x0070(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

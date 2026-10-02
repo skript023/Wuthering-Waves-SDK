@@ -56,6 +56,7 @@ public:
 
 public:
 	void ExecuteUbergraph_TsUiNavigationBehaviorListener(int32 EntryPoint);
+	void OnPreDestroyBP();
 	void OnDisableBP();
 	void OnEnableBP();
 	void StartBP();
@@ -63,7 +64,6 @@ public:
 	void OnNotifyNavigationEnterBP(class ULGUIPointerEventData* eventData);
 	void OnNotifyNotInteractiveBP();
 	void OnNotifyInteractiveBP();
-	void OnDestroyBP();
 	void AwakeBP();
 	bool OnCheckCanSetNavigationBP();
 	bool OnCheckLoopScrollChangeNavigationBP();

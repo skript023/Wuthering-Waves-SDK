@@ -11,55 +11,55 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "GA_Base_classes.hpp"
 #include "SVisionData_structs.hpp"
+#include "GA_Base_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C
-// 0x0100 (0x0688 - 0x0588)
+// 0x0100 (0x06D0 - 0x05D0)
 class UGA_Role_Bianshen_Level_Youyidie_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_Bianshen_Level_Youyidie_C;  // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     角色;                                              // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class ABP_BaseVision_C*                       幻象;                                              // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	struct FSVisionData                           幻象数据;                                          // 0x05A0(0x0098)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference, HasGetValueTypeHash)
-	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0638(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         幻象ID;                                            // 0x0640(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         幻象Level;                                         // 0x0644(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         召唤实体ID;                                        // 0x0648(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          召唤成功;                                          // 0x064C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_64D[0x3];                                      // 0x064D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAbilityTask_WaitGameplayTagRemoved*    异步任务_变身结束;                                 // 0x0650(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAbilityTask_WaitDelay*                 异步任务_隐藏玩家;                                 // 0x0658(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          空中能否释放;                                      // 0x0660(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          执行空中释放;                                      // 0x0661(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_662[0x2];                                      // 0x0662(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         MaterialDataID;                                    // 0x0664(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          混出结束;                                          // 0x0668(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_669[0x7];                                      // 0x0669(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                材质_渐变消失;                                     // 0x0670(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UObject*                                材质_渐变显示;                                     // 0x0678(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int64                                         ServerID;                                          // 0x0680(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Role_Bianshen_Level_Youyidie_C;  // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     角色;                                              // 0x05D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ABP_BaseVision_C*                       幻象;                                              // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	struct FSVisionData                           幻象数据;                                          // 0x05E8(0x0098)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference, HasGetValueTypeHash)
+	class UBaseAbilitySystemComponent*            AbilitySystemComponent;                            // 0x0680(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         幻象ID;                                            // 0x0688(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         幻象Level;                                         // 0x068C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         召唤实体ID;                                        // 0x0690(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          召唤成功;                                          // 0x0694(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_695[0x3];                                      // 0x0695(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAbilityTask_WaitGameplayTagRemoved*    异步任务_变身结束;                                 // 0x0698(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAbilityTask_WaitDelay*                 异步任务_隐藏玩家;                                 // 0x06A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          空中能否释放;                                      // 0x06A8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          执行空中释放;                                      // 0x06A9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6AA[0x2];                                      // 0x06AA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         MaterialDataID;                                    // 0x06AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          混出结束;                                          // 0x06B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_6B1[0x7];                                      // 0x06B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                材质_渐变消失;                                     // 0x06B8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                材质_渐变显示;                                     // 0x06C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int64                                         ServerID;                                          // 0x06C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Role_Bianshen_Level_Youyidie(int32 EntryPoint);
 	void 当新增加实体(int32 实体ID, class AActor* Entity);
 	void K2_OnEndAbility(bool bWasCancelled);
 	void K2_ActivateAbility();
-	void OnCompleted_5D118C384AE61F1C80292E81DEEC160B();
-	void OnBlendOut_5D118C384AE61F1C80292E81DEEC160B();
-	void OnInterrupted_5D118C384AE61F1C80292E81DEEC160B();
-	void OnCancelled_5D118C384AE61F1C80292E81DEEC160B();
-	void OnTick_5D118C384AE61F1C80292E81DEEC160B();
 	void OnCompleted_5D118C384AE61F1C80292E81908403EF();
 	void OnBlendOut_5D118C384AE61F1C80292E81908403EF();
 	void OnInterrupted_5D118C384AE61F1C80292E81908403EF();
 	void OnCancelled_5D118C384AE61F1C80292E81908403EF();
 	void OnTick_5D118C384AE61F1C80292E81908403EF();
+	void OnCompleted_5D118C384AE61F1C80292E81DEEC160B();
+	void OnBlendOut_5D118C384AE61F1C80292E81DEEC160B();
+	void OnInterrupted_5D118C384AE61F1C80292E81DEEC160B();
+	void OnCancelled_5D118C384AE61F1C80292E81DEEC160B();
+	void OnTick_5D118C384AE61F1C80292E81DEEC160B();
 	void OnFinish_A56FA84F4FE577F6C95DA6813551A97C();
 	void Removed_34F9BAE944891AC1C495D9AB9F1436CD(const struct FGameplayTag& Tag);
 	void Added_21071CB943CD992BF8EFD6A3C3F21C2A(const struct FGameplayTag& Tag);

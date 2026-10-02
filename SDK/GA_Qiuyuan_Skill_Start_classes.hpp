@@ -18,17 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Qiuyuan_Skill_Start.GA_Qiuyuan_Skill_Start_C
-// 0x0018 (0x05A0 - 0x0588)
+// 0x0018 (0x05E8 - 0x05D0)
 class UGA_Qiuyuan_Skill_Start_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Qiuyuan_Skill_Start_C;           // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          已到阈值;                                          // 0x0590(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          已松开;                                            // 0x0591(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_592[0x2];                                      // 0x0592(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BlockTime;                                         // 0x0594(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         初始能量值;                                        // 0x0598(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          是否GP成功;                                        // 0x059C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Qiuyuan_Skill_Start_C;           // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          已到阈值;                                          // 0x05D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          已松开;                                            // 0x05D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5DA[0x2];                                      // 0x05DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BlockTime;                                         // 0x05DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         初始能量值;                                        // 0x05E0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          是否GP成功;                                        // 0x05E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_GA_Qiuyuan_Skill_Start(int32 EntryPoint);

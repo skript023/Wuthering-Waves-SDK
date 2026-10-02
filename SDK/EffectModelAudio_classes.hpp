@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelAudio.EffectModelAudio_C
-// 0x0000 (0x0088 - 0x0088)
+// 0x0000 (0x0090 - 0x0090)
 class UEffectModelAudio_C final : public UEffectModelAudio
 {
 public:

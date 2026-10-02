@@ -17,6 +17,16 @@
 namespace SDK
 {
 
+// Enum KuroGAS.ERotateComponentAction
+// NumValues: 0x0004
+enum class ERotateComponentAction : uint8
+{
+	Move                                     = 0,
+	Stop                                     = 1,
+	Return                                   = 2,
+	ERotateComponentAction_MAX               = 3,
+};
+
 // Enum KuroGAS.EIntervalLockType
 // NumValues: 0x0005
 enum class EIntervalLockType : uint8

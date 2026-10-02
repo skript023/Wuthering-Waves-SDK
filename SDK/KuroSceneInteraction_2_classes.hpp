@@ -16,25 +16,25 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass KuroSceneInteraction_2.TPrefab_SM_Gat_50A_C
+// BlueprintGeneratedClass KuroSceneInteraction_2.TPrefab_SM_Pro_RailShip_C
 // 0x0000 (0x02B8 - 0x02B8)
-class KuroSceneInteraction_2::ATPrefab_SM_Gat_50A_C final : public ALevelScriptActor
+class KuroSceneInteraction_2::ATPrefab_SM_Pro_RailShip_C final : public ALevelScriptActor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_2.TPrefab_SM_Gat_50A_C")
+		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_2.TPrefab_SM_Pro_RailShip_C")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"TPrefab_SM_Gat_50A_C")
+		STATIC_NAME_IMPL(L"TPrefab_SM_Pro_RailShip_C")
 	}
-	static class KuroSceneInteraction_2::ATPrefab_SM_Gat_50A_C* GetDefaultObj()
+	static class KuroSceneInteraction_2::ATPrefab_SM_Pro_RailShip_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<KuroSceneInteraction_2::ATPrefab_SM_Gat_50A_C>();
+		return GetDefaultObjImpl<KuroSceneInteraction_2::ATPrefab_SM_Pro_RailShip_C>();
 	}
 };
-DUMPER7_ASSERTS_KuroSceneInteraction_2__ATPrefab_SM_Gat_50A_C;
+DUMPER7_ASSERTS_KuroSceneInteraction_2__ATPrefab_SM_Pro_RailShip_C;
 
 }
 

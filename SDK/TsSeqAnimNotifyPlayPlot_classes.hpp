@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsSeqAnimNotifyPlayPlot.TsSeqAnimNotifyPlayPlot_C
-// 0x0010 (0x0058 - 0x0048)
-class UTsSeqAnimNotifyPlayPlot_C final : public UKuroAnimNotify
+// 0x0010 (0x0068 - 0x0058)
+class UTsSeqAnimNotifyPlayPlot_C final : public UTsAnimNotifyBase_C
 {
 public:
-	class FString                                 PlotName;                                          // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 PlotName;                                          // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

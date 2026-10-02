@@ -10,18 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "GameplayTags_structs.hpp"
 #include "SInputAction_structs.hpp"
-#include "SBornTransform_structs.hpp"
-#include "Engine_classes.hpp"
+#include "GameplayTags_structs.hpp"
 #include "SLockOnFollowShooter_structs.hpp"
+#include "SBornTransform_structs.hpp"
+#include "SFollowShooterTagConfig_structs.hpp"
+#include "Engine_classes.hpp"
+#include "SFollowShooterEnablePriorityInfo_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_FollowShooterConfig.BP_FollowShooterConfig_C
-// 0x00E8 (0x0120 - 0x0038)
+// 0x0250 (0x0288 - 0x0038)
 class UBP_FollowShooterConfig_C final : public UPrimaryDataAsset
 {
 public:
@@ -34,9 +36,17 @@ public:
 	TArray<struct FGameplayTag>                   DisableWhenCurrentRoleHasTags;                     // 0x0070(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<struct FGameplayTag, struct FGameplayTagContainer> AddTagsWhenCurrentRoleHasAnyTags;        // 0x0080(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         DelayDisappearMillisecond;                         // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSLockOnFollowShooter                  LockOnConfig;                                      // 0x00D4(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         AimType;                                           // 0x00F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSBornTransform                        BornTransform;                                     // 0x00F8(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	uint8                                         Pad_D4[0x4];                                       // 0x00D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSLockOnFollowShooter                  LockOnConfig;                                      // 0x00D8(0x0128)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	int32                                         AimType;                                           // 0x0200(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_204[0x4];                                      // 0x0204(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 SightResId;                                        // 0x0208(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FSBornTransform                        BornTransform;                                     // 0x0218(0x0028)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TArray<struct FSFollowShooterTagConfig>       AddTagByCheckCurrentRoleTag;                       // 0x0240(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          SetEntityEnableAfterMaterialController;            // 0x0250(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_251[0x7];                                      // 0x0251(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  DisableInputWhenHasTags;                           // 0x0258(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FSFollowShooterEnablePriorityInfo> EnablePriority;                                 // 0x0278(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

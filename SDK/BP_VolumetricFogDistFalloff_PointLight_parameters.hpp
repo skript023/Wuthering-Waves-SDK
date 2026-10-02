@@ -85,5 +85,14 @@ public:
 };
 DUMPER7_ASSERTS_BP_VolumetricFogDistFalloff_PointLight_C_PointFunction;
 
+// Function BP_VolumetricFogDistFalloff_PointLight.BP_VolumetricFogDistFalloff_PointLight_C.GetPlacementSortOrder
+// 0x0004 (0x0004 - 0x0000)
+struct BP_VolumetricFogDistFalloff_PointLight_C_GetPlacementSortOrder final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_VolumetricFogDistFalloff_PointLight_C_GetPlacementSortOrder;
+
 }
 

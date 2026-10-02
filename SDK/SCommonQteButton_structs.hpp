@@ -11,27 +11,31 @@
 #include "Basic.hpp"
 
 #include "LGUI_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "ECommonQteInputAction_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "ECommonQteActionType_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SCommonQteButton.SCommonQteButton
-// 0x0058 (0x0058 - 0x0000)
+// 0x0068 (0x0068 - 0x0000)
 struct FSCommonQteButton final
 {
 public:
-	ECommonQteInputAction                         Action_22_BEE201624F8C42CD7E3068B4405D79DC;        // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class ULGUITexturePackerSpriteData> Icon_12_9597A3ED443AEFEB19F47F8EDCB774E4;     // 0x0008(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	EUIAnchorHorizontalAlign                      AnchorHAlign_13_4BBFAE1242753435D28254BFDF81A27D;  // 0x0038(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EUIAnchorVerticalAlign                        AnchorVAlign_14_6C94AAEE40FD1863900CC6B2F6F9A2E2;  // 0x0039(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_3A[0x2];                                       // 0x003A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              AnchorOffset_15_082F5366466B8444EA863FAF524C86B1;  // 0x003C(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_44[0x4];                                       // 0x0044(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 TextId_34_BF11F2F9469D1ED44BCA89866567C6A5;        // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	ECommonQteActionType                          ActionType_44_D195907A415BD045A5DBCA994F852B66;    // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ActionId_37_A4742B6D4C0B636E9040F3AB194A19AA;      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECommonQteInputAction                         Action_22_BEE201624F8C42CD7E3068B4405D79DC;        // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class ULGUITexturePackerSpriteData> Icon_12_9597A3ED443AEFEB19F47F8EDCB774E4;     // 0x0010(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	EUIAnchorHorizontalAlign                      AnchorHAlign_13_4BBFAE1242753435D28254BFDF81A27D;  // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EUIAnchorVerticalAlign                        AnchorVAlign_14_6C94AAEE40FD1863900CC6B2F6F9A2E2;  // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_42[0x2];                                       // 0x0042(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              AnchorOffset_15_082F5366466B8444EA863FAF524C86B1;  // 0x0044(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               AnchorRotation_41_AEEE0C52409FC345B59EC2ABBB720036; // 0x004C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class FString                                 TextId_34_BF11F2F9469D1ED44BCA89866567C6A5;        // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCommonQteButton;
 

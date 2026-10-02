@@ -17,12 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SM_ConditionTimer.BP_SM_ConditionTimer_C
-// 0x0008 (0x0040 - 0x0038)
+// 0x0010 (0x0048 - 0x0038)
 class UBP_SM_ConditionTimer_C final : public UASMConditionBase
 {
 public:
 	int32                                         MinTime;                                           // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         MaxTime;                                           // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsClient;                                          // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()

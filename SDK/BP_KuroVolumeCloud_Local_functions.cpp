@@ -37,6 +37,20 @@ void ABP_KuroVolumeCloud_Local_C::ExecuteUbergraph_BP_KuroVolumeCloud_Local(int3
 }
 
 
+// Function BP_KuroVolumeCloud_Local.BP_KuroVolumeCloud_Local_C.EditorTick
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Local_C::EditorTick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Local_C", "EditorTick");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_KuroVolumeCloud_Local.BP_KuroVolumeCloud_Local_C.BeforeCookForPC
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -142,6 +156,20 @@ void ABP_KuroVolumeCloud_Local_C::UserConstructionScript()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BP_KuroVolumeCloud_Local_C", "UserConstructionScript");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_KuroVolumeCloud_Local.BP_KuroVolumeCloud_Local_C.Update
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_KuroVolumeCloud_Local_C::Update()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_KuroVolumeCloud_Local_C", "Update");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

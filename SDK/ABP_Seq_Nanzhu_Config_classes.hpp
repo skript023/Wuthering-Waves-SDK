@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Seq_Nanzhu_Config.ABP_Seq_Nanzhu_Config_C
-// 0x0000 (0x31A0 - 0x31A0)
+// 0x0000 (0x34B0 - 0x34B0)
 class UABP_Seq_Nanzhu_Config_C final : public UABP_BaseRole_Seq_V2_C
 {
 public:

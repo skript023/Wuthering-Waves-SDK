@@ -37,6 +37,84 @@ void ABP_BaseRole_Seq_V2_C::ExecuteUbergraph_BP_BaseRole_Seq_V2(int32 EntryPoint
 }
 
 
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.ClearSeqCostumeState
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_BaseRole_Seq_V2_C::ClearSeqCostumeState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "ClearSeqCostumeState");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.ApplySeqCostumeState
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   State                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::ApplySeqCostumeState(int32 State)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "ApplySeqCostumeState");
+
+	Params::BP_BaseRole_Seq_V2_C_ApplySeqCostumeState Parms{};
+
+	Parms.State = State;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.EndSeqSwitchPose
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           To                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::EndSeqSwitchPose(class AActor* To)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "EndSeqSwitchPose");
+
+	Params::BP_BaseRole_Seq_V2_C_EndSeqSwitchPose Parms{};
+
+	Parms.To = To;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.BeginSeqSwitchPose
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           From                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           To                                                     (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   SwitchTime                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::BeginSeqSwitchPose(class AActor* From, class AActor* To, float SwitchTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "BeginSeqSwitchPose");
+
+	Params::BP_BaseRole_Seq_V2_C_BeginSeqSwitchPose Parms{};
+
+	Parms.From = From;
+	Parms.To = To;
+	Parms.SwitchTime = SwitchTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.ReceiveDestroyed
 // (Event, Public, BlueprintEvent)
 
@@ -581,6 +659,115 @@ void ABP_BaseRole_Seq_V2_C::GetSeqAudio(class USeqAudio_Seq_V2_C** SeqAudio)
 
 	if (SeqAudio != nullptr)
 		*SeqAudio = Parms.SeqAudio;
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqBindingTag
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName*                            Tag                                                    (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::GetSeqBindingTag(class FName* Tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "GetSeqBindingTag");
+
+	Params::BP_BaseRole_Seq_V2_C_GetSeqBindingTag Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Tag != nullptr)
+		*Tag = Parms.Tag;
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqBlendMesh
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class USkeletalMeshComponent**          Mesh                                                   (Parm, OutParm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::GetSeqBlendMesh(class USkeletalMeshComponent** Mesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "GetSeqBlendMesh");
+
+	Params::BP_BaseRole_Seq_V2_C_GetSeqBlendMesh Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (Mesh != nullptr)
+		*Mesh = Parms.Mesh;
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqMouthAnimInstance
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAnimInstance**                   AnimInstance                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::GetSeqMouthAnimInstance(class UAnimInstance** AnimInstance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "GetSeqMouthAnimInstance");
+
+	Params::BP_BaseRole_Seq_V2_C_GetSeqMouthAnimInstance Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimInstance != nullptr)
+		*AnimInstance = Parms.AnimInstance;
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqTalkId
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32*                                  TalkID_0                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  TalkID_SP_0                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::GetSeqTalkId(int32* TalkID_0, int32* TalkID_SP_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "GetSeqTalkId");
+
+	Params::BP_BaseRole_Seq_V2_C_GetSeqTalkId Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TalkID_0 != nullptr)
+		*TalkID_0 = Parms.TalkID_0;
+
+	if (TalkID_SP_0 != nullptr)
+		*TalkID_SP_0 = Parms.TalkID_SP_0;
+}
+
+
+// Function BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C.GetSeqMeshRef
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TSoftObjectPtr<class USkeletalMesh>*    MeshRef_0                                              (Parm, OutParm, HasGetValueTypeHash)
+
+void ABP_BaseRole_Seq_V2_C::GetSeqMeshRef(TSoftObjectPtr<class USkeletalMesh>* MeshRef_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_BaseRole_Seq_V2_C", "GetSeqMeshRef");
+
+	Params::BP_BaseRole_Seq_V2_C_GetSeqMeshRef Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (MeshRef_0 != nullptr)
+		*MeshRef_0 = Parms.MeshRef_0;
 }
 
 }

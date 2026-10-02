@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // UserDefinedStruct SSkillTarget.SSkillTarget
-// 0x0020 (0x0020 - 0x0000)
+// 0x0028 (0x0028 - 0x0000)
 struct FSSkillTarget final
 {
 public:
@@ -29,6 +29,7 @@ public:
 	bool                                          GlobalTarget_35_C8F0C6EE4E19DE7DD23820B99040632C;  // 0x0008(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 BlackboardKey_39_4B3BDD654E196A674D080AB04ADE7C0A; // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	float                                         SkillTargetRemainTime_42_8895E5CB41289FAAAAF2DF9791A19C1F; // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSSkillTarget;
 

@@ -29,9 +29,7 @@ public:
 	static void PlayKuroForceFeedback(class UKuroForceFeedbackEffect* forceFeedbackEffect, class FName tag, bool bLooping, bool bIgnoreTimeDilation, bool bPlayWhilePaused, class UObject* __WorldContext);
 	static void StopKuroForceFeedback(class UKuroForceFeedbackEffect* forceFeedbackEffect1, class FName tag1, class UObject* __WorldContext);
 	static void BpInputReceiveEndPlay(int32 entityId, class UObject* __WorldContext);
-	static void SetUseControllerRotationPitch(int32 entityId, bool value, class UObject* __WorldContext);
 	static void SetUseControllerRotationYaw(int32 entityId, bool value, class UObject* __WorldContext);
-	static void SetUseControllerRotationRoll(int32 entityId, bool value, class UObject* __WorldContext);
 	static void SetBpInputComponent(int32 entityId, class UBP_InputBase_C* bpInputComp, class UObject* __WorldContext);
 
 public:

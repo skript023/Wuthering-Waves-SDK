@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_PhysicInteractProxy.BP_PhysicInteractProxy_C
-// 0x0008 (0x0398 - 0x0390)
+// 0x0008 (0x0438 - 0x0430)
 class ABP_PhysicInteractProxy_C final : public AKuroGameBudgetBlueprintActor
 {
 public:
-	class UCapsuleComponent*                      Capsule;                                           // 0x0390(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCapsuleComponent*                      Capsule;                                           // 0x0430(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void SetRadiusAndHeight(float radius, float height);

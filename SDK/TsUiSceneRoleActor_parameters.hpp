@@ -14,14 +14,15 @@
 namespace SDK::Params
 {
 
-// Function TsUiSceneRoleActor.TsUiSceneRoleActor_C.IsShowUiWepaonEffect
-// 0x0001 (0x0001 - 0x0000)
-struct TsUiSceneRoleActor_C_IsShowUiWepaonEffect final
+// Function TsUiSceneRoleActor.TsUiSceneRoleActor_C.ExecuteUbergraph_TsUiSceneRoleActor
+// 0x0008 (0x0008 - 0x0000)
+struct TsUiSceneRoleActor_C_ExecuteUbergraph_TsUiSceneRoleActor final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_TsUiSceneRoleActor_C_IsShowUiWepaonEffect;
+DUMPER7_ASSERTS_TsUiSceneRoleActor_C_ExecuteUbergraph_TsUiSceneRoleActor;
 
 // Function TsUiSceneRoleActor.TsUiSceneRoleActor_C.ReceiveTick
 // 0x0004 (0x0004 - 0x0000)
@@ -32,15 +33,14 @@ public:
 };
 DUMPER7_ASSERTS_TsUiSceneRoleActor_C_ReceiveTick;
 
-// Function TsUiSceneRoleActor.TsUiSceneRoleActor_C.ExecuteUbergraph_TsUiSceneRoleActor
-// 0x0008 (0x0008 - 0x0000)
-struct TsUiSceneRoleActor_C_ExecuteUbergraph_TsUiSceneRoleActor final
+// Function TsUiSceneRoleActor.TsUiSceneRoleActor_C.IsShowUiWepaonEffect
+// 0x0001 (0x0001 - 0x0000)
+struct TsUiSceneRoleActor_C_IsShowUiWepaonEffect final
 {
 public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
-DUMPER7_ASSERTS_TsUiSceneRoleActor_C_ExecuteUbergraph_TsUiSceneRoleActor;
+DUMPER7_ASSERTS_TsUiSceneRoleActor_C_IsShowUiWepaonEffect;
 
 }
 

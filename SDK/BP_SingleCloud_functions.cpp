@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function BP_SingleCloud.BP_SingleCloud_C.UpdateCloudRotation
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_SingleCloud_C::UpdateCloudRotation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SingleCloud_C", "UpdateCloudRotation");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_SingleCloud.BP_SingleCloud_C.UpdateDistanceFade
 // (Public, BlueprintCallable, BlueprintEvent)
 
@@ -164,6 +150,20 @@ void ABP_SingleCloud_C::ExecuteUbergraph_BP_SingleCloud(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_SingleCloud.BP_SingleCloud_C.UpdateCloudRotation
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_SingleCloud_C::UpdateCloudRotation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SingleCloud_C", "UpdateCloudRotation");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

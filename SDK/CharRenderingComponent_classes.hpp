@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "ECharacterDitherType_structs.hpp"
+#include "ECharacterBodySpecifiedType_structs.hpp"
+#include "ECharacterControllerCaseType_structs.hpp"
 #include "Engine_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_classes.hpp"
-#include "ECharacterBodySpecifiedType_structs.hpp"
-#include "ECharacterControllerCaseType_structs.hpp"
+#include "ECharacterDitherType_structs.hpp"
 #include "ECharacterSlotSpecifiedType_structs.hpp"
 #include "ECharacterRenderingType_structs.hpp"
 
@@ -24,7 +24,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass CharRenderingComponent.CharRenderingComponent_C
-// 0x0020 (0x00F8 - 0x00D8)
+// 0x0038 (0x0110 - 0x00D8)
 class UCharRenderingComponent_C final : public UKuroCharRenderingComponent
 {
 public:
@@ -32,6 +32,13 @@ public:
 	class UPDA_InteractionPlayerConfig_C*         InteractionConfig;                                 // 0x00E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UPDA_DecalShadowConfig_C*               DecalShadowConfig;                                 // 0x00E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          MonsterUseBodyEffect;                              // 0x00F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          UseProxy;                                          // 0x00F1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F2[0x2];                                       // 0x00F2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         DitherRemap;                                       // 0x00F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class UMaterialInterface*>             ProxyMaterialsOverride;                            // 0x00F8(0x0010)(Edit, BlueprintVisible)
+	bool                                          ProxyRenderInMainPass;                             // 0x0108(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ProxyRenderShadow;                                 // 0x0109(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          ProxyRenderTrail;                                  // 0x010A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_CharRenderingComponent(int32 EntryPoint);
@@ -70,7 +77,6 @@ public:
 	void RemoveComponentFromDecalShadow(const class FString& name);
 	void ReceiveSeqTick(float deltaSeconds);
 	void SetLogicOwner(class AActor* owner);
-	float GetTimeDilation();
 	void SetRealtimeShadowEnabled(bool enable);
 	void SetDecalShadowOpacity(float opacity);
 	void SetRealtimeShadowOpacity(float opacity);
@@ -79,7 +85,6 @@ public:
 	void AddComponentInnerV2(const class FString& skelName1, class UMeshComponent* skeletalComp1, bool useEmptyMaterial);
 	void RemoveComponentInnerV2(const class FString& skelName);
 	void SetEffectPause(int32 handle, bool paused);
-	float QuickInitAndAddData(class UObject* data, class ASkeletalMeshActor* meshActor);
 	class USkeletalMeshComponent* GetSkeletalMeshComponent(const class FString& skelName);
 	void AddComponentWithEmptyMaterial(const class FString& skelName, class UMeshComponent* skeletalComp);
 	void SetStarScarEnergy(float value);
@@ -98,6 +103,18 @@ public:
 	void SetEffectGroupProgress(float progress, int32 groupHandleId);
 	float GetOpacityConsiderVisibility();
 	void SetShouldCastShadow(bool castShadow);
+	void SetDitherUseHeadMaskHideEffect(bool enable);
+	void TempRemoveDither();
+	void TempRecoverDither();
+	bool GetInAudioShr();
+	float QuickInitAndAddData(class UObject* data, class ASkeletalMeshActor* meshActor);
+	float GetWaterHitLocationZ();
+	class FName GetAudioShrTag();
+	void PreBodyInfoRuntimeInit(class FName bodyName);
+	void PostBodyInfoRuntimeInit(class FName bodyName);
+	void RemoveAllUnloopedEffects();
+	void SetMaterialReplaceV2ByIndex(class UMaterialInterface* material, class FName bodyName, float materialIndex);
+	void RemoveExternalMaterialReplaceV2ByIndex(class FName bodyName, float materialIndex);
 
 public:
 	static class UClass* StaticClass()

@@ -12,13 +12,14 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseRole_Seq_V2.BP_BaseRole_Seq_V2_C
-// 0x0078 (0x0388 - 0x0310)
+// 0x00F8 (0x0408 - 0x0310)
 class ABP_BaseRole_Seq_V2_C : public APawn
 {
 public:
@@ -29,7 +30,7 @@ public:
 	class USkeletalMeshComponent*                 SkeletalMeshComponent0;                            // 0x0330(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0338(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	int32                                         TalkID;                                            // 0x0340(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
-	class FName                                   BindingTag;                                        // 0x0344(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   BindingTag;                                        // 0x0344(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         HuluFX_Handle;                                     // 0x0350(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CharFX_Group_Handle;                               // 0x0354(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         CharFX_Handle;                                     // 0x0358(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -43,9 +44,15 @@ public:
 	bool                                          ToonLightChan0;                                    // 0x0385(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
 	bool                                          ToonLightChan1;                                    // 0x0386(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
 	bool                                          ToonLightChan2;                                    // 0x0387(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
+	TMap<class FName, struct FTransform>          CustomData;                                        // 0x0388(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TSoftObjectPtr<class USkeletalMesh>           MeshRef;                                           // 0x03D8(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_BaseRole_Seq_V2(int32 EntryPoint);
+	void ClearSeqCostumeState();
+	void ApplySeqCostumeState(int32 State);
+	void EndSeqSwitchPose(class AActor* To);
+	void BeginSeqSwitchPose(class AActor* From, class AActor* To, float SwitchTime);
 	void ReceiveDestroyed();
 	void UserConstructionScript();
 	void JumpFrame();
@@ -74,6 +81,11 @@ public:
 	bool IsCustomSupport();
 	bool GetAnimDataTransform(TMap<class FName, struct FTransform>* FloatCurveData);
 	void GetSeqAudio(class USeqAudio_Seq_V2_C** SeqAudio);
+	void GetSeqBindingTag(class FName* Tag);
+	void GetSeqBlendMesh(class USkeletalMeshComponent** Mesh);
+	void GetSeqMouthAnimInstance(class UAnimInstance** AnimInstance);
+	void GetSeqTalkId(int32* TalkID_0, int32* TalkID_SP_0);
+	void GetSeqMeshRef(TSoftObjectPtr<class USkeletalMesh>* MeshRef_0);
 
 public:
 	static class UClass* StaticClass()

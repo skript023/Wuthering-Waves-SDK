@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Kmola.BP_Kmola_C
-// 0x0000 (0x07C0 - 0x07C0)
+// 0x0010 (0x07D0 - 0x07C0)
 class ABP_Kmola_C final : public ABP_Base_Kmola_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Kmola_C;                         // 0x07B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Kmola_C;                         // 0x07C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_Kmola(int32 EntryPoint);

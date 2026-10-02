@@ -15,14 +15,15 @@ namespace SDK
 {
 
 // UserDefinedEnum ECharacterDitherType.ECharacterDitherType
-// NumValues: 0x0005
+// NumValues: 0x0006
 enum class ECharacterDitherType : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
 	NewEnumerator2                           = 2,
 	NewEnumerator3                           = 3,
-	ECharacterDitherType_MAX                 = 4,
+	NewEnumerator4                           = 4,
+	ECharacterDitherType_MAX                 = 5,
 };
 
 }

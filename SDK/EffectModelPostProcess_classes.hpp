@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelPostProcess.EffectModelPostProcess_C
-// 0x0000 (0x7070 - 0x7070)
+// 0x0000 (0x72A0 - 0x72A0)
 class UEffectModelPostProcess_C final : public UEffectModelPostProcess
 {
 public:

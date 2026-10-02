@@ -21,14 +21,16 @@ namespace SDK
 class UTsHideActorBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static void ShowNpcMesh(class UObject* __WorldContext);
-	static void ShowNpcEffect(class UObject* __WorldContext);
-	static void HideNpcEffect(class UObject* __WorldContext);
-	static void HideNpcMesh(class UObject* __WorldContext);
-	static void ShowEffect(class UObject* __WorldContext);
-	static void ShowMesh(class UObject* __WorldContext);
-	static void HideEffect(class UObject* __WorldContext);
 	static void HideMesh(class UObject* __WorldContext);
+	static void HideEffect(class UObject* __WorldContext);
+	static void ShowMesh(class UObject* __WorldContext);
+	static void ShowEffect(class UObject* __WorldContext);
+	static void HideNpcMesh(class UObject* __WorldContext);
+	static void HideNpcEffect(class UObject* __WorldContext);
+	static void ShowNpcEffect(class UObject* __WorldContext);
+	static void ShowNpcMesh(class UObject* __WorldContext);
+	static void SetHideParameter(float distance, class FName boneName, class UObject* __WorldContext);
+	static void ResetHideParameter(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

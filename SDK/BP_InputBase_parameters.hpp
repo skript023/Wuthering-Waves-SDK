@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
-#include "sInputCommand_structs.hpp"
-#include "SInputHoldConfig_structs.hpp"
-#include "SInputCaches_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SInputCaches_structs.hpp"
+#include "sInputCommand_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "SInputHoldConfig_structs.hpp"
 
 
 namespace SDK::Params
@@ -730,6 +730,107 @@ public:
 	struct FVector2D                              CallFunc_GetMoveVector_ReturnValue;                // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_InputBase_C_GetMoveVector;
+
+// Function BP_InputBase.BP_InputBase_C.下降按下
+// 0x0018 (0x0018 - 0x0000)
+struct BP_InputBase_C_下降按下 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         ReturnValue;                                       // 0x0004(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_下降按下;
+
+// Function BP_InputBase.BP_InputBase_C.下降抬起
+// 0x0018 (0x0018 - 0x0000)
+struct BP_InputBase_C_下降抬起 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         ReturnValue;                                       // 0x0004(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_下降抬起;
+
+// Function BP_InputBase.BP_InputBase_C.下降长按
+// 0x0018 (0x0018 - 0x0000)
+struct BP_InputBase_C_下降长按 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         ReturnValue;                                       // 0x0004(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_下降长按;
+
+// Function BP_InputBase.BP_InputBase_C.下降按下事件
+// 0x0004 (0x0004 - 0x0000)
+struct BP_InputBase_C_下降按下事件 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_下降按下事件;
+
+// Function BP_InputBase.BP_InputBase_C.下降抬起事件
+// 0x0004 (0x0004 - 0x0000)
+struct BP_InputBase_C_下降抬起事件 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_下降抬起事件;
+
+// Function BP_InputBase.BP_InputBase_C.移动输入按下
+// 0x001C (0x001C - 0x0000)
+struct BP_InputBase_C_移动输入按下 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         yaw;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         ReturnValue;                                       // 0x0008(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_移动输入按下;
+
+// Function BP_InputBase.BP_InputBase_C.移动输入抬起
+// 0x001C (0x001C - 0x0000)
+struct BP_InputBase_C_移动输入抬起 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         yaw;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         ReturnValue;                                       // 0x0008(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_移动输入抬起;
+
+// Function BP_InputBase.BP_InputBase_C.移动输入长按
+// 0x001C (0x001C - 0x0000)
+struct BP_InputBase_C_移动输入长按 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         yaw;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSInputCommand                         ReturnValue;                                       // 0x0008(0x0014)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_移动输入长按;
+
+// Function BP_InputBase.BP_InputBase_C.移动输入按下事件
+// 0x0008 (0x0008 - 0x0000)
+struct BP_InputBase_C_移动输入按下事件 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         yaw;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_移动输入按下事件;
+
+// Function BP_InputBase.BP_InputBase_C.移动输入抬起事件
+// 0x0008 (0x0008 - 0x0000)
+struct BP_InputBase_C_移动输入抬起事件 final
+{
+public:
+	float                                         time;                                              // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         yaw;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_InputBase_C_移动输入抬起事件;
 
 }
 

@@ -19,14 +19,15 @@ namespace SDK
 {
 
 // Class KuroGameScreenshot.GameScreenshotTask
-// 0x0060 (0x0090 - 0x0030)
+// 0x0080 (0x00B0 - 0x0030)
 class UGameScreenshotTask final : public UObject
 {
 public:
 	TMulticastInlineDelegate<void(int32 Width, int32 Height, const TArray<struct FColor>& Colors)> OnTakeScreenshotCapturedDelegate; // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(const TArray<uint8>& CompressedBitMap)> OnTakeScreenshotCompressedDelegate; // 0x0040(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void(bool IsGranted)> OnIOSPhotoLibraryAuthorizationCompletedDelegate;  // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
-	uint8                                         Pad_60[0x30];                                      // 0x0060(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const class FString& SavedFilePath)> OnHighResShotSavedDelegate;   // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
+	uint8                                         Pad_70[0x40];                                      // 0x0070(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnIOSPhotoLibraryAuthorizationCompleted(bool IsGranted);
@@ -35,6 +36,7 @@ public:
 	void RequestIOSPhotoLibraryAuthorization();
 	void Reset();
 	bool TakeScreenshot();
+	bool TakeScreenshotHighRes(int32 MultiplierScale);
 
 public:
 	static class UClass* StaticClass()
@@ -60,9 +62,10 @@ public:
 	static void CompressConvertColorsToBitmap(int32 Width, int32 Height, const TArray<struct FColor>& Colors, TArray<uint8>* BitMap);
 	static void ConvertColorsToBitmap(int32 Width, int32 Height, const TArray<struct FColor>& Colors, TArray<uint8>* BitMap);
 	static bool IsPhotoLibraryAuthorized();
-	static class UGameScreenshotTask* PrepareTakeScreenshot(class UObject* Outer_0, const class FString& InFilename, const struct FVector2D& MinCaptureRegion, const struct FVector2D& MaxCaptureRegion, float ScreenshotResolutionX, float ScreenshotResolutionY, bool SaveFile);
+	static class UGameScreenshotTask* PrepareTakeScreenshot(class UObject* Outer_0, const class FString& InFilename, const struct FVector2D& MinCaptureRegion, const struct FVector2D& MaxCaptureRegion, float ScreenshotResolutionX, float ScreenshotResolutionY, bool SaveFile, int32 ResolutionMultiplier);
 	static void SaveColorArrayToAndroidAlbum(int32 Width, int32 Height, const TArray<uint8>& BitMap);
 	static void SaveColorArrayToIosAlbum(int32 Width, int32 Height, const TArray<struct FColor>& Colors);
+	static void SaveColorArrayToOpenHarmonyAlbum(int32 Width, int32 Height, const TArray<uint8>& BitMap);
 	static void SaveScreenshot(const class FString& FilePath, int32 Width, int32 Height, const TArray<struct FColor>& Colors);
 
 public:

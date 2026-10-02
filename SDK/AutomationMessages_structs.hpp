@@ -78,19 +78,6 @@ public:
 };
 DUMPER7_ASSERTS_FAutomationWorkerImageComparisonResults;
 
-// ScriptStruct AutomationMessages.AutomationWorkerFindWorkers
-// 0x0038 (0x0038 - 0x0000)
-struct FAutomationWorkerFindWorkers final
-{
-public:
-	int32                                         Changelist;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 GameName;                                          // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ProcessName;                                       // 0x0018(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGuid                                  SessionId;                                         // 0x0028(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FAutomationWorkerFindWorkers;
-
 // ScriptStruct AutomationMessages.AutomationScreenshotMetadata
 // 0x0128 (0x0128 - 0x0000)
 struct FAutomationScreenshotMetadata final
@@ -151,15 +138,6 @@ public:
 };
 DUMPER7_ASSERTS_FAutomationWorkerScreenImage;
 
-// ScriptStruct AutomationMessages.AutomationWorkerPong
-// 0x0001 (0x0001 - 0x0000)
-struct FAutomationWorkerPong final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAutomationWorkerPong;
-
 // ScriptStruct AutomationMessages.AutomationWorkerNextNetworkCommandReply
 // 0x0001 (0x0001 - 0x0000)
 struct FAutomationWorkerNextNetworkCommandReply final
@@ -208,15 +186,6 @@ public:
 };
 DUMPER7_ASSERTS_FAutomationWorkerRunTests;
 
-// ScriptStruct AutomationMessages.AutomationWorkerWorkerOffline
-// 0x0001 (0x0001 - 0x0000)
-struct FAutomationWorkerWorkerOffline final
-{
-public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAutomationWorkerWorkerOffline;
-
 // ScriptStruct AutomationMessages.AutomationWorkerSingleTestReply
 // 0x0080 (0x0080 - 0x0000)
 struct FAutomationWorkerSingleTestReply final
@@ -256,6 +225,15 @@ public:
 };
 DUMPER7_ASSERTS_FAutomationWorkerRequestTests;
 
+// ScriptStruct AutomationMessages.AutomationWorkerPong
+// 0x0001 (0x0001 - 0x0000)
+struct FAutomationWorkerPong final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAutomationWorkerPong;
+
 // ScriptStruct AutomationMessages.AutomationWorkerStopTests
 // 0x0001 (0x0001 - 0x0000)
 struct FAutomationWorkerStopTests final
@@ -283,6 +261,15 @@ public:
 };
 DUMPER7_ASSERTS_FAutomationWorkerPing;
 
+// ScriptStruct AutomationMessages.AutomationWorkerWorkerOffline
+// 0x0001 (0x0001 - 0x0000)
+struct FAutomationWorkerWorkerOffline final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAutomationWorkerWorkerOffline;
+
 // ScriptStruct AutomationMessages.AutomationWorkerFindWorkersResponse
 // 0x0098 (0x0098 - 0x0000)
 struct FAutomationWorkerFindWorkersResponse final
@@ -301,6 +288,19 @@ public:
 	struct FGuid                                  SessionId;                                         // 0x0088(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAutomationWorkerFindWorkersResponse;
+
+// ScriptStruct AutomationMessages.AutomationWorkerFindWorkers
+// 0x0038 (0x0038 - 0x0000)
+struct FAutomationWorkerFindWorkers final
+{
+public:
+	int32                                         Changelist;                                        // 0x0000(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 GameName;                                          // 0x0008(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ProcessName;                                       // 0x0018(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGuid                                  SessionId;                                         // 0x0028(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FAutomationWorkerFindWorkers;
 
 }
 

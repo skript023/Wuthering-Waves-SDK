@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "KuroMath_structs.hpp"
 #include "Engine_classes.hpp"
+#include "KuroMath_structs.hpp"
 
 
 namespace SDK
@@ -30,6 +30,8 @@ public:
 	static struct FKuroGeometryGeneralPolygonList DifferenceSelectedActorsSplines(class UObject* __WorldContext);
 	static struct FKuroGeometryGeneralPolygonList GetPolygonListFromSplines(TArray<class USplineComponent*>& splines, class UObject* __WorldContext);
 	static struct FKuroGeometryGeneralPolygonList PolygonsOpenPathsDifferenceViaSplines(TArray<class USplineComponent*>& subjects, TArray<class USplineComponent*>& openPaths, float strokeWidth, EJoinType joinType, EEndType endType, class UObject* __WorldContext);
+	static bool UseNewScanSystem(class UObject* __WorldContext);
+	static void StartScan(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

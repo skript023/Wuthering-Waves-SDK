@@ -11,15 +11,60 @@
 #include "Basic.hpp"
 
 #include "Engine_classes.hpp"
-#include "CoreUObject_structs.hpp"
-#include "KuroGAS_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayAbilities_classes.hpp"
+#include "CoreUObject_structs.hpp"
+#include "KuroGAS_structs.hpp"
+#include "GameplayTasks_classes.hpp"
 #include "GameplayTags_structs.hpp"
 
 
 namespace SDK
 {
+
+// Class KuroGAS.AbilityTask_SpecifiedAnimInstancePlayMontageAndWait
+// 0x00A8 (0x0130 - 0x0088)
+class UAbilityTask_SpecifiedAnimInstancePlayMontageAndWait final : public UAbilityTask
+{
+public:
+	TMulticastInlineDelegate<void()>              OnCompleted;                                       // 0x0088(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnBlendOut;                                        // 0x0098(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnInterrupted;                                     // 0x00A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnCancelled;                                       // 0x00B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnTick;                                            // 0x00C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D8[0x28];                                      // 0x00D8(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAnimMontage*                           MontageToPlay;                                     // 0x0100(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   SkeletalMeshComponentTag;                          // 0x0108(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         Rate;                                              // 0x0114(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class FName                                   StartSection;                                      // 0x0118(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         AnimRootMotionTranslationScale;                    // 0x0124(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         StartTimeSeconds;                                  // 0x0128(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	bool                                          bStopWhenAbilityEnds;                              // 0x012C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_12D[0x3];                                      // 0x012D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UAbilityTask_SpecifiedAnimInstancePlayMontageAndWait* CreatePlayMontageAndWaitProxy(class UGameplayAbility* OwningAbility, class FName TaskInstanceName, class UAnimMontage* MontageToPlay_0, class FName SkeletalMeshComponentTag_0, float Rate_0, class FName StartSection_0, bool bStopWhenAbilityEnds_0, float AnimRootMotionTranslationScale_0, float StartTimeSeconds_0, bool NeedTick);
+
+	void OnMontageBlendingOut(class UAnimMontage* Montage, bool bInterrupted);
+	void OnMontageEnded(class UAnimMontage* Montage, bool bInterrupted);
+	void OnMontageInterrupted();
+	void TickTask(float DeltaTime);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AbilityTask_SpecifiedAnimInstancePlayMontageAndWait")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AbilityTask_SpecifiedAnimInstancePlayMontageAndWait")
+	}
+	static class UAbilityTask_SpecifiedAnimInstancePlayMontageAndWait* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAbilityTask_SpecifiedAnimInstancePlayMontageAndWait>();
+	}
+};
+DUMPER7_ASSERTS_UAbilityTask_SpecifiedAnimInstancePlayMontageAndWait;
 
 // Class KuroGAS.AsyncTaskAnyAttributeChanged
 // 0x0018 (0x0050 - 0x0038)
@@ -293,9 +338,8 @@ public:
 	TMulticastInlineDelegate<void(bool bInterrupted)> EndCallback;                                   // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	TMulticastInlineDelegate<void(bool bInterrupted)> BlendOutCallback;                              // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
 	TMulticastInlineDelegate<void(float RemainTime)> RemainCallback;                                 // 0x0058(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
-	bool                                          bShouldEmitOnEndedEvent;                           // 0x0068(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MontageLength;                                     // 0x006C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	float                                         MontageLength;                                     // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAnimInstance*                          AnimInstance;                                      // 0x0070(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UAnimMontage*                           MontageToPlay;                                     // 0x0078(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_80[0x30];                                      // 0x0080(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -322,6 +366,48 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAsyncTaskPlayMontageAndWait;
+
+// Class KuroGAS.AsyncTaskRotateSequence
+// 0x0140 (0x01B0 - 0x0070)
+class alignas(0x10) UAsyncTaskRotateSequence final : public UGameplayTask
+{
+public:
+	TMulticastInlineDelegate<void(class USceneComponent* AimPivot, const struct FVector& TargetLocation)> OnShootStepFired; // 0x0070(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USceneComponent* AimPivot)> OnSequenceFinished;              // 0x0080(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	float                                         AimToleranceDeg;                                   // 0x0090(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AimSpeedDegPerSec;                                 // 0x0094(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PostFireDelay;                                     // 0x0098(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeDilation;                                      // 0x009C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         bEaseOut : 1;                                      // 0x00A0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bEaseIn : 1;                                       // 0x00A0(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         bForceShortestRoute : 1;                           // 0x00A0(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
+	uint8                                         Pad_A1[0x3];                                       // 0x00A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               RotateOffset;                                      // 0x00A4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B0[0x100];                                     // 0x00B0(0x0100)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UAsyncTaskRotateSequence* D_StartRotateSequenceByTranslation(const TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, class USceneComponent* InAimPivot, const TArray<struct FVectorDouble>& InTargets, const float AimSpeedDegPerSec_0, const float AimToleranceDeg_0, const bool bEaseIn_0, const bool bEaseOut_0, const bool bForceShortestRoute_0, const float PostFireDelay_0, const struct FRotator& RotateOffset_0, const float TimeDilation_0);
+	static void RotateComponentTo(class USceneComponent* Component, const struct FRotator& TargetWorldRotation, const bool bEaseOut_0, const bool bEaseIn_0, const float OverTime, const bool bForceShortestRotationPath, const float TimeDilation_0, const ERotateComponentAction MoveAction, const struct FLatentActionInfo& LatentInfo);
+	static class UAsyncTaskRotateSequence* StartRotateSequenceByActor(const TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, class USceneComponent* InAimPivot, const TArray<class AActor*>& InTargets, const float AimSpeedDegPerSec_0, const float AimToleranceDeg_0, const bool bEaseIn_0, const bool bEaseOut_0, const bool bForceShortestRoute_0, const float PostFireDelay_0, const struct FRotator& RotateOffset_0, const float TimeDilation_0);
+	static class UAsyncTaskRotateSequence* StartRotateSequenceByTranslation(const TScriptInterface<class IGameplayTaskOwnerInterface> TaskOwner, class USceneComponent* InAimPivot, const TArray<struct FVector>& InTargets, const float AimSpeedDegPerSec_0, const float AimToleranceDeg_0, const bool bEaseIn_0, const bool bEaseOut_0, const bool bForceShortestRoute_0, const float PostFireDelay_0, const struct FRotator& RotateOffset_0, const float TimeDilation_0);
+
+	void OnAimLatentFinished();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AsyncTaskRotateSequence")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AsyncTaskRotateSequence")
+	}
+	static class UAsyncTaskRotateSequence* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UAsyncTaskRotateSequence>();
+	}
+};
+DUMPER7_ASSERTS_UAsyncTaskRotateSequence;
 
 // Class KuroGAS.AsyncTaskTagCountChanged
 // 0x0028 (0x0060 - 0x0038)

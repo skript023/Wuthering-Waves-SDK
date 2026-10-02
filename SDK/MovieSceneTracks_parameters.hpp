@@ -18,6 +18,15 @@
 namespace SDK::Params
 {
 
+// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
+// 0x0030 (0x0030 - 0x0000)
+struct MovieSceneTransformOrigin_BP_GetTransformOrigin final
+{
+public:
+	struct FTransform                             ReturnValue;                                       // 0x0000(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_MovieSceneTransformOrigin_BP_GetTransformOrigin;
+
 // Function MovieSceneTracks.MovieSceneParameterSection.AddBoolParameterKey
 // 0x0014 (0x0014 - 0x0000)
 struct MovieSceneParameterSection_AddBoolParameterKey final
@@ -159,15 +168,6 @@ public:
 	TSet<class FName>                             ParameterNames;                                    // 0x0000(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MovieSceneParameterSection_GetParameterNames;
-
-// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
-// 0x0030 (0x0030 - 0x0000)
-struct MovieSceneTransformOrigin_BP_GetTransformOrigin final
-{
-public:
-	struct FTransform                             ReturnValue;                                       // 0x0000(0x0030)(Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_MovieSceneTransformOrigin_BP_GetTransformOrigin;
 
 // Function MovieSceneTracks.MovieScene3DConstraintSection.SetConstraintBindingID
 // 0x0018 (0x0018 - 0x0000)

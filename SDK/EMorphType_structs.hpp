@@ -15,12 +15,13 @@ namespace SDK
 {
 
 // UserDefinedEnum EMorphType.EMorphType
-// NumValues: 0x0003
+// NumValues: 0x0004
 enum class EMorphType : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
-	EMorphType_MAX                           = 2,
+	NewEnumerator2                           = 2,
+	EMorphType_MAX                           = 3,
 };
 
 }

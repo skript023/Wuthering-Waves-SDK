@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function BPI_EffectInterface.BPI_EffectInterface_C.SetHandle
-// 0x0004 (0x0004 - 0x0000)
-struct BPI_EffectInterface_C_SetHandle final
-{
-public:
-	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BPI_EffectInterface_C_SetHandle;
-
 // Function BPI_EffectInterface.BPI_EffectInterface_C.GetHandle
 // 0x0004 (0x0004 - 0x0000)
 struct BPI_EffectInterface_C_GetHandle final
@@ -31,6 +22,15 @@ public:
 	int32                                         Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPI_EffectInterface_C_GetHandle;
+
+// Function BPI_EffectInterface.BPI_EffectInterface_C.SetHandle
+// 0x0004 (0x0004 - 0x0000)
+struct BPI_EffectInterface_C_SetHandle final
+{
+public:
+	int32                                         Handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BPI_EffectInterface_C_SetHandle;
 
 }
 

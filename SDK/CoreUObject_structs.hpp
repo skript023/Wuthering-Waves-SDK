@@ -80,6 +80,19 @@ enum class ELifetimeCondition : uint8
 	COND_MAX                                 = 17,
 };
 
+// Enum CoreUObject.EDataValidationUsecase
+// NumValues: 0x0007
+enum class EDataValidationUsecase : uint8
+{
+	None                                     = 0,
+	Manual                                   = 1,
+	Commandlet                               = 2,
+	Save                                     = 3,
+	PreSubmit                                = 4,
+	Script                                   = 5,
+	EDataValidationUsecase_MAX               = 6,
+};
+
 // Enum CoreUObject.EDataValidationResult
 // NumValues: 0x0004
 enum class EDataValidationResult : uint8
@@ -211,7 +224,7 @@ enum class EMouseCursor : uint8
 };
 
 // Enum CoreUObject.EPixelFormat
-// NumValues: 0x004A
+// NumValues: 0x004B
 enum class EPixelFormat : uint8
 {
 	PF_Unknown                               = 0,
@@ -287,7 +300,8 @@ enum class EPixelFormat : uint8
 	PF_ETC2_RG11_EAC                         = 70,
 	PF_R8                                    = 71,
 	PF_P010                                  = 72,
-	PF_MAX_0                                 = 73,
+	PF_BC6H_SF16                             = 73,
+	PF_MAX_0                                 = 74,
 };
 
 // Enum CoreUObject.EAxis
@@ -1486,6 +1500,18 @@ public:
 	uint8                                         Pad_3C[0x2C];                                      // 0x003C(0x002C)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FAssetData;
+
+// ScriptStruct CoreUObject.ObjectPoolInstanceConfig
+// 0x0020 (0x0020 - 0x0000)
+struct FObjectPoolInstanceConfig final
+{
+public:
+	class FName                                   PackageName;                                       // 0x0000(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ClassName;                                         // 0x000C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        PageBlockNum;                                      // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint32                                        ReservePageNum;                                    // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FObjectPoolInstanceConfig;
 
 }
 

@@ -39,12 +39,12 @@ public:
 	static void OpenChapterUi(int32 chapterState, int32 chapterId, class UObject* __WorldContext);
 	static void ShowLogo(float time, class UObject* __WorldContext);
 	static void CloseUiView(class UObject* __WorldContext);
-	static void OpenUiView(const class FString& maleAssetName1, const class FString& femaleAssetName1, const class FString& maleSpineName1, const class FString& femaleSpineName1, bool needLoop, class UObject* __WorldContext);
+	static void OpenUiView(const class FString& maleAssetName, const class FString& femaleAssetName, const class FString& maleSpineName, const class FString& femaleSpineName, bool needLoop1, bool useFullscreenAdaptAnchor, class UObject* __WorldContext);
 	static void PlayUiLevelSequence(const class FString& seqName, class UObject* __WorldContext);
 	static void ExecuteEntitySequenceEvents(const class FString& key, int32 entityId, class UObject* __WorldContext);
 	static void PlaySpineAnimForGender(const class FString& maleSpineName, const class FString& femaleSpineName, bool needLoop, class UObject* __WorldContext);
 	static void PlaySpineAnim(const class FString& spineName1, bool needLoop, class UObject* __WorldContext);
-	static void OpenUiViewInArray(const class FString& maleAssetName1, const class FString& femaleAssetName1, TArray<struct FSpineThingsInfo>& maleSpineArray1, TArray<struct FSpineThingsInfo>& femaleSpineArray1, class UObject* __WorldContext);
+	static void OpenUiViewInArray(const class FString& maleAssetName, const class FString& femaleAssetName, TArray<struct FSpineThingsInfo>& maleSpineArray, TArray<struct FSpineThingsInfo>& femaleSpineArray, bool useFullscreenAdaptAnchor, class UObject* __WorldContext);
 	static void PlaySpineAnimForGenderInArray(TArray<struct FSpineThingsInfo>& maleSpineArray1, TArray<struct FSpineThingsInfo>& femaleSpineArray1, class UObject* __WorldContext);
 	static void CloseSpineAnim(const class FString& spineName, class UObject* __WorldContext);
 	static void CloseSpineAnimInArray(TArray<class FString>& spineArray, class UObject* __WorldContext);
@@ -55,6 +55,14 @@ public:
 	static void AdditionSeqPlay(class ULevelSequence* levelSequence, class FName componentName, class FName boneName, float frame, class UObject* __WorldContext);
 	static void AdditionSeqEnd(class UObject* __WorldContext);
 	static void BindItemInspectActor(const struct FMovieSceneObjectBindingID& binding, class UObject* __WorldContext);
+	static void EnablePlotInteract(bool bEnable, class UObject* __WorldContext);
+	static void EnableCameraShake(bool bEnable1, TSoftClassPtr<class UClass> cameraShakePtr, class UObject* __WorldContext);
+	static bool NeedFlowAdaption(class UObject* __WorldContext);
+	static void OpenCaptionImage(const class FString& uiPrefabId, float duration, const class FString& uiStartAnimName, const class FString& uiEndAnimName, class UObject* __WorldContext);
+	static void OpenMultiTextCaption(const class FString& textId, float duration, class UObject* __WorldContext);
+	static void OpenArtWord2dView(const class FString& sequenceName, class UObject* __WorldContext);
+	static void SwitchArtWord2dMark(class UObject* __WorldContext);
+	static void CloseArtWord2dView(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

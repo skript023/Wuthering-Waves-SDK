@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
@@ -153,19 +154,170 @@ public:
 };
 DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_SmoothVehicleRotation;
 
-// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.SlerpQuat
-// 0x0050 (0x0050 - 0x0000)
-struct TsVehicleBlueprintFunctionLibrary_C_SlerpQuat final
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.AddBuffToVehicleFromGA
+// 0x0038 (0x0038 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_AddBuffToVehicleFromGA final
 {
 public:
-	struct FQuat                                  from;                                              // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	struct FQuat                                  to;                                                // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
-	float                                         slerp;                                             // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_24[0xC];                                       // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FQuat                                  outQuat;                                           // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor)
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseVehicle_C*                       target;                                            // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int64                                         buffId;                                            // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 skillId;                                           // 0x0018(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	int32                                         addCount;                                          // 0x0028(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_AddBuffToVehicleFromGA;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.GetVehicleImpactInfo
+// 0x00B0 (0x00B0 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_GetVehicleImpactInfo final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          isImpacted;                                        // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                impactVelocity;                                    // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             impactHitResult;                                   // 0x0014(0x0094)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	class UObject*                                __WorldContext;                                    // 0x00A8(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_GetVehicleImpactInfo;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.GetDrivingVehicleImpactInfo
+// 0x00B0 (0x00B0 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_GetDrivingVehicleImpactInfo final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          isImpacted;                                        // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                impactVelocity;                                    // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FHitResult                             impactHitResult;                                   // 0x0014(0x0094)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	class UObject*                                __WorldContext;                                    // 0x00A8(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_GetDrivingVehicleImpactInfo;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.ClearMotorTimer
+// 0x0008 (0x0008 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_ClearMotorTimer final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_ClearMotorTimer;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.TryGetPlayerMotorEntityId
+// 0x0010 (0x0010 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_TryGetPlayerMotorEntityId final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_TryGetPlayerMotorEntityId;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.ClearMotorAppearanceTag
+// 0x0010 (0x0010 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_ClearMotorAppearanceTag final
+{
+public:
+	class ATsBaseVehicle_C*                       motor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_ClearMotorAppearanceTag;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.MotorAppearance
+// 0x0048 (0x0048 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_MotorAppearance final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class ATsBaseVehicle_C*                       motor;                                             // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 skillId;                                           // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          forceBrake;                                        // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         hangTimeAfterAppear;                               // 0x0024(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int64                                         endHangBuffId;                                     // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         disappearDistance;                                 // 0x0030(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         disappearTime;                                     // 0x0034(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int64                                         disappearBuffId;                                   // 0x0038(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UObject*                                __WorldContext;                                    // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_SlerpQuat;
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_MotorAppearance;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.GetPassengerOnVehicle
+// 0x0018 (0x0018 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_GetPassengerOnVehicle final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         seat;                                              // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseCharacter_C*                     ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_GetPassengerOnVehicle;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.SummonAndRideMotorcycle
+// 0x0060 (0x0060 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_SummonAndRideMotorcycle final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             seatTrans;                                         // 0x0010(0x0030)(BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
+	int64                                         motorSkillId;                                      // 0x0040(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0048(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ATsBaseVehicle_C*                       ReturnValue;                                       // 0x0050(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_SummonAndRideMotorcycle;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.SetMotorAndroidInitParams
+// 0x0010 (0x0010 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_SetMotorAndroidInitParams final
+{
+public:
+	class UKuroVehicleMovementComponent*          vehicleMove;                                       // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_SetMotorAndroidInitParams;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.NeedSimulateMotorIk
+// 0x0018 (0x0018 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_NeedSimulateMotorIk final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_NeedSimulateMotorIk;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.IsVehicleInCatapult
+// 0x0018 (0x0018 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_IsVehicleInCatapult final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_IsVehicleInCatapult;
+
+// Function TsVehicleBlueprintFunctionLibrary.TsVehicleBlueprintFunctionLibrary_C.HasVehicleCatapultReachedTarget
+// 0x0018 (0x0018 - 0x0000)
+struct TsVehicleBlueprintFunctionLibrary_C_HasVehicleCatapultReachedTarget final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_TsVehicleBlueprintFunctionLibrary_C_HasVehicleCatapultReachedTarget;
 
 }
 

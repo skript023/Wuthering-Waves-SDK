@@ -21,11 +21,12 @@ namespace SDK
 class IBPI_Animation_C final
 {
 public:
-	void InterfaceManipulateInteractDirection(float 角度);
-	void InterfaceFixHookDirect(const struct FVector& Offset);
-	void InterfaceSimulateJump(float Speed);
-	void ClimbDash();
 	void InterfaceJumpPressed(float* Speed);
+	void ClimbDash();
+	void InterfaceSimulateJump(float Speed);
+	void InterfaceFixHookDirect(const struct FVector& Offset);
+	void InterfaceManipulateInteractDirection(float 角度);
+	void InterfaceControlPoint(const struct FVector& Offset);
 
 public:
 	static class UClass* StaticClass()

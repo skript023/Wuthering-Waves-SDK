@@ -126,8 +126,9 @@ void ABP_Cinematics_Tick_C::UserConstructionScript()
 // float                                   LightYaw                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   LightPitch                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   FaceLightYaw                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    UsePointLight                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Cinematics_Tick_C::SetLightDirection(class USkeletalMeshComponent* Mesh, float LightYaw, float LightPitch, float FaceLightYaw)
+void ABP_Cinematics_Tick_C::SetLightDirection(class USkeletalMeshComponent* Mesh, float LightYaw, float LightPitch, float FaceLightYaw, bool UsePointLight)
 {
 	static class UFunction* Func = nullptr;
 
@@ -140,6 +141,7 @@ void ABP_Cinematics_Tick_C::SetLightDirection(class USkeletalMeshComponent* Mesh
 	Parms.LightYaw = LightYaw;
 	Parms.LightPitch = LightPitch;
 	Parms.FaceLightYaw = FaceLightYaw;
+	Parms.UsePointLight = UsePointLight;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -197,8 +199,9 @@ void ABP_Cinematics_Tick_C::ProcessCombinNPC(class ABP_SeqNPC_C* Mesh, float Lig
 // float                                   LightPitch                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // float                                   FaceLightYaw                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // bool                                    IsRevert                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    UsePointLight                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ABP_Cinematics_Tick_C::SetActorLight(class AActor* InActor, float LightYaw, float LightPitch, float FaceLightYaw, bool IsRevert)
+void ABP_Cinematics_Tick_C::SetActorLight(class AActor* InActor, float LightYaw, float LightPitch, float FaceLightYaw, bool IsRevert, bool UsePointLight)
 {
 	static class UFunction* Func = nullptr;
 
@@ -212,6 +215,7 @@ void ABP_Cinematics_Tick_C::SetActorLight(class AActor* InActor, float LightYaw,
 	Parms.LightPitch = LightPitch;
 	Parms.FaceLightYaw = FaceLightYaw;
 	Parms.IsRevert = IsRevert;
+	Parms.UsePointLight = UsePointLight;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -226,8 +230,10 @@ void ABP_Cinematics_Tick_C::SetActorLight(class AActor* InActor, float LightYaw,
 // bool                                    isDestroyed                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    IsHideNpcMesh_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // bool                                    IsHideNpcEffect_0                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// float                                   HideDistance_0                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    BasisBoneName_0                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
 
-void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool IsHideMesh_0, bool IsHideEffect_0, bool isDestroyed, bool IsHideNpcMesh_0, bool IsHideNpcEffect_0)
+void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool IsHideMesh_0, bool IsHideEffect_0, bool isDestroyed, bool IsHideNpcMesh_0, bool IsHideNpcEffect_0, float HideDistance_0, const class FString& BasisBoneName_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -242,6 +248,8 @@ void ABP_Cinematics_Tick_C::UpdateMeshAndEffectState(class AActor* InActor, bool
 	Parms.isDestroyed = isDestroyed;
 	Parms.IsHideNpcMesh_0 = IsHideNpcMesh_0;
 	Parms.IsHideNpcEffect_0 = IsHideNpcEffect_0;
+	Parms.HideDistance_0 = HideDistance_0;
+	Parms.BasisBoneName_0 = std::move(BasisBoneName_0);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -291,6 +299,20 @@ void ABP_Cinematics_Tick_C::UpdateCameraCollision(class AActor* InActor, bool Is
 	Parms.IsDisableCameraCollision_0 = IsDisableCameraCollision_0;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Cinematics_Tick.BP_Cinematics_Tick_C.UpdateSeparateCamera
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Cinematics_Tick_C::UpdateSeparateCamera()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Cinematics_Tick_C", "UpdateSeparateCamera");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

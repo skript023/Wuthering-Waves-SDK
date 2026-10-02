@@ -10,88 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "ECharacterDitherType_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
-
-// Function TsBaseCharacter.TsBaseCharacter_C.GetEntityId
-// 0x0004 (0x0004 - 0x0000)
-struct TsBaseCharacter_C_GetEntityId final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsBaseCharacter_C_GetEntityId;
-
-// Function TsBaseCharacter.TsBaseCharacter_C.BindGameplayEnableState
-// 0x0001 (0x0001 - 0x0000)
-struct TsBaseCharacter_C_BindGameplayEnableState final
-{
-public:
-	bool                                          gameplayEnable;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_TsBaseCharacter_C_BindGameplayEnableState;
-
-// Function TsBaseCharacter.TsBaseCharacter_C.SetDitherEffect
-// 0x0008 (0x0008 - 0x0000)
-struct TsBaseCharacter_C_SetDitherEffect final
-{
-public:
-	float                                         dither;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECharacterDitherType                          ditherType;                                        // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsBaseCharacter_C_SetDitherEffect;
-
-// Function TsBaseCharacter.TsBaseCharacter_C.FightCommand
-// 0x0001 (0x0001 - 0x0000)
-struct TsBaseCharacter_C_FightCommand final
-{
-public:
-	bool                                          isInAir;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_TsBaseCharacter_C_FightCommand;
-
-// Function TsBaseCharacter.TsBaseCharacter_C.K2_OnMovementModeChanged
-// 0x0004 (0x0004 - 0x0000)
-struct TsBaseCharacter_C_K2_OnMovementModeChanged final
-{
-public:
-	EMovementMode                                 PrevMovementMode;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EMovementMode                                 NewMovementMode;                                   // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         PrevCustomMode;                                    // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         NewCustomMode;                                     // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsBaseCharacter_C_K2_OnMovementModeChanged;
-
-// Function TsBaseCharacter.TsBaseCharacter_C.ReceivePossessed
-// 0x0008 (0x0008 - 0x0000)
-struct TsBaseCharacter_C_ReceivePossessed final
-{
-public:
-	class AController*                            NewController;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsBaseCharacter_C_ReceivePossessed;
-
-// Function TsBaseCharacter.TsBaseCharacter_C.ReceiveUnpossessed
-// 0x0008 (0x0008 - 0x0000)
-struct TsBaseCharacter_C_ReceiveUnpossessed final
-{
-public:
-	class AController*                            OldController;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsBaseCharacter_C_ReceiveUnpossessed;
-
-// Function TsBaseCharacter.TsBaseCharacter_C.K2_UpdateCustomMovement
-// 0x0004 (0x0004 - 0x0000)
-struct TsBaseCharacter_C_K2_UpdateCustomMovement final
-{
-public:
-	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsBaseCharacter_C_K2_UpdateCustomMovement;
 
 // Function TsBaseCharacter.TsBaseCharacter_C.ExecuteUbergraph_TsBaseCharacter
 // 0x0020 (0x0020 - 0x0000)
@@ -108,6 +32,82 @@ public:
 	float                                         K2Node_Event_DeltaTime;                            // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_TsBaseCharacter_C_ExecuteUbergraph_TsBaseCharacter;
+
+// Function TsBaseCharacter.TsBaseCharacter_C.K2_UpdateCustomMovement
+// 0x0004 (0x0004 - 0x0000)
+struct TsBaseCharacter_C_K2_UpdateCustomMovement final
+{
+public:
+	float                                         DeltaTime;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsBaseCharacter_C_K2_UpdateCustomMovement;
+
+// Function TsBaseCharacter.TsBaseCharacter_C.ReceiveUnpossessed
+// 0x0008 (0x0008 - 0x0000)
+struct TsBaseCharacter_C_ReceiveUnpossessed final
+{
+public:
+	class AController*                            OldController;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsBaseCharacter_C_ReceiveUnpossessed;
+
+// Function TsBaseCharacter.TsBaseCharacter_C.ReceivePossessed
+// 0x0008 (0x0008 - 0x0000)
+struct TsBaseCharacter_C_ReceivePossessed final
+{
+public:
+	class AController*                            NewController;                                     // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsBaseCharacter_C_ReceivePossessed;
+
+// Function TsBaseCharacter.TsBaseCharacter_C.K2_OnMovementModeChanged
+// 0x0004 (0x0004 - 0x0000)
+struct TsBaseCharacter_C_K2_OnMovementModeChanged final
+{
+public:
+	EMovementMode                                 PrevMovementMode;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EMovementMode                                 NewMovementMode;                                   // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         PrevCustomMode;                                    // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         NewCustomMode;                                     // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsBaseCharacter_C_K2_OnMovementModeChanged;
+
+// Function TsBaseCharacter.TsBaseCharacter_C.FightCommand
+// 0x0001 (0x0001 - 0x0000)
+struct TsBaseCharacter_C_FightCommand final
+{
+public:
+	bool                                          isInAir;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_TsBaseCharacter_C_FightCommand;
+
+// Function TsBaseCharacter.TsBaseCharacter_C.SetDitherEffect
+// 0x0008 (0x0008 - 0x0000)
+struct TsBaseCharacter_C_SetDitherEffect final
+{
+public:
+	float                                         dither;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECharacterDitherType                          ditherType;                                        // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsBaseCharacter_C_SetDitherEffect;
+
+// Function TsBaseCharacter.TsBaseCharacter_C.BindGameplayEnableState
+// 0x0001 (0x0001 - 0x0000)
+struct TsBaseCharacter_C_BindGameplayEnableState final
+{
+public:
+	bool                                          gameplayEnable;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_TsBaseCharacter_C_BindGameplayEnableState;
+
+// Function TsBaseCharacter.TsBaseCharacter_C.GetEntityId
+// 0x0004 (0x0004 - 0x0000)
+struct TsBaseCharacter_C_GetEntityId final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsBaseCharacter_C_GetEntityId;
 
 }
 

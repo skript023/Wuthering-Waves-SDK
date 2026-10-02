@@ -17,23 +17,73 @@
 namespace SDK
 {
 
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ExecuteUbergraph_BP_Miaozhunxian
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ShowMesh
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void ABP_Miaozhunxian_C::ExecuteUbergraph_BP_Miaozhunxian(int32 EntryPoint)
+void ABP_Miaozhunxian_C::ShowMesh()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Miaozhunxian_C", "ExecuteUbergraph_BP_Miaozhunxian");
+		Func = Class->GetFunction("BP_Miaozhunxian_C", "ShowMesh");
 
-	Params::BP_Miaozhunxian_C_ExecuteUbergraph_BP_Miaozhunxian Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.HideMesh
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Miaozhunxian_C::HideMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Miaozhunxian_C", "HideMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.UpdateMesh
+// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+
+void ABP_Miaozhunxian_C::UpdateMesh()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Miaozhunxian_C", "UpdateMesh");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.Init
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Miaozhunxian_C::Init()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Miaozhunxian_C", "Init");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_Miaozhunxian_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_Miaozhunxian_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,73 +107,23 @@ void ABP_Miaozhunxian_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
+// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ExecuteUbergraph_BP_Miaozhunxian
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Miaozhunxian_C::ReceiveBeginPlay()
+void ABP_Miaozhunxian_C::ExecuteUbergraph_BP_Miaozhunxian(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Miaozhunxian_C", "ReceiveBeginPlay");
+		Func = Class->GetFunction("BP_Miaozhunxian_C", "ExecuteUbergraph_BP_Miaozhunxian");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::BP_Miaozhunxian_C_ExecuteUbergraph_BP_Miaozhunxian Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.Init
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Miaozhunxian_C::Init()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Miaozhunxian_C", "Init");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.UpdateMesh
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-
-void ABP_Miaozhunxian_C::UpdateMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Miaozhunxian_C", "UpdateMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.HideMesh
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Miaozhunxian_C::HideMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Miaozhunxian_C", "HideMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_Miaozhunxian.BP_Miaozhunxian_C.ShowMesh
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void ABP_Miaozhunxian_C::ShowMesh()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Miaozhunxian_C", "ShowMesh");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

@@ -506,14 +506,15 @@ void UPlotBlueprintFunctionLibrary_C::CloseUiView(class UObject* __WorldContext)
 // Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenUiView
 // (Native, Static, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const class FString&                    maleAssetName1                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const class FString&                    femaleAssetName1                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const class FString&                    maleSpineName1                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const class FString&                    femaleSpineName1                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// bool                                    needLoop                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const class FString&                    maleAssetName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    femaleAssetName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    maleSpineName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    femaleSpineName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// bool                                    needLoop1                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// bool                                    useFullscreenAdaptAnchor                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPlotBlueprintFunctionLibrary_C::OpenUiView(const class FString& maleAssetName1, const class FString& femaleAssetName1, const class FString& maleSpineName1, const class FString& femaleSpineName1, bool needLoop, class UObject* __WorldContext)
+void UPlotBlueprintFunctionLibrary_C::OpenUiView(const class FString& maleAssetName, const class FString& femaleAssetName, const class FString& maleSpineName, const class FString& femaleSpineName, bool needLoop1, bool useFullscreenAdaptAnchor, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -522,11 +523,12 @@ void UPlotBlueprintFunctionLibrary_C::OpenUiView(const class FString& maleAssetN
 
 	Params::PlotBlueprintFunctionLibrary_C_OpenUiView Parms{};
 
-	Parms.maleAssetName1 = std::move(maleAssetName1);
-	Parms.femaleAssetName1 = std::move(femaleAssetName1);
-	Parms.maleSpineName1 = std::move(maleSpineName1);
-	Parms.femaleSpineName1 = std::move(femaleSpineName1);
-	Parms.needLoop = needLoop;
+	Parms.maleAssetName = std::move(maleAssetName);
+	Parms.femaleAssetName = std::move(femaleAssetName);
+	Parms.maleSpineName = std::move(maleSpineName);
+	Parms.femaleSpineName = std::move(femaleSpineName);
+	Parms.needLoop1 = needLoop1;
+	Parms.useFullscreenAdaptAnchor = useFullscreenAdaptAnchor;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -657,13 +659,14 @@ void UPlotBlueprintFunctionLibrary_C::PlaySpineAnim(const class FString& spineNa
 // Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenUiViewInArray
 // (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const class FString&                    maleAssetName1                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// const class FString&                    femaleAssetName1                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-// TArray<struct FSpineThingsInfo>&        maleSpineArray1                                        (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-// TArray<struct FSpineThingsInfo>&        femaleSpineArray1                                      (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const class FString&                    maleAssetName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    femaleAssetName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// TArray<struct FSpineThingsInfo>&        maleSpineArray                                         (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// TArray<struct FSpineThingsInfo>&        femaleSpineArray                                       (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// bool                                    useFullscreenAdaptAnchor                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 // class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UPlotBlueprintFunctionLibrary_C::OpenUiViewInArray(const class FString& maleAssetName1, const class FString& femaleAssetName1, TArray<struct FSpineThingsInfo>& maleSpineArray1, TArray<struct FSpineThingsInfo>& femaleSpineArray1, class UObject* __WorldContext)
+void UPlotBlueprintFunctionLibrary_C::OpenUiViewInArray(const class FString& maleAssetName, const class FString& femaleAssetName, TArray<struct FSpineThingsInfo>& maleSpineArray, TArray<struct FSpineThingsInfo>& femaleSpineArray, bool useFullscreenAdaptAnchor, class UObject* __WorldContext)
 {
 	static class UFunction* Func = nullptr;
 
@@ -672,10 +675,11 @@ void UPlotBlueprintFunctionLibrary_C::OpenUiViewInArray(const class FString& mal
 
 	Params::PlotBlueprintFunctionLibrary_C_OpenUiViewInArray Parms{};
 
-	Parms.maleAssetName1 = std::move(maleAssetName1);
-	Parms.femaleAssetName1 = std::move(femaleAssetName1);
-	Parms.maleSpineArray1 = std::move(maleSpineArray1);
-	Parms.femaleSpineArray1 = std::move(femaleSpineArray1);
+	Parms.maleAssetName = std::move(maleAssetName);
+	Parms.femaleAssetName = std::move(femaleAssetName);
+	Parms.maleSpineArray = std::move(maleSpineArray);
+	Parms.femaleSpineArray = std::move(femaleSpineArray);
+	Parms.useFullscreenAdaptAnchor = useFullscreenAdaptAnchor;
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;
@@ -685,8 +689,8 @@ void UPlotBlueprintFunctionLibrary_C::OpenUiViewInArray(const class FString& mal
 
 	Func->FunctionFlags = Flgs;
 
-	maleSpineArray1 = std::move(Parms.maleSpineArray1);
-	femaleSpineArray1 = std::move(Parms.femaleSpineArray1);
+	maleSpineArray = std::move(Parms.maleSpineArray);
+	femaleSpineArray = std::move(Parms.femaleSpineArray);
 }
 
 
@@ -960,6 +964,229 @@ void UPlotBlueprintFunctionLibrary_C::BindItemInspectActor(const struct FMovieSc
 	Params::PlotBlueprintFunctionLibrary_C_BindItemInspectActor Parms{};
 
 	Parms.binding = std::move(binding);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.EnablePlotInteract
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bEnable                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::EnablePlotInteract(bool bEnable, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "EnablePlotInteract");
+
+	Params::PlotBlueprintFunctionLibrary_C_EnablePlotInteract Parms{};
+
+	Parms.bEnable = bEnable;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.EnableCameraShake
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bEnable1                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// TSoftClassPtr<class UClass>             cameraShakePtr                                         (BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::EnableCameraShake(bool bEnable1, TSoftClassPtr<class UClass> cameraShakePtr, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "EnableCameraShake");
+
+	Params::PlotBlueprintFunctionLibrary_C_EnableCameraShake Parms{};
+
+	Parms.bEnable1 = bEnable1;
+	Parms.cameraShakePtr = cameraShakePtr;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.NeedFlowAdaption
+// (Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+
+bool UPlotBlueprintFunctionLibrary_C::NeedFlowAdaption(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "NeedFlowAdaption");
+
+	Params::PlotBlueprintFunctionLibrary_C_NeedFlowAdaption Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenCaptionImage
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    uiPrefabId                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// float                                   duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    uiStartAnimName                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const class FString&                    uiEndAnimName                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::OpenCaptionImage(const class FString& uiPrefabId, float duration, const class FString& uiStartAnimName, const class FString& uiEndAnimName, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "OpenCaptionImage");
+
+	Params::PlotBlueprintFunctionLibrary_C_OpenCaptionImage Parms{};
+
+	Parms.uiPrefabId = std::move(uiPrefabId);
+	Parms.duration = duration;
+	Parms.uiStartAnimName = std::move(uiStartAnimName);
+	Parms.uiEndAnimName = std::move(uiEndAnimName);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenMultiTextCaption
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    textId                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// float                                   duration                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::OpenMultiTextCaption(const class FString& textId, float duration, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "OpenMultiTextCaption");
+
+	Params::PlotBlueprintFunctionLibrary_C_OpenMultiTextCaption Parms{};
+
+	Parms.textId = std::move(textId);
+	Parms.duration = duration;
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.OpenArtWord2dView
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    sequenceName                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::OpenArtWord2dView(const class FString& sequenceName, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "OpenArtWord2dView");
+
+	Params::PlotBlueprintFunctionLibrary_C_OpenArtWord2dView Parms{};
+
+	Parms.sequenceName = std::move(sequenceName);
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.SwitchArtWord2dMark
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::SwitchArtWord2dMark(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "SwitchArtWord2dMark");
+
+	Params::PlotBlueprintFunctionLibrary_C_SwitchArtWord2dMark Parms{};
+
+	Parms.__WorldContext = __WorldContext;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function PlotBlueprintFunctionLibrary.PlotBlueprintFunctionLibrary_C.CloseArtWord2dView
+// (Native, Static, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UPlotBlueprintFunctionLibrary_C::CloseArtWord2dView(class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("PlotBlueprintFunctionLibrary_C", "CloseArtWord2dView");
+
+	Params::PlotBlueprintFunctionLibrary_C_CloseArtWord2dView Parms{};
+
 	Parms.__WorldContext = __WorldContext;
 
 	auto Flgs = Func->FunctionFlags;

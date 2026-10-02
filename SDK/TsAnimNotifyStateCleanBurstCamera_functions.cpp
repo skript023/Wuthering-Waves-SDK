@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function TsAnimNotifyStateCleanBurstCamera.TsAnimNotifyStateCleanBurstCamera_C.K2_NotifyEnd
-// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class USkeletalMeshComponent*           MeshComp                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 // class UAnimSequenceBase*                Animation                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -36,7 +36,12 @@ bool UTsAnimNotifyStateCleanBurstCamera_C::K2_NotifyEnd(class USkeletalMeshCompo
 	Parms.MeshComp = MeshComp;
 	Parms.Animation = Animation;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

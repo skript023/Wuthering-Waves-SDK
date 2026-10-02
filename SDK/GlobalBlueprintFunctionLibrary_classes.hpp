@@ -21,8 +21,8 @@ namespace SDK
 class UGlobalBlueprintFunctionLibrary_C final : public UBlueprintFunctionLibrary
 {
 public:
-	static class UObject* GetBpFightManager(class UObject* __WorldContext);
 	static class UObject* GetBpEventManager(class UObject* __WorldContext);
+	static class UObject* GetBpFightManager(class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

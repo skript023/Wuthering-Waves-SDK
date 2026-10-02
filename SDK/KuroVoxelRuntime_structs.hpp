@@ -14,6 +14,19 @@
 namespace SDK
 {
 
+// Enum KuroVoxelRuntime.EKuroVoxelCaveType
+// NumValues: 0x0007
+enum class EKuroVoxelCaveType : uint8
+{
+	Cave                                     = 0,
+	Room                                     = 1,
+	Transition                               = 2,
+	RoomTransition                           = 3,
+	BigWorld                                 = 254,
+	Default                                  = 255,
+	EKuroVoxelCaveType_MAX                   = 256,
+};
+
 // ScriptStruct KuroVoxelRuntime.KuroVoxelInfo
 // 0x0002 (0x0002 - 0x0000)
 struct FKuroVoxelInfo final

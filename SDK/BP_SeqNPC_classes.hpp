@@ -19,25 +19,33 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SeqNPC.BP_SeqNPC_C
-// 0x0088 (0x0460 - 0x03D8)
+// 0x00A8 (0x0630 - 0x0588)
 class ABP_SeqNPC_C final : public ABP_NpcCombinedMesh_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USeqAudio_Seq_V2_C*                     SeqAudio_Seq_V2;                                   // 0x03E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UABPC_Seq_Body_V2_C*                    ABPC_Body_V2;                                      // 0x03E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPD_NpcSetupData_C*                     NPC_DA;                                            // 0x03F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         MaxLod;                                            // 0x03F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         LodBias;                                           // 0x03FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IgnoreSockets;                                     // 0x0400(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_401[0x3];                                      // 0x0401(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         TalkID;                                            // 0x0404(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         TalkID_SP;                                         // 0x0408(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_40C[0x4];                                      // 0x040C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<class FName, struct FTransform>          Float_Curve_Data;                                  // 0x0410(0x0050)(Edit, BlueprintVisible)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_SeqNPC_C;                        // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USeqAudio_Seq_V2_C*                     SeqAudio_Seq_V2;                                   // 0x0590(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UABPC_Seq_Body_V2_C*                    ABPC_Body_V2;                                      // 0x0598(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPD_NpcSetupData_C*                     NPC_DA;                                            // 0x05A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         MaxLod;                                            // 0x05A8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         LodBias;                                           // 0x05AC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IgnoreSockets;                                     // 0x05B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5B1[0x3];                                      // 0x05B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TalkID;                                            // 0x05B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         TalkID_SP;                                         // 0x05B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5BC[0x4];                                      // 0x05BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<class FName, struct FTransform>          Float_Curve_Data;                                  // 0x05C0(0x0050)(Edit, BlueprintVisible)
+	bool                                          开启阴影投射;                                      // 0x0610(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
+	bool                                          开启阴影投射Cache;                                 // 0x0611(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_612[0x6];                                      // 0x0612(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UKuroNpcExtraDecorationConfig*>  NPC_Decoration;                                    // 0x0618(0x0010)(Edit, BlueprintVisible)
+	bool                                          SetMobileCustomStencil;                            // 0x0628(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor)
+	uint8                                         Pad_629[0x3];                                      // 0x0629(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         StencilVal;                                        // 0x062C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_SeqNPC(int32 EntryPoint);
+	void EditorTick(float DeltaSeconds);
 	void ReceiveTick(float DeltaSeconds);
 	void UserConstructionScript();
 	void UpdateNpcByDa();
@@ -51,6 +59,8 @@ public:
 	bool GetAnimDataTransform(TMap<class FName, struct FTransform>* FloatCurveData);
 	void GetABPC_Body_V2(class UABPC_Seq_Body_V2_C** ABPC_Body_V2_0);
 	void GetSeqAudio(class USeqAudio_Seq_V2_C** SeqAudio);
+	void GetSeqMouthAnimInstance(class UAnimInstance** AnimInstance);
+	void GetSeqTalkId(int32* TalkID_0, int32* TalkID_SP_0);
 
 public:
 	static class UClass* StaticClass()

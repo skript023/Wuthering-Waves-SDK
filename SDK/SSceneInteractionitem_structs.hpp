@@ -11,22 +11,22 @@
 #include "Basic.hpp"
 
 #include "SSceneInteractionSequence_structs.hpp"
-#include "SSceneInteractionMaterialController_structs.hpp"
-#include "SSceneInteractionMontage_structs.hpp"
-#include "SSceneInteractionActorSkeletalmeshDestructible_structs.hpp"
 #include "KuroRenderingRuntimeBPPlugin_structs.hpp"
 #include "SSceneInteractionAudio_structs.hpp"
+#include "SSceneInteractionMontage_structs.hpp"
+#include "Engine_structs.hpp"
+#include "SSceneInteractionCrossStateEffect_structs.hpp"
+#include "SSceneInteractionMaterialController_structs.hpp"
 #include "SStateBasedEffect_structs.hpp"
 #include "SSceneInteractionitemIndestructibleEffectsParameters_structs.hpp"
-#include "SSceneInteractionCrossStateEffect_structs.hpp"
-#include "Engine_structs.hpp"
+#include "SSceneInteractionActorSkeletalmeshDestructible_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SSceneInteractionitem.SSceneInteractionitem
-// 0x0200 (0x0200 - 0x0000)
+// 0x0218 (0x0218 - 0x0000)
 struct FSSceneInteractionitem final
 {
 public:
@@ -44,16 +44,15 @@ public:
 	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPD_CharacterControllerDataGroup_C*     CharacterDataGroupForOrgan_69_B03A0A914328798FF4DDB6A1EBC5C950; // 0x00F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TArray<struct FSSceneInteractionitemIndestructibleEffectsParameters> IndestructibleEffectsParameters_82_B16BD5A64450652CED7731AF68D8E053; // 0x00F8(0x0010)(Edit, BlueprintVisible)
-	TArray<class ADestructibleActor*>             DestructibleActors_99_A07716B4422E6A54621BEDB3F449F6E9; // 0x0108(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TArray<struct FSSceneInteractionCrossStateEffect> CrossStateEffects_109_5016CE794DA6206622021E974D237C3F; // 0x0118(0x0010)(Edit, BlueprintVisible)
-	float                                         TransitionTime_112_12FA0D394CCB866377EB3CAF50BC4FCF; // 0x0128(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          NeedExpressionAnyway_124_E922E35944150267116058B40F3428FE; // 0x012C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_12D[0x3];                                      // 0x012D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class ABP_MaterialRuntimeParUpdate_C*         BP_MaterialRuntimeParUpdate_127_9A0CC7B346E88F894D52DB86AA793A1A; // 0x0130(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSceneInteractionActorSkeletalMeshDestructible SkeletalMeshDestructible_130_3EEAC93A44C8ED181B770F9E64CC1407; // 0x0138(0x0020)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	TMap<class AActor*, struct FCollisionProfileName> EnterStateActorCollisionProfile_145_269B4C09457B0627372B7F8295647243; // 0x0158(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	TMap<class AActor*, struct FCollisionProfileName> ExitStateActorCollisionProfile_147_C168A2DC488D39A04D4C9CBE4877E466; // 0x01A8(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
-	bool                                          WaitForPlayableFinished_144_B68E6DD24B98F3700493C8AC9702D334; // 0x01F8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	TArray<struct FSSceneInteractionCrossStateEffect> CrossStateEffects_109_5016CE794DA6206622021E974D237C3F; // 0x0108(0x0010)(Edit, BlueprintVisible)
+	float                                         TransitionTime_112_12FA0D394CCB866377EB3CAF50BC4FCF; // 0x0118(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          NeedExpressionAnyway_124_E922E35944150267116058B40F3428FE; // 0x011C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_11D[0x3];                                      // 0x011D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class ABP_MaterialRuntimeParUpdate_C*         BP_MaterialRuntimeParUpdate_127_9A0CC7B346E88F894D52DB86AA793A1A; // 0x0120(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSSceneInteractionActorSkeletalMeshDestructible SkeletalMeshDestructible_130_3EEAC93A44C8ED181B770F9E64CC1407; // 0x0128(0x0048)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	TMap<class AActor*, struct FCollisionProfileName> EnterStateActorCollisionProfile_145_269B4C09457B0627372B7F8295647243; // 0x0170(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	TMap<class AActor*, struct FCollisionProfileName> ExitStateActorCollisionProfile_147_C168A2DC488D39A04D4C9CBE4877E466; // 0x01C0(0x0050)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	bool                                          WaitForPlayableFinished_144_B68E6DD24B98F3700493C8AC9702D334; // 0x0210(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_FSSceneInteractionitem;
 

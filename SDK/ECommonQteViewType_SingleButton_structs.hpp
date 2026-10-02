@@ -15,13 +15,16 @@ namespace SDK
 {
 
 // UserDefinedEnum ECommonQteViewType_SingleButton.ECommonQteViewType_SingleButton
-// NumValues: 0x0004
+// NumValues: 0x0007
 enum class ECommonQteViewType_SingleButton : uint8
 {
 	NewEnumerator0                           = 0,
 	NewEnumerator1                           = 1,
 	NewEnumerator2                           = 2,
-	ECommonQteViewType_MAX                   = 3,
+	NewEnumerator3                           = 3,
+	NewEnumerator4                           = 4,
+	NewEnumerator5                           = 5,
+	ECommonQteViewType_MAX                   = 6,
 };
 
 }

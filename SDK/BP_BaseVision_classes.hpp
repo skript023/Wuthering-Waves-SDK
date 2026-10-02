@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "TsBaseCharacter_classes.hpp"
 
 
@@ -19,25 +19,24 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BaseVision.BP_BaseVision_C
-// 0x0030 (0x0780 - 0x0750)
-#pragma pack(push, 0x1)
-class alignas(0x10) ABP_BaseVision_C : public ATsBaseCharacter_C
+// 0x0020 (0x0780 - 0x0760)
+class ABP_BaseVision_C : public ATsBaseCharacter_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseVision_C;                    // 0x0750(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FVector                                显像放大比例;                                      // 0x0758(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                显像缩小比例;                                      // 0x0764(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          显像时是否需要打开可视化;                          // 0x0770(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          显像时是否需要特殊pose;                            // 0x0771(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_BaseVision_C;                    // 0x0758(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVector                                显像放大比例;                                      // 0x0760(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                显像缩小比例;                                      // 0x076C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          显像时是否需要打开可视化;                          // 0x0778(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          显像时是否需要特殊pose;                            // 0x0779(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void 获取召唤角色(class ATsBaseCharacter_C** 召唤角色);
-	void 获取幻象数据(struct FSVisionData* 幻象数据);
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
-	void 显像初始化();
-	void 显像结束();
 	void ExecuteUbergraph_BP_BaseVision(int32 EntryPoint);
+	void 显像结束();
+	void 显像初始化();
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	void 获取幻象数据(struct FSVisionData* 幻象数据);
+	void 获取召唤角色(class ATsBaseCharacter_C** 召唤角色);
 
 public:
 	static class UClass* StaticClass()
@@ -53,7 +52,6 @@ public:
 		return GetDefaultObjImpl<ABP_BaseVision_C>();
 	}
 };
-#pragma pack(pop)
 DUMPER7_ASSERTS_ABP_BaseVision_C;
 
 }

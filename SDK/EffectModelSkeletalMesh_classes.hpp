@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelSkeletalMesh.EffectModelSkeletalMesh_C
-// 0x0000 (0x0598 - 0x0598)
+// 0x0000 (0x0648 - 0x0648)
 class UEffectModelSkeletalMesh_C final : public UEffectModelSkeletalMesh
 {
 public:

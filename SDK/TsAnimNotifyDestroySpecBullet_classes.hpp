@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyDestroySpecBullet.TsAnimNotifyDestroySpecBullet_C
-// 0x0038 (0x0080 - 0x0048)
-class UTsAnimNotifyDestroySpecBullet_C final : public UKuroAnimNotify
+// 0x0038 (0x0090 - 0x0058)
+class UTsAnimNotifyDestroySpecBullet_C final : public UTsAnimNotifyBase_C
 {
 public:
-	bool                                          是否召唤子子弹;                                    // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  角色拥有标签执行判定;                              // 0x0050(0x0020)(Edit, BlueprintVisible)
-	class FName                                   bulletName;                                        // 0x0070(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          立即销毁子弹特效;                                  // 0x007C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          是否召唤子子弹;                                    // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  角色拥有标签执行判定;                              // 0x0060(0x0020)(Edit, BlueprintVisible)
+	class FName                                   bulletName;                                        // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          立即销毁子弹特效;                                  // 0x008C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

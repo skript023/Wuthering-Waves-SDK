@@ -10,31 +10,31 @@
 
 #include "Basic.hpp"
 
-#include "SInputHoldConfig_structs.hpp"
 #include "EInputAction_structs.hpp"
-#include "ERoleInteractType_structs.hpp"
-#include "BP_InputBase_classes.hpp"
 #include "SInputCaches_structs.hpp"
+#include "SInputHoldConfig_structs.hpp"
+#include "BP_InputBase_classes.hpp"
 #include "ECharViewDirectionState_structs.hpp"
+#include "ERoleInteractType_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_InputComponent.BP_InputComponent_C
-// 0x00A8 (0x0220 - 0x0178)
+// 0x00A8 (0x0240 - 0x0198)
 class UBP_InputComponent_C : public UBP_InputBase_C
 {
 public:
-	TMap<EInputAction, struct FSInputCaches>      输入缓存;                                          // 0x0178(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TMap<EInputAction, struct FSInputHoldConfig>  长按配置;                                          // 0x01C8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          通用_攻击按下;                                     // 0x0218(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          锁定退出;                                          // 0x0219(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          通用_技能1按下;                                    // 0x021A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          锁定切换;                                          // 0x021B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          通用_瞄准按下;                                     // 0x021C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          是否进入闪避通用;                                  // 0x021D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          通用_攻击长按;                                     // 0x021E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	TMap<EInputAction, struct FSInputCaches>      输入缓存;                                          // 0x0198(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TMap<EInputAction, struct FSInputHoldConfig>  长按配置;                                          // 0x01E8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          通用_攻击按下;                                     // 0x0238(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          锁定退出;                                          // 0x0239(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          通用_技能1按下;                                    // 0x023A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          锁定切换;                                          // 0x023B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          通用_瞄准按下;                                     // 0x023C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          是否进入闪避通用;                                  // 0x023D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          通用_攻击长按;                                     // 0x023E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	struct FSInputCommand 跳跃按下(float time);

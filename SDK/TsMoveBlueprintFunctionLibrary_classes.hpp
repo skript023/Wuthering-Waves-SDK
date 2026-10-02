@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
-#include "EClimbState_structs.hpp"
-#include "EMovementDirection_structs.hpp"
 #include "EExitClimb_structs.hpp"
+#include "Engine_classes.hpp"
+#include "EMovementDirection_structs.hpp"
 #include "EEnterClimb_structs.hpp"
+#include "EClimbState_structs.hpp"
 
 
 namespace SDK
@@ -128,6 +128,13 @@ public:
 	static void LeftStartSwing(int32 entityId, class UObject* __WorldContext);
 	static void LeftLoopSwing(int32 entityId, class UObject* __WorldContext);
 	static void LeftEndSwing(int32 entityId, class UObject* __WorldContext);
+	static void ResetClimbConfig(int32 entityId, const class FString& key, class UObject* __WorldContext);
+	static void EnableGoThrough(int32 entityId, int32 goThroughPriority, class UObject* __WorldContext);
+	static void DisableGoThrough(int32 entityId1, class UObject* __WorldContext);
+	static void EnterAssistedWalking(int32 entityId, class UObject* __WorldContext);
+	static void LeftAssistedWalking(int32 entityId, class UObject* __WorldContext);
+	static void StartAssistedWalk(int32 entityId, class UObject* __WorldContext);
+	static void EnterAssistedWalkIdle(int32 entityId, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

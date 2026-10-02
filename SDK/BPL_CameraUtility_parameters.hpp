@@ -44,7 +44,7 @@ public:
 DUMPER7_ASSERTS_BPL_CameraUtility_C_DtGetCameraConfigs;
 
 // Function BPL_CameraUtility.BPL_CameraUtility_C.DtGetCameraConfigList
-// 0x07A8 (0x07A8 - 0x0000)
+// 0x08B8 (0x08B8 - 0x0000)
 struct BPL_CameraUtility_C_DtGetCameraConfigList final
 {
 public:
@@ -62,10 +62,10 @@ public:
 	class FName                                   CallFunc_Array_Get_Item;                           // 0x004C(0x000C)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0058(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCameraConfig                         CallFunc_GetDataTableRowFromName_OutRow;           // 0x0060(0x0740)(HasGetValueTypeHash)
-	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x07A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_7A1[0x3];                                      // 0x07A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x07A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCameraConfig                         CallFunc_GetDataTableRowFromName_OutRow;           // 0x0060(0x0850)(HasGetValueTypeHash)
+	bool                                          CallFunc_GetDataTableRowFromName_ReturnValue;      // 0x08B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8B1[0x3];                                      // 0x08B1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x08B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BPL_CameraUtility_C_DtGetCameraConfigList;
 

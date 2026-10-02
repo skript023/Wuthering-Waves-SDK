@@ -10,24 +10,24 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "KuroAnim_structs.hpp"
 #include "KuroAnim_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_EKamolaGundaMd10011.ABP_EKamolaGundaMd10011_C
-// 0x0AA0 (0x12A0 - 0x0800)
+// 0x0DD0 (0x1790 - 0x09C0)
 class UABP_EKamolaGundaMd10011_C final : public UKuroAnimInstance
 {
 public:
-	uint8                                         Pad_7F8[0x8];                                      // 0x07F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0800(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0808(0x0038)()
-	struct FAnimNode_ExtraFollowAnims             AnimGraphNode_ExtraFollowAnims;                    // 0x0840(0x0A50)()
-	class ATsBaseCharacter_C*                     当前角色;                                          // 0x1290(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	uint8                                         Pad_9B8[0x8];                                      // 0x09B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x09C8(0x0038)()
+	struct FAnimNode_ExtraFollowAnims             AnimGraphNode_ExtraFollowAnims;                    // 0x0A00(0x0D80)()
+	class ATsBaseCharacter_C*                     当前角色;                                          // 0x1780(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_ABP_EKamolaGundaMd10011(int32 EntryPoint);

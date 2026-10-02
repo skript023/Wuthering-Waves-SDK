@@ -29,6 +29,15 @@ public:
 };
 DUMPER7_ASSERTS_BasePlayerController_SetKuroForceFeedbackConfig;
 
+// Function KuroInput.BasePlayerController.SetUseGamepadState
+// 0x0001 (0x0001 - 0x0000)
+struct BasePlayerController_SetUseGamepadState final
+{
+public:
+	bool                                          value;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BasePlayerController_SetUseGamepadState;
+
 // Function KuroInput.BasePlayerController.SetUseSonyGamepadState
 // 0x0001 (0x0001 - 0x0000)
 struct BasePlayerController_SetUseSonyGamepadState final
@@ -139,6 +148,64 @@ public:
 };
 DUMPER7_ASSERTS_BasePlayerController_StopKuroForceFeedback;
 
+// Function KuroInput.KuroInputFunctionLibrary.AddActionBinding
+// 0x0030 (0x0030 - 0x0000)
+struct KuroInputFunctionLibrary_AddActionBinding final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ActionName;                                        // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInputEvent                                   KeyEvent;                                          // 0x0014(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                Object;                                            // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   FuncName;                                          // 0x0020(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_AddActionBinding;
+
+// Function KuroInput.KuroInputFunctionLibrary.AddAxisBinding
+// 0x0030 (0x0030 - 0x0000)
+struct KuroInputFunctionLibrary_AddAxisBinding final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   AxisName;                                          // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                Object;                                            // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   FuncName;                                          // 0x0020(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_AddAxisBinding;
+
+// Function KuroInput.KuroInputFunctionLibrary.AddKeyBinding
+// 0x0050 (0x0050 - 0x0000)
+struct KuroInputFunctionLibrary_AddKeyBinding final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInputChord                            Chord;                                             // 0x0008(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInputEvent                                   KeyEvent;                                          // 0x0030(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                Object;                                            // 0x0038(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   FuncName;                                          // 0x0040(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_AddKeyBinding;
+
+// Function KuroInput.KuroInputFunctionLibrary.AddTouchBinding
+// 0x0028 (0x0028 - 0x0000)
+struct KuroInputFunctionLibrary_AddTouchBinding final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInputEvent                                   KeyEvent;                                          // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                Object;                                            // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   FuncName;                                          // 0x0018(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_AddTouchBinding;
+
 // Function KuroInput.KuroInputFunctionLibrary.ApplyInputMode
 // 0x0008 (0x0008 - 0x0000)
 struct KuroInputFunctionLibrary_ApplyInputMode final
@@ -147,6 +214,42 @@ public:
 	class APlayerController*                      InPlayerController;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroInputFunctionLibrary_ApplyInputMode;
+
+// Function KuroInput.KuroInputFunctionLibrary.ClearActionBindings
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputFunctionLibrary_ClearActionBindings final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_ClearActionBindings;
+
+// Function KuroInput.KuroInputFunctionLibrary.ClearAxisBindings
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputFunctionLibrary_ClearAxisBindings final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_ClearAxisBindings;
+
+// Function KuroInput.KuroInputFunctionLibrary.ClearKeyBindings
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputFunctionLibrary_ClearKeyBindings final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_ClearKeyBindings;
+
+// Function KuroInput.KuroInputFunctionLibrary.ClearTouchBindings
+// 0x0008 (0x0008 - 0x0000)
+struct KuroInputFunctionLibrary_ClearTouchBindings final
+{
+public:
+	class APlayerController*                      PlayerController;                                  // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_ClearTouchBindings;
 
 // Function KuroInput.KuroInputFunctionLibrary.HasInputModeReply
 // 0x0028 (0x0028 - 0x0000)
@@ -215,6 +318,17 @@ public:
 	struct FInputModeReply                        ReturnValue;                                       // 0x0020(0x0020)(Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroInputFunctionLibrary_SetUIOnlyInputMode;
+
+// Function KuroInput.KuroInputFunctionLibrary.TryUseHighPrecisionMouseMovement
+// 0x0010 (0x0010 - 0x0000)
+struct KuroInputFunctionLibrary_TryUseHighPrecisionMouseMovement final
+{
+public:
+	const class APlayerController*                InPlayerController;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUse;                                              // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroInputFunctionLibrary_TryUseHighPrecisionMouseMovement;
 
 }
 

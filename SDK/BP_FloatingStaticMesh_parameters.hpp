@@ -11,27 +11,45 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.ExecuteUbergraph_BP_FloatingStaticMesh
-// 0x0008 (0x0008 - 0x0000)
+// 0x0018 (0x0018 - 0x0000)
 struct BP_FloatingStaticMesh_C_ExecuteUbergraph_BP_FloatingStaticMesh final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UWorldPartition*                        CallFunc_GetWorldPartition_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0010(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_FloatingStaticMesh_C_ExecuteUbergraph_BP_FloatingStaticMesh;
 
 // Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.UserConstructionScript
-// 0x0001 (0x0001 - 0x0000)
+// 0x0150 (0x0150 - 0x0000)
 struct BP_FloatingStaticMesh_C_UserConstructionScript final
 {
 public:
-	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0000(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FTransformDouble                       NewLocalVar_0;                                     // 0x0000(0x0040)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0040(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0044(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0048(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AActor*>                         CallFunc_Map_Keys_Keys;                            // 0x0050(0x0010)(ReferenceParm)
+	class AActor*                                 CallFunc_Array_Get_Item;                           // 0x0060(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       CallFunc_Map_Find_Value;                           // 0x0070(0x0040)(IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Map_Find_ReturnValue;                     // 0x00B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_B2[0x2];                                       // 0x00B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             CallFunc_D_K2_SetActorRelativeTransform_SweepHitResult; // 0x00B4(0x0094)(IsPlainOldData, NoDestructor, ContainsInstancedReference)
+	bool                                          CallFunc_SetStaticMesh_ReturnValue;                // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_FloatingStaticMesh_C_UserConstructionScript;
 
@@ -81,6 +99,58 @@ public:
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_BP_FloatingStaticMesh_C_SetMaterialParams;
+
+// Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.RefreshChildActors
+// 0x0150 (0x0150 - 0x0000)
+struct BP_FloatingStaticMesh_C_RefreshChildActors final
+{
+public:
+	TArray<class AActor*>                         LocalChildActors;                                  // 0x0000(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate)
+	struct FTransformDouble                       LocalBaseTransform;                                // 0x0010(0x0040)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0050(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x0054(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0058(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5C[0x4];                                       // 0x005C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       CallFunc_D_K2_GetComponentToWorld_ReturnValue;     // 0x0060(0x0040)(IsPlainOldData, NoDestructor)
+	TArray<class AActor*>                         CallFunc_GetAttachedActors_OutActors;              // 0x00A0(0x0010)(ReferenceParm)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B4[0x4];                                       // 0x00B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 CallFunc_Array_Get_Item;                           // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x00C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C1[0xF];                                       // 0x00C1(0x000F)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransformDouble                       CallFunc_D_GetTransform_ReturnValue;               // 0x00D0(0x0040)(IsPlainOldData, NoDestructor)
+	struct FTransformDouble                       CallFunc_D_MakeRelativeTransform_ReturnValue;      // 0x0110(0x0040)(IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_FloatingStaticMesh_C_RefreshChildActors;
+
+// Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.CopyCustomPrimitiveData
+// 0x0020 (0x0020 - 0x0000)
+struct BP_FloatingStaticMesh_C_CopyCustomPrimitiveData final
+{
+public:
+	class UStaticMeshComponent*                   Target;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Array_Index_Variable;                       // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ___int_Loop_Counter_Variable;                      // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Array_Get_Item;                           // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x001C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_BP_FloatingStaticMesh_C_CopyCustomPrimitiveData;
+
+// Function BP_FloatingStaticMesh.BP_FloatingStaticMesh_C.SetCustomData
+// 0x0014 (0x0014 - 0x0000)
+struct BP_FloatingStaticMesh_C_SetCustomData final
+{
+public:
+	int32                                         ___int_Variable;                                   // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_GetCustomPrimitiveDataByIndex_ReturnValue; // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_LessEqual_IntInt_ReturnValue;             // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         CallFunc_Array_Add_ReturnValue;                    // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FloatingStaticMesh_C_SetCustomData;
 
 }
 

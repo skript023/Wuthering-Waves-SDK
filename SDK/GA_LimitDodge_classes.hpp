@@ -11,21 +11,22 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "GA_Passive_classes.hpp"
 #include "CoreUObject_structs.hpp"
+#include "GA_Passive_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass GA_LimitDodge.GA_LimitDodge_C
-// 0x0040 (0x05D0 - 0x0590)
+// 0x0048 (0x0620 - 0x05D8)
 class UGA_LimitDodge_C final : public UGa_Passive_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_LimitDodge_C;                    // 0x0590(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class ATsBaseCharacter_C*                     角色;                                              // 0x0598(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FTransform                             Transform;                                         // 0x05A0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_LimitDodge_C;                    // 0x05D8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class ATsBaseCharacter_C*                     角色;                                              // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5E8[0x8];                                      // 0x05E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             Transform;                                         // 0x05F0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_GA_LimitDodge(int32 EntryPoint);

@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "E_SE_PlayOrder_structs.hpp"
-#include "SScreenEffectExtraState_structs.hpp"
 #include "KuroCurve_structs.hpp"
-#include "Engine_classes.hpp"
+#include "E_SE_PlayOrder_structs.hpp"
 #include "E_SE_RootType_structs.hpp"
+#include "SScreenEffectExtraState_structs.hpp"
+#include "Engine_classes.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass EffectScreenPlayData.EffectScreenPlayData_C
-// 0x0120 (0x0158 - 0x0038)
+// 0x0128 (0x0160 - 0x0038)
 class UEffectScreenPlayData_C final : public UPrimaryDataAsset
 {
 public:
@@ -36,22 +36,25 @@ public:
 	uint8                                         Pad_52[0x2];                                       // 0x0052(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Order;                                             // 0x0054(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         fadeSpeed;                                         // 0x0058(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bUsedForSequence;                                  // 0x005C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	E_SE_RootType                                 RootType;                                          // 0x005D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bAutoDestroy;                                      // 0x005E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bUseAudio;                                         // 0x005F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	class UAkAudioEvent*                          AudioEvent;                                        // 0x0060(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UAkAudioEvent*                          AudioEventEnd;                                     // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         AudioEventEndDelay;                                // 0x0070(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ConsoleCommandOnBegin;                             // 0x0078(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash)
-	class FString                                 ConsoleCommandOnEnd;                               // 0x0088(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash)
-	TMap<class FString, struct FKuroCurveLinearColor> LinearColorParameter;                          // 0x0098(0x0050)(Edit, BlueprintVisible)
-	TMap<class FString, struct FKuroCurveFloat>   FloatParameter;                                    // 0x00E8(0x0050)(Edit, BlueprintVisible)
-	float                                         EffectTweenSpeed;                                  // 0x0138(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_13C[0x4];                                      // 0x013C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSScreenEffectExtraState>       ExtraStates;                                       // 0x0140(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	bool                                          bStartLoopEndByCurve;                              // 0x0150(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          OverrideFadeOutSpeed;                              // 0x005C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay)
+	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         fadeOutSpeedOverride;                              // 0x0060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash)
+	bool                                          bUsedForSequence;                                  // 0x0064(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	E_SE_RootType                                 RootType;                                          // 0x0065(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bAutoDestroy;                                      // 0x0066(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bUseAudio;                                         // 0x0067(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UAkAudioEvent*                          AudioEvent;                                        // 0x0068(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAkAudioEvent*                          AudioEventEnd;                                     // 0x0070(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         AudioEventEndDelay;                                // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ConsoleCommandOnBegin;                             // 0x0080(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash)
+	class FString                                 ConsoleCommandOnEnd;                               // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, AdvancedDisplay, HasGetValueTypeHash)
+	TMap<class FString, struct FKuroCurveLinearColor> LinearColorParameter;                          // 0x00A0(0x0050)(Edit, BlueprintVisible)
+	TMap<class FString, struct FKuroCurveFloat>   FloatParameter;                                    // 0x00F0(0x0050)(Edit, BlueprintVisible)
+	float                                         EffectTweenSpeed;                                  // 0x0140(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_144[0x4];                                      // 0x0144(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSScreenEffectExtraState>       ExtraStates;                                       // 0x0148(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	bool                                          bStartLoopEndByCurve;                              // 0x0158(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	static class UClass* StaticClass()

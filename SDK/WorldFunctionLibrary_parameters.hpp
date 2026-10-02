@@ -10,13 +10,15 @@
 
 #include "Basic.hpp"
 
+#include "ERelation_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "EPawnChannel_structs.hpp"
-#include "Engine_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "BPEEnableFollowShooter_structs.hpp"
 #include "EInputAction_structs.hpp"
+#include "Engine_structs.hpp"
 #include "EInputState_structs.hpp"
 #include "EDetachType_structs.hpp"
-#include "ERelation_structs.hpp"
+#include "EPawnChannel_structs.hpp"
 #include "EWeatherState_structs.hpp"
 #include "EWuYinQuState_structs.hpp"
 
@@ -1582,16 +1584,6 @@ public:
 };
 DUMPER7_ASSERTS_WorldFunctionLibrary_C_AttachToActor;
 
-// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetPlayerFollower
-// 0x0010 (0x0010 - 0x0000)
-struct WorldFunctionLibrary_C_GetPlayerFollower final
-{
-public:
-	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetPlayerFollower;
-
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.AttachToComponent
 // 0x0058 (0x0058 - 0x0000)
 struct WorldFunctionLibrary_C_AttachToComponent final
@@ -1633,27 +1625,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0038(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_WorldFunctionLibrary_C_DetachActor;
-
-// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerFollowerEnable
-// 0x0010 (0x0010 - 0x0000)
-struct WorldFunctionLibrary_C_IsPlayerFollowerEnable final
-{
-public:
-	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-};
-DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsPlayerFollowerEnable;
-
-// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetPlayerFollowerEnable
-// 0x0010 (0x0010 - 0x0000)
-struct WorldFunctionLibrary_C_SetPlayerFollowerEnable final
-{
-public:
-	bool                                          enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetPlayerFollowerEnable;
 
 // Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerFollowerNeedInput
 // 0x0018 (0x0018 - 0x0000)
@@ -1750,6 +1721,378 @@ public:
 	TArray<class AActor*>                         ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm)
 };
 DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetFormationActors;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetEntityBindGroup
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_GetEntityBindGroup final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetEntityBindGroup;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetVisionEntityIdList
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_GetVisionEntityIdList final
+{
+public:
+	int32                                         ownerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<int32>                                 ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetVisionEntityIdList;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetVisionPos
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_SetVisionPos final
+{
+public:
+	int32                                         ownerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         pos;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetVisionPos;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetVisionPos
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_GetVisionPos final
+{
+public:
+	int32                                         ownerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetVisionPos;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.PlayerEntityId
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_PlayerEntityId final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_PlayerEntityId;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetFollowerShooterConfig
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_GetFollowerShooterConfig final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBP_FollowShooterConfig_C*              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetFollowerShooterConfig;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetGameplayTagOriginName
+// 0x0028 (0x0028 - 0x0000)
+struct WorldFunctionLibrary_C_GetGameplayTagOriginName final
+{
+public:
+	struct FGameplayTag                           gameplayTag;                                       // 0x0000(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   ReturnValue;                                       // 0x0018(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetGameplayTagOriginName;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.CurrentFrontRoleEntityId
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_CurrentFrontRoleEntityId final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_CurrentFrontRoleEntityId;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetPlayerFollower
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_GetPlayerFollower final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetPlayerFollower;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerFollowerEnable
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_IsPlayerFollowerEnable final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsPlayerFollowerEnable;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetPlayerFollowerMotor
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_GetPlayerFollowerMotor final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetPlayerFollowerMotor;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetPlayerFollowerMotorEnable
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_SetPlayerFollowerMotorEnable final
+{
+public:
+	bool                                          enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetPlayerFollowerMotorEnable;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerFollowerMotorEnable
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_IsPlayerFollowerMotorEnable final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsPlayerFollowerMotorEnable;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.RegisterDayNightBpToBpActorController
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_RegisterDayNightBpToBpActorController final
+{
+public:
+	TScriptInterface<class IBPI_DayNightEvent_C>  dayNightBp;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_RegisterDayNightBpToBpActorController;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.UnregisterDayNightBpToBpActorController
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_UnregisterDayNightBpToBpActorController final
+{
+public:
+	TScriptInterface<class IBPI_DayNightEvent_C>  dayNightBp;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_UnregisterDayNightBpToBpActorController;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetPlayerFollowerCustomEntityId
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_SetPlayerFollowerCustomEntityId final
+{
+public:
+	class FString                                 customKey;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	int32                                         entityId;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetPlayerFollowerCustomEntityId;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.RemovePlayerFollowerCustomEntityId
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_RemovePlayerFollowerCustomEntityId final
+{
+public:
+	class FString                                 customKey;                                         // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_RemovePlayerFollowerCustomEntityId;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.ShowTipsByTextId
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_ShowTipsByTextId final
+{
+public:
+	class FString                                 textId;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ShowTipsByTextId;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SetPlayerFollowerEnable
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_SetPlayerFollowerEnable final
+{
+public:
+	bool                                          enable;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	EBPEEnableFollowShooter                       enableType;                                        // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SetPlayerFollowerEnable;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsBulletCreateByFollowShooter
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_IsBulletCreateByFollowShooter final
+{
+public:
+	int32                                         bulletId1;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsBulletCreateByFollowShooter;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.CheckIsRoleTriggerActor
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_CheckIsRoleTriggerActor final
+{
+public:
+	class AActor*                                 actor;                                             // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_CheckIsRoleTriggerActor;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsMale
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_IsMale final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsMale;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.ReleaseFromMediaPlayActor
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_ReleaseFromMediaPlayActor final
+{
+public:
+	TScriptInterface<class IBPI_SceneBp_C>        sceneBpActor;                                      // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ReleaseFromMediaPlayActor;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.ChangeCustomEntityState
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_ChangeCustomEntityState final
+{
+public:
+	int32                                         ownerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         pos;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         skillId;                                           // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FGameplayTag                           stateTag;                                          // 0x000C(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_ChangeCustomEntityState;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerElementalFieldOpened
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_IsPlayerElementalFieldOpened final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsPlayerElementalFieldOpened;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.UpdatePlayerElementalField
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_UpdatePlayerElementalField final
+{
+public:
+	bool                                          isOpen;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_UpdatePlayerElementalField;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetLivingCharMeteorAttackTargets
+// 0x0018 (0x0018 - 0x0000)
+struct WorldFunctionLibrary_C_GetLivingCharMeteorAttackTargets final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<class AActor*>                         ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetLivingCharMeteorAttackTargets;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.StartCustomSceneItemEntityTrackPlayer
+// 0x0028 (0x0028 - 0x0000)
+struct WorldFunctionLibrary_C_StartCustomSceneItemEntityTrackPlayer final
+{
+public:
+	int32                                         ownerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         pos;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         moveSpeed;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FRotator                               initRotatorOffset;                                 // 0x000C(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         angleSpeed;                                        // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0020(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_StartCustomSceneItemEntityTrackPlayer;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.StopCustomSceneItemEntityTrackPlayer
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_StopCustomSceneItemEntityTrackPlayer final
+{
+public:
+	int32                                         ownerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         pos;                                               // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_StopCustomSceneItemEntityTrackPlayer;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.StartPlayerInteractCoreFoundation
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_StartPlayerInteractCoreFoundation final
+{
+public:
+	int32                                         entityId;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UKuroBooleanEventBinder*                eventBinder;                                       // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_StartPlayerInteractCoreFoundation;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.IsPlayerDrawingElementalCore
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_IsPlayerDrawingElementalCore final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_IsPlayerDrawingElementalCore;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.PlayerElementalFieldBurst
+// 0x0008 (0x0008 - 0x0000)
+struct WorldFunctionLibrary_C_PlayerElementalFieldBurst final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_PlayerElementalFieldBurst;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.GetPlayerSceneInteractPointLocation
+// 0x0020 (0x0020 - 0x0000)
+struct WorldFunctionLibrary_C_GetPlayerSceneInteractPointLocation final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVectorDouble                          ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_GetPlayerSceneInteractPointLocation;
+
+// Function WorldFunctionLibrary.WorldFunctionLibrary_C.SummonChair
+// 0x0010 (0x0010 - 0x0000)
+struct WorldFunctionLibrary_C_SummonChair final
+{
+public:
+	int32                                         ownerEntityId;                                     // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WorldFunctionLibrary_C_SummonChair;
 
 }
 

@@ -18,7 +18,7 @@ namespace SDK
 {
 
 // Function GA_Relax_Vision.GA_Relax_Vision_C.ExecuteUbergraph_GA_Relax_Vision
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 

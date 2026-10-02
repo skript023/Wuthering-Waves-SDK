@@ -17,6 +17,80 @@
 namespace SDK
 {
 
+// Function BP_SeqCustom.BP_SeqCustom_C.ExecuteUbergraph_BP_SeqCustom
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqCustom_C::ExecuteUbergraph_BP_SeqCustom(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqCustom_C", "ExecuteUbergraph_BP_SeqCustom");
+
+	Params::BP_SeqCustom_C_ExecuteUbergraph_BP_SeqCustom Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_SeqCustom.BP_SeqCustom_C.ReceiveEndPlay
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqCustom_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqCustom_C", "ReceiveEndPlay");
+
+	Params::BP_SeqCustom_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_SeqCustom.BP_SeqCustom_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqCustom_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqCustom_C", "ReceiveTick");
+
+	Params::BP_SeqCustom_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_SeqCustom.BP_SeqCustom_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_SeqCustom_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqCustom_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_SeqCustom.BP_SeqCustom_C.UserConstructionScript
 // (Event, Public, BlueprintCallable, BlueprintEvent)
 
@@ -209,6 +283,52 @@ bool ABP_SeqCustom_C::IsCustomSupport()
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_SeqCustom.BP_SeqCustom_C.GetSeqMouthAnimInstance
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UAnimInstance**                   AnimInstance                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqCustom_C::GetSeqMouthAnimInstance(class UAnimInstance** AnimInstance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqCustom_C", "GetSeqMouthAnimInstance");
+
+	Params::BP_SeqCustom_C_GetSeqMouthAnimInstance Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (AnimInstance != nullptr)
+		*AnimInstance = Parms.AnimInstance;
+}
+
+
+// Function BP_SeqCustom.BP_SeqCustom_C.GetSeqTalkId
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32*                                  TalkID_0                                               (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32*                                  TalkID_SP_0                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_SeqCustom_C::GetSeqTalkId(int32* TalkID_0, int32* TalkID_SP_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_SeqCustom_C", "GetSeqTalkId");
+
+	Params::BP_SeqCustom_C_GetSeqTalkId Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (TalkID_0 != nullptr)
+		*TalkID_0 = Parms.TalkID_0;
+
+	if (TalkID_SP_0 != nullptr)
+		*TalkID_SP_0 = Parms.TalkID_SP_0;
 }
 
 }

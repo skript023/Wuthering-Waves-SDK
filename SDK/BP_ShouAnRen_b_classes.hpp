@@ -18,12 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ShouAnRen_b.BP_ShouAnRen_b_C
-// 0x0000 (0x0780 - 0x0780)
+// 0x0010 (0x0790 - 0x0780)
 class ABP_ShouAnRen_b_C final : public ABP_BaseVision_C
 {
 public:
-	uint8                                         Pad_772[0x6];                                      // 0x0772(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_ShouAnRen_b_C;                   // 0x0778(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_ShouAnRen_b_C;                   // 0x0780(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_ShouAnRen_b(int32 EntryPoint);

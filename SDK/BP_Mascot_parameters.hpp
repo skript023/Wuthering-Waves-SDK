@@ -239,5 +239,25 @@ public:
 };
 DUMPER7_ASSERTS_BP_Mascot_C_GetAddSpineHeadValue;
 
+// Function BP_Mascot.BP_Mascot_C.GetSeqMouthAnimInstance
+// 0x0010 (0x0010 - 0x0000)
+struct BP_Mascot_C_GetSeqMouthAnimInstance final
+{
+public:
+	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UAnimInstance*                          CallFunc_GetAnimInstance_ReturnValue;              // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Mascot_C_GetSeqMouthAnimInstance;
+
+// Function BP_Mascot.BP_Mascot_C.GetSeqTalkId
+// 0x0008 (0x0008 - 0x0000)
+struct BP_Mascot_C_GetSeqTalkId final
+{
+public:
+	int32                                         TalkID_0;                                          // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         TalkID_SP_0;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_Mascot_C_GetSeqTalkId;
+
 }
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass EffectModelNiagara.EffectModelNiagara_C
-// 0x0000 (0x06C0 - 0x06C0)
+// 0x0000 (0x0A10 - 0x0A10)
 class UEffectModelNiagara_C final : public UEffectModelNiagara
 {
 public:

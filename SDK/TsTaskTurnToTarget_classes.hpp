@@ -10,25 +10,25 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "TsTaskAbortImmediatelyBase_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTaskTurnToTarget.TsTaskTurnToTarget_C
-// 0x0020 (0x00D8 - 0x00B8)
+// 0x0020 (0x00E0 - 0x00C0)
 class UTsTaskTurnToTarget_C final : public UTsTaskAbortImmediatelyBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskTurnToTarget_C;               // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class FString                                 BlackboardKeyActor;                                // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	float                                         TurnSpeed;                                         // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskTurnToTarget_C;               // 0x00C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class FString                                 BlackboardKeyActor;                                // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	float                                         TurnSpeed;                                         // 0x00D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 	void ExecuteUbergraph_TsTaskTurnToTarget(int32 EntryPoint);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 
 public:
 	static class UClass* StaticClass()

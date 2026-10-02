@@ -17,6 +17,38 @@
 namespace SDK
 {
 
+// Function KuroVoxelRuntime.KuroCaveVolumeSubsystem.D_QueryVoxelCaveType
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// class UObject*                          WorldContext                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVectorDouble&             UELocation                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTraceDown                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+uint8 UKuroCaveVolumeSubsystem::D_QueryVoxelCaveType(class UObject* WorldContext, const struct FVectorDouble& UELocation, bool bTraceDown)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("KuroCaveVolumeSubsystem", "D_QueryVoxelCaveType");
+
+	Params::KuroCaveVolumeSubsystem_D_QueryVoxelCaveType Parms{};
+
+	Parms.WorldContext = WorldContext;
+	Parms.UELocation = std::move(UELocation);
+	Parms.bTraceDown = bTraceDown;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function KuroVoxelRuntime.KuroVoxelSystem.D_GetMaterialIDAtPos
 // (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
 // Parameters:

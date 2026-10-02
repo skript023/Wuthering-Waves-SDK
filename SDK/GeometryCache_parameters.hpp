@@ -158,31 +158,31 @@ public:
 DUMPER7_ASSERTS_GeometryCacheComponent_IsPlayingReversed;
 
 // Function GeometryCache.GeometryCacheTrack_FlipbookAnimation.AddMeshSample
-// 0x00B0 (0x00B0 - 0x0000)
+// 0x00C8 (0x00C8 - 0x0000)
 struct GeometryCacheTrack_FlipbookAnimation_AddMeshSample final
 {
 public:
-	struct FGeometryCacheMeshData                 MeshData;                                          // 0x0000(0x00A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	float                                         SampleTime;                                        // 0x00A8(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGeometryCacheMeshData                 MeshData;                                          // 0x0000(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	float                                         SampleTime;                                        // 0x00C0(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C4[0x4];                                       // 0x00C4(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GeometryCacheTrack_FlipbookAnimation_AddMeshSample;
 
 // Function GeometryCache.GeometryCacheTrack_TransformAnimation.SetMesh
-// 0x00A8 (0x00A8 - 0x0000)
+// 0x00C0 (0x00C0 - 0x0000)
 struct GeometryCacheTrack_TransformAnimation_SetMesh final
 {
 public:
-	struct FGeometryCacheMeshData                 NewMeshData;                                       // 0x0000(0x00A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FGeometryCacheMeshData                 NewMeshData;                                       // 0x0000(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GeometryCacheTrack_TransformAnimation_SetMesh;
 
 // Function GeometryCache.GeometryCacheTrack_TransformGroupAnimation.SetMesh
-// 0x00A8 (0x00A8 - 0x0000)
+// 0x00C0 (0x00C0 - 0x0000)
 struct GeometryCacheTrack_TransformGroupAnimation_SetMesh final
 {
 public:
-	struct FGeometryCacheMeshData                 NewMeshData;                                       // 0x0000(0x00A8)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FGeometryCacheMeshData                 NewMeshData;                                       // 0x0000(0x00C0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GeometryCacheTrack_TransformGroupAnimation_SetMesh;
 

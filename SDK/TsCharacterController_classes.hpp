@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsCharacterController.TsCharacterController_C
-// 0x0008 (0x0790 - 0x0788)
+// 0x0008 (0x07A0 - 0x0798)
 class ATsCharacterController_C : public ATsBasePlayerController_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_TsCharacterController_C;            // 0x0788(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_TsCharacterController_C;            // 0x0798(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void OnSetupInputComponent();
@@ -33,6 +33,7 @@ public:
 	void ReceivePossess(class APawn* PossessedPawn);
 	void ReceiveBeginPlay();
 	void ReceiveUnPossess(class APawn* UnpossessedPawn);
+	void ReceiveDestroyed();
 	void ExecuteUbergraph_TsCharacterController(int32 EntryPoint);
 
 public:

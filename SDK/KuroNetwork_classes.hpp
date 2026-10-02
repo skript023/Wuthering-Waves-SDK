@@ -10,14 +10,67 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
 #include "KuroNetwork_structs.hpp"
+#include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
 #include "JsEnv_structs.hpp"
 
 
 namespace SDK
 {
+
+// Class KuroNetwork.KuroDNS
+// 0x0000 (0x0030 - 0x0030)
+class UKuroDNS final : public UBlueprintFunctionLibrary
+{
+public:
+	static void DNSResolution(const class FString& DomainName, const class FName& Protocol, TDelegate<void(int32 ErrorCode, const TArray<class FString>& IpList)> Callback);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroDNS")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroDNS")
+	}
+	static class UKuroDNS* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroDNS>();
+	}
+};
+DUMPER7_ASSERTS_UKuroDNS;
+
+// Class KuroNetwork.KuroNetworkSetting
+// 0x0058 (0x0088 - 0x0030)
+class UKuroNetworkSetting final : public UObject
+{
+public:
+	class FString                                 AlAki;                                             // 0x0030(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 AlAks;                                             // 0x0040(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RptPub;                                            // 0x0050(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RptUrl;                                            // 0x0060(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 RptUrlGlobal;                                      // 0x0070(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          EnableDump;                                        // 0x0080(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseNativeMethod;                                   // 0x0081(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroNetworkSetting")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroNetworkSetting")
+	}
+	static class UKuroNetworkSetting* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroNetworkSetting>();
+	}
+};
+DUMPER7_ASSERTS_UKuroNetworkSetting;
 
 // Class KuroNetwork.KuroHttp
 // 0x0000 (0x0030 - 0x0030)
@@ -106,7 +159,7 @@ public:
 DUMPER7_ASSERTS_UKuroHttpServerRouterProxy;
 
 // Class KuroNetwork.KuroKcpClient
-// 0x03A0 (0x03D0 - 0x0030)
+// 0x03A8 (0x03D8 - 0x0030)
 class UKuroKcpClient final : public UObject
 {
 public:
@@ -125,12 +178,13 @@ public:
 	TMulticastInlineDelegate<void()>              OnTcpConnected;                                    // 0x0118(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnTcpConnectFailed;                                // 0x0128(0x0010)(ZeroConstructor, InstancedReference, NativeAccessSpecifierPublic)
 	class UKuroTcpClient*                         TcpClient;                                         // 0x0138(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_140[0x290];                                    // 0x0140(0x0290)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_140[0x298];                                    // 0x0140(0x0298)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void CloseTcpConnect();
 	bool Connect(const class FString& Addr, const int32 Port, const bool CrcCheckDisable);
 	void Disconnect();
+	bool DoConnect(const class FString& Addr, const int32 Port, const bool CrcCheckDisable, const bool bAddTraceId);
 	class FString GetDebugString(const struct FArrayBuffer& ArrayBuffer, const class FString& Separator, int16 MsgId, int32 SeqNo);
 	void HandleKcpConnect(const uint32 NeedCrcCheck, const uint32 Conv);
 	void HandleTcpConnected();
@@ -144,7 +198,7 @@ public:
 	void SetKcpSegmentSize(int32 SegmentSize);
 	void SetKcpStream(bool bStream);
 	void SetKcpWndSize(int32 SndWnd, int32 RcvWnd);
-	void StartTcpConnect(const int32 Port);
+	void StartTcpConnect(const class FString& Addr, const int32 Port);
 	void TickOutside(float DeltaSeconds);
 
 	bool IsTcpConnectStart() const;
@@ -164,6 +218,34 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroKcpClient;
+
+// Class KuroNetwork.SendHttpRequest
+// 0x0020 (0x0058 - 0x0038)
+class USendHttpRequest final : public UBlueprintAsyncActionBase
+{
+public:
+	TMulticastInlineDelegate<void(int32 Code, const class FString& Data)> OnSuccess;                 // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(int32 Code, const class FString& Data)> OnFail;                    // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+
+public:
+	static class USendHttpRequest* HttpRequest(const class FString& URL, EHttpMethod Method, const class FString& PostBody);
+	static class USendHttpRequest* HttpRequestEx(const class FString& URL, EHttpMethod Method, const class FString& PostBody, const class FString& HeaderParam);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SendHttpRequest")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SendHttpRequest")
+	}
+	static class USendHttpRequest* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USendHttpRequest>();
+	}
+};
+DUMPER7_ASSERTS_USendHttpRequest;
 
 // Class KuroNetwork.KuroKcpTestWorker
 // 0x0260 (0x0290 - 0x0030)
@@ -194,6 +276,37 @@ public:
 };
 DUMPER7_ASSERTS_UKuroKcpTestWorker;
 
+// Class KuroNetwork.KuroNetworkDetection
+// 0x0000 (0x0030 - 0x0030)
+class UKuroNetworkDetection final : public UObject
+{
+public:
+	static void AbortGatewayUdpReachable();
+	static void DetectionFinish(bool bSuccess);
+	static void GatewayUdpReachable(const class FString& IpAddress, const TArray<int32>& Ports, const class FString& Payload, TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate);
+	static class FString GetCurrentProxyAddress();
+	static class FString GetDetectionConfig(const class FString& ServerName);
+	static void ResolveDomainFinish();
+	static void ResolveDomainName(const class FString& DomainName, TDelegate<void(int32 ErrorCode)> Callback);
+	static void SetCDNConfig(const class FString& CDNConfig);
+	static void TestUdpReachable(const class FString& IpAddress, const TArray<int32>& Ports, TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroNetworkDetection")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroNetworkDetection")
+	}
+	static class UKuroNetworkDetection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroNetworkDetection>();
+	}
+};
+DUMPER7_ASSERTS_UKuroNetworkDetection;
+
 // Class KuroNetwork.KuroNetworkChange
 // 0x0020 (0x0050 - 0x0030)
 class UKuroNetworkChange final : public UObject
@@ -220,65 +333,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UKuroNetworkChange;
-
-// Class KuroNetwork.KuroNetworkDetection
-// 0x0000 (0x0030 - 0x0030)
-class UKuroNetworkDetection final : public UObject
-{
-public:
-	static void DetectionFinish(bool bSuccess);
-	static class FString GetCurrentProxyAddress();
-	static class FString GetDetectionConfig(const class FString& ServerName);
-	static void ResolveDomainFinish();
-	static void ResolveDomainName(const class FString& DomainName, TDelegate<void(int32 ErrorCode)> Callback);
-	static void SetCDNConfig(const class FString& CDNConfig);
-	static void TestUdpReachable(const class FString& IpAddress, const TArray<int32>& Ports, TDelegate<void(int32 SuccessCount, int32 ErrorCode)> ResultDelegate);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroNetworkDetection")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroNetworkDetection")
-	}
-	static class UKuroNetworkDetection* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroNetworkDetection>();
-	}
-};
-DUMPER7_ASSERTS_UKuroNetworkDetection;
-
-// Class KuroNetwork.KuroNetworkSetting
-// 0x0058 (0x0088 - 0x0030)
-class UKuroNetworkSetting final : public UObject
-{
-public:
-	class FString                                 AlAki;                                             // 0x0030(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 AlAks;                                             // 0x0040(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RptPub;                                            // 0x0050(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RptUrl;                                            // 0x0060(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 RptUrlGlobal;                                      // 0x0070(0x0010)(Edit, ZeroConstructor, Config, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          EnableDump;                                        // 0x0080(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseNativeMethod;                                   // 0x0081(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_82[0x6];                                       // 0x0082(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("KuroNetworkSetting")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"KuroNetworkSetting")
-	}
-	static class UKuroNetworkSetting* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UKuroNetworkSetting>();
-	}
-};
-DUMPER7_ASSERTS_UKuroNetworkSetting;
 
 // Class KuroNetwork.KuroTcpClient
 // 0x0070 (0x00A0 - 0x0030)
@@ -314,33 +368,55 @@ public:
 };
 DUMPER7_ASSERTS_UKuroTcpClient;
 
-// Class KuroNetwork.SendHttpRequest
-// 0x0020 (0x0058 - 0x0038)
-class USendHttpRequest final : public UBlueprintAsyncActionBase
+// Class KuroNetwork.KuroTraceroute
+// 0x0010 (0x0040 - 0x0030)
+class UKuroTraceroute final : public UObject
 {
 public:
-	TMulticastInlineDelegate<void(int32 Code, const class FString& Data)> OnSuccess;                 // 0x0038(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(int32 Code, const class FString& Data)> OnFail;                    // 0x0048(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	static class USendHttpRequest* HttpRequest(const class FString& URL, EHttpMethod Method, const class FString& PostBody);
-	static class USendHttpRequest* HttpRequestEx(const class FString& URL, EHttpMethod Method, const class FString& PostBody, const class FString& HeaderParam);
+	void Abort();
+	void Traceroute(const class FString& Target, TDelegate<void(bool IsReached)> Callback);
 
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("SendHttpRequest")
+		STATIC_CLASS_IMPL("KuroTraceroute")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"SendHttpRequest")
+		STATIC_NAME_IMPL(L"KuroTraceroute")
 	}
-	static class USendHttpRequest* GetDefaultObj()
+	static class UKuroTraceroute* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USendHttpRequest>();
+		return GetDefaultObjImpl<UKuroTraceroute>();
 	}
 };
-DUMPER7_ASSERTS_USendHttpRequest;
+DUMPER7_ASSERTS_UKuroTraceroute;
+
+// Class KuroNetwork.KuroUdp
+// 0x0000 (0x0030 - 0x0030)
+class UKuroUdp final : public UBlueprintFunctionLibrary
+{
+public:
+	static void SendUdpMessage(const class FString& Ip, int32 Port, const class FString& Message, int32 MaxRecvSize, TDelegate<void(bool IsSuccess, const class FString& Response)> Callback);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("KuroUdp")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"KuroUdp")
+	}
+	static class UKuroUdp* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UKuroUdp>();
+	}
+};
+DUMPER7_ASSERTS_UKuroUdp;
 
 }
 

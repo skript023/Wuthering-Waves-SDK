@@ -14,13 +14,14 @@
 #include "Engine_classes.hpp"
 #include "EInputCharacterState_structs.hpp"
 #include "SInputShowList_structs.hpp"
+#include "SInputActive_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_InputBase.BP_InputBase_C
-// 0x00B8 (0x0178 - 0x00C0)
+// 0x00D8 (0x0198 - 0x00C0)
 class UBP_InputBase_C : public UActorComponent
 {
 public:
@@ -30,6 +31,7 @@ public:
 	float                                         IsLockOnState;                                     // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	TMap<EInputCharacterState, struct FSInputShowList> InputShowMap;                                 // 0x00D8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 	TMap<EInputCharacterState, struct FSInputShowList> MobileInputShowMap;                           // 0x0128(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSInputActive                          激活移动输入映射按键事件;                          // 0x0178(0x0020)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_InputBase(int32 EntryPoint);
@@ -106,6 +108,16 @@ public:
 	struct FSInputCommand 锁定目标长按(float time);
 	struct FSInputCommand 通用交互按下(float time);
 	void GetMoveVector(struct FVector2D* ReturnVaule);
+	struct FSInputCommand 下降按下(float time);
+	struct FSInputCommand 下降抬起(float time);
+	struct FSInputCommand 下降长按(float time);
+	void 下降按下事件(float time);
+	void 下降抬起事件(float time);
+	struct FSInputCommand 移动输入按下(float time, float yaw);
+	struct FSInputCommand 移动输入抬起(float time, float yaw);
+	struct FSInputCommand 移动输入长按(float time, float yaw);
+	void 移动输入按下事件(float time, float yaw);
+	void 移动输入抬起事件(float time, float yaw);
 
 public:
 	static class UClass* StaticClass()

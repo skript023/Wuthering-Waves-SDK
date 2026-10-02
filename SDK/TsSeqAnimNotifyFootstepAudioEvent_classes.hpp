@@ -11,22 +11,22 @@
 #include "Basic.hpp"
 
 #include "E_FootstepVariant_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsSeqAnimNotifyFootstepAudioEvent.TsSeqAnimNotifyFootstepAudioEvent_C
-// 0x0090 (0x00D8 - 0x0048)
-class UTsSeqAnimNotifyFootstepAudioEvent_C final : public UKuroAnimNotify
+// 0x0090 (0x00E8 - 0x0058)
+class UTsSeqAnimNotifyFootstepAudioEvent_C final : public UTsAnimNotifyBase_C
 {
 public:
-	E_FootstepVariant                             Variant;                                           // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSoftObjectPtr<class UAkAudioEvent>           FootstepEvent;                                     // 0x0050(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	class UTraceLineElement*                      FootTraceElement;                                  // 0x0080(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<E_FootstepVariant, class FString>        FootstepVariantMap;                                // 0x0088(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	E_FootstepVariant                             Variant;                                           // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSoftObjectPtr<class UAkAudioEvent>           FootstepEvent;                                     // 0x0060(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class UTraceLineElement*                      FootTraceElement;                                  // 0x0090(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<E_FootstepVariant, class FString>        FootstepVariantMap;                                // 0x0098(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

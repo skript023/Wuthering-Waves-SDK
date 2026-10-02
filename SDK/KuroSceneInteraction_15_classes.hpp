@@ -16,25 +16,25 @@
 namespace SDK
 {
 
-// BlueprintGeneratedClass KuroSceneInteraction_15.TPrefab_SM_Pro_Mine_6_C
+// BlueprintGeneratedClass KuroSceneInteraction_15.TPrefab_SM_Pro_JinKuDoor_C
 // 0x0000 (0x02B8 - 0x02B8)
-class KuroSceneInteraction_15::ATPrefab_SM_Pro_Mine_6_C final : public ALevelScriptActor
+class KuroSceneInteraction_15::ATPrefab_SM_Pro_JinKuDoor_C final : public ALevelScriptActor
 {
 public:
 	static class UClass* StaticClass()
 	{
-		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_15.TPrefab_SM_Pro_Mine_6_C")
+		BP_STATIC_CLASS_IMPL_FULLNAME("BlueprintGeneratedClass KuroSceneInteraction_15.TPrefab_SM_Pro_JinKuDoor_C")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"TPrefab_SM_Pro_Mine_6_C")
+		STATIC_NAME_IMPL(L"TPrefab_SM_Pro_JinKuDoor_C")
 	}
-	static class KuroSceneInteraction_15::ATPrefab_SM_Pro_Mine_6_C* GetDefaultObj()
+	static class KuroSceneInteraction_15::ATPrefab_SM_Pro_JinKuDoor_C* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<KuroSceneInteraction_15::ATPrefab_SM_Pro_Mine_6_C>();
+		return GetDefaultObjImpl<KuroSceneInteraction_15::ATPrefab_SM_Pro_JinKuDoor_C>();
 	}
 };
-DUMPER7_ASSERTS_KuroSceneInteraction_15__ATPrefab_SM_Pro_Mine_6_C;
+DUMPER7_ASSERTS_KuroSceneInteraction_15__ATPrefab_SM_Pro_JinKuDoor_C;
 
 }
 

@@ -10,18 +10,18 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyFootprint.TsAnimNotifyFootprint_C
-// 0x0008 (0x0050 - 0x0048)
-class UTsAnimNotifyFootprint_C final : public UKuroAnimNotify
+// 0x0008 (0x0060 - 0x0058)
+class UTsAnimNotifyFootprint_C final : public UTsAnimNotifyBase_C
 {
 public:
-	bool                                          IsLeftFoot;                                        // 0x0048(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          IsLeftFoot;                                        // 0x0058(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

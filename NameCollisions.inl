@@ -9,129 +9,177 @@
 // FORWARD DECLARATIONS
 
 
-namespace KuroSceneInteraction_49 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace Ani_RoleDevelopToggle_PreUp { class USequenceDirector_C; }
 
-namespace TPrefab_SM_Gat_57A { class ATPrefab_SM_Gat_57A_C; }
+namespace Ani_UiView_PlotContent_Close_PC { class USequenceDirector_C; }
 
-namespace KuroSceneInteraction_54 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace KuroSceneInteraction_46 { class ATPrefab_SM_Pro_JinKuDoor_C; }
 
-namespace Ani_MissionPnlProcess_Start { class USequenceDirector_C; }
+namespace KuroSceneInteraction_8 { class ATPrefab_SM_Pro_JinKuDoor_C; }
 
-namespace KuroSceneInteraction_58 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace Ani_UiView_PlotContent_Close1_PC { class USequenceDirector_C; }
 
-namespace Ani_MissionPnlProcess_Finish { class USequenceDirector_C; }
+namespace KuroSceneInteraction_9 { class ATPrefab_SM_Pro_JinKuUnderNormalCamera_C; }
 
-namespace ECharacterControllerUVSwitch { enum class ECharacterControllerUVSwitch : uint8; }
-
-namespace SC_Kamola_Burst01 { class USequenceDirector_C; }
-
-namespace Ani_Ui_ItemBaseB_SelectedStart { class USequenceDirector_C; }
-
-namespace KuroSceneInteraction_45 { class ATPrefab_SM_Gat_57A_C; }
-
-namespace Ani_NewLevelSequence_Up { class USequenceDirector_C; }
-
-namespace KuroSceneInteraction_55 { class ATPrefab_SM_Pro_Mine_6_C; }
-
-namespace SC_Kamola_Burst02 { class USequenceDirector_C; }
-
-namespace TPrefab_SM_Gat_53A { class ATPrefab_SM_Gat_53A_C; }
-
-namespace KuroSceneInteraction_9 { class ATPrefab_SM_Gat_53A_C; }
-
-namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
-
-namespace KuroSceneInteraction_11 { class ATPrefab_SM_Pro_Mine_6_C; }
-
-namespace KuroSceneInteraction_18 { class ATPrefab_SM_Gat_50A_C; }
-
-namespace KuroSceneInteraction_27 { class ATPrefab_SM_Pro_SmallTow_2_0_C; }
-
-namespace TPrefab_SM_Pro_Mine_6 { class ATPrefab_SM_Pro_Mine_6_C; }
-
-namespace Ani_UnionLevelTips_Start { class USequenceDirector_C; }
-
-namespace SC_Qiuyuan_Burst01 { class USequenceDirector_C; }
-
-namespace KuroSceneInteraction_21 { class ATPrefab_SM_Gat_50A_C; }
-
-namespace KuroSceneInteraction_51 { class ATPrefab_SM_Gat_50A_C; }
-
-namespace GA_Destroy_Zhaohuan_Vision_0 { class UGA_Destroy_Zhaohuan_Vision_C; }
-
-namespace KuroSceneInteraction_46 { class ATPrefab_SM_Gat_53A_C; }
-
-namespace KuroSceneInteraction_25 { class ATPrefab_SM_Gat_50A_C; }
-
-namespace Ani_MissionPnlProcess_Finish_Close { class USequenceDirector_C; }
-
-namespace KuroSceneInteraction_50 { class ATPrefab_SM_Gat_50A_C; }
-
-namespace KuroSceneInteraction_1 { class ATPrefab_SM_Gat_50A_C; }
-
-namespace KuroSceneInteraction_57 { class ATPrefab_SM_Pro_Mine_6_C; }
-
-namespace Ani_RoleHeadLink_Loop { class USequenceDirector_C; }
-
-namespace KuroSceneInteraction_6 { class ATPrefab_SM_Gat_53A_C; }
-
-namespace Ani_MissionPnlProcess_StartWithChild { class USequenceDirector_C; }
+namespace KuroSceneInteraction_47 { class ATPrefab_2_1_LLDL_Hack_C; }
 
 namespace Ani_MissionPnlProcess_Unlock { class USequenceDirector_C; }
 
-namespace Ani_MissionPnlProcess_StartNew { class USequenceDirector_C; }
+namespace Ani_RoleDevelopToggle_Sle { class USequenceDirector_C; }
 
-namespace KuroSceneInteraction_56 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace SC_Kamola_Burst02 { class USequenceDirector_C; }
 
-namespace SC_Shouanren_Burst01 { class USequenceDirector_C; }
+namespace KuroSceneInteraction_12 { class ATPrefab_SM_Pro_JinKuDoor_C; }
 
-namespace KuroSceneInteraction_12 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace KuroSceneInteraction_32 { class ATPrefab_SM_Pro_JinKuDoor_C; }
 
-namespace KuroSceneInteraction_52 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace Ani_BtnHome_Move { class USequenceDirector_C; }
 
-namespace TPrefab_SM_Pro_SmallTow_2_0 { class ATPrefab_SM_Pro_SmallTow_2_0_C; }
+namespace KuroSceneInteraction_7 { class ATPrefab_SM_Pro_JinKuDoor_C; }
 
-namespace KuroSceneInteraction_47 { class ATPrefab_SM_Gat_50A_C; }
+namespace TPrefab_SM_Pro_Box_2_0_01_CBT3 { class ATPrefab_SM_Pro_Box_2_0_01_CBT3_C; }
 
-namespace KuroSceneInteraction_53 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace TPrefab_SM_Pro_RailShip { class ATPrefab_SM_Pro_RailShip_C; }
 
-namespace KuroSceneInteraction_60 { class ATPrefab_SM_Pro_SmallTow_2_0_C; }
+namespace TPrefab_SM_Pro_Box_2_0_04_Monser { class ATPrefab_SM_Pro_Box_2_0_04_Monser_C; }
 
-namespace KuroSceneInteraction_2 { class ATPrefab_SM_Gat_50A_C; }
+namespace KuroSceneInteraction_2 { class ATPrefab_SM_Pro_RailShip_C; }
 
-namespace KuroSceneInteraction_10 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace GameplayAbilities { struct FServerAbilityRPCBatch; }
 
-namespace SC_Shouanren_Burst02 { class USequenceDirector_C; }
+namespace Ani_UnionLevelTips_Close { class USequenceDirector_C; }
 
-namespace KuroSceneInteraction_44 { class ATPrefab_SM_Gat_53A_C; }
+namespace KuroSceneInteraction_48 { class ATPrefab_SM_Pro_SmallTow_2_0_C; }
+
+namespace Ani_BtnFightEnter_Phone_Circle_In { class USequenceDirector_C; }
+
+namespace Ani_RoleDevelopToggle_Float { class USequenceDirector_C; }
+
+namespace Ani_UiItem_RewardList_Show { class USequenceDirector_C; }
+
+namespace Ani_MapThemeHall35_HideView { class USequenceDirector_C; }
+
+namespace Ani_RoleDevelopToggle_Move { class USequenceDirector_C; }
+
+namespace Ani_UiView_PlotContent_Switch_PC { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_26 { class ATPrefab_SM_Pro_JinKuUnderNormalCamera_C; }
+
+namespace TPrefab_2_1_LLDL_Hack { class ATPrefab_2_1_LLDL_Hack_C; }
+
+namespace Ani_UiView_PlotContent_Start { class USequenceDirector_C; }
+
+namespace Ani_BtnHome_Float { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_13 { class ATPrefab_SM_Pro_Box_2_0_04_Monser_C; }
+
+namespace Ani_BtnFightEnter_Phone_Icon_In { class USequenceDirector_C; }
+
+namespace TPrefab_SM_Pro_JinKuDoor { class ATPrefab_SM_Pro_JinKuDoor_C; }
+
+namespace KuroSceneInteraction_33 { class ATPrefab_SM_Pro_CollectionDoor_C; }
+
+namespace KuroSceneInteraction_40 { class ATPrefab_SM_Pro_JinKuDoor_C; }
+
+namespace Ani_UiItem_RewardList_Hide { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_1 { class ATPrefab_SM_Pro_RailShip_C; }
+
+namespace Ani_RoleDevelopToggle_Pre { class USequenceDirector_C; }
+
+namespace Ani_BtnHome_LoopA_PC { class USequenceDirector_C; }
+
+namespace Ani_UiView_PlotContent_Start_PC { class USequenceDirector_C; }
+
+namespace Ani_UnionLevelTips_Start { class USequenceDirector_C; }
+
+namespace Ani_UiView_PlotContent_ShowView_PC { class USequenceDirector_C; }
+
+namespace Ani_RoleHeadLink_Loop { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_24 { class ATPrefab_SM_Pro_Box_2_0_01_CBT3_C; }
+
+namespace Ani_UiView_PlotContent_ShowView { class USequenceDirector_C; }
 
 namespace GA_Destroy_Zhaohuan_Vision { class UGA_Destroy_Zhaohuan_Vision_C; }
 
-namespace KuroSceneInteraction_13 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace SC_Kamola_Burst01 { class USequenceDirector_C; }
 
-namespace KuroSceneInteraction_3 { class ATPrefab_SM_Gat_50A_C; }
+namespace Ani_MissionPnlProcess_Finish_Close { class USequenceDirector_C; }
 
-namespace TPrefab_SM_Gat_50A { class ATPrefab_SM_Gat_50A_C; }
+namespace Seq_JKU_ChangeRail_01 { class USequenceDirector_C; }
 
-namespace KuroSceneInteraction_8 { class ATPrefab_SM_Gat_53A_C; }
+namespace KuroSceneInteraction_45 { class ATPrefab_SM_Pro_CollectionDoor_C; }
 
-namespace KuroSceneInteraction_48 { class ATPrefab_SM_Gat_57A_C; }
+namespace Seq_JKU_ChangeRail_02 { class USequenceDirector_C; }
 
-namespace KuroSceneInteraction_4 { class ATPrefab_SM_Gat_53A_C; }
+namespace KuroSceneInteraction_22 { class ATPrefab_SM_Pro_Box_2_0_02_CBT3_C; }
 
-namespace KuroSceneInteraction_19 { class ATPrefab_SM_Gat_50A_C; }
+namespace KuroSceneInteraction_14 { class ATPrefab_SM_Pro_CollectionDoor_C; }
 
-namespace KuroSceneInteraction_15 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace TPrefab_SM_Pro_Box_2_0_02_CBT3 { class ATPrefab_SM_Pro_Box_2_0_02_CBT3_C; }
 
-namespace KuroSceneInteraction_14 { class ATPrefab_SM_Pro_Mine_6_C; }
+namespace KuroSceneInteraction_25 { class ATPrefab_SM_Pro_JinKuDoor_C; }
 
-namespace KuroSceneInteraction_16 { class ATPrefab_SM_Gat_53A_C; }
+namespace SC_Shouanren_Burst02 { class USequenceDirector_C; }
 
-namespace KuroSceneInteraction_17 { class ATPrefab_SM_Gat_50A_C; }
+namespace SC_Kamola_Execute01 { class USequenceDirector_C; }
 
-namespace Ani_Ui_ItemBaseB_SelectedEnd { class USequenceDirector_C; }
+namespace Seq_JKU_ChangeRail_03 { class USequenceDirector_C; }
 
-namespace KuroSceneInteraction_22 { class ATPrefab_SM_Gat_50A_C; }
+namespace Ani_MissionPnlProcess_StartNew { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_20 { class ATPrefab_SM_Pro_Box_2_0_04_Monser_C; }
+
+namespace SC_Shouanren_Burst01 { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_6 { class ATPrefab_SM_Pro_Box_2_0_03_CBT3_C; }
+
+namespace KuroSceneInteraction_30 { class ATPrefab_SM_Pro_JinKuUnderNormalCamera_C; }
+
+namespace Ani_NewLevelSequence_Up { class USequenceDirector_C; }
+
+namespace Ani_BtnFightEnter_Phone_Icon_Out { class USequenceDirector_C; }
+
+namespace Ani_MissionPnlProcess_StartWithChild { class USequenceDirector_C; }
+
+namespace Ani_MissionPnlProcess_Start { class USequenceDirector_C; }
+
+namespace Ani_MissionPnlProcess_Finish { class USequenceDirector_C; }
+
+namespace SC_Qiuyuan_Burst01 { class USequenceDirector_C; }
+
+namespace TPrefab_SM_Pro_Box_2_0_03_CBT3 { class ATPrefab_SM_Pro_Box_2_0_03_CBT3_C; }
+
+namespace TPrefab_SM_Pro_SmallTow_2_0 { class ATPrefab_SM_Pro_SmallTow_2_0_C; }
+
+namespace TPrefab_SM_Pro_CollectionDoor { class ATPrefab_SM_Pro_CollectionDoor_C; }
+
+namespace TPrefab_SM_Pro_JinKuUnderNormalCamera { class ATPrefab_SM_Pro_JinKuUnderNormalCamera_C; }
+
+namespace Ani_MapThemeHall35_Start { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_31 { class ATPrefab_SM_Pro_Box_2_0_01_CBT3_C; }
+
+namespace GA_Destroy_Zhaohuan_Vision_0 { class UGA_Destroy_Zhaohuan_Vision_C; }
+
+namespace Ani_RoleDevelopToggle_UnSle { class USequenceDirector_C; }
+
+namespace KuroSceneInteraction_15 { class ATPrefab_SM_Pro_JinKuDoor_C; }
+
+namespace KuroSceneInteraction_28 { class ATPrefab_SM_Pro_Box_2_0_03_CBT3_C; }
+
+namespace KuroSceneInteraction_29 { class ATPrefab_SM_Pro_JinKuUnderNormalCamera_C; }
+
+namespace KuroSceneInteraction_34 { class ATPrefab_SM_Pro_Box_2_0_02_CBT3_C; }
+
+namespace KuroSceneInteraction_39 { class ATPrefab_SM_Pro_JinKuUnderNormalCamera_C; }
+
+namespace KuroSceneInteraction_44 { class ATPrefab_SM_Pro_Box_2_0_02_CBT3_C; }
+
+namespace Seq_JKU_ChangeRail_04 { class USequenceDirector_C; }
 
 namespace KuroRenderingRuntimeBPPlugin { enum class ECharacterControllerUVSwitch : uint8; }
+
+namespace ECharacterControllerUVSwitch { enum class ECharacterControllerUVSwitch : uint8; }
 

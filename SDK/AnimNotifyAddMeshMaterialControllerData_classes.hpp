@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass AnimNotifyAddMeshMaterialControllerData.AnimNotifyAddMeshMaterialControllerData_C
-// 0x0010 (0x0058 - 0x0048)
-class UAnimNotifyAddMeshMaterialControllerData_C final : public UKuroAnimNotifyState
+// 0x0010 (0x0068 - 0x0058)
+class UAnimNotifyAddMeshMaterialControllerData_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	class UPD_CharacterControllerData_C*          MaterialAssetData;                                 // 0x0048(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          HideMeshAfterPlay;                                 // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UPD_CharacterControllerData_C*          MaterialAssetData;                                 // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          HideMeshAfterPlay;                                 // 0x0060(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);
+	bool K2_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);
 
 	class FString GetNotifyName() const;
 

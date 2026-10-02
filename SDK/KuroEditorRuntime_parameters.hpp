@@ -88,7 +88,7 @@ public:
 DUMPER7_ASSERTS_EditorRuntimeOperations_ReadFileAsync;
 
 // Function KuroEditorRuntime.EditorRuntimeOperations.SendHttpRequest
-// 0x00A8 (0x00A8 - 0x0000)
+// 0x00B0 (0x00B0 - 0x0000)
 struct EditorRuntimeOperations_SendHttpRequest final
 {
 public:
@@ -97,6 +97,8 @@ public:
 	TMap<class FString, class FString>            HeaderParam;                                       // 0x0020(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 	class FString                                 Content;                                           // 0x0070(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void(bool Success, int32 Code, const class FString& Data)> Handler;                    // 0x0080(0x0028)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         Timeout;                                           // 0x00A8(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_EditorRuntimeOperations_SendHttpRequest;
 

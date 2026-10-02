@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "SMSystem_classes.hpp"
 
 
@@ -17,12 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SM_TaskSkill.BP_SM_TaskSkill_C
-// 0x0008 (0x0038 - 0x0030)
+// 0x0018 (0x0048 - 0x0030)
 class UBP_SM_TaskSkill_C final : public UASMTask
 {
 public:
 	int32                                         SkillId;                                           // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          允许打断;                                          // 0x0034(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           ConfigReplaceTag;                                  // 0x0038(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

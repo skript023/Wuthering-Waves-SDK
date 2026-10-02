@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "EAimAssistMode_structs.hpp"
-#include "SCameraDebugTool_ControllerModification_structs.hpp"
-#include "ECameraGravityMode_structs.hpp"
-#include "SCameraDebugTool_CameraModeInfo_structs.hpp"
-#include "SCameraDebugTool_SubCameraModification_structs.hpp"
-#include "SSequenceCamera_Settings_structs.hpp"
-#include "ECameraAnsEffectiveClientType_structs.hpp"
-#include "GameplayTags_structs.hpp"
-#include "SCameraModifier_Settings_structs.hpp"
-#include "SBaseCurve_structs.hpp"
-#include "SCameraModifier_Condition_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SCameraDebugTool_CameraModeInfo_structs.hpp"
+#include "ECameraGravityMode_structs.hpp"
+#include "SCameraDebugTool_ControllerModification_structs.hpp"
+#include "SCameraDebugTool_SubCameraModification_structs.hpp"
+#include "EAimAssistMode_structs.hpp"
+#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
+#include "SSequenceCamera_Settings_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "ECameraAnsEffectiveClientType_structs.hpp"
+#include "SBaseCurve_structs.hpp"
+#include "SCameraModifier_Settings_structs.hpp"
+#include "SCameraModifier_Condition_structs.hpp"
 #include "ECustomCameraMode_structs.hpp"
 
 
@@ -285,7 +285,7 @@ public:
 DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_ExitSpecialGameplayCamera;
 
 // Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ApplyCameraModify
-// 0x0180 (0x0180 - 0x0000)
+// 0x01E0 (0x01E0 - 0x0000)
 struct CameraBlueprintFunctionLibrary_C_ApplyCameraModify final
 {
 public:
@@ -295,16 +295,16 @@ public:
 	float                                         blendOutTime;                                      // 0x0014(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         breakBlendOutTime;                                 // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCameraModifier_Settings              cameraModifySettings;                              // 0x0020(0x0118)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	class UAnimMontage*                           montage;                                           // 0x0138(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSBaseCurve                            blendInCurve;                                      // 0x0140(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSBaseCurve                            blendOutCurve;                                     // 0x0148(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 cameraAttachSocket;                                // 0x0150(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	int32                                         entityId;                                          // 0x0160(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECameraAnsEffectiveClientType                 cameraEffectiveClientType;                         // 0x0164(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_165[0x3];                                      // 0x0165(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSCameraModifier_Condition>     cameraModifierContions;                            // 0x0168(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	class UObject*                                __WorldContext;                                    // 0x0178(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSCameraModifier_Settings              cameraModifySettings;                              // 0x0020(0x0168)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	class UAnimMontage*                           montage;                                           // 0x0188(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSBaseCurve                            blendInCurve;                                      // 0x0190(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSBaseCurve                            blendOutCurve;                                     // 0x01A0(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 cameraAttachSocket;                                // 0x01B0(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	int32                                         entityId;                                          // 0x01C0(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECameraAnsEffectiveClientType                 cameraEffectiveClientType;                         // 0x01C4(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C5[0x3];                                      // 0x01C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSCameraModifier_Condition>     cameraModifierContions;                            // 0x01C8(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	class UObject*                                __WorldContext;                                    // 0x01D8(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_ApplyCameraModify;
 
@@ -350,29 +350,29 @@ public:
 DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_ExitSpecialGameplayCamera2;
 
 // Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.PlayCameraSequence
-// 0x0098 (0x0098 - 0x0000)
+// 0x00A8 (0x00A8 - 0x0000)
 struct CameraBlueprintFunctionLibrary_C_PlayCameraSequence final
 {
 public:
 	ESequenceCameraAnsEffectiveClientType         生效客户端;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         entityId;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSSequenceCamera_Settings              settings;                                          // 0x0008(0x0038)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
-	bool                                          resetLockOnCamera;                                 // 0x0040(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               additiveRotation;                                  // 0x0044(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	class FString                                 cameraAttachSocket;                                // 0x0050(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 cameraDetectSocket;                                // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
-	struct FVector                                extraSphereLocation;                               // 0x0070(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         extraDetectSphereRadius;                           // 0x007C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          isShowExtraSphere;                                 // 0x0080(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          isIgnoreCharacterCollision;                        // 0x0081(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          disableMovementInput;                              // 0x0082(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          disableLookAtInput;                                // 0x0083(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          disableMotionBlur;                                 // 0x0084(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_85[0x3];                                       // 0x0085(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UObject*                                __WorldContext;                                    // 0x0088(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0090(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	struct FSSequenceCamera_Settings              settings;                                          // 0x0008(0x0048)(BlueprintVisible, BlueprintReadOnly, Parm, HasGetValueTypeHash)
+	bool                                          resetLockOnCamera;                                 // 0x0050(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_51[0x3];                                       // 0x0051(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               additiveRotation;                                  // 0x0054(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	class FString                                 cameraAttachSocket;                                // 0x0060(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 cameraDetectSocket;                                // 0x0070(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FVector                                extraSphereLocation;                               // 0x0080(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         extraDetectSphereRadius;                           // 0x008C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          isShowExtraSphere;                                 // 0x0090(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          isIgnoreCharacterCollision;                        // 0x0091(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          disableMovementInput;                              // 0x0092(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          disableLookAtInput;                                // 0x0093(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          disableMotionBlur;                                 // 0x0094(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0098(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x00A0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 };
 DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_PlayCameraSequence;
 
@@ -777,6 +777,101 @@ public:
 	int32                                         ReturnValue;                                       // 0x0028(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_EnableCameraSpecificLockLocation;
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetFightCameraForward
+// 0x0020 (0x0020 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_GetFightCameraForward final
+{
+public:
+	int32                                         index;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_GetFightCameraForward;
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.SetOcclusionDitherState
+// 0x0010 (0x0010 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_SetOcclusionDitherState final
+{
+public:
+	bool                                          isEnable;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_SetOcclusionDitherState;
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.InitSeparateCamera
+// 0x0030 (0x0030 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_InitSeparateCamera final
+{
+public:
+	class FString                                 cameraName;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	struct FVector2D                              initLocation;                                      // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              initSize;                                          // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          enableScissorOffset;                               // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_InitSeparateCamera;
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.FadeSeparateCamera
+// 0x0038 (0x0038 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_FadeSeparateCamera final
+{
+public:
+	class FString                                 cameraName;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+	float                                         fadeTime;                                          // 0x0010(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              targetViewLocation;                                // 0x0014(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              targetViewSize;                                    // 0x001C(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          enableScissorOffset;                               // 0x0024(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCurveFloat*                            curve;                                             // 0x0028(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_FadeSeparateCamera;
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.ForceStopCameraModify
+// 0x0010 (0x0010 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_ForceStopCameraModify final
+{
+public:
+	bool                                          withFadeOut;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_ForceStopCameraModify;
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.EnableSoftLockCamera
+// 0x0010 (0x0010 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_EnableSoftLockCamera final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_EnableSoftLockCamera;
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.DisableSoftLockCamera
+// 0x0010 (0x0010 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_DisableSoftLockCamera final
+{
+public:
+	int32                                         handle;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                __WorldContext;                                    // 0x0008(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_DisableSoftLockCamera;
+
+// Function CameraBlueprintFunctionLibrary.CameraBlueprintFunctionLibrary_C.GetPhotoCameraComponent
+// 0x0010 (0x0010 - 0x0000)
+struct CameraBlueprintFunctionLibrary_C_GetPhotoCameraComponent final
+{
+public:
+	class UObject*                                __WorldContext;                                    // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UCameraComponent*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_CameraBlueprintFunctionLibrary_C_GetPhotoCameraComponent;
 
 }
 

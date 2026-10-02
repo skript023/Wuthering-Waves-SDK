@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_Qiuyuan.ABP_Qiuyuan_C
-// 0x0010 (0x2B070 - 0x2B060)
+// 0x0010 (0x2CBC0 - 0x2CBB0)
 class UABP_Qiuyuan_C final : public UABP_BaseRole_C
 {
 public:
-	bool                                          PhysicsClothSimulateEnable;                        // 0x2B05C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2B05D[0x3];                                    // 0x2B05D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         PhysicsClothSimulateScale;                         // 0x2B060(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          PhysicsClothSimulateEnable;                        // 0x2CBAC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2CBAD[0x3];                                    // 0x2CBAD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         PhysicsClothSimulateScale;                         // 0x2CBB0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

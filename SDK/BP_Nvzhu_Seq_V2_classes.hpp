@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Nvzhu_Seq_V2.BP_Nvzhu_Seq_V2_C
-// 0x0000 (0x0388 - 0x0388)
+// 0x0000 (0x0408 - 0x0408)
 class ABP_Nvzhu_Seq_V2_C final : public ABP_BaseRole_Seq_V2_C
 {
 public:

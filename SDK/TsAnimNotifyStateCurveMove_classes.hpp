@@ -10,49 +10,54 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "ECurveMoveTargetBlackboardType_structs.hpp"
 #include "SSkillBehaviorCondition_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "EMovementProcessDirection_structs.hpp"
+#include "SSkillBehaviorAction_structs.hpp"
 #include "EPositionDatumTarget_structs.hpp"
 #include "EOffsetDirectionDatum_structs.hpp"
-#include "SSkillBehaviorAction_structs.hpp"
-#include "EMovementProcessDirection_structs.hpp"
-#include "Engine_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateCurveMove.TsAnimNotifyStateCurveMove_C
-// 0x0378 (0x03C0 - 0x0048)
-class UTsAnimNotifyStateCurveMove_C final : public UKuroAnimNotifyState
+// 0x03F8 (0x0450 - 0x0058)
+class UTsAnimNotifyStateCurveMove_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	TArray<struct FSSkillBehaviorCondition>       技能条件;                                          // 0x0048(0x0010)(Edit, BlueprintVisible)
-	class FName                                   技能条件公式;                                      // 0x0058(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          无视障碍阻挡;                                      // 0x0064(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_65[0x3];                                       // 0x0065(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        运动轨迹曲线;                                      // 0x0068(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          持续更新目标位置;                                  // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	EPositionDatumTarget                          位置基准目标;                                      // 0x0089(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_8A[0x2];                                       // 0x008A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   基于目标骨骼位置;                                  // 0x008C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   目标参数;                                          // 0x0098(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EOffsetDirectionDatum                         偏移方向基准;                                      // 0x00A4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_A5[0x3];                                       // 0x00A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                目标位置偏移;                                      // 0x00A8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          位置修正;                                          // 0x00B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B5[0x3];                                       // 0x00B5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSSkillBehaviorAction                  位置修正配置;                                      // 0x00B8(0x02D0)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	class UCurveFloat*                            运动位置曲线;                                      // 0x0388(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<struct FSplinePoint>                   运动轨迹曲线关键点;                                // 0x0390(0x0010)(Edit, BlueprintVisible)
-	TArray<struct FInterpCurvePointFloat>         运动轨迹曲线插值ReparamTable;                      // 0x03A0(0x0010)(Edit, BlueprintVisible)
-	EMovementProcessDirection                     运动过程朝向;                                      // 0x03B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          DebugMode;                                         // 0x03B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          自动更新运动轨迹曲线关键点;                        // 0x03B2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          终点贴地检测;                                      // 0x03B3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         终点贴地检测距离;                                  // 0x03B4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         最大位移距离;                                      // 0x03B8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FSSkillBehaviorCondition>       技能条件;                                          // 0x0058(0x0010)(Edit, BlueprintVisible)
+	class FName                                   技能条件公式;                                      // 0x0068(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          无视障碍阻挡;                                      // 0x0074(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_75[0x3];                                       // 0x0075(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        运动轨迹曲线;                                      // 0x0078(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          持续更新目标位置;                                  // 0x0098(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	EPositionDatumTarget                          位置基准目标;                                      // 0x0099(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_9A[0x2];                                       // 0x009A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   基于目标骨骼位置;                                  // 0x009C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   目标参数;                                          // 0x00A8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECurveMoveTargetBlackboardType                目标参数类型;                                      // 0x00B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EOffsetDirectionDatum                         偏移方向基准;                                      // 0x00B5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B6[0x2];                                       // 0x00B6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                目标位置偏移;                                      // 0x00B8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          位置修正;                                          // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C5[0x3];                                       // 0x00C5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSSkillBehaviorAction                  位置修正配置;                                      // 0x00C8(0x0348)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class UCurveFloat*                            运动位置曲线;                                      // 0x0410(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TArray<struct FSplinePoint>                   运动轨迹曲线关键点;                                // 0x0418(0x0010)(Edit, BlueprintVisible)
+	TArray<struct FInterpCurvePointFloat>         运动轨迹曲线插值ReparamTable;                      // 0x0428(0x0010)(Edit, BlueprintVisible)
+	EMovementProcessDirection                     运动过程朝向;                                      // 0x0438(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          DebugMode;                                         // 0x0439(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          自动更新运动轨迹曲线关键点;                        // 0x043A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          终点贴地检测;                                      // 0x043B(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         终点贴地检测距离;                                  // 0x043C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         最大位移距离;                                      // 0x0440(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          偏移基准消除重力分量;                              // 0x0444(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_445[0x3];                                      // 0x0445(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         最大移动速度;                                      // 0x0448(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

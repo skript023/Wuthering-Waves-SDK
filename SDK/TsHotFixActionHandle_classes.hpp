@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "InputCore_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "InputCore_structs.hpp"
 
 
 namespace SDK
@@ -44,20 +44,20 @@ public:
 public:
 	void OnPressAction(const struct FKey& key);
 	void OnReleaseAction(const struct FKey& Key);
-	void AddPressBinding(const class FString& actionName, class ABasePlayerController* controller);
-	void AddReleaseBinding(const class FString& actionName, class ABasePlayerController* controller);
-	void AddTouchPressBinding(class ABasePlayerController* controller);
-	void AddTouchReleaseBinding(class ABasePlayerController* controller);
+	void AddPressBinding(const class FString& actionName, class APlayerController* controller);
+	void AddReleaseBinding(const class FString& actionName, class APlayerController* controller);
+	void AddTouchPressBinding(class APlayerController* controller);
+	void AddTouchReleaseBinding(class APlayerController* controller);
 	void OnTouchPressAction(ETouchIndex touchIndex, const struct FVector& position);
 	void OnTouchReleaseAction(ETouchIndex touchIndex, const struct FVector& position);
-	void ClearActionBinding(class ABasePlayerController* controller);
+	void ClearActionBinding(class APlayerController* controller);
 	void OnTouchMoveAction(ETouchIndex touchindex, const struct FVector& position);
-	void AddTouchMoveBinding(class ABasePlayerController* controller);
-	void AddAxisBinding(const class FString& axisName, class ABasePlayerController* controller);
+	void AddTouchMoveBinding(class APlayerController* controller);
+	void AddAxisBinding(const class FString& axisName, class APlayerController* controller);
 	void OnAxisInput(float value);
-	void ClearAxisBinding(class ABasePlayerController* controller);
-	void AddAnyKeyPress(class ABasePlayerController* controller, const struct FInputChord& chord);
-	void ClearKeyBinding(class ABasePlayerController* controller);
+	void ClearAxisBinding(class APlayerController* controller);
+	void AddAnyKeyPress(class APlayerController* controller, const struct FInputChord& chord);
+	void ClearKeyBinding(class APlayerController* controller);
 	void OnAnyKeyPressAction(const struct FKey& key);
 
 public:

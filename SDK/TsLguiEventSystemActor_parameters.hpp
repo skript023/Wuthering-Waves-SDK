@@ -10,82 +10,31 @@
 
 #include "Basic.hpp"
 
-#include "LGUI_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "LGUI_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTrigger
-// 0x0002 (0x0002 - 0x0000)
-struct TsLguiEventSystemActor_C_InputTrigger final
-{
-public:
-	bool                                          triggerPress;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	EMouseButtonType                              mouseButtonType;                                   // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputTrigger;
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputNavigation
-// 0x0003 (0x0003 - 0x0000)
-struct TsLguiEventSystemActor_C_InputNavigation final
-{
-public:
-	ELGUINavigationDirection                      direction;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	bool                                          pressOrRelease;                                    // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	bool                                          forceNavigation;                                   // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-};
-DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputNavigation;
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTriggerForNavigation
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.SetClickThresholdWithInputKeyType
 // 0x0001 (0x0001 - 0x0000)
-struct TsLguiEventSystemActor_C_InputTriggerForNavigation final
+struct TsLguiEventSystemActor_C_SetClickThresholdWithInputKeyType final
 {
 public:
-	bool                                          triggerPress;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	EInputKeyType                                 inputKeyType;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputTriggerForNavigation;
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_SetClickThresholdWithInputKeyType;
 
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputScroll
-// 0x0004 (0x0004 - 0x0000)
-struct TsLguiEventSystemActor_C_InputScroll final
-{
-public:
-	float                                         axisValue;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputScroll;
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchTrigger
-// 0x0014 (0x0014 - 0x0000)
-struct TsLguiEventSystemActor_C_InputTouchTrigger final
-{
-public:
-	bool                                          touchPress;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         touchId;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                touchPointPosition;                                // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputTouchTrigger;
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchMove
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.IsPointerEventDataLineTrace
 // 0x0010 (0x0010 - 0x0000)
-struct TsLguiEventSystemActor_C_InputTouchMove final
+struct TsLguiEventSystemActor_C_IsPointerEventDataLineTrace final
 {
 public:
-	int32                                         touchId;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                touchPointPosition;                                // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class ULGUIPointerEventData*                  pointerEventData;                                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
 };
-DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputTouchMove;
-
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetNowHitComponent
-// 0x0008 (0x0008 - 0x0000)
-struct TsLguiEventSystemActor_C_GetNowHitComponent final
-{
-public:
-	class UUIItem*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_TsLguiEventSystemActor_C_GetNowHitComponent;
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_IsPointerEventDataLineTrace;
 
 // Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetPointerEventData
 // 0x0010 (0x0010 - 0x0000)
@@ -99,15 +48,75 @@ public:
 };
 DUMPER7_ASSERTS_TsLguiEventSystemActor_C_GetPointerEventData;
 
-// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.IsPointerEventDataLineTrace
-// 0x0010 (0x0010 - 0x0000)
-struct TsLguiEventSystemActor_C_IsPointerEventDataLineTrace final
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.GetNowHitComponent
+// 0x0008 (0x0008 - 0x0000)
+struct TsLguiEventSystemActor_C_GetNowHitComponent final
 {
 public:
-	class ULGUIPointerEventData*                  pointerEventData;                                  // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper)
+	class UUIItem*                                ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 };
-DUMPER7_ASSERTS_TsLguiEventSystemActor_C_IsPointerEventDataLineTrace;
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_GetNowHitComponent;
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchMove
+// 0x0010 (0x0010 - 0x0000)
+struct TsLguiEventSystemActor_C_InputTouchMove final
+{
+public:
+	int32                                         touchId;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                touchPointPosition;                                // 0x0004(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputTouchMove;
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTouchTrigger
+// 0x0014 (0x0014 - 0x0000)
+struct TsLguiEventSystemActor_C_InputTouchTrigger final
+{
+public:
+	bool                                          touchPress;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         touchId;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                touchPointPosition;                                // 0x0008(0x000C)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputTouchTrigger;
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputScroll
+// 0x0004 (0x0004 - 0x0000)
+struct TsLguiEventSystemActor_C_InputScroll final
+{
+public:
+	float                                         axisValue;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputScroll;
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTriggerForNavigation
+// 0x0001 (0x0001 - 0x0000)
+struct TsLguiEventSystemActor_C_InputTriggerForNavigation final
+{
+public:
+	bool                                          triggerPress;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+};
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputTriggerForNavigation;
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputNavigation
+// 0x0003 (0x0003 - 0x0000)
+struct TsLguiEventSystemActor_C_InputNavigation final
+{
+public:
+	ELGUINavigationDirection                      direction;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	bool                                          pressOrRelease;                                    // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	bool                                          forceNavigation;                                   // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+};
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputNavigation;
+
+// Function TsLguiEventSystemActor.TsLguiEventSystemActor_C.InputTrigger
+// 0x0002 (0x0002 - 0x0000)
+struct TsLguiEventSystemActor_C_InputTrigger final
+{
+public:
+	bool                                          triggerPress;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper)
+	EMouseButtonType                              mouseButtonType;                                   // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_TsLguiEventSystemActor_C_InputTrigger;
 
 }
 

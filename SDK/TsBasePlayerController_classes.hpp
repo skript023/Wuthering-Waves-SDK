@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "InputCore_structs.hpp"
+#include "Engine_structs.hpp"
 #include "KuroInput_classes.hpp"
 
 
@@ -19,18 +19,19 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsBasePlayerController.TsBasePlayerController_C
-// 0x00B8 (0x0788 - 0x06D0)
+// 0x00B8 (0x0798 - 0x06E0)
 class ATsBasePlayerController_C : public ABasePlayerController
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x06D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UClass*                                 ActionHandleClass;                                 // 0x06D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class FString, class UTsActionHandle_C*> ActionHandleMap;                                   // 0x06E0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UClass*                                 AxisHandleClass;                                   // 0x0730(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TMap<class FString, class UTsAxisHandle_C*>   AxisHandleMap;                                     // 0x0738(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x06E0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UClass*                                 ActionHandleClass;                                 // 0x06E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FString, class UTsActionHandle_C*> ActionHandleMap;                                   // 0x06F0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UClass*                                 AxisHandleClass;                                   // 0x0740(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TMap<class FString, class UTsAxisHandle_C*>   AxisHandleMap;                                     // 0x0748(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void ExecuteUbergraph_TsBasePlayerController(int32 EntryPoint);
+	void OnReceivedPlayer();
 	void ReceiveTick(float DeltaSeconds);
 	void ReceiveBeginPlay();
 	void ReceiveDestroyed();

@@ -10,57 +10,17 @@
 
 #include "Basic.hpp"
 
-#include "UMG_classes.hpp"
+#include "SlateCore_structs.hpp"
+#include "SpinePlugin_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
-#include "SpinePlugin_structs.hpp"
 #include "ProceduralMeshComponent_classes.hpp"
-#include "SlateCore_structs.hpp"
+#include "UMG_classes.hpp"
 
 
 namespace SDK
 {
-
-// Class SpinePlugin.SpineSkeletonRendererComponent
-// 0x02C0 (0x0890 - 0x05D0)
-class USpineSkeletonRendererComponent final : public UProceduralMeshComponent
-{
-public:
-	class UMaterialInterface*                     NormalBlendMaterial;                               // 0x05C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     AdditiveBlendMaterial;                             // 0x05D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     MultiplyBlendMaterial;                             // 0x05D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UMaterialInterface*                     ScreenBlendMaterial;                               // 0x05E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       atlasNormalBlendMaterials;                         // 0x05E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       atlasAdditiveBlendMaterials;                       // 0x05F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       atlasMultiplyBlendMaterials;                       // 0x0608(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	TArray<class UMaterialInstanceDynamic*>       atlasScreenBlendMaterials;                         // 0x0618(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         DepthOffset;                                       // 0x0628(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   TextureParameterName;                              // 0x062C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Color;                                             // 0x0638(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCreateCollision;                                  // 0x0648(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_649[0x1F7];                                    // 0x0649(0x01F7)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        vertices;                                          // 0x0840(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<int32>                                 indices;                                           // 0x0850(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FVector>                        normals;                                           // 0x0860(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FVector2D>                      uvs;                                               // 0x0870(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FColor>                         colors;                                            // 0x0880(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SpineSkeletonRendererComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SpineSkeletonRendererComponent")
-	}
-	static class USpineSkeletonRendererComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USpineSkeletonRendererComponent>();
-	}
-};
-DUMPER7_ASSERTS_USpineSkeletonRendererComponent;
 
 // Class SpinePlugin.SpineAtlasAsset
 // 0x0038 (0x0068 - 0x0030)
@@ -150,58 +110,6 @@ public:
 };
 DUMPER7_ASSERTS_USpineBoneFollowerComponent;
 
-// Class SpinePlugin.SpineSkeletonComponent
-// 0x0058 (0x0118 - 0x00C0)
-class USpineSkeletonComponent : public UActorComponent
-{
-public:
-	class USpineAtlasAsset*                       Atlas;                                             // 0x00C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USpineSkeletonDataAsset*                SkeletonData;                                      // 0x00C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USpineSkeletonComponent* skeleton)> BeforeUpdateWorldTransform; // 0x00D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class USpineSkeletonComponent* skeleton)> AfterUpdateWorldTransform; // 0x00E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F0[0x28];                                      // 0x00F0(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	float GetAnimationDuration(const class FString& AnimationName);
-	void GetAnimations(TArray<class FString>* Animations);
-	void GetBones(TArray<class FString>* Bones);
-	struct FTransform GetBoneWorldTransform(const class FString& BoneName);
-	float GetScaleX();
-	float GetScaleY();
-	void GetSkins(TArray<class FString>* Skins);
-	void GetSlots(TArray<class FString>* Slots);
-	bool HasAnimation(const class FString& AnimationName);
-	bool HasBone(const class FString& BoneName);
-	bool HasSkin(const class FString& SkinName);
-	bool HasSlot(const class FString& SlotName);
-	bool SetAttachment(const class FString& slotName, const class FString& attachmentName);
-	void SetBonesToSetupPose();
-	void SetBoneWorldPosition(const class FString& BoneName, const struct FVector& position);
-	void SetScaleX(float scaleX);
-	void SetScaleY(float scaleY);
-	bool SetSkin(const class FString& SkinName);
-	bool SetSkins(TArray<class FString>& SkinNames);
-	void SetSlotColor(const class FString& SlotName, const struct FColor& color);
-	void SetSlotsToSetupPose();
-	void SetToSetupPose();
-	void UpdateWorldTransform();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SpineSkeletonComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SpineSkeletonComponent")
-	}
-	static class USpineSkeletonComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USpineSkeletonComponent>();
-	}
-};
-DUMPER7_ASSERTS_USpineSkeletonComponent;
-
 // Class SpinePlugin.TrackEntry
 // 0x0068 (0x0098 - 0x0030)
 class UTrackEntry final : public UObject
@@ -265,23 +173,75 @@ public:
 };
 DUMPER7_ASSERTS_UTrackEntry;
 
+// Class SpinePlugin.SpineSkeletonComponent
+// 0x00A8 (0x0168 - 0x00C0)
+class USpineSkeletonComponent : public UActorComponent
+{
+public:
+	class USpineAtlasAsset*                       Atlas;                                             // 0x00C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USpineSkeletonDataAsset*                SkeletonData;                                      // 0x00C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USpineSkeletonComponent* skeleton)> BeforeUpdateWorldTransform; // 0x00D0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class USpineSkeletonComponent* skeleton)> AfterUpdateWorldTransform; // 0x00E0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F0[0x78];                                      // 0x00F0(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	float GetAnimationDuration(const class FString& AnimationName);
+	void GetAnimations(TArray<class FString>* Animations);
+	void GetBones(TArray<class FString>* Bones);
+	struct FTransform GetBoneWorldTransform(const class FString& BoneName);
+	float GetScaleX();
+	float GetScaleY();
+	void GetSkins(TArray<class FString>* Skins);
+	void GetSlots(TArray<class FString>* Slots);
+	bool HasAnimation(const class FString& AnimationName);
+	bool HasBone(const class FString& BoneName);
+	bool HasSkin(const class FString& SkinName);
+	bool HasSlot(const class FString& SlotName);
+	bool SetAttachment(const class FString& slotName, const class FString& attachmentName);
+	void SetBonesToSetupPose();
+	void SetBoneWorldPosition(const class FString& BoneName, const struct FVector& position);
+	void SetScaleX(float scaleX);
+	void SetScaleY(float scaleY);
+	bool SetSkin(const class FString& SkinName);
+	bool SetSkins(TArray<class FString>& SkinNames);
+	void SetSlotColor(const class FString& SlotName, const struct FColor& color);
+	void SetSlotsToSetupPose();
+	void SetToSetupPose();
+	void UpdateWorldTransform();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SpineSkeletonComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SpineSkeletonComponent")
+	}
+	static class USpineSkeletonComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USpineSkeletonComponent>();
+	}
+};
+DUMPER7_ASSERTS_USpineSkeletonComponent;
+
 // Class SpinePlugin.SpineSkeletonAnimationComponent
-// 0x0100 (0x0218 - 0x0118)
+// 0x0100 (0x0268 - 0x0168)
 class USpineSkeletonAnimationComponent final : public USpineSkeletonComponent
 {
 public:
-	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationStart;                         // 0x0118(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationInterrupt;                     // 0x0128(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UTrackEntry* entry, const struct FSpineEvent& evt)> AnimationEvent; // 0x0138(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationComplete;                      // 0x0148(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationEnd;                           // 0x0158(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationDispose;                       // 0x0168(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	class FString                                 PreviewAnimation;                                  // 0x0178(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 PreviewSkin;                                       // 0x0188(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_198[0x8];                                      // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TSet<class UTrackEntry*>                      trackEntries;                                      // 0x01A0(0x0050)(Protected, NativeAccessSpecifierProtected)
-	bool                                          bAutoPlaying;                                      // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1F1[0x27];                                     // 0x01F1(0x0027)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationStart;                         // 0x0168(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationInterrupt;                     // 0x0178(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UTrackEntry* entry, const struct FSpineEvent& evt)> AnimationEvent; // 0x0188(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationComplete;                      // 0x0198(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationEnd;                           // 0x01A8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UTrackEntry* entry)> AnimationDispose;                       // 0x01B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class FString                                 PreviewAnimation;                                  // 0x01C8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 PreviewSkin;                                       // 0x01D8(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1E8[0x8];                                      // 0x01E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TSet<class UTrackEntry*>                      trackEntries;                                      // 0x01F0(0x0050)(Protected, NativeAccessSpecifierProtected)
+	bool                                          bAutoPlaying;                                      // 0x0240(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_241[0x27];                                     // 0x0241(0x0027)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UTrackEntry* AddAnimation(int32 trackIndex, const class FString& animationName, bool loop, float delay);
@@ -344,6 +304,49 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USpineSkeletonDataAsset;
+
+// Class SpinePlugin.SpineSkeletonRendererComponent
+// 0x0310 (0x0940 - 0x0630)
+class USpineSkeletonRendererComponent final : public UProceduralMeshComponent
+{
+public:
+	class UMaterialInterface*                     NormalBlendMaterial;                               // 0x0630(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     AdditiveBlendMaterial;                             // 0x0638(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     MultiplyBlendMaterial;                             // 0x0640(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInterface*                     ScreenBlendMaterial;                               // 0x0648(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       atlasNormalBlendMaterials;                         // 0x0650(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       atlasAdditiveBlendMaterials;                       // 0x0660(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       atlasMultiplyBlendMaterials;                       // 0x0670(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	TArray<class UMaterialInstanceDynamic*>       atlasScreenBlendMaterials;                         // 0x0680(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
+	float                                         DepthOffset;                                       // 0x0690(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TextureParameterName;                              // 0x0694(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Color;                                             // 0x06A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCreateCollision;                                  // 0x06B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6B1[0x1F7];                                    // 0x06B1(0x01F7)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        vertices;                                          // 0x08A8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<int32>                                 indices;                                           // 0x08B8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector>                        normals;                                           // 0x08C8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FVector2D>                      uvs;                                               // 0x08D8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FColor>                         colors;                                            // 0x08E8(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_8F8[0x38];                                     // 0x08F8(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bNeedParallelUpdate;                               // 0x0930(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_931[0xF];                                      // 0x0931(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SpineSkeletonRendererComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SpineSkeletonRendererComponent")
+	}
+	static class USpineSkeletonRendererComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USpineSkeletonRendererComponent>();
+	}
+};
+DUMPER7_ASSERTS_USpineSkeletonRendererComponent;
 
 // Class SpinePlugin.SpineWidget
 // 0x0578 (0x06E8 - 0x0170)

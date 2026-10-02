@@ -14,15 +14,6 @@
 namespace SDK::Params
 {
 
-// Function BP_EffectPreview.BP_EffectPreview_C.EditorTick
-// 0x0004 (0x0004 - 0x0000)
-struct BP_EffectPreview_C_EditorTick final
-{
-public:
-	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_EffectPreview_C_EditorTick;
-
 // Function BP_EffectPreview.BP_EffectPreview_C.ExecuteUbergraph_BP_EffectPreview
 // 0x0008 (0x0008 - 0x0000)
 struct BP_EffectPreview_C_ExecuteUbergraph_BP_EffectPreview final
@@ -32,6 +23,15 @@ public:
 	float                                         K2Node_Event_DeltaSeconds;                         // 0x0004(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_EffectPreview_C_ExecuteUbergraph_BP_EffectPreview;
+
+// Function BP_EffectPreview.BP_EffectPreview_C.EditorTick
+// 0x0004 (0x0004 - 0x0000)
+struct BP_EffectPreview_C_EditorTick final
+{
+public:
+	float                                         DeltaSeconds;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_EffectPreview_C_EditorTick;
 
 }
 

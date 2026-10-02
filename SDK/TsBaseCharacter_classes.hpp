@@ -10,20 +10,21 @@
 
 #include "Basic.hpp"
 
-#include "ECharacterDitherType_structs.hpp"
+#include "ECamp_structs.hpp"
 #include "Engine_structs.hpp"
+#include "ECharacterDitherType_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ECharacterRenderingType_structs.hpp"
 #include "KuroGAS_classes.hpp"
-#include "CoreUObject_structs.hpp"
-#include "ECamp_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsBaseCharacter.TsBaseCharacter_C
-// 0x00D0 (0x0750 - 0x0680)
-class ATsBaseCharacter_C : public ABaseCharacter
+// 0x00E0 (0x0760 - 0x0680)
+#pragma pack(push, 0x1)
+class alignas(0x10) ATsBaseCharacter_C : public ABaseCharacter
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0680(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -54,19 +55,20 @@ public:
 	ECamp                                         Camp;                                              // 0x0748(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_749[0x3];                                      // 0x0749(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         EntityId;                                          // 0x074C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UDataTable*                             DtGameplayAbpConfig;                               // 0x0750(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	int32 GetEntityId();
-	void BindGameplayEnableState(bool& gameplayEnable);
-	void SetDitherEffect(float dither, ECharacterDitherType ditherType);
-	void Initialize();
-	void FightCommand(bool isInAir);
-	void K2_OnMovementModeChanged(EMovementMode PrevMovementMode, EMovementMode NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);
-	void ReceivePossessed(class AController* NewController);
-	void ReceiveUnpossessed(class AController* OldController);
-	void K2_UpdateCustomMovement(float DeltaTime);
-	void ReceiveDestroyed();
 	void ExecuteUbergraph_TsBaseCharacter(int32 EntryPoint);
+	void ReceiveDestroyed();
+	void K2_UpdateCustomMovement(float DeltaTime);
+	void ReceiveUnpossessed(class AController* OldController);
+	void ReceivePossessed(class AController* NewController);
+	void K2_OnMovementModeChanged(EMovementMode PrevMovementMode, EMovementMode NewMovementMode, uint8 PrevCustomMode, uint8 NewCustomMode);
+	void FightCommand(bool isInAir);
+	void Initialize();
+	void SetDitherEffect(float dither, ECharacterDitherType ditherType);
+	void BindGameplayEnableState(bool& gameplayEnable);
+	int32 GetEntityId();
 
 public:
 	static class UClass* StaticClass()
@@ -82,6 +84,7 @@ public:
 		return GetDefaultObjImpl<ATsBaseCharacter_C>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_ATsBaseCharacter_C;
 
 }

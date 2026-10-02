@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "GameplayTags_structs.hpp"
 #include "SMSystem_classes.hpp"
 
 
@@ -17,12 +18,14 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SM_BindStateCue.BP_SM_BindStateCue_C
-// 0x0018 (0x0048 - 0x0030)
+// 0x0020 (0x0050 - 0x0030)
 class UBP_SM_BindStateCue_C final : public UASMBindState
 {
 public:
 	TArray<int64>                                 CueIds;                                            // 0x0030(0x0010)(Edit, BlueprintVisible)
 	bool                                          加载期间隐藏模型;                                  // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_41[0x3];                                       // 0x0041(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTag                           ConfigReplaceTag;                                  // 0x0044(0x000C)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

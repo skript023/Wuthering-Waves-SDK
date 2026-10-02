@@ -14,13 +14,14 @@
 #include "ECommonQteViewType_Drag_structs.hpp"
 #include "ECommonQteInteractiveTiming_structs.hpp"
 #include "SCommonQte_Attach_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
 {
 
 // UserDefinedStruct SCommonQte_Drag.SCommonQte_Drag
-// 0x00C0 (0x00C0 - 0x0000)
+// 0x00E8 (0x00E8 - 0x0000)
 struct FSCommonQte_Drag final
 {
 public:
@@ -34,11 +35,20 @@ public:
 	float                                         DragBounds_68_1F8374BD4FB29DB65A159194093BD835;    // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         DragLength_67_40E1DD084B2DDA0BEAE5D382640D7929;    // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         LerpSpeed_71_BA2178DD4D590D5DCB805A9A9A4A11BC;     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSCommonQteButton                      UIConfig_40_7D1814F047F7875E71D239BB5D624892;      // 0x0020(0x0058)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	bool                                          IsAttachToActor_57_6A54246C4D866817D2B2D98214114B0D; // 0x0078(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_79[0x7];                                       // 0x0079(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSCommonQte_Attach                     AttachConfig_59_8E53891645379E5AB865489806C5D01E;  // 0x0080(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CheckByRealTimeInput_77_B3418C134270BEC9E96790B2CA1DCB46; // 0x00B8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSCommonQteButton                      UIConfig_40_7D1814F047F7875E71D239BB5D624892;      // 0x0020(0x0068)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	bool                                          IsAttachToActor_57_6A54246C4D866817D2B2D98214114B0D; // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_89[0x7];                                       // 0x0089(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSCommonQte_Attach                     AttachConfig_59_8E53891645379E5AB865489806C5D01E;  // 0x0090(0x0038)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CheckByRealTimeInput_77_B3418C134270BEC9E96790B2CA1DCB46; // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_C9[0x3];                                       // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         LeftSlideLength_81_8E56BB8748271814F008F1A85427D1BD; // 0x00CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         RightSlideLength_84_1F0BA15240175C44005A36ADF1349E8C; // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         SlideAngleTolerance_86_44B852B04C1AEB1F63BA80821CA84BCD; // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsLeftSuccess_88_90777E38412AA7688C6EA58D5106DC93; // 0x00D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          BackwardWhenFail_91_42C8496443D78C5D35448CA900A29F61; // 0x00D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_DA[0x2];                                       // 0x00DA(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         RewardSpeed_95_58EC717C4A37BA0A047BCEAD7C313223;   // 0x00DC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              DragCenterPivot_98_6B2C07654FAA1C5E8EB340A9D0D1766A; // 0x00E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_FSCommonQte_Drag;
 

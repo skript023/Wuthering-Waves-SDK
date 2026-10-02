@@ -10,12 +10,200 @@
 
 #include "Basic.hpp"
 
-#include "KuroAudio_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "KuroAudio_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function KuroAudio.KuroAudioStatics.ExecuteActionOnEvent
+// 0x0020 (0x0020 - 0x0000)
+struct KuroAudioStatics_ExecuteActionOnEvent final
+{
+public:
+	const class UAkAudioEvent*                    AudioEvent;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAudioActionType                              ActionType;                                        // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	const class AActor*                           Actor;                                             // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TransitionDuration;                                // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAudioFadeCurve                               TransitionFadeCurve;                               // 0x001C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAudioStatics_ExecuteActionOnEvent;
+
+// Function KuroAudio.KuroAudioStatics.ExecuteActionOnEventName
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAudioStatics_ExecuteActionOnEventName final
+{
+public:
+	class FString                                 EventName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAudioActionType                              ActionType;                                        // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	const class AActor*                           Actor;                                             // 0x0018(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TransitionDuration;                                // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAudioFadeCurve                               TransitionFadeCurve;                               // 0x0024(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAudioStatics_ExecuteActionOnEventName;
+
+// Function KuroAudio.KuroAudioStatics.ExecuteActionOnPlayingId
+// 0x0010 (0x0010 - 0x0000)
+struct KuroAudioStatics_ExecuteActionOnPlayingId final
+{
+public:
+	int32                                         PlayingId;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAudioActionType                              ActionType;                                        // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         TransitionDuration;                                // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAudioFadeCurve                               TransitionFadeCurve;                               // 0x000C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAudioStatics_ExecuteActionOnPlayingId;
+
+// Function KuroAudio.KuroAudioStatics.GetAkComponent
+// 0x0020 (0x0020 - 0x0000)
+struct KuroAudioStatics_GetAkComponent final
+{
+public:
+	class USceneComponent*                        Parent;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   SocketName;                                        // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bCreated;                                          // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAkComponent*                           ReturnValue;                                       // 0x0018(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_GetAkComponent;
+
+// Function KuroAudio.KuroAudioStatics.GetAudioEnvironmentSubsystem
+// 0x0010 (0x0010 - 0x0000)
+struct KuroAudioStatics_GetAudioEnvironmentSubsystem final
+{
+public:
+	const class UWorld*                           World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UKuroAudioEnvironmentSubsystem*         ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_GetAudioEnvironmentSubsystem;
+
+// Function KuroAudio.KuroAudioStatics.GetSourcePlayPosition
+// 0x000C (0x000C - 0x0000)
+struct KuroAudioStatics_GetSourcePlayPosition final
+{
+public:
+	int32                                         PlayingId;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bExtrapolate;                                      // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_GetSourcePlayPosition;
+
+// Function KuroAudio.KuroAudioStatics.IsAndroidApiUsingOpenSL
+// 0x0001 (0x0001 - 0x0000)
+struct KuroAudioStatics_IsAndroidApiUsingOpenSL final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_IsAndroidApiUsingOpenSL;
+
+// Function KuroAudio.KuroAudioStatics.IsDolbyAtmosGameSupported
+// 0x0001 (0x0001 - 0x0000)
+struct KuroAudioStatics_IsDolbyAtmosGameSupported final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_IsDolbyAtmosGameSupported;
+
+// Function KuroAudio.KuroAudioStatics.PostEventWithMidiNote
+// 0x0018 (0x0018 - 0x0000)
+struct KuroAudioStatics_PostEventWithMidiNote final
+{
+public:
+	const class UAkAudioEvent*                    AudioEvent;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Note;                                              // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	const class AActor*                           Actor;                                             // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_PostEventWithMidiNote;
+
+// Function KuroAudio.KuroAudioStatics.PostNotifyEvent
+// 0x0010 (0x0010 - 0x0000)
+struct KuroAudioStatics_PostNotifyEvent final
+{
+public:
+	const class UAkAudioEvent*                    NotifyEvent;                                       // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class AActor*                           Actor;                                             // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_PostNotifyEvent;
+
+// Function KuroAudio.KuroAudioStatics.SeekOnEventName
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAudioStatics_SeekOnEventName final
+{
+public:
+	class FString                                 EventName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Position;                                          // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	const class AActor*                           Actor;                                             // 0x0018(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         PlayingId;                                         // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSnapToMarker;                                     // 0x0024(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAudioStatics_SeekOnEventName;
+
+// Function KuroAudio.KuroAudioStatics.SetIosAuditPackage
+// 0x0001 (0x0001 - 0x0000)
+struct KuroAudioStatics_SetIosAuditPackage final
+{
+public:
+	bool                                          IsAuditPackage;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_SetIosAuditPackage;
+
+// Function KuroAudio.KuroAudioStatics.SetRtpcValue
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAudioStatics_SetRtpcValue final
+{
+public:
+	class FString                                 RtpcName;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Value;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	const class AActor*                           Actor;                                             // 0x0018(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         TransitionDuration;                                // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAudioFadeCurve                               TransitionFadeCurve;                               // 0x0024(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_KuroAudioStatics_SetRtpcValue;
+
+// Function KuroAudio.KuroAudioStatics.SetState
+// 0x0020 (0x0020 - 0x0000)
+struct KuroAudioStatics_SetState final
+{
+public:
+	class FString                                 StateGroup;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 State;                                             // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_SetState;
+
+// Function KuroAudio.KuroAudioStatics.SetSwitch
+// 0x0028 (0x0028 - 0x0000)
+struct KuroAudioStatics_SetSwitch final
+{
+public:
+	class FString                                 SwitchGroup;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 SwitchState;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class AActor*                           Actor;                                             // 0x0020(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_SetSwitch;
+
+// Function KuroAudio.KuroAudioStatics.StopAll
+// 0x0008 (0x0008 - 0x0000)
+struct KuroAudioStatics_StopAll final
+{
+public:
+	const class AActor*                           Actor;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroAudioStatics_StopAll;
 
 // Function KuroAudio.KuroAmbientSoundComponent.IsPlaying
 // 0x0001 (0x0001 - 0x0000)
@@ -98,180 +286,6 @@ public:
 	TMap<class FString, class FString>            ReturnValue;                                       // 0x0010(0x0050)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KuroAudioEnvironmentSubsystem_GetEnvironmentStates;
-
-// Function KuroAudio.KuroAudioStatics.ExecuteActionOnEvent
-// 0x0020 (0x0020 - 0x0000)
-struct KuroAudioStatics_ExecuteActionOnEvent final
-{
-public:
-	const class UAkAudioEvent*                    AudioEvent;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAudioActionType                              ActionType;                                        // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	const class AActor*                           Actor;                                             // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TransitionDuration;                                // 0x0018(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAudioFadeCurve                               TransitionFadeCurve;                               // 0x001C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroAudioStatics_ExecuteActionOnEvent;
-
-// Function KuroAudio.KuroAudioStatics.ExecuteActionOnEventName
-// 0x0028 (0x0028 - 0x0000)
-struct KuroAudioStatics_ExecuteActionOnEventName final
-{
-public:
-	class FString                                 EventName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAudioActionType                              ActionType;                                        // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	const class AActor*                           Actor;                                             // 0x0018(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TransitionDuration;                                // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAudioFadeCurve                               TransitionFadeCurve;                               // 0x0024(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroAudioStatics_ExecuteActionOnEventName;
-
-// Function KuroAudio.KuroAudioStatics.ExecuteActionOnPlayingId
-// 0x0010 (0x0010 - 0x0000)
-struct KuroAudioStatics_ExecuteActionOnPlayingId final
-{
-public:
-	int32                                         PlayingId;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAudioActionType                              ActionType;                                        // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         TransitionDuration;                                // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAudioFadeCurve                               TransitionFadeCurve;                               // 0x000C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroAudioStatics_ExecuteActionOnPlayingId;
-
-// Function KuroAudio.KuroAudioStatics.GetAkComponent
-// 0x0020 (0x0020 - 0x0000)
-struct KuroAudioStatics_GetAkComponent final
-{
-public:
-	class USceneComponent*                        Parent;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   SocketName;                                        // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bCreated;                                          // 0x0014(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAkComponent*                           ReturnValue;                                       // 0x0018(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_GetAkComponent;
-
-// Function KuroAudio.KuroAudioStatics.GetAudioEnvironmentSubsystem
-// 0x0010 (0x0010 - 0x0000)
-struct KuroAudioStatics_GetAudioEnvironmentSubsystem final
-{
-public:
-	const class UWorld*                           World;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UKuroAudioEnvironmentSubsystem*         ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_GetAudioEnvironmentSubsystem;
-
-// Function KuroAudio.KuroAudioStatics.GetSourcePlayPosition
-// 0x0008 (0x0008 - 0x0000)
-struct KuroAudioStatics_GetSourcePlayPosition final
-{
-public:
-	int32                                         PlayingId;                                         // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_GetSourcePlayPosition;
-
-// Function KuroAudio.KuroAudioStatics.IsAndroidApiUsingOpenSL
-// 0x0001 (0x0001 - 0x0000)
-struct KuroAudioStatics_IsAndroidApiUsingOpenSL final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_IsAndroidApiUsingOpenSL;
-
-// Function KuroAudio.KuroAudioStatics.IsDolbyAtmosGameSupported
-// 0x0001 (0x0001 - 0x0000)
-struct KuroAudioStatics_IsDolbyAtmosGameSupported final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_IsDolbyAtmosGameSupported;
-
-// Function KuroAudio.KuroAudioStatics.PostNotifyEvent
-// 0x0010 (0x0010 - 0x0000)
-struct KuroAudioStatics_PostNotifyEvent final
-{
-public:
-	const class UAkAudioEvent*                    NotifyEvent;                                       // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	const class AActor*                           Actor;                                             // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_PostNotifyEvent;
-
-// Function KuroAudio.KuroAudioStatics.SeekOnEventName
-// 0x0028 (0x0028 - 0x0000)
-struct KuroAudioStatics_SeekOnEventName final
-{
-public:
-	class FString                                 EventName;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Position;                                          // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	const class AActor*                           Actor;                                             // 0x0018(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         PlayingId;                                         // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSnapToMarker;                                     // 0x0024(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroAudioStatics_SeekOnEventName;
-
-// Function KuroAudio.KuroAudioStatics.SetIosAuditPackage
-// 0x0001 (0x0001 - 0x0000)
-struct KuroAudioStatics_SetIosAuditPackage final
-{
-public:
-	bool                                          IsAuditPackage;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_SetIosAuditPackage;
-
-// Function KuroAudio.KuroAudioStatics.SetRtpcValue
-// 0x0028 (0x0028 - 0x0000)
-struct KuroAudioStatics_SetRtpcValue final
-{
-public:
-	class FString                                 RtpcName;                                          // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Value;                                             // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	const class AActor*                           Actor;                                             // 0x0018(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         TransitionDuration;                                // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAudioFadeCurve                               TransitionFadeCurve;                               // 0x0024(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_KuroAudioStatics_SetRtpcValue;
-
-// Function KuroAudio.KuroAudioStatics.SetState
-// 0x0020 (0x0020 - 0x0000)
-struct KuroAudioStatics_SetState final
-{
-public:
-	class FString                                 StateGroup;                                        // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 State;                                             // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_SetState;
-
-// Function KuroAudio.KuroAudioStatics.SetSwitch
-// 0x0028 (0x0028 - 0x0000)
-struct KuroAudioStatics_SetSwitch final
-{
-public:
-	class FString                                 SwitchGroup;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 SwitchState;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	const class AActor*                           Actor;                                             // 0x0020(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_SetSwitch;
-
-// Function KuroAudio.KuroAudioStatics.StopAll
-// 0x0008 (0x0008 - 0x0000)
-struct KuroAudioStatics_StopAll final
-{
-public:
-	const class AActor*                           Actor;                                             // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_KuroAudioStatics_StopAll;
 
 }
 

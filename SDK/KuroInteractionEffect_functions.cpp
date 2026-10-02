@@ -20,7 +20,7 @@ namespace SDK
 // Function KuroInteractionEffect.KuroEnviInteractionComponent.GetEnviInteractionData
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// struct FKuroEnviInteractionData         ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FKuroEnviInteractionData         ReturnValue                                            (Parm, OutParm, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
 struct FKuroEnviInteractionData UKuroEnviInteractionComponent::GetEnviInteractionData()
 {
@@ -167,6 +167,69 @@ void UKuroEnviInteractionComponent::UpdateRainOcclusion(bool Result, class UTrac
 }
 
 
+// Function KuroInteractionEffect.KuroEnviInteractionComponent.IsOccludedInRain
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroEnviInteractionComponent::IsOccludedInRain() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroEnviInteractionComponent", "IsOccludedInRain");
+
+	Params::KuroEnviInteractionComponent_IsOccludedInRain Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroInteractionEffect.KuroIEMeshDebugActor.ClearGeneratedIEMeshDebugActors
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroIEMeshDebugActor::ClearGeneratedIEMeshDebugActors()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroIEMeshDebugActor", "ClearGeneratedIEMeshDebugActors");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInteractionEffect.KuroIEMeshDebugActor.RebuildIEMeshDebugActors
+// (Final, Native, Public, BlueprintCallable)
+
+void AKuroIEMeshDebugActor::RebuildIEMeshDebugActors()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroIEMeshDebugActor", "RebuildIEMeshDebugActors");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function KuroInteractionEffect.KuroInteractionEffectSystem.GetKuroInteractionEffectSystem
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -249,22 +312,128 @@ void UKuroInteractionEffectSystem::RegisterSPModelCharacterEIComp(class UNiagara
 }
 
 
-// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionPlacementTriggerActor
-// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionFoliage
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class UStaticMesh*                      PlacementMesh                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FSoftObjectPath                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    FoliageTypeName                                        (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FSoftObjectPath UKuroInteractionEffectSystem::SearchInteractionPlacementTriggerActor(class UStaticMesh* PlacementMesh)
+int32 UKuroInteractionEffectSystem::SearchInteractionFoliage(const class FString& FoliageTypeName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("KuroInteractionEffectSystem", "SearchInteractionPlacementTriggerActor");
+		Func = Class->GetFunction("KuroInteractionEffectSystem", "SearchInteractionFoliage");
 
-	Params::KuroInteractionEffectSystem_SearchInteractionPlacementTriggerActor Parms{};
+	Params::KuroInteractionEffectSystem_SearchInteractionFoliage Parms{};
 
-	Parms.PlacementMesh = PlacementMesh;
+	Parms.FoliageTypeName = std::move(FoliageTypeName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionFoliageArray
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const TArray<class FString>&            FoliageTypeNames                                       (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<int32>                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+
+TArray<int32> UKuroInteractionEffectSystem::SearchInteractionFoliageArray(const TArray<class FString>& FoliageTypeNames)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroInteractionEffectSystem", "SearchInteractionFoliageArray");
+
+	Params::KuroInteractionEffectSystem_SearchInteractionFoliageArray Parms{};
+
+	Parms.FoliageTypeNames = std::move(FoliageTypeNames);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SearchInteractionStaticMeshConfig
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UStaticMesh*                      StaticMesh                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FKuroInteractionEffectTraceStaticMeshReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FKuroInteractionEffectTraceStaticMesh UKuroInteractionEffectSystem::SearchInteractionStaticMeshConfig(class UStaticMesh* StaticMesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroInteractionEffectSystem", "SearchInteractionStaticMeshConfig");
+
+	Params::KuroInteractionEffectSystem_SearchInteractionStaticMeshConfig Parms{};
+
+	Parms.StaticMesh = StaticMesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.SetGlobalUINiagaraPause
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bPause                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKuroInteractionEffectSystem::SetGlobalUINiagaraPause(bool bPause)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroInteractionEffectSystem", "SetGlobalUINiagaraPause");
+
+	Params::KuroInteractionEffectSystem_SetGlobalUINiagaraPause Parms{};
+
+	Parms.bPause = bPause;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function KuroInteractionEffect.KuroInteractionEffectSystem.GetGlobalUINiagaraPause
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UKuroInteractionEffectSystem::GetGlobalUINiagaraPause() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KuroInteractionEffectSystem", "GetGlobalUINiagaraPause");
+
+	Params::KuroInteractionEffectSystem_GetGlobalUINiagaraPause Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

@@ -42,20 +42,20 @@ public:
 	int32                                         DebugInteractCount;                                // 0x0110(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void SetMovementDebug(bool newDebug);
-	void DrawErrorNavigationPaths();
-	void DrawDebugPatrolPoints();
-	void SetDebugRiseEnable(bool enable);
-	void ChangeClimbingTrace();
-	void ChangeUpArriveClimbTrace();
-	void ChangeVaultClimbTrace();
-	void ChangeEnterClimbTrace();
-	void ChangeNoTop();
-	void DebugDrawActivateArea();
-	void ActivateDebugSpeed(bool activate);
-	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
 	void ExecuteUbergraph_TsCharacterDebugComponent(int32 EntryPoint);
+	void ReceiveTick(float DeltaSeconds);
+	void ReceiveBeginPlay();
+	void ActivateDebugSpeed(bool activate);
+	void DebugDrawActivateArea();
+	void ChangeNoTop();
+	void ChangeEnterClimbTrace();
+	void ChangeVaultClimbTrace();
+	void ChangeUpArriveClimbTrace();
+	void ChangeClimbingTrace();
+	void SetDebugRiseEnable(bool enable);
+	void DrawDebugPatrolPoints();
+	void DrawErrorNavigationPaths();
+	void SetMovementDebug(bool newDebug);
 
 public:
 	static class UClass* StaticClass()

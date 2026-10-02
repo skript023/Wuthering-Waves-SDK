@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function BP_InteractedBox.BP_InteractedBox_C.ReceiveBeginPlay
-// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
-
-void ABP_InteractedBox_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InteractedBox_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function BP_InteractedBox.BP_InteractedBox_C.ExecuteUbergraph_BP_InteractedBox
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void ABP_InteractedBox_C::ExecuteUbergraph_BP_InteractedBox(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_InteractedBox.BP_InteractedBox_C.ReceiveBeginPlay
+// (Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+
+void ABP_InteractedBox_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BP_InteractedBox_C", "ReceiveBeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

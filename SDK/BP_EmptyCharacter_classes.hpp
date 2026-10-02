@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_EmptyCharacter.BP_EmptyCharacter_C
-// 0x0000 (0x0750 - 0x0750)
+// 0x0000 (0x0760 - 0x0760)
 class ABP_EmptyCharacter_C final : public ATsBaseCharacter_C
 {
 public:

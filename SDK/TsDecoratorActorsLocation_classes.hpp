@@ -18,15 +18,15 @@ namespace SDK
 {
 
 // TypeScriptGeneratedClass TsDecoratorActorsLocation.TsDecoratorActorsLocation_C
-// 0x0050 (0x00F8 - 0x00A8)
+// 0x0050 (0x0100 - 0x00B0)
 class UTsDecoratorActorsLocation_C final : public UBTDecorator_BlueprintBase
 {
 public:
-	class FString                                 KeyActorA;                                         // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 KeyActorB;                                         // 0x00B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	struct FFloatRange                            DistanceRange;                                     // 0x00C8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FFloatRange                            AngleRange;                                        // 0x00D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FFloatRange                            HeightRange;                                       // 0x00E8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 KeyActorA;                                         // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 KeyActorB;                                         // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	struct FFloatRange                            DistanceRange;                                     // 0x00D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FFloatRange                            AngleRange;                                        // 0x00E0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FFloatRange                            HeightRange;                                       // 0x00F0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn);

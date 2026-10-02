@@ -17,174 +17,25 @@
 namespace SDK
 {
 
-// Function SceneInteractionActor.SceneInteractionActor_C.ExecuteUbergraph_SceneInteractionActor
-// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ASceneInteractionActor_C::ExecuteUbergraph_SceneInteractionActor(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ExecuteUbergraph_SceneInteractionActor");
-
-	Params::SceneInteractionActor_C_ExecuteUbergraph_SceneInteractionActor Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.ReceiveEndPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ASceneInteractionActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ReceiveEndPlay");
-
-	Params::SceneInteractionActor_C_ReceiveEndPlay Parms{};
-
-	Parms.EndPlayReason = EndPlayReason;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.ReceiveBeginPlay
-// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ReceiveBeginPlay");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.AddNewState
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::AddNewState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "AddNewState");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.UpdateTimeDilation
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::UpdateTimeDilation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "UpdateTimeDilation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.AddNewEndEffect
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::AddNewEndEffect()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "AddNewEndEffect");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.AddMatrialDataForChildrenActor
+// Function SceneInteractionActor.SceneInteractionActor_C.PostTagEvent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-// class UItemMaterialControllerActorData_C*materialData                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    event                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// bool                                    follow                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ASceneInteractionActor_C::AddMatrialDataForChildrenActor(class AActor* actor, class UItemMaterialControllerActorData_C* materialData)
+void ASceneInteractionActor_C::PostTagEvent(const class FString& event, const struct FGameplayTag& tag, bool follow)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "AddMatrialDataForChildrenActor");
+		Func = Class->GetFunction("SceneInteractionActor_C", "PostTagEvent");
 
-	Params::SceneInteractionActor_C_AddMatrialDataForChildrenActor Parms{};
+	Params::SceneInteractionActor_C_PostTagEvent Parms{};
 
-	Parms.actor = actor;
-	Parms.materialData = materialData;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.ResetTagActorHide
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-
-void ASceneInteractionActor_C::ResetTagActorHide(const struct FGameplayTag& tag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ResetTagActorHide");
-
-	Params::SceneInteractionActor_C_ResetTagActorHide Parms{};
-
+	Parms.event = std::move(event);
 	Parms.tag = std::move(tag);
+	Parms.follow = follow;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -195,21 +46,25 @@ void ASceneInteractionActor_C::ResetTagActorHide(const struct FGameplayTag& tag)
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.StopExtraEffectOnTagsChange
+// Function SceneInteractionActor.SceneInteractionActor_C.PostAutoMergeEvent
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// const class FString&                    event                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+// float                                   tagId                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    follow                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ASceneInteractionActor_C::StopExtraEffectOnTagsChange(const struct FGameplayTag& tag)
+void ASceneInteractionActor_C::PostAutoMergeEvent(const class FString& event, float tagId, bool follow)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "StopExtraEffectOnTagsChange");
+		Func = Class->GetFunction("SceneInteractionActor_C", "PostAutoMergeEvent");
 
-	Params::SceneInteractionActor_C_StopExtraEffectOnTagsChange Parms{};
+	Params::SceneInteractionActor_C_PostAutoMergeEvent Parms{};
 
-	Parms.tag = std::move(tag);
+	Parms.event = std::move(event);
+	Parms.tagId = tagId;
+	Parms.follow = follow;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -220,20 +75,118 @@ void ASceneInteractionActor_C::StopExtraEffectOnTagsChange(const struct FGamepla
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.GetDirectorBySequence
+// Function SceneInteractionActor.SceneInteractionActor_C.OverrideKuroDestructibleActorPhysicsVelocity
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AKuroDestructibleActor*           skeletalMeshDestruction                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ASceneInteractionActor_C::OverrideKuroDestructibleActorPhysicsVelocity(class AKuroDestructibleActor* skeletalMeshDestruction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "OverrideKuroDestructibleActorPhysicsVelocity");
+
+	Params::SceneInteractionActor_C_OverrideKuroDestructibleActorPhysicsVelocity Parms{};
+
+	Parms.skeletalMeshDestruction = skeletalMeshDestruction;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.UnsetOverrideSeqBindActor
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           actorToUnbind                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    bindingName                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ASceneInteractionActor_C::UnsetOverrideSeqBindActor(class AActor* actorToUnbind, const class FString& bindingName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "UnsetOverrideSeqBindActor");
+
+	Params::SceneInteractionActor_C_UnsetOverrideSeqBindActor Parms{};
+
+	Parms.actorToUnbind = actorToUnbind;
+	Parms.bindingName = std::move(bindingName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.SetOverrideSeqBindActor
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           actorToBind                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const class FString&                    bindingName                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, HasGetValueTypeHash)
+
+void ASceneInteractionActor_C::SetOverrideSeqBindActor(class AActor* actorToBind, const class FString& bindingName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "SetOverrideSeqBindActor");
+
+	Params::SceneInteractionActor_C_SetOverrideSeqBindActor Parms{};
+
+	Parms.actorToBind = actorToBind;
+	Parms.bindingName = std::move(bindingName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.AddNewEffect
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::AddNewEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "AddNewEffect");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.GetActiveSequenceRemainTime
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ULevelSequence*                   sequence                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// class ALevelSequenceActor*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-class ALevelSequenceActor* ASceneInteractionActor_C::GetDirectorBySequence(class ULevelSequence* sequence)
+float ASceneInteractionActor_C::GetActiveSequenceRemainTime(class ULevelSequence* sequence)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "GetDirectorBySequence");
+		Func = Class->GetFunction("SceneInteractionActor_C", "GetActiveSequenceRemainTime");
 
-	Params::SceneInteractionActor_C_GetDirectorBySequence Parms{};
+	Params::SceneInteractionActor_C_GetActiveSequenceRemainTime Parms{};
 
 	Parms.sequence = sequence;
 
@@ -248,40 +201,48 @@ class ALevelSequenceActor* ASceneInteractionActor_C::GetDirectorBySequence(class
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.DestroySelf
-// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Function SceneInteractionActor.SceneInteractionActor_C.CheckAllEffectPlaying
+// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
 
-void ASceneInteractionActor_C::DestroySelf()
+bool ASceneInteractionActor_C::CheckAllEffectPlaying()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "DestroySelf");
+		Func = Class->GetFunction("SceneInteractionActor_C", "CheckAllEffectPlaying");
+
+	Params::SceneInteractionActor_C_CheckAllEffectPlaying Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.StopTagAkEvent
+// Function SceneInteractionActor.SceneInteractionActor_C.PlayKuroSkeletalMeshDestruction
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    isJumpToEnd                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void ASceneInteractionActor_C::StopTagAkEvent(const struct FGameplayTag& tag)
+void ASceneInteractionActor_C::PlayKuroSkeletalMeshDestruction(class AActor* actor, bool isJumpToEnd)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "StopTagAkEvent");
+		Func = Class->GetFunction("SceneInteractionActor_C", "PlayKuroSkeletalMeshDestruction");
 
-	Params::SceneInteractionActor_C_StopTagAkEvent Parms{};
+	Params::SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction Parms{};
 
-	Parms.tag = std::move(tag);
+	Parms.actor = actor;
+	Parms.isJumpToEnd = isJumpToEnd;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -292,40 +253,15 @@ void ASceneInteractionActor_C::StopTagAkEvent(const struct FGameplayTag& tag)
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.UpdateProjectionActorTransform
+// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingTagEffectTick
 // (Native, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FTransformDouble&          transform1                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 
-void ASceneInteractionActor_C::UpdateProjectionActorTransform(const struct FTransformDouble& transform1)
+void ASceneInteractionActor_C::RemovePendingTagEffectTick()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "UpdateProjectionActorTransform");
-
-	Params::SceneInteractionActor_C_UpdateProjectionActorTransform Parms{};
-
-	Parms.transform1 = std::move(transform1);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.TryStopCurrentState
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::TryStopCurrentState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "TryStopCurrentState");
+		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingTagEffectTick");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -336,15 +272,15 @@ void ASceneInteractionActor_C::TryStopCurrentState()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState1
+// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayTagEffect
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::ChangeState1()
+void ASceneInteractionActor_C::PendingPlayTagEffect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState1");
+		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayTagEffect");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -355,15 +291,15 @@ void ASceneInteractionActor_C::ChangeState1()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState2
+// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingCrossStateEffectTick
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::ChangeState2()
+void ASceneInteractionActor_C::RemovePendingCrossStateEffectTick()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState2");
+		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingCrossStateEffectTick");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -374,15 +310,15 @@ void ASceneInteractionActor_C::ChangeState2()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState3
+// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayCrossStateEffect
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::ChangeState3()
+void ASceneInteractionActor_C::PendingPlayCrossStateEffect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState3");
+		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayCrossStateEffect");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -393,15 +329,15 @@ void ASceneInteractionActor_C::ChangeState3()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState4
+// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingStateEffectTick
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::ChangeState4()
+void ASceneInteractionActor_C::RemovePendingStateEffectTick()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState4");
+		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingStateEffectTick");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -412,186 +348,15 @@ void ASceneInteractionActor_C::ChangeState4()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState5
+// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayStateEffect
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::ChangeState5()
+void ASceneInteractionActor_C::PendingPlayStateEffect()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState5");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState6
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::ChangeState6()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState6");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState7
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::ChangeState7()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState7");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState8
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::ChangeState8()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState8");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.PreviewFullDestructible
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::PreviewFullDestructible()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "PreviewFullDestructible");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.RemoveActorProjection
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::RemoveActorProjection()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "RemoveActorProjection");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.使用字段值切换状态
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::使用字段值切换状态()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "使用字段值切换状态");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.模拟Tag添加
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::模拟Tag添加()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "模拟Tag添加");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.模拟Tag移除
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::模拟Tag移除()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "模拟Tag移除");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SceneInteractionActor.SceneInteractionActor_C.重置
-// (Native, Public, BlueprintCallable, BlueprintEvent)
-
-void ASceneInteractionActor_C::重置()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "重置");
+		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayStateEffect");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -627,15 +392,15 @@ void ASceneInteractionActor_C::ApplyAnimOptimizationParams(bool bUseDistanceMap)
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayStateEffect
+// Function SceneInteractionActor.SceneInteractionActor_C.重置
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::PendingPlayStateEffect()
+void ASceneInteractionActor_C::重置()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayStateEffect");
+		Func = Class->GetFunction("SceneInteractionActor_C", "重置");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -646,15 +411,15 @@ void ASceneInteractionActor_C::PendingPlayStateEffect()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingStateEffectTick
+// Function SceneInteractionActor.SceneInteractionActor_C.模拟Tag移除
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::RemovePendingStateEffectTick()
+void ASceneInteractionActor_C::模拟Tag移除()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingStateEffectTick");
+		Func = Class->GetFunction("SceneInteractionActor_C", "模拟Tag移除");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -665,15 +430,15 @@ void ASceneInteractionActor_C::RemovePendingStateEffectTick()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayCrossStateEffect
+// Function SceneInteractionActor.SceneInteractionActor_C.模拟Tag添加
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::PendingPlayCrossStateEffect()
+void ASceneInteractionActor_C::模拟Tag添加()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayCrossStateEffect");
+		Func = Class->GetFunction("SceneInteractionActor_C", "模拟Tag添加");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -684,15 +449,15 @@ void ASceneInteractionActor_C::PendingPlayCrossStateEffect()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingCrossStateEffectTick
+// Function SceneInteractionActor.SceneInteractionActor_C.使用字段值切换状态
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::RemovePendingCrossStateEffectTick()
+void ASceneInteractionActor_C::使用字段值切换状态()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingCrossStateEffectTick");
+		Func = Class->GetFunction("SceneInteractionActor_C", "使用字段值切换状态");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -703,15 +468,15 @@ void ASceneInteractionActor_C::RemovePendingCrossStateEffectTick()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.PendingPlayTagEffect
+// Function SceneInteractionActor.SceneInteractionActor_C.RemoveActorProjection
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::PendingPlayTagEffect()
+void ASceneInteractionActor_C::RemoveActorProjection()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "PendingPlayTagEffect");
+		Func = Class->GetFunction("SceneInteractionActor_C", "RemoveActorProjection");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -722,15 +487,15 @@ void ASceneInteractionActor_C::PendingPlayTagEffect()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.RemovePendingTagEffectTick
+// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState8
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 
-void ASceneInteractionActor_C::RemovePendingTagEffectTick()
+void ASceneInteractionActor_C::ChangeState8()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "RemovePendingTagEffectTick");
+		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState8");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -741,23 +506,173 @@ void ASceneInteractionActor_C::RemovePendingTagEffectTick()
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.PlayKuroSkeletalMeshDestruction
+// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState7
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::ChangeState7()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState7");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState6
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::ChangeState6()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState6");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState5
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::ChangeState5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState5");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState4
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::ChangeState4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState4");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState3
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::ChangeState3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState3");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState2
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::ChangeState2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState2");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ChangeState1
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::ChangeState1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ChangeState1");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.TryStopCurrentState
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::TryStopCurrentState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "TryStopCurrentState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.UpdateProjectionActorTransform
 // (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// class AActor*                           actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// bool                                    isJumpToEnd                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// const struct FTransformDouble&          transform1                                             (BlueprintVisible, BlueprintReadOnly, Parm, IsPlainOldData, NoDestructor)
 
-void ASceneInteractionActor_C::PlayKuroSkeletalMeshDestruction(class AActor* actor, bool isJumpToEnd)
+void ASceneInteractionActor_C::UpdateProjectionActorTransform(const struct FTransformDouble& transform1)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "PlayKuroSkeletalMeshDestruction");
+		Func = Class->GetFunction("SceneInteractionActor_C", "UpdateProjectionActorTransform");
 
-	Params::SceneInteractionActor_C_PlayKuroSkeletalMeshDestruction Parms{};
+	Params::SceneInteractionActor_C_UpdateProjectionActorTransform Parms{};
 
-	Parms.actor = actor;
-	Parms.isJumpToEnd = isJumpToEnd;
+	Parms.transform1 = std::move(transform1);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -768,19 +683,21 @@ void ASceneInteractionActor_C::PlayKuroSkeletalMeshDestruction(class AActor* act
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.CheckAllEffectPlaying
-// (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function SceneInteractionActor.SceneInteractionActor_C.StopTagAkEvent
+// (Native, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, HasGetValueTypeHash)
 
-bool ASceneInteractionActor_C::CheckAllEffectPlaying()
+void ASceneInteractionActor_C::StopTagAkEvent(const struct FGameplayTag& tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "CheckAllEffectPlaying");
+		Func = Class->GetFunction("SceneInteractionActor_C", "StopTagAkEvent");
 
-	Params::SceneInteractionActor_C_CheckAllEffectPlaying Parms{};
+	Params::SceneInteractionActor_C_StopTagAkEvent Parms{};
+
+	Parms.tag = std::move(tag);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -788,25 +705,42 @@ bool ASceneInteractionActor_C::CheckAllEffectPlaying()
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.GetActiveSequenceRemainTime
+// Function SceneInteractionActor.SceneInteractionActor_C.DestroySelf
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::DestroySelf()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "DestroySelf");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.GetDirectorBySequence
 // (Native, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class ULevelSequence*                   sequence                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class ALevelSequenceActor*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-float ASceneInteractionActor_C::GetActiveSequenceRemainTime(class ULevelSequence* sequence)
+class ALevelSequenceActor* ASceneInteractionActor_C::GetDirectorBySequence(class ULevelSequence* sequence)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "GetActiveSequenceRemainTime");
+		Func = Class->GetFunction("SceneInteractionActor_C", "GetDirectorBySequence");
 
-	Params::SceneInteractionActor_C_GetActiveSequenceRemainTime Parms{};
+	Params::SceneInteractionActor_C_GetDirectorBySequence Parms{};
 
 	Parms.sequence = sequence;
 
@@ -821,20 +755,204 @@ float ASceneInteractionActor_C::GetActiveSequenceRemainTime(class ULevelSequence
 }
 
 
-// Function SceneInteractionActor.SceneInteractionActor_C.AddNewEffect
+// Function SceneInteractionActor.SceneInteractionActor_C.StopExtraEffectOnTagsChange
 // (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
 
-void ASceneInteractionActor_C::AddNewEffect()
+void ASceneInteractionActor_C::StopExtraEffectOnTagsChange(const struct FGameplayTag& tag)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("SceneInteractionActor_C", "AddNewEffect");
+		Func = Class->GetFunction("SceneInteractionActor_C", "StopExtraEffectOnTagsChange");
+
+	Params::SceneInteractionActor_C_StopExtraEffectOnTagsChange Parms{};
+
+	Parms.tag = std::move(tag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ResetTagActorHide
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FGameplayTag&              tag                                                    (BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void ASceneInteractionActor_C::ResetTagActorHide(const struct FGameplayTag& tag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ResetTagActorHide");
+
+	Params::SceneInteractionActor_C_ResetTagActorHide Parms{};
+
+	Parms.tag = std::move(tag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.AddMatrialDataForChildrenActor
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           actor                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+// class UItemMaterialControllerActorData_C*materialData                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+
+void ASceneInteractionActor_C::AddMatrialDataForChildrenActor(class AActor* actor, class UItemMaterialControllerActorData_C* materialData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "AddMatrialDataForChildrenActor");
+
+	Params::SceneInteractionActor_C_AddMatrialDataForChildrenActor Parms{};
+
+	Parms.actor = actor;
+	Parms.materialData = materialData;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.AddNewEndEffect
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::AddNewEndEffect()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "AddNewEndEffect");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.UpdateTimeDilation
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::UpdateTimeDilation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "UpdateTimeDilation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.AddNewState
+// (Native, Public, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::AddNewState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "AddNewState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ReceiveBeginPlay
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+
+void ASceneInteractionActor_C::ReceiveBeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ReceiveBeginPlay");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ReceiveEndPlay
+// (Native, Event, Public, Protected, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EEndPlayReason                          EndPlayReason                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ASceneInteractionActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ReceiveEndPlay");
+
+	Params::SceneInteractionActor_C_ReceiveEndPlay Parms{};
+
+	Parms.EndPlayReason = EndPlayReason;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function SceneInteractionActor.SceneInteractionActor_C.ExecuteUbergraph_SceneInteractionActor
+// (Final, Native, UbergraphFunction, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ASceneInteractionActor_C::ExecuteUbergraph_SceneInteractionActor(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SceneInteractionActor_C", "ExecuteUbergraph_SceneInteractionActor");
+
+	Params::SceneInteractionActor_C_ExecuteUbergraph_SceneInteractionActor Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

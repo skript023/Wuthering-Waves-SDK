@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_R2T1KamolaMd10011_Gameplay_Default.ABP_R2T1KamolaMd10011_Gameplay_Default_C
-// 0x0040 (0x0750 - 0x0710)
+// 0x0040 (0x0870 - 0x0830)
 class UABP_R2T1KamolaMd10011_Gameplay_Default_C final : public UAnimInstance
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0710(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0718(0x0038)()
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0830(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x0838(0x0038)()
 
 public:
 	void ExecuteUbergraph_ABP_R2T1KamolaMd10011_Gameplay_Default(int32 EntryPoint);

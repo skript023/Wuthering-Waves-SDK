@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsSeqAnimNotifyAudioEvent.TsSeqAnimNotifyAudioEvent_C
-// 0x0040 (0x0088 - 0x0048)
-class UTsSeqAnimNotifyAudioEvent_C final : public UKuroAnimNotify
+// 0x0040 (0x0098 - 0x0058)
+class UTsSeqAnimNotifyAudioEvent_C final : public UTsAnimNotifyBase_C
 {
 public:
-	TSoftObjectPtr<class UAkAudioEvent>           AudioEvent;                                        // 0x0048(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	class FName                                   SocketName;                                        // 0x0078(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Follow;                                            // 0x0084(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	TSoftObjectPtr<class UAkAudioEvent>           AudioEvent;                                        // 0x0058(0x0030)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	class FName                                   SocketName;                                        // 0x0088(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Follow;                                            // 0x0094(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

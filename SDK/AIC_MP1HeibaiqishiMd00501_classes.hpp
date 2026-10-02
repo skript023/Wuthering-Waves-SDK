@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SAiConditions_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SAiConditions_structs.hpp"
 #include "AIC_AICommon_classes.hpp"
 
 

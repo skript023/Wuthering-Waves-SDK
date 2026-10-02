@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "GA_Base_classes.hpp"
+#include "CoreUObject_structs.hpp"
 #include "EMovementDirection_structs.hpp"
 
 
@@ -21,16 +21,16 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass GA_Kamola_Burst_MoveAttack.GA_Kamola_Burst_MoveAttack_C
-// 0x0078 (0x0600 - 0x0588)
+// 0x0078 (0x0648 - 0x05D0)
 class UGA_Kamola_Burst_MoveAttack_C final : public UGA_Base_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Kamola_Burst_MoveAttack_C;       // 0x0588(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FVector                                移动输入;                                          // 0x0590(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_59C[0x4];                                      // 0x059C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<struct FGameplayTag, class FName>        根据标签释放技能;                                  // 0x05A0(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         特效Handle;                                        // 0x05F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   追踪插槽;                                          // 0x05F4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_GA_Kamola_Burst_MoveAttack_C;       // 0x05D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FVector                                移动输入;                                          // 0x05D8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5E4[0x4];                                      // 0x05E4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<struct FGameplayTag, class FName>        根据标签释放技能;                                  // 0x05E8(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         特效Handle;                                        // 0x0638(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   追踪插槽;                                          // 0x063C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_GA_Kamola_Burst_MoveAttack(int32 EntryPoint);

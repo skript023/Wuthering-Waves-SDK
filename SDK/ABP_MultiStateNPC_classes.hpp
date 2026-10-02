@@ -10,231 +10,246 @@
 
 #include "Basic.hpp"
 
-#include "AnimGraphRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "ECharState_structs.hpp"
 #include "KuroAnim_structs.hpp"
 #include "KuroAnim_classes.hpp"
 #include "Engine_structs.hpp"
+#include "AnimGraphRuntime_structs.hpp"
+#include "ECharState_structs.hpp"
 
 
 namespace SDK
 {
 
 // AnimBlueprintGeneratedClass ABP_MultiStateNPC.ABP_MultiStateNPC_C
-// 0x3A70 (0x4270 - 0x0800)
+// 0x4200 (0x4BC0 - 0x09C0)
 class UABP_MultiStateNPC_C final : public UKuroAnimInstance
 {
 public:
-	uint8                                         Pad_7F8[0x8];                                      // 0x07F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0800(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	struct FAnimNode_Root                         AnimGraphNode_Root_1;                              // 0x0808(0x0038)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_5;                              // 0x0840(0x0060)()
-	struct FAnimNode_Inertialization              AnimGraphNode_Inertialization;                     // 0x08A0(0x0070)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_31;                 // 0x0910(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_30;                 // 0x0938(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_29;                 // 0x0960(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_28;                 // 0x0988(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_27;                 // 0x09B0(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_26;                 // 0x09D8(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_25;                 // 0x0A00(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_24;                 // 0x0A28(0x0028)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_14;                   // 0x0A50(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_35;                      // 0x0B28(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_13;                   // 0x0B60(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_34;                      // 0x0C38(0x0038)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_33;                      // 0x0C70(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_10;                     // 0x0CA8(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_32;                      // 0x0E40(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_23;                 // 0x0E78(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_22;                 // 0x0EA0(0x0028)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_12;                   // 0x0EC8(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_31;                      // 0x0FA0(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_11;                   // 0x0FD8(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_30;                      // 0x10B0(0x0038)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_29;                      // 0x10E8(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_9;                      // 0x1120(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_28;                      // 0x12B8(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_21;                 // 0x12F0(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_20;                 // 0x1318(0x0028)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_10;                   // 0x1340(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_27;                      // 0x1418(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_9;                    // 0x1450(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_26;                      // 0x1528(0x0038)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_25;                      // 0x1560(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_8;                      // 0x1598(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_24;                      // 0x1730(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_19;                 // 0x1768(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_18;                 // 0x1790(0x0028)()
-	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer_3;                  // 0x17B8(0x0108)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_23;                      // 0x18C0(0x0038)()
-	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer_2;                  // 0x18F8(0x0108)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_22;                      // 0x1A00(0x0038)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_21;                      // 0x1A38(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_7;                      // 0x1A70(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_20;                      // 0x1C08(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_17;                 // 0x1C40(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_16;                 // 0x1C68(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_15;                 // 0x1C90(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_14;                 // 0x1CB8(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_13;                 // 0x1CE0(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_12;                 // 0x1D08(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_11;                 // 0x1D30(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_10;                 // 0x1D58(0x0028)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_8;                    // 0x1D80(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_19;                      // 0x1E58(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_7;                    // 0x1E90(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_18;                      // 0x1F68(0x0038)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_17;                      // 0x1FA0(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_6;                      // 0x1FD8(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_16;                      // 0x2170(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_9;                  // 0x21A8(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_8;                  // 0x21D0(0x0028)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_6;                    // 0x21F8(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_15;                      // 0x22D0(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_5;                    // 0x2308(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_14;                      // 0x23E0(0x0038)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_13;                      // 0x2418(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_5;                      // 0x2450(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_12;                      // 0x25E8(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_7;                  // 0x2620(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_6;                  // 0x2648(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x2670(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x2698(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x26C0(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x26E8(0x0028)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_4;                    // 0x2710(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_11;                      // 0x27E8(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_3;                    // 0x2820(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_10;                      // 0x28F8(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_2;                    // 0x2930(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_9;                       // 0x2A08(0x0038)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x2A40(0x00D8)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_8;                       // 0x2B18(0x0038)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_7;                       // 0x2B50(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_4;                      // 0x2B88(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_6;                       // 0x2D20(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_3;                      // 0x2D58(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_5;                       // 0x2EF0(0x0038)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x2F28(0x0028)()
-	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x2F50(0x0028)()
-	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer_1;                  // 0x2F78(0x0108)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_4;                       // 0x3080(0x0038)()
-	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer;                    // 0x30B8(0x0108)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_3;                       // 0x31C0(0x0038)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x31F8(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_2;                      // 0x3230(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x33C8(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_1;                      // 0x3400(0x0198)()
-	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x3598(0x0038)()
-	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x35D0(0x0198)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_4;                              // 0x3768(0x0060)()
-	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive_1;                     // 0x37C8(0x00D8)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_3;                              // 0x38A0(0x0060)()
-	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive;                       // 0x3900(0x00D8)()
-	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x39D8(0x0038)()
-	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer;                     // 0x3A10(0x00C0)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_2;                              // 0x3AD0(0x0060)()
-	struct FAnimNode_SightLock                    AnimGraphNode_SightLock;                           // 0x3B30(0x01E8)()
-	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x3D18(0x0020)()
-	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x3D38(0x0020)()
-	uint8                                         Pad_3D58[0x8];                                     // 0x3D58(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAnimNode_RBF                          AnimGraphNode_RBF;                                 // 0x3D60(0x0150)()
-	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves_1;                     // 0x3EB0(0x0060)()
-	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves;                       // 0x3F10(0x0060)()
-	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x3F70(0x00D8)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x4048(0x0060)()
-	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x40A8(0x0060)()
-	struct FAnimNode_TextureFace                  AnimGraphNode_TextureFace;                         // 0x4108(0x00C8)(ContainsInstancedReference)
-	class ABP_BaseNPC_C*                          角色蓝图;                                          // 0x41D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                移动输入向量;                                      // 0x41D8(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         速度;                                              // 0x41E4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          是否有移动输入;                                    // 0x41E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          ifPlayIdleAction;                                  // 0x41E9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_41EA[0x6];                                     // 0x41EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UAnimMontage*>                   IdleMontageArray;                                  // 0x41F0(0x0010)(Edit, BlueprintVisible)
-	class USkeletalMeshComponent*                 角色Mesh;                                          // 0x4200(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          是否原地转身;                                      // 0x4208(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4209[0x3];                                     // 0x4209(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         旋转角度差值;                                      // 0x420C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         上一次旋转角度;                                    // 0x4210(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                SightDirect;                                       // 0x4214(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsBeingImpacted;                                   // 0x4220(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          IsBeingAttacked;                                   // 0x4221(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	ESightLockMode                                SightLockMode;                                     // 0x4222(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4223[0x1];                                     // 0x4223(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         走跑混合;                                          // 0x4224(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsTurnLeft;                                        // 0x4228(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4229[0x3];                                     // 0x4229(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FRotator                               角色旋转;                                          // 0x422C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	int32                                         NpcEntityId;                                       // 0x4238(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CollisionStrength;                                 // 0x423C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CollisionDirection;                                // 0x4240(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         RandomEpresionEndTime;                             // 0x4244(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         眨眼动画时长;                                      // 0x4248(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         此轮眨眼动画总时长;                                // 0x424C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         ExpresionAlpha;                                    // 0x4250(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          眨眼中;                                            // 0x4254(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	bool                                          Cache原地转身;                                     // 0x4255(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_4256[0x2];                                     // 0x4256(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           口型曲线;                                          // 0x4258(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	int32                                         当前状态;                                          // 0x4268(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          是否无过渡切换状态;                                // 0x426C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_9B8[0x8];                                      // 0x09B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FAnimNode_Root                         AnimGraphNode_Root_1;                              // 0x09C8(0x0038)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_6;                              // 0x0A00(0x0060)()
+	struct FAnimNode_Inertialization              AnimGraphNode_Inertialization;                     // 0x0A60(0x0070)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_31;                 // 0x0AD0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_30;                 // 0x0AF8(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_29;                 // 0x0B20(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_28;                 // 0x0B48(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_27;                 // 0x0B70(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_26;                 // 0x0B98(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_25;                 // 0x0BC0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_24;                 // 0x0BE8(0x0028)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_14;                   // 0x0C10(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_35;                      // 0x0CE8(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_13;                   // 0x0D20(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_34;                      // 0x0DF8(0x0038)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_33;                      // 0x0E30(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_10;                     // 0x0E68(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_32;                      // 0x1050(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_23;                 // 0x1088(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_22;                 // 0x10B0(0x0028)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_12;                   // 0x10D8(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_31;                      // 0x11B0(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_11;                   // 0x11E8(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_30;                      // 0x12C0(0x0038)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_29;                      // 0x12F8(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_9;                      // 0x1330(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_28;                      // 0x1518(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_21;                 // 0x1550(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_20;                 // 0x1578(0x0028)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_10;                   // 0x15A0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_27;                      // 0x1678(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_9;                    // 0x16B0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_26;                      // 0x1788(0x0038)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_25;                      // 0x17C0(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_8;                      // 0x17F8(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_24;                      // 0x19E0(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_19;                 // 0x1A18(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_18;                 // 0x1A40(0x0028)()
+	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer_3;                  // 0x1A68(0x0118)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_23;                      // 0x1B80(0x0038)()
+	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer_2;                  // 0x1BB8(0x0118)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_22;                      // 0x1CD0(0x0038)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_21;                      // 0x1D08(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_7;                      // 0x1D40(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_20;                      // 0x1F28(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_17;                 // 0x1F60(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_16;                 // 0x1F88(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_15;                 // 0x1FB0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_14;                 // 0x1FD8(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_13;                 // 0x2000(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_12;                 // 0x2028(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_11;                 // 0x2050(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_10;                 // 0x2078(0x0028)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_8;                    // 0x20A0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_19;                      // 0x2178(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_7;                    // 0x21B0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_18;                      // 0x2288(0x0038)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_17;                      // 0x22C0(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_6;                      // 0x22F8(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_16;                      // 0x24E0(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_9;                  // 0x2518(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_8;                  // 0x2540(0x0028)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_6;                    // 0x2568(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_15;                      // 0x2640(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_5;                    // 0x2678(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_14;                      // 0x2750(0x0038)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_13;                      // 0x2788(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_5;                      // 0x27C0(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_12;                      // 0x29A8(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_7;                  // 0x29E0(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_6;                  // 0x2A08(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_5;                  // 0x2A30(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_4;                  // 0x2A58(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_3;                  // 0x2A80(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_2;                  // 0x2AA8(0x0028)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_4;                    // 0x2AD0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_11;                      // 0x2BA8(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_3;                    // 0x2BE0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_10;                      // 0x2CB8(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_2;                    // 0x2CF0(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_9;                       // 0x2DC8(0x0038)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer_1;                    // 0x2E00(0x00D8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_8;                       // 0x2ED8(0x0038)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_7;                       // 0x2F10(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_4;                      // 0x2F48(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_6;                       // 0x3130(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_3;                      // 0x3168(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_5;                       // 0x3350(0x0038)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult_1;                  // 0x3388(0x0028)()
+	struct FAnimNode_TransitionResult             AnimGraphNode_TransitionResult;                    // 0x33B0(0x0028)()
+	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer_1;                  // 0x33D8(0x0118)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_4;                       // 0x34F0(0x0038)()
+	struct FAnimNode_BlendSpacePlayer             AnimGraphNode_BlendSpacePlayer;                    // 0x3528(0x0118)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_3;                       // 0x3640(0x0038)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_2;                       // 0x3678(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_2;                      // 0x36B0(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult_1;                       // 0x3898(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine_1;                      // 0x38D0(0x01E8)()
+	struct FAnimNode_StateResult                  AnimGraphNode_StateResult;                         // 0x3AB8(0x0038)()
+	struct FAnimNode_StateMachine                 AnimGraphNode_StateMachine;                        // 0x3AF0(0x01E8)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_5;                              // 0x3CD8(0x0060)()
+	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive_1;                     // 0x3D38(0x00D8)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_4;                              // 0x3E10(0x0060)()
+	struct FAnimNode_ApplyAdditive                AnimGraphNode_ApplyAdditive;                       // 0x3E70(0x00D8)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_3;                              // 0x3F48(0x0060)()
+	struct FAnimNode_KuroSlotLayeredBlend         AnimGraphNode_KuroSlotLayeredBlend;                // 0x3FA8(0x00E0)()
+	struct FAnimNode_LinkedInputPose              AnimGraphNode_LinkedInputPose;                     // 0x4088(0x0138)()
+	struct FAnimNode_BlendListByBool              AnimGraphNode_BlendListByBool;                     // 0x41C0(0x00B0)()
+	struct FAnimNode_Root                         AnimGraphNode_Root;                                // 0x4270(0x0038)()
+	struct FAnimNode_LinkedAnimLayer              AnimGraphNode_LinkedAnimLayer;                     // 0x42A8(0x00C0)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_2;                              // 0x4368(0x0060)()
+	struct FAnimNode_SightLock                    AnimGraphNode_SightLock;                           // 0x43C8(0x01E8)()
+	struct FAnimNode_ConvertLocalToComponentSpace AnimGraphNode_LocalToComponentSpace;               // 0x45B0(0x0020)()
+	struct FAnimNode_ConvertComponentToLocalSpace AnimGraphNode_ComponentToLocalSpace;               // 0x45D0(0x0020)()
+	struct FAnimNode_RBF                          AnimGraphNode_RBF;                                 // 0x45F0(0x0150)()
+	struct FAnimNode_LinkedAnimGraph              AnimGraphNode_LinkedAnimGraph;                     // 0x4740(0x00A8)()
+	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves_1;                     // 0x47E8(0x0060)()
+	struct FAnimNode_SequencePlayer               AnimGraphNode_SequencePlayer;                      // 0x4848(0x00D8)()
+	struct FAnimNode_Slot                         AnimGraphNode_Slot_1;                              // 0x4920(0x0060)()
+	struct FAnimNode_CombineCurves                AnimGraphNode_CombineCurves;                       // 0x4980(0x0060)()
+	struct FAnimNode_TextureFace                  AnimGraphNode_TextureFace;                         // 0x49E0(0x00C8)(ContainsInstancedReference)
+	struct FAnimNode_Slot                         AnimGraphNode_Slot;                                // 0x4AA8(0x0060)()
+	class ABP_BaseNPC_C*                          角色蓝图;                                          // 0x4B08(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                移动输入向量;                                      // 0x4B10(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         速度;                                              // 0x4B1C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          是否有移动输入;                                    // 0x4B20(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          ifPlayIdleAction;                                  // 0x4B21(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4B22[0x6];                                     // 0x4B22(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UAnimMontage*>                   IdleMontageArray;                                  // 0x4B28(0x0010)(Edit, BlueprintVisible)
+	class USkeletalMeshComponent*                 角色Mesh;                                          // 0x4B38(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          是否原地转身;                                      // 0x4B40(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4B41[0x3];                                     // 0x4B41(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         旋转角度差值;                                      // 0x4B44(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         上一次旋转角度;                                    // 0x4B48(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                SightDirect;                                       // 0x4B4C(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsBeingImpacted;                                   // 0x4B58(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          IsBeingAttacked;                                   // 0x4B59(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	ESightLockMode                                SightLockMode;                                     // 0x4B5A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4B5B[0x1];                                     // 0x4B5B(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         走跑混合;                                          // 0x4B5C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsTurnLeft;                                        // 0x4B60(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4B61[0x3];                                     // 0x4B61(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FRotator                               角色旋转;                                          // 0x4B64(0x000C)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	int32                                         NpcEntityId;                                       // 0x4B70(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CollisionStrength;                                 // 0x4B74(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CollisionDirection;                                // 0x4B78(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         RandomEpresionEndTime;                             // 0x4B7C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         眨眼动画时长;                                      // 0x4B80(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         此轮眨眼动画总时长;                                // 0x4B84(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         ExpresionAlpha;                                    // 0x4B88(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          眨眼中;                                            // 0x4B8C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          Cache原地转身;                                     // 0x4B8D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4B8E[0x2];                                     // 0x4B8E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           口型曲线;                                          // 0x4B90(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	int32                                         当前状态;                                          // 0x4BA0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          是否无过渡切换状态;                                // 0x4BA4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          状态_地区运动模式;                                 // 0x4BA5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	bool                                          状态_地区运动模式_临时;                            // 0x4BA6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4BA7[0x1];                                     // 0x4BA7(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBP_ABPLogicParams_C*                   Ts逻辑变量集;                                      // 0x4BA8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsEnableTurnMove;                                  // 0x4BB0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_4BB1[0x3];                                     // 0x4BB1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         TurnYawRate;                                       // 0x4BB4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsForceUpdateSourceAnimation;                      // 0x4BB8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
-	void InterfaceJumpPressed(float* Speed);
-	void 基础层(struct FPoseLink* 基础层_0);
-	void AnimGraph(struct FPoseLink* AnimGraph_0);
-	void 更新角色状态();
-	void 更新眨眼();
-	void HasInputRotate(bool* Output_Get);
-	void 是否AI驱动(bool* Result);
-	void 更新角色转身();
-	void 更新角色移动();
-	void 更新角色碰撞();
-	void 更新视线();
-	void 更新角色信息();
-	void InterfaceManipulateInteractDirection(float 角度);
-	void InterfaceFixHookDirect(const struct FVector& Offset);
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TextureFace_47C3F22343F4E2941D0AC3929521DD7B();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_FE7049014D58E276D1DAA4A7B255E004();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_BE174F4E4305A31C44EB53B8A0ACB38F();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_2753322D49988F73D13551BE96449CEC();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_1BD443804CCB9B22EFA4DBA71566B6B7();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_8698E7E3445AAA35915DC7B9FE769331();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_397CD326496626151E6C38AFBFB8C7BC();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_6BAB1C7244A9FA3CCE76DC83A08CCED5();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_CBB2E4A1476665CF32489F8488633075();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_58B5095B4B2B5446A89319BB171C7794();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_210DFE6A4C2E240DE1D99AACF91F01EF();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_7A5788C0485C309C2ECB9693EC3EB1E7();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_DA048FEC4A7322378EEF208E853CE59B();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_CF817C524F33139FE79DFF871D173577();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_F4F96042466926A52814119508C8224A();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_BD5D1A29496F8570ECA77DA2ED3219BB();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_7CD0B5224A979BBF8DD500B389E56FF4();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_4963A49343D067378F50F4897F39D90B();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_2BE5DC3A4BF210E9CCD4D9BB0BBF70FE();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_6574E985420FDB1130BEA6991C5D661B();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_D58127CB43F64574DF9FC4B027EE42F2();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_27EFD72A476E73371BEEACAE3F318B51();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_8ECA98314DE03091D8AEF7859D07C8D1();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_1165591C4973FAFC213772A1917D020F();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_DD54A29F4039E201894B5D98D07489CE();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_79CA551742D69E3E0FD67EB0149DAC1D();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_FD997E7D42E1AD7C0BCA5E86676A938C();
-	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_30942B7F421866411D6649824CA5F52B();
-	void InterfaceSimulateJump(float Speed);
-	void BlueprintInitializeAnimation();
-	void BlueprintUpdateAnimation(float DeltaTimeX);
-	void ClimbDash();
-	void OnComponentStart();
-	void AnimNotify_OnCollisionAnimEnd();
-	void AnimNotify_OnCollisionAnimBegin();
-	void AnimNotify_OnHitAnimBegin();
-	void AnimNotify_OnHitAnimEnd();
 	void ExecuteUbergraph_ABP_MultiStateNPC(int32 EntryPoint);
+	void AnimNotify_OnHitAnimEnd();
+	void AnimNotify_OnHitAnimBegin();
+	void AnimNotify_OnCollisionAnimBegin();
+	void AnimNotify_OnCollisionAnimEnd();
+	void ClimbDash();
+	void InterfaceSimulateJump(float Speed);
+	void OnComponentStart();
+	void InterfaceFixHookDirect(const struct FVector& Offset);
+	void BlueprintUpdateAnimation(float DeltaTimeX);
+	void BlueprintInitializeAnimation();
+	void InterfaceManipulateInteractDirection(float 角度);
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_30942B7F421866411D6649824CA5F52B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_FD997E7D42E1AD7C0BCA5E86676A938C();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_79CA551742D69E3E0FD67EB0149DAC1D();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_DD54A29F4039E201894B5D98D07489CE();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_1165591C4973FAFC213772A1917D020F();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_8ECA98314DE03091D8AEF7859D07C8D1();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_27EFD72A476E73371BEEACAE3F318B51();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_D58127CB43F64574DF9FC4B027EE42F2();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_6574E985420FDB1130BEA6991C5D661B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_2BE5DC3A4BF210E9CCD4D9BB0BBF70FE();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_4963A49343D067378F50F4897F39D90B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_7CD0B5224A979BBF8DD500B389E56FF4();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_BD5D1A29496F8570ECA77DA2ED3219BB();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_F4F96042466926A52814119508C8224A();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_CF817C524F33139FE79DFF871D173577();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_DA048FEC4A7322378EEF208E853CE59B();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_7A5788C0485C309C2ECB9693EC3EB1E7();
 	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_4AF0EC2E474050F4A6FEEFB5B0EB514D();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_210DFE6A4C2E240DE1D99AACF91F01EF();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_58B5095B4B2B5446A89319BB171C7794();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_CBB2E4A1476665CF32489F8488633075();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_6BAB1C7244A9FA3CCE76DC83A08CCED5();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_397CD326496626151E6C38AFBFB8C7BC();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_8698E7E3445AAA35915DC7B9FE769331();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_1BD443804CCB9B22EFA4DBA71566B6B7();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_2753322D49988F73D13551BE96449CEC();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_BE174F4E4305A31C44EB53B8A0ACB38F();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TransitionResult_FE7049014D58E276D1DAA4A7B255E004();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_BlendListByBool_816E29AA41B99EA68ABDEA9444F51DC3();
+	void EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_MultiStateNPC_AnimGraphNode_TextureFace_47C3F22343F4E2941D0AC3929521DD7B();
+	void InterfaceControlPoint(const struct FVector& Offset);
+	void 更新角色信息();
+	void 更新视线();
+	void 更新角色碰撞();
+	void 更新角色移动();
+	void 更新角色转身();
+	void 是否AI驱动(bool* Result);
+	void HasInputRotate(bool* Output_Get);
+	void 更新眨眼();
+	void 更新角色状态();
+	void 初始化Tag();
+	void AnimGraph(struct FPoseLink* AnimGraph_0);
+	void 基础层(const struct FPoseLink& 地区运动状态, struct FPoseLink* 基础层_0);
+	void InterfaceJumpPressed(float* Speed);
 
 public:
 	static class UClass* StaticClass()

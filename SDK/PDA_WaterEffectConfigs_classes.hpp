@@ -18,17 +18,17 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass PDA_WaterEffectConfigs.PDA_WaterEffectConfigs_C
-// 0x0138 (0x0170 - 0x0038)
+// 0x0168 (0x01A0 - 0x0038)
 class UPDA_WaterEffectConfigs_C final : public UPrimaryDataAsset
 {
 public:
 	float                                         TimeExistAfterDead;                                // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         FallJumpPositionFix;                               // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSWaterEffectSubConfig                 WaterEffectConfig;                                 // 0x0040(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TSoftObjectPtr<class UEffectModelBase>        SwimIdleEffectRef;                                 // 0x0090(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TSoftObjectPtr<class UEffectModelBase>        SwimNormalEffectRef;                               // 0x00C0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TSoftObjectPtr<class UEffectModelBase>        SwimFastEffectRef;                                 // 0x00F0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
-	TMap<class UPhysicalMaterial*, struct FSWaterEffectSubConfig> MaterialEffectConfig;              // 0x0120(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSWaterEffectSubConfig                 WaterEffectConfig;                                 // 0x0040(0x0080)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UEffectModelBase>        SwimIdleEffectRef;                                 // 0x00C0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UEffectModelBase>        SwimNormalEffectRef;                               // 0x00F0(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TSoftObjectPtr<class UEffectModelBase>        SwimFastEffectRef;                                 // 0x0120(0x0030)(Edit, BlueprintVisible, DisableEditOnInstance, HasGetValueTypeHash)
+	TMap<class UPhysicalMaterial*, struct FSWaterEffectSubConfig> MaterialEffectConfig;              // 0x0150(0x0050)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	static class UClass* StaticClass()

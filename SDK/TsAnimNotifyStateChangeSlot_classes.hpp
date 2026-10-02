@@ -11,21 +11,21 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "TsAnimNotifyStateBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifyStateChangeSlot.TsAnimNotifyStateChangeSlot_C
-// 0x0058 (0x00A0 - 0x0048)
-class UTsAnimNotifyStateChangeSlot_C final : public UKuroAnimNotifyState
+// 0x0058 (0x00B0 - 0x0058)
+class UTsAnimNotifyStateChangeSlot_C final : public UTsAnimNotifyStateBase_C
 {
 public:
-	class FString                                 ComponentName;                                     // 0x0048(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	class FName                                   SwitchToSlotName;                                  // 0x0058(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_64[0xC];                                       // 0x0064(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             SlotTransform;                                     // 0x0070(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
+	class FString                                 ComponentName;                                     // 0x0058(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FName                                   SwitchToSlotName;                                  // 0x0068(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_74[0xC];                                       // 0x0074(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             SlotTransform;                                     // 0x0080(0x0030)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor)
 
 public:
 	bool K2_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration);

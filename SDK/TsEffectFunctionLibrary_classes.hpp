@@ -43,6 +43,8 @@ public:
 	static void SetSimulateFromSequence(int32 handle, class ABP_EffectActor_C* actor, class UObject* __WorldContext);
 	static int32 SpawnEffect(class UObject* worldContext, class UObject* callObject, const class FString& path, const struct FTransformDouble& transform, const class FString& reason, EEffectPlay playType, bool disablePostProcess, class UObject* __WorldContext);
 	static int32 SpawnEffectWithActor(class UObject* worldContext, class UObject* callObject, class AActor* effectActor, const class FString& path, const class FString& reason, EEffectPlay playType, EEffectType effectType, bool disablePostProcess, class UObject* __WorldContext);
+	static bool StopAndDestroyEffect(int32 handle, class UObject* callObject, const class FString& reason, bool immediately, class UObject* __WorldContext);
+	static int32 SpawnEffectAttachToBone(class UObject* worldContext, class UObject* callObject, class USkeletalMeshComponent* skeletalMeshComponent, class FName socketName, const class FString& path, const struct FTransformDouble& transform, const class FString& reason, EEffectPlay playType, bool disablePostProcess, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

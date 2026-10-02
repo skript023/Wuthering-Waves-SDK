@@ -140,11 +140,11 @@ public:
 DUMPER7_ASSERTS_IKuroBuildingGridPlaceholderInterface;
 
 // Class KuroBuildingGridSystem.KuroBuildingGridRenderingComponent
-// 0x0010 (0x0590 - 0x0580)
+// 0x0010 (0x05F0 - 0x05E0)
 class UKuroBuildingGridRenderingComponent final : public UDebugDrawComponent
 {
 public:
-	uint8                                         Pad_580[0x10];                                     // 0x0580(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_5E0[0x10];                                     // 0x05E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

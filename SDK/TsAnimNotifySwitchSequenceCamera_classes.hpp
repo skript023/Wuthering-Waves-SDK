@@ -10,39 +10,42 @@
 
 #include "Basic.hpp"
 
-#include "SSequenceCamera_SpecificConfig_structs.hpp"
 #include "SSequenceCamera_Settings_structs.hpp"
-#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
+#include "SSequenceCamera_SpecificConfig_structs.hpp"
+#include "TsAnimNotifyBase_classes.hpp"
 #include "CoreUObject_structs.hpp"
-#include "KuroRenderingRuntimeBPPlugin_classes.hpp"
+#include "ESequenceCameraAnsEffectiveClientType_structs.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsAnimNotifySwitchSequenceCamera.TsAnimNotifySwitchSequenceCamera_C
-// 0x0098 (0x00E0 - 0x0048)
-class UTsAnimNotifySwitchSequenceCamera_C final : public UKuroAnimNotify
+// 0x00B0 (0x0108 - 0x0058)
+class UTsAnimNotifySwitchSequenceCamera_C final : public UTsAnimNotifyBase_C
 {
 public:
-	struct FSSequenceCamera_Settings              特写镜头配置;                                      // 0x0048(0x0038)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	struct FRotator                               AdditiveRotation;                                  // 0x0080(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_8C[0x4];                                       // 0x008C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 CameraAttachSocket;                                // 0x0090(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	class FString                                 CameraDetectSocket;                                // 0x00A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	float                                         ExtraDetectSphereRadius;                           // 0x00B0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                ExtraSphereLocation;                               // 0x00B4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsShowExtraSphere;                                 // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bResetLockOnCamera;                                // 0x00C1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	ESequenceCameraAnsEffectiveClientType         生效客户端;                                        // 0x00C2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsIgnoreCharacterCollision;                        // 0x00C3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DisableMovementInput;                              // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DisableLookAtInput;                                // 0x00C5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          DisableMotionBlur;                                 // 0x00C6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          强制播放Sequence;                                  // 0x00C7(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          启用特定功能下的镜头配置;                          // 0x00C8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_C9[0x7];                                       // 0x00C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FSSequenceCamera_SpecificConfig> 特定功能下的镜头配置;                             // 0x00D0(0x0010)(Edit, BlueprintVisible)
+	struct FSSequenceCamera_Settings              特写镜头配置;                                      // 0x0058(0x0048)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	struct FRotator                               AdditiveRotation;                                  // 0x00A0(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_AC[0x4];                                       // 0x00AC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 CameraAttachSocket;                                // 0x00B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	class FString                                 CameraDetectSocket;                                // 0x00C0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	float                                         ExtraDetectSphereRadius;                           // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                ExtraSphereLocation;                               // 0x00D4(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsShowExtraSphere;                                 // 0x00E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bResetLockOnCamera;                                // 0x00E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	ESequenceCameraAnsEffectiveClientType         生效客户端;                                        // 0x00E2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsIgnoreCharacterCollision;                        // 0x00E3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DisableMovementInput;                              // 0x00E4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DisableLookAtInput;                                // 0x00E5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          DisableMotionBlur;                                 // 0x00E6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          强制播放Sequence;                                  // 0x00E7(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          启用特定功能下的镜头配置;                          // 0x00E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_E9[0x7];                                       // 0x00E9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FSSequenceCamera_SpecificConfig> 特定功能下的镜头配置;                             // 0x00F0(0x0010)(Edit, BlueprintVisible)
+	bool                                          ShotBeforePlaying;                                 // 0x0100(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_101[0x3];                                      // 0x0101(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ShotDuration;                                      // 0x0104(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	bool K2_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation);

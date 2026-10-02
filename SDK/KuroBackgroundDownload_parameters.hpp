@@ -27,9 +27,19 @@ public:
 	int32                                         InRetryCount;                                      // 0x0030(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         InTimeout;                                         // 0x0034(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bNewIOSApi;                                        // 0x0038(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bAllowCell;                                        // 0x0039(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_KuroBgPrefixDownload_Start;
+
+// Function KuroBackgroundDownload.KuroBgPrefixDownload.Continue
+// 0x0001 (0x0001 - 0x0000)
+struct KuroBgPrefixDownload_Continue final
+{
+public:
+	bool                                          bAllowCell;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_KuroBgPrefixDownload_Continue;
 
 // Function KuroBackgroundDownload.KuroBgPrefixDownload.GetBpsSpeed
 // 0x0004 (0x0004 - 0x0000)

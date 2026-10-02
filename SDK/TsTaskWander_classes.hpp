@@ -10,38 +10,38 @@
 
 #include "Basic.hpp"
 
+#include "TsTaskAbortImmediatelyBase_classes.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "TsTaskAbortImmediatelyBase_classes.hpp"
 
 
 namespace SDK
 {
 
 // TypeScriptGeneratedClass TsTaskWander.TsTaskWander_C
-// 0x00A8 (0x0160 - 0x00B8)
+// 0x00A8 (0x0168 - 0x00C0)
 class UTsTaskWander_C final : public UTsTaskAbortImmediatelyBase_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskWander_C;                     // 0x00B8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	float                                         RandomRadius;                                      // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         MinWanderDistance;                                 // 0x00C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         MaxNavigationMillisecond;                          // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         MaxStopTime;                                       // 0x00CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         BlinkTime;                                         // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Debug;                                             // 0x00D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          UsePatrolPointPriority;                            // 0x00D5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_D6[0x2];                                       // 0x00D6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSoftObjectPath                        ShowMaterialDa;                                    // 0x00D8(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	struct FSoftObjectPath                        HideMaterialDa;                                    // 0x00F8(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	struct FSoftObjectPath                        HideEffectDa;                                      // 0x0118(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	struct FSoftObjectPath                        ShowEffectDa;                                      // 0x0138(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
-	bool                                          MoveStateForWanderOrReset;                         // 0x0158(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame_TsTaskWander_C;                     // 0x00C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	float                                         RandomRadius;                                      // 0x00C8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         MinWanderDistance;                                 // 0x00CC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         MaxNavigationMillisecond;                          // 0x00D0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         MaxStopTime;                                       // 0x00D4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         BlinkTime;                                         // 0x00D8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Debug;                                             // 0x00DC(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          UsePatrolPointPriority;                            // 0x00DD(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_DE[0x2];                                       // 0x00DE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSoftObjectPath                        ShowMaterialDa;                                    // 0x00E0(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	struct FSoftObjectPath                        HideMaterialDa;                                    // 0x0100(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	struct FSoftObjectPath                        HideEffectDa;                                      // 0x0120(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	struct FSoftObjectPath                        ShowEffectDa;                                      // 0x0140(0x0020)(Edit, BlueprintVisible, ZeroConstructor, HasGetValueTypeHash)
+	bool                                          MoveStateForWanderOrReset;                         // 0x0160(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
-	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
 	void ExecuteUbergraph_TsTaskWander(int32 EntryPoint);
+	void ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn);
+	void ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds);
 
 public:
 	static class UClass* StaticClass()

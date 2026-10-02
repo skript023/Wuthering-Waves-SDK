@@ -93,76 +93,6 @@ void UGA_Role_Bianshen_Level_Youyidie_C::K2_ActivateAbility()
 }
 
 
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnCompleted_5D118C384AE61F1C80292E81DEEC160B
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Role_Bianshen_Level_Youyidie_C::OnCompleted_5D118C384AE61F1C80292E81DEEC160B()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnCompleted_5D118C384AE61F1C80292E81DEEC160B");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnBlendOut_5D118C384AE61F1C80292E81DEEC160B
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Role_Bianshen_Level_Youyidie_C::OnBlendOut_5D118C384AE61F1C80292E81DEEC160B()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnBlendOut_5D118C384AE61F1C80292E81DEEC160B");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnInterrupted_5D118C384AE61F1C80292E81DEEC160B
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Role_Bianshen_Level_Youyidie_C::OnInterrupted_5D118C384AE61F1C80292E81DEEC160B()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnInterrupted_5D118C384AE61F1C80292E81DEEC160B");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnCancelled_5D118C384AE61F1C80292E81DEEC160B
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Role_Bianshen_Level_Youyidie_C::OnCancelled_5D118C384AE61F1C80292E81DEEC160B()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnCancelled_5D118C384AE61F1C80292E81DEEC160B");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnTick_5D118C384AE61F1C80292E81DEEC160B
-// (BlueprintCallable, BlueprintEvent)
-
-void UGA_Role_Bianshen_Level_Youyidie_C::OnTick_5D118C384AE61F1C80292E81DEEC160B()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnTick_5D118C384AE61F1C80292E81DEEC160B");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnCompleted_5D118C384AE61F1C80292E81908403EF
 // (BlueprintCallable, BlueprintEvent)
 
@@ -228,6 +158,76 @@ void UGA_Role_Bianshen_Level_Youyidie_C::OnTick_5D118C384AE61F1C80292E81908403EF
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnTick_5D118C384AE61F1C80292E81908403EF");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnCompleted_5D118C384AE61F1C80292E81DEEC160B
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_Bianshen_Level_Youyidie_C::OnCompleted_5D118C384AE61F1C80292E81DEEC160B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnCompleted_5D118C384AE61F1C80292E81DEEC160B");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnBlendOut_5D118C384AE61F1C80292E81DEEC160B
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_Bianshen_Level_Youyidie_C::OnBlendOut_5D118C384AE61F1C80292E81DEEC160B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnBlendOut_5D118C384AE61F1C80292E81DEEC160B");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnInterrupted_5D118C384AE61F1C80292E81DEEC160B
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_Bianshen_Level_Youyidie_C::OnInterrupted_5D118C384AE61F1C80292E81DEEC160B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnInterrupted_5D118C384AE61F1C80292E81DEEC160B");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnCancelled_5D118C384AE61F1C80292E81DEEC160B
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_Bianshen_Level_Youyidie_C::OnCancelled_5D118C384AE61F1C80292E81DEEC160B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnCancelled_5D118C384AE61F1C80292E81DEEC160B");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GA_Role_Bianshen_Level_Youyidie.GA_Role_Bianshen_Level_Youyidie_C.OnTick_5D118C384AE61F1C80292E81DEEC160B
+// (BlueprintCallable, BlueprintEvent)
+
+void UGA_Role_Bianshen_Level_Youyidie_C::OnTick_5D118C384AE61F1C80292E81DEEC160B()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GA_Role_Bianshen_Level_Youyidie_C", "OnTick_5D118C384AE61F1C80292E81DEEC160B");
 
 	UObject::ProcessEvent(Func, nullptr);
 }

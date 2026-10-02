@@ -37,6 +37,60 @@ void AAIC_AICommon_C::ExecuteUbergraph_AIC_AICommon(int32 EntryPoint)
 }
 
 
+// Function AIC_AICommon.AIC_AICommon_C.ReceiveTick
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void AAIC_AICommon_C::ReceiveTick(float DeltaSeconds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_AICommon_C", "ReceiveTick");
+
+	Params::AIC_AICommon_C_ReceiveTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIC_AICommon.AIC_AICommon_C.OnStart
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AAIC_AICommon_C::OnStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_AICommon_C", "OnStart");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function AIC_AICommon.AIC_AICommon_C.通用行为树条件
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void AAIC_AICommon_C::通用行为树条件(bool bContent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_AICommon_C", "通用行为树条件");
+
+	Params::AIC_AICommon_C_通用行为树条件 Parms{};
+
+	Parms.bContent = bContent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function AIC_AICommon.AIC_AICommon_C.保底传送回调
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -84,6 +138,26 @@ void AAIC_AICommon_C::入战监听(bool bContent)
 		Func = Class->GetFunction("AIC_AICommon_C", "入战监听");
 
 	Params::AIC_AICommon_C_入战监听 Parms{};
+
+	Parms.bContent = bContent;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIC_AICommon.AIC_AICommon_C.默认感知保底事件
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void AAIC_AICommon_C::默认感知保底事件(bool bContent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_AICommon_C", "默认感知保底事件");
+
+	Params::AIC_AICommon_C_默认感知保底事件 Parms{};
 
 	Parms.bContent = bContent;
 
@@ -209,80 +283,6 @@ void AAIC_AICommon_C::通用战斗AI(bool bContent)
 }
 
 
-// Function AIC_AICommon.AIC_AICommon_C.默认感知保底事件
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void AAIC_AICommon_C::默认感知保底事件(bool bContent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_AICommon_C", "默认感知保底事件");
-
-	Params::AIC_AICommon_C_默认感知保底事件 Parms{};
-
-	Parms.bContent = bContent;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIC_AICommon.AIC_AICommon_C.通用行为树条件
-// (BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bContent                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void AAIC_AICommon_C::通用行为树条件(bool bContent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_AICommon_C", "通用行为树条件");
-
-	Params::AIC_AICommon_C_通用行为树条件 Parms{};
-
-	Parms.bContent = bContent;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function AIC_AICommon.AIC_AICommon_C.OnStart
-// (Public, BlueprintCallable, BlueprintEvent)
-
-void AAIC_AICommon_C::OnStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_AICommon_C", "OnStart");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function AIC_AICommon.AIC_AICommon_C.ReceiveTick
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   DeltaSeconds                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void AAIC_AICommon_C::ReceiveTick(float DeltaSeconds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_AICommon_C", "ReceiveTick");
-
-	Params::AIC_AICommon_C_ReceiveTick Parms{};
-
-	Parms.DeltaSeconds = DeltaSeconds;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIC_AICommon.AIC_AICommon_C.状态切换函数
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -391,26 +391,6 @@ void AAIC_AICommon_C::设置区域监听对象()
 }
 
 
-// Function AIC_AICommon.AIC_AICommon_C.区域
-// (Private, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const TDelegate<void()>&                换人监听                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm)
-
-void AAIC_AICommon_C::区域(const TDelegate<void()>& 换人监听)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIC_AICommon_C", "区域");
-
-	Params::AIC_AICommon_C_区域 Parms{};
-
-	Parms.换人监听 = 换人监听;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function AIC_AICommon.AIC_AICommon_C.区域监听事件函数
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -477,6 +457,20 @@ void AAIC_AICommon_C::通用关卡变量切换监听(EAiLevelVarSource 关卡变
 	Parms.事件 = 事件;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function AIC_AICommon.AIC_AICommon_C.避开卡死的可集成函数
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void AAIC_AICommon_C::避开卡死的可集成函数()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AIC_AICommon_C", "避开卡死的可集成函数");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }
